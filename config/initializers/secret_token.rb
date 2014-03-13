@@ -9,4 +9,6 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Railsroot::Application.config.secret_key_base = '69999e48ff2773499507925564a4a8f623b7492cf06d3a25153ded11ab7191ce22108fd865c857d56953a97f958436b4449b9f36feb2b89b0050363f30794ad2'
+Railsroot::Application.config.secret_key_base = '69999e48ff2773499507925564a' \
+'4a8f623b7492cf06d3a25153ded11ab7191ce22108fd865c857d56953a97f958436b4449b9f' \
+'36feb2b89b0050363f30794ad2'

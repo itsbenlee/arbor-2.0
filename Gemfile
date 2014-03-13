@@ -36,6 +36,7 @@ end
 
 gem 'reek'
 gem 'rails_best_practices'
+gem 'rubocop'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
