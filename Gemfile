@@ -36,6 +36,21 @@ group :development do
   gem 'dotenv'
 end
 
+group :development, :test do
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
+  gem 'spork-rails'
+  gem 'thin'
+  gem 'faker'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'shoulda-matchers'
+  gem 'database_cleaner'
+end
+
 # Code analysis tools
 
 gem 'reek'
