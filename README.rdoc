@@ -1,28 +1,26 @@
-== README
+== RAILSROOTS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple basic rails project setup with all the tools we use:
 
-Things you may want to cover:
+Reek
+Rubocop
+RailsBestPractices
+Travis
 
-* Ruby version
+Haml
+Rspec
+FactoryGirl
 
-* System dependencies
+=== How to Use this repo
 
-* Configuration
+- clone it using git
+- rename the origin remote on .git/config to point to your new empty project repo
+- configure all necesary files (see below)
+- Make your initial config commit
+- Enjoy rake code_analysis, rake spec and all the other goodies you always use.
 
-* Database creation
+=== Needed configurations
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+- Chagne the .travis.yml file and config/database.travis.yml file to point to your test database
+- Add a .env file with any necesary ENVIRONMENT variable you may need
+- Use config/database.yml.example to create config/database.yml
