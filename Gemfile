@@ -35,6 +35,7 @@ end
 # Code analysis tools
 
 gem 'reek'
+gem 'rails_best_practices'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
