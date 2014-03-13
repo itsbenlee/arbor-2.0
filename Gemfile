@@ -32,6 +32,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development do
+  gem 'dotenv'
+end
+
 # Code analysis tools
 
 gem 'reek'
