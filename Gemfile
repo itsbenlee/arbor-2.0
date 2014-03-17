@@ -57,6 +57,8 @@ gem 'reek'
 gem 'rails_best_practices'
 gem 'rubocop'
 
+gem 'rails_12factor', group: :production
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
