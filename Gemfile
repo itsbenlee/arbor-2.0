@@ -43,6 +43,7 @@ group :development, :test do
   gem 'spork-rails'
   gem 'thin'
   gem 'faker'
+  gem 'byebug'
 end
 
 group :test do
@@ -60,15 +61,3 @@ gem 'rubocop'
 gem "brakeman", :require => false
 
 gem 'rails_12factor', group: :production
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
