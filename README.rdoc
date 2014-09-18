@@ -1,9 +1,13 @@
 == RAILSROOTS
 
+[![Test Coverage](https://codeclimate.com/repos/5297467689af7e3236060b56/badges/b6b6f81d23f0bdc0bb83/coverage.svg)](https://codeclimate.com/repos/5297467689af7e3236060b56/feed)
+[![Code Climate](https://codeclimate.com/repos/5297467689af7e3236060b56/badges/b6b6f81d23f0bdc0bb83/gpa.svg)](https://codeclimate.com/repos/5297467689af7e3236060b56/feed)
+
 A simple basic rails project setup with all the tools we use:
 
 Reek
 Rubocop
+Brakeman
 RailsBestPractices
 Travis
 
@@ -13,7 +17,10 @@ FactoryGirl
 
 === How to Use this repo
 
-- clone it using git
+- clone it using git: `git clone git@github.com:neonroots/railsroots.git your_new_project_name`
+- Use config/database.yml.example to create config/database.yml
+- Run the setup script: `rake setup_task[your_new_project_name]`
+- Commit the rename of the railsroot module `git add .;git commit -m 'Rename Railsroot Module'`
 - rename the origin remote on .git/config to point to your new empty project repo
 - configure all necesary files (see below)
 - Make your initial config commit
@@ -21,6 +28,5 @@ FactoryGirl
 
 === Needed configurations
 
-- Chagne the .travis.yml file and config/database.travis.yml file to point to your test database
 - Add a .env file with any necesary ENVIRONMENT variable you may need
 - Use config/database.yml.example to create config/database.yml
