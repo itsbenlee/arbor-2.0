@@ -58,5 +58,6 @@ end
 gem 'reek'
 gem 'rails_best_practices'
 gem 'rubocop'
+gem "brakeman", :require => false
 
 gem 'rails_12factor', group: :production
