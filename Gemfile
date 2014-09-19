@@ -11,6 +11,9 @@ gem 'pg'
 gem 'sass-rails', '>= 4.0.3'
 gem 'compass-rails'
 
+# Foundation template
+gem 'foundation-rails'
+
 gem 'haml-rails'
 
 # Use Uglifier as compressor for JavaScript assets
