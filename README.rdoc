@@ -7,9 +7,13 @@ A simple basic rails project setup with all the tools we use:
 
 Reek
 Rubocop
-Brakeman
 RailsBestPractices
 Travis
+
+We recomend adding Brakeman
+Run:
+`gem install brakeman`
+`brakeman`
 
 Haml
 Rspec
