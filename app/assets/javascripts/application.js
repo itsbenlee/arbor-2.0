@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require assets/global-vars
 //= require foundation
 //= require turbolinks
-
-$(function(){ $(document).foundation(); });
+//= require main
