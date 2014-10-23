@@ -1440,3 +1440,76 @@ $include-html-global-classes: $include-html-classes;
 // $include-accessibility-classes: true;
 
 @import 'foundation';
+
+// --------------------------------------------------------
+// VARIABLES
+// --------------------------------------------------------
+
+// Grayscale
+$black-10:  darken(#fff, 10%) !default;
+$black-20:  darken(#fff, 20%) !default;
+$black-30:  darken(#fff, 30%) !default;
+$black-40:  darken(#fff, 40%) !default;
+$black-50:  darken(#fff, 50%) !default;
+$black-60:  darken(#fff, 60%) !default;
+$black-70:  darken(#fff, 70%) !default;
+$black-80:  darken(#fff, 80%) !default;
+$black-90:  darken(#fff, 90%) !default;
+
+/* #Typography
+================================================== */
+
+@mixin f-size($sizeValue){
+  font-size: ($sizeValue) + px;
+  font-size: $sizeValue / $font-size * 1rem;
+}
+
+@mixin l-height($sizeValue) {
+  line-height: ($sizeValue) + px;
+  line-height:$sizeValue / $font-size * 1rem;
+}
+
+
+/// --------------------------------------------------------
+// MIXINS, FUNCTIONS, AND A LITTLE RESET
+// --------------------------------------------------------
+
+
+@mixin selection {
+  ::-moz-selection { @content; }
+  ::selection { @content; }
+}
+
+@mixin input-placeholder {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
+// BOX FLEX
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
+  order: $val;
+}
