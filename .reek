@@ -1,3 +1,4 @@
+---
 Attribute:
   enabled: false
   exclude: []
@@ -5,7 +6,7 @@ BooleanParameter:
   enabled: true
   exclude: []
 ClassVariable:
-  enabled: false
+  enabled: true
   exclude: []
 ControlParameter:
   enabled: true
@@ -37,13 +38,19 @@ LongYieldList:
   enabled: true
   exclude: []
   max_params: 3
+ModuleInitialize:
+  enabled: true
+  exclude: []
 NestedIterators:
   enabled: true
   exclude: []
   max_allowed_nesting: 1
   ignore_iterators: []
 NilCheck:
-  enabled: false
+  enabled: true
+  exclude: []
+PrimaDonnaMethod:
+  enabled: true
   exclude: []
 RepeatedConditional:
   enabled: true
@@ -61,7 +68,6 @@ TooManyStatements:
   enabled: true
   exclude:
   - initialize
-  - ApplicationController#global_search
   max_statements: 5
 UncommunicativeMethodName:
   enabled: true
@@ -86,6 +92,7 @@ UncommunicativeParameterName:
   - !ruby/regexp /^.$/
   - !ruby/regexp /[0-9]$/
   - !ruby/regexp /[A-Z]/
+  - !ruby/regexp /^_/
   accept: []
 UncommunicativeVariableName:
   enabled: true
