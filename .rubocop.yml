@@ -1,8 +1,8 @@
 AllCops:
-  Includes:
+  Include:
     - '**/*.gemspec'
     - '**/Rakefile'
-  Excludes:
+  Exclude:
     - 'db/*'
 
 LineLength:
@@ -30,10 +30,7 @@ ParameterLists:
 
 Semicolon:
   Description: "Don't use semicolons to terminate expressions."
-  # For example; def area(height, width); height * width end
-  AllowAfterParameterListInOneLineMethods: false
-  # For example; def area(height, width) height * width; end
-  AllowBeforeEndInOneLineMethods: false
+  AllowAsExpressionSeparator: false
 
 SingleLineMethods:
   Description: 'Avoid single-line methods.'
@@ -41,11 +38,8 @@ SingleLineMethods:
 
 SpaceInsideHashLiteralBraces:
   Description: "Use spaces inside hash literal braces - or don't."
-  EnforcedStyleIsWithSpaces: true
-
-SymbolName:
-  Description: 'Symbol literals should use snake_case.'
-  AllowCamelCase: false
+  EnforcedStyle: space
+  EnforcedStyleForEmptyBraces: no_space
 
 BlockNesting:
   Description: 'Avoid more than `Max` levels of nesting.'
@@ -70,7 +64,7 @@ CollectionMethods:
 
 # Multi-line method chaining should be done with leading dots.
 DotPosition:
-  Style: 'leading'
+  EnforcedStyle: leading
 
 # TrivialAccessors doesn't require exact name matches and doesn't allow
 # predicated methods by default.

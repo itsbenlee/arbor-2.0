@@ -61,5 +61,6 @@ end
 gem 'reek'
 gem 'rails_best_practices'
 gem 'rubocop'
+gem 'scss-lint'
 
 gem 'rails_12factor', group: :production
