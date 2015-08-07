@@ -1,14 +1,7 @@
 require 'rubygems'
 require 'spork'
-# uncomment the following line to use spork with the debugger
-# require 'spork/ext/ruby-debug'
 
 Spork.prefork do
-  # Loading more in this block will cause your tests to run faster. However,
-  # if you change any configuration or code from libraries loaded here, you'll
-  # need to restart spork for it take effect.
-
-  # This file is copied to spec/ when you run 'rails generate rspec:install'
   ENV['RAILS_ENV'] ||= 'test'
   ENV['SKIP_RAILS_ADMIN_INITIALIZER'] = 'false'
 
@@ -18,7 +11,6 @@ Spork.prefork do
 
   require 'capybara/rspec'
   require 'capybara/rails'
-  require 'capybara/poltergeist'
   require 'factory_girl_rails'
 
   FactoryGirl.factories.clear
@@ -32,13 +24,7 @@ Spork.prefork do
   # If you are not using ActiveRecord, you can remove this line.
   ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
-  Capybara.register_driver :poltergeist do |app|
-    Capybara::Poltergeist::Driver.new(app)
-  end
-
-  # The following is a monkey patch to let the capybara server and the test
-  # suite share the database connection when using transactional fixtures
-  Capybara.javascript_driver = :poltergeist
+  Capybara.javascript_driver = :webkit
 
   # Change rails logger level to reduce IO during tests
   Rails.logger.level = 4
@@ -56,20 +42,19 @@ Spork.prefork do
 
     config.before :each do |example_group|
       if Capybara.current_driver == :rack_test
-        DatabaseCleaner.strategy = :transaction
+        DatabaseRewinder.strategy = :transaction
       else
-        DatabaseCleaner.strategy = :truncation
+        DatabaseRewinder.strategy = :truncation
       end
-      DatabaseCleaner.start
+      DatabaseRewinder.start
     end
 
     config.after do
-      DatabaseCleaner.clean
+      DatabaseRewinder.clean
     end
   end
 end
 
 Spork.each_run do
   # This code will be run each time you run your specs.
-
 end

@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.2'
+ruby '2.1.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
@@ -32,35 +32,29 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
+    # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
 
-group :development do
-  gem 'dotenv'
-end
-
 group :development, :test do
+  gem 'dotenv'
   gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'spork-rails'
   gem 'thin'
   gem 'faker'
   gem 'byebug'
+  gem 'reek'
+  gem 'rails_best_practices'
+  gem 'rubocop'
+  gem 'scss-lint'
 end
 
 group :test do
   gem 'capybara'
-  gem 'poltergeist'
+  gem 'capybara-webkit'
   gem 'shoulda-matchers'
-  gem 'database_cleaner'
+  gem 'database_rewinder'
 end
-
-# Code analysis tools
-
-gem 'reek'
-gem 'rails_best_practices'
-gem 'rubocop'
-gem 'scss-lint'
 
 gem 'rails_12factor', group: :production
