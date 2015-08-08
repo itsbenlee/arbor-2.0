@@ -32,13 +32,12 @@ Spork.prefork do
   RSpec.configure do |config|
     config.use_transactional_fixtures = false
     config.infer_base_class_for_anonymous_controllers = false
-    config.treat_symbols_as_metadata_keys_with_true_values = true
     config.order = 'random'
 
     config.include FactoryGirl::Syntax::Methods
 
     # Uncomment if you want to include Devise. Add devise to your gemfile
-    # config.include Devise::TestHelpers, type: :controller
+    config.include Devise::TestHelpers, type: :controller
 
     config.before :each do |example_group|
       if Capybara.current_driver == :rack_test

@@ -15,5 +15,16 @@
     = csrf_meta_tags
 
   %body
+    - if notice
+      .alert-box.warning.round{ 'data' => { 'alert' => '' } }
+        = notice
+        %a.close{ href:'#' }
+          &times;
+    - if alert
+      .alert-box.error.round{ 'data' => { 'alert' => '' } }
+        = alert
+        %a.close{ href:'#' }
+          &times;
+
     = yield
     = javascript_include_tag 'application'
