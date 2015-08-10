@@ -2,7 +2,7 @@ development:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: railsroots_development
+  database: arbor_development
   pool:     5
   username: yourpgusername
   password:
@@ -11,7 +11,7 @@ test:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: railsroots_test
+  database: arbor_test
   pool:     5
   username: yourpgusername
   password:
@@ -20,7 +20,7 @@ production:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: railsroots_production
+  database: arbor_production
   pool:     5
   username: postgres
   password: postgres
