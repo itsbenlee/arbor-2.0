@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe ProjectsController, :type => :controller do
+RSpec.describe ProjectsController, type: :controller do
   describe 'GET index' do
     context 'for a logged in user' do
       it 'should redirect to login' do
