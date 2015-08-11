@@ -2,6 +2,10 @@
 
 scss_files: '**/*.scss'
 
+exclude:
+  - 'app/assets/stylesheets/vendor/**'
+  - 'app/assets/stylesheets/assets/**'
+
 linters:
   BangFormat:
     enabled: true
@@ -57,7 +61,7 @@ linters:
     enabled: true
 
   IdSelector:
-    enabled: true
+    enabled: false
 
   ImportantRule:
     enabled: true

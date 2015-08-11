@@ -1,26 +1,22 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = devise_error_messages!
-  .field
-    = f.label :full_name
-    %br/
-    = f.text_field :full_name, autofocus: true, required: true
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, required: true
-  .field
-    = f.label :password
-    - if minimum_password_length
-      %em
-        (#{minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: 'off', required: true
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: 'off',
-    required: true
-  .actions
-    = f.submit 'Sign up'
-= render 'devise/shared/links'
+%section#signup
+  %h2= t('sign_up.title')
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = devise_error_messages!
+    .field
+      = image_tag('icons/user-icon.svg', class: 'icon')
+      = f.text_field :full_name, autofocus: true, required: true, placeholder: t('sign_up.name'), class: 'radius'
+    .field
+      = image_tag('icons/mail-icon.svg', class: 'icon')
+      = f.email_field :email, autofocus: true, required: true, placeholder: t('sign_up.mail'), class: 'radius'
+    .field
+      - if minimum_password_length
+        %em
+          (#{minimum_password_length} characters minimum)
+      = image_tag('icons/password-icon.svg', class: 'icon')
+      = f.password_field :password, placeholder: t('sign_up.password'), class: 'radius', autocomplete: 'off', required: true
+    .field
+      = image_tag('icons/password-icon.svg', class: 'icon')
+      = f.password_field :password_confirmation, autocomplete: 'off', placeholder: t('sign_up.password_confirmation') , class: 'radius',
+      required: true
+    .action
+      = f.submit t('sign_up.button_signup'), class: 'button radius success small'
