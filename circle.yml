@@ -1,5 +1,4 @@
 test:
   post:
+    - bundle exec rake code_analysis
     - bundle exec rake spec
-        environment:
-          RAILS_ENV: test
