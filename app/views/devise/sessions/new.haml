@@ -2,8 +2,8 @@
   .arbor-logo
     = image_tag('arbor-logo.svg')
   .row
-    .large-6.columns.login
-      = render 'devise/sessions/login'
     .large-6.columns.signup
       = render 'devise/registrations/sign_up',
       minimum_password_length: @minimum_password_length
+    .large-6.columns.login
+      = render 'devise/sessions/login'

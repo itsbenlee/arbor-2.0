@@ -4,9 +4,14 @@ section#intro {
     margin: 60px auto;
   }
 
+  h1 {
+    color: $black-50;
+  }
+
   .login, .signup {
     background-color: $light-bg;
     border: 1px solid $black-10;
     border-radius: $global-radius;
+    padding: rem-calc(30);
   }
 } // section intro

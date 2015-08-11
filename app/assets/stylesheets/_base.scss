@@ -23,7 +23,7 @@ $black-70:  darken(#fff, 70%) !default;
 $black-80:  darken(#fff, 80%) !default;
 $black-90:  darken(#fff, 90%) !default;
 
-$global-radius: 5px;
+$global-radius: rem-calc(5);
 
 // -------  fonts ------ //
 

@@ -12,4 +12,16 @@ body {
 h1 {
   font-family: $font-titles;
   font-size: rem-calc(30);
+  margin-bottom: rem-calc(20);
+}
+
+.btn {
+  background-color: $backlog-color;
+  border-radius: $global-radius;
+  padding: rem-calc(18 0);
+  font-size: rem-calc(14);
+  color: white;
+  border: 0;
+  width: 100%;
+  text-transform: uppercase;
 }
