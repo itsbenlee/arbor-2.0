@@ -1,1 +1,14 @@
 #h1 Your projects
+- if @projects
+  %table
+    %tr
+      %th ID
+      %th Name
+    - @projects.each do |project|
+      %tr
+        %td
+          =link_to project.id, project_path(project)
+        %td
+          =link_to project.name, project_path(project)
+
+=link_to 'New Project', new_project_path

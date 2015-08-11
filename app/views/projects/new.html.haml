@@ -1,0 +1,13 @@
+- if @errors
+  #error_explanation
+    %ul
+      - @errors.each do |message|
+        %li= message
+
+= form_for :project, url: projects_path do |f|
+  %p
+    = f.label :name
+    %br/
+    = f.text_field :name
+  %p
+    = f.submit

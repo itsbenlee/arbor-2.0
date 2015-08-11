@@ -68,7 +68,7 @@ TooManyStatements:
   enabled: true
   exclude:
   - initialize
-  max_statements: 5
+  max_statements: 6
 UncommunicativeMethodName:
   enabled: true
   exclude: []
