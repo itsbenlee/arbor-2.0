@@ -1,3 +1,15 @@
 // --------------------------------------------------------
 // MAIN STYLES
 // --------------------------------------------------------
+
+body {
+  padding: 0;
+  font-family: $font-base;
+  font-size: $font-size;
+  color: $secondary;
+}
+
+h1 {
+  font-family: $font-titles;
+  font-size: rem-calc(30);
+}
