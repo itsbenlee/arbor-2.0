@@ -3,7 +3,7 @@
 // --------------------------------------------------------
 
 
-// -------  color variables ------ //
+// -------  variables ------ //
 
 $primary: #282c37; // dark blue
 $secondary: #252525; // text color
@@ -23,6 +23,8 @@ $black-70:  darken(#fff, 70%) !default;
 $black-80:  darken(#fff, 80%) !default;
 $black-90:  darken(#fff, 90%) !default;
 
+$global-radius: 5px;
+
 // -------  fonts ------ //
 
 $font-base: "aktiv-grotesk-std", sans-serif;
@@ -32,3 +34,22 @@ $font-normal: 400;
 $font-medium: 500;
 $font-bold: 700;
 $font-size: 16 !default;
+
+// -------  Mixins ------ //
+
+@mixin radius($radius:$global-radius) {
+  @if $radius {
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;
+  }
+}
+
+@mixin input-placeholder {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
