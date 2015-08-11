@@ -7,7 +7,6 @@ Spork.prefork do
 
   require File.expand_path('../../config/environment', __FILE__)
   require 'rspec/rails'
-  require 'rspec/autorun'
 
   require 'capybara/rspec'
   require 'capybara/rails'
@@ -31,6 +30,7 @@ Spork.prefork do
 
   RSpec.configure do |config|
     config.use_transactional_fixtures = false
+    config.infer_spec_type_from_file_location!
     config.infer_base_class_for_anonymous_controllers = false
     config.order = 'random'
 
