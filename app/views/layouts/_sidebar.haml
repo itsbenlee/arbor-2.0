@@ -1,0 +1,8 @@
+%aside
+  %span
+    My projects
+  %ul
+    - projects.each do |project|
+      %li
+        %a.project_link{href: project_url(project.id)}
+          %span= project.name
