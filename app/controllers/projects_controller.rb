@@ -1,5 +1,4 @@
 class ProjectsController < ApplicationController
-  before_action :load_projects, only: [:index]
   before_action :load_project, only: [:show]
 
   def index
@@ -28,10 +27,6 @@ class ProjectsController < ApplicationController
 
   def project_params
     params.require(:project).permit(:name)
-  end
-
-  def load_projects
-    @projects = current_user.projects
   end
 
   def load_project

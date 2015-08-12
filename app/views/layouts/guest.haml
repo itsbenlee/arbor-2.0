@@ -15,7 +15,6 @@
     = csrf_meta_tags
 
   %body
-    = render 'layouts/sidebar', projects: @projects
     = render 'layouts/notices', alert: alert, notice: notice
     = yield
     = javascript_include_tag 'application'

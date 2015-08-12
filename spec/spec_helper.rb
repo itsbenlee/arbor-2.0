@@ -38,6 +38,7 @@ Spork.prefork do
 
     # Uncomment if you want to include Devise. Add devise to your gemfile
     config.include Devise::TestHelpers, type: :controller
+    config.include Capybara::Auth::Helpers, type: :feature
 
     config.before :each do |example_group|
       if Capybara.current_driver == :rack_test
