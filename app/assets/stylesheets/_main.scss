@@ -8,7 +8,7 @@ body {
   font-size: $font-size;
   color: $secondary;
 
-  h1 {
+  h2 {
     font-family: $font-titles;
     font-size: rem-calc(25);
     margin-bottom: rem-calc(20);
@@ -30,7 +30,7 @@ body {
   } // buttons
 
   .intro-input {
-    font-size: 17px;
+    font-size: rem-calc(17);
     padding-left: rem-calc(50);
   } // inputs
 
