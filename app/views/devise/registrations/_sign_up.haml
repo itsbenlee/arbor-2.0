@@ -3,16 +3,20 @@
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     = devise_error_messages!
     .field
-      = f.text_field :full_name, autofocus: true, required: true, placeholder: 'Full Name', class: 'intro-input'
+      = image_tag('icons/user-icon.svg', class: 'general-icon')
+      = f.text_field :full_name, autofocus: true, required: true, placeholder: 'Full name', class: 'intro-input'
     .field
+      = image_tag('icons/mail-icon.svg', class: 'general-icon')
       = f.email_field :email, autofocus: true, required: true, placeholder: 'Mail', class: 'intro-input'
     .field
       - if minimum_password_length
         %em
           (#{minimum_password_length} characters minimum)
+      = image_tag('icons/password-icon.svg', class: 'general-icon')
       = f.password_field :password, placeholder: 'Password', class: 'intro-input', autocomplete: 'off', required: true
     .field
-      = f.password_field :password_confirmation, autocomplete: 'off', placeholder: 'Password Confirmation' , class: 'intro-input',
+      = image_tag('icons/password-icon.svg', class: 'general-icon')
+      = f.password_field :password_confirmation, autocomplete: 'off', placeholder: 'Password confirmation' , class: 'intro-input',
       required: true
     .action
       = f.submit 'Sign up', class: 'btn'

@@ -2,8 +2,10 @@
   %h1 Log in
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .field
+      = image_tag('icons/mail-icon.svg', class: 'general-icon')
       = f.email_field :email, autofocus: true, required: true, placeholder: 'Email', class: 'intro-input'
     .field
+      = image_tag('icons/password-icon.svg', class: 'general-icon')
       = f.password_field :password, placeholder: 'Password', class: 'intro-input', autocomplete: 'off', required: true
     - if devise_mapping.rememberable?
       .field

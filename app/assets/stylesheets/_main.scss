@@ -10,7 +10,7 @@ body {
 
   h1 {
     font-family: $font-titles;
-    font-size: rem-calc(30);
+    font-size: rem-calc(25);
     margin-bottom: rem-calc(20);
   }
 
@@ -30,12 +30,13 @@ body {
   } // buttons
 
   .intro-input {
+    font-size: 17px;
     padding-left: rem-calc(50);
   } // inputs
 
   .intro-input, .btn {
     border-radius: $global-radius;
-    height: 50px;
+    height: 45px;
   } // inputs btn commons
 
   .centered-link a {
@@ -48,11 +49,17 @@ body {
 
   .normal-link {
     color: $black-40;
-    padding-left: rem-calc(25);
     font-size: rem-calc(15);
   }
 
-  .checkbox {
-    background-color: red;
+  .field {
+    position: relative;
+  }
+
+  .general-icon {
+    width: 16px;
+    position: absolute;
+    top: rem-calc(15);
+    left: rem-calc(20);
   }
 } // body

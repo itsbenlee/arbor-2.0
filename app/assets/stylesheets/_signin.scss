@@ -2,7 +2,12 @@ section#intro {
   .arbor-logo {
     width: 150px;
     margin: 60px auto;
-  }
+
+    @media #{$small-only} {
+      width: 130px;
+      margin: 35px auto;
+    }
+  } // logo
 
   h1 {
     color: $black-50;
@@ -14,10 +19,14 @@ section#intro {
     border-radius: $global-radius;
     padding: rem-calc(30);
   }
-} // section intro
 
-// .icon-mail {
-//   width: 50px;
-//   height: 50px;
-//   display: block;
-// }
+  .normal-link {
+    vertical-align: middle;
+  }
+
+  .signup {
+    @media #{$small-only} {
+      margin-top: rem-calc(15);
+    } // media small
+  }  //signup small
+} // section intro
