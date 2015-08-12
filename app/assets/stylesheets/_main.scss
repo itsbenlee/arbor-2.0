@@ -7,21 +7,52 @@ body {
   font-family: $font-base;
   font-size: $font-size;
   color: $secondary;
-}
 
-h1 {
-  font-family: $font-titles;
-  font-size: rem-calc(30);
-  margin-bottom: rem-calc(20);
-}
+  h1 {
+    font-family: $font-titles;
+    font-size: rem-calc(30);
+    margin-bottom: rem-calc(20);
+  }
 
-.btn {
-  background-color: $backlog-color;
-  border-radius: $global-radius;
-  padding: rem-calc(15 0);
-  font-size: rem-calc(14);
-  color: white;
-  border: 0;
-  width: 100%;
-  text-transform: uppercase;
-}
+  .btn {
+    background-color: $backlog-color;
+    font-size: rem-calc(14);
+    color: white;
+    border: 0;
+    width: 100%;
+    text-transform: uppercase;
+    opacity: 1;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.9;
+    } // btn hover
+  } // buttons
+
+  .intro-input {
+    padding-left: rem-calc(50);
+  } // inputs
+
+  .intro-input, .btn {
+    border-radius: $global-radius;
+    height: 50px;
+  } // inputs btn commons
+
+  .centered-link a {
+    display: block;
+    text-align: center;
+    color: $black-40;
+    text-decoration: underline;
+    margin-top: rem-calc(20);
+  } // centered links
+
+  .normal-link {
+    color: $black-40;
+    padding-left: rem-calc(25);
+    font-size: rem-calc(15);
+  }
+
+  .checkbox {
+    background-color: red;
+  }
+} // body
