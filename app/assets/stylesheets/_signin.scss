@@ -1,11 +1,11 @@
 section#intro {
   .arbor-logo {
     width: 150px;
-    margin: rem-calc(60 auto);
+    margin: 60px auto;
 
     @media #{$small-only} {
       width: 130px;
-      margin: rem-calc(35 auto);
+      margin: 35px auto;
     }
   } // logo
 
