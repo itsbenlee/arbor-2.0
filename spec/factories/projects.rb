@@ -1,7 +1,8 @@
 FactoryGirl.define do
   factory :project do
-    name  { Faker::Lorem.words(2).join(' ') }
+    sequence(:name) { |n| Faker::Lorem.word + "(#{n})" }
     owner { create :user }
     members { [] }
+    hypotheses { [] }
   end
 end
