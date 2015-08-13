@@ -1,18 +1,16 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, required: true, class: 'login'
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: 'off', required: true,
-    class: 'login'
-  - if devise_mapping.rememberable?
+%section#login
+  %h2= t('login.title')
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit 'Log in', id: 'login_button'
-= render 'devise/shared/links'
+      = image_tag('icons/mail-icon.svg', class: 'icon')
+      = f.email_field :email, autofocus: true, required: true, placeholder: t('login.email'), class: 'radius login'
+    .field
+      = image_tag('icons/password-icon.svg', class: 'icon')
+      = f.password_field :password, placeholder: t('login.password'), class: 'radius login', autocomplete: 'off', required: true
+    - if devise_mapping.rememberable?
+      .field
+        = f.check_box :remember_me, class: 'checkbox'
+        = f.label :remember_me, t('login.remember_me')
+    .action
+      = f.submit t('login.button_login'), class: 'button radius success small', id: 'login_button'
+  = render 'devise/shared/links'

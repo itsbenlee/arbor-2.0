@@ -1,6 +1,11 @@
-.row
-  .large-6.columns
-    = render 'devise/sessions/login'
-  .large-6.columns
-    = render 'devise/registrations/sign_up',
-    minimum_password_length: @minimum_password_length
+%section#user-session
+  .arbor-logo
+    = image_tag('arbor-logo.svg')
+  .row
+    .large-6.columns
+      .login-form
+        = render 'devise/sessions/login'
+    .large-6.columns
+      .signup-form
+        = render 'devise/registrations/sign_up',
+        minimum_password_length: @minimum_password_length

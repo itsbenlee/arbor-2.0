@@ -1,0 +1,47 @@
+#user-session {
+  .arbor-logo {
+    margin: rem-calc(60) auto rem-calc(45);
+    width: rem-calc(130);
+
+    @media #{$small-only} { margin: rem-calc(35) auto; }
+  } // logo
+
+  .login-form,
+  .signup-form {
+    border: 1px solid $black-20;
+    border-radius: $global-radius;
+    margin-top: rem-calc(15);
+    padding: rem-calc(30);
+
+    // scss-lint:disable QualifyingElement
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      height: rem-calc(45);
+      padding-left: rem-calc(50);
+    } // inputs
+  }
+
+  .signup-form .button { margin-bottom: 0; }
+
+  h2 { margin-bottom: rem-calc(20); }
+
+  .field { position: relative; }
+
+  .icon {
+    left: rem-calc(20);
+    position: absolute;
+    top: rem-calc(15);
+  }
+
+  label {
+    color: $black-30;
+    vertical-align: middle;
+  }
+
+  .forgot-password {
+    color: $black-40;
+    display: block;
+    text-decoration: underline;
+  } // centered links
+} // section intro

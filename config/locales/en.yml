@@ -1,4 +1,19 @@
 en:
+  sign_up:
+    title: "Sign up"
+    name: "Full name"
+    mail: "Mail"
+    password: "Password"
+    password_confirmation: "Password confirmation"
+    button_signup: "Sign up"
+  login:
+    title: "Login"
+    password: "Password"
+    email: "Email"
+    remember_me: "Remember me"
+    button_login: "Log in"
+  links:
+    forgot_password: "Forgot your password?"
   enter_description: "Enter a description"
   save: "Save"
   can_not_view: "You can not view this project."
