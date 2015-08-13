@@ -8,14 +8,6 @@ Bundler.require(:default, Rails.env)
 
 module Railsroot
   class Application < Rails::Application
-    config.to_prepare do
-      Devise::SessionsController.layout 'guest'
-      Devise::RegistrationsController.layout 'guest'
-      Devise::ConfirmationsController.layout 'guest'
-      Devise::UnlocksController.layout 'guest'
-      Devise::PasswordsController.layout 'guest'
-    end
-
     config.assets.initialize_on_precompile = false
   end
 end

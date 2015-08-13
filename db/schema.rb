@@ -11,10 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150811155150) do
+ActiveRecord::Schema.define(version: 20150812153906) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "hypotheses", force: true do |t|
+    t.string   "description"
+    t.integer  "project_id"
+    t.integer  "hypothesis_type_id"
+    t.integer  "order"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "hypotheses", ["hypothesis_type_id"], name: "index_hypotheses_on_hypothesis_type_id", using: :btree
+  add_index "hypotheses", ["project_id"], name: "index_hypotheses_on_project_id", using: :btree
+
+  create_table "hypothesis_types", force: true do |t|
+    t.string   "code"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "members_projects", force: true do |t|
     t.integer "member_id",  null: false

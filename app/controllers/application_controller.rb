@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!, :current_user_projects
   before_action :configure_permitted_parameters, if: :devise_controller?
+  layout :layout_by_resource
 
   protected
 
@@ -13,5 +14,9 @@ class ApplicationController < ActionController::Base
   def current_user_projects
     return unless current_user
     @projects = current_user.projects
+  end
+
+  def layout_by_resource
+    devise_controller? ? 'guest' : 'application'
   end
 end
