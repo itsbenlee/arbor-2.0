@@ -1,16 +1,17 @@
 require 'spec_helper'
 
 feature 'Create a new project' do
+  let!(:user) { create :user }
+
   before :each do
     ENV['MAXIMUM_MEMBER_COUNT'] = '4'
-    @user = sign_in create :user
+    sign_in user
     visit projects_path
   end
 
   scenario 'should display a new project link on the projects index page' do
     expect(page).to have_link 'New Project'
   end
-
 
   scenario 'should not allow to create a project without a name' do
     click_link 'New Project'
@@ -38,10 +39,11 @@ feature 'Create a new project' do
       4.times do
         click_button 'New Member'
       end
-      expect(all('input.new_member').count).to eq 4
-
+      wait_for_ajax
+      expect(all('input.member').count).to eq 4
+      wait_for_ajax
       click_button 'New Member'
-      expect(all('input.new_member').count).to eq 4
+      expect(all('input.member').count).to eq 4
     end
 
     scenario 'should ignore empty email fields' do
@@ -49,7 +51,7 @@ feature 'Create a new project' do
       click_button 'Save Project'
 
       expect(Project.first.members.count).to eq 1
-      expect(Project.first.members).to include @user
+      expect(Project.first.members).to include user
     end
 
     scenario 'should ignore non-existing users' do
@@ -58,18 +60,18 @@ feature 'Create a new project' do
       click_button 'Save Project'
 
       expect(Project.first.members.count).to eq 1
-      expect(Project.first.members).to include @user
+      expect(Project.first.members).to include user
     end
 
     scenario 'should add existing users to the project' do
-      member = create :user, email: 'existing@test.com'
+      additional_member = create :user, email: 'existing@test.com'
 
       click_button 'New Member'
       fill_in 'member_0', with: 'existing@test.com'
       click_button 'Save Project'
 
       expect(Project.first.members.count).to eq 2
-      [@user, member].each do |user|
+      [user, additional_member].each do |member|
         expect(Project.first.members).to include user
       end
     end

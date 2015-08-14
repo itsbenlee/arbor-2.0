@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require assets/global-vars
-//= require assets/add-project-member
 //= require foundation
 //= require turbolinks
-//= require main
+//= require init
+//= require_tree ./projects

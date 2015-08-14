@@ -36,6 +36,7 @@ group :test do
   gem 'connection_pool'
   gem 'shoulda-matchers'
   gem 'database_rewinder'
+  gem 'rspec-wait'
 end
 
 gem 'rails_12factor', group: :production

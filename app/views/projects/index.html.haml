@@ -4,11 +4,14 @@
     %tr
       %th ID
       %th Name
+      %th
     - @projects.each do |project|
       %tr
         %td
-          =link_to project.id, project_path(project)
+          = link_to project.id, project_path(project)
         %td
-          =link_to project.name, project_path(project)
+          = link_to project.name, project_path(project)
+        %td
+          = link_to 'Edit', edit_project_path(project)
 
-=link_to 'New Project', new_project_path
+= link_to 'New Project', new_project_path

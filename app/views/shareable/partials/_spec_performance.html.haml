@@ -1,0 +1,27 @@
+- if Rails.env.test?
+  :css
+    .notransition * {
+      -webkit-transition: none !important;
+      -moz-transition: none !important;
+      -o-transition: none !important;
+      -ms-transition: none !important;
+      transition: none !important;
+      -webkit-transition-property: none !important;
+      -moz-transition-property: none !important;
+      -o-transition-property: none !important;
+      -ms-transition-property: none !important;
+      transition-property: none !important;
+      -webkit-transform: none !important;
+      -moz-transform: none !important;
+      -o-transform: none !important;
+      -ms-transform: none !important;
+      transform: none !important;
+      -webkit-animation: none !important;
+      -moz-animation: none !important;
+      -o-animation: none !important;
+      -ms-animation: none !important;
+      animation: none !important;
+    }
+  :javascript
+    $.fx.off = true;
+    $('body').addClass('notransition');
