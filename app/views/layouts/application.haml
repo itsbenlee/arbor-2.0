@@ -13,10 +13,6 @@
     = stylesheet_link_tag    'application'
     = javascript_include_tag 'vendor/modernizr'
     = csrf_meta_tags
-    - unless Rails.env.test?
-      %script{:src => "//use.typekit.net/uyn6gfv.js"}
-      :javascript
-        try{Typekit.load();}catch(e){}
   %body{'data-action' => action_name, 'data-controller' => controller_name }
     = render 'layouts/sidebar', projects: @projects
     .columns.small-10.right-app-content

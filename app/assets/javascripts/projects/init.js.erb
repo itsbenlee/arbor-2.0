@@ -10,7 +10,7 @@ ARBOR.projects.init = function () {
     e.preventDefault();
     if (member_count < max_member_count) {
       $(wrapper).append('<div>' + member_input + '</div>');
-    };
+    }
   });
 
   function generateInput(member_count) {
@@ -20,5 +20,5 @@ ARBOR.projects.init = function () {
          'name="' + member_name + '" ' +
          'id="' + member_id + '" ' +
          'type="email">';
-  };//generateInput
-}
+  }//generateInput
+};
