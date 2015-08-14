@@ -9,7 +9,7 @@ feature 'Add a project member' do
   scenario 'should show the project on sidebar' do
     visit root_url
     within 'aside' do
-      expect(find('.project_link')).to  have_text @project.name
+      expect(find('.project-link')).to  have_text @project.name
     end
   end
 
@@ -17,7 +17,7 @@ feature 'Add a project member' do
     project_not_member = create :project
     visit root_url
     within 'aside' do
-      expect(find('.project_link')).not_to  have_text project_not_member.name
+      expect(find('.project-link')).not_to  have_text project_not_member.name
     end
   end
 end

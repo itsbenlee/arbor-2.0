@@ -1,0 +1,23 @@
+#sidebar {
+  background-color: $primary-color;
+  color: $white;
+  height: 100%;
+  padding: 0;
+
+  .top {
+    background-color: darken($primary-color, 5%);
+    padding: rem-calc(24 20);
+
+    span { display: block; }
+  }
+
+  .sidebar-content {
+    padding: rem-calc(20);
+  } // content
+
+  .project-link {
+    color: $black-30;
+
+    &:hover { color: $white; }
+  }
+} // sidebar
