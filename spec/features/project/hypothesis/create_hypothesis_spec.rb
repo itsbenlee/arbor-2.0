@@ -16,16 +16,16 @@ feature 'Create hypothesis' do
 
     hypothesis_description = 'My amazing hypothesis'
 
-    within 'form.new_hypothesis' do
-      find('#hypothesis_description').set(hypothesis_description)
+    within '.hypothesis-new' do
+      find('.description').set(hypothesis_description)
       find('#hypothesis_hypothesis_type_id').select(@hypothesis_type.description)
       click_button 'Save'
     end
 
-    within 'table#hypotheses' do
-      expect(find('.hypothesis_description')).to have_text(hypothesis_description)
-      expect(find('.hypothesis_order')).to have_text('1')
-      expect(find('.hypothesis_type')).to have_text(@hypothesis_type.description)
+    within '.hypotheses-list' do
+      expect(find('.description')).to have_text(hypothesis_description)
+      expect(find('.order')).to have_text('1')
+      expect(find('.type')).to have_text(@hypothesis_type.description)
     end
   end
 
@@ -36,7 +36,7 @@ feature 'Create hypothesis' do
       find('.project-link').click
     end
 
-    within 'form.new_hypothesis' do
+    within '.hypothesis-new' do
       find('#hypothesis_hypothesis_type_id').select(@hypothesis_type.description)
       click_button 'Save'
     end

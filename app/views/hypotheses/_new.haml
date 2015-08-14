@@ -4,8 +4,7 @@
       %ul
         - hypothesis.errors.full_messages.each do |error|
           %li= error
-  = form.text_field :description, placeholder: I18n.translate('enter_description'),
-  required: true, maxlength: 250
-  = form.select(:hypothesis_type_id,
-  hypothesis_types.all.collect { |ht|[ht.description, ht.id] })
-  = form.submit I18n.translate('save')
+  = form.text_field :description, placeholder: I18n.translate('labs.hypotheses.enter_description'),
+    required: true, maxlength: 250, class: 'description'
+  = form.select(:hypothesis_type_id, hypothesis_types.all.collect { |ht|[ht.description, ht.id] }, {}, { class: 'type' })
+  = form.submit I18n.translate('save'), class: 'hide'

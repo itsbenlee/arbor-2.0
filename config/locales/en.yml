@@ -16,7 +16,9 @@ en:
     forgot_password: "Forgot your password?"
   sidebar:
     my_projects: "My projects"
-  enter_description: "Enter a description"
+  labs:
+    hypotheses:
+      enter_description: "Enter a description"
   save: "Save"
   can_not_view: "You can not view this project."
   can_not_edit: "You can not edit this project."
