@@ -11,7 +11,7 @@ feature 'Create hypothesis' do
     visit root_url
 
     within 'aside' do
-      find('.project_link').click
+      find('.project-link').click
     end
 
     hypothesis_description = 'My amazing hypothesis'
@@ -33,7 +33,7 @@ feature 'Create hypothesis' do
     visit root_url
 
     within 'aside' do
-      find('.project_link').click
+      find('.project-link').click
     end
 
     within 'form.new_hypothesis' do
