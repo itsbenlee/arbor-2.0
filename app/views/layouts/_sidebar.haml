@@ -1,8 +1,8 @@
-%aside
-  %span
-    My projects
-  %ul
-    - projects.each do |project|
-      %li
-        = link_to project.name, project_hypotheses_path(project_id: project.id),
-        class: 'project_link'
+#sidebar.columns.small-2
+  .top
+    %span.text-center= t('sidebar.my_projects')
+  .sidebar-content
+    %ul
+      - projects.each do |project|
+        %li
+          = link_to project.name, project_hypotheses_path(project_id: project.id), class: 'project-link'

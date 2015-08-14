@@ -18,6 +18,7 @@
       try{Typekit.load();}catch(e){}
   %body
     = render 'layouts/sidebar', projects: @projects
-    = render 'layouts/notices', alert: alert, notice: notice
-    = yield
+    .columns.small-10.content
+      = render 'layouts/notices', alert: alert, notice: notice
+      = yield
     = javascript_include_tag 'application'
