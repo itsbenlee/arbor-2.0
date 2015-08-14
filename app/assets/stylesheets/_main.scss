@@ -2,6 +2,19 @@
 // MAIN STYLES
 // --------------------------------------------------------
 
+body {
+  overflow: hidden;
+}
+
+.right-app-content {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+//Remove focus styles
+input,
+select { outline: 0; }
+
 .button {
   text-transform: uppercase;
   width: 100%;
@@ -12,7 +25,7 @@
 input {
   @include input-placeholder {
     color: $black-30;
-    font-weight: $font-normal;
+    font-weight: $font-weight-normal;
   }
 }
 

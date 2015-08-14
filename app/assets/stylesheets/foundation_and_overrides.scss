@@ -93,8 +93,9 @@ $font-family-serif: Georgia, Cambria, Times, serif;
 // $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 
 // We use these to define default font weights
-// $font-weight-normal: normal;
-// $font-weight-bold: bold;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
 
 $white: #fff;
 $black: #000;
@@ -107,6 +108,9 @@ $success-color: #2ecc71;
 $canvas-color: #e62940; // red
 $lab-color: #4ba4f6;  // cyan
 $light-bg: #fbfbfb;
+$font-color-2: #626262;
+$font-color-3: #b3b3b3;
+$border-color: #cecece;
 
 // Grayscale
 $black-10:  darken($white, 10%) !default;

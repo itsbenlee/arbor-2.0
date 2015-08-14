@@ -1,12 +1,16 @@
-= link_to I18n.translate('add_hypothesis'), '#new_hypothesis_form'
-- if @project.hypotheses.any?
-  %table#hypotheses
-    %tbody
+%section#hypotheses
+  = link_to I18n.translate('add_hypothesis'), '#new_hypothesis_form'
+  - if @project.hypotheses.any?
+    .hypotheses-list
       - @project.hypotheses.each do |hypothesis|
-        %tr
-          %td.hypothesis_order= hypothesis.order
-          %td.hypothesis_description= hypothesis.description
-          %td.hypothesis_type= hypothesis.hypothesis_type_description
-%section#new_hypothesis_form
-  = render 'hypotheses/new', hypothesis: @hypothesis,
-  hypothesis_types: @hypothesis_types, project: @project
+        .hypothesis
+          %span.order= hypothesis.order
+          %span.content
+            %span.description= hypothesis.description
+            %span.type= hypothesis.hypothesis_type_description
+  .hypothesis-new
+    .hypothesis
+      %span.order 4
+      .content
+        = render 'hypotheses/new', hypothesis: @hypothesis,
+        hypothesis_types: @hypothesis_types, project: @project
