@@ -1,0 +1,12 @@
+// --------------------------------------------------------
+//  CREATE PROJECTS
+// --------------------------------------------------------
+
+#new-project {
+  margin-top: rem-calc(200);
+  text-align: center;
+
+  p { color: $black-30; }
+
+  .button { width: 25%; }
+} // new project
