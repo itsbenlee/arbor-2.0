@@ -4,10 +4,10 @@ ARBOR.projects.init = function () {
   var add_member_button = $('#new_member_button');
 
   $(add_member_button).click(function(e) {
-    e.preventDefault();
     var member_count = $('#members input.member').size();
     var member_input = generateInput(member_count);
 
+    e.preventDefault();
     if (member_count < max_member_count) {
       $(wrapper).append('<div>' + member_input + '</div>');
     };

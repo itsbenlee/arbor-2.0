@@ -50,6 +50,7 @@ feature 'Edit a project' do
     end
 
     scenario 'should only allow up to 4 users' do
+      expect(all('input.member').count).to eq 1
       click_button 'New Member'
       expect(all('input.member').count).to eq 2
 
