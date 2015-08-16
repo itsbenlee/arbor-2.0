@@ -39,6 +39,7 @@ feature 'Create a new project' do
       4.times do
         click_button 'New Member'
       end
+      # byebug
       wait_for_ajax
       expect(all('input.member').count).to eq 4
       wait_for_ajax

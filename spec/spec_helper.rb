@@ -42,10 +42,10 @@ Spork.prefork do
     config.infer_base_class_for_anonymous_controllers = false
     config.order = 'random'
 
+    config.include WaitForAjax, type: :feature
     config.include FactoryGirl::Syntax::Methods
     config.include Devise::TestHelpers, type: :controller
     config.include Capybara::Auth::Helpers, type: :feature
-    config.include WaitForAjax, type: :feature
 
     config.before :each do |example_group|
       if Capybara.current_driver == :rack_test
