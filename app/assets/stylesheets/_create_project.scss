@@ -3,10 +3,14 @@
 // --------------------------------------------------------
 
 #new-project {
-  margin-top: rem-calc(200);
+  margin-top: rem-calc(150);
   text-align: center;
 
   p { color: $black-30; }
 
-  .button { width: 25%; }
+  .button { width: 60%; }
 } // new project
+
+#project-info {
+  margin-top: rem-calc(150);
+}

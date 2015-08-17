@@ -24,6 +24,8 @@ en:
     project_button: "New Project"
     project_name: "Project name"
     section_title: "Project info"
+    save_button: "Save project"
+    member_mail: "Member mail"
   save: "Save"
   can_not_view: "You can not view this project."
   can_not_edit: "You can not edit this project."

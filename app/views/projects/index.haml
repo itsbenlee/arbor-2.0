@@ -1,18 +1,4 @@
-#new-project
-  %p= t('create_project.title')
-  =link_to t('create_project.project_button'), new_project_path, class: 'button radius small success'
-- if @projects
-  %table
-    %tr
-      %th ID
-      %th Name
-      %th
-    - @projects.each do |project|
-      %tr
-        %td
-          = link_to project.id, project_path(project)
-        %td
-          = link_to project.name, project_path(project)
-        %td
-          = link_to 'Edit', edit_project_path(project)
-
+#new-project.row
+  .large-6.large-centered.columns
+    %p= t('create_project.title')
+    =link_to t('create_project.project_button'), new_project_path, class: 'button radius small success'

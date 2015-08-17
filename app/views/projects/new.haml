@@ -1,17 +1,21 @@
-- if @errors
-  #error_explanation
-    %ul
-      - @errors.each do |message|
-        %li= message
+#project-info.row
+  .large-6.large-centered.columns
+    - if @errors
+      #error_explanation
+        %ul
+          - @errors.each do |message|
+            %li= message
 
-= form_for :project, url: Project.new, html: { id: 'new_project' }  do |f|
-  %h2= t('create_project.section_title')
-  .field
-    = f.text_field :name, placeholder: t('create_project.project_name')
-  #members
-    %label{ for: 'project_members' } Members
-    = f.button 'Add more members', id: 'new_member_button', type: :button
-    .field
-      = f.text_field :name
-  %p
-    = f.submit
+    = form_for :project, url: Project.new, html: { id: 'new_project' }  do |f|
+      %h2= t('create_project.section_title')
+      .field
+        = image_tag('icons/project-icon.svg', class: 'icon')
+        = f.text_field :name, placeholder: t('create_project.project_name'), class: 'radius login'
+      #members
+        %label{ for: 'project_members' } Members
+        = f.button 'Add more members', id: 'new_member_button', type: :button
+        .field
+          = image_tag('icons/mail-icon.svg', class: 'icon')
+          = f.text_field :name, class: 'radius login', placeholder: t('create_project.member_mail')
+      .action
+        = f.submit t('create_project.save_button'), class: 'button radius success small'
