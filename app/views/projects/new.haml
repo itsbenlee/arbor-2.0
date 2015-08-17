@@ -5,12 +5,13 @@
         %li= message
 
 = form_for :project, url: Project.new, html: { id: 'new_project' }  do |f|
-  %p
-    = f.label :name
-    %br/
-    = f.text_field :name
+  %h2= t('create_project.section_title')
+  .field
+    = f.text_field :name, placeholder: t('create_project.project_name')
   #members
     %label{ for: 'project_members' } Members
-    = f.button 'New Member', id: 'new_member_button', type: :button
+    = f.button 'Add more members', id: 'new_member_button', type: :button
+    .field
+      = f.text_field :name
   %p
     = f.submit
