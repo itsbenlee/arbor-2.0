@@ -12,7 +12,6 @@ feature 'Edit a project' do
   end
 
   before :each do
-    ENV['MAXIMUM_MEMBER_COUNT'] = '4'
     sign_in user
     visit projects_path
   end

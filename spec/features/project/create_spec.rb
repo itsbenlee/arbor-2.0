@@ -4,7 +4,6 @@ feature 'Create a new project' do
   let!(:user) { create :user }
 
   before :each do
-    ENV['MAXIMUM_MEMBER_COUNT'] = '4'
     sign_in user
     visit projects_path
   end
