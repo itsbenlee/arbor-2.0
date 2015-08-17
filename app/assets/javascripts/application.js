@@ -15,4 +15,5 @@
 //= require assets/global-vars
 //= require foundation
 //= require turbolinks
-//= require main
+//= require init
+//= require_tree ./projects

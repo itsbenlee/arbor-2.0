@@ -3,29 +3,37 @@ require 'spork'
 
 Spork.prefork do
   ENV['RAILS_ENV'] ||= 'test'
-  ENV['SKIP_RAILS_ADMIN_INITIALIZER'] = 'false'
 
   require File.expand_path('../../config/environment', __FILE__)
   require 'rspec/rails'
 
   require 'capybara/rspec'
   require 'capybara/rails'
+  require 'capybara/poltergeist'
   require 'factory_girl_rails'
 
-  FactoryGirl.factories.clear
-  FactoryGirl.reload
+  class ActiveRecord::Base
+    mattr_accessor :shared_connection
+    @@shared_connection = nil
 
-  # Requires supporting ruby files with custom matchers and macros, etc,
-  # in spec/support/ and its subdirectories.
+    def self.connection
+      @@shared_connection || ConnectionPool::Wrapper.new(size: 1) { retrieve_connection }
+    end
+  end
+
+  ActiveRecord::Base.shared_connection = ActiveRecord::Base.connection
+
   Dir[Rails.root.join('spec/support/**/*.rb')].each { |file| require file }
 
-  # Checks for pending migrations before tests are run.
-  # If you are not using ActiveRecord, you can remove this line.
   ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
-  Capybara.javascript_driver = :webkit
+  Capybara.register_driver :poltergeist do |app|
+    options = { inspector: true, timeout: 1.minutes}
+    Capybara::Poltergeist::Driver.new(app, options)
+  end
 
-  # Change rails logger level to reduce IO during tests
+  Capybara.javascript_driver = :poltergeist
+
   Rails.logger.level = 4
 
   RSpec.configure do |config|
@@ -34,9 +42,8 @@ Spork.prefork do
     config.infer_base_class_for_anonymous_controllers = false
     config.order = 'random'
 
+    config.include WaitForAjax, type: :feature
     config.include FactoryGirl::Syntax::Methods
-
-    # Uncomment if you want to include Devise. Add devise to your gemfile
     config.include Devise::TestHelpers, type: :controller
     config.include Capybara::Auth::Helpers, type: :feature
 
@@ -56,5 +63,4 @@ Spork.prefork do
 end
 
 Spork.each_run do
-  # This code will be run each time you run your specs.
 end

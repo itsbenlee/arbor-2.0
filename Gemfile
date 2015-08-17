@@ -17,7 +17,7 @@ group :doc do
 end
 
 group :development, :test do
-  gem 'dotenv'
+  gem 'dotenv-rails'
   gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'spork-rails'
@@ -32,9 +32,11 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'capybara-webkit'
+  gem 'poltergeist'
+  gem 'connection_pool'
   gem 'shoulda-matchers'
   gem 'database_rewinder'
+  gem 'rspec-wait'
 end
 
 gem 'rails_12factor', group: :production

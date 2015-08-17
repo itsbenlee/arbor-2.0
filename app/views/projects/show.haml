@@ -1,0 +1,14 @@
+= @project.name
+%h1
+  Members
+  %table
+    %tr
+      %th Name
+      %th Email
+    - @project.members.each do |member|
+      %tr
+        %td
+          = member.full_name
+        %td
+          = member.email
+= link_to 'Edit', edit_project_path(@project)

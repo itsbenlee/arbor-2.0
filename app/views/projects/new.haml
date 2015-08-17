@@ -1,0 +1,16 @@
+- if @errors
+  #error_explanation
+    %ul
+      - @errors.each do |message|
+        %li= message
+
+= form_for :project, url: Project.new, html: { id: 'new_project' }  do |f|
+  %p
+    = f.label :name
+    %br/
+    = f.text_field :name
+  #members
+    %label{ for: 'project_members' } Members
+    = f.button 'New Member', id: 'new_member_button', type: :button
+  %p
+    = f.submit
