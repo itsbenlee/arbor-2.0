@@ -13,4 +13,18 @@
 
 #project-info {
   margin-top: rem-calc(150);
-}
+
+  #members {
+    label {
+      font-weight: $font-weight-normal;
+      padding-bottom: rem-calc(10);
+      text-transform: uppercase;
+    }
+
+    .button {
+      background-color: white;
+      border: 1px solid $primary-color;
+      color: $primary-color;
+    }
+  }
+} // project info

@@ -51,3 +51,5 @@ input[type="password"] {
   height: rem-calc(45);
   padding-left: rem-calc(50);
 } // inputs
+
+#error_explanation { color: $canvas-color; }

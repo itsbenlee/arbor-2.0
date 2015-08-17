@@ -12,10 +12,7 @@
         = image_tag('icons/project-icon.svg', class: 'icon')
         = f.text_field :name, placeholder: t('create_project.project_name'), class: 'radius login'
       #members
-        %label{ for: 'project_members' } Members
-        = f.button 'Add more members', id: 'new_member_button', type: :button
-        .field
-          = image_tag('icons/mail-icon.svg', class: 'icon')
-          = f.text_field :name, class: 'radius login', placeholder: t('create_project.member_mail')
+        %label{ for: 'project_members' }= t('create_project.project_members')
+        = f.button t('create_project.add_members'), id: 'new_member_button', class: 'button radius small', type: :button
       .action
         = f.submit t('create_project.save_button'), class: 'button radius success small'
