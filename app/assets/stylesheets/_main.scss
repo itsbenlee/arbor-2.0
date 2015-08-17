@@ -43,3 +43,11 @@ ul {
     top: rem-calc(15);
   }
 } // input icons
+
+// scss-lint:disable QualifyingElement
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  height: rem-calc(45);
+  padding-left: rem-calc(50);
+} // inputs
