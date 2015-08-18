@@ -10,14 +10,15 @@
 
       .progress {
         background-color: $black-10;
-        border-radius: $global-radius;
+        @include border-radius($global-radius);
         height: rem-calc(20);
         margin-bottom: 0;
 
         .meter {
-          background-color: $canvas-color;
-          border-top-left-radius: $global-radius;;
-          border-bottom-left-radius: $global-radius;;
+          background-color: $success-color;
+          @include border-radius(3px);
+          // border-top-left-radius: $global-radius;;
+          // border-bottom-left-radius: $global-radius;;
         } // completed percentage
       } // progress bar
 
@@ -35,9 +36,9 @@
       padding: rem-calc(12 0);
     }
 
-    .canvas-visited { color: $canvas-color; }
+    .canvas-visited { color: $success-color; }
 
-    .done { background: rem-calc(410) image-url('icons/done-icon.png') no-repeat; }
+    .done { background: rem-calc(425) image-url('icons/done-icon.png') no-repeat; }
   } // left wrapper
 
   .right-content-wrapper {
@@ -45,7 +46,7 @@
 
     label { margin-bottom: rem-calc(15); }
 
-    textarea { border-radius: $global-radius; }
+    textarea { @include border-radius($global-radius); }
 
     .solutions-field,
     .alternative-field,
@@ -56,6 +57,12 @@
     .revenue-streams-field,
     .cost-structure-field {
       display: none;
+    }
+
+    .button {
+      background-color: $black-10;
+      color: $primary-color;
+      font-weight: $font-weight-bold;
     }
   } // right content
 } // canvas
