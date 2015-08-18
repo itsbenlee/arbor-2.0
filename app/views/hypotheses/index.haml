@@ -1,9 +1,9 @@
 %section#hypotheses
   = link_to I18n.translate('add_hypothesis'), '#new_hypothesis_form'
   - if @project.hypotheses.any?
-    .hypotheses-list
+    .hypotheses-list{ data:{ project_path: project_hypotheses_order_path(@project)} }
       - @project.hypotheses.each do |hypothesis|
-        .hypothesis
+        .hypothesis{ data: { id: hypothesis.id, order: hypothesis.order } }
           %span.order= hypothesis.order
           %span.content
             %span.description= hypothesis.description
