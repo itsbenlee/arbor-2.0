@@ -6,8 +6,21 @@ ARBOR.canvas.init = function() {
     $('.' + type + '-field.canvas-fields').show();
   }
 
+  function setVisited(type) {
+    $.each($canvasAttributeLinks, function(index, canvasItem) {
+      var item = $(this);
+      if(item.attr('type') == type) {
+        item.addClass('canvas-visited');
+      } else {
+        item.removeClass('canvas-visited');
+      }
+    });
+  }
+
   $canvasAttributeLinks.click(function() {
     $canvasAttributeFields.hide();
-    showAttribute($(this).attr('type'));
+    var type = $(this).attr('type');
+    showAttribute(type);
+    setVisited(type);
   });
 };

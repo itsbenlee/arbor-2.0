@@ -1,0 +1,61 @@
+#canvas {
+  .left-content-wrapper,
+  .right-content-wrapper { padding-top: rem-calc(30); }
+
+  .left-content-wrapper {
+    border-right: 1px solid $black-10;
+
+    .progress-bar {
+      margin: rem-calc(20 0);
+
+      .progress {
+        background-color: $black-10;
+        border-radius: $global-radius;
+        height: rem-calc(20);
+        margin-bottom: 0;
+
+        .meter {
+          background-color: $canvas-color;
+          border-top-left-radius: $global-radius;;
+          border-bottom-left-radius: $global-radius;;
+        } // completed percentage
+      } // progress bar
+
+      .percentage {
+        color: $black-30;
+        font-size: rem-calc(14);
+      } // percentage number
+    } // progress bar
+
+    .canvas-item {
+      border-bottom: 1px solid $black-10;
+      color: $font-color-2;
+      cursor: pointer;
+      font-weight: $font-weight-bold;
+      padding: rem-calc(12 0);
+    }
+
+    .canvas-visited { color: $canvas-color; }
+
+    .done { background: rem-calc(410) image-url('icons/done-icon.png') no-repeat; }
+  } // left wrapper
+
+  .right-content-wrapper {
+    padding-left: rem-calc(40);
+
+    label { margin-bottom: rem-calc(15); }
+
+    textarea { border-radius: $global-radius; }
+
+    .solutions-field,
+    .alternative-field,
+    .advantage-field,
+    .segment-field,
+    .channel-field,
+    .value-proposition-field,
+    .revenue-streams-field,
+    .cost-structure-field {
+      display: none;
+    }
+  } // right content
+} // canvas
