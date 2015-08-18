@@ -5,7 +5,7 @@
 #new-project {
   text-align: center;
 
-  p.create-project { color: $black-30; }
+  .create-project { color: $black-30; }
 
   .button { width: 60%; }
 } // new project
@@ -23,6 +23,9 @@
       color: $primary-color;
     }
 
-    .member { background: rem-calc(17) image_url('icons/mail-icon.png') no-repeat; }
+    .member {
+      background: rem-calc(17) image-url('icons/mail-icon.png') no-repeat;
+      border-radius: $global-radius;
+    }
   }
 } // project info

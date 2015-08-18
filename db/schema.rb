@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20150814145019) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "canvas", force: true do |t|
+  create_table "canvas", force: :cascade do |t|
     t.text     "problems"
     t.text     "solutions"
     t.text     "alternative"
@@ -32,9 +32,10 @@ ActiveRecord::Schema.define(version: 20150814145019) do
   end
 
   add_index "canvas", ["project_id"], name: "index_canvas_on_project_id", using: :btree
+  add_index "canvas", ["value_proposition"], name: "index_canvas_on_value_proposition", using: :btree
 
-  create_table "hypotheses", force: true do |t|
-    t.string   "description"
+  create_table "hypotheses", force: :cascade do |t|
+    t.string   "description",        limit: 255
     t.integer  "project_id"
     t.integer  "hypothesis_type_id"
     t.integer  "order"
@@ -45,14 +46,14 @@ ActiveRecord::Schema.define(version: 20150814145019) do
   add_index "hypotheses", ["hypothesis_type_id"], name: "index_hypotheses_on_hypothesis_type_id", using: :btree
   add_index "hypotheses", ["project_id"], name: "index_hypotheses_on_project_id", using: :btree
 
-  create_table "hypothesis_types", force: true do |t|
-    t.string   "code"
-    t.string   "description"
+  create_table "hypothesis_types", force: :cascade do |t|
+    t.string   "code",        limit: 255
+    t.string   "description", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "members_projects", force: true do |t|
+  create_table "members_projects", force: :cascade do |t|
     t.integer "member_id",  null: false
     t.integer "project_id", null: false
   end
@@ -60,30 +61,30 @@ ActiveRecord::Schema.define(version: 20150814145019) do
   add_index "members_projects", ["member_id"], name: "index_members_projects_on_member_id", using: :btree
   add_index "members_projects", ["project_id"], name: "index_members_projects_on_project_id", using: :btree
 
-  create_table "projects", force: true do |t|
-    t.string   "name",       null: false
-    t.integer  "owner_id",   null: false
+  create_table "projects", force: :cascade do |t|
+    t.string   "name",       limit: 255, null: false
+    t.integer  "owner_id",               null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "projects", ["owner_id"], name: "index_projects_on_owner_id", using: :btree
 
-  create_table "users", force: true do |t|
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
-    t.string   "reset_password_token"
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  limit: 255, default: "",    null: false
+    t.string   "encrypted_password",     limit: 255, default: "",    null: false
+    t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer  "sign_in_count",                      default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
-    t.string   "full_name"
-    t.boolean  "admin",                  default: false
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
+    t.string   "full_name",              limit: 255
+    t.boolean  "admin",                              default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
