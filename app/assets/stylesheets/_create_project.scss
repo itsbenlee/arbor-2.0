@@ -3,20 +3,16 @@
 // --------------------------------------------------------
 
 #new-project {
-  margin-top: rem-calc(150);
   text-align: center;
 
-  p { color: $black-30; }
+  p.create-project { color: $black-30; }
 
   .button { width: 60%; }
 } // new project
 
 #project-info {
-  margin-top: rem-calc(150);
-
   #members {
     label {
-      font-weight: $font-weight-normal;
       padding-bottom: rem-calc(10);
       text-transform: uppercase;
     }

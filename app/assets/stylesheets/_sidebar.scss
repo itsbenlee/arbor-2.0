@@ -13,6 +13,10 @@
 
   .sidebar-content {
     padding: rem-calc(20);
+
+    .single-project-title {
+      border: 1px solid darken($primary-color, 5%);
+    }
   } // content
 
   .project-link {

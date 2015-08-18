@@ -1,4 +1,4 @@
-#new-project.row
+#new-project.section-margin-top.row
   - if @projects
     %table
       %tr
@@ -15,5 +15,5 @@
             = link_to 'Edit', edit_project_path(project)
 
   .large-6.large-centered.columns
-    %p= t('create_project.title')
+    %p.create-project= t('create_project.title')
     =link_to t('create_project.project_button'), new_project_path, class: 'button radius small success'
