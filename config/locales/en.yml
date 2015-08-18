@@ -28,6 +28,14 @@ en:
     member_mail: "Member mail"
     project_members: "Project members"
     add_members: "New Member"
+  backlog:
+    user_stories:
+      enter_role: "Role"
+      enter_action: "Action"
+      enter_result: "Result"
+      role_prefix: "As a"
+      action_prefix: "I should be able to"
+      result_prefix: "so that"
   save: "Save"
   can_not_view: "You can not view this project."
   can_not_edit: "You can not edit this project."

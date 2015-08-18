@@ -4,10 +4,10 @@ class UserStory < ActiveRecord::Base
   validates_presence_of :role
   validates_presence_of :action
   validates_presence_of :result
-  validates_presence_of :priority
 
   validates_inclusion_of :priority, in: PRIORITIES
 
+  belongs_to :hypothesis
   belongs_to :project
 
   def self.priorities
@@ -15,7 +15,7 @@ class UserStory < ActiveRecord::Base
   end
 
   def self.estimation_series
-    fibonacci = ->(x){ x < 2 ? x : fibonacci[x-1] + fibonacci[x-2] }
-    (2..12).map { |index| fibonacci[index] }
+    fib = ->(arg) { arg < 2 ? x : fib[arg - 1] + fib[arg - 2] }
+    (2..12).map { |index| fib[index] }
   end
 end

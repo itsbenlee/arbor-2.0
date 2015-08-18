@@ -6,6 +6,8 @@ class Hypothesis < ActiveRecord::Base
 
   belongs_to :project
   belongs_to :hypothesis_type
+  has_many :user_stories
+
   delegate :description, :code, to: :hypothesis_type, prefix: true
 
   def self.new_order(hypothesis_hash)
