@@ -1,0 +1,25 @@
+- if @errors
+  #error_explanation
+    %ul
+      - @errors.each do |message|
+        %li= message
+
+
+= form_for :user_story, url: UserStory.new do |f|
+  %p
+    = f.label :role
+    = f.text_field :role
+
+    = f.label :action
+    = f.text_field :action
+
+    = f.label :result
+    = f.text_field :result
+
+    = f.label :priority
+    = f.select :priority, UserStory.priorities
+
+    = f.label :estimated_points
+    = f.select :estimated_points, UserStory.estimation_series
+  %p
+    = f.submit

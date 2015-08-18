@@ -7,4 +7,6 @@ Railsroot::Application.routes.draw do
     resources :canvas, only: [:index, :create]
     put 'hypotheses/order', controller: :hypotheses, action: :update_order
   end
+
+  resources :user_stories, only: [:index, :new, :create]
 end
