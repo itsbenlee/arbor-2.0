@@ -4,19 +4,19 @@
     = devise_error_messages!
     .field
       = image_tag('icons/user-icon.svg', class: 'icon')
-      = f.text_field :full_name, autofocus: true, required: true, placeholder: t('sign_up.name'), class: 'radius'
+      = f.text_field :full_name, autofocus: true, required: true, placeholder: t('sign_up.name'), class: 'with-icon radius'
     .field
       = image_tag('icons/mail-icon.svg', class: 'icon')
-      = f.email_field :email, autofocus: true, required: true, placeholder: t('sign_up.mail'), class: 'radius'
+      = f.email_field :email, autofocus: true, required: true, placeholder: t('sign_up.mail'), class: 'with-icon radius'
     .field
       - if minimum_password_length
         %em
           (#{minimum_password_length} characters minimum)
       = image_tag('icons/password-icon.svg', class: 'icon')
-      = f.password_field :password, placeholder: t('sign_up.password'), class: 'radius', autocomplete: 'off', required: true
+      = f.password_field :password, placeholder: t('sign_up.password'), class: 'with-icon radius', autocomplete: 'off', required: true
     .field
       = image_tag('icons/password-icon.svg', class: 'icon')
-      = f.password_field :password_confirmation, autocomplete: 'off', placeholder: t('sign_up.password_confirmation') , class: 'radius',
+      = f.password_field :password_confirmation, autocomplete: 'off', placeholder: t('sign_up.password_confirmation') , class: 'with-icon radius',
       required: true
     .action
       = f.submit t('sign_up.button_signup'), class: 'button radius success small'

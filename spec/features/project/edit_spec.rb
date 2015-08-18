@@ -48,18 +48,6 @@ feature 'Edit a project' do
       visit edit_project_path project
     end
 
-    scenario 'should only allow up to 4 users' do
-      expect(all('input.member').count).to eq 1
-      click_button 'New Member'
-      expect(all('input.member').count).to eq 2
-
-      3.times do
-        click_button 'New Member'
-      end
-
-      expect(all('input.member').count).to eq 4
-    end
-
     scenario 'should ignore empty email fields' do
       click_button 'New Member'
       click_button 'Update Project'

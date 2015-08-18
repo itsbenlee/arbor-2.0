@@ -12,27 +12,11 @@
     border-radius: $global-radius;
     margin-top: rem-calc(15);
     padding: rem-calc(30);
-
-    // scss-lint:disable QualifyingElement
-    input[type="text"],
-    input[type="email"],
-    input[type="password"] {
-      height: rem-calc(45);
-      padding-left: rem-calc(50);
-    } // inputs
   }
 
   .signup-form .button { margin-bottom: 0; }
 
   h2 { margin-bottom: rem-calc(20); }
-
-  .field { position: relative; }
-
-  .icon {
-    left: rem-calc(20);
-    position: absolute;
-    top: rem-calc(15);
-  }
 
   label {
     color: $black-30;

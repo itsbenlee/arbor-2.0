@@ -1,16 +1,18 @@
-- if @errors
-  #error_explanation
-    %ul
-      - @errors.each do |message|
-        %li= message
+#project-info.row
+  .section-margin-top.large-6.large-centered.columns
+    - if @errors
+      #error-explanation
+        %ul
+          - @errors.each do |message|
+            %li= message
 
-= form_for :project, url: Project.new, html: { id: 'new_project' }  do |f|
-  %p
-    = f.label :name
-    %br/
-    = f.text_field :name
-  #members
-    %label{ for: 'project_members' } Members
-    = f.button 'New Member', id: 'new_member_button', type: :button
-  %p
-    = f.submit
+    = form_for :project, url: Project.new, html: { id: 'new_project' }  do |f|
+      %h2= t('create_project.section_title')
+      .field
+        = image_tag('icons/project-icon.svg', class: 'icon')
+        = f.text_field :name, placeholder: t('create_project.project_name'), class: 'with-icon radius login'
+      #members
+        %label{ for: 'project_members' }= t('create_project.project_members')
+        = f.button t('create_project.add_members'), id: 'new_member_button', class: 'button radius small', type: :button
+      .action
+        = f.submit t('create_project.save_button'), class: 'button radius success small'

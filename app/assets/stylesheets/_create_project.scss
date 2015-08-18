@@ -1,0 +1,31 @@
+// --------------------------------------------------------
+//  CREATE PROJECTS
+// --------------------------------------------------------
+
+#new-project {
+  text-align: center;
+
+  .create-project { color: $black-30; }
+
+  .button { width: 60%; }
+} // new project
+
+#project-info {
+  #members {
+    label {
+      padding-bottom: rem-calc(10);
+      text-transform: uppercase;
+    }
+
+    .button {
+      background-color: $white;
+      border: 1px solid $primary-color;
+      color: $primary-color;
+    }
+
+    .member {
+      background: rem-calc(17) image-url('icons/mail-icon.png') no-repeat;
+      border-radius: $global-radius;
+    }
+  }
+} // project info

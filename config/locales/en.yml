@@ -19,6 +19,15 @@ en:
   labs:
     hypotheses:
       enter_description: "Enter a description"
+  create_project:
+    title: "Start creating your project"
+    project_button: "New Project"
+    project_name: "Project name"
+    section_title: "Project info"
+    save_button: "Save Project"
+    member_mail: "Member mail"
+    project_members: "Project members"
+    add_members: "New Member"
   save: "Save"
   can_not_view: "You can not view this project."
   can_not_edit: "You can not edit this project."

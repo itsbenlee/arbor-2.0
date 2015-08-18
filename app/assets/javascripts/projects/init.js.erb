@@ -16,7 +16,8 @@ ARBOR.projects.init = function () {
   function generateInput(member_count) {
   var member_id    = 'member_' + member_count;
   var member_name  = 'project[' + member_id + ']';
-  return '<input class="member" ' +
+  return '<input class="member with-icon" ' +
+         '<input placeholder="Member mail" ' +
          'name="' + member_name + '" ' +
          'id="' + member_id + '" ' +
          'type="email">';
