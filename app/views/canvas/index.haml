@@ -1,41 +1,39 @@
 .row
   .large-8.columns
-    .row
-      %h1= @project.name
+    %h2= @project.name
     .row
       .large-11.columns
         .progress
           %span.meter{style: "width: #{@canvas.completed_percentage}%"}
+        %ul
+          %li.canvas-item{class: @canvas.problems ? 'done' : 'pending',
+          type: 'problems'}
+            =t('problems')
+          %li.canvas-item{class: @canvas.solutions ? 'done' : 'pending',
+          type: 'solutions'}
+            =t('solutions')
+          %li.canvas-item{class: @canvas.alternative ? 'done' : 'pending',
+          type: 'alternative'}
+            =t('alternative')
+          %li.canvas-item{class: @canvas.advantage ? 'done' : 'pending',
+          type: 'advantage'}
+            =t('advantage')
+          %li.canvas-item{class: @canvas.segment ? 'done' : 'pending',
+          type: 'segment'}
+            =t('segment')
+          %li.canvas-item{class: @canvas.channel ? 'done' : 'pending',
+          type: 'channel'}
+            =t('channel')
+          %li.canvas-item{class: @canvas.value_proposition ? 'done' : 'pending',
+          type: 'value-proposition'}
+            =t('value_proposition')
+          %li.canvas-item{class: @canvas.revenue_streams ? 'done' : 'pending',
+          type: 'revenue-streams'}
+            =t('revenue_streams')
+          %li.canvas-item{class: @canvas.cost_structure ? 'done' : 'pending',
+          type: 'cost-structure'}
+            =t('cost_structure')
       .large-1.columns.percentage
         %h2= "#{@canvas.completed_percentage}%"
-    .row
-      %ul
-        %li.canvas-item{class: @canvas.problems ? 'done' : 'pending',
-        type: 'problems'}
-          =t('problems')
-        %li.canvas-item{class: @canvas.solutions ? 'done' : 'pending',
-        type: 'solutions'}
-          =t('solutions')
-        %li.canvas-item{class: @canvas.alternative ? 'done' : 'pending',
-        type: 'alternative'}
-          =t('alternative')
-        %li.canvas-item{class: @canvas.advantage ? 'done' : 'pending',
-        type: 'advantage'}
-          =t('advantage')
-        %li.canvas-item{class: @canvas.segment ? 'done' : 'pending',
-        type: 'segment'}
-          =t('segment')
-        %li.canvas-item{class: @canvas.channel ? 'done' : 'pending',
-        type: 'channel'}
-          =t('channel')
-        %li.canvas-item{class: @canvas.value_proposition ? 'done' : 'pending',
-        type: 'value-proposition'}
-          =t('value_proposition')
-        %li.canvas-item{class: @canvas.revenue_streams ? 'done' : 'pending',
-        type: 'revenue-streams'}
-          =t('revenue_streams')
-        %li.canvas-item{class: @canvas.cost_structure ? 'done' : 'pending',
-        type: 'cost-structure'}
-          =t('cost_structure')
   .large-4.columns
     = render 'canvas/canvas_form', project: @project, canvas: @canvas
