@@ -10,7 +10,7 @@
             %span.type= hypothesis.hypothesis_type_description
   .hypothesis-new
     .hypothesis
-      %span.order 4
+      %span.order= @project.hypotheses.length + 1
       .content
         = render 'hypotheses/new', hypothesis: @hypothesis,
         hypothesis_types: @hypothesis_types, project: @project
