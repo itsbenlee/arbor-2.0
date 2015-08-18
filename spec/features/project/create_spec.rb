@@ -34,18 +34,6 @@ feature 'Create a new project' do
       fill_in 'project_name', with: 'Test Project'
     end
 
-    scenario 'should only allow up to 4 users' do
-      4.times do
-        click_button 'New Member'
-      end
-      # byebug
-      wait_for_ajax
-      expect(all('input.member').count).to eq 4
-      wait_for_ajax
-      click_button 'New Member'
-      expect(all('input.member').count).to eq 4
-    end
-
     scenario 'should ignore empty email fields' do
       click_button 'New Member'
       click_button 'Save Project'

@@ -27,8 +27,6 @@
       color: $primary-color;
     }
 
-    .member {
-      background: rem-calc(17) image_url('icons/mail-icon.png') no-repeat;
-    }
+    .member { background: rem-calc(17) image_url('icons/mail-icon.png') no-repeat; }
   }
 } // project info
