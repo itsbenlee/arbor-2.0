@@ -6,8 +6,9 @@ ARBOR = {
       });
     }
   },
-  projects: new Object
-}
+  projects: {},
+  canvas: {}
+};
 
 UTIL = {
   exec: function(controller, action) {

@@ -11,10 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150812153906) do
+ActiveRecord::Schema.define(version: 20150814145019) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "canvas", force: true do |t|
+    t.text     "problems"
+    t.text     "solutions"
+    t.text     "alternative"
+    t.text     "advantage"
+    t.text     "segment"
+    t.text     "channel"
+    t.text     "value_proposition"
+    t.text     "revenue_streams"
+    t.text     "cost_structure"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "canvas", ["project_id"], name: "index_canvas_on_project_id", using: :btree
 
   create_table "hypotheses", force: true do |t|
     t.string   "description"

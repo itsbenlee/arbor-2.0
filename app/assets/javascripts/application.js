@@ -16,4 +16,6 @@
 //= require foundation
 //= require turbolinks
 //= require init
-//= require_tree ./projects
+//= require_tree .
+
+Typekit.load();
