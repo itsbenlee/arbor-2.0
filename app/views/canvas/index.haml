@@ -6,7 +6,7 @@
         %span.meter{style: "width: #{@canvas.completed_percentage}%"}
       .percentage.large-2.columns
         %span= "#{@canvas.completed_percentage}%"
-    %ul
+    %ul.canvas-item-list
       %li.canvas-item{class: @canvas.problems ? 'done' : 'pending',
       type: 'problems'}
         =t('problems')

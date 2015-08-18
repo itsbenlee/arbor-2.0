@@ -9,14 +9,14 @@
       margin: rem-calc(20 0);
 
       .progress {
-        background-color: $black-10;
         @include border-radius($global-radius);
+        background-color: $black-10;
         height: rem-calc(20);
         margin-bottom: 0;
 
         .meter {
-          background-color: $success-color;
           @include border-radius(3px);
+          background-color: $success-color;
           // border-top-left-radius: $global-radius;;
           // border-bottom-left-radius: $global-radius;;
         } // completed percentage
@@ -28,17 +28,21 @@
       } // percentage number
     } // progress bar
 
-    .canvas-item {
-      border-bottom: 1px solid $black-10;
-      color: $font-color-2;
-      cursor: pointer;
-      font-weight: $font-weight-bold;
-      padding: rem-calc(12 0);
-    }
+    .canvas-item-list {
+      margin-right: rem-calc(25);
 
-    .canvas-visited { color: $success-color; }
+      .canvas-item {
+        border-bottom: 1px solid $black-10;
+        color: $font-color-2;
+        cursor: pointer;
+        font-weight: $font-weight-bold;
+        padding: rem-calc(12 0);
+      }
 
-    .done { background: rem-calc(425) image-url('icons/done-icon.png') no-repeat; }
+      .canvas-visited { color: $success-color; }
+
+      .done { background: rem-calc(425) image-url('icons/done-icon.png') no-repeat; }
+    } // canvas ul
   } // left wrapper
 
   .right-content-wrapper {
