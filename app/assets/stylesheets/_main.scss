@@ -58,3 +58,19 @@ input[type="password"] {
 #error-explanation { color: $canvas-color; }
 
 .section-margin-top { margin-top: rem-calc(150); }
+
+.alert,
+.warning,
+.error {
+  border: 0;
+  margin: rem-calc(10) auto;
+  padding: rem-calc(10 20);
+  width: 55%;
+
+  ul { font-size: rem-calc(14); }
+}
+
+.alert-box.error.alert { background-color: $canvas-color; }
+
+.alert-box.warning { background-color: $success-color; }
+
