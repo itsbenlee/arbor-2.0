@@ -42,5 +42,9 @@ group :test do
   gem 'rspec-wait'
 end
 
-gem 'rails_12factor', group: :production
+group :production do
+  gem 'rails_12factor'
+  gem 'passenger', '5.0.15'
+end
+
 gem 'devise'
