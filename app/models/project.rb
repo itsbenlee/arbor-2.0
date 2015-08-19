@@ -7,4 +7,5 @@ class Project < ActiveRecord::Base
   has_many :members, class_name: User, through: :members_projects
   has_many :hypotheses, dependent: :destroy
   has_one :canvas, dependent: :destroy
+  has_many :user_stories, dependent: :destroy
 end

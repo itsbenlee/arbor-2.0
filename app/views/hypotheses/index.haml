@@ -8,6 +8,11 @@
           %span.content
             %span.description= hypothesis.description
             %span.type= hypothesis.hypothesis_type_description
+            - if hypothesis.user_stories.any?
+              .content
+                = render 'user_stories/index', user_stories: hypothesis.user_stories, project: @project
+            .new-epic
+              = render 'user_stories/new', user_story: UserStory.new, project: @project, hypothesis: hypothesis
   .hypothesis-new
     .hypothesis
       %span.order= @project.hypotheses.length + 1

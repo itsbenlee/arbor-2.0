@@ -1,0 +1,16 @@
+%table
+  %tr
+    %th Role
+    %th Action
+    %th Result
+    %th Priority
+    %th Estimated Points
+    %th
+  - user_stories.each do |user_story|
+    %tr
+      %td= user_story.role
+      %td= user_story.action
+      %td= user_story.result
+      %td= user_story.priority
+      %td= user_story.estimated_points
+      %td= link_to 'Edit', edit_project_user_story_path(project, user_story)

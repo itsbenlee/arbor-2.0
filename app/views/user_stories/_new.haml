@@ -1,0 +1,32 @@
+= form_for [project, user_story] do |form|
+  -if user_story.errors.any?
+    .alert-box.alert.user_story_errors
+      %ul
+        - user_story.errors.full_messages.each do |error|
+          %li= error
+  = t('backlog.user_stories.role_prefix')
+  = form.text_field(                                   |
+    :role,                                             |
+    placeholder: t('backlog.user_stories.enter_role'), |
+    required:    true,                                 |
+    maxlength:   100,                                  |
+    class:      'role'                                 |
+  )                                                    |
+  = t('backlog.user_stories.action_prefix')
+  = form.text_field(                                     |
+    :action,                                             |
+    placeholder: t('backlog.user_stories.enter_action'), |
+    required:    true,                                   |
+    maxlength:   255,                                    |
+    class:      'action'                                 |
+  )                                                      |
+  = t('backlog.user_stories.result_prefix')
+  = form.text_field(                                     |
+    :result,                                             |
+    placeholder: t('backlog.user_stories.enter_result'), |
+    required:    true,                                   |
+    maxlength:   255,                                    |
+    class:      'result'                                 |
+  )                                                      |
+  = form.hidden_field :hypothesis_id, value: hypothesis.id
+  = form.submit I18n.translate('save'), class: 'hide'

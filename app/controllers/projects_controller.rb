@@ -14,7 +14,6 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    @project = Project.find(params[:id])
     @project.update_attributes(name: project_params[:name])
     assign_associations
 
