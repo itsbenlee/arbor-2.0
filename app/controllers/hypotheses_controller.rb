@@ -1,6 +1,6 @@
 class HypothesesController < ApplicationController
   before_action :check_view_permission, only: [:index]
-  before_action :check_edit_permission, only: [:create]
+  before_action :check_edit_permission, only: [:create, :update_order]
 
   def index
     @hypothesis = Hypothesis.new(project_id: params[:project_id])
@@ -17,6 +17,11 @@ class HypothesesController < ApplicationController
       @hypothesis_types = HypothesisType.all
       render :index
     end
+  end
+
+  def update_order
+    project_services = ProjectServices.new(@project)
+    render json: project_services.reorder_hypotheses(hypothesis_order_params)
   end
 
   private
@@ -49,5 +54,9 @@ class HypothesesController < ApplicationController
 
   def hypothesis_params
     params.require(:hypothesis).permit(:description, :hypothesis_type_id)
+  end
+
+  def hypothesis_order_params
+    params.require(:new_order)
   end
 end
