@@ -62,6 +62,15 @@ ActiveRecord::Schema.define(version: 20150821121912) do
     t.datetime "updated_at"
   end
 
+  create_table "invites", force: :cascade do |t|
+    t.string   "email"
+    t.integer  "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "invites", ["project_id"], name: "index_invites_on_project_id", using: :btree
+
   create_table "members_projects", force: :cascade do |t|
     t.integer "member_id",  null: false
     t.integer "project_id", null: false
@@ -115,4 +124,5 @@ ActiveRecord::Schema.define(version: 20150821121912) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "invites", "projects"
 end

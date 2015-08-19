@@ -12,3 +12,14 @@
         %td
           = member.email
 = link_to 'Edit', edit_project_path(@project)
+.sent_invites
+  %h3
+    - unless @invites.empty?
+      Sent Invites
+      %table
+        %tr
+          %th Email
+        - @invites.each do |invite|
+          %tr
+            %td
+              = invite.email

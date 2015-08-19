@@ -1,0 +1,18 @@
+%html
+  %head
+    %meta{ 'content' => 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type' }
+    =stylesheet_link_tag 'mailer'
+  %body
+    .logo
+    .content
+      .tagline= t("mailer.invite.title")
+      = t("mailer.invite.someone_invited_you", inviter: @inviter, project_name: @project_name).html_safe
+
+      %p= t("mailer.invite.description").html_safe
+      %p= t("mailer.invite.get_started").html_safe
+      - if @is_new
+        %p= link_to t("mailer.invite.create_account"), root_url, class: 'btn-green'
+      - else
+        %p= link_to t("mailer.invite.view_project"), root_url, class: 'btn-green'
+      %p= t("mailer.invite.thanks").html_safe
+      %p= t("mailer.invite.arbor").html_safe
