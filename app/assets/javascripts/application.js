@@ -15,6 +15,7 @@
 //= require assets/global-vars
 //= require foundation
 //= require turbolinks
+//= require jquery.turbolinks
 //= require init
 //= require_tree .
 
