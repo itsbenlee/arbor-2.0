@@ -1,3 +1,9 @@
+-if @project.canvas
+  .title-hypotheses-value-proposition
+    =@project.canvas.value_proposition
+  = form_tag project_canvas_path(@project), method: :post, class: 'hypotheses-value-proposition' do
+    = text_field_tag :value_proposition, @project.canvas.value_proposition
+    = submit_tag :save, id: 'save-value-proposition-edit'
 %section#hypotheses
   = link_to I18n.translate('add_hypothesis'), '#new_hypothesis_form'
   - if @project.hypotheses.any?

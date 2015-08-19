@@ -29,7 +29,7 @@ class HypothesesController < ApplicationController
   def set_project
     @project =
       Project
-      .includes([:hypotheses, :members])
+      .includes([:hypotheses, :members, :canvas])
       .order('hypotheses.order')
       .find(params[:project_id])
   end
