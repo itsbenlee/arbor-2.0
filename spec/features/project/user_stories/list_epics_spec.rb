@@ -5,7 +5,7 @@ feature 'List epics' do
   let!(:project)    { create :project, owner: user }
   let!(:hypothesis) { create :hypothesis, project: project }
 
-  before :each do
+  background do
     create(
       :epic,
       project:    project,

@@ -19,5 +19,3 @@
 //= require jquery.turbolinks
 //= require init
 //= require_tree .
-
-Typekit.load();

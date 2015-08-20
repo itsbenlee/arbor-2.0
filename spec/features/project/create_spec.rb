@@ -3,7 +3,7 @@ require 'spec_helper'
 feature 'Create a new project' do
   let!(:user) { create :user }
 
-  before :each do
+  background do
     sign_in user
     visit projects_path
   end

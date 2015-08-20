@@ -11,7 +11,7 @@ feature 'Edit a project' do
     )
   end
 
-  before :each do
+  background do
     sign_in user
     visit projects_path
   end

@@ -12,7 +12,7 @@ FactoryGirl.define do
     project                      { create :project }
   end
 
-  trait :uncomplete do
+  trait :incomplete do
     problems nil
     solutions nil
     alternative nil
