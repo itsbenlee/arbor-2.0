@@ -70,7 +70,10 @@ input[type="password"] {
   ul { font-size: rem-calc(14); }
 }
 
-.alert-box.error.alert { background-color: $canvas-color; }
+.alert-box.error,
+.alert-box.alert {
+  background-color: $canvas-color;
+}
 
 .alert-box.warning { background-color: $success-color; }
 
