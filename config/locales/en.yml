@@ -19,6 +19,7 @@ en:
   labs:
     hypotheses:
       enter_description: "Enter a description"
+      delete: "Delete Hypothesis"
   create_project:
     title: "Start creating your project"
     project_button: "New Project"

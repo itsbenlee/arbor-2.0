@@ -14,6 +14,12 @@
           %span.content
             %span.description= hypothesis.description
             %span.type= hypothesis.hypothesis_type_description
+            .delete-hypothesis
+              = link_to(                                        |
+                 t('labs.hypotheses.delete'),                   |
+                 project_hypothesis_path(@project, hypothesis), |
+                 method: :delete,                               |
+              )                                                 |
             - if hypothesis.user_stories.any?
               .content
                 = render 'user_stories/index', user_stories: hypothesis.user_stories, project: @project
