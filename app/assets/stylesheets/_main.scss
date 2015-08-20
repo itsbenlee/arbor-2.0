@@ -20,6 +20,30 @@ select { outline: 0; }
   width: 100%;
 } // buttons
 
+.secondary-btn {
+  background-color: $black-10;
+  color: $primary-color;
+  font-weight: $font-weight-bold;
+
+  &:hover {
+    background-color: $black-20;
+    color: $primary-color;
+  }
+}
+
+.hollow-btn {
+  background-color: $white;
+  border: 1px solid $primary-color;
+  color: $primary-color;
+  font-weight: $font-weight-bold;
+
+  &:hover {
+    background-color: $black-10;
+    border: 1px solid $black-10;
+    color: $primary-color;
+  }
+}
+
 .icon { width: rem-calc(16); }
 
 input {

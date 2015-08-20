@@ -7,11 +7,7 @@ feature 'Create hypothesis' do
 
   background do
     sign_in user
-    visit root_url
-
-    within 'aside' do
-      find('.project-link').click
-    end
+    visit project_hypotheses_path(project.id)
   end
 
   scenario 'with valid data' do

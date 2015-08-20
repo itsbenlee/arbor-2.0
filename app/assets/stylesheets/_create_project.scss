@@ -17,12 +17,6 @@
       text-transform: uppercase;
     }
 
-    .button {
-      background-color: $white;
-      border: 1px solid $primary-color;
-      color: $primary-color;
-    }
-
     .member {
       background: rem-calc(17) image-url('icons/mail-icon.png') no-repeat;
       border-radius: $global-radius;
