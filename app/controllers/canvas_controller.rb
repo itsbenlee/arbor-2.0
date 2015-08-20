@@ -6,7 +6,7 @@ class CanvasController < ApplicationController
 
   def create
     @canvas.update_attributes(canvas_params)
-    redirect_to project_canvas_path(@project)
+    redirect_to :back
   end
 
   private

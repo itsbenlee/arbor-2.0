@@ -1,5 +1,8 @@
 ARBOR.hypotheses.init = function() {
-  var $hypothesesList = $('.hypotheses-list');
+  var $hypothesesList = $('.hypotheses-list'),
+      $valueProposition = $('.title-hypotheses-value-proposition'),
+      $valuePropositionForm = $('form .hypotheses-value-proposition'),
+      $valuePropositionSubmit = $('#save-value-proposition-edit');
 
   function refreshOrder(hypotheses) {
     var orderedHypotheses = [];
@@ -40,5 +43,16 @@ ARBOR.hypotheses.init = function() {
         setOrder(newOrder);
       });
     }
+  });
+
+  $valueProposition.click(function() {
+    $(this).hide();
+    $valuePropositionForm.show();
+  });
+
+  $valuePropositionSubmit.click(function() {
+    $valueProposition.show();
+    $valuePropositionForm.hide();
+    return true;
   });
 };
