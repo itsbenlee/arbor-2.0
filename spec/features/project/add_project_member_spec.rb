@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature 'Add a project member' do
-  before :each do
+  background do
     @user = sign_in create :user
     @project = create :project, { owner: @user, members: [@user]}
   end

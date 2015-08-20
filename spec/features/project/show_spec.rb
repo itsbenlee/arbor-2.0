@@ -5,7 +5,7 @@ feature 'Show project details' do
   let!(:member)  { create :user }
   let!(:project) { create :project, members: [user, member] }
 
-  before :each do
+  background do
     sign_in user
     visit project_path project
   end

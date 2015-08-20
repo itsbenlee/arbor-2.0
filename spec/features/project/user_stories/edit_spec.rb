@@ -16,7 +16,7 @@ feature 'Edit an epic' do
     )
   end
 
-  before :each do
+  background do
     sign_in user
     visit project_hypotheses_path project
   end

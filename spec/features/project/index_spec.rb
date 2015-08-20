@@ -6,7 +6,7 @@ feature 'Show project details' do
   let!(:user_project_b)   { create :project, members: [user] }
   let!(:non_user_project) { create :project }
 
-  before :each do
+  background do
     sign_in user
     visit projects_path
   end

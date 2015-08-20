@@ -6,7 +6,7 @@ feature 'Create a new epic' do
   let!(:hypothesis) { create :hypothesis, project: project }
   let(:epic)        { build :epic }
 
-  before :each do
+  background do
     sign_in user
     visit project_hypotheses_path project
   end
