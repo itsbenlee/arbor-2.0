@@ -1,3 +1,7 @@
 test:
   post:
     - bundle exec rake code_analysis
+deployment:
+  branch: master
+  heroku:
+    appname: arbor-2-development
