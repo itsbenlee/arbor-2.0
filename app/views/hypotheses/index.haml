@@ -18,7 +18,7 @@
               = link_to(                                        |
                  t('labs.hypotheses.delete'),                   |
                  project_hypothesis_path(@project, hypothesis), |
-                 method: :delete,                               |
+                 method: :delete                                |
               )                                                 |
             - if hypothesis.user_stories.any?
               .content
