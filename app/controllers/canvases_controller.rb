@@ -1,4 +1,4 @@
-class CanvasController < ApplicationController
+class CanvasesController < ApplicationController
   before_action :set_canvas, :check_edit_permission
 
   def index

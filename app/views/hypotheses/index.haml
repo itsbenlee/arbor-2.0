@@ -2,7 +2,7 @@
   .value-prop.large-8.columns
     .title-value-proposition
       %h2=@project.canvas.value_proposition
-    = form_tag project_canvas_path(@project), method: :post, class: 'hypotheses-value-proposition' do
+    = form_tag project_canvases_path(@project), method: :post, class: 'hypotheses-value-proposition' do
       = text_field_tag :value_proposition, @project.canvas.value_proposition
       = submit_tag :save, id: 'save-value-proposition-edit', class: 'hollow-btn button radius small'
   .new-hypothesis-btn.large-4.columns

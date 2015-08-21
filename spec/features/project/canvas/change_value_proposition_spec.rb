@@ -11,7 +11,7 @@ feature 'Edit value proposition' do
   end
 
   scenario 'when change value proposition hypotheses title change' do
-    visit project_canvas_path(project)
+    visit project_canvases_path(project)
     find(".canvas-item[type='value-proposition']").click()
     updated_proposition = 'My new value proposition'
     fill_in :value_proposition, with: updated_proposition

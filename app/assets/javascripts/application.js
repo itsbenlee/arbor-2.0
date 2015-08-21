@@ -18,4 +18,6 @@
 //= require turbolinks
 //= require jquery.turbolinks
 //= require init
-//= require_tree .
+//= require_tree ./projects
+//= require_tree ./hypotheses
+//= require_tree ./canvases
