@@ -1,6 +1,6 @@
 class UserStoriesController < ApplicationController
   before_action :check_edit_permission, only: [:create]
-  before_action :set_project, only: [:edit, :create, :update]
+  before_action :set_project, only: [:edit, :create, :update, :destroy]
   before_action :load_user_story, only: [:edit, :update]
 
   def edit
@@ -28,6 +28,13 @@ class UserStoriesController < ApplicationController
     end
   end
 
+  def destroy
+    @user_story = @project.user_stories.find(params[:id])
+    @user_story.destroy
+
+    redirect_to project_hypotheses_path(@project)
+  end
+
   private
 
   def set_project
@@ -47,7 +54,7 @@ class UserStoriesController < ApplicationController
   end
 
   def load_user_story
-    @user_story = UserStory.find(params[:id])
+    @user_story = @project.user_stories.find(params[:id])
   end
 
   def user_story_params

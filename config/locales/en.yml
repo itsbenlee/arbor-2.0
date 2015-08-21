@@ -37,6 +37,7 @@ en:
       role_prefix: "As a"
       action_prefix: "I should be able to"
       result_prefix: "so that"
+      delete_epic: "Delete Epic"
   save: "Save"
   can_not_view: "You can not view this project."
   can_not_edit: "You can not edit this project."
