@@ -27,7 +27,8 @@
 
     .content { @include inline-block; }
 
-    .description {
+    .description,
+    .description-error {
       color: $font-color-2;
       font-size: rem-calc(15);
       font-weight: $font-weight-bold;
@@ -65,6 +66,12 @@
         font-style: italic;
       }//placeholder
     }//description
+
+    .description-error {
+      color: $canvas-color;
+      font-size: rem-calc(16);
+      height: rem-calc(18);
+    }
 
     .type { width: inherit; }
   }//hypothesis new

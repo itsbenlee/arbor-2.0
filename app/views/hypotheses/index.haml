@@ -5,6 +5,12 @@
     = text_field_tag :value_proposition, @project.canvas.value_proposition
     = submit_tag :save, id: 'save-value-proposition-edit'
 %section#hypotheses
+  -if @hypothesis.errors.any?
+    .alert-box.alert.radius.hypothesis_errors{ data: { alert: '' } }
+      %a.close{href:"#"} ×
+      %ul
+        - @hypothesis.errors.full_messages.each do |error|
+          %li= error
   = link_to I18n.translate('add_hypothesis'), '#new_hypothesis_form'
   - if @project.hypotheses.any?
     .hypotheses-list{ data:{ project_path: project_hypotheses_order_path(@project)} }
