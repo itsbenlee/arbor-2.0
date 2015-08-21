@@ -4,11 +4,30 @@
 
 // HYPOTHESIS
 // --------------------------------------------------------
+.value-prop {
+  padding: rem-calc(20);
+
+  .title-value-proposition { padding: 0; }
+
+  .hypotheses-value-proposition {
+    display: none;
+    width: 80%;
+  }
+
+  input { @include border-radius($global-radius); }
+}
+
+.new-hypothesis-btn {
+  padding: rem-calc(20);
+}
 
 #hypotheses {
+  padding: rem-calc(20);
+
   .hypothesis {
     border-bottom: 1px solid $border-color;
-    padding: rem-calc(20);
+    clear: both;
+    padding: rem-calc(20 0);
 
     .order {
       @include border-radius(100%);

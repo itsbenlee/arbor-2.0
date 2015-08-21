@@ -1,9 +1,12 @@
 -if @project.canvas
-  .title-hypotheses-value-proposition
-    =@project.canvas.value_proposition
-  = form_tag project_canvas_path(@project), method: :post, class: 'hypotheses-value-proposition' do
-    = text_field_tag :value_proposition, @project.canvas.value_proposition
-    = submit_tag :save, id: 'save-value-proposition-edit'
+  .value-prop.large-8.columns
+    .title-value-proposition
+      %h2=@project.canvas.value_proposition
+    = form_tag project_canvas_path(@project), method: :post, class: 'hypotheses-value-proposition' do
+      = text_field_tag :value_proposition, @project.canvas.value_proposition
+      = submit_tag :save, id: 'save-value-proposition-edit', class: 'hollow-btn button radius small'
+  .new-hypothesis-btn.large-4.columns
+    = link_to I18n.translate('add_hypothesis'), '#new_hypothesis_form', class: 'secondary-btn button radius small'
 %section#hypotheses
   -if @hypothesis.errors.any?
     .alert-box.alert.radius.hypothesis_errors{ data: { alert: '' } }
@@ -11,7 +14,6 @@
       %ul
         - @hypothesis.errors.full_messages.each do |error|
           %li= error
-  = link_to I18n.translate('add_hypothesis'), '#new_hypothesis_form'
   - if @project.hypotheses.any?
     .hypotheses-list{ data:{ project_path: project_hypotheses_order_path(@project)} }
       - @project.hypotheses.each do |hypothesis|

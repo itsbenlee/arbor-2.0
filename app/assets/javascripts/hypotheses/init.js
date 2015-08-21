@@ -1,7 +1,7 @@
 ARBOR.hypotheses.init = function() {
   var $hypothesesList = $('.hypotheses-list'),
-      $valueProposition = $('.title-hypotheses-value-proposition'),
-      $valuePropositionForm = $('form .hypotheses-value-proposition'),
+      $valueProposition = $('.title-value-proposition'),
+      $valuePropositionForm = $('form.hypotheses-value-proposition'),
       $valuePropositionSubmit = $('#save-value-proposition-edit');
 
   function refreshOrder(hypotheses) {

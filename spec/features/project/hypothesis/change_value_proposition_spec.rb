@@ -4,7 +4,7 @@ feature 'Show the actual canvas value proposition on hypotheses' do
   let!(:user)            { create :user }
   let!(:project)         { create :project, { owner: user, members: [user]} }
   let!(:canvas)          { create :canvas, { project: project } }
-  let(:hypothesis_title) { '.title-hypotheses-value-proposition' }
+  let(:hypothesis_title) { '.title-value-proposition' }
   let(:hypothesis_form)  { '.hypotheses-value-proposition' }
 
   background do
