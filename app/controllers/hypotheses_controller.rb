@@ -1,4 +1,5 @@
 class HypothesesController < ApplicationController
+  before_action :load_hypothesis, only: [:destroy]
   before_action :check_view_permission, only: [:index]
   before_action :check_edit_permission, only: [:create, :update_order, :destroy]
 
@@ -35,6 +36,7 @@ class HypothesesController < ApplicationController
 
   def set_project
     @project =
+      @hypothesis.try(:project) ||
       Project
       .includes([:hypotheses, :members, :canvas])
       .order('hypotheses.order')
@@ -57,6 +59,10 @@ class HypothesesController < ApplicationController
 
     flash[:alert] = I18n.translate('can_not_edit')
     redirect_to root_url
+  end
+
+  def load_hypothesis
+    @hypothesis = Hypothesis.find(params[:id])
   end
 
   def hypothesis_params

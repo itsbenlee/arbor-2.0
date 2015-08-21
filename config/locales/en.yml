@@ -20,6 +20,9 @@ en:
     hypotheses:
       enter_description: "Enter a description"
       delete: "Delete Hypothesis"
+    goals:
+      title: "Title"
+      enter_title: "Enter Title"
   create_project:
     title: "Start creating your project"
     project_button: "New Project"
@@ -39,6 +42,7 @@ en:
       result_prefix: "so that"
       delete_epic: "Delete Epic"
   save: "Save"
+  edit: "Edit"
   can_not_view: "You can not view this project."
   can_not_edit: "You can not edit this project."
   add_hypothesis: "Add New Hypothesis"

@@ -42,7 +42,7 @@ feature 'List epics' do
   scenario 'should show an edit link for each epic' do
     within '.hypothesis .content table' do
       UserStory.all.each do |epic|
-        expect(page).to have_href edit_project_user_story_path(project, epic)
+        expect(page).to have_href edit_user_story_path epic
       end
     end
   end
