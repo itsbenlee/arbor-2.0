@@ -1,6 +1,6 @@
 class HypothesesController < ApplicationController
   before_action :load_hypothesis, only: [:destroy]
-  before_action :check_view_permission, only: [:index]
+  before_action :check_view_permission, only: [:index, :export]
   before_action :check_edit_permission, only: [:create, :update_order, :destroy]
 
   def index
@@ -30,6 +30,16 @@ class HypothesesController < ApplicationController
   def update_order
     project_services = ProjectServices.new(@project)
     render json: project_services.reorder_hypotheses(hypothesis_order_params)
+  end
+
+  def export
+    hypothesis_services = HypothesisServices.new(@project)
+
+    respond_to do |format|
+      format.csv do
+        send_data(hypothesis_services.csv_export, disposition: 'inline')
+      end
+    end
   end
 
   private

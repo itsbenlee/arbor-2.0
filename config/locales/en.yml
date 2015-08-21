@@ -23,6 +23,7 @@ en:
     goals:
       title: "Title"
       enter_title: "Enter Title"
+      export: "Export"
   create_project:
     title: "Start creating your project"
     project_button: "New Project"
@@ -64,3 +65,6 @@ en:
   revenue_streams_title: "What is your revenue model, gross margin, and proposed path to revenue?"
   cost_structure: "Cost Structure"
   cost_structure_title: "What are your customer acquisition costs, distribution costs, people, hosting, integration partners, etc?"
+  csv: "CSV"
+  json: "Json"
+  trello: "Export to Trello"
