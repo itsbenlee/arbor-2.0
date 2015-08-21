@@ -6,8 +6,8 @@ AllCops:
     - 'db/*'
 
 LineLength:
-  Description: 'Limit lines to 79 characters.'
-  Max: 79
+  Description: 'Limit lines to 80 characters.'
+  Max: 80
 
 Documentation:
   Enabled: false
