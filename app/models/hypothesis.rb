@@ -26,6 +26,14 @@ class Hypothesis < ActiveRecord::Base
     end
   end
 
+  def as_json
+    super(only: [:order, :description], methods: [:type])
+  end
+
+  def type
+    hypothesis_type.as_json
+  end
+
   private
 
   def order_in_project

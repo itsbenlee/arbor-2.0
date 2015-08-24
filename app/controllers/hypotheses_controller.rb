@@ -39,6 +39,9 @@ class HypothesesController < ApplicationController
       format.csv do
         send_data(hypothesis_services.csv_export, disposition: 'inline')
       end
+      format.json do
+        send_data(hypothesis_services.json_export, disposition: 'inline')
+      end
     end
   end
 
