@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe CanvasController do
+RSpec.describe CanvasesController do
   describe 'GET index' do
     before :each do
       @project = create :project

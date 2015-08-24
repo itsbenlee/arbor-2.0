@@ -1,4 +1,4 @@
-ARBOR.canvas.init = function() {
+ARBOR.canvases.init = function() {
   var $canvasAttributeLinks = $('li.canvas-item');
   var $canvasAttributeFields = $('.canvas-fields');
 

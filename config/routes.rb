@@ -4,7 +4,7 @@ Railsroot::Application.routes.draw do
 
   resources :projects,  shallow: true, except: [:destroy] do
     resources :hypotheses, only: [:index, :create]
-    resources :canvas, only: [:index, :create]
+    resources :canvases, only: [:index, :create]
     resources :user_stories, only: [:create]
     put 'hypotheses/order', controller: :hypotheses, action: :update_order
   end

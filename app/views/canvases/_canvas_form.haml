@@ -1,5 +1,5 @@
 = hidden_field_tag 'require_canvas', id: 'require_canvas'
-= form_tag project_canvas_path(project), method: :post do
+= form_tag project_canvases_path(project), method: :post do
   .problems-field.canvas-fields
     = label_tag :problems, t('problems_title')
     = text_area_tag :problems, canvas.problems

@@ -7,7 +7,7 @@ ARBOR = {
     }
   },
   projects: {},
-  canvas: {},
+  canvases: {},
   hypotheses: {}
 };
 
