@@ -35,13 +35,14 @@ en:
     add_members: "New Member"
   backlog:
     user_stories:
-      enter_role: "Role"
-      enter_action: "Action"
-      enter_result: "Result"
+      enter_role: "<type of user>"
+      enter_action: "<some function>"
+      enter_result: "<some benefit>"
       role_prefix: "As a"
       action_prefix: "I should be able to"
       result_prefix: "so that"
       delete_epic: "Delete Epic"
+      edit_title: "Edit epic"
   save: "Save"
   edit: "Edit"
   can_not_view: "You can not view this project."

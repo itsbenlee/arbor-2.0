@@ -44,7 +44,9 @@
       width: rem-calc(29);
     }//order
 
-    .content { @include inline-block; }
+    .content {
+      @include inline-block;
+    }
 
     .description,
     .description-error {
@@ -59,6 +61,24 @@
       font-size: rem-calc(12);
       text-transform: uppercase;
     }//type
+
+    .new-epic {
+      .epic-input {
+        font-size: rem-calc(13);
+        padding: 0;
+
+        input {
+          @include ellipsis;
+          background-color: $white;
+          border: 0;
+          display: inline-block;
+          font-size: rem-calc(14);
+          font-style: italic;
+          vertical-align: baseline;
+          width: 58%;
+        }
+      }
+    } // epics
   }// hypothesis item
 
   .hypothesis-new {
@@ -94,4 +114,31 @@
 
     .type { width: inherit; }
   }//hypothesis new
+
+  #hypothesis-tr {
+    table {
+      border-radius: $global-radius;
+      margin: rem-calc(15 0);
+      padding: rem-calc(5 10 10);
+
+      td {
+        color: $font-color-2;
+
+        a {
+          font-size: rem-calc(11);
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+      } // td
+    } // table
+  } // hyp table
 }//hypothesis section
+
+#edit-epic {
+  width: 50%;
+
+  input {
+    border-radius: $global-radius;
+    width: 95%;
+  }
+} // edit epics

@@ -648,7 +648,7 @@ $button-font-sml: rem-calc(14);
 // $input-font-color: rgba(0,0,0,0.75);
 $input-font-size: rem-calc(17);
 $input-bg-color: $light-bg;
-// $input-focus-bg-color: scale-color($white, $lightness: -2%);
+$input-focus-bg-color: $black-10;
 $input-border-color: $black-20;
 // $input-focus-border-color: scale-color($white, $lightness: -40%);
 // $input-border-style: solid;
