@@ -1,4 +1,4 @@
 test:
   adapter: postgresql
-  database: railsroots_test
+  database: arbor_test
   username: postgres

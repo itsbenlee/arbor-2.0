@@ -32,14 +32,18 @@
       margin-right: rem-calc(25);
 
       .canvas-item {
+        @include single-transition(color, .25s, ease-in);
         border-bottom: 1px solid $black-10;
         color: $font-color-2;
         cursor: pointer;
         font-weight: $font-weight-bold;
         padding: rem-calc(12 0);
+
+        &:hover { color: $black; }
       }
 
-      .canvas-visited { color: $success-color; }
+      .canvas-visited,
+      .canvas-visited:hover { color: $success-color; }
 
       .done { background: rem-calc(425) image-url('icons/done-icon.png') no-repeat; }
     } // canvas ul
@@ -48,19 +52,28 @@
   .right-content-wrapper {
     padding-left: rem-calc(40);
 
-    label { margin-bottom: rem-calc(15); }
+    .canvas-fields {
+      @include opacity(0);
+      @include single-transition(opacity, .5s, ease-in-out);
+    }
 
-    textarea { @include border-radius($global-radius); }
+    label {
+      cursor: text;
+      margin-bottom: rem-calc(15);
+    }
 
-    .solutions-field,
-    .alternative-field,
-    .advantage-field,
-    .segment-field,
-    .channel-field,
-    .value-proposition-field,
-    .revenue-streams-field,
-    .cost-structure-field {
-      display: none;
+    textarea {
+      @include transition(box-shadow .25s, ease-in, height .15s, ease-in);
+      @include border-radius($global-radius);
+      font-size: rem-calc(14);
+      max-height: rem-calc(520);
+      min-height: rem-calc(50);
+      resize: none;
+
+      &:focus {
+        @include box-shadow(0 0 5px 0 $success-color);
+        border-color: $success-color;
+      }
     }
   } // right content
 } // canvas
