@@ -8,4 +8,8 @@ class Project < ActiveRecord::Base
   has_many :hypotheses, dependent: :destroy
   has_one :canvas, dependent: :destroy
   has_many :user_stories, dependent: :destroy
+
+  def as_json
+    super(only: [:name])
+  end
 end

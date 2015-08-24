@@ -16,7 +16,7 @@
       %li#csv_export_link
         = link_to t('csv'), project_hypotheses_export_path(@project, format: :csv)
       %li#json_export_link
-        = link_to t('json'), '#'
+        = link_to t('json'), project_hypotheses_export_path(@project, format: :json)
       %li#trello_export_link
         = link_to t('trello'), '#'
 %section#hypotheses
