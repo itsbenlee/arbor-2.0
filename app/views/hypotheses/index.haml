@@ -7,10 +7,22 @@
       = submit_tag :save, id: 'save-value-proposition-edit', class: 'hollow-btn button radius small'
   .new-hypothesis-btn.large-4.columns
     = link_to I18n.translate('add_hypothesis'), '#new_hypothesis_form', class: 'secondary-btn button radius small'
+.row
+  .large-2.large-offset-9.columns
+    = link_to t('labs.hypotheses.export'), '#',
+    { class: 'button', id: 'export-button',
+    data: { dropdown:'drop', options: 'align:down' } }
+    %ul#drop.small.medium.large{ class: '[tiny content]f-dropdown', data: { dropdown: { content:'' } } }
+      %li#csv_export_link
+        = link_to t('csv'), project_hypotheses_export_path(@project, format: :csv)
+      %li#json_export_link
+        = link_to t('json'), '#'
+      %li#trello_export_link
+        = link_to t('trello'), '#'
 %section#hypotheses
   -if @hypothesis.errors.any?
     .alert-box.alert.radius.hypothesis_errors{ data: { alert: '' } }
-      %a.close{href:"#"} ×
+      = link_to '×', '#', class: 'close'
       %ul
         - @hypothesis.errors.full_messages.each do |error|
           %li= error

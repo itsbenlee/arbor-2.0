@@ -17,6 +17,15 @@ class Hypothesis < ActiveRecord::Base
     hypothesis.save
   end
 
+  def self.to_csv(hypotheses, options = {})
+    CSV.generate(options) do |csv|
+      csv << column_names
+      hypotheses.each do |hypothesis|
+        csv << hypothesis.attributes.values_at(*column_names)
+      end
+    end
+  end
+
   private
 
   def order_in_project
