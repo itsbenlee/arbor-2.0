@@ -23,7 +23,7 @@ feature 'Create a new epic' do
       fill_in 'Role', with: epic.role
       fill_in 'Action', with: epic.action
       fill_in 'Result', with: epic.result
-      click_button 'Save'
+      expect{ click_button 'Save' }.to change { UserStory.count }.by 1
     end
   end
 end

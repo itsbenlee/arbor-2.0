@@ -15,7 +15,7 @@
         - @hypothesis.errors.full_messages.each do |error|
           %li= error
   - if @project.hypotheses.any?
-    .hypotheses-list{ data:{ project_path: project_hypotheses_order_path(@project)} }
+    .hypotheses-list{ data:{ project_path: project_hypotheses_order_path(@project) } }
       - @project.hypotheses.each do |hypothesis|
         .hypothesis{ data: { id: hypothesis.id, order: hypothesis.order } }
           %span.order= hypothesis.order
@@ -23,14 +23,19 @@
             %span.description= hypothesis.description
             %span.type= hypothesis.hypothesis_type_description
             .delete-hypothesis
-              = link_to(                                        |
-                 t('labs.hypotheses.delete'),                   |
-                 project_hypothesis_path(@project, hypothesis), |
-                 method: :delete                                |
-              )                                                 |
+              = link_to(                      |
+                 t('labs.hypotheses.delete'), |
+                 hypothesis_path(hypothesis), |
+                 method: :delete,             |
+              )                               |
+            .goals
+              - if hypothesis.goals.any?
+                = render 'goals/index', goals: hypothesis.goals
+              .new-goal
+                = render 'goals/new', goal: Goal.new, hypothesis: hypothesis
             - if hypothesis.user_stories.any?
               .content
-                = render 'user_stories/index', user_stories: hypothesis.user_stories, project: @project
+                = render 'user_stories/index', user_stories: hypothesis.user_stories
             .new-epic
               = render 'user_stories/new', user_story: UserStory.new, project: @project, hypothesis: hypothesis
   .hypothesis-new

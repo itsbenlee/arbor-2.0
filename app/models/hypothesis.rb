@@ -7,6 +7,7 @@ class Hypothesis < ActiveRecord::Base
   belongs_to :project
   belongs_to :hypothesis_type
   has_many :user_stories
+  has_many :goals, dependent: :destroy
 
   delegate :description, :code, to: :hypothesis_type, prefix: true
 

@@ -1,7 +1,7 @@
 class UserStoriesController < ApplicationController
-  before_action :check_edit_permission, only: [:create]
-  before_action :set_project, only: [:edit, :create, :update, :destroy]
-  before_action :load_user_story, only: [:edit, :update]
+  before_action :load_user_story, only: [:edit, :update, :destroy]
+  before_action :check_edit_permission, only: [:create, :destroy, :update]
+  # before_action :set_project, only: [:edit, :create, :destroy]
 
   def edit
   end
@@ -21,7 +21,7 @@ class UserStoriesController < ApplicationController
   def update
     @user_story.update_attributes(user_story_params)
     if @user_story.save
-      redirect_to project_hypotheses_path(@project)
+      redirect_to project_hypotheses_path(@user_story.project)
     else
       @errors = @user_story.errors.full_messages
       render :edit, status: 400
@@ -39,6 +39,7 @@ class UserStoriesController < ApplicationController
 
   def set_project
     @project =
+      @user_story.try(:project) ||
       Project
       .includes([:user_stories, :members])
       .find(params[:project_id])
@@ -54,7 +55,7 @@ class UserStoriesController < ApplicationController
   end
 
   def load_user_story
-    @user_story = @project.user_stories.find(params[:id])
+    @user_story = UserStory.find params[:id]
   end
 
   def user_story_params
