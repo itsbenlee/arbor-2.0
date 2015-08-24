@@ -55,4 +55,5 @@ ARBOR.hypotheses.init = function() {
     $valuePropositionForm.hide();
     return true;
   });
+  new UserStory();
 };

@@ -37,10 +37,6 @@ class Hypothesis < ActiveRecord::Base
   private
 
   def order_in_project
-    if (project.hypotheses.count == 0)
-      self.order = 1
-    else
-      self.order = Hypothesis.where(project_id: project_id).maximum(:order) + 1
-    end
+    self.order = project.hypotheses.maximum(:order).to_i + 1
   end
 end
