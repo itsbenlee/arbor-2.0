@@ -21,7 +21,7 @@ feature 'Create a new goal' do
   scenario 'should create a new goal' do
     within 'form.new_goal' do
       fill_in 'goal_title', with: goal.title
-      expect{ click_button 'Save' }.to change { Goal.count }.by 1
+      expect{ click_button 'Save' }.to change{ Goal.count }.by 1
     end
   end
 end
