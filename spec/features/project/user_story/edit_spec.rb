@@ -24,7 +24,7 @@ feature 'Edit an epic' do
   scenario 'should show me the epic edit form after following the edit link' do
     click_link 'Edit'
 
-    %w(Role Action Result).each do |input|
+    %w(user_story_role user_story_action user_story_result).each do |input|
       expect(page).to have_field input
     end
   end
@@ -32,9 +32,9 @@ feature 'Edit an epic' do
   scenario 'should be able to edit an epic' do
     click_link 'Edit'
 
-    fill_in 'Role', with: changed_epic.role
-    fill_in 'Action', with: changed_epic.action
-    fill_in 'Result', with: changed_epic.result
+    fill_in 'user_story_role', with: changed_epic.role
+    fill_in 'user_story_action', with: changed_epic.action
+    fill_in 'user_story_result', with: changed_epic.result
 
     click_button 'Save'
 

@@ -4,28 +4,33 @@
       %ul
         - @user_story.errors.full_messages.each do |error|
           %li= error
-  = t('backlog.user_stories.role_prefix')
-  = form.text_field(                                   |
-    :role,                                             |
-    placeholder: t('backlog.user_stories.enter_role'), |
-    required:    true,                                 |
-    maxlength:   100,                                  |
-    class:      'role'                                 |
-  )                                                    |
-  = t('backlog.user_stories.action_prefix')
-  = form.text_field(                                     |
-    :action,                                             |
-    placeholder: t('backlog.user_stories.enter_action'), |
-    required:    true,                                   |
-    maxlength:   255,                                    |
-    class:      'action'                                 |
-  )                                                      |
-  = t('backlog.user_stories.result_prefix')
-  = form.text_field(                                     |
-    :result,                                             |
-    placeholder: t('backlog.user_stories.enter_result'), |
-    required:    true,                                   |
-    maxlength:   255,                                    |
-    class:      'result'                                 |
-  )                                                      |
-  = form.submit I18n.translate('save')
+  #edit-epic.section-margin-top.row
+    %h2=t('backlog.user_stories.edit_title')
+    .edit-input
+      = t('backlog.user_stories.role_prefix')
+      = form.text_field(                                   |
+        :role,                                             |
+        placeholder: t('backlog.user_stories.enter_role'), |
+        required:    true,                                 |
+        maxlength:   100,                                  |
+        class:      'role'                                 |
+      )                                                    |
+    .edit-input
+      = t('backlog.user_stories.action_prefix')
+      = form.text_field(                                     |
+        :action,                                             |
+        placeholder: t('backlog.user_stories.enter_action'), |
+        required:    true,                                   |
+        maxlength:   255,                                    |
+        class:      'action'                                 |
+      )                                                      |
+    .edit-input
+      = t('backlog.user_stories.result_prefix')
+      = form.text_field(                                     |
+        :result,                                             |
+        placeholder: t('backlog.user_stories.enter_result'), |
+        required:    true,                                   |
+        maxlength:   255,                                    |
+        class:      'result'                                 |
+      )                                                      |
+    = form.submit I18n.translate('save'), class: 'button radius small'

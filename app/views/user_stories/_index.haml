@@ -1,22 +1,23 @@
-%table
-  %tr
-    %th Role
-    %th Action
-    %th Result
-    %th Priority
-    %th Estimated Points
-    %th
-    %th
-  - user_stories.each do |user_story|
+#hypothesis-tr
+  %table
     %tr
-      %td= user_story.role
-      %td= user_story.action
-      %td= user_story.result
-      %td= user_story.priority
-      %td= user_story.estimated_points
-      %td= link_to t('edit'), edit_user_story_path(user_story)
-      %td= link_to(                                |
-            t('backlog.user_stories.delete_epic'), |
-            user_story_path(user_story),           |
-            method: :delete                        |
-      )                                            |
+      %th Role
+      %th Action
+      %th Result
+      %th Priority
+      %th Estimated Points
+      %th
+      %th
+    - user_stories.each do |user_story|
+      %tr
+        %td= user_story.role
+        %td= user_story.action
+        %td= user_story.result
+        %td= user_story.priority
+        %td= user_story.estimated_points
+        %td= link_to t('edit'), edit_user_story_path(user_story)
+        %td= link_to(                                |
+              t('backlog.user_stories.delete_epic'), |
+              user_story_path(user_story),           |
+              method: :delete                        |
+        )                                            |
