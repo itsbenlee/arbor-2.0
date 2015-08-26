@@ -44,9 +44,7 @@
       width: rem-calc(29);
     }//order
 
-    .content {
-      @include inline-block;
-    }
+    .content { @include inline-block; }
 
     .description,
     .description-error {
@@ -62,21 +60,19 @@
       text-transform: uppercase;
     }//type
 
-    .new-epic {
-      .epic-input {
-        font-size: rem-calc(13);
-        padding: 0;
+    .new-epic .epic-input {
+      font-size: rem-calc(13);
+      padding: 0;
 
-        input {
-          @include ellipsis;
-          background-color: $white;
-          border: 0;
-          display: inline-block;
-          font-size: rem-calc(14);
-          font-style: italic;
-          vertical-align: baseline;
-          width: 58%;
-        }
+      input {
+        @include ellipsis;
+        background-color: $white;
+        border: 0;
+        display: inline-block;
+        font-size: rem-calc(14);
+        font-style: italic;
+        vertical-align: baseline;
+        width: 58%;
       }
     } // epics
   }// hypothesis item
