@@ -12,11 +12,11 @@ feature 'Delete hypothesis' do
   end
 
   scenario 'should show delete link' do
-    expect(page).to have_link 'Delete Hypothesis'
+    expect(page).to have_css '.trash-btn'
   end
 
   scenario 'should delete the hypothesis after clicking the link' do
-    click_link 'Delete Hypothesis'
+    find('.trash-btn').click
 
     expect(Hypothesis.count).to eq 0
     expect(page).not_to have_content hypothesis.description
@@ -32,7 +32,7 @@ feature 'Delete hypothesis' do
       expect(page).to have_content epic.send(field)
     end
 
-    click_link 'Delete Hypothesis'
+    find('.trash-btn').click
 
     expect(UserStory.count).to eq 1
     %i(role action result).each do |field|

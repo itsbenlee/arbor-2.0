@@ -53,6 +53,11 @@
       font-weight: $font-weight-bold;
     }//description
 
+    .delete-hypothesis img {
+      float: right;
+      width: rem-calc(16);
+    }
+
     .type {
       color: $font-color-3;
       display: block;

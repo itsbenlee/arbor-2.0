@@ -32,14 +32,16 @@
         .hypothesis{ data: { id: hypothesis.id, order: hypothesis.order } }
           %span.order= hypothesis.order
           %span.content
-            %span.description= hypothesis.description
+            .row
+              %span.description.large-11.columns= hypothesis.description
+              .delete-hypothesis.large-1.columns
+                = link_to(                      |
+                   image_tag('icons/delete-icon.svg', title: 'Delete Hypothesis'), |
+                   hypothesis_path(hypothesis), |
+                   method: :delete,             |
+                   class:'trash-btn'           |
+                )                               |
             %span.type= hypothesis.hypothesis_type_description
-            .delete-hypothesis
-              = link_to(                      |
-                 t('labs.hypotheses.delete'), |
-                 hypothesis_path(hypothesis), |
-                 method: :delete,             |
-              )                               |
             .goals
               - if hypothesis.goals.any?
                 = render 'goals/index', goals: hypothesis.goals

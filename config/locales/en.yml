@@ -19,7 +19,6 @@ en:
   labs:
     hypotheses:
       enter_description: "Enter a description"
-      delete: "Delete Hypothesis"
     goals:
       title: "Title"
       enter_title: "Enter Title"
