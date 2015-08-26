@@ -24,5 +24,6 @@ feature 'Create a new epic' do
       fill_in 'user_story_action', with: epic.action
       fill_in 'user_story_result', with: epic.result
       expect{ click_button 'Save' }.to change { UserStory.count }.by 1
+    end
   end
 end
