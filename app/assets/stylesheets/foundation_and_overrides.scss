@@ -116,6 +116,7 @@ $border-color: #cecece;
 $black-10:  darken($white, 10%) !default;
 $black-20:  darken($white, 20%) !default;
 $black-30:  darken($white, 30%) !default;
+$black-35:  darken($white, 34%) !default;
 $black-40:  darken($white, 40%) !default;
 $black-50:  darken($white, 50%) !default;
 $black-60:  darken($white, 60%) !default;
@@ -455,7 +456,7 @@ $h2-font-size: rem-calc(25);
 $button-font-sml: rem-calc(14);
 // $button-font-med: rem-calc(16);
 // $button-font-lrg: rem-calc(20);
-// $button-font-weight: $font-weight-normal;
+$button-font-weight: $font-weight-bold;
 // $button-font-align: center;
 
 // We use these to control various hover effects.

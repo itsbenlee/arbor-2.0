@@ -1,8 +1,20 @@
 %aside#sidebar.columns.small-2
-  .top
-    %span= t('sidebar.my_projects')
-  .sidebar-content
-    %ul
-      - projects.each do |project|
-        %li
-          = link_to project.name, project_hypotheses_path(project_id: project.id), class: 'project-link'
+  %ul.active
+    %li
+      = link_to t('sidebar.my_projects'), projects_path
+      = link_to '#' do
+        %span.icon-arrow
+    - projects.each do |project|
+      %li
+        = link_to project.name, project_hypotheses_path(project_id: project.id)
+        = link_to edit_project_path(project) do
+          %span.icon-edit
+    %li
+      =link_to t('create_project.project_button'), new_project_path, class: 'button radius small success'
+  %ul
+    %li
+      %p
+        = t('sidebar.powered_by')
+        = image_tag 'icons/arbor-icon.svg', title: 'Arbor Logo', alt: 'Powered by Arbor'
+      = link_to '#' do
+        %span.icon-left

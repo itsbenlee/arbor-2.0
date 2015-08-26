@@ -33,4 +33,20 @@ UTIL = {
   }
 };
 
+$('#sidebar li .icon-arrow').bind('click', function(event) {
+  var $this    = $(this),
+      $parent  = $this.closest('ul');
+
+  $parent.toggleClass('active');
+
+  event.preventDefault();
+});
+
+$('#sidebar a').each(function() {
+  if ($(this).attr('href')  ===  window.location.pathname) {
+    $(this).parent().addClass('selected');
+  }
+});
+
+
 $(document).ready(UTIL.init);
