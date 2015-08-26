@@ -1,4 +1,16 @@
--if @project.canvas
+- content_for :top_links do
+  #top-nav
+    = link_to '#', {"aria-controls" => "drop1", "aria-expanded" => "false", id: "export-button", class: "nav-links", "data-dropdown" => "drop1"} do
+      = image_tag('icons/export-icon.svg', class: 'icon')
+      = t('labs.hypotheses.export')
+    %ul#drop1.f-dropdown{"aria-hidden" => "true", "data-dropdown-content" => "", :tabindex => "-1"}
+      %li#csv_export_link
+        = link_to t('csv'), project_hypotheses_export_path(@project, format: :csv)
+      %li#json_export_link
+        = link_to t('json'), project_hypotheses_export_path(@project, format: :json)
+      %li#trello_export_link
+        = link_to t('trello'), '#'
+- if @project.canvas
   .value-prop.large-8.columns
     .title-value-proposition
       %h2=@project.canvas.value_proposition
@@ -7,18 +19,6 @@
       = submit_tag :save, id: 'save-value-proposition-edit', class: 'hollow-btn button radius small'
   .new-hypothesis-btn.large-4.columns
     = link_to I18n.translate('add_hypothesis'), '#new_hypothesis_form', class: 'secondary-btn button radius small'
-.row
-  .large-2.large-offset-9.columns
-    = link_to t('labs.hypotheses.export'), '#',
-    { class: 'button', id: 'export-button',
-    data: { dropdown:'drop', options: 'align:down' } }
-    %ul#drop.small.medium.large{ class: '[tiny content]f-dropdown', data: { dropdown: { content:'' } } }
-      %li#csv_export_link
-        = link_to t('csv'), project_hypotheses_export_path(@project, format: :csv)
-      %li#json_export_link
-        = link_to t('json'), project_hypotheses_export_path(@project, format: :json)
-      %li#trello_export_link
-        = link_to t('trello'), '#'
 %section#hypotheses
   -if @hypothesis.errors.any?
     .alert-box.alert.radius.hypothesis_errors{ data: { alert: '' } }
