@@ -12,15 +12,20 @@ en:
     email: "Email"
     remember_me: "Remember me"
     button_login: "Log in"
-    recover_password:
-      change: 'Change your password'
-      password: 'New password'
-      confirm_password: 'Confirm new password'
-      submit: 'Change my password'
-      forgot: 'Forgot your password?'
-      email: 'Your email address'
-    reset_password: 'Send me reset password instructions'
-    email_address: 'Email address'
+  recover_password:
+    change: 'Change your password'
+    password: 'New password'
+    confirm_password: 'Confirm new password'
+    submit: 'Change my password'
+    forgot: 'Forgot your password?'
+    email: 'Your email address'
+  reset_password: 'Send me reset password instructions'
+  email_address: 'Email address'
+  project_members:
+    title: "Project members"
+    name: "Name"
+    edit: "Edit"
+    already_invited: "Members already invited"
   links:
     forgot_password: "Forgot your password?"
   sidebar:
