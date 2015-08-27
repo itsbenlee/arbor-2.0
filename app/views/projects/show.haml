@@ -23,3 +23,5 @@
           %tr
             %td
               = invite.email
+- if @can_delete
+  = link_to t('project.delete_project'), @project, method: :delete, data: { confirm: t('project.delete_confirmation') }

@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :load_project, only: [:show, :edit, :update]
+  before_action :load_project, only: [:show, :edit, :update, :destroy]
 
   def index
   end
@@ -12,6 +12,12 @@ class ProjectsController < ApplicationController
 
   def show
     @invites = Invite.where(project: @project)
+    @can_delete = current_user == @project.owner
+  end
+
+  def destroy
+    @project.destroy
+    redirect_to projects_path
   end
 
   def update

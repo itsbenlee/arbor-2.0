@@ -27,4 +27,10 @@ feature 'Show project details' do
     expect(page).to have_content user.email
     expect(page).to have_content member.email
   end
+
+  scenario 'the product owner should be able to delete the project' do
+    find_link('Delete project').click
+    find_button('Ok')
+  end
+
 end

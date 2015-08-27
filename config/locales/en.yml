@@ -32,6 +32,9 @@ en:
     member_mail: "Member mail"
     project_members: "Project members"
     add_members: "New Member"
+  project:
+    delete_project: 'Delete project'
+    delete_confirmation: 'Are you sure you want to delete this project?'
   backlog:
     user_stories:
       enter_role: "<type of user>"
