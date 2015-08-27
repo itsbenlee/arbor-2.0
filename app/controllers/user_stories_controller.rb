@@ -1,7 +1,7 @@
 class UserStoriesController < ApplicationController
   before_action :load_user_story, only: [:edit, :update, :destroy]
-  before_action :check_edit_permission, only: [:create, :destroy, :update]
-  # before_action :set_project, only: [:edit, :create, :destroy]
+  before_action :check_edit_permission,
+    only: [:create, :destroy, :update, :update_order]
 
   def edit
   end
@@ -35,13 +35,20 @@ class UserStoriesController < ApplicationController
     redirect_to project_hypotheses_path(@project)
   end
 
+  def update_order
+    @hypothesis_service = HypothesisServices.new(@project)
+    render json: @hypothesis_service.reorder_stories(update_order_params)
+  end
+
   private
 
   def set_project
     @project =
       @user_story.try(:project) ||
       Project
-      .includes([:user_stories, :members])
+      .includes([:user_stories,
+                 :members,
+                 :hypotheses])
       .find(params[:project_id])
   end
 
@@ -62,5 +69,9 @@ class UserStoriesController < ApplicationController
     params.require(:user_story).permit(
       %i(role action result estimated_points priority, hypothesis_id)
     )
+  end
+
+  def update_order_params
+    params.require(:hypotheses)
   end
 end

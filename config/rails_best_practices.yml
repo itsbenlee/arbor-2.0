@@ -27,7 +27,8 @@ RemoveUnusedMethodsInHelpersCheck: { except_methods: [] }
 RemoveUnusedMethodsInModelsCheck: {
   except_methods: [
     UserStory#priorities,
-    UserStory#estimation_series
+    UserStory#estimation_series,
+    Hypothesis#reorder_user_stories
   ]
 }
 ReplaceComplexCreationWithFactoryMethodCheck: { attribute_assignment_count: 2 }

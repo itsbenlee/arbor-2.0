@@ -2,7 +2,7 @@ class UserStory < ActiveRecord::Base
   PRIORITIES = %w(m s c w)
 
   validates_presence_of :role, :action, :result
-  validates_uniqueness_of :order, scope: :hypothesis_id
+  validates_uniqueness_of :order, scope: :hypothesis_id, allow_nil: true
   validates_inclusion_of :priority, in: PRIORITIES
   before_create :order_in_hypotheses
 

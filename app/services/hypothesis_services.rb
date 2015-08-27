@@ -14,6 +14,17 @@ class HypothesisServices
     HypothesisServices.add_hypotheses(@project.as_json, @hypotheses)
   end
 
+  def reorder_stories(new_order)
+    response = { success: true }
+    new_order.values.each do |hypothesis_hash|
+      @hypotheses
+        .find(hypothesis_hash['id'])
+        .reorder_user_stories(hypothesis_hash['stories'])
+    end
+
+    response
+  end
+
   def self.add_hypotheses(json_project, hypotheses)
     json_project[:hypotheses] = []
 
