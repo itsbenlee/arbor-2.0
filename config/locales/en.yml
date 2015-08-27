@@ -18,7 +18,7 @@ en:
     my_projects: "My projects"
   labs:
     hypotheses:
-      enter_description: "Enter a description"
+      enter_description: "Write a hypothesis"
     goals:
       title: "Title"
       enter_title: "Enter Title"
