@@ -9,9 +9,10 @@
         %th Estimated Points
         %th
         %th
-    - user_stories.each do |user_story|
-      %tbody.user-story-list{ data: { hypothesis_id: user_story.hypothesis_id} }
-        %tr.user-story
+    %tbody.user-story-list{ data: { hypothesis_id: hypothesis.id ,
+    url: project_user_stories_order_path(hypothesis.project) } }
+      - user_stories.each do |user_story|
+        %tr.user-story{ data: { hypothesis_id: hypothesis.id, id: user_story.id, order: user_story.order } }
           %td= user_story.role
           %td= user_story.action
           %td= user_story.result

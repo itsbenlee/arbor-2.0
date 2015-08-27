@@ -7,6 +7,10 @@ Railsroot::Application.routes.draw do
     resources :user_stories, only: [:create]
     put 'hypotheses/order', controller: :hypotheses, action: :update_order
     get 'hypotheses/export', controller: :hypotheses, action: :export
+    put 'hypotheses/user_stories/order',
+      controller: :user_stories,
+      action: :update_order,
+      as: :user_stories_order
   end
 
   resources :hypotheses, only: [:destroy] do

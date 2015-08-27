@@ -23,7 +23,7 @@ DuplicateMethodCall:
   allow_calls: []
 FeatureEnvy:
   enabled: true
-  exclude: []
+  exclude: [HypothesisServices#reorder_stories]
 IrresponsibleModule:
   enabled: false
   exclude: []

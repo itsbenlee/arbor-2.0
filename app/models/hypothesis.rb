@@ -34,6 +34,17 @@ class Hypothesis < ActiveRecord::Base
     hypothesis_type.as_json
   end
 
+  def reorder_user_stories(user_stories_hash)
+    user_stories.each { |user_story| user_story.update_attributes!(order: nil) }
+
+    user_stories_hash.values.each do |story|
+      UserStory
+        .find(story['id'].to_i)
+        .update_attributes!(hypothesis_id: id,
+                            order: story['order'].to_i)
+    end
+  end
+
   private
 
   def order_in_project
