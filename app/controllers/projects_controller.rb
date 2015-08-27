@@ -11,6 +11,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @invites = Invite.where(project: @project)
   end
 
   def update
@@ -47,16 +48,15 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
 
-  def fetch_members
-    emails = params[:project].select do |id, email|
+  def member_emails
+    params[:project].select do |id, email|
       email if id.starts_with?('member')
-    end.values
-
-    emails.map { |email| User.find_by(email: email) }.compact
+    end.values.reject(&:blank?)
   end
 
   def assign_associations
-    @project.owner = current_user
-    @project.members = fetch_members << current_user
+    @project.owner = current_user unless @project_owner
+    ProjectMemberServices.new(@project, current_user, member_emails)
+      .invite_members
   end
 end

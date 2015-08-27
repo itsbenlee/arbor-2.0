@@ -1,5 +1,4 @@
 Railsroot::Application.routes.draw do
-  devise_for :users
   root to: 'projects#index'
 
   resources :projects,  shallow: true, except: [:destroy] do
@@ -14,5 +13,6 @@ Railsroot::Application.routes.draw do
     resources :goals, only: [:create]
   end
 
+  devise_for :users, controllers: { registrations: 'registrations' }
   resources :user_stories, only: [:edit, :update, :destroy]
 end

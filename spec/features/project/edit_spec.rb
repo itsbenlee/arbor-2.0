@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 feature 'Edit a project' do
+  ENV['FROM_EMAIL_ADDRESS'] = 'no-reply@getarbor.io'
   let!(:user) { create :user }
   let!(:project) do
     create(
@@ -56,13 +57,22 @@ feature 'Edit a project' do
       expect(Project.first.members).to include user
     end
 
-    scenario 'should ignore non-existing users' do
-      click_button 'New Member'
-      fill_in 'member_0', with: 'non_existing@test.com'
-      click_button 'Update Project'
+    context 'with invites' do
+      background do
+        click_button 'New Member'
+        fill_in 'member_0', with: 'email@email.com'
+        click_button 'Update Project'
+      end
 
-      expect(Project.first.members.count).to eq 1
-      expect(Project.first.members).to include user
+      scenario 'should create an invite for non-existing users' do
+        expect(Invite.first.email).to eq('email@email.com')
+        expect(Invite.first.project.name).to eq('Test Project')
+      end
+
+      scenario 'should send an email invite for non-existing users' do
+        expect(ActionMailer::Base.deliveries.last.to.first)
+          .to have_content('email@email.com')
+      end
     end
   end
 
@@ -90,13 +100,15 @@ feature 'Edit a project' do
         input.value == 'existing@test.com'
       end
 
-      fill_in input[:id], with: 'non_existing@test.com'
+      fill_in input[:id], with: 'test@test.com'
       click_button 'Update Project'
 
       visit project_path project
       expect(page).to have_content user.email
       expect(page).not_to have_content 'existing@test.com'
-      expect(page).not_to have_content 'non_existing@test.com'
+      within '.sent_invites' do
+        expect(page).to have_content 'test@test.com'
+      end
     end
 
     scenario 'should add new members' do
@@ -109,6 +121,17 @@ feature 'Edit a project' do
       visit project_path project
       expect(page).to have_content user.email
       expect(page).to have_content member.email
+    end
+
+    scenario 'should send an email invite to new members' do
+      visit edit_project_path project
+
+      click_button 'New Member'
+      fill_in 'member_1', with: member.email
+
+      click_button 'Update Project'
+      expect(ActionMailer::Base.deliveries.last.to.first)
+        .to have_content(member.email)
     end
   end
 end
