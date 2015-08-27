@@ -9,6 +9,9 @@ body {
 .right-app-content {
   height: 100%;
   overflow-y: scroll;
+  padding: 0;
+
+  .content-general { padding: rem-calc(0 15); }
 }
 
 //Remove focus styles

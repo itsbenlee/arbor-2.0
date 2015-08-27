@@ -1,0 +1,16 @@
+// --------------------------------------------------------
+//  TOP NAV
+// --------------------------------------------------------
+
+#top-nav {
+  @include clearfix();
+  border-bottom: 1px solid $black-10;
+  padding: rem-calc(20 35);
+  width: 100%;
+
+  .nav-links {
+    float: right;
+    font-size: rem-calc(13);
+    font-weight: $font-weight-bold;
+  } // nav links
+} // top nav

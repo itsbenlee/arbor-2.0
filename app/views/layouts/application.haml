@@ -19,7 +19,9 @@
   %body{'data-action' => action_name, 'data-controller' => controller_name }
     = render 'layouts/sidebar', projects: @projects
     .columns.small-10.right-app-content
-      = render 'layouts/notices', alert: alert, notice: notice
-      = yield
+      = yield :top_links
+      .content-general
+        = render 'layouts/notices', alert: alert, notice: notice
+        = yield
     = javascript_include_tag 'application'
     = render 'shareable/partials/spec_performance'

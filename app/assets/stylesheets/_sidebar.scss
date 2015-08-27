@@ -6,6 +6,7 @@
 
   .top {
     background-color: darken($primary-color, 5%);
+    line-height: 1;
     padding: rem-calc(24 20);
 
     span { display: block; }
