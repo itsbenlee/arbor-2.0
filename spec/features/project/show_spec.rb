@@ -28,9 +28,19 @@ feature 'Show project details' do
     expect(page).to have_content member.email
   end
 
-  scenario 'the product owner should be able to delete the project' do
-    find_link('Delete project').click
-    find_button('Ok')
+  scenario 'should not show the delete project link for common users' do
+    expect(page).not_to have_link('Delete project')
   end
 
+  context "the user is the project owner" do
+    background do
+      project.update_attributes(owner: user)
+      visit project_path project
+    end
+
+    scenario 'should be able to delete the project' do
+      find_link('Delete project').click
+      expect(Project.find_by(id: project.id)).to be(nil)
+    end
+  end
 end
