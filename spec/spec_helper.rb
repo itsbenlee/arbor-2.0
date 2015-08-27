@@ -3,6 +3,12 @@ require 'spork'
 
 Spork.prefork do
   ENV['RAILS_ENV'] ||= 'test'
+  ENV['FROM_EMAIL_ADDRESS'] = 'no-reply@getarbor.io'
+  ENV['MAXIMUM_MEMBER_COUNT'] = '16'
+
+
+
+
 
   require File.expand_path('../../config/environment', __FILE__)
   require 'rspec/rails'
