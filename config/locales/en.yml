@@ -23,6 +23,7 @@ en:
     forgot_password: "Forgot your password?"
   sidebar:
     my_projects: "My projects"
+    powered_by: "Powered by"
   labs:
     hypotheses:
       enter_description: "Write a hypothesis"
@@ -32,7 +33,7 @@ en:
       export: "Export"
   create_project:
     title: "Start creating your project"
-    project_button: "New Project"
+    project_button: "Create new project"
     project_name: "Project name"
     section_title: "Project info"
     save_button: "Save Project"
