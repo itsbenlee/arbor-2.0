@@ -1,0 +1,14 @@
+= form_for @goal do |form|
+  -if @goal.errors.any?
+    .alert-box.alert.user_story_errors
+      %ul
+        - @goal.errors.full_messages.each do |error|
+          %li= error
+  = t('labs.goals.title')
+  = form.text_field(                          |
+    :title,                                   |
+    placeholder: t('labs.goals.enter_title'), |
+    required:    true,                        |
+    class:      'title'                       |
+  )                                           |
+  = form.submit I18n.translate('save')

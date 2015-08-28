@@ -21,7 +21,7 @@ class RegistrationsController < Devise::RegistrationsController
     email = params[:user][:email]
     Invite.where(email: email).each do |invite|
       invite.project.members << User.find_by(email: email)
-      Invite.destroy(invite)
+      invite.destroy
     end
   end
 end

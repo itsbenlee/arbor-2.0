@@ -1,6 +1,7 @@
 class GoalsController < ApplicationController
+  before_action :load_goal, only: [:edit, :update, :destroy]
   before_action :set_hypothesis
-  before_action :check_edit_permission, only: [:create]
+  before_action :check_edit_permission, only: [:create, :update, :destroy]
 
   def create
     @goal = Goal.new(goal_params)
@@ -12,6 +13,26 @@ class GoalsController < ApplicationController
       @errors = @goal.errors.full_messages
       render :new, status: 400
     end
+  end
+
+  def edit
+  end
+
+  def update
+    @goal.update_attributes(goal_params)
+
+    if @goal.save
+      redirect_to project_hypotheses_path(@hypothesis.project)
+    else
+      @errors = @goal.errors.full_messages
+      render :edit, status: 400
+    end
+  end
+
+  def destroy
+    @goal.destroy
+
+    redirect_to project_hypotheses_path(@hypothesis.project)
   end
 
   private
@@ -28,7 +49,14 @@ class GoalsController < ApplicationController
     params.require(:goal).permit(:title, :hypothesis_id)
   end
 
+  def load_goal
+    @goal = Goal.includes([:hypothesis]).find(params[:id])
+  end
+
   def set_hypothesis
-    @hypothesis = Hypothesis.find(params[:hypothesis_id])
+    @hypothesis =
+      @goal.try(:hypothesis) ||
+      Hypothesis
+      .find(params[:hypothesis_id])
   end
 end

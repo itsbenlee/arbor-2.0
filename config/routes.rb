@@ -17,6 +17,8 @@ Railsroot::Application.routes.draw do
     resources :goals, only: [:create]
   end
 
+  resources :goals, only: [:edit, :update, :destroy]
+
   devise_for :users, controllers: { registrations: 'registrations' }
   resources :user_stories, only: [:edit, :update, :destroy]
 end

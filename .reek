@@ -23,7 +23,10 @@ DuplicateMethodCall:
   allow_calls: []
 FeatureEnvy:
   enabled: true
-  exclude: [HypothesisServices#reorder_stories]
+  exclude: [
+    HypothesisServices#reorder_stories,
+    RegistrationsController#add_member_to_projects,
+  ]
 IrresponsibleModule:
   enabled: false
   exclude: []

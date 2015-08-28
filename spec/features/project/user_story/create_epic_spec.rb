@@ -20,10 +20,11 @@ feature 'Create a new epic' do
 
   scenario 'should create a new epic' do
     within 'form.new_user_story' do
-      fill_in 'user_story_role', with: epic.role
-      fill_in 'user_story_action', with: epic.action
-      fill_in 'user_story_result', with: epic.result
-      expect{ click_button 'Save' }.to change { UserStory.count }.by 1
+      fill_in :user_story_role, with: epic.role
+      fill_in :user_story_action, with: epic.action
+      fill_in :user_story_result, with: epic.result
+
+      expect{ click_button 'Save' }.to change{ UserStory.count }.from(0).to(1)
     end
   end
 end
