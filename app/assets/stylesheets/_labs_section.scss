@@ -33,7 +33,7 @@
 
     .description:before {
       color: $lab-color;
-      content: "\2022";
+      content: \2022';
       font-size: rem-calc(30);
       margin-right: rem-calc(5);
       vertical-align: middle;
