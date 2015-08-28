@@ -61,7 +61,7 @@ class ProjectsController < ApplicationController
   end
 
   def assign_associations
-    @project.owner = current_user unless @project_owner
+    @project.owner ||= current_user
     ProjectMemberServices.new(@project, current_user, member_emails)
       .invite_members
   end
