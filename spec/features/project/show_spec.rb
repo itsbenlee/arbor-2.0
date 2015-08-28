@@ -27,4 +27,20 @@ feature 'Show project details' do
     expect(page).to have_content user.email
     expect(page).to have_content member.email
   end
+
+  scenario 'should not show the delete project link for common users' do
+    expect(page).not_to have_link('Delete project')
+  end
+
+  context 'the user is the project owner' do
+    background do
+      project.update_attributes(owner: user)
+      visit project_path project
+    end
+
+    scenario 'should be able to delete the project' do
+      find_link('Delete project').click
+      expect{ project.reload }.to raise_error(ActiveRecord::RecordNotFound)
+    end
+  end
 end

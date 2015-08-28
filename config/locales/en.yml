@@ -39,6 +39,11 @@ en:
     member_mail: "Member mail"
     project_members: "Project members"
     add_members: "New Member"
+  project:
+    delete_project: 'Delete project'
+    delete_confirmation: |
+      This project will be deleted permanently.
+      Are you sure you want to continue?
   backlog:
     user_stories:
       enter_role: "<type of user>"

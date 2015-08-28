@@ -1,7 +1,7 @@
 Railsroot::Application.routes.draw do
   root to: 'projects#index'
 
-  resources :projects,  shallow: true, except: [:destroy] do
+  resources :projects,  shallow: true do
     resources :hypotheses, only: [:index, :create]
     resources :canvases, only: [:index, :create]
     resources :user_stories, only: [:create]
