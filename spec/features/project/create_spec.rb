@@ -9,18 +9,24 @@ feature 'Create a new project' do
   end
 
   scenario 'should display a new project link on the projects index page' do
-    expect(page).to have_link 'New Project'
+    within '.content-general' do
+      expect(page).to have_link 'Create new project'
+    end
   end
 
   scenario 'should not allow to create a project without a name' do
-    click_link 'New Project'
+    within '.content-general' do
+      click_link 'Create new project'
+    end
     click_button 'Save Project'
 
     expect(page).to have_text "Name can't be blank"
   end
 
   scenario 'should successfully save a project with a valid project name' do
-    click_link 'New Project'
+    within '.content-general' do
+      click_link 'Create new project'
+    end
     fill_in 'project_name', with: 'Test Project'
     click_button 'Save Project'
 

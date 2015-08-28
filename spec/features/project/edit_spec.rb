@@ -18,17 +18,16 @@ feature 'Edit a project' do
   end
 
   scenario 'should display an edit project link on the projects index page' do
-    expect(page).to have_link 'Edit'
     expect(page).to have_href edit_project_path(project)
   end
 
   scenario 'should show the current project name' do
-    click_link 'Edit'
+    visit edit_project_path project
     expect(find('input#project_name').value).to eq 'Test Project'
   end
 
   scenario 'should not allow to edit a project name to an empty string' do
-    click_link 'Edit'
+    visit edit_project_path project
     fill_in 'project_name', with: ''
     click_button 'Update Project'
 
@@ -36,7 +35,7 @@ feature 'Edit a project' do
   end
 
   scenario 'should successfully save a project with a valid project name' do
-    click_link 'Edit'
+    visit edit_project_path project
     fill_in 'project_name', with: 'Changed Project'
     click_button 'Update Project'
 

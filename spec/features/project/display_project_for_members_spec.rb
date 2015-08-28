@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'Add a project member' do
+feature 'Display projects only for members' do
   background do
     @user = sign_in create :user
     @project = create :project, { owner: @user, members: [@user]}
@@ -9,7 +9,7 @@ feature 'Add a project member' do
   scenario 'should show the project on sidebar' do
     visit root_url
     within 'aside' do
-      expect(find('.project-link')).to  have_text @project.name
+      expect(page).to have_text @project.name
     end
   end
 
@@ -17,7 +17,7 @@ feature 'Add a project member' do
     project_not_member = create :project
     visit root_url
     within 'aside' do
-      expect(find('.project-link')).not_to  have_text project_not_member.name
+      expect(page).not_to have_text project_not_member.name
     end
   end
 end
