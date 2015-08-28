@@ -1,11 +1,13 @@
-%h2 Forgot your password?
+%h2
+  = t('login.recover_password.forgot')
 = form_for(resource, as: resource_name, url: password_path(resource_name),
 html: { method: :post }) do |f|
   = devise_error_messages!
   .field
-    = f.label :email
     %br/
-    = f.email_field :email, autofocus: true
+    = f.label t('login.recover_password.email')
+    .field
+      = image_tag('icons/mail-icon.svg', class: 'icon')
+      = f.email_field :email, autofocus: true, required: true, placeholder: t('login.email'), class: 'with-icon radius login'
   .actions
-    = f.submit 'Send me reset password instructions'
-= render 'devise/shared/links'
+    = f.submit 'Send me reset password instructions', class: 'button radius success small'

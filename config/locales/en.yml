@@ -12,6 +12,13 @@ en:
     email: "Email"
     remember_me: "Remember me"
     button_login: "Log in"
+    recover_password:
+      change: 'Change your password'
+      password: 'New password'
+      confirm_password: 'Confirm new password'
+      submit: 'Change my password'
+      forgot: 'Forgot your password?'
+      email: 'Your email address'
   links:
     forgot_password: "Forgot your password?"
   sidebar:
