@@ -32,7 +32,7 @@ feature 'Show project details' do
     expect(page).not_to have_link('Delete project')
   end
 
-  context "the user is the project owner" do
+  context 'the user is the project owner' do
     background do
       project.update_attributes(owner: user)
       visit project_path project
@@ -40,7 +40,7 @@ feature 'Show project details' do
 
     scenario 'should be able to delete the project' do
       find_link('Delete project').click
-      expect(Project.find_by(id: project.id)).to be(nil)
+      expect{ project.reload }.to raise_error(ActiveRecord::RecordNotFound)
     end
   end
 end

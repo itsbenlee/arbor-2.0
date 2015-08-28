@@ -12,7 +12,7 @@ class ProjectsController < ApplicationController
 
   def show
     @invites = Invite.where(project: @project)
-    @can_delete = current_user == @project.owner
+    @can_delete = current_user.can_delete?(@project)
   end
 
   def destroy
