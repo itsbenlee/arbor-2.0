@@ -29,28 +29,22 @@
     clear: both;
     padding: rem-calc(20 0);
 
-    .order {
-      @include border-radius(100%);
-      @include inline-block;
-      background-color: $lab-color;
-      color: $white;
-      font-size: rem-calc(17);
-      font-weight: $font-weight-light;
-      height: rem-calc(29);
-      line-height: 1.6;
-      margin-right: rem-calc(14);
-      text-align: center;
-      vertical-align: top;
-      width: rem-calc(29);
-    }//order
-
     .content { @include inline-block; }
+
+    .description:before {
+      color: $lab-color;
+      content: '•';
+      font-size: rem-calc(30);
+      margin-right: rem-calc(5);
+      vertical-align: middle;
+    }
 
     .description,
     .description-error {
       color: $font-color-2;
       font-size: rem-calc(15);
       font-weight: $font-weight-bold;
+      padding: 0;
     }//description
 
     .delete-hypothesis img {

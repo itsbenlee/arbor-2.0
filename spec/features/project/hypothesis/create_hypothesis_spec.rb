@@ -21,26 +21,7 @@ feature 'Create hypothesis' do
 
     within '.hypotheses-list' do
       expect(find('.description')).to have_text(hypothesis_description)
-      expect(find('.order')).to have_text('1')
       expect(find('.type')).to have_text(hypothesis_type.description)
-    end
-  end
-
-  scenario 'should increment the bullet number when adding a hypothesis' do
-    hypothesis_description = 'My amazing hypothesis'
-
-    within '.hypothesis-new' do
-      find('.description').set(hypothesis_description)
-      find('#hypothesis_hypothesis_type_id').select(hypothesis_type.description)
-      click_button 'Save'
-    end
-
-    within '.hypotheses-list' do
-      expect(find('.order')).to have_text('1')
-    end
-
-    within '.hypothesis-new' do
-      expect(find('.order')).to have_text('2')
     end
   end
 

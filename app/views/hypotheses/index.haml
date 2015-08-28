@@ -30,7 +30,6 @@
     .hypotheses-list{ data:{ project_path: project_hypotheses_order_path(@project) } }
       - @project.hypotheses.each do |hypothesis|
         .hypothesis{ data: { id: hypothesis.id, order: hypothesis.order } }
-          %span.order= hypothesis.order
           %span.content
             .row
               %span.description.large-11.columns= hypothesis.description
@@ -54,7 +53,7 @@
               = render 'user_stories/new', user_story: UserStory.new, project: @project, hypothesis: hypothesis
   .hypothesis-new
     .hypothesis
-      %span.order= @project.hypotheses.length + 1
+      / %span.order= @project.hypotheses.length + 1
       .content
         = render 'hypotheses/new', hypothesis: @hypothesis,
         hypothesis_types: @hypothesis_types, project: @project
