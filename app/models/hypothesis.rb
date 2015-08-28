@@ -11,6 +11,8 @@ class Hypothesis < ActiveRecord::Base
 
   delegate :description, :code, to: :hypothesis_type, prefix: true
 
+  include AssociationLoggable
+
   def self.new_order(hypothesis_hash)
     hypothesis = Hypothesis.find(hypothesis_hash[:id])
     hypothesis.order = hypothesis_hash[:order]

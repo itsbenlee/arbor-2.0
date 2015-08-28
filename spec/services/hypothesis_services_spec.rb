@@ -22,9 +22,9 @@ feature 'Reorder user stories' do
     first_story_updated, second_story_updated, third_story_updated =
       get_reordered(@first_story, @second_story, @third_story)
 
-    expect(first_story_updated.order).to be(2)
-    expect(second_story_updated.order).to be(3)
-    expect(third_story_updated.order).to be(1)
+    expect(first_story_updated.order).to eq 2
+    expect(second_story_updated.order).to eq 3
+    expect(third_story_updated.order).to eq 1
   end
 
   scenario 'should reorder user stories on hypothesis' do
@@ -42,11 +42,11 @@ feature 'Reorder user stories' do
     first_story_updated, second_story_updated, third_story_updated =
       get_reordered(@first_story, @second_story, @third_story)
 
-    expect(first_story_updated.order).to be(2)
-    expect(first_story_updated.hypothesis_id).to be(hypothesis.id)
-    expect(second_story_updated.order).to be(1)
-    expect(second_story_updated.hypothesis_id).to be(hypothesis.id)
-    expect(third_story_updated.order).to be(1)
-    expect(third_story_updated.hypothesis_id).to be(second_hypothesis.id)
+    expect(first_story_updated.order).to eq 2
+    expect(first_story_updated.hypothesis_id).to eq hypothesis.id
+    expect(second_story_updated.order).to eq 1
+    expect(second_story_updated.hypothesis_id).to eq hypothesis.id
+    expect(third_story_updated.order).to eq 1
+    expect(third_story_updated.hypothesis_id).to eq second_hypothesis.id
   end
 end

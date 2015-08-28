@@ -1,5 +1,6 @@
 class UserStoriesController < ApplicationController
   before_action :load_user_story, only: [:update, :destroy, :edit]
+  before_action :set_hypothesis, only: [:create]
   before_action :check_edit_permission,
     only: [:create, :destroy, :update, :update_order, :index, :edit]
 
@@ -20,6 +21,7 @@ class UserStoriesController < ApplicationController
     @user_story.project = @project
 
     if @user_story.save
+      update_associations
       redirect_to :back
     else
       @errors = @user_story.errors.full_messages
@@ -38,7 +40,7 @@ class UserStoriesController < ApplicationController
   end
 
   def destroy
-    @user_story.destroy
+    @project.user_stories.destroy(@user_story)
 
     redirect_to project_hypotheses_path(@project)
   end
@@ -58,6 +60,11 @@ class UserStoriesController < ApplicationController
                  :members,
                  :hypotheses])
       .find(params[:project_id])
+  end
+
+  def set_hypothesis
+    hypothesis_id = user_story_params[:hypothesis_id]
+    @hypothesis = Hypothesis.find(hypothesis_id) if hypothesis_id
   end
 
   def check_edit_permission
@@ -84,5 +91,10 @@ class UserStoriesController < ApplicationController
 
   def update_order_params
     params.require(:hypotheses)
+  end
+
+  def update_associations
+    @project.user_stories << @user_story
+    @hypothesis.user_stories << @user_story if @hypothesis
   end
 end

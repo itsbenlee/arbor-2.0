@@ -62,7 +62,9 @@ class ProjectsController < ApplicationController
   end
 
   def assign_associations
-    ProjectMemberServices.new(@project, current_user, member_emails)
-      .invite_members
+    @project.owner ||= current_user
+    ProjectMemberServices.new(
+      @project, current_user, member_emails
+    ).invite_members
   end
 end

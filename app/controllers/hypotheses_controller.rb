@@ -13,6 +13,7 @@ class HypothesesController < ApplicationController
     @hypothesis.project = @project
 
     if @hypothesis.save
+      @project.hypotheses << @hypothesis
       redirect_to project_hypotheses_path(@project)
     else
       @hypothesis_types = HypothesisType.all
@@ -21,8 +22,7 @@ class HypothesesController < ApplicationController
   end
 
   def destroy
-    @hypothesis = @project.hypotheses.find(params[:id])
-    @hypothesis.destroy
+    @project.hypotheses.destroy(@hypothesis)
 
     redirect_to project_hypotheses_path(@project)
   end

@@ -8,6 +8,7 @@ class GoalsController < ApplicationController
     @goal.hypothesis = @hypothesis
 
     if @goal.save
+      @hypothesis.goals << @goal
       redirect_to project_hypotheses_path(@hypothesis.project)
     else
       @errors = @goal.errors.full_messages
@@ -30,7 +31,7 @@ class GoalsController < ApplicationController
   end
 
   def destroy
-    @goal.destroy
+    @hypothesis.goals.destroy(@goal)
 
     redirect_to project_hypotheses_path(@hypothesis.project)
   end

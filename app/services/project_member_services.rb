@@ -38,7 +38,7 @@ class ProjectMemberServices
   end
 
   def invite_new_user(data)
-    Invite.create(email: data[:email], project: @project)
+    @project.invites << Invite.create(email: data[:email])
     InviteMailer.project_invite_email(data, true).deliver_now
   end
 end

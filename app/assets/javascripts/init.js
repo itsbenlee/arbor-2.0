@@ -49,5 +49,4 @@ $('#sidebar a').each(function() {
   }
 });
 
-
 $(document).ready(UTIL.init);

@@ -6,10 +6,6 @@ Spork.prefork do
   ENV['FROM_EMAIL_ADDRESS'] = 'no-reply@getarbor.io'
   ENV['MAXIMUM_MEMBER_COUNT'] = '16'
 
-
-
-
-
   require File.expand_path('../../config/environment', __FILE__)
   require 'rspec/rails'
 
@@ -17,6 +13,9 @@ Spork.prefork do
   require 'capybara/rails'
   require 'capybara/poltergeist'
   require 'factory_girl_rails'
+  require 'public_activity/testing'
+
+  PublicActivity.enabled = false
 
   class ActiveRecord::Base
     mattr_accessor :shared_connection
