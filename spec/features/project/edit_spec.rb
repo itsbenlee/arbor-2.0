@@ -75,6 +75,24 @@ feature 'Edit a project' do
     end
   end
 
+  context 'with a user that is not the project owner' do
+    let(:new_owner) { create :user }
+
+    background do
+      project.members << new_owner
+      project.update_attributes(owner: new_owner)
+      visit edit_project_path project
+    end
+
+    scenario 'should not modify the project owner when another user edits' do
+      click_button 'New Member'
+      fill_in 'member_0', with: 'email@email.com'
+      click_button 'Update Project'
+
+      expect{ project.reload }.not_to change{ project.owner }
+    end
+  end
+
   context 'with members', js: true do
     let(:member) { create :user, email: 'existing@test.com' }
 
