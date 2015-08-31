@@ -19,6 +19,8 @@ en:
       submit: 'Change my password'
       forgot: 'Forgot your password?'
       email: 'Your email address'
+    reset_password: 'Send me reset password instructions'
+    email_address: 'Email address'
   links:
     forgot_password: "Forgot your password?"
   sidebar:

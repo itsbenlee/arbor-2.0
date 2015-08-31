@@ -1,19 +1,4 @@
 #user-session {
-  .arbor-logo {
-    margin: rem-calc(60) auto rem-calc(45);
-    width: rem-calc(130);
-
-    @media #{$small-only} { margin: rem-calc(35) auto; }
-  } // logo
-
-  .login-form,
-  .signup-form {
-    border: 1px solid $black-20;
-    border-radius: $global-radius;
-    margin-top: rem-calc(15);
-    padding: rem-calc(30);
-  }
-
   .signup-form .button { margin-bottom: 0; }
 
   h2 { margin-bottom: rem-calc(20); }

@@ -18,6 +18,22 @@ body {
 input,
 select { outline: 0; }
 
+.arbor-logo {
+  margin: rem-calc(60) auto rem-calc(45);
+  width: rem-calc(130);
+
+  @media #{$small-only} { margin: rem-calc(35) auto; }
+} // logo
+
+.login-form,
+.signup-form,
+.reset-form {
+  border: 1px solid $black-20;
+  border-radius: $global-radius;
+  margin-top: rem-calc(15);
+  padding: rem-calc(30);
+} //user session style
+
 .button {
   text-transform: uppercase;
   width: 100%;
