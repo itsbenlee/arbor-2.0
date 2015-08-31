@@ -12,11 +12,11 @@ feature 'Delete epic' do
   end
 
   scenario 'should show delete link' do
-    expect(page).to have_link 'Delete Epic'
+    expect(page).to have_css '.delete-story a'
   end
 
   scenario 'should delete the epic after clicking the link' do
-    click_link 'Delete Epic'
+    find('.delete-story a').click
 
     expect(UserStory.count).to eq 0
     %i(role action result).each do |field|

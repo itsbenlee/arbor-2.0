@@ -16,7 +16,7 @@ feature 'Delete hypothesis' do
   end
 
   scenario 'should delete the hypothesis after clicking the link' do
-    find('.trash-btn').click
+    find('.delete-hypothesis a').click
 
     expect(Hypothesis.count).to eq 0
     expect(page).not_to have_content hypothesis.description
@@ -28,15 +28,15 @@ feature 'Delete hypothesis' do
 
     visit project_hypotheses_path project
 
-    %i(role action result).each do |field|
-      expect(page).to have_content epic.send(field)
+    within "#edit_user_story_#{epic.id}" do
+      expect(find('#user_story_role').value).to have_text epic.role
+      expect(find('#user_story_action').value).to have_text epic.action
+      expect(find('#user_story_result').value).to have_text epic.result
     end
 
-    find('.trash-btn').click
+    find('.delete-hypothesis a').click
 
     expect(UserStory.count).to eq 1
-    %i(role action result).each do |field|
-      expect(page).not_to have_content epic.send(field)
-    end
+    expect(page).not_to have_css "#edit_user_story_#{epic.id}"
   end
 end

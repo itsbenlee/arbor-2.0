@@ -9,10 +9,10 @@ Railsroot::Application.routes.draw do
     end
   end
 
-  resources :projects,  shallow: true do
+  resources :projects, shallow: true do
     resources :hypotheses, only: [:index, :create]
     resources :canvases, only: [:index, :create]
-    resources :user_stories, only: [:create]
+    resources :user_stories, only: [:create, :update, :destroy]
     put 'hypotheses/order', controller: :hypotheses, action: :update_order
     get 'hypotheses/export', controller: :hypotheses, action: :export
     put 'hypotheses/user_stories/order',
@@ -28,5 +28,4 @@ Railsroot::Application.routes.draw do
   resources :goals, only: [:edit, :update, :destroy]
 
   devise_for :users, controllers: { registrations: 'registrations' }
-  resources :user_stories, only: [:edit, :update, :destroy]
 end
