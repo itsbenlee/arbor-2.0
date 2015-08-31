@@ -1,5 +1,13 @@
 Railsroot::Application.routes.draw do
-  root to: 'projects#index'
+  devise_scope :user do
+    authenticated :user do
+      root to: 'projects#index', as: :authenticated_root
+    end
+
+    unauthenticated :user do
+      root to: 'devise/sessions#new'
+    end
+  end
 
   resources :projects,  shallow: true do
     resources :hypotheses, only: [:index, :create]
