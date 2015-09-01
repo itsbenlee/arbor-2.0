@@ -1,26 +1,14 @@
-#hypothesis-tr
-  %table
-    %thead
-      %tr
-        %th Role
-        %th Action
-        %th Result
-        %th Priority
-        %th Estimated Points
-        %th
-        %th
-    %tbody.user-story-list{ data: { hypothesis_id: hypothesis.id ,
-    url: project_user_stories_order_path(hypothesis.project) } }
-      - user_stories.each do |user_story|
-        %tr.user-story{ data: { hypothesis_id: hypothesis.id, id: user_story.id, order: user_story.order } }
-          %td= user_story.role
-          %td= user_story.action
-          %td= user_story.result
-          %td= user_story.priority
-          %td= user_story.estimated_points
-          %td= link_to t('edit'), edit_user_story_path(user_story)
-          %td= link_to(                                |
-                t('backlog.user_stories.delete_epic'), |
-                user_story_path(user_story),           |
-                method: :delete                        |
-          )                                            |
+.user-story-list{ data: { hypothesis_id: hypothesis.id , url: project_user_stories_order_path(hypothesis.project) } }
+  - user_stories.each do |user_story|
+    .user-story.new-epic{ data: { hypothesis_id: hypothesis.id, id: user_story.id, order: user_story.order } }
+      .row
+        = render 'user_stories/form', project: hypothesis.project,
+        user_story: user_story, hypothesis: hypothesis,
+        form_url: user_story_path(user_story)
+        .delete-story.large-1.columns
+          = link_to(                                                                   |
+                       image_tag('icons/delete-icon.svg', title: 'Delete User Story'), |
+                       user_story_path(user_story),                                    |
+                       method: :delete,                                                |
+                       class:'trash-btn'                                               |
+                    )                                                                  |

@@ -28,21 +28,19 @@ feature 'List epics' do
   end
 
   scenario 'should list all epics for a hypothesis' do
-    within '.hypothesis .content table' do
-      expect(page).to have_content 'User'
-      expect(page).to have_content 'login'
-      expect(page).to have_content 'enjoy'
-
-      expect(page).to have_content 'Admin'
-      expect(page).to have_content 'administrate'
-      expect(page).to have_content 'do work'
+    UserStory.all.each do |epic|
+      within "#edit_user_story_#{epic.id}" do
+        expect(find('#user_story_role').value).to have_text epic.role
+        expect(find('#user_story_action').value).to have_text epic.action
+        expect(find('#user_story_result').value).to have_text epic.result
+      end
     end
   end
 
   scenario 'should show an edit link for each epic' do
-    within '.hypothesis .content table' do
+    within '.hypothesis .content .user-story-list' do
       UserStory.all.each do |epic|
-        expect(page).to have_href edit_user_story_path epic
+        expect(page).to have_css "#edit_user_story_#{epic.id}"
       end
     end
   end
