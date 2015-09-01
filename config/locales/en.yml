@@ -86,11 +86,11 @@ en:
   mailer:
     invite:
       subject: 'Invitation instructions'
-      title: 'Be a better product owner'
+      title: 'BE A BETTER PRODUCT OWNER'
       someone_invited_you: '%{inviter} invited you to collaborate on a project called %{project_name} in Arbor.'
       description: 'Arbor is the most effective way to distill your idea into an actionable roadmap that your team can use to define and build out your product.'
       get_started: 'To get started, click on the button below:'
-      create_account: 'Create Account'
+      create_account: 'CREATE ACCOUNT'
       view_project: 'View Project'
       thanks: 'Thanks!'
       arbor: '- Arbor Team'
