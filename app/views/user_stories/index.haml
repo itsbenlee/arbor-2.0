@@ -1,0 +1,22 @@
+.row
+  .large-5.column
+    - @project.user_stories.each do |user_story|
+      %ul
+        %li.user-story{ data: { user_id: user_story.id,
+        url: edit_user_story_path(user_story) } }
+          = t('backlog.user_stories.role_prefix') + |
+          ' ' + user_story.role + ' ' +             |
+          t('backlog.user_stories.action_prefix') + |
+          ' ' + user_story.action + ' ' +           |
+          t('backlog.user_stories.result_prefix') + |
+          ' ' + user_story.result                   |
+      .delete-story.large-1.columns
+        = link_to(image_tag('icons/delete-icon.svg', title: 'Delete User Story'),
+        user_story_path(user_story),
+        method: :delete,
+        class:'trash-btn')
+  .large-7.column.user-story-edit-form
+    = render 'user_stories/form', project: @project,
+    user_story: @user_story,
+    hypothesis: nil,
+    form_url: project_user_stories_path(@project)

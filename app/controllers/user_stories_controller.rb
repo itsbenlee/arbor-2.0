@@ -1,14 +1,26 @@
 class UserStoriesController < ApplicationController
-  before_action :load_user_story, only: [:update, :destroy]
+  before_action :load_user_story, only: [:update, :destroy, :edit]
   before_action :check_edit_permission,
-    only: [:create, :destroy, :update, :update_order]
+    only: [:create, :destroy, :update, :update_order, :index, :edit]
+
+  def index
+    @user_story = UserStory.new
+  end
+
+  def edit
+    render partial: 'user_stories/form',
+           locals: { project: @project,
+                     user_story: @user_story,
+                     hypothesis: @user_story.hypothesis,
+                     form_url: user_story_path(@user_story) }
+  end
 
   def create
     @user_story = UserStory.new(user_story_params)
     @user_story.project = @project
 
     if @user_story.save
-      redirect_to project_hypotheses_path(@project)
+      redirect_to :back
     else
       @errors = @user_story.errors.full_messages
       render :new, status: 400
@@ -18,7 +30,7 @@ class UserStoriesController < ApplicationController
   def update
     @user_story.update_attributes(user_story_params)
     if @user_story.save
-      redirect_to project_hypotheses_path(@user_story.project)
+      redirect_to :back
     else
       @errors = @user_story.errors.full_messages
       render :edit, status: 400
@@ -58,7 +70,10 @@ class UserStoriesController < ApplicationController
   end
 
   def load_user_story
-    @user_story = UserStory.find(params[:id])
+    @user_story =
+      UserStory
+      .includes(project: [:user_stories, :members, :hypotheses])
+      .find(params[:id])
   end
 
   def user_story_params
