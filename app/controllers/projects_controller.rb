@@ -34,9 +34,10 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    assign_associations
+    @project.owner = current_user
 
     if @project.save
+      assign_associations
       redirect_to projects_path
     else
       @errors = @project.errors.full_messages
@@ -56,12 +57,11 @@ class ProjectsController < ApplicationController
 
   def member_emails
     params[:project].select do |id, email|
-      email if id.starts_with?('member')
-    end.values.reject(&:blank?)
+      email if id.starts_with?('member') && email != current_user.email
+    end.values.reject(&:blank?).uniq
   end
 
   def assign_associations
-    @project.owner ||= current_user
     ProjectMemberServices.new(@project, current_user, member_emails)
       .invite_members
   end

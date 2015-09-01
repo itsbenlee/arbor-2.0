@@ -34,6 +34,17 @@ feature 'Create a new project' do
     expect(Project.first.name).to eq 'Test Project'
   end
 
+  scenario 'should not create invites when no name is set', js: true do
+    within '.content-general' do
+      click_link 'Create new project'
+    end
+    click_button 'New Member'
+    fill_in 'member_0', with: 'test@test.com'
+    click_button 'Save Project'
+
+    expect(Invite.count).to eq(0)
+  end
+
   context 'with members provided', js: true do
     before :each do
       visit new_project_path
@@ -55,6 +66,29 @@ feature 'Create a new project' do
 
       expect(Project.first.members.count).to eq 1
       expect(Project.first.members).to include user
+    end
+
+    scenario 'should ignore duplicate current user' do
+      click_button 'New Member'
+      click_button 'New Member'
+
+      fill_in 'member_0', with: user.email
+      fill_in 'member_1', with: user.email
+
+       click_button 'Save Project'
+      expect(Project.first.members.count).to eq 1
+    end
+
+    scenario 'should ignore duplicate emails' do
+      additional_member = create :user, email: 'existing@test.com'
+
+      click_button 'New Member'
+      click_button 'New Member'
+
+      fill_in 'member_0', with: additional_member.email
+      fill_in 'member_1', with: additional_member.email
+       click_button 'Save Project'
+      expect(Project.first.members.count).to eq 2
     end
 
     scenario 'should add existing users to the project' do
