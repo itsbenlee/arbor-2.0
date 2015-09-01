@@ -31,12 +31,21 @@
 
     .content { @include inline-block; }
 
-    .description:before {
+    .description:before,
+    .bullet:before {
       color: $lab-color;
       content: '\2022';
       font-size: rem-calc(30);
       margin-right: rem-calc(5);
-      vertical-align: middle;
+    }
+
+    .description:before { vertical-align: middle; }
+
+    .bullet:before { position: absolute; }
+
+    input {
+      float: right;
+      width: 98%;
     }
 
     .description,
