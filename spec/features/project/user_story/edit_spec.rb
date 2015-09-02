@@ -58,7 +58,7 @@ feature 'Edit an epic' do
 
   scenario 'should be able to edit an epic on backlog section', js: true do
     visit project_user_stories_path project
-    find('li.user-story').click
+    find('.user-story').click
 
     within 'form.edit_user_story' do
       fill_in 'user_story_role', with: changed_epic.role

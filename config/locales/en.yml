@@ -33,10 +33,11 @@ en:
     powered_by: "Powered by"
   labs:
     hypotheses:
-      enter_description: "Write a hypothesis"
+      enter_description: "Write here a new Hypothesis"
     goals:
       title: "Title"
       enter_title: "Enter Title"
+      enter_goal: "Write here a new Goal..."
       export: "Export"
       delete: "Delete Goal"
   create_project:

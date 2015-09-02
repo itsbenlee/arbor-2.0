@@ -79,9 +79,7 @@ feature 'Log lab activity' do
         click_link project.name
 
         PublicActivity.with_tracking do
-          within '.delete-hypothesis' do
-            find('.trash-btn').click
-          end
+          find('.delete-hypothesis').click
         end
 
         last_actvity = PublicActivity::Activity.last
@@ -142,7 +140,7 @@ feature 'Log lab activity' do
 
         PublicActivity.with_tracking do
           within '.user-story' do
-            find('a.trash-btn').click
+            find('.delete-user-story').click
           end
         end
 
