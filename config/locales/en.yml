@@ -58,6 +58,7 @@ en:
       result_prefix: "so that"
       delete_epic: "Delete Epic"
       edit_title: "Edit epic"
+      new: "New user story"
   save: "Save"
   edit: "Edit"
   can_not_view: "You can not view this project."

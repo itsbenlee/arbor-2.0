@@ -1,4 +1,7 @@
 .row
+  .large-2.large-offset-10.column
+    = link_to t('backlog.user_stories.new'), project_user_stories_path(@project)
+.row
   .large-5.column
     - @project.user_stories.each do |user_story|
       %ul
