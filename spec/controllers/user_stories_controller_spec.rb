@@ -24,9 +24,9 @@ RSpec.describe UserStoriesController do
         first_story_updated, second_story_updated, third_story_updated =
           get_reordered(@first_story, @second_story, @third_story)
 
-        expect(first_story_updated.order).to be(2)
-        expect(second_story_updated.order).to be(3)
-        expect(third_story_updated.order).to be(1)
+        expect(first_story_updated.order).to eq 2
+        expect(second_story_updated.order).to eq 3
+        expect(third_story_updated.order).to eq 1
       end
     end
 

@@ -1,4 +1,6 @@
 class UserStory < ActiveRecord::Base
+  include WithoutAssociationLoggable
+
   PRIORITIES = %w(m s c w)
 
   validates_presence_of :role, :action, :result

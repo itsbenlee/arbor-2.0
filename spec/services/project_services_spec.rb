@@ -30,7 +30,7 @@ feature 'Reorder hypothesis inside' do
 
     updated_first_hypothesis = Hypothesis.find(first_hypothesis.id)
     updated_second_hypothesis = Hypothesis.find(second_hypothesis.id)
-    expect(updated_first_hypothesis.order).to be(2)
-    expect(updated_second_hypothesis.order).to be(1)
+    expect(updated_first_hypothesis.order).to eq 2
+    expect(updated_second_hypothesis.order).to eq 1
   end
 end

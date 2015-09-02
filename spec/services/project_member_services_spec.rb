@@ -31,7 +31,7 @@ feature 'invite members' do
     end
 
     scenario 'should not add the non users to the project' do
-      expect(project.members.count).to be(2)
+      expect(project.members.count).to eq 2
     end
   end
 end

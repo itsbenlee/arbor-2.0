@@ -33,6 +33,7 @@ en:
       title: "Title"
       enter_title: "Enter Title"
       export: "Export"
+      delete: "Delete Goal"
   create_project:
     title: "Start creating your project"
     project_button: "Create new project"

@@ -14,6 +14,7 @@ gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'nilify_blanks', '1.2.1'
 gem 'jquery-ui-rails', '5.0.5'
+gem 'public_activity'
 
 group :doc do
   gem 'sdoc', require: false

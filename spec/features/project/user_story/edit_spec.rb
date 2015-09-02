@@ -28,13 +28,13 @@ feature 'Edit an epic' do
     end
   end
 
-  scenario 'should be able to edit an epic on lab section', js: true do
+  scenario 'should be able to edit an epic on lab section' do
     visit project_hypotheses_path project
     within 'form.edit_user_story' do
       fill_in 'user_story_role', with: changed_epic.role
       fill_in 'user_story_action', with: changed_epic.action
-      fill_in 'user_story_result', with: "#{changed_epic.result}"
-      find('.user-story-submit', visible: false).trigger('click')
+      fill_in 'user_story_result', with: changed_epic.result
+      click_button 'Save'
     end
 
     visit project_hypotheses_path project
@@ -63,7 +63,7 @@ feature 'Edit an epic' do
     within 'form.edit_user_story' do
       fill_in 'user_story_role', with: changed_epic.role
       fill_in 'user_story_action', with: changed_epic.action
-      fill_in 'user_story_result', with: "#{changed_epic.result}"
+      fill_in 'user_story_result', with: changed_epic.result
       find('.user-story-submit', visible: false).trigger('click')
     end
 
@@ -73,8 +73,8 @@ feature 'Edit an epic' do
       within 'form.edit_user_story' do
         field_id = "#user_story_#{field}"
         field_value = page.find(field_id).value
-        expect(field_value).to have_text changed_epic.send(field)
-        expect(field_value).not_to have_content epic.send(field)
+        expect(field_value).to have_text changed_epic.try(field)
+        expect(field_value).not_to have_content epic.try(field)
       end
     end
   end
