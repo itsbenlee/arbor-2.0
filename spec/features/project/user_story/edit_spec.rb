@@ -18,17 +18,48 @@ feature 'Edit an epic' do
 
   background do
     sign_in user
-    visit project_hypotheses_path project
   end
 
-  scenario 'should show me the epic edit form after following the edit link' do
+  scenario 'should show me the epic edit form after following the edit link on lab section' do
 
+    visit project_hypotheses_path project
     %w(user_story_role user_story_action user_story_result).each do |input|
       expect(page).to have_field input
     end
   end
 
-  scenario 'should be able to edit an epic', js: true do
+  scenario 'should be able to edit an epic on lab section', js: true do
+    visit project_hypotheses_path project
+    within 'form.edit_user_story' do
+      fill_in 'user_story_role', with: changed_epic.role
+      fill_in 'user_story_action', with: changed_epic.action
+      fill_in 'user_story_result', with: "#{changed_epic.result}"
+      find('.user-story-submit', visible: false).trigger('click')
+    end
+
+    visit project_hypotheses_path project
+
+    %i(role action result).each do |field|
+      within 'form.edit_user_story' do
+        field_id = "#user_story_#{field}"
+        field_value = page.find(field_id).value
+        expect(field_value).to have_text changed_epic.send(field)
+        expect(field_value).not_to have_content epic.send(field)
+      end
+    end
+  end
+
+  scenario 'should show me the epic edit form after following the edit link on backlog section' do
+    visit project_user_stories_path project
+    %w(user_story_role user_story_action user_story_result).each do |input|
+      expect(page).to have_field input
+    end
+  end
+
+  scenario 'should be able to edit an epic on backlog section', js: true do
+    visit project_user_stories_path project
+    find('li.user-story').click
+
     within 'form.edit_user_story' do
       fill_in 'user_story_role', with: changed_epic.role
       fill_in 'user_story_action', with: changed_epic.action

@@ -21,6 +21,7 @@ class UserStory < ActiveRecord::Base
   private
 
   def order_in_hypotheses
+    return unless hypothesis
     self.order = hypothesis.user_stories.maximum(:order).to_i + 1
   end
 end

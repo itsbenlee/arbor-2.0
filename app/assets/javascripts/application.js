@@ -21,3 +21,4 @@
 //= require_tree ./projects
 //= require_tree ./hypotheses
 //= require_tree ./canvases
+//= require_tree ./userStories

@@ -12,7 +12,7 @@ Railsroot::Application.routes.draw do
   resources :projects, shallow: true do
     resources :hypotheses, only: [:index, :create]
     resources :canvases, only: [:index, :create]
-    resources :user_stories, only: [:create, :update, :destroy]
+    resources :user_stories, except: [:show, :new]
     put 'hypotheses/order', controller: :hypotheses, action: :update_order
     get 'hypotheses/export', controller: :hypotheses, action: :export
     put 'hypotheses/user_stories/order',

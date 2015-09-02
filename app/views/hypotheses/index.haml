@@ -48,9 +48,10 @@
                 = render 'goals/new', goal: Goal.new, hypothesis: hypothesis
             - if hypothesis.user_stories.any?
               .content
-                = render 'user_stories/index', user_stories: hypothesis.user_stories, hypothesis: hypothesis
+                = render 'user_stories/list', user_stories: hypothesis.user_stories, hypothesis: hypothesis
             .new-epic
-              = render 'user_stories/new', user_story: UserStory.new, project: @project, hypothesis: hypothesis
+              .large-10.column
+                = render 'user_stories/new', user_story: UserStory.new, project: @project, hypothesis: hypothesis
   .hypothesis-new
     .hypothesis
       .content

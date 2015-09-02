@@ -8,7 +8,8 @@ ARBOR = {
   },
   projects: {},
   canvases: {},
-  hypotheses: {}
+  hypotheses: {},
+  user_stories:{}
 };
 
 UTIL = {
