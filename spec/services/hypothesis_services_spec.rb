@@ -27,7 +27,7 @@ feature 'Reorder user stories' do
     expect(third_story_updated.order).to eq 1
   end
 
-  scenario 'should reorder user stories on hypothesis' do
+  scenario 'should reorder user stories on different hypothesis' do
     second_hypothesis = create :hypothesis, project: project
     first_hypothesis_stories = { '0' => {'id' => @first_story.id, 'order' => 2},
                                  '1' => {'id' => @second_story.id, 'order' => 1} }

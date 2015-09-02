@@ -42,7 +42,7 @@ class UserStoriesController < ApplicationController
   def destroy
     @project.user_stories.destroy(@user_story)
 
-    redirect_to project_hypotheses_path(@project)
+    redirect_to :back
   end
 
   def update_order

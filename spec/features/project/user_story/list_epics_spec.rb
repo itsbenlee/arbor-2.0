@@ -22,7 +22,6 @@ feature 'List epics' do
       action:     'administrate',
       result:     'do work'
     )
-
     sign_in user
   end
 
@@ -44,6 +43,7 @@ feature 'List epics' do
         expect(page).to have_text epic.role
         expect(page).to have_text epic.action
         expect(page).to have_text epic.result
+        expect(page).to have_text epic.story_number
       end
     end
   end
