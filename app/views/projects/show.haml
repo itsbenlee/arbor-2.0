@@ -1,27 +1,22 @@
 = @project.name
-%h1
-  Members
-  %table
-    %tr
-      %th Name
-      %th Email
+.invite-members.row
+  .section-margin-top.large-6.large-centered.columns
+    %h2= t("project_members.title")
     - @project.members.each do |member|
-      %tr
-        %td
-          = member.full_name
-        %td
+      %label= t("project_members.name")
+      .user-info
+        = image_tag('icons/user-icon.svg', class: 'icon')
+        = member.full_name
+        .user-mail
           = member.email
-= link_to 'Edit', edit_project_path(@project)
-.sent_invites
-  %h3
-    - unless @invites.empty?
-      Sent Invites
-      %table
-        %tr
-          %th Email
+      = link_to t("project_members.edit"), edit_project_path(@project), class: 'button radius success small'
+      .sent-invites
+        %label= t("project_members.already_invited")
+      - unless @invites.empty?
         - @invites.each do |invite|
-          %tr
-            %td
-              = invite.email
-- if @can_delete
-  = link_to t('project.delete_project'), @project, method: :delete, data: { confirm: t('project.delete_confirmation') }
+          .user-info.email-invited
+            = image_tag('icons/mail-icon.svg', class: 'icon')
+            = invite.email
+    - if @can_delete
+      %span.icon-trash
+      = link_to t('project.delete_project'), @project, method: :delete, data: { confirm: t('project.delete_confirmation') }

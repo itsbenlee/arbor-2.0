@@ -123,7 +123,7 @@ feature 'Edit a project' do
       visit project_path project
       expect(page).to have_content user.email
       expect(page).not_to have_content 'existing@test.com'
-      within '.sent_invites' do
+      within '.email-invited' do
         expect(page).to have_content 'test@test.com'
       end
     end
