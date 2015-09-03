@@ -1,25 +1,5 @@
-- if @errors
-  #error-explanation
-    %ul
-      - @errors.each do |message|
-        %li= message
-
-= form_for @project, url: @project, html: { id: 'edit_project' }  do |f|
-  %p
-    = f.label :name
-    %br/
-    = f.text_field :name
-  #members
-    %label{ for: 'project_members'} Members
-    - @project.members.each_with_index do |member, index|
-      - member_id = "member_#{index}"
-      %input{                          |
-        class: "member",               |
-        type: 'email',                 |
-        id: member_id,                 |
-        name: "project[#{member_id}]", |
-        value: member.email            |
-      }                                |
-    = f.button 'New Member', id: 'new_member_button', type: :button
-  %p
-    = f.submit
+= @project.name
+.invite-members.row
+  .section-margin-top.large-6.large-centered.columns
+    %h2= t("project_members.title")
+    = render 'projects/edit', project: @project, errors: @errors

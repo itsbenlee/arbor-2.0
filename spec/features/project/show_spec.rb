@@ -6,6 +6,7 @@ feature 'Show project details' do
   let!(:project) { create :project, members: [user, member] }
 
   background do
+    ENV['FROM_EMAIL_ADDRESS'] = 'no-reply@getarbor.io'
     sign_in user
     visit project_path project
   end
@@ -28,8 +29,40 @@ feature 'Show project details' do
     expect(page).to have_content member.email
   end
 
-  scenario 'should not show the delete project link for common users' do
+  scenario 'should not show the delete project link for common users', js: true do
     expect(page).not_to have_link('Delete project')
+  end
+
+  scenario 'should not display the edit form', js: true do
+    expect(page).not_to have_css('form#edit_project')
+  end
+
+  scenario 'should display the edit form when edit is clicked', js: true do
+    find_link('Edit').click
+    expect(page).to have_css('form#edit_project')
+  end
+
+  context 'when clicking on edit', js: true do
+    background do
+      find_link('Edit').click
+      click_button 'New Member'
+    end
+
+    scenario 'should add new members' do
+      fill_in 'member_2', with: member.email
+
+      click_button 'Update Project'
+      expect(page).to have_content user.email
+      expect(page).to have_content member.email
+    end
+
+    scenario 'should create an invite for non-existing users' do
+      fill_in 'member_2', with: 'non-existing@test.com'
+      click_button 'Update Project'
+
+      expect(Invite.first.email).to eq('non-existing@test.com')
+      expect(Invite.first.project.name).to eq(project.name)
+    end
   end
 
   context 'the user is the project owner' do
