@@ -47,6 +47,14 @@ class Hypothesis < ActiveRecord::Base
     end
   end
 
+  def log_description
+    description
+  end
+
+  def recipient
+    project
+  end
+
   private
 
   def order_in_project

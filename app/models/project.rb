@@ -25,4 +25,10 @@ class Project < ActiveRecord::Base
         .update_attributes!(backlog_order: story['backlog_order'].to_i)
     end
   end
+
+  def log_description
+  end
+
+  def recipient
+  end
 end

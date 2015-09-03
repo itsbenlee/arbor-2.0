@@ -15,4 +15,8 @@ class User < ActiveRecord::Base
   def can_delete?(project)
     self == project.owner
   end
+
+  def log_description
+    email
+  end
 end

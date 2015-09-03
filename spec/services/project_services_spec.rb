@@ -53,3 +53,37 @@ feature 'Reorder hypothesis inside' do
     expect(third_story_updated.backlog_order).to eq 1
   end
 end
+
+feature 'Collect log entries' do
+  let!(:user) { create :user }
+
+  background do
+    sign_in user
+  end
+
+  scenario 'should collect the log entries of all associated entities' do
+    PublicActivity.with_tracking do
+      @project = create :project
+      hypothesis = create :hypothesis
+      goal = create :goal
+      @project.hypotheses << hypothesis
+      hypothesis.goals << goal
+    end
+
+    project_services = ProjectServices.new(@project)
+    log_entries = project_services.collect_log_entries
+
+    %w(
+      hypothesis.add_goal
+      goal.update
+      project.add_hypothesis
+      hypothesis.update
+      goal.create
+      hypothesis.create
+      project.add_member
+      project.create
+    ).each do |key|
+      expect(log_entries.map(&:key)).to include key
+    end
+  end
+end

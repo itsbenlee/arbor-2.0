@@ -3,6 +3,9 @@
     = link_to '#', {"aria-controls" => "drop1", "aria-expanded" => "false", id: "export-button", class: "nav-links", "data-dropdown" => "drop1"} do
       = image_tag('icons/export-icon.svg', class: 'icon')
       = t('top_nav.export')
+    = link_to log_project_path(@project), {'data-reveal-id' => 'log-modal', 'data-reveal-ajax' => true} do
+      = image_tag('icons/export-icon.svg', class: 'icon')
+      = t('labs.log')
     %ul#drop1.f-dropdown{"aria-hidden" => "true", "data-dropdown-content" => "", :tabindex => "-1"}
       %li#csv_export_link
         = link_to t('csv'), project_hypotheses_export_path(@project, format: :csv)
@@ -48,10 +51,11 @@
             .stories
               - if hypothesis.user_stories.any?
                 = render 'user_stories/list', user_stories: hypothesis.user_stories, hypothesis: hypothesis
-              .new-epic.row
+              .new-user-story.row
                 = render 'user_stories/new', user_story: UserStory.new, project: @project, hypothesis: hypothesis
   .hypothesis-new
     .hypothesis
       .content.row
         = render 'hypotheses/new', hypothesis: @hypothesis,
         hypothesis_types: @hypothesis_types, project: @project
+#log-modal.reveal-modal{"data-reveal" => ""}

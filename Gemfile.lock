@@ -213,6 +213,8 @@ GEM
       json
       require_all
       ruby-progressbar
+    rails_engine_decorators (1.0.0)
+      railties (>= 3.2.8)
     rails_serve_static_assets (0.0.4)
     rails_stdout_logging (0.0.3)
     railties (4.2.3)
@@ -352,6 +354,7 @@ DEPENDENCIES
   rails (= 4.2.3)
   rails_12factor
   rails_best_practices
+  rails_engine_decorators
   reek
   rspec-rails
   rspec-wait

@@ -40,13 +40,15 @@ en:
     backlog: 'Backlog'
   labs:
     hypotheses:
-      enter_description: "Write here a new Hypothesis"
+      enter_description: "Write a new Hypothesis here"
+      export: "Export"
     goals:
       title: "Title"
       enter_title: "Enter Title"
       enter_goal: "Write here a new Goal..."
       export: "Export"
       delete: "Delete Goal"
+    log: "Latest changes"
   create_project:
     title: "Start creating your project"
     project_button: "Create new project"
@@ -69,9 +71,39 @@ en:
       role_prefix: "As a"
       action_prefix: "I should be able to"
       result_prefix: "so that"
-      delete_epic: "Delete Epic"
-      edit_title: "Edit epic"
+      delete: "Delete User Story"
+      edit_title: "Edit User Story"
       new: "New user story"
+  log:
+    project:
+      create: "The project was created."
+      update: "The project was updated."
+      add_user_story: "A new user story was added to the project"
+      add_hypothesis: "A new hypothesis was added to the project"
+      add_member: "A new collaborator was added to the project"
+      add_invite: "A new collaborator was invited to the project"
+      add_goal: "A new goal was added to the project"
+      remove_user_story: "A user story was removed from the project"
+      remove_hypothesis: "A hypothesis was removed from the project"
+      remove_member: "A collaborator was removed from the project"
+      remove_invite: "An invite was reverted from the project"
+      remove_goal: "A goal was removed from the project"
+    hypothesis:
+      create: "A hypothesis was created"
+      update: "A hypothesis was updated"
+      destroy: "A hypothesis was deleted"
+      add_user_story: "New user story added to hypothesis"
+      add_goal: "New goal added to hypothesis"
+      remove_user_story: "A user story was removed from a hypothesis"
+      remove_goal: "A goal was removed from a hypothesis"
+    goal:
+      create: "A goal was created"
+      update: "A goal was updated"
+      destroy: "A goal was deleted"
+    user_story:
+      create: "A user story was created"
+      update: "A user story was updated"
+      destroy: "A user story was deleted"
   save: "Save"
   edit: "Edit"
   can_not_view: "You can not view this project."

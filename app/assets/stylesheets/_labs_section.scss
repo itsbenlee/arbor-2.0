@@ -165,7 +165,7 @@
     }
   }
 
-  .new-epic {
+  .new-user-story {
     display: block;
     padding: rem-calc(0 0 0 24);
 
@@ -184,7 +184,7 @@
     a:hover +.edit-story {
       span,
       input,
-      .epic-input { color: $canvas-color; }
+      .user-story-input { color: $canvas-color; }
     }
 
     .square {
@@ -208,7 +208,7 @@
 
       .square { @include opacity(1); }
 
-      .epic-input {
+      .user-story-input {
         @include single-transition(color, .25s, ease-in);
         color: rgba($black, .75);
       }
@@ -254,7 +254,7 @@
     text-transform: uppercase;
   }
 
-  .epic-input {
+  .user-story-input {
     color: $font-color-2;
     font-size: rem-calc(13);
     padding: 0;
