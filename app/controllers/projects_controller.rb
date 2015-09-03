@@ -1,6 +1,5 @@
 class ProjectsController < ApplicationController
   before_action :load_project, only: [:show, :edit, :update, :destroy]
-
   def index
   end
 
@@ -45,6 +44,12 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def order_stories
+    project = Project.includes(:user_stories).find(params[:project_id])
+    project_services = ProjectServices.new(project)
+    render json: project_services.reorder_stories(update_order_params)
+  end
+
   private
 
   def project_params
@@ -66,5 +71,9 @@ class ProjectsController < ApplicationController
     ProjectMemberServices.new(
       @project, current_user, member_emails
     ).invite_members
+  end
+
+  def update_order_params
+    params.require(:stories)
   end
 end

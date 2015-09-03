@@ -59,6 +59,7 @@ class UserStoriesController < ApplicationController
       .includes([:user_stories,
                  :members,
                  :hypotheses])
+      .order('user_stories.backlog_order')
       .find(params[:project_id])
   end
 

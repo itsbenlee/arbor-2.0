@@ -4,9 +4,10 @@
 .row
   .large-5.column
     - @project.user_stories.each do |user_story|
-      %ul
+      %ul.user-story-list{ data: { url: project_reorder_backlog_path(@project) } }
         %li.user-story{ data: { id: user_story.id,
-        url: edit_user_story_path(user_story) } }
+        url: edit_user_story_path(user_story),
+        backlog_order: user_story.backlog_order } }
           .story-number
             = "##{user_story.story_number}"
           = t('backlog.user_stories.role_prefix') + |

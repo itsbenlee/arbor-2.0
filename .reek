@@ -26,6 +26,7 @@ FeatureEnvy:
   exclude: [
     HypothesisServices#reorder_stories,
     RegistrationsController#add_member_to_projects,
+    Project#reorder_user_stories
   ]
 IrresponsibleModule:
   enabled: false

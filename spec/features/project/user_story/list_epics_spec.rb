@@ -39,7 +39,7 @@ feature 'List epics' do
   scenario 'should list all epics for a hypothesis on backlog section.', js: true do
     visit project_user_stories_path project
     UserStory.all.each do |epic|
-      within ".user-story[data-id='#{epic.id}']" do
+      within "li.user-story[data-id='#{epic.id}']" do
         expect(page).to have_text epic.role
         expect(page).to have_text epic.action
         expect(page).to have_text epic.result

@@ -15,4 +15,14 @@ class Project < ActiveRecord::Base
   def as_json
     super(only: [:name])
   end
+
+  def reorder_user_stories(user_stories_hash)
+    user_stories.update_all backlog_order: nil
+
+    user_stories_hash.values.each do |story|
+      UserStory
+        .find(story['id'].to_i)
+        .update_attributes!(backlog_order: story['backlog_order'].to_i)
+    end
+  end
 end
