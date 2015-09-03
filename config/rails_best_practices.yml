@@ -22,13 +22,18 @@ ProtectMassAssignmentCheck: { }
 RemoveEmptyHelpersCheck: { }
 #RemoveTabCheck: { }
 RemoveTrailingWhitespaceCheck: { }
-RemoveUnusedMethodsInControllersCheck: { except_methods: [RegistrationsController#new] }
+RemoveUnusedMethodsInControllersCheck: { except_methods: [
+                                                          RegistrationsController#new,
+                                                          ProjectsController#order_stories
+                                                          ]
+                                       }
 RemoveUnusedMethodsInHelpersCheck: { except_methods: [] }
 RemoveUnusedMethodsInModelsCheck: {
   except_methods: [
     UserStory#priorities,
     UserStory#estimation_series,
-    Hypothesis#reorder_user_stories
+    Hypothesis#reorder_user_stories,
+    Project#reorder_user_stories
   ]
 }
 ReplaceComplexCreationWithFactoryMethodCheck: { attribute_assignment_count: 2 }

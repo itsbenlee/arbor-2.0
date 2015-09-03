@@ -5,10 +5,10 @@ class UserStory < ActiveRecord::Base
 
   validates_presence_of :role, :action, :result
   validates_uniqueness_of :order, scope: :hypothesis_id, allow_nil: true
+  validates_uniqueness_of :backlog_order, scope: :project_id, allow_nil: true
   validates_uniqueness_of :story_number, scope: :project_id
   validates_inclusion_of :priority, in: PRIORITIES
-  before_create :order_in_hypotheses
-  before_create :assign_story_number
+  before_create :order_in_hypotheses, :order_in_backlog, :assign_story_number
 
   belongs_to :hypothesis
   belongs_to :project
@@ -31,5 +31,9 @@ class UserStory < ActiveRecord::Base
 
   def assign_story_number
     self.story_number = project.user_stories.maximum(:story_number).to_i + 1
+  end
+
+  def order_in_backlog
+    self.backlog_order = project.user_stories.maximum(:backlog_order).to_i + 1
   end
 end

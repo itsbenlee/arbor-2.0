@@ -14,6 +14,13 @@ class ProjectServices
     response
   end
 
+  def reorder_stories(new_order)
+    @project
+      .reorder_user_stories(new_order)
+
+    { success: true }
+  end
+
   private
 
   def clean_hypotheses_order
