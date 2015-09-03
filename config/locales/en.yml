@@ -26,6 +26,9 @@ en:
     name: "Name"
     edit: "Edit"
     already_invited: "Members already invited"
+  top_nav:
+    search: "Search"
+    export: "Export"
   links:
     forgot_password: "Forgot your password?"
   sidebar:
