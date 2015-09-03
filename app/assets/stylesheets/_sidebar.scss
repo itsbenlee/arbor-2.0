@@ -26,6 +26,13 @@
       .icon-arrow { @include rotate(0); }
     }
 
+    &#workspace {
+      li {
+        padding: rem-calc(0 20);
+        &:first-of-type { padding-top: rem-calc(14); }
+      }
+    }
+
     li {
       @include single-transition(color, .25s, ease-in);
       background-color: darken($primary-color, 5%);
@@ -64,10 +71,22 @@
         +a { display: inline; }
       }
 
+      .canvas {
+        .bullet::before { color: $canvas-color; }
+      }
+
+      .backlog {
+        .bullet::before { color: $backlog-color; }
+      }
+
       img {
         display: inline-block;
         margin-left: 7px;
         width: 20px;
+
+        &.icon {
+          margin: rem-calc(0 5 0 0);
+        }
       }
 
       p {
@@ -104,6 +123,23 @@
         }
       } // span
 
+      .bullet {
+        @include opacity(1);
+        padding: 0;
+        top: 0;
+        z-index: 1;
+
+        &::before {
+          @include single-transition(all, .25s, ease-in);
+          color: $lab-color;
+          content: '\2022';
+          font-size: rem-calc(30);
+          margin-right: rem-calc(5);
+          position: absolute;
+          right: 0;
+        }
+      }
+
       .button {
         color: $white;
         font-size: rem-calc(13);
@@ -111,5 +147,13 @@
         padding: rem-calc(14);
       }
     } // li
+
+    .canvas,
+    .lab,
+    .backlog {
+      &:hover {
+        .bullet::before { right: rem-calc(90); }
+      }
+    }//section links
   } // ul
 } // sidebar

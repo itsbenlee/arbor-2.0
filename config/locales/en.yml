@@ -31,6 +31,10 @@ en:
   sidebar:
     my_projects: "My projects"
     powered_by: "Powered by"
+    workspace: 'Workspace'
+    canvas: 'Canvas'
+    lab: 'Lab'
+    backlog: 'Backlog'
   labs:
     hypotheses:
       enter_description: "Write here a new Hypothesis"
