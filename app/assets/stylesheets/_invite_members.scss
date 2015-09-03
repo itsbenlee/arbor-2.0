@@ -2,7 +2,7 @@
 // INVITE MEMBERS
 // --------------------------------------------------------
 
-.invite-members {
+.projects {
   label {
     cursor: default;
     margin-bottom: rem-calc(5);
@@ -31,4 +31,15 @@
       }
     }
   } // user name & mail
+
+  .delete-project {
+    @include single-transition(color, .25s, ease-in);
+
+    &:hover { color: $canvas-color; }
+
+    span {
+      float: left;
+      margin-right: rem-calc(10);
+    }
+  }
 } // invite members
