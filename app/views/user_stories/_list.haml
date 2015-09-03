@@ -1,15 +1,8 @@
 .user-story-list{ data: { hypothesis_id: hypothesis.id , url: project_user_stories_order_path(hypothesis.project) } }
   - user_stories.each do |user_story|
-    .user-story.new-epic{ data: { hypothesis_id: hypothesis.id, id: user_story.id, order: user_story.order } }
-      .row
-        .large-10.column
-          = render 'user_stories/form', project: hypothesis.project,
-          user_story: user_story, hypothesis: hypothesis,
-          form_url: user_story_path(user_story)
-        .delete-story.large-1.columns
-          = link_to(                                                                   |
-                       image_tag('icons/delete-icon.svg', title: 'Delete User Story'), |
-                       user_story_path(user_story),                                    |
-                       method: :delete,                                                |
-                       class:'trash-btn'                                               |
-                    )                                                                  |
+    .user-story.new-epic.row{ data: { hypothesis_id: hypothesis.id, id: user_story.id, order: user_story.order } }
+      = link_to user_story_path(user_story), class: 'delete-user-story', title: 'Delete User Story', method: :delete do
+        %span.icon-trash
+      = render 'user_stories/form', project: hypothesis.project,
+      user_story: user_story, hypothesis: hypothesis,
+      form_url: user_story_path(user_story)

@@ -1,10 +1,8 @@
-%table
-  %tr
-    %th Title
-    %th
-    %th
-  - goals.each do |goal|
-    %tr
-      %td= goal.title
-      %td= link_to t('edit'), edit_goal_path(goal)
-      %td= link_to t('labs.goals.delete'), goal_path(goal), method: :delete
+- goals.each do |goal|
+  .row
+    = link_to goal_path(goal), title: 'Delete Goal', method: :delete do
+      %span.icon-trash
+    = link_to edit_goal_path(goal), title: 'Edit Goal', class: 'goal-title' do
+      = goal.title
+      %span.icon-check
+      %span.icon-edit

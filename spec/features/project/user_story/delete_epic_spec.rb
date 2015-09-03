@@ -12,12 +12,12 @@ feature 'Delete epic' do
 
   scenario 'should show delete link on lab section' do
     visit project_hypotheses_path project
-    expect(page).to have_css '.delete-story a'
+    expect(page).to have_css '.delete-user-story'
   end
 
   scenario 'should delete the epic after clicking the link on lab section' do
     visit project_hypotheses_path project
-    find('.delete-story a').click
+    find('.delete-user-story').click
 
     expect(UserStory.count).to eq 0
     %i(role action result).each do |field|

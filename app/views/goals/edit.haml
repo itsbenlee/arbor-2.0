@@ -4,7 +4,6 @@
       %ul
         - @goal.errors.full_messages.each do |error|
           %li= error
-  = t('labs.goals.title')
   = form.text_field(                          |
     :title,                                   |
     placeholder: t('labs.goals.enter_title'), |

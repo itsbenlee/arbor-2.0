@@ -5,7 +5,7 @@
   .large-5.column
     - @project.user_stories.each do |user_story|
       %ul
-        %li.user-story{ data: { user_id: user_story.id,
+        %li.user-story{ data: { id: user_story.id,
         url: edit_user_story_path(user_story) } }
           .story-number
             = "##{user_story.story_number}"

@@ -14,7 +14,7 @@ feature 'Delete an existing goal' do
   scenario 'should show me a delete link for the goal' do
     within 'div.goals' do
       expect(page).to have_href goal_path(goal)
-      expect(page).to have_content 'Delete'
+      expect(page).to have_css '.icon-trash'
     end
   end
 

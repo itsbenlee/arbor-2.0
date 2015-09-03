@@ -24,10 +24,11 @@
 
 [class^="icon-"]::before {
   @include font(arbor-icons);
+  display: inline-block;
   line-height: normal;
-  position: relative;
   speak: none;
   text-transform: none;
+  vertical-align: baseline;
 }
 
 span {
@@ -39,4 +40,6 @@ span {
   &.icon-check::before { content: '\e605'; }
   &.icon-arrow::before { content: '\e606'; }
   &.icon-note::before  { content: '\e60a'; }
+  &.icon-trash::before { content: '\e608'; }
+  &.icon-plus::before  { content: '\e609'; }
 }

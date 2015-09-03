@@ -4,12 +4,14 @@
       %ul
         - goals.errors.full_messages.each do |error|
           %li= error
-  = t('labs.goals.title')
   = form.text_field(                          |
     :title,                                   |
-    placeholder: t('labs.goals.enter_title'), |
+    placeholder: t('labs.goals.enter_goal'),  |
     required:    true,                        |
-    class:      'title'                       |
+    class:      'title',                      |
+    title: 'Write your Goal'                  |
   )                                           |
+  %span.icon-plus
+  %span.icon-check
   = form.hidden_field :hypothesis_id, value: hypothesis.id
   = form.submit I18n.translate('save'), class: 'hide'

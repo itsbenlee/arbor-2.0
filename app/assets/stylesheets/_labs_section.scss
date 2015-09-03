@@ -17,132 +17,287 @@
   input { @include border-radius($global-radius); }
 }
 
-.new-hypothesis-btn {
-  padding: rem-calc(20);
+.ui-sortable-handle {
+  @include grab-cursor;
+
+  &.ui-sortable-helper {
+    @include box-shadow(rem-calc(3) rem-calc(3) rem-calc(6) rgba($black, .3));
+    @include radius($global-radius);
+    @include grabbing-cursor;
+    background-color: rgba($white, .9);
+    border: 1px solid $border-color;
+    padding: rem-calc(20);
+  }
 }
 
-#hypotheses {
+.hypothesis {
+  background-color: $white;
+  border-bottom: 1px solid $border-color;
+  clear: both;
+  color: $font-color-3;
+  margin: rem-calc(0 20);
   padding: rem-calc(20);
 
-  .hypothesis {
-    border-bottom: 1px solid $border-color;
-    clear: both;
-    padding: rem-calc(20 0);
+  &:hover .description .icon-trash { @include opacity(1); }
 
-    .content { @include inline-block; }
+  span {
+    @include transition(opacity .25s ease-in, color .25s ease-in);
+    left: 0;
+    position: absolute;
+    top: rem-calc(7);
 
-    .description:before,
-    .bullet:before {
-      color: $lab-color;
-      content: '\2022';
-      font-size: rem-calc(30);
-      margin-right: rem-calc(5);
+    &::before {
+      letter-spacing: 3px;
+      text-indent: rem-calc(1);
+      vertical-align: middle;
     }
 
-    .description:before { vertical-align: middle; }
+    &.icon-trash {
+      @include opacity(0);
+      left: auto;
+      right: 0;
+      z-index: 2;
 
-    .bullet:before { position: absolute; }
-
-    input {
-      float: right;
-      width: 98%;
+      &:hover { color: $canvas-color; }
     }
 
-    .description,
-    .description-error {
-      color: $font-color-2;
-      font-size: rem-calc(15);
-      font-weight: $font-weight-bold;
-      padding: 0;
-    }//description
+    &.bullet {
+      top: 0;
+      z-index: 1;
 
-    .delete-hypothesis img {
-      float: right;
-      width: rem-calc(16);
-    }
-
-    .type {
-      color: $font-color-3;
-      display: block;
-      font-size: rem-calc(12);
-      text-transform: uppercase;
-    }//type
-
-    .new-epic .epic-input {
-      font-size: rem-calc(13);
-      padding: 0;
-
-      input {
-        @include ellipsis;
-        background-color: $white;
-        border: 0;
-        display: inline-block;
-        font-size: rem-calc(14);
-        font-style: italic;
-        vertical-align: baseline;
-        width: 58%;
+      &::before {
+        @include single-transition(color, .25s, ease-in);
+        color: $lab-color;
+        content: '\2022';
+        font-size: rem-calc(30);
+        margin-right: rem-calc(5);
+        vertical-align: middle;
       }
-    } // epics
-  }// hypothesis item
-
-  .hypothesis-new {
-    .hypothesis { border: 0; }
-
-    .content {
-      width: calc(100% - 47px);
-
-      // scss-lint:disable QualifyingElement
-      input[type="text"],
-      select {
-        background-color: transparent;
-        border: 0;
-        margin: 0;
-        padding: 0;
-      }//input text and select
-    }//content
-
-    .description {
-      height: rem-calc(29);
-
-      @include input-placeholder {
-        font-size: rem-calc(13);
-        font-style: italic;
-      }//placeholder
-    }//description
-
-    .description-error {
-      color: $canvas-color;
-      font-size: rem-calc(16);
-      height: rem-calc(18);
     }
+  }
 
-    .type { width: inherit; }
-  }//hypothesis new
+  label {
+    display: inline-block;
+    font-size: rem-calc(14);
+    line-height: rem-calc(43);
+    width: auto;
+  }
 
-  #hypothesis-tr {
-    table {
-      border-radius: $global-radius;
-      margin: rem-calc(15 0);
-      padding: rem-calc(5 10 10);
+  input,
+  select,
+  .goal-title {
+    @include single-transition(color, .25s, ease-in);
+    background-color: $transparent;
+    border: 0;
+    display: inline-block;
+    font-size: rem-calc(14);
+    font-weight: $font-weight-normal;
+    height: rem-calc(40);
+    outline: 0;
+    padding: rem-calc(9 9 9 24);
+    position: relative;
+    vertical-align: bottom;
+    width: 70%;
+    z-index: 1;
 
-      td {
-        color: $font-color-2;
+    &.hide { display: none; }
 
-        a {
-          font-size: rem-calc(11);
-          font-weight: bold;
-          text-transform: uppercase;
-        }
-      } // td
-    } // table
-  } // hyp table
-}//hypothesis section
-
-#edit-epic {
-  width: 50%;
+    &:-webkit-autofill { @include box-shadow(0 0 0 rem-calc(1000) $white inset); }
+  }
 
   input {
-    border-radius: $global-radius;
-    width: 95%;
+    +.icon-plus +.icon-check { @include opacity(0); }
+
+    &:hover,
+    &:focus {
+      background-color: $transparent;
+      z-index: 0;
+
+      +.icon-plus {
+        @include opacity(0);
+
+        +.icon-check { @include opacity(1); }
+      }
+    }
+
+    &:focus +.icon-plus +.icon-check { color: $lab-color; }
   }
-} // edit epics
+
+  .row {
+    max-width: 100%;
+    position: relative;
+  }
+
+  .goals,
+  .stories {
+    clear: both;
+    font-size: rem-calc(14);
+    padding-left: rem-calc(15);
+
+    a:hover +.goal-title {
+      color: $canvas-color;
+
+      span {
+        border-color: $canvas-color;
+        color: $canvas-color;
+      }
+    }
+
+    .row:hover .icon-trash { @include opacity(1); }
+  }
+
+  .goal-title {
+    @include single-transition(color, .25s, ease-in);
+    color: $font-color-2;
+
+    .icon-edit { @include opacity(0); }
+    .icon-check { color: $lab-color; }
+
+    &:hover {
+      color: $font-color-3;
+
+      .icon-check { @include opacity(0); }
+
+      .icon-edit {
+        @include opacity(1);
+        color: $lab-color;
+      }
+    }
+  }
+
+  .new-epic {
+    display: block;
+    padding: rem-calc(0 0 0 24);
+
+    &:hover {
+      .edit-story .square    { @include opacity(0); }
+      .edit-story .icon-edit { @include opacity(1); }
+    }
+
+    &.ui-sortable-helper {
+      padding: rem-calc(0 20 0 40);
+
+      .icon-edit { left: rem-calc(10); }
+      .icon-trash { right: rem-calc(10); }
+    }
+
+    a:hover +.edit-story {
+      span,
+      input,
+      .epic-input { color: $canvas-color; }
+    }
+
+    .square {
+      @include opacity(0);
+      @include border-radius(rem-calc(2));
+      background-color: $lab-color;
+      color: $lab-color;
+      height: rem-calc(12);
+      margin-left: rem-calc(1);
+      top: rem-calc(14);
+      width: rem-calc(12);
+    }
+
+    .icon-edit {
+      @include opacity(0);
+      color: $lab-color;
+      top: rem-calc(7);
+    }
+
+    .edit-story {
+
+      .square { @include opacity(1); }
+
+      .epic-input {
+        @include single-transition(color, .25s, ease-in);
+        color: rgba($black, .75);
+      }
+
+      input {
+        color: $font-color-2;
+        margin: 0;
+        padding: rem-calc(10 0);
+
+        &:hover,
+        &:focus { color: $font-color-3; }
+      }
+    }
+  }
+
+  .description,
+  .description-error {
+    color: $font-color-2;
+    font-size: rem-calc(15);
+    font-weight: $font-weight-bold;
+    height: rem-calc(29);
+    padding: rem-calc(0 0 0 15);
+    position: relative;
+
+    .hypothesis-title { @include single-transition(color, .25s, ease-in); }
+
+    a:hover +.hypothesis-title {
+      color: $canvas-color;
+
+      span::before { color: $canvas-color; }
+    }
+  }//description
+
+  .delete-hypothesis span {
+    float: right;
+    font-size: rem-calc(16);
+    margin-top: 0;
+  }
+
+  .type {
+    font-size: rem-calc(12);
+    margin-bottom: rem-calc(10);
+    text-transform: uppercase;
+  }
+
+  .epic-input {
+    color: $font-color-2;
+    font-size: rem-calc(13);
+    padding: 0;
+
+    input {
+      @include ellipsis;
+      font-style: italic;
+      padding: 0;
+      vertical-align: baseline;
+      width: 58%;
+    }
+  }
+}// hypothesis item
+
+.hypothesis-new {
+
+  .hypothesis {
+    border: 0;
+
+    .bullet { top: rem-calc(2); }
+  }
+
+  input,
+  select {
+    display: block;
+    padding: rem-calc(0 0 0 15);
+  }
+
+  select {
+    color: $font-color-2;
+    height: auto;
+  }
+
+  .description {
+    height: rem-calc(29);
+
+    @include input-placeholder {
+      font-size: rem-calc(13);
+      font-style: italic;
+    }
+  } // description
+
+  .description-error { color: $canvas-color; }
+
+  .type { width: inherit; }
+}//hypothesis new

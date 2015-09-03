@@ -15,7 +15,7 @@ feature 'Edit an existing goal' do
   scenario 'should show me an edit link for the goal' do
     within 'div.goals' do
       expect(page).to have_href edit_goal_path(goal)
-      expect(page).to have_content 'Edit'
+      expect(page).to have_content :title
     end
   end
 

@@ -39,7 +39,7 @@ feature 'List epics' do
   scenario 'should list all epics for a hypothesis on backlog section.', js: true do
     visit project_user_stories_path project
     UserStory.all.each do |epic|
-      within "li.user-story[data-user-id='#{epic.id}']" do
+      within ".user-story[data-id='#{epic.id}']" do
         expect(page).to have_text epic.role
         expect(page).to have_text epic.action
         expect(page).to have_text epic.result
@@ -60,12 +60,12 @@ feature 'List epics' do
   scenario 'should not show epic who does not belongs to an hypothesis on lab section', js: true do
     epic = create :epic, project: project, hypothesis: nil
     visit project_hypotheses_path project
-    expect(page).not_to have_css "li.user-story[data-user-id='#{epic.id}']"
+    expect(page).not_to have_css "li.user-story[data-id='#{epic.id}']"
   end
 
   scenario 'should show epic who does not belongs to an hypothesis on backlog section', js: true do
     epic = create :epic, project: project, hypothesis: nil
     visit project_user_stories_path project
-    expect(page).to have_css "li.user-story[data-user-id='#{epic.id}']"
+    expect(page).to have_css "li.user-story[data-id='#{epic.id}']"
   end
 end
