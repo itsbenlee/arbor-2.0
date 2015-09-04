@@ -37,7 +37,6 @@ end
 group :test do
   gem 'capybara'
   gem 'poltergeist'
-  gem 'connection_pool'
   gem 'shoulda-matchers'
   gem 'database_rewinder'
   gem 'rspec-wait'
