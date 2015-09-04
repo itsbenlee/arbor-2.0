@@ -13,6 +13,11 @@ ARBOR.projects.init = function () {
     }
   });
 
+  $('#edit_project').click(function() {
+    $('.show-project-data').hide();
+    $('.edit-project-form').show();
+  });
+
   function generateInput(member_count) {
   var member_id    = 'member_' + member_count;
   var member_name  = 'project[' + member_id + ']';

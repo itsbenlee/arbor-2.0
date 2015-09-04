@@ -2,21 +2,23 @@
 .invite-members.row
   .section-margin-top.large-6.large-centered.columns
     %h2= t("project_members.title")
-    - @project.members.each do |member|
-      %label= t("project_members.name")
-      .user-info
-        = image_tag('icons/user-icon.svg', class: 'icon')
-        = member.full_name
-        .user-mail
-          = member.email
-      = link_to t("project_members.edit"), edit_project_path(@project), class: 'button radius success small'
-      .sent-invites
-        %label= t("project_members.already_invited")
+    .show-project-data
+      - @project.members.each do |member|
+        .user-info
+          = image_tag('icons/user-icon.svg', class: 'icon')
+          = member.full_name
+          .user-mail
+            = member.email
+      = link_to t("project_members.edit"),'#', id: 'edit_project', class: 'button radius success small'
       - unless @invites.empty?
+        .sent-invites
+          %label= t("project_members.already_invited")
         - @invites.each do |invite|
           .user-info.email-invited
             = image_tag('icons/mail-icon.svg', class: 'icon')
             = invite.email
-    - if @can_delete
-      %span.icon-trash
-      = link_to t('project.delete_project'), @project, method: :delete, data: { confirm: t('project.delete_confirmation') }
+      - if @can_delete
+        %span.icon-trash
+        = link_to t('project.delete_project'), @project, method: :delete, data: { confirm: t('project.delete_confirmation') }
+    .edit-project-form
+      = render 'projects/edit', project: @project, errors: @errors
