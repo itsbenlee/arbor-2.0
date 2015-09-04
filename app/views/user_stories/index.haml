@@ -23,6 +23,12 @@
         %li.user-story{ data: { id: user_story.id,
           url: edit_user_story_path(user_story),
           backlog_order: user_story.backlog_order } }
+          .hover-options
+            %span.icon-arrow.up
+            %span.center-icon
+              = link_to user_story_path(user_story), title: 'Delete User Story', method: :delete do
+                %span.icon-trash
+            %span.icon-arrow.down
           .number
             = "##{user_story.story_number}"
           %span.points 2 points
@@ -33,11 +39,6 @@
             %span=user_story.action
             %span.grey-prefix= t('backlog.user_stories.result_prefix')
             %span=user_story.result
-      .delete-story.large-1.columns
-        = link_to(image_tag('icons/delete-icon.svg', title: 'Delete User Story'),
-        user_story_path(user_story),
-        method: :delete,
-        class:'trash-btn')
   .user-story-edit-form.large-7.columns
     = render 'user_stories/form', project: @project,
     user_story: @user_story,
