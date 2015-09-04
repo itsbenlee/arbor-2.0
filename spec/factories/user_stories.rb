@@ -4,6 +4,7 @@ FactoryGirl.define do
     action   { 'be able to log in'}
     result   { 'so that I can use the app' }
     project  { create :project }
+    epic     { true }
   end
 
   factory :user_story do

@@ -33,6 +33,8 @@
       maxlength:   255,                                    |
       class:      'result'                                 |
     )                                                      |
+  = form.label 'Epic'
+  = form.check_box :epic
   - if hypothesis
     = form.hidden_field :hypothesis_id, value: hypothesis.id
   = form.submit I18n.translate('save'), class: 'hide user-story-submit'

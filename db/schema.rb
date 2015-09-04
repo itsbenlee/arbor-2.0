@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150902182239) do
+ActiveRecord::Schema.define(version: 20150904112443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20150902182239) do
     t.string   "recipient_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "value"
   end
 
   add_index "activities", ["owner_id", "owner_type"], name: "index_activities_on_owner_id_and_owner_type", using: :btree
@@ -106,9 +107,9 @@ ActiveRecord::Schema.define(version: 20150902182239) do
   add_index "projects", ["owner_id"], name: "index_projects_on_owner_id", using: :btree
 
   create_table "user_stories", force: :cascade do |t|
-    t.string   "role",             limit: 100,               null: false
-    t.string   "action",           limit: 255,               null: false
-    t.string   "result",           limit: 255,               null: false
+    t.string   "role",             limit: 100,                 null: false
+    t.string   "action",           limit: 255,                 null: false
+    t.string   "result",           limit: 255,                 null: false
     t.integer  "estimated_points", limit: 2
     t.string   "priority",         limit: 1,   default: "s"
     t.integer  "project_id"
@@ -118,6 +119,7 @@ ActiveRecord::Schema.define(version: 20150902182239) do
     t.integer  "order"
     t.integer  "story_number"
     t.integer  "backlog_order"
+    t.boolean  "epic",                         default: false
   end
 
   add_index "user_stories", ["hypothesis_id"], name: "index_user_stories_on_hypothesis_id", using: :btree
