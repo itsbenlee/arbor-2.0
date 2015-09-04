@@ -1,12 +1,12 @@
 %aside#sidebar.columns.small-2
-  %ul
+  %ul.sidebar-project-list
     %li
       = link_to t('sidebar.my_projects'), projects_path
       = link_to '#' do
         %span.icon-arrow
     - projects.each do |project|
       %li
-        = link_to project.name, project_hypotheses_path(project_id: project.id)
+        = link_to project.name, project_hypotheses_path(project_id: project.id), class: 'sidebar-project-item'
         = link_to edit_project_path(project), id: 'icon_edit_project' do
           %span.icon-edit
     %li
