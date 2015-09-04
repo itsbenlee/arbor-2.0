@@ -1,27 +1,44 @@
-.row
-  .large-2.large-offset-10.column
-    = link_to t('backlog.user_stories.new'), project_user_stories_path(@project)
-.row
-  .large-5.column
+- content_for :top_links do
+  #top-nav
+    = link_to '#', class: "nav-links" do
+      = image_tag('icons/search-icon.svg', class: 'icon')
+      = t('top_nav.search')
+    = link_to '#', {"aria-controls" => "drop1", "aria-expanded" => "false", id: "export-button", class: "nav-links", "data-dropdown" => "drop1"} do
+      = image_tag('icons/export-icon.svg', class: 'icon')
+      = t('top_nav.export')
+    = link_to project_user_stories_path(@project), class: "nav-links" do
+      = image_tag('icons/add-icon.svg', class: 'icon')
+      = t('backlog.user_stories.new')
+    %ul#drop1.f-dropdown{"aria-hidden" => "true", "data-dropdown-content" => "", :tabindex => "-1"}
+      %li#csv_export_link
+        = link_to t('csv'), project_hypotheses_export_path(@project, format: :csv)
+      %li#json_export_link
+        = link_to t('json'), project_hypotheses_export_path(@project, format: :json)
+      %li#trello_export_link
+        = link_to t('trello'), '#'
+%section.backlog.row
+  .user-stories.large-5.columns
     - @project.user_stories.each do |user_story|
       %ul.user-story-list{ data: { url: project_reorder_backlog_path(@project) } }
         %li.user-story{ data: { id: user_story.id,
-        url: edit_user_story_path(user_story),
-        backlog_order: user_story.backlog_order } }
-          .story-number
+          url: edit_user_story_path(user_story),
+          backlog_order: user_story.backlog_order } }
+          .number
             = "##{user_story.story_number}"
-          = t('backlog.user_stories.role_prefix') + |
-          ' ' + user_story.role + ' ' +             |
-          t('backlog.user_stories.action_prefix') + |
-          ' ' + user_story.action + ' ' +           |
-          t('backlog.user_stories.result_prefix') + |
-          ' ' + user_story.result                   |
+          %span.points 2 points
+          .story-text
+            %span.grey-prefix= t('backlog.user_stories.role_prefix')
+            %span=user_story.role
+            %span.grey-prefix= t('backlog.user_stories.action_prefix')
+            %span=user_story.action
+            %span.grey-prefix= t('backlog.user_stories.result_prefix')
+            %span=user_story.result
       .delete-story.large-1.columns
         = link_to(image_tag('icons/delete-icon.svg', title: 'Delete User Story'),
         user_story_path(user_story),
         method: :delete,
         class:'trash-btn')
-  .large-7.column.user-story-edit-form
+  .user-story-edit-form.large-7.columns
     = render 'user_stories/form', project: @project,
     user_story: @user_story,
     hypothesis: nil,
