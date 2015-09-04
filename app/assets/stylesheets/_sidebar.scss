@@ -29,7 +29,11 @@
     &#workspace {
       li {
         padding: rem-calc(0 20);
-        &:first-of-type { padding-top: rem-calc(14); }
+
+        &:first-of-type {
+          color: darken($black-35, 20%);
+          padding-top: rem-calc(14);
+        }
       }
     }
 
@@ -148,12 +152,14 @@
       }
     } // li
 
-    .canvas,
-    .lab,
-    .backlog {
-      &:hover {
-        .bullet::before { right: rem-calc(90); }
-      }
-    }//section links
+    @media #{ $large-up } {
+      .canvas,
+      .lab,
+      .backlog {
+        &:hover {
+          .bullet::before { right: rem-calc(24); }
+        }
+      }//section links
+    }
   } // ul
 } // sidebar

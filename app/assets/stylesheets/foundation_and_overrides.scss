@@ -108,7 +108,7 @@ $secondary-color: #252525;
 $success-color: #2ecc71;
 $canvas-color: #e62940; // red
 $lab-color: #4ba4f6;  // cyan
-$backlog-color: #2ecc71; //green
+$backlog-color: $success-color; //green
 $light-bg: #fbfbfb;
 $font-color-2: #626262;
 $font-color-3: #b3b3b3;

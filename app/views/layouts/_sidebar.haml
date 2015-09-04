@@ -13,10 +13,7 @@
       =link_to t('create_project.project_button'), new_project_path, class: 'button radius small success'
   %ul#workspace.active
     %li
-      = link_to '#' do
-        = t('sidebar.workspace')
-      = link_to '#' do
-        %span.icon-arrow
+      = t('sidebar.workspace')
     %li
       = link_to '#', class: 'canvas' do
         = image_tag('icons/canvas-icon.svg', class: 'icon')
