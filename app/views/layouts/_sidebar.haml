@@ -1,5 +1,5 @@
 %aside#sidebar.columns.small-2
-  %ul.active
+  %ul
     %li
       = link_to t('sidebar.my_projects'), projects_path
       = link_to '#' do
@@ -11,6 +11,24 @@
           %span.icon-edit
     %li
       =link_to t('create_project.project_button'), new_project_path, class: 'button radius small success'
+  %ul#workspace.active
+    %li
+      = t('sidebar.workspace')
+    %li
+      = link_to '#', class: 'canvas' do
+        = image_tag('icons/canvas-icon.svg', class: 'icon')
+        = t('sidebar.canvas')
+        %span.bullet
+    %li
+      = link_to '#', class: 'lab' do
+        = image_tag('icons/lab-icon.svg', class: 'icon')
+        = t('sidebar.lab')
+        %span.bullet
+    %li
+      = link_to '#', class: 'backlog' do
+        = image_tag('icons/backlog-icon.svg', class: 'icon')
+        = t('sidebar.backlog')
+        %span.bullet
   %ul
     %li
       %p
