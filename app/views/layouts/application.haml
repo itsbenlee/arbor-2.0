@@ -25,7 +25,7 @@
       :javascript
         try{Typekit.load();}catch(e){}
   %body{'data-action' => action_name, 'data-controller' => controller_name }
-    = render 'layouts/sidebar', projects: @projects
+    = render 'layouts/sidebar', projects: @projects, current_project: @project
     .columns.small-10.right-app-content
       = yield :top_links
       .content-general
