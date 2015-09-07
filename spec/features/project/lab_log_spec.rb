@@ -54,12 +54,10 @@ feature 'Log lab activity' do
       let(:hypothesis)       { build :hypothesis }
 
       background do
-        visit project_path project
+        visit project_hypotheses_path project
       end
 
       scenario 'should log adding hypotheses' do
-        click_link project.name
-
         PublicActivity.with_tracking do
           within '.hypothesis-new' do
             fill_in 'hypothesis_description', with: hypothesis.description
@@ -76,7 +74,7 @@ feature 'Log lab activity' do
 
       scenario 'should log removing hypotheses' do
         create :hypothesis, project: project
-        click_link project.name
+        visit current_path
 
         PublicActivity.with_tracking do
           find('.delete-hypothesis').click
@@ -112,11 +110,11 @@ feature 'Log lab activity' do
       let(:user_story)  { build :user_story }
 
       background do
-        visit project_path project
+        visit project_hypotheses_path project
       end
 
       scenario 'should log adding user stories' do
-        click_link project.name
+        visit current_path
 
         within 'form.new_user_story' do
           fill_in :user_story_role, with: user_story.role
@@ -136,7 +134,7 @@ feature 'Log lab activity' do
 
       scenario 'should log removing user stories' do
         create :user_story, project: hypothesis.project, hypothesis: hypothesis
-        click_link project.name
+        visit current_path
 
         PublicActivity.with_tracking do
           within '.user-story' do
@@ -155,12 +153,10 @@ feature 'Log lab activity' do
       let(:goal)        { build :goal }
 
       background do
-        visit project_path project
+        visit project_hypotheses_path project
       end
 
       scenario 'should log adding goals' do
-        click_link project.name
-
         within '.new-goal' do
           fill_in :goal_title, with: goal.title
           PublicActivity.with_tracking do
@@ -176,7 +172,7 @@ feature 'Log lab activity' do
       scenario 'should log removing goals' do
         create :goal, hypothesis: hypothesis
 
-        click_link project.name
+        visit current_path
 
         within '.goals' do
           PublicActivity.with_tracking do
@@ -196,8 +192,7 @@ feature 'Log lab activity' do
       PublicActivity.with_tracking do
         @project = create :project, owner: user
       end
-      visit project_path @project
-      click_link @project.name
+      visit project_hypotheses_path @project
     end
 
     scenario 'should show the link to access the log' do
