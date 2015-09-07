@@ -17,4 +17,9 @@ describe Hypothesis do
       expect(hypothesis.order).to be(index + 1)
     end
   end
+
+  it_behaves_like 'a logged entity' do
+    let(:entity)      { build :hypothesis, description: 'This is a test' }
+    let(:description) { 'This is a test' }
+  end
 end

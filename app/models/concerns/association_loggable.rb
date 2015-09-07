@@ -32,7 +32,11 @@ module AssociationLoggable
           "after_#{action}_for_#{assoc_model}".to_sym
         ) << lambda do |_klass, object, assoc_object|
           key = "#{action}_#{assoc_model.singularize}"
-          object.create_activity key, recipient: assoc_object if object.save
+          object.create_activity(
+            key,
+            recipient: (assoc_object if object.save),
+            value: assoc_object.log_description
+          )
         end
       end
     end

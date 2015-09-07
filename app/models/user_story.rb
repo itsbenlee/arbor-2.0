@@ -22,6 +22,19 @@ class UserStory < ActiveRecord::Base
     (2..12).map { |index| fib[index] }
   end
 
+  def log_description
+    "#{I18n.t('backlog.user_stories.role_prefix')} "\
+      "#{role} "\
+      "#{I18n.t('backlog.user_stories.action_prefix')} "\
+      "#{action} "\
+      "#{I18n.t('backlog.user_stories.result_prefix')} "\
+      "#{result}"
+  end
+
+  def recipient
+    project
+  end
+
   private
 
   def order_in_hypotheses

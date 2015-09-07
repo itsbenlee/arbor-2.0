@@ -107,21 +107,21 @@ feature 'Log lab activity' do
       end
     end
 
-    context 'epics' do
+    context 'user stories' do
       let!(:hypothesis) { create :hypothesis, project: project }
-      let(:epic)        { build :epic }
+      let(:user_story)  { build :user_story }
 
       background do
         visit project_path project
       end
 
-      scenario 'should log adding epics' do
+      scenario 'should log adding user stories' do
         click_link project.name
 
         within 'form.new_user_story' do
-          fill_in :user_story_role, with: epic.role
-          fill_in :user_story_action, with: epic.action
-          fill_in :user_story_result, with: epic.result
+          fill_in :user_story_role, with: user_story.role
+          fill_in :user_story_action, with: user_story.action
+          fill_in :user_story_result, with: user_story.result
 
           PublicActivity.with_tracking do
             click_button 'Save'
@@ -134,8 +134,8 @@ feature 'Log lab activity' do
         expect(activities.third.key).to eq 'hypothesis.add_user_story'
       end
 
-      scenario 'should log removing epics' do
-        create :epic, project: hypothesis.project, hypothesis: hypothesis
+      scenario 'should log removing user stories' do
+        create :user_story, project: hypothesis.project, hypothesis: hypothesis
         click_link project.name
 
         PublicActivity.with_tracking do
@@ -188,6 +188,31 @@ feature 'Log lab activity' do
         expect(activities.first.key).to eq 'goal.destroy'
         expect(activities.second.key).to eq 'hypothesis.remove_goal'
       end
+    end
+  end
+
+  context 'displaying the log' do
+    background do
+      PublicActivity.with_tracking do
+        @project = create :project, owner: user
+      end
+      visit project_path @project
+      click_link @project.name
+    end
+
+    scenario 'should show the link to access the log' do
+      within 'div#top-nav' do
+        expect(page).to have_link 'Latest changes'
+      end
+    end
+
+    scenario 'should display the log after following the link' do
+      within 'div#top-nav' do
+        click_link 'Latest changes'
+      end
+
+      expect(page).to have_content 'The project was created'
+      expect(page).to have_content 'A new collaborator was added'
     end
   end
 end

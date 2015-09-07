@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
-  before_action :load_project, only: [:show, :edit, :update, :destroy]
+  before_action :load_project, only: [:show, :edit, :update, :destroy, :log]
+
   def index
   end
 
@@ -48,6 +49,13 @@ class ProjectsController < ApplicationController
     project = Project.includes(:user_stories).find(params[:project_id])
     project_services = ProjectServices.new(project)
     render json: project_services.reorder_stories(update_order_params)
+  end
+
+  def log
+    project_services = ProjectServices.new(@project)
+    @activities = project_services.collect_log_entries
+
+    render layout: false
   end
 
   private

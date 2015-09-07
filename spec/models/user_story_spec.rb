@@ -34,4 +34,11 @@ RSpec.describe UserStory do
       expect(user_story.backlog_order).to be(index + 1)
     end
   end
+
+  it_behaves_like 'a logged entity' do
+    let(:entity) do
+      build :user_story, role: 'User', action: 'work', result: 'test'
+    end
+    let(:description) { 'As a User I should be able to work so that test' }
+  end
 end

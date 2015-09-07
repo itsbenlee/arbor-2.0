@@ -24,4 +24,9 @@ describe Invite do
     expect{ create :invite, email: 'test2@test2.com', project: project }
       .not_to raise_error
   end
+
+  it_behaves_like 'a logged entity' do
+    let(:entity)      { build :invite, email: 'test@mail.com' }
+    let(:description) { 'test@mail.com' }
+  end
 end

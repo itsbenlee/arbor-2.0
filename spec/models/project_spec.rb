@@ -10,4 +10,9 @@ describe Project do
   it { should have_many :hypotheses }
   it { should have_many :user_stories }
   it { should belong_to :owner }
+
+  it_behaves_like 'a logged entity' do
+    let(:entity)      { build :project, name: 'Test project' }
+    let(:description) { nil }
+  end
 end
