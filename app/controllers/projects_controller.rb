@@ -38,7 +38,7 @@ class ProjectsController < ApplicationController
 
     if @project.save
       assign_associations
-      redirect_to projects_path
+      redirect_to project_canvases_path(@project)
     else
       @errors = @project.errors.full_messages
       render :new, status: 400

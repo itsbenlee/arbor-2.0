@@ -1,12 +1,13 @@
 %aside#sidebar.columns.small-2
   %ul.sidebar-project-list
     %li
-      - if current_project && !current_project.new_record?
-        = link_to current_project.name, '#'
-      - else
-        = link_to t('sidebar.my_projects'), '#'
-      = link_to '#' do
-        %span.icon-arrow
+      .projects-list
+        - if current_project && !current_project.new_record?
+          = link_to current_project.name, '#'
+        - else
+          = link_to t('sidebar.my_projects'), '#'
+        = link_to '#' do
+          %span.icon-arrow
     - projects.each do |project|
       %li
         = link_to project.name, project_hypotheses_path(project_id: project.id), class: 'sidebar-project-item'
