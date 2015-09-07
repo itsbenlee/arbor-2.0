@@ -2,7 +2,13 @@
   .row
     = link_to goal_path(goal), title: 'Delete Goal', method: :delete do
       %span.icon-trash
-    = link_to edit_goal_path(goal), title: 'Edit Goal', class: 'goal-title' do
+    .goal-title.goal-item{ data: { goal_id: goal.id } }
       = goal.title
       %span.icon-check
       %span.icon-edit
+    .goal-title.goal-item-editable{ data: { goal_id: goal.id } }
+      = form_for goal do |form|
+        = form.text_field :title
+        %span.icon-check
+        %span.icon-edit
+        = form.submit :save, class: 'hide', id: 'update-goal-btn'
