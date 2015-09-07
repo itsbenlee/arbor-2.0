@@ -25,8 +25,8 @@
           backlog_order: user_story.backlog_order } }
           .hover-options
             %span.icon-arrow.up
-            %span.center-icon
-              = link_to user_story_path(user_story), title: 'Delete User Story', method: :delete do
+            %span.center-icon.delete-story
+              = link_to user_story_path(user_story), title: 'Delete User Story', class: 'trash-btn', method: :delete do
                 %span.icon-trash
             %span.icon-arrow.down
           .number
