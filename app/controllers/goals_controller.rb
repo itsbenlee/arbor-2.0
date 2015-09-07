@@ -23,7 +23,7 @@ class GoalsController < ApplicationController
     @goal.update_attributes(goal_params)
 
     if @goal.save
-      redirect_to project_hypotheses_path(@hypothesis.project)
+      redirect_to :back
     else
       @errors = @goal.errors.full_messages
       render :edit, status: 400

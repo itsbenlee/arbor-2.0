@@ -52,7 +52,7 @@ class HypothesesController < ApplicationController
       @hypothesis.try(:project) ||
       Project
       .includes(:members, :canvas, hypotheses: [:user_stories, :goals])
-      .order('hypotheses.order', 'user_stories.order')
+      .order('hypotheses.order', 'user_stories.order', 'goals.created_at')
       .find(params[:project_id])
   end
 
