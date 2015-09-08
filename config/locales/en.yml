@@ -40,12 +40,12 @@ en:
     backlog: 'Backlog'
   labs:
     hypotheses:
-      enter_description: "Write a new Hypothesis here"
+      enter_description: "Write a new hypothesis"
       export: "Export"
     goals:
       title: "Title"
       enter_title: "Enter Title"
-      enter_goal: "Write here a new Goal..."
+      enter_goal: "Write a new goal that measure your hypothesis"
       export: "Export"
       delete: "Delete Goal"
     log: "Latest changes"
@@ -54,10 +54,10 @@ en:
     project_button: "Create new project"
     project_name: "Project name"
     section_title: "Project info"
-    save_button: "Save Project"
+    save_button: "Create Project"
     member_mail: "Member mail"
     project_members: "Project members"
-    add_members: "New Member"
+    add_members: "Add Member"
   project:
     delete_project: 'Delete project'
     delete_confirmation: |
