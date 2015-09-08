@@ -6,8 +6,8 @@
           %li= error
   %span.square
   %span.icon-edit
-  .user-story-input.large-3.column
-    = t('backlog.user_stories.role')
+  .user-story-input.column.role
+    = t('backlog.user_stories.role_prefix')
     = form.text_field(                                   |
       :role,                                             |
       placeholder: t('backlog.user_stories.enter_role'), |
@@ -15,7 +15,7 @@
       maxlength:   100,                                  |
       class:      'role'                                 |
     )                                                    |
-  .user-story-input.large-5.column
+  .user-story-input.column.action
     = t('backlog.user_stories.action_prefix')
     .user-story-priority
       = user_story.priority
@@ -27,8 +27,8 @@
       maxlength:   255,                                    |
       class:      'action'                                 |
     )                                                      |
-  .user-story-input.large-4.column
-    = t('backlog.user_stories.result')
+  .user-story-input.column.result
+    = t('backlog.user_stories.result_prefix')
     = form.text_field(                                     |
       :result,                                             |
       placeholder: t('backlog.user_stories.enter_result'), |

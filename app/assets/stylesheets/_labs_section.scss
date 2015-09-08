@@ -215,6 +215,21 @@
       .user-story-input {
         @include single-transition(color, .25s, ease-in);
         color: rgba($black, .75);
+
+        &.role {
+          // scss-lint:disable PlaceholderInExtend
+          @extend .large-3;
+        }
+
+        &.action {
+          // scss-lint:disable PlaceholderInExtend
+          @extend .large-5;
+        }
+
+        &.result {
+          // scss-lint:disable PlaceholderInExtend
+          @extend .large-4;
+        }
       }
 
       input {
