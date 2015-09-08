@@ -34,13 +34,14 @@ UTIL = {
   }
 };
 
-$('#sidebar li .icon-arrow').bind('click', function(event) {
-  var $this    = $(this),
-      $parent  = $this.closest('ul');
+var $projectList = $('#sidebar li .projects-list');
+
+$projectList.click(function() {
+  var $this = $(this),
+      $parent = $this.closest('ul');
 
   $parent.toggleClass('active');
-
-  event.preventDefault();
+  return false;
 });
 
 $('#sidebar a').each(function() {

@@ -34,6 +34,15 @@ feature 'Create a new project' do
     expect(Project.first.name).to eq 'Test Project'
   end
 
+  scenario 'should redirect to canvas after create' do
+    within '.content-general' do
+      click_link 'Create new project'
+    end
+    fill_in 'project_name', with: 'Test Project'
+    click_button 'Save Project'
+    expect(page).to have_css('#canvas')
+  end
+
   scenario 'should not create invites when no name is set', js: true do
     within '.content-general' do
       click_link 'Create new project'
