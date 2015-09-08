@@ -15,6 +15,12 @@ feature 'Show project details' do
     expect(page).to have_href edit_project_path(project)
   end
 
+  scenario 'should show the project name on the sidebar' do
+    within '.sidebar-project-list' do
+      expect(page).to have_content(project.name)
+    end
+  end
+
   scenario 'should show the project name' do
     expect(page).to have_content project.name
   end
