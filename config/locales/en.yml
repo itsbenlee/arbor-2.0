@@ -34,10 +34,14 @@ en:
   sidebar:
     my_projects: "My projects"
     powered_by: "Powered by"
-    workspace: 'Workspace'
-    canvas: 'Canvas'
-    lab: 'Lab'
-    backlog: 'Backlog'
+    workspace: "Workspace"
+    extras: "Extras"
+    canvas: "Canvas"
+    lab: "Lab"
+    backlog: "Backlog"
+    links: "Links"
+    members: "Project Members"
+    activity: "Activity"
   labs:
     hypotheses:
       enter_description: "Write a new hypothesis"

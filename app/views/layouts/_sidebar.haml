@@ -1,40 +1,56 @@
 %aside#sidebar.columns.small-2
-  %ul.sidebar-project-list
+  %ul.sidebar-project-list.active
     %li
-      .projects-list
-        - if current_project && !current_project.new_record?
-          = link_to current_project.name, '#'
-        - else
-          = link_to t('sidebar.my_projects'), '#'
-        = link_to '#' do
-          %span.icon-arrow
+      - if current_project && !current_project.new_record?
+        = link_to current_project.name, current_project
+      - else
+        = link_to t('sidebar.my_projects'), projects_path
+      = link_to '#' do
+        %span.icon-arrow
+
     - projects.each do |project|
       %li
-        = link_to project.name, project_hypotheses_path(project_id: project.id), class: 'sidebar-project-item'
+        = link_to project.name, project_canvases_path(project_id: project.id), class: 'sidebar-project-item'
         = link_to edit_project_path(project), id: 'icon_edit_project' do
           %span.icon-edit
     %li
       =link_to t('create_project.project_button'), new_project_path, class: 'button radius small success'
   - if current_project && !current_project.new_record?
-    %ul#workspace.active
-      %li
-        = t('sidebar.workspace')
-      %li
-        = link_to project_canvases_path(current_project), class: 'canvas' do
-          = image_tag('icons/canvas-icon.svg', class: 'icon')
-          = t('sidebar.canvas')
-          %span.bullet
-      %li
-        = link_to project_hypotheses_path(current_project), class: 'lab' do
-          = image_tag('icons/lab-icon.svg', class: 'icon')
-          = t('sidebar.lab')
-          %span.bullet
-      %li
-        = link_to project_user_stories_path(current_project), class: 'backlog' do
-          = image_tag('icons/backlog-icon.svg', class: 'icon')
-          = t('sidebar.backlog')
-          %span.bullet
-  %ul
+    .toolbar
+      %ul#workspace
+        %li
+          = t('sidebar.workspace')
+        %li
+          = link_to project_canvases_path(current_project), class: 'canvas' do
+            = image_tag('icons/canvas-icon.svg', alt: t('sidebar.canvas'), class: 'icon')
+            = t('sidebar.canvas')
+            %span.bullet
+        %li
+          = link_to project_hypotheses_path(current_project), class: 'lab' do
+            = image_tag('icons/lab-icon.svg', alt: t('sidebar.lab'), class: 'icon')
+            = t('sidebar.lab')
+            %span.bullet
+        %li
+          = link_to project_user_stories_path(current_project), class: 'backlog' do
+            = image_tag('icons/backlog-icon.svg', alt: t('sidebar.backlog'), class: 'icon')
+            = t('sidebar.backlog')
+            %span.bullet
+      %ul#extras
+        %li
+          = t('sidebar.extras')
+        %li
+          = link_to '#', class: 'canvas' do
+            = image_tag('icons/link-icon.svg', alt: t('sidebar.links'), class: 'icon')
+            = t('sidebar.links')
+        %li
+          = link_to '#', class: 'lab' do
+            = image_tag('icons/members-icon.svg', alt: t('sidebar.members'), class: 'icon')
+            = t('sidebar.members')
+        %li
+          = link_to '#', class: 'backlog' do
+            = image_tag('icons/activity-icon.svg', alt: t('sidebar.activity'), class: 'icon')
+            = t('sidebar.activity')
+  %ul.footer.columns.small-2
     %li
       %p
         = t('sidebar.powered_by')
