@@ -18,7 +18,7 @@ feature 'Create a new project' do
     within '.content-general' do
       click_link 'Create new project'
     end
-    click_button 'Save Project'
+    find('.create-project-btn').click
 
     expect(page).to have_text "Name can't be blank"
   end
@@ -28,7 +28,7 @@ feature 'Create a new project' do
       click_link 'Create new project'
     end
     fill_in 'project_name', with: 'Test Project'
-    click_button 'Save Project'
+    click_button 'Create Project'
 
     expect(page).to have_content 'Test Project'
     expect(Project.first.name).to eq 'Test Project'
@@ -47,9 +47,9 @@ feature 'Create a new project' do
     within '.content-general' do
       click_link 'Create new project'
     end
-    click_button 'New Member'
+    click_button 'Add Member'
     fill_in 'member_0', with: 'test@test.com'
-    click_button 'Save Project'
+    click_button 'Create Project'
 
     expect(Invite.count).to eq(0)
   end
@@ -61,51 +61,51 @@ feature 'Create a new project' do
     end
 
     scenario 'should ignore empty email fields' do
-      click_button 'New Member'
-      click_button 'Save Project'
+      click_button 'Add Member'
+      click_button 'Create Project'
 
       expect(Project.first.members.count).to eq 1
       expect(Project.first.members).to include user
     end
 
     scenario 'should ignore non-existing users' do
-      click_button 'New Member'
+      click_button 'Add Member'
       fill_in 'member_0', with: 'non_existing@test.com'
-      click_button 'Save Project'
+      click_button 'Create Project'
 
       expect(Project.first.members.count).to eq 1
       expect(Project.first.members).to include user
     end
 
     scenario 'should ignore duplicate current user' do
-      click_button 'New Member'
-      click_button 'New Member'
+      click_button 'Add Member'
+      click_button 'Add Member'
 
       fill_in 'member_0', with: user.email
       fill_in 'member_1', with: user.email
 
-       click_button 'Save Project'
+       click_button 'Create Project'
       expect(Project.first.members.count).to eq 1
     end
 
     scenario 'should ignore duplicate emails' do
       additional_member = create :user, email: 'existing@test.com'
 
-      click_button 'New Member'
-      click_button 'New Member'
+      click_button 'Add Member'
+      click_button 'Add Member'
 
       fill_in 'member_0', with: additional_member.email
       fill_in 'member_1', with: additional_member.email
-       click_button 'Save Project'
+       click_button 'Create Project'
       expect(Project.first.members.count).to eq 2
     end
 
     scenario 'should add existing users to the project' do
       additional_member = create :user, email: 'existing@test.com'
 
-      click_button 'New Member'
+      click_button 'Add Member'
       fill_in 'member_0', with: 'existing@test.com'
-      click_button 'Save Project'
+      click_button 'Create Project'
 
       expect(Project.first.members.count).to eq 2
       [user, additional_member].each do |member|
