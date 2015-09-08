@@ -1,0 +1,25 @@
+.hypothesis{ data: { id: hypothesis.id, order: hypothesis.order } }
+  .hypothesis-form.clearfix
+    = render 'hypotheses/edit', hypothesis: hypothesis, hypothesis_types: hypothesis_types
+    .description.large-12.columns.hypothesis-show{ data: { id: hypothesis.id } }
+      = link_to                        |
+         hypothesis_path(hypothesis),  |
+         method: :delete,              |
+         class: 'delete-hypothesis',   |
+         title: 'Delete Hypothesis' do |
+        %span.icon-trash
+      .hypothesis-title
+        %span.bullet
+        = hypothesis.description
+    .type.small-12.columns.hypothesis-type-show{ data: { id: hypothesis.id } }= hypothesis.hypothesis_type_description
+  .content.row.collapse
+    .goals
+      - if hypothesis.goals.any?
+        = render 'goals/index', goals: hypothesis.goals
+      .new-goal.row
+        = render 'goals/new', goal: Goal.new, hypothesis: hypothesis
+    .stories
+      - if hypothesis.user_stories.any?
+        = render 'user_stories/list', user_stories: hypothesis.user_stories, hypothesis: hypothesis
+      .new-user-story.row
+        = render 'user_stories/new', user_story: UserStory.new, project: project, hypothesis: hypothesis

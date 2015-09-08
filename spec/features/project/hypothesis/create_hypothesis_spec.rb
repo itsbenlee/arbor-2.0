@@ -19,10 +19,10 @@ feature 'Create hypothesis' do
       click_button 'Save'
     end
 
-    within '.hypotheses-list' do
-      expect(find('.description')).to have_text(hypothesis_description)
-      expect(find('.type')).to have_text(hypothesis_type.description)
+    within '.hypothesis-show' do
+      expect(find('.hypothesis-title')).to have_text(hypothesis_description)
     end
+    expect(find('.hypothesis-type-show')).to have_text(hypothesis_type.description)
   end
 
   scenario 'create hypothesis without description' do

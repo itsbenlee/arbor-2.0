@@ -57,4 +57,5 @@ ARBOR.hypotheses.init = function() {
   });
   new UserStory();
   new Goal();
+  new HypothesisShow();
 };

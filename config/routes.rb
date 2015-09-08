@@ -11,7 +11,7 @@ Railsroot::Application.routes.draw do
 
   resources :projects, shallow: true do
     get 'log', on: :member
-    resources :hypotheses, only: [:index, :create]
+    resources :hypotheses, only: [:index, :create, :update]
     resources :canvases, only: [:index, :create]
     put 'user_stories/order',
         controller: :projects,

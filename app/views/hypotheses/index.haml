@@ -30,29 +30,8 @@
   - if @project.hypotheses.any?
     .hypotheses-list{ data:{ project_path: project_hypotheses_order_path(@project) } }
       - @project.hypotheses.each do |hypothesis|
-        .hypothesis{ data: { id: hypothesis.id, order: hypothesis.order } }
-          .description.large-12.columns
-            = link_to                        |
-               hypothesis_path(hypothesis),  |
-               method: :delete,              |
-               class: 'delete-hypothesis',   |
-               title: 'Delete Hypothesis' do |
-              %span.icon-trash
-            .hypothesis-title
-              %span.bullet
-              = hypothesis.description
-          .type.small-12.columns= hypothesis.hypothesis_type_description
-          .content.row.collapse
-            .goals
-              - if hypothesis.goals.any?
-                = render 'goals/index', goals: hypothesis.goals
-              .new-goal.row
-                = render 'goals/new', goal: Goal.new, hypothesis: hypothesis
-            .stories
-              - if hypothesis.user_stories.any?
-                = render 'user_stories/list', user_stories: hypothesis.user_stories, hypothesis: hypothesis
-              .new-user-story.row
-                = render 'user_stories/new', user_story: UserStory.new, project: @project, hypothesis: hypothesis
+        = render 'hypotheses/show', hypothesis: hypothesis,
+        hypothesis_types: @hypothesis_types, project: @project
   .hypothesis-new
     .hypothesis
       .content.row
