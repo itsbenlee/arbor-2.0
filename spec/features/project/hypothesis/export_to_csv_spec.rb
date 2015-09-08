@@ -31,6 +31,21 @@ feature 'Export hypothesis to csv as a project member' do
     response_headers = page.response_headers
     expect(response_headers['Content-Disposition']).to have_text('inline')
     expect(page).to have_text(hypothesis.description)
-    expect(page).to have_text(hypothesis.id)
+  end
+
+  scenario 'can download csv with a goal' do
+    goal = create :goal, hypothesis: hypothesis
+    visit project_hypotheses_export_path(project, format: :csv)
+    response_headers = page.response_headers
+    expect(response_headers['Content-Disposition']).to have_text('inline')
+    expect(page).to have_text(goal.title)
+  end
+
+  scenario 'can download csv with a user story' do
+    user_story = create :user_story, hypothesis: hypothesis, action: 'MY AMAZING ACTION'
+    visit project_hypotheses_export_path(project, format: :csv)
+    response_headers = page.response_headers
+    expect(response_headers['Content-Disposition']).to have_text('inline')
+    expect(page).to have_text(user_story.action)
   end
 end

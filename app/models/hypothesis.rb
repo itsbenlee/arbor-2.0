@@ -10,6 +10,7 @@ class Hypothesis < ActiveRecord::Base
   has_many :goals, dependent: :destroy
 
   delegate :description, :code, to: :hypothesis_type, prefix: true
+  delegate :name, to: :project, prefix: true
 
   include AssociationLoggable
 
@@ -21,9 +22,11 @@ class Hypothesis < ActiveRecord::Base
 
   def self.to_csv(hypotheses, options = {})
     CSV.generate(options) do |csv|
-      csv << column_names
       hypotheses.each do |hypothesis|
-        csv << hypothesis.attributes.values_at(*column_names)
+        hypothesis_csv(csv, hypothesis)
+        goals_csv(csv, hypothesis.goals)
+        user_story_csv(csv, hypothesis.user_stories)
+        csv << %w(- - - - -)
       end
     end
   end
@@ -59,5 +62,38 @@ class Hypothesis < ActiveRecord::Base
 
   def order_in_project
     self.order = project.hypotheses.maximum(:order).to_i + 1
+  end
+
+  def self.goals_csv(csv, goals)
+    csv << %w(goal_title)
+    goals.each do |goal|
+      csv << [goal.title]
+    end
+  end
+
+  def self.user_story_csv(csv, user_stories)
+    csv << %w(user_story_points
+              user_story_priority
+              user_story_role
+              user_story_action
+              user_story_result)
+    user_stories.each do |user_story|
+      csv << [user_story.estimated_points,
+              user_story.priority,
+              user_story.role,
+              user_story.action,
+              user_story.result]
+    end
+  end
+
+  def self.hypothesis_csv(csv, hypothesis)
+    csv << %w(hypothesis_description
+              hypothesis_project
+              hypothesis_type
+              order)
+    csv << [hypothesis.description,
+            hypothesis.project_name,
+            hypothesis.hypothesis_type_description,
+            hypothesis.order]
   end
 end
