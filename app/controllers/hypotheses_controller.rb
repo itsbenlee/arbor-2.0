@@ -1,5 +1,5 @@
 class HypothesesController < ApplicationController
-  before_action :load_hypothesis, only: [:destroy]
+  before_action :load_hypothesis, only: [:destroy, :update]
   before_action :check_view_permission, only: [:index, :export]
   before_action :check_edit_permission, only: [:create, :update_order, :destroy]
 
@@ -25,6 +25,12 @@ class HypothesesController < ApplicationController
     @project.hypotheses.destroy(@hypothesis)
 
     redirect_to project_hypotheses_path(@project)
+  end
+
+  def update
+    @hypothesis.update_attributes(hypothesis_params)
+    @hypothesis.save
+    redirect_to :back
   end
 
   def update_order

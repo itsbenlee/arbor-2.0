@@ -16,7 +16,9 @@ feature 'Delete hypothesis' do
   end
 
   scenario 'should delete the hypothesis after clicking the link' do
-    find('.delete-hypothesis').click
+    within '.hypothesis-show' do
+      find('.delete-hypothesis').click
+    end
 
     expect(Hypothesis.count).to eq 0
     expect(page).not_to have_content hypothesis.description
@@ -34,7 +36,9 @@ feature 'Delete hypothesis' do
       expect(find('#user_story_result').value).to have_text user_story.result
     end
 
-    find('.delete-hypothesis').click
+    within '.hypothesis-show' do
+      find('.delete-hypothesis').click
+    end
 
     expect(UserStory.count).to eq 1
     expect(page).not_to have_css "#edit_user_story_#{user_story.id}"

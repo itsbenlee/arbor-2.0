@@ -1,0 +1,13 @@
+.description.large-12.columns.hypothesis-edit{ data: { id: hypothesis.id } }
+  = link_to                        |
+     hypothesis_path(hypothesis),  |
+     method: :delete,              |
+     class: 'delete-hypothesis',   |
+     title: 'Delete Hypothesis' do |
+    %span.icon-trash
+  = form_for hypothesis do |form|
+    .hypothesis-title
+      %span.bullet
+      = form.text_field :description, class: 'hypothesis-title-field'
+    .small-12.columns.hypothesis-type-edit{ data: { id: hypothesis.id } }= form.select(:hypothesis_type_id, hypothesis_types.all.collect { |ht|[ht.description, ht.id] }, {}, { class: 'type' })
+    = form.submit :save, class: 'hide'

@@ -77,7 +77,9 @@ feature 'Log lab activity' do
         visit current_path
 
         PublicActivity.with_tracking do
-          find('.delete-hypothesis').click
+          within '.hypothesis-show' do
+            find('.delete-hypothesis').click
+          end
         end
 
         last_actvity = PublicActivity::Activity.last
