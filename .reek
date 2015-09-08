@@ -28,6 +28,7 @@ FeatureEnvy:
     RegistrationsController#add_member_to_projects,
     Project#reorder_user_stories,
     ProjectServices#collect_log_entries,
+    TrelloServices#config,
   ]
 IrresponsibleModule:
   enabled: false
