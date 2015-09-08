@@ -14,7 +14,7 @@ feature 'Log lab activity' do
           click_link 'Create new project'
         end
         fill_in 'project_name', with: 'Test Project'
-        click_button 'Save Project'
+        find('.create-project-btn').click
       end
 
       project_activities = Project.first.activities
@@ -28,7 +28,7 @@ feature 'Log lab activity' do
           click_link 'Create new project'
         end
         fill_in 'project_name', with: 'Test Project'
-        click_button 'Save Project'
+        find('.create-project-btn').click
       end
 
       expect(Project.first.activities.second.key).to eq 'project.add_member'
@@ -39,7 +39,7 @@ feature 'Log lab activity' do
         within '.content-general' do
           click_link 'Create new project'
         end
-        click_button 'Save Project'
+        find('.create-project-btn').click
       end
 
       expect(PublicActivity::Activity.all).to be_empty
