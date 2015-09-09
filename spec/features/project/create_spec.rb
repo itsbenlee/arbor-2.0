@@ -39,7 +39,7 @@ feature 'Create a new project' do
       click_link 'Create new project'
     end
     fill_in 'project_name', with: 'Test Project'
-    click_button 'Save Project'
+    click_button 'Create Project'
     expect(page).to have_css('#canvas')
   end
 

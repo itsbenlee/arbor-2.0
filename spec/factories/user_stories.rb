@@ -8,10 +8,11 @@ FactoryGirl.define do
   end
 
   factory :user_story do
-    role     { 'User' }
-    action   { 'be able to reset my password'}
-    result   { 'so that I can recover my account' }
-    priority { 's' }
-    project  { create :project }
+    role       { 'User' }
+    action     { 'be able to reset my password'}
+    result     { 'so that I can recover my account' }
+    priority   { 's' }
+    project    { create :project }
+    hypothesis { create :hypothesis }
   end
 end
