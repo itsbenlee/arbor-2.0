@@ -11,6 +11,7 @@ Dotenv.load(
 
 module Railsroot
   class Application < Rails::Application
+    config.middleware.use Rack::Deflater
     config.assets.initialize_on_precompile = false
   end
 end
