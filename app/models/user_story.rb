@@ -1,7 +1,7 @@
 class UserStory < ActiveRecord::Base
   include WithoutAssociationLoggable
 
-  PRIORITIES = %w(m s c w)
+  PRIORITIES = %w(must should could would)
 
   validates_presence_of :role, :action, :result
   validates_uniqueness_of :order, scope: :hypothesis_id, allow_nil: true
@@ -23,11 +23,11 @@ class UserStory < ActiveRecord::Base
   end
 
   def log_description
-    "#{I18n.t('backlog.user_stories.role_prefix')} "\
+    "#{I18n.t('backlog.user_stories.role')} "\
       "#{role} "\
-      "#{I18n.t('backlog.user_stories.action_prefix')} "\
+      "#{I18n.t('backlog.user_stories.action', priority: priority)} "\
       "#{action} "\
-      "#{I18n.t('backlog.user_stories.result_prefix')} "\
+      "#{I18n.t('backlog.user_stories.result')} "\
       "#{result}"
   end
 

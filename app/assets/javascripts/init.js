@@ -71,4 +71,8 @@ $('.icon-arrow').bind('click', function(event) {
   event.preventDefault();
 });
 
+$('select#user_story_priority').on('change', function() {
+  $(this).closest('form#new_user_story').find('.user-story-priority').text(this.value);
+});
+
 $(document).on('page:change', UTIL.init);
