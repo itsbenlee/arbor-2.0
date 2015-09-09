@@ -34,20 +34,41 @@ UTIL = {
   }
 };
 
-var $projectList = $('#sidebar li .projects-list');
+var projectsBar = $('#sidebar .sidebar-project-list'),
+    toolBar     = $('#sidebar .toolbar'),
+    toggleIcon  = $('#sidebar .icon-arrow'),
+    activeState = 'active';
 
-$projectList.click(function() {
-  var $this = $(this),
-      $parent = $this.closest('ul');
-
-  $parent.toggleClass('active');
-  return false;
-});
 
 $('#sidebar a').each(function() {
   if ($(this).attr('href')  ===  window.location.pathname) {
-    $(this).parent().addClass('selected');
+    $(this).parent().addClass('selected')
   }
+});
+
+function slideSidebarToogle() {
+
+  if (toolBar.is(':visible')) {
+    toggleIcon.addClass(activeState);
+    toolBar.addClass(activeState).delay(500).hide(1);
+    projectsBar.addClass(activeState)
+  } else {
+    toggleIcon.removeClass(activeState);
+    toolBar.show(1).removeClass(activeState);
+    projectsBar.removeClass(activeState)
+  }
+}
+
+$('.icon-arrow').bind('click', function(event) {
+
+  if (toolBar.length) {
+    slideSidebarToogle()
+  } else {
+    toggleIcon.toggleClass(activeState);
+    projectsBar.toggleClass(activeState)
+  }
+
+  event.preventDefault();
 });
 
 $(document).on('page:change', UTIL.init);
