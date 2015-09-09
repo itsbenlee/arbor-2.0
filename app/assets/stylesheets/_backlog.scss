@@ -30,20 +30,21 @@
         span { display: block; }
       }
 
-      .icon-arrow.up {
-        @include rotate(180deg);
+      .icon-arrow.up,
+      .icon-arrow.down {
         color: $black-40;
         font-size: rem-calc(13);
         position: absolute;
+      }
+      
+      .icon-arrow.up {
+        @include rotate(180deg);
         right: rem-calc(11);
         top: rem-calc(3);
       } // arrow up
 
       .icon-arrow.down {
         bottom: rem-calc(3);
-        color: $black-40;
-        font-size: rem-calc(13);
-        position: absolute;
         right: rem-calc(11);
       } // arrow down
 
