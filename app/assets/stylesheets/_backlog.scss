@@ -8,25 +8,70 @@
     color: $secondary-color;
     padding: rem-calc(0 0 20 0);
 
-    ul {
-      font-size: rem-calc(14);
+    ul { font-size: rem-calc(14); } // ul
 
-      .user-story {
-        border-bottom: 1px solid $black-10;
-        padding: rem-calc(20 0);
+    .user-story {
+      border-bottom: 1px solid $black-10;
+      padding: rem-calc(20 40 20 0);
+      position: relative;
 
-        .number,
-        .points {
-          font-size: rem-calc(11);
-          font-weight: 700;
-        } // number
+      .hover-options {
+        @include opacity(0); // 0
+        background-color: $black-10;
+        border-left: 1px solid $black-20;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: rem-calc(40);
 
-        .points {
-          color: $success-color;
-          text-transform: uppercase;
+        &:hover { @include opacity(.8); }
+
+        span { display: block; }
+      }
+
+      .icon-arrow.up,
+      .icon-arrow.down {
+        color: $black-40;
+        font-size: rem-calc(13);
+        position: absolute;
+      }
+      
+      .icon-arrow.up {
+        @include rotate(180deg);
+        right: rem-calc(11);
+        top: rem-calc(3);
+      } // arrow up
+
+      .icon-arrow.down {
+        bottom: rem-calc(3);
+        right: rem-calc(11);
+      } // arrow down
+
+      .center-icon {
+        background-color: $white;
+        padding: rem-calc (5 0);
+
+        .icon-trash {
+          @include translateY(-50%);
+          position: absolute;
+          right: rem-calc(11);
+          top: 50%;
+          vertical-align: middle;
         }
       }
-    } // ul
+
+      .number,
+      .points {
+        font-size: rem-calc(11);
+        font-weight: 700;
+      } // number
+
+      .points {
+        color: $success-color;
+        text-transform: uppercase;
+      }
+    }
 
     .number {
       display: inline-block;
