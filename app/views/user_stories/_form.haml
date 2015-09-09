@@ -7,7 +7,7 @@
   %span.square
   %span.icon-edit
   .user-story-input.large-3.column
-    = t('backlog.user_stories.role_prefix')
+    = t('backlog.user_stories.role')
     = form.text_field(                                   |
       :role,                                             |
       placeholder: t('backlog.user_stories.enter_role'), |
@@ -17,6 +17,9 @@
     )                                                    |
   .user-story-input.large-5.column
     = t('backlog.user_stories.action_prefix')
+    .user-story-priority
+      = user_story.priority
+    = t('backlog.user_stories.action_suffix')
     = form.text_field(                                     |
       :action,                                             |
       placeholder: t('backlog.user_stories.enter_action'), |
@@ -25,7 +28,7 @@
       class:      'action'                                 |
     )                                                      |
   .user-story-input.large-4.column
-    = t('backlog.user_stories.result_prefix')
+    = t('backlog.user_stories.result')
     = form.text_field(                                     |
       :result,                                             |
       placeholder: t('backlog.user_stories.enter_result'), |
@@ -33,8 +36,12 @@
       maxlength:   255,                                    |
       class:      'result'                                 |
     )                                                      |
-  = form.label 'Epic'
-  = form.check_box :epic
+  .user-story-input.large-6.column
+    = form.label 'Epic'
+    = form.check_box :epic
+  .user-story-input.large-6.column
+    = form.label 'Priority'
+    = form.select(:priority, UserStory::PRIORITIES)
   - if hypothesis
     = form.hidden_field :hypothesis_id, value: hypothesis.id
   = form.submit I18n.translate('save'), class: 'hide user-story-submit'

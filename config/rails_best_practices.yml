@@ -30,7 +30,6 @@ RemoveUnusedMethodsInControllersCheck: { except_methods: [
 RemoveUnusedMethodsInHelpersCheck: { except_methods: [] }
 RemoveUnusedMethodsInModelsCheck: {
   except_methods: [
-    UserStory#priorities,
     UserStory#estimation_series,
     Hypothesis#reorder_user_stories,
     Project#reorder_user_stories

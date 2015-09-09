@@ -43,6 +43,10 @@ Spork.prefork do
     config.include UserStoryHelper, type: :controller
     config.include UserStoryHelper, type: :feature
 
+    config.before :suite do
+      DatabaseRewinder.clean_with :truncation
+    end
+
     config.before :each do |example_group|
       if Capybara.current_driver == :rack_test
         DatabaseRewinder.strategy = :transaction

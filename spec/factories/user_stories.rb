@@ -11,7 +11,7 @@ FactoryGirl.define do
     role       { 'User' }
     action     { 'be able to reset my password'}
     result     { 'so that I can recover my account' }
-    priority   { 's' }
+    priority   { 'should' }
     project    { create :project }
     hypothesis { create :hypothesis }
   end
