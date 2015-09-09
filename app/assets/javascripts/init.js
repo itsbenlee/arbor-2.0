@@ -50,4 +50,4 @@ $('#sidebar a').each(function() {
   }
 });
 
-$(document).ready(UTIL.init);
+$(document).on('page:change', UTIL.init);
