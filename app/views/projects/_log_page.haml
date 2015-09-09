@@ -16,5 +16,5 @@
         - if activity.owner
           = mail_to activity.owner.email, activity.owner.full_name
         - else
-          deleted user
+          = t('log.deleted_user')
   %hr

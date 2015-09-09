@@ -110,6 +110,7 @@ en:
       create: "A user story was created"
       update: "A user story was updated"
       destroy: "A user story was deleted"
+    deleted_user: "Deleted User"
   save: "Save"
   edit: "Edit"
   can_not_view: "You can not view this project."
