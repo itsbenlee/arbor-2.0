@@ -36,12 +36,15 @@
       maxlength:   255,                                    |
       class:      'result'                                 |
     )                                                      |
-  .user-story-input.large-6.column
+  .user-story-input.large-4.column
     = form.label 'Epic'
     = form.check_box :epic
-  .user-story-input.large-6.column
+  .user-story-input.large-4.column
+    = form.label 'Estimation'
+    = form.select :estimated_points, UserStory.estimation_series, include_blank: true
+  .user-story-input.large-4.column
     = form.label 'Priority'
-    = form.select(:priority, UserStory::PRIORITIES)
+    = form.select :priority, UserStory::PRIORITIES
   - if hypothesis
     = form.hidden_field :hypothesis_id, value: hypothesis.id
   = form.submit I18n.translate('save'), class: 'hide user-story-submit'

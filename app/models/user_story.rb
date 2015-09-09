@@ -14,7 +14,7 @@ class UserStory < ActiveRecord::Base
   belongs_to :project
 
   def self.estimation_series
-    fib = ->(arg) { arg < 2 ? x : fib[arg - 1] + fib[arg - 2] }
+    fib = ->(arg) { arg < 2 ? arg : fib[arg - 1] + fib[arg - 2] }
     (2..12).map { |index| fib[index] }
   end
 
