@@ -16,6 +16,7 @@ gem 'nilify_blanks', '1.2.1'
 gem 'jquery-ui-rails', '5.0.5'
 gem 'public_activity'
 gem 'rails_engine_decorators'
+gem 'ruby-trello'
 
 group :doc do
   gem 'sdoc', require: false

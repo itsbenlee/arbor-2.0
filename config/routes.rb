@@ -20,6 +20,11 @@ Railsroot::Application.routes.draw do
     resources :user_stories, except: [:show, :new]
     put 'hypotheses/order', controller: :hypotheses, action: :update_order
     get 'hypotheses/export', controller: :hypotheses, action: :export
+    get 'hypotheses/export/trello',
+      controller: :hypotheses,
+      action: :export_to_trello,
+      as: :trello_export
+
     put 'hypotheses/user_stories/order',
       controller: :user_stories,
       action: :update_order,

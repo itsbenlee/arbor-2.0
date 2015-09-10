@@ -22,3 +22,4 @@
 //= require_tree ./hypotheses
 //= require_tree ./canvases
 //= require_tree ./userStories
+//= require_tree ./vendor

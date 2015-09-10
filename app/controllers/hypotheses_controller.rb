@@ -1,6 +1,7 @@
 class HypothesesController < ApplicationController
   before_action :load_hypothesis, only: [:destroy, :update]
-  before_action :check_view_permission, only: [:index, :export]
+  before_action :check_view_permission,
+    only: [:index, :export, :export_to_trello]
   before_action :check_edit_permission, only: [:create, :update_order, :destroy]
 
   def index
@@ -51,6 +52,11 @@ class HypothesesController < ApplicationController
     end
   end
 
+  def export_to_trello
+    TrelloServices.new(@project, trello_export_params).export
+    redirect_to :back
+  end
+
   private
 
   def set_project
@@ -90,5 +96,9 @@ class HypothesesController < ApplicationController
 
   def hypothesis_order_params
     params.require(:new_order)
+  end
+
+  def trello_export_params
+    params.require(:token)
   end
 end
