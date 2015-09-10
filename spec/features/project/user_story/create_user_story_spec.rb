@@ -49,7 +49,7 @@ feature 'Create a new user story' do
     end
   end
 
-  context 'backlog' do
+  context 'backlog section' do
     background do
       visit project_user_stories_path project
     end
@@ -108,10 +108,6 @@ feature 'Create a new user story' do
       end
 
       expect(UserStory.first.priority).to eq 'must'
-      within 'li.user-story .story-text' do
-        expect(page).to have_content 'must'
-        expect(page).not_to have_content 'should'
-      end
     end
 
     scenario 'should change the priority field in the story text', js: true do
@@ -121,6 +117,31 @@ feature 'Create a new user story' do
       select 'must', from: :user_story_priority
 
       expect(priority_field.text).to eq 'must'
+    end
+
+    scenario 'should create a new user story with an estimation' do
+      within 'form.new_user_story' do
+        fill_in :user_story_role, with: user_story.role
+        fill_in :user_story_action, with: user_story.action
+        fill_in :user_story_result, with: user_story.result
+        select user_story.estimated_points, from: :user_story_estimated_points
+
+        click_button 'Save'
+      end
+
+      expect(UserStory.first.estimated_points).to eq 2
+    end
+
+    scenario 'should create a new user story without an estimation' do
+      within 'form.new_user_story' do
+        fill_in :user_story_role, with: user_story.role
+        fill_in :user_story_action, with: user_story.action
+        fill_in :user_story_result, with: user_story.result
+
+        click_button 'Save'
+      end
+
+      expect(UserStory.first.estimated_points).to be_nil
     end
   end
 end

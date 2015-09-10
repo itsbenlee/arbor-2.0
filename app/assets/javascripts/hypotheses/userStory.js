@@ -14,7 +14,7 @@ function UserStory() {
     return changes;
   }
 
-  function getHypothesesWhoChange() {
+  function getHypothesesWhichChanged() {
     var hypotheses = [];
     $.each($userStoriesList, function() {
       var hypothesisId = $(this).data('hypothesis-id'),
@@ -64,7 +64,7 @@ function UserStory() {
   $userStoriesList.sortable({
     connectWith: '.user-story-list',
     stop: function() {
-      var hypotheses = getHypothesesWhoChange();
+      var hypotheses = getHypothesesWhichChanged();
       updateHypotheses(hypotheses);
     }
   });

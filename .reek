@@ -113,5 +113,7 @@ UnusedParameters:
   exclude: []
 UtilityFunction:
   enabled: true
-  exclude: []
+  exclude: [
+    UserStoriesHelper#format_story_points,
+  ]
   max_helper_calls: 1
