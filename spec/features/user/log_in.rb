@@ -12,4 +12,14 @@ feature 'Sign in' do
       expect(page).to have_content('You need to sign in or sign up before continuing.')
     end
   end
+
+  context 'when the user logs in' do
+    background do
+      sign_in create :user
+    end
+    
+    scenario 'should not show a success message' do
+      expect(page).not_to have_content('Signed in successfully.')
+    end
+  end
 end
