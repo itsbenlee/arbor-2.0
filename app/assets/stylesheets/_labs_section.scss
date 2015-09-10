@@ -237,7 +237,23 @@
     padding: rem-calc(0 0 0 15);
     position: relative;
 
-    .hypothesis-title { @include single-transition(color, .25s, ease-in); }
+    .hypothesis-title {
+      @include single-transition(color, .25s, ease-in);
+
+      .hypothesis-title-field {
+        margin-bottom: 0;
+        padding: rem-calc(0 0 15 0);
+      }
+    }
+
+    .hypothesis-type-edit {
+      padding-left: 0;
+
+      .type {
+        padding: 0;
+        width: 16%;
+      }
+    }
 
     a:hover +.hypothesis-title {
       color: $canvas-color;
