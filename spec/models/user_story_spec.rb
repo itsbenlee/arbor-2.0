@@ -41,4 +41,18 @@ RSpec.describe UserStory do
     end
     let(:description) { 'As a User I should be able to work so that test' }
   end
+
+  describe 'story_number' do
+    it 'should assign unique story numbers' do
+      user_stories = create_list :user_story, 2, project: project
+
+      expect(user_stories.first.story_number).to eq 1
+      expect(user_stories.second.story_number).to eq 2
+
+      user_stories.second.destroy
+
+      next_story = create :user_story, project: project
+      expect(next_story.story_number).to eq 3
+    end
+  end
 end
