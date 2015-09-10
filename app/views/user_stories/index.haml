@@ -32,8 +32,7 @@
           .number
             = "##{user_story.story_number}"
           %span.points
-            - if user_story.estimated_points
-              = "#{user_story.estimated_points} #{user_story.estimated_points == 1 ? "point" : "points"}"
+            = format_story_points(user_story)
           .story-text
             %span.grey-prefix= t('backlog.user_stories.role')
             %span=user_story.role
