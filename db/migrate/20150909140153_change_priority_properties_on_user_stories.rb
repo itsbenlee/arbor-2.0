@@ -1,6 +1,6 @@
 class ChangePriorityPropertiesOnUserStories < ActiveRecord::Migration
   def up
-    change_column :user_stories, :priority, limit: nil, default: 'should'
+    change_column :user_stories, :priority, :string, limit: nil, default: 'should'
 
     translation = {
       'm' => 'must',
@@ -17,7 +17,7 @@ class ChangePriorityPropertiesOnUserStories < ActiveRecord::Migration
   end
 
   def down
-    change_column :user_stories, :priority, limit: 1, default: 's'
+    change_column :user_stories, :priority, :string, limit: 1, default: 's'
 
     translation = {
       'must' => 'm',
