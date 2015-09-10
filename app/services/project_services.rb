@@ -23,7 +23,14 @@ class ProjectServices
 
   def activities_by_pages
     activities = []
-    %w(project hypotheses goals).each do |entity|
+    %w(
+      project
+      hypotheses
+      goals
+      user_stories
+      constraints
+      acceptance_criteria
+    ).each do |entity|
       activities += send("collect_#{entity}_log_entries")
     end
 
@@ -51,6 +58,28 @@ class ProjectServices
     @project
       .hypotheses
       .collect(&:goals)
+      .flatten
+      .collect(&:activities)
+      .flatten
+  end
+
+  def collect_user_stories_log_entries
+    @project.user_stories.collect(&:activities).flatten
+  end
+
+  def collect_constraints_log_entries
+    @project
+      .user_stories
+      .collect(&:constraints)
+      .flatten
+      .collect(&:activities)
+      .flatten
+  end
+
+  def collect_acceptance_criteria_log_entries
+    @project
+      .user_stories
+      .collect(&:acceptance_criterions)
       .flatten
       .collect(&:activities)
       .flatten
