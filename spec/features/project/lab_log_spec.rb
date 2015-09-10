@@ -128,10 +128,10 @@ feature 'Log lab activity' do
           end
         end
 
-        activities = PublicActivity::Activity.all
-        expect(activities.first.key).to eq 'user_story.create'
-        expect(activities.second.key).to eq 'project.add_user_story'
-        expect(activities.third.key).to eq 'hypothesis.add_user_story'
+        activity_keys = PublicActivity::Activity.pluck(:key)
+        expect(activity_keys).to include 'user_story.create'
+        expect(activity_keys).to include 'project.add_user_story'
+        expect(activity_keys).to include 'hypothesis.add_user_story'
       end
 
       scenario 'should log removing user stories' do

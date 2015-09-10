@@ -1,14 +1,10 @@
 module UserStoryHelper
   def set_user_stories(hypothesis)
-    stories = []
-    3.times { stories.push(create :user_story, hypothesis: hypothesis) }
-    stories
+    create_list :user_story, 3, hypothesis: hypothesis
   end
 
   def set_user_stories_on_project(project)
-    stories = []
-    3.times { stories.push(create :user_story, project: project) }
-    stories
+    create_list :user_story, 3, project: project
   end
 
   def get_reordered(first_story, second_story, third_story)
