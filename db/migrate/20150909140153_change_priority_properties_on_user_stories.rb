@@ -9,11 +9,11 @@ class ChangePriorityPropertiesOnUserStories < ActiveRecord::Migration
       'w' => 'would'
     }
 
-    PublicActivity.without_tracking do
-      UserStory.all.each do |user_story|
-        user_story.update_attribute(:priority, translation[user_story.priority])
-      end
+    PublicActivity.enabled = false
+    UserStory.all.each do |user_story|
+      user_story.update_attribute(:priority, translation[user_story.priority])
     end
+    PublicActivity.enabled = true
   end
 
   def down
@@ -26,10 +26,10 @@ class ChangePriorityPropertiesOnUserStories < ActiveRecord::Migration
       'would' => 'w'
     }
 
-    PublicActivity.without_tracking do
-      UserStory.all.each do |user_story|
-        user_story.update_attribute(:priority, translation[user_story.priority])
-      end
+    PublicActivity.enabled = false
+    UserStory.all.each do |user_story|
+      user_story.update_attribute(:priority, translation[user_story.priority])
     end
+    PublicActivity.enabled = true
   end
 end
