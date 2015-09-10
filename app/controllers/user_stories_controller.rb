@@ -96,7 +96,6 @@ class UserStoriesController < ApplicationController
 
   def update_associations
     @project.user_stories << @user_story
-    @project.update_attribute :next_story_number, @project.next_story_number + 1
     @hypothesis.user_stories << @user_story if @hypothesis
   end
 end
