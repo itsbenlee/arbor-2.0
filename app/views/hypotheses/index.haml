@@ -15,7 +15,7 @@
       %li#json_export_link
         = link_to t('json'), project_hypotheses_export_path(@project, format: :json)
       %li#trello_export_link
-        = link_to t('trello'), '#'
+        = link_to t('trello.export'), '#'
 - if @project.canvas
   .value-prop.row
     .title-value-proposition.large-8.columns
