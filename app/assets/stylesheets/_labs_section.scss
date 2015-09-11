@@ -329,8 +329,13 @@
 
 .hypothesis-edit {
   display: none;
-}//hypothesis edit
+}// hypothesis edit
 
 .hypothesis-type-edit {
   display: none;
-}//hypothesis edit
+}// hypothesis edit
+
+#log-modal.reveal-modal {
+  height: 60%;
+  overflow-y: scroll;
+}// log-modal.reveal-modal

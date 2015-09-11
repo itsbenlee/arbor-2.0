@@ -71,7 +71,7 @@ feature 'Collect log entries' do
     end
 
     project_services = ProjectServices.new(@project)
-    log_entries = project_services.collect_log_entries
+    log_entries = project_services.activities_by_pages.flatten
 
     %w(
       hypothesis.add_goal

@@ -1,6 +1,7 @@
 class ProjectServices
   def initialize(project)
     @project = project
+    @entries_per_page = ProjectServices.entries_per_page
   end
 
   def reorder_hypotheses(hypotheses)
@@ -20,13 +21,15 @@ class ProjectServices
     { success: true }
   end
 
-  def collect_log_entries
+  def activities_by_pages
     activities = []
     %w(project hypotheses goals).each do |entity|
       activities += send("collect_#{entity}_log_entries")
     end
 
-    activities.sort_by(&:created_at).reverse
+    activities
+      .sort_by(&:created_at)
+      .reverse.in_groups_of @entries_per_page, false
   end
 
   private
@@ -51,5 +54,10 @@ class ProjectServices
       .flatten
       .collect(&:activities)
       .flatten
+  end
+
+  def self.entries_per_page
+    env_value = ENV['LOG_ENTRIES_PER_PAGE']
+    env_value ? env_value.to_i : 5
   end
 end

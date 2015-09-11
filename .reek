@@ -27,8 +27,8 @@ FeatureEnvy:
     HypothesisServices#reorder_stories,
     RegistrationsController#add_member_to_projects,
     Project#reorder_user_stories,
-    ProjectServices#collect_log_entries,
     TrelloServices#config,
+    ProjectServices#activities_by_pages,
   ]
 IrresponsibleModule:
   enabled: false
