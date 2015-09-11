@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150909235849) do
+ActiveRecord::Schema.define(version: 20150910182505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "acceptance_criterions", force: :cascade do |t|
+    t.text     "description"
+    t.integer  "user_story_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "acceptance_criterions", ["user_story_id"], name: "index_acceptance_criterions_on_user_story_id", using: :btree
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -62,7 +71,7 @@ ActiveRecord::Schema.define(version: 20150909235849) do
   add_index "goals", ["hypothesis_id"], name: "index_goals_on_hypothesis_id", using: :btree
 
   create_table "hypotheses", force: :cascade do |t|
-    t.string   "description",        limit: 255
+    t.string   "description"
     t.integer  "project_id"
     t.integer  "hypothesis_type_id"
     t.integer  "order"
@@ -74,8 +83,8 @@ ActiveRecord::Schema.define(version: 20150909235849) do
   add_index "hypotheses", ["project_id"], name: "index_hypotheses_on_project_id", using: :btree
 
   create_table "hypothesis_types", force: :cascade do |t|
-    t.string   "code",        limit: 255
-    t.string   "description", limit: 255
+    t.string   "code"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -105,6 +114,7 @@ ActiveRecord::Schema.define(version: 20150909235849) do
     t.integer  "next_story_number",             default: 1, null: false
   end
 
+  add_index "projects", ["name"], name: "index_projects_on_name", using: :btree
   add_index "projects", ["owner_id"], name: "index_projects_on_owner_id", using: :btree
 
   create_table "user_stories", force: :cascade do |t|
@@ -128,24 +138,25 @@ ActiveRecord::Schema.define(version: 20150909235849) do
   add_index "user_stories", ["story_number"], name: "index_user_stories_on_story_number", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  limit: 255, default: "",    null: false
-    t.string   "encrypted_password",     limit: 255, default: "",    null: false
-    t.string   "reset_password_token",   limit: 255
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                      default: 0,     null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                                         null: false
-    t.datetime "updated_at",                                         null: false
-    t.string   "full_name",              limit: 255
-    t.boolean  "admin",                              default: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.string   "full_name"
+    t.boolean  "admin",                  default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "acceptance_criterions", "user_stories"
   add_foreign_key "invites", "projects"
 end
