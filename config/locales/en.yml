@@ -136,7 +136,9 @@ en:
   cost_structure_title: "What are your customer acquisition costs, distribution costs, people, hosting, integration partners, etc?"
   csv: "CSV"
   json: "Json"
-  trello: "Export to Trello"
+  trello:
+    export: 'Export to Trello'
+    default_list: 'Product Backlog'
   mailer:
     invite:
       subject: 'Invitation instructions'

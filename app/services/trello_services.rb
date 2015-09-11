@@ -9,14 +9,14 @@ class TrelloServices
   def export
     fields = {
       name: @project.name,
-      description: 'Arbor project',
       closed: false,
       starred: false
     }
 
     board = Trello::Board.create(fields)
     board.lists.each(&:close!)
-    list = Trello::List.create(name: 'To Do', board_id: board.id)
+    list = Trello::List.create(
+      name: I18n.t('trello.default_list'), board_id: board.id)
 
     @project.user_stories.each do |user_story|
       Trello::Card.create(name: user_story.log_description, list_id: list.id)
