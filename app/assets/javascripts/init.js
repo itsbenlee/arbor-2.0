@@ -34,13 +34,18 @@ UTIL = {
   }
 };
 
-var projectsBar = $('#sidebar .sidebar-project-list'),
-    toolBar     = $('#sidebar .toolbar'),
-    toggleIcon  = $('#sidebar .icon-arrow'),
-    activeState = 'active';
+var $sideBar        = $('#sidebar'),
+    $currentProject = $('.current-project'),
+     projectsBar    = $sideBar.find('.sidebar-project-list'),
+     toolBar        = $sideBar.find('.toolbar'),
+     toggleIcon     = $sideBar.find('.icon-arrow'),
+     toggleBar      = $sideBar.find('.icon-arrow, .current-project, .my-projects'),
+     projectName    = $sideBar.find('.current-project').html(),
+     projectItem    = $currentProject.parent('li'),
+     activeState    = 'active';
 
 
-$('#sidebar a').each(function() {
+$sideBar.find('.toolbar a').each(function() {
   if ($(this).attr('href')  ===  window.location.pathname) {
     $(this).parent().addClass('selected')
   }
@@ -49,27 +54,33 @@ $('#sidebar a').each(function() {
 function slideSidebarToogle() {
 
   if (toolBar.is(':visible')) {
+    $currentProject.html('My projects').removeClass(activeState);
     toggleIcon.addClass(activeState);
     toolBar.addClass(activeState).delay(500).hide(1);
     projectsBar.addClass(activeState)
   } else {
+    $currentProject.html(projectName).addClass(activeState);
     toggleIcon.removeClass(activeState);
     toolBar.show(1).removeClass(activeState);
     projectsBar.removeClass(activeState)
   }
 }
 
-$('.icon-arrow').bind('click', function(event) {
-
-  if (toolBar.length) {
+if (toolBar.length) {
+  toggleBar.bind('click', function(event) {
     slideSidebarToogle()
-  } else {
+
+    event.preventDefault();
+  });
+} else {
+  toggleIcon.addClass(activeState);
+  toggleBar.bind('click', function(event) {
     toggleIcon.toggleClass(activeState);
     projectsBar.toggleClass(activeState)
-  }
 
-  event.preventDefault();
-});
+    event.preventDefault();
+  });
+}
 
 $('select#user_story_priority').on('change', function() {
   $(this).closest('form#new_user_story').find('.user-story-priority').text(this.value);
