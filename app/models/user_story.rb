@@ -13,6 +13,7 @@ class UserStory < ActiveRecord::Base
 
   belongs_to :hypothesis
   belongs_to :project
+  has_many :acceptance_criterions, dependent: :destroy
 
   def self.estimation_series
     fib = ->(arg) { arg < 2 ? arg : fib[arg - 1] + fib[arg - 2] }

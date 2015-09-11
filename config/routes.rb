@@ -17,7 +17,11 @@ Railsroot::Application.routes.draw do
         controller: :projects,
         action: :order_stories,
         as: :reorder_backlog
-    resources :user_stories, except: [:show, :new]
+
+    resources :user_stories, except: [:show, :new] do
+      resources :acceptance_criterions, only: [:create, :update]
+    end
+
     put 'hypotheses/order', controller: :hypotheses, action: :update_order
     get 'hypotheses/export', controller: :hypotheses, action: :export
     get 'hypotheses/export/trello',
