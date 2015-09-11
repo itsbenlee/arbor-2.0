@@ -1,5 +1,5 @@
 = @project.name
-.invite-members.row
+.projects.row
   .section-margin-top.large-6.large-centered.columns
     %h2= t("project_members.title")
     .show-project-data
@@ -18,7 +18,8 @@
             = image_tag('icons/mail-icon.svg', class: 'icon')
             = invite.email
       - if @can_delete
-        %span.icon-trash
-        = link_to t('project.delete_project'), @project, method: :delete, data: { confirm: t('project.delete_confirmation') }
+        = link_to @project, method: :delete, data: { confirm: t('project.delete_confirmation') }, class: 'delete-project' do
+          = t('project.delete_project')
+          %span.icon-trash
     .edit-project-form
       = render 'projects/edit', project: @project, errors: @errors

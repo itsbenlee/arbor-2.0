@@ -39,7 +39,7 @@ feature 'Create a new project' do
       click_link 'Create new project'
     end
     fill_in 'project_name', with: 'Test Project'
-    find('.create-project-btn').click
+    click_button 'create-project-btn'
     expect(page).to have_css('#canvas')
   end
 
