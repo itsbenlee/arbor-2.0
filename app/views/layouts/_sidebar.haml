@@ -1,10 +1,10 @@
 %aside#sidebar.columns.small-2
   %ul.sidebar-project-list.active
-    %li
+    %li.selected
       - if current_project && !current_project.new_record?
-        = link_to current_project.name, current_project
+        = link_to current_project.name, '#', class: 'current-project active'
       - else
-        = link_to t('sidebar.my_projects'), projects_path
+        = link_to t('sidebar.my_projects'), '#', class: 'my-projects'
       = link_to '#' do
         %span.icon-arrow
 

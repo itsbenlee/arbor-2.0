@@ -33,7 +33,13 @@
       text-align: left;
       width: 100%;
 
-      &:first-of-type { padding-top: rem-calc(14); }
+      &:first-of-type {
+        padding-top: rem-calc(14);
+
+        &:hover a    { color: $white; }
+        &:hover span { color: $success-color; }
+      }
+
       &:last-of-type { padding: rem-calc(10 20); }
 
       &:hover {
@@ -55,6 +61,8 @@
 
         &:hover,
         &:active { color: $white; }
+
+        &.active { font-weight: $font-weight-normal; }
 
         +a { display: inline; }
       }
@@ -186,9 +194,9 @@
   }
 
   .icon-arrow {
-    @include rotate(0);
+    @include rotate(180deg);
     @include single-transition(transform, .25s, ease-in);
 
-    &.active { @include rotate(180deg); }
+    &.active { @include rotate(0); }
   }
 } // sidebar
