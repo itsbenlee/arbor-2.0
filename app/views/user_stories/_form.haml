@@ -7,7 +7,7 @@
   %span.square
   %span.icon-edit
   .user-story-input.column.role
-    = t('backlog.user_stories.role_prefix')
+    = t('backlog.user_stories.role')
     = form.text_field(                                   |
       :role,                                             |
       placeholder: t('backlog.user_stories.enter_role'), |
@@ -28,7 +28,7 @@
       class:      'action'                                 |
     )                                                      |
   .user-story-input.column.result
-    = t('backlog.user_stories.result_prefix')
+    = t('backlog.user_stories.result')
     = form.text_field(                                     |
       :result,                                             |
       placeholder: t('backlog.user_stories.enter_result'), |
