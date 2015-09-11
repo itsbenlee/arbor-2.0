@@ -1,6 +1,7 @@
 class ProjectServices
   def initialize(project)
     @project = project
+    @entries_per_page = ProjectServices.entries_per_page
   end
 
   def reorder_hypotheses(hypotheses)
@@ -28,7 +29,7 @@ class ProjectServices
 
     activities
       .sort_by(&:created_at)
-      .reverse.in_groups_of ProjectServices.entries_per_page, false
+      .reverse.in_groups_of @entries_per_page, false
   end
 
   private
