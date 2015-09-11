@@ -18,7 +18,7 @@
   .user-story-input.column.action
     = t('backlog.user_stories.action_prefix')
     .user-story-priority
-      = user_story.priority
+      %p= user_story.priority
     = t('backlog.user_stories.action_suffix')
     = form.text_field(                                     |
       :action,                                             |

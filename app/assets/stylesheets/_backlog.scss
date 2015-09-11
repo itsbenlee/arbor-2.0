@@ -101,8 +101,21 @@
       height: inherit;
       line-height: 1.5;
       margin: 0;
+      vertical-align: baseline;
 
       &[type="submit"] { display: none; }
+    }
+
+    .user-story-priority {
+      @include inline-block;
+      vertical-align: baseline;
+
+      p {
+        @include inline-block;
+        font-size: rem-calc(40);
+        margin: 0;
+        vertical-align: baseline;
+      }
     }
 
     .new-story {
