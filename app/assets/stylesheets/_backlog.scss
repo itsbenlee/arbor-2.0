@@ -90,5 +90,70 @@
     .delete-story { float: right; }
   } // user stories
 
-  .user-story-edit-form { padding-top: rem-calc(20); }
+  .user-story-edit-form {
+    padding-top: rem-calc(20);
+
+    input {
+      @include inline-block();
+      background-color: transparent;
+      border: 0;
+      font-size: rem-calc(40);
+      height: inherit;
+      line-height: 1.5;
+      margin: 0;
+      vertical-align: baseline;
+
+      &[type="submit"] { display: none; }
+    }
+
+    .user-story-priority {
+      @include inline-block;
+      vertical-align: baseline;
+
+      p {
+        @include inline-block;
+        font-size: rem-calc(40);
+        margin: 0;
+        vertical-align: baseline;
+      }
+    }
+
+    .new-story {
+      // scss-lint:disable PlaceholderInExtend
+      @extend .row;
+    }
+
+    .icon-edit { display: none; }
+
+    .role {
+      // scss-lint:disable PlaceholderInExtend
+      @extend .large-12;
+      input { width: 66%; }
+    }
+
+    .action {
+      // scss-lint:disable PlaceholderInExtend
+      @extend .large-12;
+      input { width: 35%; }
+    }
+
+    .result {
+      // scss-lint:disable PlaceholderInExtend
+      @extend .large-12;
+
+      input {
+        // scss-lint:disable PlaceholderInExtend
+        @extend .large-12;
+        width: 60%;
+      }
+    }//result
+
+    label { display: inline-block; }
+
+    .user-story-input {
+      color: $black-30;
+      font-size: rem-calc(40);
+      line-height: 1.5;
+    }
+  }
 } // backlog
