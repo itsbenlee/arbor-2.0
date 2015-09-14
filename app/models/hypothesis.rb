@@ -20,13 +20,12 @@ class Hypothesis < ActiveRecord::Base
     hypothesis.save
   end
 
-  def self.to_csv(hypotheses, options = {})
+  def self.to_csv(hypotheses, options = { col_sep: '|' })
     CSV.generate(options) do |csv|
       hypotheses.each do |hypothesis|
         hypothesis_csv(csv, hypothesis)
         goals_csv(csv, hypothesis.goals)
         user_story_csv(csv, hypothesis.user_stories)
-        csv << %w(- - - - -)
       end
     end
   end
@@ -65,35 +64,21 @@ class Hypothesis < ActiveRecord::Base
   end
 
   def self.goals_csv(csv, goals)
-    csv << %w(goal_title)
+    csv << %w(goals)
     goals.each do |goal|
       csv << [goal.title]
     end
   end
 
   def self.user_story_csv(csv, user_stories)
-    csv << %w(user_story_points
-              user_story_priority
-              user_story_role
-              user_story_action
-              user_story_result)
+    csv << %w(user_stories)
     user_stories.each do |user_story|
-      csv << [user_story.estimated_points,
-              user_story.priority,
-              user_story.role,
-              user_story.action,
-              user_story.result]
+      csv << [user_story.log_description]
     end
   end
 
   def self.hypothesis_csv(csv, hypothesis)
-    csv << %w(hypothesis_description
-              hypothesis_project
-              hypothesis_type
-              order)
-    csv << [hypothesis.description,
-            hypothesis.project_name,
-            hypothesis.hypothesis_type_description,
-            hypothesis.order]
+    csv << %w(hypothesis)
+    csv << [hypothesis.description]
   end
 end
