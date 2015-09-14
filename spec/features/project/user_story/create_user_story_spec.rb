@@ -31,22 +31,6 @@ feature 'Create a new user story' do
         expect{ click_button 'Save' }.to change{ UserStory.count }.from(0).to(1)
       end
     end
-
-    scenario 'should change the priority field in the story text without
-      changing it somewhere else', js: true do
-      create :hypothesis, project: project
-      visit project_hypotheses_path project
-
-      first_hypothesis = find(".hypothesis[data-id='#{hypothesis.id}']")
-
-      within first_hypothesis do
-        select 'must', from: :user_story_priority
-      end
-
-      priority_description_fields = all('.user-story-priority')
-      expect(priority_description_fields[0].text).to eq 'must'
-      expect(priority_description_fields[1].text).to eq 'should'
-    end
   end
 
   context 'backlog section' do
