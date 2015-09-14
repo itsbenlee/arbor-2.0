@@ -1,0 +1,11 @@
+%section#user-stories-without-hypothesis
+  .hypothesis-title
+    %span.bullet
+    = t('labs.undefined_hypothesis')
+  -independent_stories.each do |user_story|
+    = link_to user_story_path(user_story), class: 'delete-user-story', title: 'Delete User Story', method: :delete do
+      %span.icon-trash
+    = render 'user_stories/lab_form', project: project,
+    user_story: user_story,
+    hypothesis: nil,
+    form_url: project_user_stories_path(project)

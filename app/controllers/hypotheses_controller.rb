@@ -3,6 +3,7 @@ class HypothesesController < ApplicationController
   before_action :check_view_permission,
     only: [:index, :export, :export_to_trello]
   before_action :check_edit_permission, only: [:create, :update_order, :destroy]
+  before_action :set_user_strories, only: :index
 
   def index
     @hypothesis = Hypothesis.new(project_id: params[:project_id])
@@ -100,5 +101,10 @@ class HypothesesController < ApplicationController
 
   def trello_export_params
     params.require(:token)
+  end
+
+  def set_user_strories
+    @independent_stories =
+      @project.user_stories.where(hypothesis_id: nil)
   end
 end

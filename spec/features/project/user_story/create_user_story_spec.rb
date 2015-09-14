@@ -56,6 +56,25 @@ feature 'Create a new user story' do
       end
     end
 
+    scenario 'should show on lab user stories created on backlog' do
+      within 'form.new_user_story' do
+        fill_in :user_story_role, with: user_story.role
+        fill_in :user_story_action, with: user_story.action
+        fill_in :user_story_result, with: user_story.result
+
+        click_button 'Save'
+      end
+
+      visit project_hypotheses_path project
+      expect(page).to have_css 'section#user-stories-without-hypothesis'
+
+      within 'section#user-stories-without-hypothesis form' do
+        expect(find('#user_story_role').value).to have_text user_story.role
+        expect(find('#user_story_action').value).to have_text user_story.action
+        expect(find('#user_story_result').value).to have_text user_story.result
+      end
+    end
+
     scenario 'should create a new user story as a non epic' do
       within 'form.new_user_story' do
         fill_in :user_story_role, with: user_story.role
