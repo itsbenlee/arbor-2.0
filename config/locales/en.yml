@@ -43,6 +43,7 @@ en:
     members: "Project Members"
     activity: "Activity"
   labs:
+    undefined_hypothesis: 'Undefined hypothesis'
     hypotheses:
       enter_description: "Write a new hypothesis"
       export: "Export"
