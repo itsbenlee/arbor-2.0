@@ -50,7 +50,7 @@ en:
     goals:
       title: "Title"
       enter_title: "Enter Title"
-      enter_goal: "Write a new goal that measure your hypothesis"
+      enter_goal: "Write a new goal that helps to measure your hypothesis"
       export: "Export"
       delete: "Delete Goal"
     log: "Latest changes"
