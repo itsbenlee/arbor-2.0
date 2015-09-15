@@ -3,6 +3,9 @@
 
 - content_for :top_links do
   #top-nav
+    = link_to destroy_user_session_path, method: :delete, class: 'logout nav-links' do
+      = image_tag('icons/signout-icon.svg', class: 'icon')
+      = t('backlog.logout')
     = link_to '#', {"aria-controls" => "drop1", "aria-expanded" => "false", id: "export-button", class: "nav-links", "data-dropdown" => "drop1"} do
       = image_tag('icons/export-icon.svg', class: 'icon')
       = t('top_nav.export')

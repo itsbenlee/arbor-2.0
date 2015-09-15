@@ -1,5 +1,8 @@
 - content_for :top_links do
   #top-nav
+    = link_to destroy_user_session_path, method: :delete, class: 'logout nav-links' do
+      = image_tag('icons/signout-icon.svg', class: 'icon')
+      = t('backlog.logout')
     = link_to '#', class: "nav-links" do
       = image_tag('icons/search-icon.svg', class: 'icon')
       = t('top_nav.search')

@@ -82,6 +82,7 @@ en:
       edit_title: "Edit User Story"
       new: "New user story"
       enter_criterion: 'Write here a new acceptance criterion...'
+    logout: "Sign out"
   log:
     project:
       create: "The project was created."
