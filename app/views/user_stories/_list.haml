@@ -1,5 +1,6 @@
 .user-story-list{ data: { hypothesis_id: hypothesis.id , url: project_user_stories_order_path(hypothesis.project) } }
   - user_stories.each do |user_story|
+    %a{id:"user_story#{user_story.id}"}
     .user-story.new-user-story.row{ data: { hypothesis_id: hypothesis.id, id: user_story.id, order: user_story.order } }
       = link_to user_story_path(user_story), class: 'delete-user-story', title: 'Delete User Story', method: :delete do
         %span.icon-trash

@@ -17,16 +17,15 @@ class UserStoriesController < ApplicationController
   end
 
   def create
-    @user_story = UserStory.new(user_story_params)
-    @user_story.project = @project
-
+    @user_story =
+      UserStoryService.new.new_user_story(user_story_params, @project)
     if @user_story.save
       update_associations
-      redirect_to :back
+      request.env['HTTP_REFERER'] += "#user_story#{@user_story.id}"
     else
       @errors = @user_story.errors.full_messages
-      render :new, status: 400
     end
+    redirect_to :back
   end
 
   def update
