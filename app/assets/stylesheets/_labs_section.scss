@@ -312,78 +312,58 @@
   }
 
   .epic {
-    @include transition(opacity .25s ease-in, color .25s ease-in);
-    margin-left: rem-calc(1);
-    left: 0;
+    left: rem-calc(1);
     position: absolute;
     top: rem-calc(14);
 
-    input[type="checkbox"] {
-      position: absolute;
+    input {
       left: rem-calc(-9999);
+      position: absolute;
 
       + label {
         cursor: pointer;
-        font-size: rem-calc(12);
+        font-size: rem-calc(4);
         margin: 0;
         padding: 0;
         position: relative;
         vertical-align: top;
-        width: 22px;
+        width: rem-calc(22);
 
         &::before {
           @include border-radius(rem-calc(2));
           border: 2px solid $lab-color;
           content: '';
-          height: 12px;
-          left: 1px;
+          height: rem-calc(12);
+          left: 0;
           position: absolute;
           top: 0;
-          width: 12px;
+          width: rem-calc(12);
         }
 
         &::after {
+          @include transition(all .2s);
           @include opacity(0);
           @include scale(0);
-          content: '✔';
-          position: absolute;
-          left: 5px;
-          font-size: 4px;
           color: $white;
-          top: 7px;
-          transition: all .2s;
+          content: '✔';
+          font-size: rem-calc(4);
+          left: rem-calc(4);
           line-height: 0;
-        }
-
-        small {
-          color: #6a6a6a;
-          display: block;
-          font-size: 0.85em;
-          line-height: 20px;
-          margin-top: 5px;
+          position: absolute;
+          top: rem-calc(7);
         }
       }
 
-      &:checked {
-        + label {
-          &::after {
-            @include opacity(1);
-            @include scale(1.8, 2);
-          }
-
-          &::before { background-color: $lab-color; }
+      &:checked + label {
+        &::after {
+          @include opacity(1);
+          @include scale(1.8, 2);
         }
 
-        &:disabled + label:after { color: #999; }
+        &::before { background-color: $lab-color; }
       }
-    }
 
-    input {
-      @include border-radius(rem-calc(2));
-      background-color: $lab-color;
-      color: $lab-color;
-      height: rem-calc(20);
-      width: rem-calc(20);
+      &:checked:disabled + label:after { color: $black-70; }
     }
   }
 }// hypothesis item
