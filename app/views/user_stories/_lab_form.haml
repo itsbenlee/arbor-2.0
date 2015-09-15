@@ -4,8 +4,9 @@
       %ul
         - user_story.errors.full_messages.each do |error|
           %li= error
-  %span.square
-  %span.icon-edit
+  .user-story-input.epic
+    = form.check_box :epic, id: user_story.id
+    %label{ for: user_story.id }
   .user-story-input.column.role
     = t('backlog.user_stories.role')
     = form.text_field(                                   |
@@ -17,8 +18,7 @@
     )                                                    |
   .user-story-input.column.action
     = t('backlog.user_stories.action_prefix')
-    .user-story-priority
-      %p= user_story.priority
+    .user-story-priority= user_story.priority
     = t('backlog.user_stories.action_suffix')
     = form.text_field(                                     |
       :action,                                             |
@@ -36,9 +36,6 @@
       maxlength:   255,                                    |
       class:      'result'                                 |
     )                                                      |
-  .user-story-input.large-4.column
-    = form.label 'Epic'
-    = form.check_box :epic
   - if hypothesis
     = form.hidden_field :hypothesis_id, value: hypothesis.id
   = form.submit I18n.translate('save'), class: 'hide user-story-submit'

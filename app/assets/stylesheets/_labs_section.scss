@@ -213,6 +213,7 @@
       top: rem-calc(7);
     }
 
+    .new-story,
     .edit-story {
 
       .square { @include opacity(1); }
@@ -305,6 +306,84 @@
       padding: 0;
       vertical-align: baseline;
       width: 58%;
+    }
+
+    .user-story-priority { display: inline; }
+  }
+
+  .epic {
+    @include transition(opacity .25s ease-in, color .25s ease-in);
+    margin-left: rem-calc(1);
+    left: 0;
+    position: absolute;
+    top: rem-calc(14);
+
+    input[type="checkbox"] {
+      position: absolute;
+      left: rem-calc(-9999);
+
+      + label {
+        cursor: pointer;
+        font-size: rem-calc(12);
+        margin: 0;
+        padding: 0;
+        position: relative;
+        vertical-align: top;
+        width: 22px;
+
+        &::before {
+          @include border-radius(rem-calc(2));
+          border: 2px solid $lab-color;
+          content: '';
+          height: 12px;
+          left: 1px;
+          position: absolute;
+          top: 0;
+          width: 12px;
+        }
+
+        &::after {
+          @include opacity(0);
+          @include scale(0);
+          content: '✔';
+          position: absolute;
+          left: 5px;
+          font-size: 4px;
+          color: $white;
+          top: 7px;
+          transition: all .2s;
+          line-height: 0;
+        }
+
+        small {
+          color: #6a6a6a;
+          display: block;
+          font-size: 0.85em;
+          line-height: 20px;
+          margin-top: 5px;
+        }
+      }
+
+      &:checked {
+        + label {
+          &::after {
+            @include opacity(1);
+            @include scale(1.8, 2);
+          }
+
+          &::before { background-color: $lab-color; }
+        }
+
+        &:disabled + label:after { color: #999; }
+      }
+    }
+
+    input {
+      @include border-radius(rem-calc(2));
+      background-color: $lab-color;
+      color: $lab-color;
+      height: rem-calc(20);
+      width: rem-calc(20);
     }
   }
 }// hypothesis item
