@@ -399,10 +399,18 @@
   .description-error { color: $canvas-color; }
 
   .type { width: inherit; }
+
+  .hypothesis-type {
+    height: 13px;
+  }// .hypothesis-type
 }//hypothesis new
 
 .hypothesis-edit {
   display: none;
+
+  .hypothesis-type {
+    height: 13px;
+  }// .hypothesis-type
 }// hypothesis edit
 
 .hypothesis-type-edit {
