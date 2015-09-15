@@ -50,7 +50,7 @@ en:
     goals:
       title: "Title"
       enter_title: "Enter Title"
-      enter_goal: "Write a new goal that measure your hypothesis"
+      enter_goal: "Write a new goal that helps to measure your hypothesis"
       export: "Export"
       delete: "Delete Goal"
     log: "Latest changes"
@@ -82,6 +82,7 @@ en:
       edit_title: "Edit User Story"
       new: "New user story"
       enter_criterion: 'Write here a new acceptance criterion...'
+    logout: "Sign out"
   log:
     project:
       create: "The project was created."
