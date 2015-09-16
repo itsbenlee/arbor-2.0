@@ -15,7 +15,7 @@ feature 'Create hypothesis' do
 
     within '.hypothesis-new' do
       find('.description').set(hypothesis_description)
-      find('#hypothesis_hypothesis_type_id').select(hypothesis_type.description)
+      find("#hypothesis_hypothesis_type_id_#{hypothesis_type.id}").set(true)
       click_button 'Save'
     end
 
@@ -27,7 +27,7 @@ feature 'Create hypothesis' do
 
   scenario 'create hypothesis without description' do
     within '.hypothesis-new' do
-      find('#hypothesis_hypothesis_type_id').select(hypothesis_type.description)
+      find("#hypothesis_hypothesis_type_id_#{hypothesis_type.id}").set(true)
       click_button 'Save'
     end
 
