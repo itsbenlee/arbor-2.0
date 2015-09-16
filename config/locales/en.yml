@@ -42,6 +42,8 @@ en:
     links: "Links"
     members: "Project Members"
     activity: "Activity"
+    version: "Version "
+    logo_title: "Arbor Logo"
   labs:
     undefined_hypothesis: 'Undefined hypothesis'
     hypotheses:
