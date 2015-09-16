@@ -199,4 +199,8 @@
 
     &.active { @include rotate(0); }
   }
+
+  .arbor-version {
+    margin-left: 5px;
+  }// arbor-version 
 } // sidebar

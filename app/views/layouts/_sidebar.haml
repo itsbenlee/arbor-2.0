@@ -54,6 +54,10 @@
     %li
       %p
         = t('sidebar.powered_by')
-        = image_tag 'icons/arbor-icon.svg', title: 'Arbor Logo', alt: 'Powered by Arbor'
+        = image_tag 'icons/arbor-icon.svg',
+        title: t('sidebar.logo_title'),
+        alt: t('sidebar.powered_by')
+      %p.arbor-version
+        = t('sidebar.version') + ENV['VERSION']
       = link_to '#' do
         %span.icon-left
