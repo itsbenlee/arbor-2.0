@@ -4,7 +4,7 @@
     required: true, maxlength: 250, class: 'description' + (hypothesis.errors.any? ? '-error' : '')
   .row
     - hypothesis_types.each do |hypothesis_type|
-      .small-2.columns
+      .large-1.columns
         = form.radio_button :hypothesis_type_id, hypothesis_type.id,
         class: 'hypothesis-type'
         = form.label :hypothesis_type_id, hypothesis_type.description,
