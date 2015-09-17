@@ -4,7 +4,7 @@ class CreateConstraints < ActiveRecord::Migration
       t.string  :description, limit: 255, null: false, index: true
       t.references :user_story, null: false, index: true
 
-      t.timestamps, null: false
+      t.timestamps null: false
     end
   end
 end
