@@ -103,4 +103,14 @@ $('#log-modal').on('opened.fndtn.reveal', function() {
   });
 });
 
+$('.hypothesis input')
+  .focus(function() {
+    $(this).closest('.row').addClass('editing');
+  })
+
+  .blur(function() {
+    $(this).closest('.row').removeClass('editing');
+});
+
 $(document).on('page:change', UTIL.init);
+
