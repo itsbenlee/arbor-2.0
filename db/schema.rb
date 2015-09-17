@@ -64,8 +64,8 @@ ActiveRecord::Schema.define(version: 20150917123031) do
   create_table "constraints", force: :cascade do |t|
     t.string   "description",   limit: 255, null: false
     t.integer  "user_story_id",             null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   add_index "constraints", ["description"], name: "index_constraints_on_description", using: :btree
