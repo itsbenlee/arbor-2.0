@@ -38,13 +38,13 @@
       - @project.hypotheses.each do |hypothesis|
         = render 'hypotheses/show', hypothesis: hypothesis,
         hypothesis_types: @hypothesis_types, project: @project
+  - unless @independent_stories.nil?
+    = render 'user_stories/without_hypothesis',
+    independent_stories: @independent_stories,
+    project: @project
   .hypothesis-new
     .hypothesis
       .content.row
         = render 'hypotheses/new', hypothesis: @hypothesis,
         hypothesis_types: @hypothesis_types, project: @project
 #log-modal.reveal-modal{"data-reveal" => ""}
-- unless @independent_stories.nil?
-  = render 'user_stories/without_hypothesis',
-  independent_stories: @independent_stories,
-  project: @project

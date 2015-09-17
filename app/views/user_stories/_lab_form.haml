@@ -4,19 +4,22 @@
       %ul
         - user_story.errors.full_messages.each do |error|
           %li= error
+  %span.icon-edit
   .user-story-input.epic
     = form.check_box :epic, id: user_story.id
     %label{ for: user_story.id }
-  .user-story-input.column.role
+    %span epic
+  .user-story-input.role
     = t('backlog.user_stories.role')
     = form.text_field(                                   |
       :role,                                             |
       placeholder: t('backlog.user_stories.enter_role'), |
       required:    true,                                 |
       maxlength:   100,                                  |
-      class:      'role'                                 |
+      class:      'role',                                |
+      'data-autosize-input' => '{ "space": 10 }'         |
     )                                                    |
-  .user-story-input.column.action
+  .user-story-input.action
     = t('backlog.user_stories.action_prefix')
     .user-story-priority= user_story.priority
     = t('backlog.user_stories.action_suffix')
@@ -25,17 +28,20 @@
       placeholder: t('backlog.user_stories.enter_action'), |
       required:    true,                                   |
       maxlength:   255,                                    |
-      class:      'action'                                 |
+      class:      'action',                                |
+      'data-autosize-input' => '{ "space": 10 }'           |
     )                                                      |
-  .user-story-input.column.result
+  .user-story-input.result
     = t('backlog.user_stories.result')
     = form.text_field(                                     |
       :result,                                             |
       placeholder: t('backlog.user_stories.enter_result'), |
       required:    true,                                   |
       maxlength:   255,                                    |
-      class:      'result'                                 |
+      class:      'result',                                |
+      'data-autosize-input' => '{ "space": 10 }'           |
     )                                                      |
+  .enter - press &#8629; to finish
   - if hypothesis
     = form.hidden_field :hypothesis_id, value: hypothesis.id
   = form.submit I18n.translate('save'), class: 'hide user-story-submit'

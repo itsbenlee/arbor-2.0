@@ -123,9 +123,24 @@
     &:focus +.icon-plus +.icon-check { color: $lab-color; }
   }
 
+  .enter {
+    @include single-transition(opacity, .25s, ease-in);
+    @include opacity(0);
+    display: inline-block;
+    font-size: rem-calc(10);
+    vertical-align: top;
+  }
+
   .row {
     max-width: 100%;
     position: relative;
+
+    &.editing {
+      .enter { @include opacity(1); }
+      .epic span { @include opacity(1); }
+      .user-story-input { font-weight: $font-weight-bold; }
+      .new-story .epic label::before { border-color: $lab-color; }
+    }
   }
 
   .goals,
@@ -155,6 +170,7 @@
 
     &:hover {
       color: $font-color-3;
+      cursor: text;
 
       .icon-check { @include opacity(0); }
 
@@ -176,35 +192,33 @@
 
   .new-user-story {
     display: block;
-    padding: rem-calc(0 0 0 24);
-
-    &:hover {
-      .edit-story .square    { @include opacity(0); }
-      .edit-story .icon-edit { @include opacity(1); }
-    }
+    padding: rem-calc(0 24);
 
     &.ui-sortable-helper {
       padding: rem-calc(0 20 0 40);
 
-      .icon-edit { left: rem-calc(10); }
+      .epic {
+        left: rem-calc(10);
+
+        span { @include opacity(0); }
+      }
+
       .icon-trash { right: rem-calc(10); }
     }
 
     a:hover +.edit-story {
       span,
       input,
-      .user-story-input { color: $canvas-color; }
-    }
+      .user-story-input {
+        color: $canvas-color;
 
-    .square {
-      @include opacity(0);
-      @include border-radius(rem-calc(2));
-      background-color: $lab-color;
-      color: $lab-color;
-      height: rem-calc(12);
-      margin-left: rem-calc(1);
-      top: rem-calc(14);
-      width: rem-calc(12);
+        &.epic input:checked +label::before {
+          background-color: $canvas-color;
+          border-color: $canvas-color;
+        }
+
+        &.epic input +label::before { border-color: $canvas-color; }
+      }
     }
 
     .icon-edit {
@@ -213,39 +227,48 @@
       top: rem-calc(7);
     }
 
-    .new-story,
-    .edit-story {
+    .edit-story,
+    .new-story {
+      @include clearfix;
+      padding: rem-calc(8 0);
+    }
 
-      .square { @include opacity(1); }
+    .new-story .epic label::before {
+      @include grab-cursor;
+      border-color: $font-color-3;
+    }
 
-      .user-story-input {
-        @include single-transition(color, .25s, ease-in);
-        color: rgba($black, .75);
-
-        &.role {
-          // scss-lint:disable PlaceholderInExtend
-          @extend .large-3;
-        }
-
-        &.action {
-          // scss-lint:disable PlaceholderInExtend
-          @extend .large-5;
-        }
-
-        &.result {
-          // scss-lint:disable PlaceholderInExtend
-          @extend .large-4;
-        }
-      }
+    .user-story-input {
+      @include single-transition(color, .25s, ease-in);
+      color: $font-color-2;
+      display: inline;
+      padding: 0;
+      width: auto;
 
       input {
         color: $font-color-2;
+        font-style: italic;
+        height: rem-calc(20);
         margin: 0;
-        padding: rem-calc(10 0);
+        max-width: none;
+        min-width: 0;
+        padding: 0;
+        vertical-align: baseline;
+        width: rem-calc(110);
 
         &:hover,
         &:focus { color: $font-color-3; }
+
+        &:focus { min-width: rem-calc(110); }
       }
+
+      &.role input {
+        width: rem-calc(95);
+
+        &:focus { min-width: rem-calc(95); }
+      }
+
+      .user-story-priority { display: inline; }
     }
   }
 
@@ -295,32 +318,24 @@
     text-transform: uppercase;
   }
 
-  .user-story-input {
-    color: $font-color-2;
-    font-size: rem-calc(13);
-    padding: 0;
-
-    input {
-      @include ellipsis;
-      font-style: italic;
-      padding: 0;
-      vertical-align: baseline;
-      width: 58%;
-    }
-
-    .user-story-priority { display: inline; }
-  }
-
   .epic {
     left: rem-calc(1);
     position: absolute;
     top: rem-calc(14);
 
+    span {
+      @include opacity(0);
+      color: $lab-color;
+      font-weight: $font-weight-normal;
+      left: rem-calc(-32);
+      top: rem-calc(-6);
+    }
+
     input {
       left: rem-calc(-9999);
       position: absolute;
 
-      + label {
+      +label {
         cursor: pointer;
         font-size: rem-calc(4);
         margin: 0;
@@ -330,6 +345,7 @@
         width: rem-calc(22);
 
         &::before {
+          @include transition(background-color .25s ease-in, border-color .25s ease-in);
           @include border-radius(rem-calc(2));
           border: 2px solid $lab-color;
           content: '';
@@ -347,7 +363,7 @@
           color: $white;
           content: '✔';
           font-size: rem-calc(4);
-          left: rem-calc(4);
+          left: rem-calc(5);
           line-height: 0;
           position: absolute;
           top: rem-calc(7);
