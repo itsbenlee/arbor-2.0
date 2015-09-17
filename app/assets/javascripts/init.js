@@ -112,5 +112,6 @@ $('.hypothesis input')
     $(this).closest('.row').removeClass('editing');
 });
 
-$(document).on('page:change', UTIL.init);
-
+$(document).ready(function() {
+  UTIL.init();
+});

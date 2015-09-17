@@ -43,7 +43,7 @@
             = image_tag('icons/link-icon.svg', alt: t('sidebar.links'), class: 'icon')
             = t('sidebar.links')
         %li
-          = link_to '#', class: 'lab' do
+          = link_to current_project, class: 'lab' do
             = image_tag('icons/members-icon.svg', alt: t('sidebar.members'), class: 'icon')
             = t('sidebar.members')
         %li

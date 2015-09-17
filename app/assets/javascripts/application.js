@@ -15,8 +15,6 @@
 //= require jquery-ui/sortable
 //= require assets/global-vars
 //= require foundation
-//= require turbolinks
-//= require jquery.turbolinks
 //= require init
 //= require_tree ./projects
 //= require_tree ./hypotheses
