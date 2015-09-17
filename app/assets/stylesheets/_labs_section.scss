@@ -126,8 +126,8 @@
   .enter {
     @include single-transition(opacity, .25s, ease-in);
     @include opacity(0);
-    font-size: rem-calc(10);
     display: inline-block;
+    font-size: rem-calc(10);
     vertical-align: top;
   }
 
@@ -231,44 +231,44 @@
     .new-story {
       @include clearfix;
       padding: rem-calc(8 0);
-
-      .user-story-input {
-        @include single-transition(color, .25s, ease-in);
-        color: $font-color-2;
-        display: inline;
-        padding: 0;
-        width: auto;
-
-        input {
-          color: $font-color-2;
-          font-style: italic;
-          height: rem-calc(20);
-          margin: 0;
-          max-width: none;
-          min-width: 0;
-          padding: 0;
-          vertical-align: baseline;
-          width: rem-calc(110);
-
-          &:hover,
-          &:focus { color: $font-color-3; }
-
-          &:focus { min-width: rem-calc(110); }
-        }
-
-        &.role input {
-          width: rem-calc(95);
-
-          &:focus { min-width: rem-calc(95); }
-        }
-
-        .user-story-priority { display: inline; }
-      }
     }
 
     .new-story .epic label::before {
       @include grab-cursor;
       border-color: $font-color-3;
+    }
+
+    .user-story-input {
+      @include single-transition(color, .25s, ease-in);
+      color: $font-color-2;
+      display: inline;
+      padding: 0;
+      width: auto;
+
+      input {
+        color: $font-color-2;
+        font-style: italic;
+        height: rem-calc(20);
+        margin: 0;
+        max-width: none;
+        min-width: 0;
+        padding: 0;
+        vertical-align: baseline;
+        width: rem-calc(110);
+
+        &:hover,
+        &:focus { color: $font-color-3; }
+
+        &:focus { min-width: rem-calc(110); }
+      }
+
+      &.role input {
+        width: rem-calc(95);
+
+        &:focus { min-width: rem-calc(95); }
+      }
+
+      .user-story-priority { display: inline; }
     }
   }
 
