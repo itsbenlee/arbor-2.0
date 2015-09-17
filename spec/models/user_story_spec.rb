@@ -11,6 +11,8 @@ RSpec.describe UserStory do
   it { should validate_presence_of :result }
   it { should validate_inclusion_of(:priority).in_array UserStory::PRIORITIES }
   it { should belong_to(:project) }
+  it { should have_many :acceptance_criterions }
+  it { should have_many :constraints }
   it { should validate_uniqueness_of(:story_number).scoped_to(:project_id)}
 
   it 'must increase user stories order' do

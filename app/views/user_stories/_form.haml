@@ -53,3 +53,7 @@
     = render 'acceptance_criterions/new', user_story: user_story
     - user_story.acceptance_criterions.each do |acceptance_criterion|
       = render 'acceptance_criterions/edit', user_story: user_story, acceptance_criterion: acceptance_criterion
+  .constraint-form
+    = render 'constraints/new', user_story: user_story
+    - user_story.constraints.each do |constraint|
+      = render 'constraints/edit', user_story: user_story, constraint: constraint
