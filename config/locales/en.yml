@@ -45,7 +45,7 @@ en:
     version: "Version "
     logo_title: "Arbor Logo"
   labs:
-    undefined_hypothesis: 'Undefined hypothesis'
+    undefined_hypothesis: 'Undefined hypotheses'
     hypotheses:
       enter_description: "Write a new hypothesis"
       export: "Export"
