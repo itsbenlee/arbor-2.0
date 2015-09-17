@@ -116,5 +116,8 @@ UtilityFunction:
   enabled: true
   exclude: [
     UserStoriesHelper#format_story_points,
+    ApplicationHelper#meta_title,
+    ApplicationHelper#meta_description
+
   ]
   max_helper_calls: 1
