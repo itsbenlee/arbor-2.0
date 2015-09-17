@@ -83,7 +83,8 @@ en:
       delete: "Delete User Story"
       edit_title: "Edit User Story"
       new: "New user story"
-      enter_criterion: 'Write here a new acceptance criterion...'
+      enter_criterion: 'Write a new acceptance criterion here...'
+      enter_constraint: "Write a new constraint here..."
     logout: "Sign out"
   log:
     project:

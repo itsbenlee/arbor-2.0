@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150910182505) do
+ActiveRecord::Schema.define(version: 20150917123031) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,16 @@ ActiveRecord::Schema.define(version: 20150910182505) do
 
   add_index "canvas", ["project_id"], name: "index_canvas_on_project_id", using: :btree
   add_index "canvas", ["value_proposition"], name: "index_canvas_on_value_proposition", using: :btree
+
+  create_table "constraints", force: :cascade do |t|
+    t.string   "description",   limit: 255, null: false
+    t.integer  "user_story_id",             null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "constraints", ["description"], name: "index_constraints_on_description", using: :btree
+  add_index "constraints", ["user_story_id"], name: "index_constraints_on_user_story_id", using: :btree
 
   create_table "goals", force: :cascade do |t|
     t.text     "title",         null: false
