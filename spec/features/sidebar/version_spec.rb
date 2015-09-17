@@ -4,7 +4,7 @@ feature 'Check version string' do
   let(:user) { create :user }
 
   background do
-    ENV['VERSION'] = 'MY_VERSION'
+    ENV['SIDEBAR_VERSION'] = 'MY_VERSION'
     sign_in user
   end
 
