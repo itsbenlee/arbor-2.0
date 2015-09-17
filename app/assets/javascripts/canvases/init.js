@@ -22,7 +22,7 @@ ARBOR.canvases.init = function() {
   }
 
   function setVisited(type) {
-    $canvasLins.each(function(index, canvasItem) {
+    $canvasLinks.each(function(index, canvasItem) {
       var item = $(this);
       if(item.attr('type') == type) {
         item.addClass('canvas-visited');
