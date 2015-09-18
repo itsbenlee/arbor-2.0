@@ -201,6 +201,10 @@
   }
 
   .arbor-version {
-    margin-left: 5px;
-  }// arbor-version 
+    color: lighten($secondary-color, 10%);
+    left: rem-calc(15);
+    margin-left: rem-calc(5);
+    position: absolute;
+    top: rem-calc(25);
+  }// arbor-version
 } // sidebar
