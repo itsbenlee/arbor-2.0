@@ -39,16 +39,7 @@
     text-align: center;
 
     &:hover +.click-edit { @include opacity(1); }
-
   } // success metric show
-
-  .click-edit {
-    @include single-transition(opacity, .25s, ease-in);
-    @include opacity(0);
-    display: inline-block;
-    font-size: rem-calc(10);
-    vertical-align: top;
-  }
 }
 
 .hypothesis {
@@ -144,7 +135,8 @@
     &:focus +.icon-plus +.icon-check { color: $lab-color; }
   }
 
-  .enter {
+  .enter, 
+  .click-edit {
     @include single-transition(opacity, .25s, ease-in);
     @include opacity(0);
     display: inline-block;
