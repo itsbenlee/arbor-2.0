@@ -190,6 +190,10 @@
     }
   }
 
+  .user-story-list-empty {
+    min-height: 5px;
+  }
+
   .new-user-story {
     display: block;
     padding: rem-calc(0 24);

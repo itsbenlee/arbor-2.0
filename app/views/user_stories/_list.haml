@@ -1,4 +1,4 @@
-.user-story-list{ data: { hypothesis_id: hypothesis.id , url: project_user_stories_order_path(hypothesis.project) } }
+.user-story-list{ data: { hypothesis_id: hypothesis.id , url: project_user_stories_order_path(hypothesis.project) }, class: user_stories.any? ? '' : 'user-story-list-empty' }
   - user_stories.each do |user_story|
     %a{id:"user_story#{user_story.id}"}
     .user-story.new-user-story.row{ data: { hypothesis_id: hypothesis.id, id: user_story.id, order: user_story.order } }
