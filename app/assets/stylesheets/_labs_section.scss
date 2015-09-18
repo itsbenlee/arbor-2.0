@@ -442,15 +442,15 @@
   }// .hypothesis-type
 
   .success-items .radio-btn {
-    padding: 0;
     display: inline-block;
+    padding: 0;
 
     label {
       @include border-radius(50px);
       border: 1px solid $black-20;
       color: $black-20;
-      // display: inline-block;
       font-size: rem-calc(11);
+      margin-right: rem-calc(5);
       line-height: 1;
       padding: rem-calc(5 10);
       text-transform: uppercase;
@@ -458,16 +458,13 @@
       &:hover {
         border-color: $lab-color;
         color: $lab-color;
-      }
-    }
+      } // label hover
 
-    .radio-check {
-      color: $black-20;
-      display: inline-block;
-      font-size: rem-calc(12);
-      width: rem-calc(10);
-    }
-  }
+      // &:checked {
+      //   background-color: red;
+      // }
+    } // label
+  } // success items
 }// hypothesis edit
 
 .hypothesis-type-edit {
