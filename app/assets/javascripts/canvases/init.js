@@ -1,7 +1,9 @@
 ARBOR.canvases.init = function() {
-  var $canvasLinks    = $('li.canvas-item'),
-      $canvasFields   = $('.canvas-fields'),
-      $canvasTextarea = $('.canvas-fields textarea');
+  var $canvasLinks       = $('li.canvas-item'),
+      $canvasFields      = $('.canvas-fields'),
+      $canvasTextarea    = $('.canvas-fields textarea'),
+      $currentQuestion   = $('#current-question'),
+      currentQuestionVal = $currentQuestion.val();
 
   $canvasTextarea.each(function(array) {
     $(this).height($('textarea')[array].scrollHeight - 16);
@@ -18,6 +20,7 @@ ARBOR.canvases.init = function() {
   $canvasFields.css('opacity', 1);
 
   function showAttribute(type) {
+    $canvasFields.hide();
     $('.' + type + '-field.canvas-fields').show();
   }
 
@@ -32,10 +35,20 @@ ARBOR.canvases.init = function() {
     });
   }
 
+  showAttribute(currentQuestionVal);
+  setVisited(currentQuestionVal);
+
   $canvasLinks.click(function() {
-    $canvasFields.hide();
     var type = $(this).attr('type');
     showAttribute(type);
     setVisited(type);
+  });
+
+  function setCurrentQuestion(question) {
+    $currentQuestion.val(question);
+  }
+
+  $canvasTextarea.bind('keyup', function() {
+    setCurrentQuestion($(this).data('question'));
   });
 };

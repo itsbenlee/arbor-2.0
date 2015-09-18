@@ -9,6 +9,16 @@ feature 'Canvas question change for each canvas step' do
     sign_in member
   end
 
+  scenario 'should stay on the answered question' do
+    visit project_canvases_path(project)
+    find('.solutions-field textarea').set('My solution proposal')
+    click_button 'save-canvas'
+    within '.right-content-wrapper' do
+      expect(page).to have_text(I18n.t('solutions_title'))
+      expect(page).to have_text('My solution proposal')
+    end
+  end
+
   scenario 'for problem step' do
     visit project_canvases_path(project)
     find(".canvas-item[type='problems']").click()

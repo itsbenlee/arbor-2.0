@@ -1,15 +1,25 @@
 class CanvasesController < ApplicationController
   before_action :set_canvas, :check_edit_permission
+  before_action :set_current_question, only: :create
 
   def index
+    @current_question = 'problems'
   end
 
   def create
     @canvas.update_attributes(canvas_params)
-    redirect_to :back
+    if env['HTTP_REFERER'].include? 'hypotheses'
+      redirect_to :back
+      return
+    end
+    render :index
   end
 
   private
+
+  def set_current_question
+    @current_question = params['current-question']
+  end
 
   def canvas_params
     params.permit(:problems, :solutions, :alternative, :advantage, :segment,
