@@ -13,9 +13,7 @@
     .success-items
       - hypothesis_types.each do |hypothesis_type|
         .radio-btn
-          .radio-check
-            = form.radio_button :hypothesis_type_id, hypothesis_type.id,
-          class: 'hypothesis-type hide'
+          = form.radio_button :hypothesis_type_id, hypothesis_type.id, class: 'hypothesis-type'
           = form.label :hypothesis_type_id, hypothesis_type.description,
           value: hypothesis_type.id
     = form.submit :save, class: 'hide'
