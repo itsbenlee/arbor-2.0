@@ -39,7 +39,7 @@ function UserStory() {
   function setHypothesisObject(updatedHypothesis) {
     var hypothesisObject = { id: null, stories: [] };
     hypothesisObject.id = updatedHypothesis.data('hypothesis-id');
-    setStoriesObject(updatedHypothesis.children(), hypothesisObject);
+    setStoriesObject(updatedHypothesis.children('.user-story'), hypothesisObject);
     return hypothesisObject;
   }
 
