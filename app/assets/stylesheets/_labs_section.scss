@@ -31,12 +31,24 @@
 
   .hypothesis-type-show {
     @include border-radius(50px);
-    border: 1px solid $black-20;
+    border: 1px solid $lab-color;
     clear: both;
+    color: $lab-color;
     display: inline-block;
     padding: rem-calc(0 10);
     text-align: center;
+
+    &:hover .click-edit { @include opacity(1); }
+
   } // success metric show
+
+  .click-edit {
+    @include single-transition(opacity, .25s, ease-in);
+    // @include opacity(0);
+    display: inline-block;
+    font-size: rem-calc(10);
+    vertical-align: top;
+  }
 }
 
 .hypothesis {
@@ -428,18 +440,47 @@
   .description-error { color: $canvas-color; }
 
   .type { width: inherit; }
-
-  .hypothesis-type {
-    height: 13px;
-  }// .hypothesis-type
 }//hypothesis new
 
 .hypothesis-edit {
   display: none;
 
   .hypothesis-type {
-    height: 13px;
+    height: 3px;
   }// .hypothesis-type
+
+  .success-items {
+
+    .radio-btn {
+      padding: 0;
+
+      label {
+        @include border-radius(50px);
+        border: 1px solid $black-20;
+        color: $black-20;
+        font-size: rem-calc(11);
+        line-height: 1;
+        padding: rem-calc(5 10);
+        text-transform: uppercase;
+
+        &:hover {
+          border-color: $lab-color;
+          color: $lab-color;
+        }
+
+        input:checked {
+          background-color: red;
+        }
+      }
+
+      .radio-check {
+        color: $black-20;
+        display: inline-block;
+        font-size: rem-calc(12);
+        width: rem-calc(10);
+      }
+    }
+  }
 }// hypothesis edit
 
 .hypothesis-type-edit {
