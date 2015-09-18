@@ -135,7 +135,7 @@
     &:focus +.icon-plus +.icon-check { color: $lab-color; }
   }
 
-  .enter, 
+  .enter,
   .click-edit {
     @include single-transition(opacity, .25s, ease-in);
     @include opacity(0);
@@ -441,36 +441,31 @@
     height: 3px;
   }// .hypothesis-type
 
-  .success-items {
+  .success-items .radio-btn {
+    padding: 0;
+    display: inline-block;
 
-    .radio-btn {
-      padding: 0;
+    label {
+      @include border-radius(50px);
+      border: 1px solid $black-20;
+      color: $black-20;
+      // display: inline-block;
+      font-size: rem-calc(11);
+      line-height: 1;
+      padding: rem-calc(5 10);
+      text-transform: uppercase;
 
-      label {
-        @include border-radius(50px);
-        border: 1px solid $black-20;
-        color: $black-20;
-        font-size: rem-calc(11);
-        line-height: 1;
-        padding: rem-calc(5 10);
-        text-transform: uppercase;
-
-        &:hover {
-          border-color: $lab-color;
-          color: $lab-color;
-        }
-
-        input:checked {
-          background-color: red;
-        }
+      &:hover {
+        border-color: $lab-color;
+        color: $lab-color;
       }
+    }
 
-      .radio-check {
-        color: $black-20;
-        display: inline-block;
-        font-size: rem-calc(12);
-        width: rem-calc(10);
-      }
+    .radio-check {
+      color: $black-20;
+      display: inline-block;
+      font-size: rem-calc(12);
+      width: rem-calc(10);
     }
   }
 }// hypothesis edit
