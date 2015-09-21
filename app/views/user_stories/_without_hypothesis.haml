@@ -6,8 +6,8 @@
           %span.bullet
           = t('labs.undefined_hypothesis')
       .stories
-        .new-user-story.row
-          -independent_stories.each do |user_story|
+        -independent_stories.each do |user_story|
+          .new-user-story.row
             = link_to user_story_path(user_story), class: 'delete-user-story', title: 'Delete User Story', method: :delete do
               %span.icon-trash
             = render 'user_stories/lab_form', project: project,
