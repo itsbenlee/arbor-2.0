@@ -28,6 +28,25 @@
     border: 1px solid $border-color;
     padding: rem-calc(20);
   }
+
+  .hypothesis-type-show {
+    @include border-radius(50px);
+    background-color: $lab-color;
+    border: 2px solid $lab-color;
+    clear: both;
+    color: $white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: rem-calc(8);
+    font-weight: $font-weight-bold;
+    line-height: normal;
+    margin: rem-calc(6 0 6 16);
+    padding: rem-calc(3 7);
+    text-align: center;
+    text-transform: uppercase;
+
+    &:hover +.click-edit { display: inline-block; }
+  } // success metric show
 }
 
 .hypothesis {
@@ -123,12 +142,11 @@
     &:focus +.icon-plus +.icon-check { color: $lab-color; }
   }
 
-  .enter {
-    @include single-transition(opacity, .25s, ease-in);
-    @include opacity(0);
-    display: inline-block;
+  .enter,
+  .click-edit {
+    display: none;
     font-size: rem-calc(10);
-    vertical-align: top;
+    vertical-align: middle;
   }
 
   .row {
@@ -282,6 +300,7 @@
     font-size: rem-calc(15);
     font-weight: $font-weight-bold;
     height: rem-calc(29);
+    margin-bottom: 0;
     padding: rem-calc(0 0 0 15);
     position: relative;
 
@@ -291,15 +310,6 @@
       .hypothesis-title-field {
         margin-bottom: 0;
         padding: rem-calc(0 0 15 0);
-      }
-    }
-
-    .hypothesis-type-edit {
-      padding-left: 0;
-
-      .type {
-        padding: 0;
-        width: 16%;
       }
     }
 
@@ -316,12 +326,6 @@
     margin-top: 0;
   }
 
-  .type {
-    font-size: rem-calc(12);
-    margin-bottom: rem-calc(10);
-    text-transform: uppercase;
-  }
-
   .epic {
     left: rem-calc(1);
     position: absolute;
@@ -336,8 +340,7 @@
     }
 
     input {
-      left: rem-calc(-9999);
-      position: absolute;
+      display: none;
 
       +label {
         cursor: pointer;
@@ -418,20 +421,54 @@
 
   .description-error { color: $canvas-color; }
 
-  .type { width: inherit; }
-
-  .hypothesis-type {
-    height: 13px;
-  }// .hypothesis-type
 }//hypothesis new
 
 .hypothesis-edit {
   display: none;
+  min-height: rem-calc(60);
 
   .hypothesis-type {
-    height: 13px;
+    height: 3px;
   }// .hypothesis-type
+
 }// hypothesis edit
+
+.success-items {
+  position: relative;
+  top: rem-calc(-5);
+
+  .radio-btn {
+    display: inline-block;
+    padding: 0;
+
+    input {
+      display: none;
+
+      +label {
+        @include border-radius(50px);
+        border: 2px solid $black-20;
+        color: $black-20;
+        font-size: rem-calc(8);
+        font-weight: $font-weight-bold;
+        line-height: normal;
+        margin: rem-calc(0 5 0 0);
+        padding: rem-calc(3 7);
+        text-transform: uppercase;
+
+        &:hover {
+          border-color: $lab-color;
+          color: $lab-color;
+        } // label hover
+      } // label
+
+      &:checked + label {
+        background-color: $lab-color;
+        border-color: $lab-color;
+        color: $white;
+      } // checked
+    } // input
+  } // radio btn
+} // success items
 
 .hypothesis-type-edit {
   display: none;

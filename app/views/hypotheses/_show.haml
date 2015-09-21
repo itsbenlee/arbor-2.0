@@ -11,7 +11,8 @@
       .hypothesis-title
         %span.bullet
         = hypothesis.description
-    .type.small-12.columns.hypothesis-type-show{ data: { id: hypothesis.id } }= hypothesis.hypothesis_type_description
+    .type.hypothesis-type-show{ data: { id: hypothesis.id } }= hypothesis.hypothesis_type_description
+    .click-edit - click here to edit
   .content.row.collapse
     .goals
       - if hypothesis.goals.any?

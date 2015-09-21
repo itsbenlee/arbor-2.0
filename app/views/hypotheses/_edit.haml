@@ -10,11 +10,10 @@
       %span.bullet
       = form.text_field :description, class: 'hypothesis-title-field'
     .small-12.columns.hypothesis-type-edit{ data: { id: hypothesis.id } }
-    .row
+    .success-items
       - hypothesis_types.each do |hypothesis_type|
-        .small-2.columns
-          = form.radio_button :hypothesis_type_id, hypothesis_type.id,
-          class: 'hypothesis-type'
+        .radio-btn
+          = form.radio_button :hypothesis_type_id, hypothesis_type.id, class: 'hypothesis-type'
           = form.label :hypothesis_type_id, hypothesis_type.description,
           value: hypothesis_type.id
     = form.submit :save, class: 'hide'
