@@ -110,6 +110,10 @@ function dynamicInput() {
     var pluginDataAttributeName = 'autosize-input';
     var validTypes = ['text', 'password', 'search', 'url', 'tel', 'email', 'number'];
 
+    $(document).on('focus', ':input', function() {
+      $(this).attr('autocomplete', 'off');
+    });
+
     $.fn.autosizeInput = function (options) {
       return this.each(function () {
 
