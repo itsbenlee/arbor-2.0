@@ -43,6 +43,13 @@ feature 'Sidebar structure changes' do
       expect(page).to have_css 'section#canvas'
     end
 
+    scenario 'should display a link to the files section' do
+      find('a.sidebar-project-item').click
+      within 'ul#extras' do
+        expect(page).to have_link 'Files'
+      end
+    end
+
     scenario 'the lab link works' do
       find('a.sidebar-project-item').click
       within 'ul#workspace' do
