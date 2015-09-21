@@ -460,7 +460,7 @@
     &:checked + label {
       background-color: $lab-color;
       border-color: $lab-color;
-      color: white;
+      color: $white;
     } // checked
   } // input
 } // success items
