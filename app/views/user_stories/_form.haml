@@ -6,7 +6,7 @@
           %li= error
   %span.square
   %span.icon-edit
-  .user-story-input.column.role
+  .user-story-input.columns.role
     = t('backlog.user_stories.role')
     = form.text_field(                                   |
       :role,                                             |
@@ -27,7 +27,7 @@
       maxlength:   255,                                    |
       class:      'action'                                 |
     )                                                      |
-  .user-story-input.column.result
+  .user-story-input.columns.result
     = t('backlog.user_stories.result')
     = form.text_field(                                     |
       :result,                                             |
@@ -36,18 +36,18 @@
       maxlength:   255,                                    |
       class:      'result'                                 |
     )                                                      |
-  .user-story-input.large-4.column
-    = form.label 'Epic'
-    = form.check_box :epic
-  .user-story-input.large-4.column
-    = form.label 'Estimation'
-    = form.select :estimated_points, UserStory.estimation_series, include_blank: true
-  .user-story-input.large-4.column
+  .estimation.user-story-input.large-5.columns
+    = form.label 'Estimation points'
+    = form.select :estimated_points, UserStory.estimation_series
+  .priority.user-story-input.large-7.columns
     = form.label 'Priority'
     = form.select :priority, UserStory::PRIORITIES
   - if hypothesis
     = form.hidden_field :hypothesis_id, value: hypothesis.id
   = form.submit I18n.translate('save'), class: 'hide user-story-submit'
+  .epic.user-story-input.large-12.columns
+    = form.check_box :epic
+    = form.label 'Epic'
 - unless user_story.new_record?
   .acceptance-criterion-form
     = render 'acceptance_criterions/new', user_story: user_story
