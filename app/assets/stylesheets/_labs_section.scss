@@ -301,6 +301,7 @@
     font-size: rem-calc(15);
     font-weight: $font-weight-bold;
     height: rem-calc(29);
+    margin-bottom: 0;
     padding: rem-calc(0 0 0 15);
     position: relative;
 
@@ -430,38 +431,39 @@
     height: 3px;
   }// .hypothesis-type
 
-  .success-items .radio-btn {
-    display: inline-block;
-    padding: 0;
-
-    input {
-      display: none;
-
-      +label {
-        @include border-radius(50px);
-        border: 2px solid $black-20;
-        color: $black-20;
-        font-size: rem-calc(8);
-        font-weight: $font-weight-bold;
-        line-height: normal;
-        margin: rem-calc(0 5 0 0);
-        padding: rem-calc(3 7);
-        text-transform: uppercase;
-
-        &:hover {
-          border-color: $lab-color;
-          color: $lab-color;
-        } // label hover
-      } // label
-
-      &:checked + label {
-        background-color: $lab-color;
-        border-color: $lab-color;
-        color: white;
-      }
-    }
-  } // success items
 }// hypothesis edit
+
+.success-items .radio-btn {
+  display: inline-block;
+  padding: 0;
+
+  input {
+    display: none;
+
+    +label {
+      @include border-radius(50px);
+      border: 2px solid $black-20;
+      color: $black-20;
+      font-size: rem-calc(8);
+      font-weight: $font-weight-bold;
+      line-height: normal;
+      margin: rem-calc(0 5 0 0);
+      padding: rem-calc(3 7);
+      text-transform: uppercase;
+
+      &:hover {
+        border-color: $lab-color;
+        color: $lab-color;
+      } // label hover
+    } // label
+
+    &:checked + label {
+      background-color: $lab-color;
+      border-color: $lab-color;
+      color: white;
+    } // checked
+  } // input
+} // success items
 
 .hypothesis-type-edit {
   display: none;
