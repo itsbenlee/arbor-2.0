@@ -5,7 +5,6 @@ class ConstraintsController < ApplicationController
   def create
     constraint = Constraint.new(constraint_params)
     constraint.user_story = @user_story
-    # byebug
     if constraint.save
       @user_story.constraints << constraint
     else
