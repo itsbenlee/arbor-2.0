@@ -35,16 +35,17 @@
     border: 2px solid $lab-color;
     clear: both;
     color: $white;
+    cursor: pointer;
     display: inline-block;
     font-size: rem-calc(8);
     font-weight: $font-weight-bold;
     line-height: normal;
-    margin-left: rem-calc(16);
+    margin: rem-calc(6 0 6 16);
     padding: rem-calc(3 7);
     text-align: center;
     text-transform: uppercase;
 
-    &:hover +.click-edit { @include opacity(1); }
+    &:hover +.click-edit { display: inline-block; }
   } // success metric show
 }
 
@@ -143,11 +144,9 @@
 
   .enter,
   .click-edit {
-    @include single-transition(opacity, .25s, ease-in);
-    @include opacity(0);
-    display: inline-block;
+    display: none;
     font-size: rem-calc(10);
-    vertical-align: top;
+    vertical-align: middle;
   }
 
   .row {
@@ -426,6 +425,7 @@
 
 .hypothesis-edit {
   display: none;
+  min-height: rem-calc(60);
 
   .hypothesis-type {
     height: 3px;
@@ -433,36 +433,41 @@
 
 }// hypothesis edit
 
-.success-items .radio-btn {
-  display: inline-block;
-  padding: 0;
+.success-items {
+  position: relative;
+  top: rem-calc(-5);
 
-  input {
-    display: none;
+  .radio-btn {
+    display: inline-block;
+    padding: 0;
 
-    +label {
-      @include border-radius(50px);
-      border: 2px solid $black-20;
-      color: $black-20;
-      font-size: rem-calc(8);
-      font-weight: $font-weight-bold;
-      line-height: normal;
-      margin: rem-calc(0 5 0 0);
-      padding: rem-calc(3 7);
-      text-transform: uppercase;
+    input {
+      display: none;
 
-      &:hover {
+      +label {
+        @include border-radius(50px);
+        border: 2px solid $black-20;
+        color: $black-20;
+        font-size: rem-calc(8);
+        font-weight: $font-weight-bold;
+        line-height: normal;
+        margin: rem-calc(0 5 0 0);
+        padding: rem-calc(3 7);
+        text-transform: uppercase;
+
+        &:hover {
+          border-color: $lab-color;
+          color: $lab-color;
+        } // label hover
+      } // label
+
+      &:checked + label {
+        background-color: $lab-color;
         border-color: $lab-color;
-        color: $lab-color;
-      } // label hover
-    } // label
-
-    &:checked + label {
-      background-color: $lab-color;
-      border-color: $lab-color;
-      color: $white;
-    } // checked
-  } // input
+        color: $white;
+      } // checked
+    } // input
+  } // radio btn
 } // success items
 
 .hypothesis-type-edit {
