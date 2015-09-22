@@ -10,7 +10,7 @@ RSpec.describe UserStoriesController do
       sign_in user
     end
 
-    it 'redirects to the newly created user story' do
+    it 'send a success response with user story id' do
       request.env['HTTP_REFERER'] = project_hypotheses_path(project.id)
       post :create, project_id: project.id, user_story: {
           role: 'user',
@@ -21,10 +21,13 @@ RSpec.describe UserStoriesController do
           hypothesis_id: hypothesis.id,
           epic: 'false'
         }
+
       expect(UserStory.count).to eq(1)
       user_story = UserStory.last
-      expect(response).to redirect_to(
-        project_hypotheses_path(project.id) + "#user_story#{user_story.id}" )
+      hash_response = JSON.parse(response.body)
+
+      expect(hash_response['success']).to eq(true)
+      expect(hash_response['data']['user_story_id']).to eq(user_story.id)
     end
 
     context 'with ordering' do

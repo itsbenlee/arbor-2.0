@@ -17,15 +17,10 @@ class UserStoriesController < ApplicationController
   end
 
   def create
-    @user_story =
-      UserStoryService.new.new_user_story(user_story_params, @project)
-    if @user_story.save
-      update_associations
-      request.env['HTTP_REFERER'] += "#user_story#{@user_story.id}"
-    else
-      @errors = @user_story.errors.full_messages
-    end
-    redirect_to :back
+    @user_story_service = UserStoryService.new(@project, @hypothesis)
+    response =
+      @user_story_service.new_user_story(user_story_params)
+    render json: response
   end
 
   def update
@@ -64,7 +59,7 @@ class UserStoriesController < ApplicationController
 
   def set_hypothesis
     hypothesis_id = user_story_params[:hypothesis_id]
-    @hypothesis = Hypothesis.find(hypothesis_id) if hypothesis_id
+    @hypothesis = hypothesis_id ? Hypothesis.find(hypothesis_id) : nil
   end
 
   def check_edit_permission
@@ -91,10 +86,5 @@ class UserStoriesController < ApplicationController
 
   def update_order_params
     params.require(:hypotheses)
-  end
-
-  def update_associations
-    @project.user_stories << @user_story
-    @hypothesis.user_stories << @user_story if @hypothesis
   end
 end

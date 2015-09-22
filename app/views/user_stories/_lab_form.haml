@@ -1,4 +1,7 @@
-= form_for user_story, html: { class: user_story.new_record? ? 'new-story new_user_story' : 'edit-story edit_user_story' }, url: form_url do |form|
+= form_for user_story,
+html: { class: user_story.new_record? ? 'new-story new_user_story' : 'edit-story edit_user_story',
+data: { hypothesis_id: hypothesis.nil? ? nil : hypothesis.id } },
+url: form_url do |form|
   -if user_story.errors.any?
     .alert-box.alert.user_story_errors
       %ul

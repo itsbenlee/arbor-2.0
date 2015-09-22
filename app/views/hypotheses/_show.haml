@@ -20,6 +20,7 @@
       .new-goal.row
         = render 'goals/new', goal: Goal.new, hypothesis: hypothesis
     .stories
-      = render 'user_stories/list', user_stories: hypothesis.user_stories, hypothesis: hypothesis
+      .stories-list{ data: { hypothesis_id: hypothesis.id } }
+        = render 'user_stories/list', user_stories: hypothesis.user_stories, hypothesis: hypothesis
       .new-user-story.row
         = render 'user_stories/new', user_story: UserStory.new, project: project, hypothesis: hypothesis
