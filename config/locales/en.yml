@@ -44,6 +44,7 @@ en:
     activity: "Activity"
     version: "Version "
     logo_title: "Arbor Logo"
+    collapse: "Collapse/Uncollapse sidebar"
   labs:
     undefined_hypothesis: 'Undefined hypotheses'
     hypotheses:

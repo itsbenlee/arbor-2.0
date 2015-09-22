@@ -1,4 +1,5 @@
 #sidebar {
+  @include single-transition(width, .25s, ease-in);
   background-color: $primary-color;
   color: $white;
   height: 100%;
@@ -53,7 +54,7 @@
       }
 
       a {
-        @include single-transition(color, .25s, ease-in);
+        @include transition(color .25s ease-in);
         color: inherit;
         display: block;
         font-size: rem-calc(15);
@@ -65,25 +66,29 @@
         &.active { font-weight: $font-weight-normal; }
 
         +a { display: inline; }
+
+        &.my-projects,
+        &.current-project { @include transition(color .25s ease-in, opacity .25s ease-in .25s); }
       }
 
-      .canvas {
-        .bullet::before { color: $canvas-color; }
-      }
+      .canvas .bullet::before  { color: $canvas-color; }
+      .backlog .bullet::before { color: $backlog-color; }
 
-      .backlog {
-        .bullet::before { color: $backlog-color; }
-      }
-
-      img {
+      img,
+      svg {
         display: inline-block;
+        height: auto;
         margin-left: rem-calc(7);
         width: rem-calc(20);
 
         &.icon {
+          @include single-transition(width, .25s, ease-in);
           margin: rem-calc(-3 9 0 0);
+          vertical-align: middle;
           width: rem-calc(16);
         }
+
+        .colorable { @include single-transition(fill, .25s, ease-in); }
       }
 
       p {
@@ -95,7 +100,7 @@
       }
 
       span {
-        @include transition(opacity .25s ease-in, color .25s ease-in);
+        @include transition(transform .25s ease-in, opacity .25s ease-in, color .25s ease-in);
         @include opacity(0);
         color: $black-35;
         padding: rem-calc(10 0 10 10);
@@ -122,7 +127,7 @@
         z-index: 1;
 
         &::before {
-          @include single-transition(all, .25s, ease-in);
+          @include single-transition(right, .15s, ease-in);
           color: $lab-color;
           content: '\2022';
           font-size: rem-calc(30);
@@ -131,6 +136,8 @@
           right: 0;
         }
       }
+
+      .create-project-icon { display: none; }
 
       .button {
         color: $white;
@@ -141,12 +148,10 @@
     } // li
 
     @media #{ $large-up } {
-      .canvas,
       .lab,
+      .canvas,
       .backlog {
-        &:hover {
-          .bullet::before { right: rem-calc(24); }
-        }
+        &:hover .bullet::before { right: rem-calc(10); }
       }//section links
     }
   } // ul
@@ -177,6 +182,8 @@
         color: darken($black-35, 20%);
         padding: rem-calc(14 20);
       }
+
+      a { @include transition(color .25s ease-in .25s); }
     }
   }
 
@@ -188,14 +195,17 @@
     height: rem-calc(66);
     padding: 0;
     position: fixed;
+    width: inherit;
     z-index: 1;
 
     a { display: inline; }
+
+    p { @include transition(opacity .25s ease-in .25s); }
   }
 
   .icon-arrow {
     @include rotate(180deg);
-    @include single-transition(transform, .25s, ease-in);
+    @include transition(transform .25s ease-in, color .25s ease-in);
 
     &.active { @include rotate(0); }
   }
@@ -207,4 +217,95 @@
     position: absolute;
     top: rem-calc(25);
   }// arbor-version
-} // sidebar
+
+
+  @media #{ $small-only } {
+    @include single-transition(none);
+    width: 100%;
+  }
+
+  &.collapsed {
+    width: rem-calc(65);
+
+    li a {
+      @include ellipsis;
+
+      &.my-projects,
+      &.current-project {
+        @include opacity(0);
+        color: darken($primary-color, 5%);
+      }
+    }
+
+    #extras li,
+    #workspace li {
+      &:first-of-type {
+        @include opacity(0);
+        height: 0;
+      }
+
+      &.selected a {
+        color: $primary-color;
+
+        .colorable { fill: $success-color; }
+      }
+
+      a {
+        color: $primary-color;
+
+        .bullet { @include opacity(0); }
+
+        svg { width: rem-calc(20); }
+
+        &:hover .colorable { fill: $success-color; }
+      }
+    }// extras, workspace
+
+    .sidebar-project-list {
+      span {
+        font-size: rem-calc(20);
+        right: rem-calc(14);
+        top: rem-calc(6);
+      }
+
+      .sidebar-project-item +a { display: none; }
+
+      .button { display: none; }
+
+      .create-project-icon {
+        display: block;
+        margin-bottom: rem-calc(10);
+
+        &:hover span { @include opacity(.7); }
+
+        span {
+          @include opacity(1);
+          color: $success-color;
+          padding: rem-calc(0 10);
+        }
+      }
+    }// sidebar project list
+
+    .footer {
+      p {
+        @include opacity(0);
+        color: darken($primary-color, 5%);
+        width: 0;
+      }
+
+      span {
+        @include rotate(180deg);
+        font-size: rem-calc(20);
+        right: rem-calc(14);
+        top: rem-calc(6);
+      }
+    }
+  }// sidebar collapsed
+}// sidebar
+
+.right-app-content {
+  @include single-transition(width, .25s, ease-in);
+
+  &.full { width: calc(100% - 4.0625rem); }
+}
+

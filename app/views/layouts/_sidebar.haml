@@ -10,45 +10,47 @@
 
     - projects.each do |project|
       %li
-        = link_to project.name, project_canvases_path(project_id: project.id), class: 'sidebar-project-item'
+        = link_to project.name, project_canvases_path(project_id: project.id), title: " Go to #{project.name}", class: 'sidebar-project-item'
         = link_to edit_project_path(project), id: 'icon_edit_project' do
           %span.icon-edit
     %li
-      =link_to t('create_project.project_button'), new_project_path, class: 'button radius small success'
+      =link_to t('create_project.project_button'), new_project_path, title: t('create_project.project_button'), class: 'button radius small success'
+      =link_to new_project_path, title: t('create_project.project_button'), class: 'create-project-icon' do
+        %span.icon-plus
   - if current_project && !current_project.new_record?
     .toolbar
       %ul#workspace
         %li
           = t('sidebar.workspace')
         %li
-          = link_to project_canvases_path(current_project), class: 'canvas' do
-            = image_tag('icons/canvas-icon.svg', alt: t('sidebar.canvas'), class: 'icon')
+          = link_to project_canvases_path(current_project), title: "#{current_project.name} Canvas", class: 'canvas' do
+            = render 'shareable/svg/canvas_icon'
             = t('sidebar.canvas')
             %span.bullet
         %li
-          = link_to project_hypotheses_path(current_project), class: 'lab' do
-            = image_tag('icons/lab-icon.svg', alt: t('sidebar.lab'), class: 'icon')
+          = link_to project_hypotheses_path(current_project), title: "#{current_project.name} Lab", class: 'lab' do
+            = render 'shareable/svg/lab_icon'
             = t('sidebar.lab')
             %span.bullet
         %li
-          = link_to project_user_stories_path(current_project), class: 'backlog' do
-            = image_tag('icons/backlog-icon.svg', alt: t('sidebar.backlog'), class: 'icon')
+          = link_to project_user_stories_path(current_project), title: "#{current_project.name} Backlog", class: 'backlog' do
+            = render 'shareable/svg/backlog_icon'
             = t('sidebar.backlog')
             %span.bullet
       %ul#extras
         %li
           = t('sidebar.extras')
         %li
-          = link_to '#' do
-            = image_tag('icons/link-icon.svg', alt: t('sidebar.files'), class: 'icon')
+          = link_to '#', title: "#{current_project.name} Files" do
+            = render 'shareable/svg/files_icon'
             = t('sidebar.files')
         %li
-          = link_to current_project do
-            = image_tag('icons/members-icon.svg', alt: t('sidebar.members'), class: 'icon')
+          = link_to current_project, title: "#{current_project.name} Members" do
+            = render 'shareable/svg/members_icon'
             = t('sidebar.members')
         %li
-          = link_to '#' do
-            = image_tag('icons/activity-icon.svg', alt: t('sidebar.activity'), class: 'icon')
+          = link_to '#', title: "#{current_project.name} Activity" do
+            = render 'shareable/svg/activity_icon'
             = t('sidebar.activity')
   %ul.footer.columns.small-2
     %li
@@ -59,5 +61,5 @@
         alt: t('sidebar.powered_by')
       %p.arbor-version
         = t('sidebar.version') + ENV['SIDEBAR_VERSION']
-      = link_to '#' do
+      = link_to '#', title: t('sidebar.collapse'), class: 'collapse' do
         %span.icon-left
