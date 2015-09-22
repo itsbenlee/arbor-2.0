@@ -85,7 +85,10 @@ en:
       new: "New user story"
       enter_criterion: 'Write a new acceptance criterion here...'
       enter_constraint: "Write a new constraint here..."
+    story_span: "Story"
     logout: "Sign out"
+    acceptance_criteria: "Acceptance Criteria"
+    constraints: "Constraints"
   log:
     project:
       create: "The project was created."

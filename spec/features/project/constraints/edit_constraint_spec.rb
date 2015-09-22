@@ -22,7 +22,7 @@ feature 'Update a constraint' do
   scenario 'should update a constraint', js: true do
     pending 'Need to fix javascript/database cleaner/shared connection'
 
-    within 'form.edit_constraint' do
+    within 'form.edit-constraint' do
       fill_in :constraint_description, with: 'new description'
       find('input#save-constraint', visible: false).trigger('click')
     end
