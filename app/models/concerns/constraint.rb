@@ -1,4 +1,4 @@
-class AcceptanceCriterion < ActiveRecord::Base
+class Constraint < ActiveRecord::Base
   include WithoutAssociationLoggable
 
   validates_presence_of :description
