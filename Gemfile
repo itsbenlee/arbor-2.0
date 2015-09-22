@@ -32,6 +32,8 @@ group :development, :test do
   gem 'rails_best_practices'
   gem 'rubocop'
   gem 'scss-lint'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :test do

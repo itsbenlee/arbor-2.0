@@ -1,5 +1,6 @@
 function UserStory() {
-  var $userStoriesList = $('.user-story-list');
+  var $userStoriesList = $('.user-story-list'),
+      $newUserStoryForm = $('form#new_user_story');
 
   function storiesAreReordered(hypothesisId, stories) {
     var changes = false;
@@ -61,11 +62,57 @@ function UserStory() {
     });
   }
 
-  $userStoriesList.sortable({
-    connectWith: '.user-story-list',
-    stop: function() {
-      var hypotheses = getHypothesesWhichChanged();
-      updateHypotheses(hypotheses);
-    }
+  function hideHypothesis(hypothesisId) {
+    $('.hypothesis[data-id=' + hypothesisId + ']').hide();
+  }
+
+  function showHypothesis(hypothesisId) {
+    $('.hypothesis[data-id=' + hypothesisId + ']').show();
+  }
+
+  function refreshHypothesis(hypothesisId, userStoryId) {
+    $.get('/hypotheses/' + hypothesisId + '/user_stories',
+      function(storiesHTML) {
+      $('.stories-list[data-hypothesis-id=' + hypothesisId + ']').html('');
+      $('.stories-list[data-hypothesis-id=' + hypothesisId + ']').html(storiesHTML);
+      showHypothesis(hypothesisId);
+      $userStoriesList = $('.user-story-list');
+      bindUserStoriesSortEvent();
+      location.href = '#user_story' + userStoryId;
+    });
+  }
+
+  function bindUserStoriesSortEvent() {
+    $userStoriesList.sortable({
+      connectWith: '.user-story-list',
+      stop: function() {
+        var hypotheses = getHypothesesWhichChanged();
+        updateHypotheses(hypotheses);
+      }
+    });
+  }
+
+  bindUserStoriesSortEvent();
+  $newUserStoryForm.submit(function() {
+    var url          = $(this).attr('action'),
+        type         = $(this).attr('method'),
+        userStory    = $(this).serialize(),
+        hypothesisId = $(this).data('hypothesisId');
+
+    hideHypothesis(hypothesisId);
+
+    $.ajax({
+      type: type,
+      url: url,
+      data: userStory,
+      success: function (response) {
+        if(response.success) {
+          refreshHypothesis(hypothesisId, response.data.user_story_id);
+          $newUserStoryForm.trigger('reset');
+        }
+      }
+    });
+
+    return false;
   });
 }

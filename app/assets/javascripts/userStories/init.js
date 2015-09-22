@@ -1,7 +1,11 @@
 ARBOR.user_stories.init = function() {
-  var $userStoriesOnList = $('li.user-story'),
-      $userStoriesList = $('ul.user-story-list'),
-      $userStoryForm = $('.user-story-edit-form');
+  var $userStoriesOnList    = $('li.user-story'),
+      $userStoriesList      = $('ul.user-story-list'),
+      $userStoryForm        = $('.user-story-edit-form'),
+      $newUserStoryForm     = $('form#new_user_story'),
+      $backlogSection       = $('section.backlog'),
+      $userStoriesContainer = $('.user-stories-list-container'),
+      projectId             = $backlogSection.data('projectId');
 
   function setBacklogOrder() {
     var newOrder = { stories: []},
@@ -15,28 +19,72 @@ ARBOR.user_stories.init = function() {
     return newOrder;
   }
 
-  $userStoriesOnList.click(function() {
-    var url = $(this).data('url');
+  function bindUserStoriesEvents() {
+    $userStoriesOnList.click(function() {
+      var url = $(this).data('url');
 
-    $.get(url, function(editForm) {
-      $userStoryForm.html('');
-      $userStoryForm.html(editForm);
-    });
-  });
-
-  $userStoriesList.sortable({
-    connectWith: '.user-story-list',
-    stop: function() {
-      var newOrder = setBacklogOrder(),
-          url = $userStoriesList.data('url');
-
-      $.ajax({
-        url: url,
-        dataType: 'json',
-        method: 'PUT',
-        data: { stories: newOrder.stories }
+      $.get(url, function(editForm) {
+        $userStoryForm.html('');
+        $userStoryForm.html(editForm);
       });
-    }
+    });
+
+    $userStoriesList.sortable({
+      connectWith: '.user-story-list',
+      stop: function() {
+        var newOrder = setBacklogOrder(),
+            url = $userStoriesList.data('url');
+
+        $.ajax({
+          url: url,
+          dataType: 'json',
+          method: 'PUT',
+          data: { stories: newOrder.stories }
+        });
+      }
+    });
+  }
+
+  function hideBacklog() {
+    $userStoriesContainer.hide();
+  }
+
+  function showBacklog() {
+    $userStoriesContainer.show();
+  }
+
+  function refreshBacklog() {
+    $.get('backlog', function(backlogHTML) {
+      $userStoriesContainer.html('');
+      $userStoriesContainer.html(backlogHTML);
+      $userStoriesOnList = $('li.user-story');
+      $userStoriesList   = $('ul.user-story-list');
+      bindUserStoriesEvents();
+      showBacklog();
+    });
+  }
+
+  bindUserStoriesEvents();
+  $newUserStoryForm.submit(function() {
+    var url       = $(this).attr('action'),
+        type      = $(this).attr('method'),
+        userStory = $(this).serialize();
+
+    hideBacklog();
+
+    $.ajax({
+      type: type,
+      url: url,
+      data: userStory,
+      success: function (response) {
+        if(response.success) {
+          refreshBacklog();
+          $newUserStoryForm.trigger('reset');
+        }
+      }
+    });
+
+    return false;
   });
 };
 

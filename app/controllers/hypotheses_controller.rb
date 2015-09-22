@@ -10,6 +10,14 @@ class HypothesesController < ApplicationController
     @hypothesis_types = HypothesisType.all
   end
 
+  def list_stories
+    hypothesis = Hypothesis.find(params[:hypothesis_id])
+
+    render partial: 'user_stories/list',
+           locals: { user_stories: hypothesis.user_stories,
+                     hypothesis: hypothesis }
+  end
+
   def create
     @hypothesis = Hypothesis.new(hypothesis_params)
     @hypothesis.project = @project
