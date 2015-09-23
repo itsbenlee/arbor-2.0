@@ -8,11 +8,12 @@
   = form_for hypothesis do |form|
     .hypothesis-title
       %span.bullet
-      = form.text_field :description, class: 'hypothesis-title-field'
+      = form.text_field :description, class: 'hypothesis-title-field',
+      data: { hypothesis_id: hypothesis.id }
     .small-12.columns.hypothesis-type-edit{ data: { id: hypothesis.id } }
     .success-items
       - hypothesis_types.each do |hypothesis_type|
-        .radio-btn
+        .radio-btn.hypothesis-type-container{ data: { hypothesis_type_id: hypothesis_type.id, hypothesis_id: hypothesis.id } }
           = form.radio_button :hypothesis_type_id, hypothesis_type.id, class: 'hypothesis-type'
           = form.label :hypothesis_type_id, hypothesis_type.description,
           value: hypothesis_type.id
