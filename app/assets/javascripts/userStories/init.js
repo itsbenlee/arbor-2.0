@@ -19,14 +19,18 @@ ARBOR.user_stories.init = function() {
     return newOrder;
   }
 
+  function displayStoryForm(url) {
+    $.get(url, function(editForm) {
+      $userStoryForm.html('');
+      $userStoryForm.html(editForm);
+      bindEditForm();
+    });
+  }
+
   function bindUserStoriesEvents() {
     $userStoriesOnList.click(function() {
       var url = $(this).data('url');
-
-      $.get(url, function(editForm) {
-        $userStoryForm.html('');
-        $userStoryForm.html(editForm);
-      });
+      displayStoryForm(url);
     });
 
     $userStoriesList.sortable({
@@ -79,13 +83,39 @@ ARBOR.user_stories.init = function() {
       success: function (response) {
         if(response.success) {
           refreshBacklog();
-          $newUserStoryForm.trigger('reset');
+          editUrl = response.data.edit_url;
+          displayStoryForm(editUrl);
         }
       }
     });
-
     return false;
   });
+
+  function bindEditForm() {
+    $editForm = $('form.edit-story.edit_user_story');
+
+    $editForm.submit(function() {
+      var url       = $(this).attr('action'),
+          type      = $(this).attr('method'),
+          userStory = $(this).serialize();
+
+      hideBacklog();
+
+      $.ajax({
+        type: type,
+        url: url,
+        data: userStory,
+        success: function (response) {
+          if(response.success) {
+            refreshBacklog();
+            editUrl = response.data.edit_url
+            displayStoryForm(editUrl);
+          }
+        }
+      });
+      return false;
+    });
+  }
 };
 
 dynamicInput();
@@ -186,4 +216,3 @@ function dynamicInput() {
     });
   })($);
 };
-

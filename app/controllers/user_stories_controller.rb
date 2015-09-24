@@ -25,17 +25,14 @@ class UserStoriesController < ApplicationController
 
   def update
     @user_story.update_attributes(user_story_params)
-    if @user_story.save
-      redirect_to :back
-    else
-      @errors = @user_story.errors.full_messages
-      render :edit, status: 400
-    end
+    @user_story_service = UserStoryService.new(@project)
+    response =
+      @user_story_service.update_user_story(@user_story)
+    render json: response
   end
 
   def destroy
     @project.user_stories.destroy(@user_story)
-
     redirect_to :back
   end
 

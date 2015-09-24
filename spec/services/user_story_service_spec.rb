@@ -1,4 +1,25 @@
 require 'spec_helper'
+
+feature 'update user story' do
+  let(:project)       { create :project }
+  let(:story_service) { UserStoryService.new(project) }
+  let(:user_story)    {
+    create :user_story,
+    role: 'User',
+    action: 'be able to reset my password',
+    result: 'so that I can recover my account',
+    estimated_points: 1,
+    priority: 'should',
+    epic: false
+  }
+
+  scenario 'should load the response' do
+    response = story_service.update_user_story(user_story)
+    expect(response.success).to eq(true)
+    expect(response.data[:edit_url]).to eq(edit_user_story_path(user_story))
+  end
+end
+
 feature 'create user story' do
   let(:project)           { create :project }
   let(:hypothesis)        { create :hypothesis, project: project }
