@@ -1,6 +1,7 @@
 function UserStory() {
-  var $userStoriesList = $('.user-story-list'),
-      $newUserStoryForm = $('form#new_user_story');
+  var $userStoriesList  = $('.user-story-list'),
+      $newUserStoryForm = $('form#new_user_story'),
+      $appContent       = $('.right-app-content');
 
   function storiesAreReordered(hypothesisId, stories) {
     var changes = false;
@@ -63,26 +64,35 @@ function UserStory() {
   }
 
   function hideHypothesis(hypothesisId) {
+    var $preloader  = $('.hypothesis-preloader[data-id=' + hypothesisId + ']');
     $('.hypothesis[data-id=' + hypothesisId + ']').hide();
+    $preloader.show();
+    $appContent.scrollTo($preloader, 300);
   }
 
   function showHypothesis(hypothesisId) {
+    $('.hypothesis-preloader[data-id=' + hypothesisId + ']').hide();
     $('.hypothesis[data-id=' + hypothesisId + ']').show();
   }
 
   function refreshHypothesis(hypothesisId, userStoryId) {
     $.get('/hypotheses/' + hypothesisId + '/user_stories',
       function(storiesHTML) {
-      $('.stories-list[data-hypothesis-id=' + hypothesisId + ']').html('');
-      $('.stories-list[data-hypothesis-id=' + hypothesisId + ']').html(storiesHTML);
-      showHypothesis(hypothesisId);
-      $userStoriesList = $('.user-story-list');
-      bindUserStoriesSortEvent();
-      location.href = '#user_story' + userStoryId;
+        var $storiesList = $('.stories-list[data-hypothesis-id=' +
+              hypothesisId + ']');
+        $storiesList.html('');
+        $storiesList.html(storiesHTML);
+
+        showHypothesis(hypothesisId);
+
+        bindUserStoriesSortEvent();
+        var $userStoryForm = $('#edit_user_story_' + userStoryId);
+        $appContent.scrollTo($userStoryForm, 200);
     });
   }
 
   function bindUserStoriesSortEvent() {
+    $userStoriesList = $('.user-story-list');
     $userStoriesList.sortable({
       connectWith: '.user-story-list',
       stop: function() {

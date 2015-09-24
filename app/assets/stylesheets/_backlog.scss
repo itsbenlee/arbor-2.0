@@ -209,3 +209,15 @@
     .estimation { padding-right: rem-calc(15); }
   } // user story edit form
 } // backlog
+
+.user-stories-preloader {
+  display: none;
+  padding-left: rem-calc(172);
+
+  img {
+    padding-bottom: rem-calc(25);
+    padding-top: rem-calc(25);
+    width: rem-calc(55);
+  }//user-stories-preloader img
+}
+

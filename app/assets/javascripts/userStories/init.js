@@ -5,6 +5,7 @@ ARBOR.user_stories.init = function() {
       $newUserStoryForm     = $('form#new_user_story'),
       $backlogSection       = $('section.backlog'),
       $userStoriesContainer = $('.user-stories-list-container'),
+      $backlogPreloader     = $('.user-stories-preloader'),
       projectId             = $backlogSection.data('projectId');
 
   function setBacklogOrder() {
@@ -51,9 +52,11 @@ ARBOR.user_stories.init = function() {
 
   function hideBacklog() {
     $userStoriesContainer.hide();
+    $backlogPreloader.show();
   }
 
   function showBacklog() {
+    $backlogPreloader.hide();
     $userStoriesContainer.show();
   }
 

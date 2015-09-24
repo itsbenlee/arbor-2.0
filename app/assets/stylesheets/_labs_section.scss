@@ -478,3 +478,15 @@
   height: 60%;
   overflow-y: scroll;
 }// log-modal.reveal-modal
+
+.hypothesis-preloader {
+  display: none;
+
+  img {
+    display: block;
+    margin: auto;
+    padding-bottom: rem-calc(25);
+    padding-top: rem-calc(25);
+    width: rem-calc(55);
+  }//hypothesis-preloader img
+}//hypothesis-preloader
