@@ -121,7 +121,7 @@
     .new-story {
       // scss-lint:disable PlaceholderInExtend
       @extend .row;
-      padding-left: (15);
+      padding-left: rem-calc(15);
     }
 
     .icon-edit { display: none; }
