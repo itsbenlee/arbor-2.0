@@ -14,6 +14,8 @@ class UserStory < ActiveRecord::Base
   belongs_to :hypothesis
   belongs_to :project
 
+  scope :ordered, -> { order(order: :asc) }
+
   include AssociationLoggable
 
   def self.estimation_series

@@ -11,10 +11,11 @@ class HypothesesController < ApplicationController
   end
 
   def list_stories
-    hypothesis = Hypothesis.find(params[:hypothesis_id])
+    hypothesis =
+      Hypothesis.includes(:user_stories).find(params[:hypothesis_id])
 
     render partial: 'user_stories/list',
-           locals: { user_stories: hypothesis.user_stories,
+           locals: { user_stories: hypothesis.user_stories.ordered,
                      hypothesis: hypothesis }
   end
 

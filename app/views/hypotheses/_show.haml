@@ -1,3 +1,5 @@
+.hypothesis-preloader{ data: { id: hypothesis.id } }
+  = image_tag 'preloader.gif'
 .hypothesis{ data: { id: hypothesis.id, order: hypothesis.order } }
   .hypothesis-form.clearfix
     = render 'hypotheses/edit', hypothesis: hypothesis, hypothesis_types: hypothesis_types
