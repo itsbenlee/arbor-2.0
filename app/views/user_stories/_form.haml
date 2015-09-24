@@ -6,6 +6,9 @@
           %li= error
   %span.square
   %span.icon-edit
+  %span.story-title= t('backlog.story_span')
+  .number
+    = "##{user_story.story_number}"
   .user-story-input.columns.role
     = t('backlog.user_stories.role')
     = form.text_field(                                   |
