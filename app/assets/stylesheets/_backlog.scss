@@ -215,7 +215,7 @@
       input {
         color: $secondary-color;
         font-size: rem-calc(16);
-        padding-left: 0 ;
+        padding-left: 0;
         @include input-placeholder { font-style: italic; };
       }
 
