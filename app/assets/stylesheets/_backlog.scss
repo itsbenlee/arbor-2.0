@@ -210,8 +210,6 @@
 
     .acceptance-criterion-form,
     .constraint-form {
-      position: relative;
-
       input {
         color: $secondary-color;
         font-size: rem-calc(16);
@@ -273,4 +271,3 @@
     width: rem-calc(55);
   }//user-stories-preloader img
 }
-
