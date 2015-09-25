@@ -36,6 +36,7 @@ Railsroot::Application.routes.draw do
       as: :user_stories_order
 
     get '/backlog', controller: :projects, action: :backlog
+    resources :attachments, only: [:index, :create]
   end
 
   resources :hypotheses, only: [:destroy] do

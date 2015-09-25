@@ -1,0 +1,19 @@
+CarrierWave.configure do |config|
+  config.ignore_integrity_errors = true
+  config.ignore_processing_errors = true
+  config.ignore_download_errors = true
+
+  if Rails.env.production? || Rails.env.development?
+    config.fog_provider = 'fog/aws'
+    config.fog_credentials = {
+      provider:              'AWS',
+      aws_access_key_id:     ENV['AMAZON_KEY'],
+      aws_secret_access_key: ENV['AMAZON_SECRET']
+    }
+    config.storage = :fog
+    config.fog_directory = ENV['AMAZON_BUCKET_NAME']
+    config.cache_dir = "#{Rails.root}/tmp/uploads"
+  else
+    config.storage = :file
+  end
+end

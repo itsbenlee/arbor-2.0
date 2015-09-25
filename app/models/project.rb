@@ -12,6 +12,8 @@ class Project < ActiveRecord::Base
 
   include AssociationLoggable
 
+  has_many :attachments, dependent: :destroy
+
   def as_json
     super(only: [:name])
   end

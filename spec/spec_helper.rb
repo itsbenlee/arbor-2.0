@@ -1,5 +1,7 @@
 require 'rubygems'
 require 'spork'
+require 'webmock'
+require 'vcr'
 
 Spork.prefork do
   ENV['RAILS_ENV'] ||= 'test'
@@ -30,6 +32,13 @@ Spork.prefork do
   Capybara.javascript_driver = :poltergeist
 
   Rails.logger.level = 4
+
+  if Rails.env.test?
+    CarrierWave.configure do |config|
+      config.storage = :file
+      config.enable_processing = false
+    end
+  end
 
   RSpec.configure do |config|
     config.use_transactional_fixtures = false
@@ -65,4 +74,10 @@ Spork.prefork do
 end
 
 Spork.each_run do
+end
+
+VCR.configure do |config|
+  config.cassette_library_dir = './spec/vcr'
+  config.allow_http_connections_when_no_cassette = true
+  config.hook_into :webmock
 end

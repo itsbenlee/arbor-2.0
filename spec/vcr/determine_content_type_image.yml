@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: head
+    uri: https://upload.wikimedia.org/wikipedia/commons/c/c4/PM5544_with_non-PAL_signals.png
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.6.0.1, ruby 2.1.5 (2014-11-13))
+      Accept:
+      - "*/*"
+      Date:
+      - Tue, 29 Sep 2015 14:04:45 GMT
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.9.4
+      Date:
+      - Tue, 29 Sep 2015 14:04:45 GMT
+      Content-Type:
+      - image/png
+      Content-Length:
+      - '15118'
+      Connection:
+      - keep-alive
+      X-Object-Meta-Sha1base36:
+      - cop7gv0y7n3inx4df0hihhqgb0pv07x
+      Last-Modified:
+      - Mon, 07 Oct 2013 12:13:49 GMT
+      Etag:
+      - b0f7fb8b330f60cefa2c1ff129bd1bcf
+      X-Timestamp:
+      - '1381148028.61784'
+      X-Trans-Id:
+      - tx26cfb88d7fa84f3b99f6b-005608db6d
+      X-Varnish:
+      - 2266823123 2243926915, 1096912658 1008261074, 1800571201 1800540086
+      Via:
+      - 1.1 varnish, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '114448'
+      X-Cache:
+      - cp1061 hit (35), cp3036 hit (604), cp3038 frontend hit (1)
+      Strict-Transport-Security:
+      - max-age=31536000
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Age, Date, Content-Length, Content-Range, X-Content-Duration, X-Cache, X-Varnish
+      Timing-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Tue, 29 Sep 2015 14:04:45 GMT
+recorded_with: VCR 2.9.3

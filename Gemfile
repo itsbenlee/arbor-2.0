@@ -15,6 +15,10 @@ gem 'jquery-ui-rails', '5.0.5'
 gem 'public_activity'
 gem 'rails_engine_decorators'
 gem 'ruby-trello'
+gem 'httpclient'
+gem 'metainspector'
+gem 'fog-aws'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
 group :doc do
   gem 'sdoc', require: false
@@ -42,11 +46,14 @@ group :test do
   gem 'shoulda-matchers'
   gem 'database_rewinder'
   gem 'rspec-wait'
+  gem 'webmock'
+  gem 'vcr'
 end
 
 group :production do
   gem 'rails_12factor'
   gem 'passenger', '5.0.15'
+  gem 'mini_magick'
 end
 
 gem 'devise'

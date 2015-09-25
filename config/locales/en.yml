@@ -90,6 +90,9 @@ en:
     logout: "Sign out"
     acceptance_criteria: "Acceptance Criteria"
     constraints: "Constraints"
+  attachment:
+    link:
+      enter_url: "Paste link here"
   log:
     project:
       create: "The project was created."
@@ -132,7 +135,8 @@ en:
       create: "A constraint was created"
       update: "A constraint was updated"
       destroy: "A constraint was deleted"
-    deleted_user: "Deleted User"
+  invalid_url: 'is invalid'
+  deleted_user: "Deleted User"
   save: "Save"
   edit: "Edit"
   can_not_view: "You can not view this project."
@@ -172,3 +176,7 @@ en:
       view_project: 'View Project'
       thanks: 'Thanks!'
       arbor: '- Arbor Team'
+  activerecord:
+    attributes:
+      link_attachment:
+        content: 'URL'
