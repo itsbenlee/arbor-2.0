@@ -20,8 +20,8 @@
       %li#trello_export_link
         = link_to t('trello.export'), '#'
 - if @project.canvas
-  .value-prop.row
-    .title-value-proposition.large-8.columns
+  .value-prop
+    .title-value-proposition
       %h2=@project.canvas.value_proposition
     = form_tag project_canvases_path(@project), method: :post, class: 'hypotheses-value-proposition' do
       = text_field_tag :value_proposition, @project.canvas.value_proposition

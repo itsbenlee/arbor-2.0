@@ -5,9 +5,18 @@
 // HYPOTHESIS
 // --------------------------------------------------------
 .value-prop {
-  padding: rem-calc(20);
+  padding: rem-calc(20 0 0 20);
+  width: 80%;
 
-  .title-value-proposition { padding: 0; }
+  .title-value-proposition {
+    display: inline-block;
+    padding: 0;
+  }
+
+  .hollow-btn {
+    float: right;
+    width: auto;
+  }
 
   .hypotheses-value-proposition {
     display: none;
