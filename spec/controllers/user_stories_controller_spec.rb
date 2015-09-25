@@ -1,16 +1,48 @@
 require 'spec_helper'
 
 RSpec.describe UserStoriesController do
-  describe 'POST create' do
-    let!(:user)        { create :user }
-    let!(:project)     { create :project, owner: user }
-    let!(:hypothesis)  { create :hypothesis, project: project }
+  let!(:user)        { create :user }
+  let!(:project)     { create :project, owner: user }
+  let!(:hypothesis)  { create :hypothesis, project: project }
 
-    before :each do
-      sign_in user
+  before :each do
+    sign_in user
+  end
+
+  describe 'POST update' do
+    let!(:user_story) {
+      create :user_story,
+      project: project,
+      role: 'user',
+      action: 'sign up',
+      result: 'i can browse the site',
+      estimated_points: '3',
+      priority: 'should',
+      epic: 'false'
+    }
+
+    it 'send a success response with the edit url' do
+      request.env['HTTP_REFERER'] = project_user_stories_path(project.id)
+      post :update, id: user_story.id, user_story: {
+          role: 'admin',
+          action: 'sign up',
+          result: 'i can browse the database',
+          estimated_points: '3',
+          priority: 'should',
+          epic: 'false'
+        }
+
+      expect(UserStory.count).to eq(1)
+      user_story = UserStory.last
+      hash_response = JSON.parse(response.body)
+
+      expect(hash_response['success']).to eq(true)
+      expect(hash_response['data']['edit_url']).to eq(edit_user_story_path(user_story))
     end
+  end
 
-    it 'redirects to the newly created user story' do
+  describe 'POST create' do
+    it 'send a success response with user story id' do
       request.env['HTTP_REFERER'] = project_hypotheses_path(project.id)
       post :create, project_id: project.id, user_story: {
           role: 'user',
@@ -21,10 +53,13 @@ RSpec.describe UserStoriesController do
           hypothesis_id: hypothesis.id,
           epic: 'false'
         }
+
       expect(UserStory.count).to eq(1)
       user_story = UserStory.last
-      expect(response).to redirect_to(
-        project_hypotheses_path(project.id) + "#user_story#{user_story.id}" )
+      hash_response = JSON.parse(response.body)
+
+      expect(hash_response['success']).to eq(true)
+      expect(hash_response['data']['user_story_id']).to eq(user_story.id)
     end
 
     context 'with ordering' do

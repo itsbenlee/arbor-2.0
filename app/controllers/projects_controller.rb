@@ -58,6 +58,11 @@ class ProjectsController < ApplicationController
     render layout: false
   end
 
+  def backlog
+    project = Project.find(params[:project_id])
+    render partial: 'user_stories/backlog_list', locals: { project: project }
+  end
+
   private
 
   def project_params

@@ -1,3 +1,5 @@
+.hypothesis-preloader{ data: { id: hypothesis.id } }
+  = image_tag 'preloader.gif'
 .hypothesis{ data: { id: hypothesis.id, order: hypothesis.order } }
   .hypothesis-form.clearfix
     = render 'hypotheses/edit', hypothesis: hypothesis, hypothesis_types: hypothesis_types
@@ -11,7 +13,8 @@
       .hypothesis-title
         %span.bullet
         = hypothesis.description
-    .type.small-12.columns.hypothesis-type-show{ data: { id: hypothesis.id } }= hypothesis.hypothesis_type_description
+    .type.hypothesis-type-show{ data: { id: hypothesis.id } }= hypothesis.hypothesis_type_description
+    .click-edit - click here to edit
   .content.row.collapse
     .goals
       - if hypothesis.goals.any?
@@ -19,7 +22,7 @@
       .new-goal.row
         = render 'goals/new', goal: Goal.new, hypothesis: hypothesis
     .stories
-      - if hypothesis.user_stories.any?
+      .stories-list{ data: { hypothesis_id: hypothesis.id } }
         = render 'user_stories/list', user_stories: hypothesis.user_stories, hypothesis: hypothesis
       .new-user-story.row
         = render 'user_stories/new', user_story: UserStory.new, project: project, hypothesis: hypothesis

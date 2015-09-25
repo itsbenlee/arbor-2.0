@@ -19,30 +19,11 @@
         = link_to t('json'), project_hypotheses_export_path(@project, format: :json)
       %li#trello_export_link
         = link_to t('trello.export'), '#'
-%section.backlog.row
-  .user-stories.large-5.columns
-    - @project.user_stories.each do |user_story|
-      %ul.user-story-list{ data: { url: project_reorder_backlog_path(@project) } }
-        %li.user-story{ data: { id: user_story.id,
-          url: edit_user_story_path(user_story),
-          backlog_order: user_story.backlog_order } }
-          .hover-options
-            %span.icon-arrow.up
-            %span.center-icon.delete-story
-              = link_to user_story_path(user_story), title: 'Delete User Story', class: 'trash-btn center-icon delete-story', method: :delete do
-                %span.icon-trash
-            %span.icon-arrow.down
-          .number
-            = "##{user_story.story_number}"
-          %span.points
-            = format_story_points(user_story)
-          .story-text
-            %span.grey-prefix= t('backlog.user_stories.role')
-            %span=user_story.role
-            %span.grey-prefix= t('backlog.user_stories.action', priority: user_story.priority)
-            %span=user_story.action
-            %span.grey-prefix= t('backlog.user_stories.result')
-            %span=user_story.result
+%section.backlog.row{ data: { project_id: @project.id } }
+  .user-stories-preloader.large-5.columns
+    = image_tag 'preloader.gif'
+  .user-stories-list-container
+    = render 'user_stories/backlog_list', project: @project
   .user-story-edit-form.large-7.columns
     = render 'user_stories/form', project: @project,
     user_story: @user_story,

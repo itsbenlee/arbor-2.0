@@ -5,7 +5,6 @@ class ConstraintsController < ApplicationController
   def create
     constraint = Constraint.new(constraint_params)
     constraint.user_story = @user_story
-
     if constraint.save
       @user_story.constraints << constraint
     else
@@ -34,6 +33,9 @@ class ConstraintsController < ApplicationController
   end
 
   def set_user_story
-    @user_story = UserStory.find(params[:user_story_id])
+    @user_story =
+      @constraint.try(:user_story) ||
+      UserStory
+      .find(params[:user_story_id])
   end
 end

@@ -39,11 +39,12 @@ en:
     canvas: "Canvas"
     lab: "Lab"
     backlog: "Backlog"
-    links: "Links"
+    files: "Files"
     members: "Project Members"
     activity: "Activity"
     version: "Version "
     logo_title: "Arbor Logo"
+    collapse: "Collapse/Uncollapse sidebar"
   labs:
     undefined_hypothesis: 'Undefined hypotheses'
     hypotheses:
@@ -85,7 +86,10 @@ en:
       new: "New user story"
       enter_criterion: 'Write a new acceptance criterion here...'
       enter_constraint: "Write a new constraint here..."
+    story_span: "Story"
     logout: "Sign out"
+    acceptance_criteria: "Acceptance Criteria"
+    constraints: "Constraints"
   log:
     project:
       create: "The project was created."
@@ -116,6 +120,18 @@ en:
       create: "A user story was created"
       update: "A user story was updated"
       destroy: "A user story was deleted"
+      add_acceptance_criterion: "An acceptance criterion was added to the user story"
+      add_constraint: "A constraint was added to the user story"
+      remove_acceptance_criterion: "An acceptance criterion was removed from the user story"
+      remove_constraint: "A constraint was removed from the user story"
+    acceptance_criterion:
+      create: "An acceptance criterion was created"
+      update: "An acceptance criterion was updated"
+      destroy: "An acceptance criterion was deleted"
+    constraint:
+      create: "A constraint was created"
+      update: "A constraint was updated"
+      destroy: "A constraint was deleted"
     deleted_user: "Deleted User"
   save: "Save"
   edit: "Edit"

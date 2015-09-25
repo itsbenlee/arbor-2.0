@@ -91,7 +91,7 @@
   } // user stories
 
   .user-story-edit-form {
-    padding-top: rem-calc(20);
+    padding: rem-calc(20 0 0 30);
 
     input {
       @include inline-block();
@@ -121,9 +121,19 @@
     .new-story {
       // scss-lint:disable PlaceholderInExtend
       @extend .row;
+      padding-left: rem-calc(15);
     }
 
     .icon-edit { display: none; }
+
+    .role,
+    .action,
+    .result {
+      font-family: $font-family-serif;
+      padding: 0;
+
+      @include input-placeholder { color: $secondary-color; }
+    }
 
     .role {
       // scss-lint:disable PlaceholderInExtend
@@ -134,7 +144,7 @@
     .action {
       // scss-lint:disable PlaceholderInExtend
       @extend .large-12;
-      input { width: 35%; }
+      input { width: 63%; }
     }
 
     .result {
@@ -148,12 +158,116 @@
       }
     }//result
 
-    label { display: inline-block; }
+    .story-title,
+    .number {
+      font-size: rem-calc(12);
+      font-weight: $font-weight-bold;
+      text-transform: uppercase;
+    }
+
+    .story-title { color: $black-40; }
+
+    .number { color: $secondary-color; }
+
+    label,
+    .number { display: inline-block; }
 
     .user-story-input {
       color: $black-30;
       font-size: rem-calc(40);
-      line-height: 1.5;
+      line-height: 1;
+
+      label {
+        color: $black-30;
+        font-size: rem-calc(12);
+        text-transform: uppercase;
+        width: 100%;
+      } // label
+    } // user story inputs
+
+    .estimation label,
+    .priority label {
+      border-top: 1px solid $black-10;
+      margin-top: rem-calc(30);
+      padding-top: rem-calc(20);
     }
-  }
+
+    .estimation,
+    .priority {
+      padding: 0;
+
+      select {
+        background-color: $white;
+        border-radius: $global-radius;
+        color: $black-70;
+        font-size: rem-calc(12);
+        padding-left: rem-calc(15);
+        text-transform: uppercase;
+      }
+    }
+
+    .constraint-input { width: 70%; }
+
+    .acceptance-criterion-form,
+    .constraint-form {
+      input {
+        color: $secondary-color;
+        font-size: rem-calc(16);
+        padding-left: 0;
+        @include input-placeholder { font-style: italic; };
+      }
+
+      .edit-constraint input {
+        line-height: 1;
+        width: auto;
+      }
+
+      .backlog-placeholder { width: 90%; }
+
+      .bullet::before {
+        color: $lab-color;
+        content: '\2022';
+        font-size: rem-calc(30);
+        margin-right: rem-calc(5);
+        vertical-align: middle;
+      }
+
+      .criterion-group {
+        border-top: 1px solid $black-10;
+        clear: both;
+        color: $black-30;
+        font-size: rem-calc(12);
+        margin-top: rem-calc(15);
+        padding-top: rem-calc(20);
+        text-transform: uppercase;
+        width: 100%;
+      }
+    } // acceptance criteria
+
+    .epic {
+      line-height: .4;
+      padding: rem-calc(0 0 20);
+
+      label {
+        color: $black-70;
+        font-size: rem-calc(12);
+        margin-left: 0;
+        vertical-align: baseline;
+        width: auto;
+      }
+    }  // epic
+
+    .estimation { padding-right: rem-calc(15); }
+  } // user story edit form
 } // backlog
+
+.user-stories-preloader {
+  display: none;
+  padding-left: rem-calc(172);
+
+  img {
+    padding-bottom: rem-calc(25);
+    padding-top: rem-calc(25);
+    width: rem-calc(55);
+  }//user-stories-preloader img
+}

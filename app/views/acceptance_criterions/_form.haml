@@ -1,3 +1,5 @@
 = form_for criterion do |form|
-  = form.text_field :description, placeholder: t('backlog.user_stories.enter_criterion')
+  - unless criterion.kind_of?(Array)
+    %span.bullet
+  = form.text_field :description, class: 'backlog-placeholder', placeholder: t('backlog.user_stories.enter_criterion')
   = form.submit t('save'), id: 'save-acceptance-criterion', class: 'hide'

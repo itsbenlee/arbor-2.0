@@ -6,7 +6,9 @@ class AcceptanceCriterionsController < ApplicationController
     acceptance_criterion = AcceptanceCriterion.new(acceptance_criterion_params)
     acceptance_criterion.user_story = @user_story
 
-    unless acceptance_criterion.save
+    if acceptance_criterion.save
+      @user_story.acceptance_criterions << acceptance_criterion
+    else
       flash[:alert] = acceptance_criterion.errors.full_messages[0]
     end
 

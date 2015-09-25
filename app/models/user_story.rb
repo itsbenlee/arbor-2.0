@@ -1,6 +1,4 @@
 class UserStory < ActiveRecord::Base
-  include WithoutAssociationLoggable
-
   PRIORITIES = %w(must should could would)
 
   validates_presence_of :role, :action, :result
@@ -11,14 +9,18 @@ class UserStory < ActiveRecord::Base
   before_create :order_in_hypotheses, :order_in_backlog, :assign_story_number
   after_create :update_next_story_number
 
-  belongs_to :hypothesis
-  belongs_to :project
   has_many :acceptance_criterions, dependent: :destroy
   has_many :constraints, dependent: :destroy
+  belongs_to :hypothesis
+  belongs_to :project
+
+  scope :ordered, -> { order(order: :asc) }
+
+  include AssociationLoggable
 
   def self.estimation_series
     fib = ->(arg) { arg < 2 ? arg : fib[arg - 1] + fib[arg - 2] }
-    (2..12).map { |index| fib[index] }
+    (2..12).map { |index| fib[index] }.unshift([nil])
   end
 
   def log_description

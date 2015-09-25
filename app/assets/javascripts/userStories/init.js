@@ -1,7 +1,12 @@
 ARBOR.user_stories.init = function() {
-  var $userStoriesOnList = $('li.user-story'),
-      $userStoriesList = $('ul.user-story-list'),
-      $userStoryForm = $('.user-story-edit-form');
+  var $userStoriesOnList    = $('li.user-story'),
+      $userStoriesList      = $('ul.user-story-list'),
+      $userStoryForm        = $('.user-story-edit-form'),
+      $newUserStoryForm     = $('form#new_user_story'),
+      $backlogSection       = $('section.backlog'),
+      $userStoriesContainer = $('.user-stories-list-container'),
+      $backlogPreloader     = $('.user-stories-preloader'),
+      projectId             = $backlogSection.data('projectId');
 
   function setBacklogOrder() {
     var newOrder = { stories: []},
@@ -15,29 +20,105 @@ ARBOR.user_stories.init = function() {
     return newOrder;
   }
 
-  $userStoriesOnList.click(function() {
-    var url = $(this).data('url');
-
+  function displayStoryForm(url) {
     $.get(url, function(editForm) {
       $userStoryForm.html('');
       $userStoryForm.html(editForm);
+      bindEditForm();
     });
+  }
+
+  function bindUserStoriesEvents() {
+    $userStoriesOnList.click(function() {
+      var url = $(this).data('url');
+      displayStoryForm(url);
+    });
+
+    $userStoriesList.sortable({
+      connectWith: '.user-story-list',
+      stop: function() {
+        var newOrder = setBacklogOrder(),
+            url = $userStoriesList.data('url');
+
+        $.ajax({
+          url: url,
+          dataType: 'json',
+          method: 'PUT',
+          data: { stories: newOrder.stories }
+        });
+      }
+    });
+  }
+
+  function hideBacklog() {
+    $userStoriesContainer.hide();
+    $backlogPreloader.show();
+  }
+
+  function showBacklog() {
+    $backlogPreloader.hide();
+    $userStoriesContainer.show();
+  }
+
+  function refreshBacklog() {
+    $.get('backlog', function(backlogHTML) {
+      $userStoriesContainer.html('');
+      $userStoriesContainer.html(backlogHTML);
+      $userStoriesOnList = $('li.user-story');
+      $userStoriesList   = $('ul.user-story-list');
+      bindUserStoriesEvents();
+      showBacklog();
+    });
+  }
+
+  bindUserStoriesEvents();
+  $newUserStoryForm.submit(function() {
+    var url       = $(this).attr('action'),
+        type      = $(this).attr('method'),
+        userStory = $(this).serialize();
+
+    hideBacklog();
+
+    $.ajax({
+      type: type,
+      url: url,
+      data: userStory,
+      success: function (response) {
+        if(response.success) {
+          refreshBacklog();
+          editUrl = response.data.edit_url;
+          displayStoryForm(editUrl);
+        }
+      }
+    });
+    return false;
   });
 
-  $userStoriesList.sortable({
-    connectWith: '.user-story-list',
-    stop: function() {
-      var newOrder = setBacklogOrder(),
-          url = $userStoriesList.data('url');
+  function bindEditForm() {
+    $editForm = $('form.edit-story.edit_user_story');
+
+    $editForm.submit(function() {
+      var url       = $(this).attr('action'),
+          type      = $(this).attr('method'),
+          userStory = $(this).serialize();
+
+      hideBacklog();
 
       $.ajax({
+        type: type,
         url: url,
-        dataType: 'json',
-        method: 'PUT',
-        data: { stories: newOrder.stories }
+        data: userStory,
+        success: function (response) {
+          if(response.success) {
+            refreshBacklog();
+            editUrl = response.data.edit_url
+            displayStoryForm(editUrl);
+          }
+        }
       });
-    }
-  });
+      return false;
+    });
+  }
 };
 
 dynamicInput();
@@ -110,6 +191,10 @@ function dynamicInput() {
     var pluginDataAttributeName = 'autosize-input';
     var validTypes = ['text', 'password', 'search', 'url', 'tel', 'email', 'number'];
 
+    $(document).on('focus', ':input', function() {
+      $(this).attr('autocomplete', 'off');
+    });
+
     $.fn.autosizeInput = function (options) {
       return this.each(function () {
 
@@ -134,4 +219,3 @@ function dynamicInput() {
     });
   })($);
 };
-

@@ -36,14 +36,17 @@ UTIL = {
 
 var $sideBar        = $('#sidebar'),
     $currentProject = $('.current-project'),
+    $rightContent   = $('.right-app-content'),
      projectsBar    = $sideBar.find('.sidebar-project-list'),
      toolBar        = $sideBar.find('.toolbar'),
      toggleIcon     = $sideBar.find('.icon-arrow'),
      toggleBar      = $sideBar.find('.icon-arrow, .current-project, .my-projects'),
      projectName    = $sideBar.find('.current-project').html(),
+     collapsedBar   = $sideBar.find('.collapse'),
      projectItem    = $currentProject.parent('li'),
-     activeState    = 'active';
-
+     activeState    = 'active',
+     collapsedState = 'collapsed',
+     fullState      = 'full';
 
 $sideBar.find('.toolbar a').each(function() {
   if ($(this).attr('href')  ===  window.location.pathname) {
@@ -52,7 +55,6 @@ $sideBar.find('.toolbar a').each(function() {
 });
 
 function slideSidebarToogle() {
-
   if (toolBar.is(':visible')) {
     $currentProject.html('My projects').removeClass(activeState);
     toggleIcon.addClass(activeState);
@@ -81,6 +83,29 @@ if (toolBar.length) {
     event.preventDefault();
   });
 }
+
+function collapseSidebar() {
+  if (!matchMedia(Foundation.media_queries.large).matches) {
+    if (collapsedBar.hasClass(collapsedState)) {
+      $sideBar.toggleClass(collapsedState);
+      $rightContent.toggleClass(fullState);
+    } else {
+      $sideBar.addClass(collapsedState);
+      $rightContent.addClass(fullState);
+    }
+  }
+}
+
+collapseSidebar()
+
+$(window).resize(collapseSidebar);
+
+collapsedBar.bind('click', function(event) {
+  $sideBar.toggleClass(collapsedState);
+  $rightContent.toggleClass(fullState);
+
+  event.preventDefault();
+});
 
 $('select#user_story_priority').on('change', function() {
   $(this).closest('form#new_user_story').find('.user-story-priority').text(this.value);

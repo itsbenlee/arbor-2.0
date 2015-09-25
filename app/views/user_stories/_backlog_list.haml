@@ -1,0 +1,23 @@
+.user-stories.large-5.columns
+  - project.user_stories.each do |user_story|
+    %ul.user-story-list{ data: { url: project_reorder_backlog_path(project) } }
+      %li.user-story{ data: { id: user_story.id,
+        url: edit_user_story_path(user_story),
+        backlog_order: user_story.backlog_order } }
+        .hover-options
+          %span.icon-arrow.up
+          %span.center-icon.delete-story
+            = link_to user_story_path(user_story), title: 'Delete User Story', class: 'trash-btn center-icon delete-story', method: :delete do
+              %span.icon-trash
+          %span.icon-arrow.down
+        .number
+          = "##{user_story.story_number}"
+        %span.points
+          = format_story_points(user_story)
+        .story-text
+          %span.grey-prefix= t('backlog.user_stories.role')
+          %span=user_story.role
+          %span.grey-prefix= t('backlog.user_stories.action', priority: user_story.priority)
+          %span=user_story.action
+          %span.grey-prefix= t('backlog.user_stories.result')
+          %span=user_story.result

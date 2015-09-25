@@ -98,7 +98,7 @@ feature 'List user stories' do
       visit project_user_stories_path project
 
       within ".user-story[data-id='#{UserStory.first.id}'] .points" do
-        expect(page).to have_content "1 point"
+        expect(page).to have_content '1 point'
       end
     end
 
@@ -106,7 +106,7 @@ feature 'List user stories' do
       visit project_user_stories_path project
 
       within ".user-story[data-id='#{UserStory.second.id}'] .points" do
-        expect(page).to have_content "2 points"
+        expect(page).to have_content '2 points'
       end
     end
 

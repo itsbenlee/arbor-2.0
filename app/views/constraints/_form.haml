@@ -1,3 +1,5 @@
 = form_for constraint do |form|
-  = form.text_field :description, placeholder: t('backlog.user_stories.enter_constraint')
+  - unless constraint.kind_of?(Array)
+    %span.bullet
+  = form.text_field :description, class: 'constraint-input', placeholder: t('backlog.user_stories.enter_constraint')
   = form.submit t('save'), id: 'save-constraint', class: 'hide'

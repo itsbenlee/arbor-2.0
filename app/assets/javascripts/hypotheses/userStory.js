@@ -1,5 +1,7 @@
 function UserStory() {
-  var $userStoriesList = $('.user-story-list');
+  var $userStoriesList  = $('.user-story-list'),
+      $newUserStoryForm = $('form#new_user_story'),
+      $appContent       = $('.right-app-content');
 
   function storiesAreReordered(hypothesisId, stories) {
     var changes = false;
@@ -39,7 +41,7 @@ function UserStory() {
   function setHypothesisObject(updatedHypothesis) {
     var hypothesisObject = { id: null, stories: [] };
     hypothesisObject.id = updatedHypothesis.data('hypothesis-id');
-    setStoriesObject(updatedHypothesis.children(), hypothesisObject);
+    setStoriesObject(updatedHypothesis.children('.user-story'), hypothesisObject);
     return hypothesisObject;
   }
 
@@ -61,11 +63,66 @@ function UserStory() {
     });
   }
 
-  $userStoriesList.sortable({
-    connectWith: '.user-story-list',
-    stop: function() {
-      var hypotheses = getHypothesesWhichChanged();
-      updateHypotheses(hypotheses);
-    }
+  function hideHypothesis(hypothesisId) {
+    var $preloader  = $('.hypothesis-preloader[data-id=' + hypothesisId + ']');
+    $('.hypothesis[data-id=' + hypothesisId + ']').hide();
+    $preloader.show();
+    $appContent.scrollTo($preloader, 300);
+  }
+
+  function showHypothesis(hypothesisId) {
+    $('.hypothesis-preloader[data-id=' + hypothesisId + ']').hide();
+    $('.hypothesis[data-id=' + hypothesisId + ']').show();
+  }
+
+  function refreshHypothesis(hypothesisId, userStoryId) {
+    $.get('/hypotheses/' + hypothesisId + '/user_stories',
+      function(storiesHTML) {
+        var $storiesList = $('.stories-list[data-hypothesis-id=' +
+              hypothesisId + ']');
+        $storiesList.html('');
+        $storiesList.html(storiesHTML);
+
+        showHypothesis(hypothesisId);
+
+        bindUserStoriesSortEvent();
+        var $userStoryForm = $('#edit_user_story_' + userStoryId);
+        $appContent.scrollTo($userStoryForm, 200);
+    });
+  }
+
+  function bindUserStoriesSortEvent() {
+    $userStoriesList = $('.user-story-list');
+    $userStoriesList.sortable({
+      connectWith: '.user-story-list',
+      stop: function() {
+        var hypotheses = getHypothesesWhichChanged();
+        updateHypotheses(hypotheses);
+      }
+    });
+  }
+
+  bindUserStoriesSortEvent();
+  $newUserStoryForm.submit(function() {
+    var url          = $(this).attr('action'),
+        type         = $(this).attr('method'),
+        userStory    = $(this).serialize(),
+        hypothesisId = $(this).data('hypothesisId');
+
+    hideHypothesis(hypothesisId);
+
+    $.ajax({
+      type: type,
+      url: url,
+      data: userStory,
+      success: function (response) {
+        if(response.success) {
+          refreshHypothesis(hypothesisId, response.data.user_story_id);
+          $newUserStoryForm.trigger('reset');
+        }
+      }
+    });
+
+    return false;
   });
 }

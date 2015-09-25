@@ -34,10 +34,13 @@ Railsroot::Application.routes.draw do
       controller: :user_stories,
       action: :update_order,
       as: :user_stories_order
+
+    get '/backlog', controller: :projects, action: :backlog
   end
 
   resources :hypotheses, only: [:destroy] do
     resources :goals, only: [:create]
+    get '/user_stories', controller: :hypotheses, action: :list_stories
   end
 
   resources :goals, only: [:edit, :update, :destroy]
