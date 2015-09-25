@@ -106,7 +106,7 @@ ARBOR.user_stories.init = function() {
       success: function (response) {
         if(response.success) {
           refreshBacklog();
-          editUrl = response.data.edit_url
+          editUrl = response.data.edit_url;
           displayStoryForm(editUrl);
         }
       }
@@ -148,6 +148,7 @@ ARBOR.user_stories.init = function() {
           constraint = $(this).serialize();
 
       editFormAjax(url, type, constraint);
+      hideBacklog();
       return false;
     });
   }
@@ -250,4 +251,4 @@ function dynamicInput() {
       $('input[data-' + pluginDataAttributeName + ']').autosizeInput();
     });
   })($);
-};
+}
