@@ -3,16 +3,10 @@ class AcceptanceCriterionsController < ApplicationController
   before_action :set_acceptance_criterion, only: :update
 
   def create
-    acceptance_criterion = AcceptanceCriterion.new(acceptance_criterion_params)
-    acceptance_criterion.user_story = @user_story
-
-    if acceptance_criterion.save
-      @user_story.acceptance_criterions << acceptance_criterion
-    else
-      flash[:alert] = acceptance_criterion.errors.full_messages[0]
-    end
-
-    redirect_to :back
+    @ac_service = AcceptanceCriterionServices.new(@user_story)
+    response =
+      @ac_service.new_acceptance_criterion(acceptance_criterion_params)
+    render json: response
   end
 
   def update

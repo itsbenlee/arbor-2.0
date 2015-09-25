@@ -3,15 +3,10 @@ class ConstraintsController < ApplicationController
   before_action :set_user_story, only: :create
 
   def create
-    constraint = Constraint.new(constraint_params)
-    constraint.user_story = @user_story
-    if constraint.save
-      @user_story.constraints << constraint
-    else
-      flash[:alert] = acceptance_criterion.errors.full_messages[0]
-    end
-
-    redirect_to :back
+    @constraint_service = ConstraintServices.new(@user_story)
+    response =
+      @constraint_service.new_constraint(constraint_params)
+    render json: response
   end
 
   def update
