@@ -92,9 +92,10 @@ function UserStory() {
   }
 
   function bindUserStoriesSortEvent() {
-    $userStoriesList = $('.user-story-list');
+    var storyListSelector = '.user-story-list';
+    $userStoriesList = $(storyListSelector);
     $userStoriesList.sortable({
-      connectWith: '.user-story-list',
+      connectWith: storyListSelector,
       stop: function() {
         var hypotheses = getHypothesesWhichChanged();
         updateHypotheses(hypotheses);

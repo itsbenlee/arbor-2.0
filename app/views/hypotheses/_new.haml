@@ -2,11 +2,7 @@
   %span.bullet
   = form.text_field :description, placeholder: I18n.translate('labs.hypotheses.enter_description'), class: 'custom',
     required: true, maxlength: 250, class: 'description' + (hypothesis.errors.any? ? '-error' : '')
-  .success-items
-    - hypothesis_types.each do |hypothesis_type|
-      .radio-btn
-        = form.radio_button :hypothesis_type_id, hypothesis_type.id,
-        class: 'hypothesis-type'
-        = form.label :hypothesis_type_id, hypothesis_type.description,
-        value: hypothesis_type.id
+  .small-12.columns{ data: { id: hypothesis.id } }
+    = form.select(:hypothesis_type_id,
+    hypothesis_types.all.collect { |ht|[ht.description, ht.id] }, {}, { class: 'type' })
   = form.submit I18n.translate('save'), class: 'hide'

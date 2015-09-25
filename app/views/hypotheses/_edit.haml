@@ -11,10 +11,6 @@
       = form.text_field :description, class: 'hypothesis-title-field',
       data: { hypothesis_id: hypothesis.id }
     .small-12.columns.hypothesis-type-edit{ data: { id: hypothesis.id } }
-    .success-items
-      - hypothesis_types.each do |hypothesis_type|
-        .radio-btn.hypothesis-type-container{ data: { hypothesis_type_id: hypothesis_type.id, hypothesis_id: hypothesis.id } }
-          = form.radio_button :hypothesis_type_id, hypothesis_type.id, class: 'hypothesis-type'
-          = form.label :hypothesis_type_id, hypothesis_type.description,
-          value: hypothesis_type.id
+      = form.select(:hypothesis_type_id,
+      hypothesis_types.all.collect { |ht|[ht.description, ht.id] }, {}, { class: 'type edit-type' })
     = form.submit :save, class: 'hide'
