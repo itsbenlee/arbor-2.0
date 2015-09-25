@@ -195,6 +195,7 @@
   #extras { border: 0; }
 
   .footer {
+    @include box-shadow(0 rem-calc(-2) rem-calc(5) rgba($black, .3));
     border-top: 1px solid $primary-color;
     bottom: 0;
     height: rem-calc(66);
