@@ -61,8 +61,7 @@ feature 'Log lab activity' do
         PublicActivity.with_tracking do
           within '.hypothesis-new' do
             fill_in 'hypothesis_description', with: hypothesis.description
-            find("#hypothesis_hypothesis_type_id_#{hypothesis_type.id}")
-              .set(true)
+            find('#hypothesis_hypothesis_type_id').select(hypothesis_type.description)
             click_button 'Save'
           end
         end
