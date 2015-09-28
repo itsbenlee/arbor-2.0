@@ -175,7 +175,7 @@
 
     .user-story-input {
       color: $black-30;
-      font-size: rem-calc(40);
+      font-size: rem-calc(27);
       line-height: 1;
 
       label {
@@ -184,6 +184,14 @@
         text-transform: uppercase;
         width: 100%;
       } // label
+
+      input,
+      p { font-size: rem-calc(27); }
+
+      .action {
+        width: 50%;
+        display: inline-block;
+      }
     } // user story inputs
 
     .estimation label,
