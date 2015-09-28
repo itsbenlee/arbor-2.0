@@ -15,6 +15,8 @@
       height: rem-calc(66);
       min-height: rem-calc(66);
       padding-bottom: rem-calc(66);
+
+      li:first-of-type { min-height: rem-calc(66); }
     }
 
     &.active {
@@ -48,10 +50,7 @@
         span { @include opacity(1); }
       }
 
-      &.selected a {
-        color: $white;
-        font-weight: $font-weight-bold;
-      }
+      &.selected a { color: $white; }
 
       a {
         @include transition(color .25s ease-in);
@@ -136,8 +135,6 @@
           right: 0;
         }
       }
-
-      .create-project-icon { display: none; }
 
       .button {
         color: $white;
@@ -276,20 +273,6 @@
 
       .sidebar-project-item +a { display: none; }
 
-      .button { display: none; }
-
-      .create-project-icon {
-        display: block;
-        margin-bottom: rem-calc(10);
-
-        &:hover span { @include opacity(.7); }
-
-        span {
-          @include opacity(1);
-          color: $success-color;
-          padding: rem-calc(0 10);
-        }
-      }
     }// sidebar project list
 
     .footer {
