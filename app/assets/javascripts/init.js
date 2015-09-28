@@ -42,71 +42,119 @@ var $sideBar        = $('#sidebar'),
      toggleIcon     = $sideBar.find('.icon-arrow'),
      toggleBar      = $sideBar.find('.icon-arrow, .current-project, .my-projects'),
      projectName    = $sideBar.find('.current-project').html(),
+     projectsList   = projectsBar.find('li').not(':first'),
      collapsedBar   = $sideBar.find('.collapse'),
      projectItem    = $currentProject.parent('li'),
      activeState    = 'active',
      collapsedState = 'collapsed',
      fullState      = 'full';
 
+// Add selected styles to page anchor
 $sideBar.find('.toolbar a').each(function() {
   if ($(this).attr('href')  ===  window.location.pathname) {
     $(this).parent().addClass('selected')
   }
 });
 
+// Show/hide projects list
 function slideSidebarToogle() {
   if (toolBar.is(':visible')) {
-    $currentProject.html('My projects').removeClass(activeState);
-    toggleIcon.addClass(activeState);
-    toolBar.addClass(activeState).delay(300).fadeOut();
-    projectsBar.addClass(activeState)
-
+    hideToolbar();
   } else {
-    $currentProject.html(projectName).addClass(activeState);
-    toggleIcon.removeClass(activeState);
-    toolBar.delay(200).fadeIn().removeClass(activeState);
-    projectsBar.removeClass(activeState)
+    showToolbar();
   }
 }
 
-if (toolBar.length) {
-  toggleBar.bind('click', function(event) {
-    slideSidebarToogle()
-
-    event.preventDefault();
-  });
-} else {
-  toggleIcon.addClass(activeState);
-  toggleBar.bind('click', function(event) {
-    toggleIcon.toggleClass(activeState);
-    projectsBar.toggleClass(activeState)
-
-    event.preventDefault();
-  });
+function hideToolbar() {
+  $currentProject.html('My projects').removeClass(activeState); // Change Current Project Name for 'My projects'
+  toggleIcon.addClass(activeState); // Rotate arrow
+  toolBar.addClass(activeState).hide(); // Hide toolbar
+  projectsBar.addClass(activeState); // Add active state
+  projectsList.delay(200).fadeIn(); // Show project list
 }
 
+function showToolbar() {
+  $currentProject.html(projectName).addClass(activeState); // Change Back Current Project Name
+  toggleIcon.removeClass(activeState); // Rotate arrow
+  toolBar.delay(200).fadeIn().removeClass(activeState); // Show toolbar
+  projectsBar.removeClass(activeState); // Remove active state
+  projectsList.fadeOut(); // Hide project list
+}
+
+function toggleCollapseState() {
+  $sideBar.toggleClass(collapsedState); // Toogle collapse state
+  $rightContent.toggleClass(fullState); // Toogle resize right content
+}
+
+// Collapse/uncollapse sidebar
 function collapseSidebar() {
+
+  // If browser window < than media queries large...
   if (!matchMedia(Foundation.media_queries.large).matches) {
+
+    // If bar is collapsed...
     if (collapsedBar.hasClass(collapsedState)) {
-      $sideBar.toggleClass(collapsedState);
-      $rightContent.toggleClass(fullState);
+      toggleCollapseState();
+
+    // If bar is uncollapsed...
     } else {
-      $sideBar.addClass(collapsedState);
-      $rightContent.addClass(fullState);
+      $sideBar.addClass(collapsedState); // Collapse sidebar
+      $rightContent.addClass(fullState); // Resize right content
+
+      // If toolbar is not visible...
+      if (!toolBar.is(':visible')) {
+        showToolbar();
+      }
     }
   }
 }
 
+if (toolBar.length) {
+  projectsList.hide(); // Hide project list
+
+  // On arrow icon click
+  toggleBar.bind('click', function(event) {
+    slideSidebarToogle();
+
+    // Uncollapse sidebar
+    $sideBar.removeClass(collapsedState);
+    $rightContent.removeClass(fullState);
+
+    event.preventDefault();
+  });
+
+  // On collapse icon click
+  collapsedBar.bind('click', function(event) {
+
+    // Collapse sidebar
+    toggleCollapseState();
+
+    // Hide project list
+    showToolbar();
+
+    event.preventDefault();
+  });
+
+// If toolbar is not present
+} else {
+  collapsedBar.hide();  // Don't show collapse icon
+  toggleIcon.addClass(activeState); // Rotate arrow
+
+  // On arrow click
+  toggleBar.bind('click', function(event) {
+    toggleIcon.toggleClass(activeState); // Rotate arrow
+    projectsBar.toggleClass(activeState); // Remove active state
+    projectsBar.find('li').not(':first').fadeToggle(); // Hide project list
+
+    event.preventDefault();
+  });
+}
+
 collapseSidebar()
 
+// On resize ejecute function
 $(window).resize(collapseSidebar);
 
-collapsedBar.bind('click', function(event) {
-  $sideBar.toggleClass(collapsedState);
-  $rightContent.toggleClass(fullState);
-
-  event.preventDefault();
-});
 
 $('select#user_story_priority').on('change', function() {
   $(this).closest('form#new_user_story').find('.user-story-priority').text(this.value);
