@@ -189,8 +189,8 @@
       p { font-size: rem-calc(27); }
 
       .action {
-        width: 50%;
         display: inline-block;
+        width: 50%;
       }
     } // user story inputs
 
@@ -282,3 +282,5 @@
     width: rem-calc(55);
   }//user-stories-preloader img
 }
+
+.new-icon { padding-bottom: rem-calc(2); }
