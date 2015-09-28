@@ -24,9 +24,11 @@ ARBOR.user_stories.init = function() {
     $.get(url, function(editForm) {
       $userStoryForm.html('');
       $userStoryForm.html(editForm);
-      bindEditForm();
-      bindAcceptanceCriterion();
-      bindConstraint();
+      bindUserStoryEditForm();
+      bindNewAcceptanceCriterion();
+      bindNewConstraint();
+      bindEditAcceptanceCriterion();
+      bindEditConstraint();
     });
   }
 
@@ -73,47 +75,34 @@ ARBOR.user_stories.init = function() {
     });
   }
 
-  bindUserStoriesEvents();
-  $newUserStoryForm.submit(function() {
-    var url       = $(this).attr('action'),
-        type      = $(this).attr('method'),
-        userStory = $(this).serialize();
-
+  function editFormAjax(url, type, currentObject) {
     hideBacklog();
 
     $.ajax({
       type: type,
       url: url,
-      data: userStory,
+      data: currentObject,
       success: function (response) {
         if(response.success) {
           refreshBacklog();
-          editUrl = response.data.edit_url;
-          displayStoryForm(editUrl);
-        }
-      }
-    });
-    return false;
-  });
-
-  function editFormAjax(url, type, current_object){
-    hideBacklog();
-
-    $.ajax({
-      type: type,
-      url: url,
-      data: current_object,
-      success: function (response) {
-        if(response.success) {
-          refreshBacklog();
-          editUrl = response.data.edit_url;
+          editUrl = response.data.edit_url
           displayStoryForm(editUrl);
         }
       }
     });
   }
 
-  function bindAcceptanceCriterion() {
+  bindUserStoriesEvents();
+  $newUserStoryForm.submit(function() {
+    var url       = $(this).attr('action'),
+        type      = $(this).attr('method'),
+        userStory = $(this).serialize();
+
+    editFormAjax(url, type, userStory);
+    return false;
+  });
+
+  function bindNewAcceptanceCriterion() {
     $newCriterionForm = $('.new_acceptance_criterion');
 
     $newCriterionForm.submit(function() {
@@ -126,7 +115,20 @@ ARBOR.user_stories.init = function() {
     });
   }
 
-  function bindEditForm() {
+  function bindEditAcceptanceCriterion() {
+    $editCriterionForm = $('.edit_acceptance_criterion');
+
+    $editCriterionForm.submit(function() {
+      var url        = $(this).attr('action'),
+          type       = $(this).attr('method'),
+          acriterion = $(this).serialize();
+
+      editFormAjax(url, type, acriterion);
+      return false;
+    });
+  }
+
+  function bindUserStoryEditForm() {
     $editUserStoryForm = $('form.edit-story.edit_user_story');
 
     $editUserStoryForm.submit(function() {
@@ -139,7 +141,7 @@ ARBOR.user_stories.init = function() {
     });
   }
 
-  function bindConstraint() {
+  function bindNewConstraint() {
     $newConstraintForm = $('.new_constraint');
 
     $newConstraintForm.submit(function() {
@@ -149,6 +151,19 @@ ARBOR.user_stories.init = function() {
 
       editFormAjax(url, type, constraint);
       hideBacklog();
+      return false;
+    });
+  }
+
+  function bindEditConstraint() {
+    $editConstraintForm = $('.edit_constraint');
+
+    $editConstraintForm.submit(function() {
+      var url        = $(this).attr('action'),
+          type       = $(this).attr('method'),
+          constraint = $(this).serialize();
+
+      editFormAjax(url, type, constraint);
       return false;
     });
   }

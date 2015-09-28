@@ -9,7 +9,7 @@ RSpec.describe UserStoriesController do
     sign_in user
   end
 
-  describe 'POST update' do
+  describe 'PUT update' do
     let!(:user_story) {
       create :user_story,
       project: project,
@@ -23,7 +23,7 @@ RSpec.describe UserStoriesController do
 
     it 'send a success response with the edit url' do
       request.env['HTTP_REFERER'] = project_user_stories_path(project.id)
-      post :update, id: user_story.id, user_story: {
+      put :update, id: user_story.id, user_story: {
           role: 'admin',
           action: 'sign up',
           result: 'i can browse the database',
