@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 feature 'create constraint' do
-  let(:project)    { create :project }
-  let(:user_story) { create :user_story }
+  let(:project)            { create :project }
+  let(:user_story)         { create :user_story }
   let(:constraint_service) { ConstraintServices.new(user_story) }
   let(:constraint_params)  {
     {
@@ -18,5 +18,21 @@ feature 'create constraint' do
     expect(constraint).to be_a(Constraint)
     expect(constraint.description).to eq('My new description')
     expect(constraint.user_story).to eq(user_story)
+  end
+end
+
+feature 'update constraint' do
+  let(:user_story)         { create :user_story }
+  let(:constraint_service) { ConstraintServices.new(user_story) }
+  let(:constraint) {
+    create :constraint,
+    user_story: user_story,
+    description: 'This is the description.'
+  }
+
+  scenario 'should load the response with user story edit url' do
+    response = constraint_service.update_constraint(constraint)
+    expect(response.success).to eq(true)
+    expect(response.data[:edit_url]).to eq(edit_user_story_path(user_story))
   end
 end

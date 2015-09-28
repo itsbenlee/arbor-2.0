@@ -11,10 +11,10 @@ class ConstraintsController < ApplicationController
 
   def update
     @constraint.update_attributes(constraint_params)
-
-    flash[:alert] = @constraint.errors.full_messages[0] unless @constraint.save
-
-    redirect_to :back
+    @constraint_service = ConstraintServices.new(@constraint.user_story)
+    response =
+      @constraint_service.update_constraint(@constraint)
+    render json: response
   end
 
   private

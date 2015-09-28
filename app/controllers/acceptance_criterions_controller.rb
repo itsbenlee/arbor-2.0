@@ -11,12 +11,11 @@ class AcceptanceCriterionsController < ApplicationController
 
   def update
     @acceptance_criterion.update_attributes(acceptance_criterion_params)
-
-    unless @acceptance_criterion.save
-      flash[:alert] = @acceptance_criterion.errors.full_messages[0]
-    end
-
-    redirect_to :back
+    @ac_service =
+      AcceptanceCriterionServices.new(@acceptance_criterion.user_story)
+    response =
+      @ac_service.update_acceptance_criterion(@acceptance_criterion)
+    render json: response
   end
 
   private
