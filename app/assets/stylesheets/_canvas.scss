@@ -1,4 +1,6 @@
 #canvas {
+  margin: 0;
+
   .left-content-wrapper,
   .right-content-wrapper { padding-top: rem-calc(30); }
 
@@ -17,8 +19,6 @@
         .meter {
           @include border-radius(3px);
           background-color: $success-color;
-          // border-top-left-radius: $global-radius;;
-          // border-bottom-left-radius: $global-radius;;
         } // completed percentage
       } // progress bar
 
@@ -51,6 +51,8 @@
 
   .right-content-wrapper {
     padding-left: rem-calc(40);
+
+    @media #{$small-only} { padding-left: 0; }
 
     .canvas-fields {
       @include opacity(0);
