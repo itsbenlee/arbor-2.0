@@ -3,6 +3,8 @@
 // --------------------------------------------------------
 
 .backlog {
+  margin: 0;
+
   .user-stories {
     border-right: 1px solid $black-10;
     color: $secondary-color;
@@ -12,7 +14,7 @@
 
     .user-story {
       border-bottom: 1px solid $black-10;
-      padding: rem-calc(20 40 20 0);
+      padding: rem-calc(20 40 20 15);
       position: relative;
 
       .hover-options {
@@ -91,7 +93,7 @@
   } // user stories
 
   .user-story-edit-form {
-    padding: rem-calc(20 0 0 30);
+    padding: rem-calc(20 0 0 20);
 
     input {
       @include inline-block();
