@@ -483,6 +483,22 @@
   display: none;
 }// hypothesis edit
 
+.hypothesis-type-edit,
+.hypothesis-new {
+  padding-left: 0;
+
+  select {
+    @include border-radius(50px);
+    border: 1px solid $black-20;
+    font-size: rem-calc(10);
+    height: rem-calc(25);
+    margin-bottom: rem-calc(5);
+    padding: rem-calc(0 0 0 10);
+    text-transform: uppercase;
+    width: 16%;
+  }
+}// hypothesis edit
+
 #log-modal.reveal-modal {
   height: 60%;
   overflow-y: scroll;
