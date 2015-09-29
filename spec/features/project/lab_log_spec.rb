@@ -192,18 +192,18 @@ feature 'Log lab activity' do
       PublicActivity.with_tracking do
         @project = create :project, owner: user
       end
-      visit project_hypotheses_path @project
+      visit project_path(@project)
     end
 
-    scenario 'should show the link to access the log' do
-      within 'div#top-nav' do
-        expect(page).to have_link 'Latest changes'
+    scenario 'should show the Activity link on the sidebar to access the log' do
+      within '#sidebar' do
+        expect(page).to have_link 'Activity'
       end
     end
 
     scenario 'should display the log after following the link' do
-      within 'div#top-nav' do
-        click_link 'Latest changes'
+      within '#sidebar' do
+        click_link 'Activity'
       end
 
       expect(page).to have_content 'The project was created'
@@ -216,7 +216,9 @@ feature 'Log lab activity' do
         PublicActivity.with_tracking do
           @project.hypotheses << create_list(:hypothesis, 10, project: @project)
         end
-        click_link 'Latest changes'
+        within '#sidebar' do
+          click_link 'Activity'
+        end
       end
 
       scenario 'should have 22 activities to work with' do
