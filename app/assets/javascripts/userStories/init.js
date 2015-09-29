@@ -25,6 +25,8 @@ ARBOR.user_stories.init = function() {
       $userStoryForm.html('');
       $userStoryForm.html(editForm);
       bindEditForm();
+      bindAcceptanceCriterion();
+      bindConstraint();
     });
   }
 
@@ -94,28 +96,59 @@ ARBOR.user_stories.init = function() {
     return false;
   });
 
-  function bindEditForm() {
-    $editForm = $('form.edit-story.edit_user_story');
+  function editFormAjax(url, type, current_object){
+    hideBacklog();
 
-    $editForm.submit(function() {
+    $.ajax({
+      type: type,
+      url: url,
+      data: current_object,
+      success: function (response) {
+        if(response.success) {
+          refreshBacklog();
+          editUrl = response.data.edit_url;
+          displayStoryForm(editUrl);
+        }
+      }
+    });
+  }
+
+  function bindAcceptanceCriterion() {
+    $newCriterionForm = $('.new_acceptance_criterion');
+
+    $newCriterionForm.submit(function() {
+      var url        = $(this).attr('action'),
+          type       = $(this).attr('method'),
+          acriterion = $(this).serialize();
+
+      editFormAjax(url, type, acriterion);
+      return false;
+    });
+  }
+
+  function bindEditForm() {
+    $editUserStoryForm = $('form.edit-story.edit_user_story');
+
+    $editUserStoryForm.submit(function() {
       var url       = $(this).attr('action'),
           type      = $(this).attr('method'),
           userStory = $(this).serialize();
 
-      hideBacklog();
+      editFormAjax(url, type, userStory);
+      return false;
+    });
+  }
 
-      $.ajax({
-        type: type,
-        url: url,
-        data: userStory,
-        success: function (response) {
-          if(response.success) {
-            refreshBacklog();
-            editUrl = response.data.edit_url
-            displayStoryForm(editUrl);
-          }
-        }
-      });
+  function bindConstraint() {
+    $newConstraintForm = $('.new_constraint');
+
+    $newConstraintForm.submit(function() {
+      var url        = $(this).attr('action'),
+          type       = $(this).attr('method'),
+          constraint = $(this).serialize();
+
+      editFormAjax(url, type, constraint);
+      hideBacklog();
       return false;
     });
   }
@@ -218,4 +251,4 @@ function dynamicInput() {
       $('input[data-' + pluginDataAttributeName + ']').autosizeInput();
     });
   })($);
-};
+}

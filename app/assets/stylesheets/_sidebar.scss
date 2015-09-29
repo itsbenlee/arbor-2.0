@@ -3,7 +3,7 @@
   background-color: $primary-color;
   color: $white;
   height: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
   padding: 0;
 
   ul {
@@ -159,13 +159,18 @@
   .toolbar {
     @include transition(top .5s ease-in-out);
     background-color: $primary-color;
-    height: 100%;
+    height: calc(100% - 4.125rem);
     left: 0;
+    min-height: rem-calc(450);
     position: absolute;
     top: rem-calc(66);
     width: 100%;
 
-    &.active { top: 100%; }
+    &.active {
+      position: fixed;
+      top: 100%;
+      width: inherit;
+    }
   }
 
   #extras,
@@ -190,6 +195,7 @@
   #extras { border: 0; }
 
   .footer {
+    @include box-shadow(0 rem-calc(-2) rem-calc(5) rgba($black, .3));
     border-top: 1px solid $primary-color;
     bottom: 0;
     height: rem-calc(66);
@@ -308,4 +314,5 @@
 
   &.full { width: calc(100% - 4.0625rem); }
 }
+
 

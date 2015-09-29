@@ -58,12 +58,13 @@ function slideSidebarToogle() {
   if (toolBar.is(':visible')) {
     $currentProject.html('My projects').removeClass(activeState);
     toggleIcon.addClass(activeState);
-    toolBar.addClass(activeState).delay(500).hide(1);
+    toolBar.addClass(activeState).delay(300).fadeOut();
     projectsBar.addClass(activeState)
+
   } else {
     $currentProject.html(projectName).addClass(activeState);
     toggleIcon.removeClass(activeState);
-    toolBar.show(1).removeClass(activeState);
+    toolBar.delay(200).fadeIn().removeClass(activeState);
     projectsBar.removeClass(activeState)
   }
 }
@@ -140,3 +141,4 @@ $('.hypothesis input')
 $(document).ready(function() {
   UTIL.init();
 });
+

@@ -1,10 +1,9 @@
 ARBOR.hypotheses.init = function() {
-  var $hypothesesList          = $('.hypotheses-list'),
-      $valueProposition        = $('.title-value-proposition'),
-      $valuePropositionForm    = $('form.hypotheses-value-proposition'),
-      $valuePropositionSubmit  = $('#save-value-proposition-edit'),
-      $hypothesisTypeContainer = $('.hypothesis-type-container'),
-      $hypothesisTitle         = $('.hypothesis-title-field');
+  var $hypothesesList         = $('.hypotheses-list'),
+      $valueProposition       = $('.title-value-proposition'),
+      $valuePropositionForm   = $('form.hypotheses-value-proposition'),
+      $hypothesisTypeEdit     = $('select.edit-type'),
+      $valuePropositionSubmit = $('#save-value-proposition-edit');
 
   function refreshOrder(hypotheses) {
     var orderedHypotheses = [];
@@ -58,14 +57,9 @@ ARBOR.hypotheses.init = function() {
     return true;
   });
 
-  $hypothesisTypeContainer.click(function() {
-    var hypothesisId     = $(this).data('hypothesisId'),
-        hypothesisTypeId = $(this).data('hypothesisTypeId'),
-        $titleInput      =
-          $('input#hypothesis_description[data-hypothesis-id='+
-          hypothesisId + ']');
-    $titleInput.focus();
-    return true;
+  $hypothesisTypeEdit.change(function() {
+    var $editForm = $(this).parent().parent('form')[0];
+    $editForm.submit();
   });
 
   new UserStory();
