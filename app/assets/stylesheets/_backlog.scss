@@ -212,6 +212,8 @@
 
     .acceptance-criterion-form,
     .constraint-form {
+      margin-bottom: rem-calc(20);
+
       input {
         color: $secondary-color;
         font-size: rem-calc(16);
