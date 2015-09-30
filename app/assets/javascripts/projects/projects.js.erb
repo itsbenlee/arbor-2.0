@@ -1,0 +1,26 @@
+function Projects () {
+  var max_member_count  = <%= ENV['MAXIMUM_MEMBER_COUNT'] %>,
+      $wrapper           = $('#members'),
+      $add_member_button = $('#new_member_button');
+
+  function generateInput(member_count) {
+    var member_id   = 'member_' + member_count,
+        member_name = 'project[' + member_id + ']';
+
+    return '<input class="member with-icon" ' +
+           '<input placeholder="Member mail" ' +
+           'name="' + member_name + '" ' +
+           'id="' + member_id + '" ' +
+           'type="email">';
+  }
+
+  $add_member_button.click(function() {
+    var member_count = $('#members input.member').size(),
+        member_input = generateInput(member_count);
+
+    if (member_count < max_member_count) {
+      $wrapper.append('<div>' + member_input + '</div>');
+    }
+    return false;
+  });
+}
