@@ -12,20 +12,13 @@ feature 'Edit hypothesis' do
 
   scenario 'edit form is diplayed when clicking on hypothesis title' do
     find('.hypothesis-show').click
-    expect(page).to have_css '.hypothesis-edit'
-    expect(page).to have_css '.hypothesis-type-edit'
-  end
-
-  scenario 'edit form is diplayed when clicking on hypothesis type' do
-    find('.hypothesis-type-show').click
-    expect(page).to have_css '.hypothesis-edit'
-    expect(page).to have_css '.hypothesis-type-edit'
+    expect(page).to have_css '.hypothesis-title-field'
   end
 
   scenario 'edit hypothesis title' do
     updated_title =  'MY NEW HYPOTHESIS TITLE'
 
-    find('.hypothesis-type-show').click
+    find('.hypothesis-show').click
 
     within '.hypothesis-edit' do
       find('.hypothesis-title-field').set(updated_title)

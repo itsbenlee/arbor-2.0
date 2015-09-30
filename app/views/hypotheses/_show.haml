@@ -2,7 +2,6 @@
   = image_tag 'preloader.gif'
 .hypothesis{ data: { id: hypothesis.id, order: hypothesis.order } }
   .hypothesis-form.clearfix
-    = render 'hypotheses/edit', hypothesis: hypothesis, hypothesis_types: hypothesis_types
     .description.large-12.columns.hypothesis-show{ data: { id: hypothesis.id } }
       = link_to                        |
          hypothesis_path(hypothesis),  |
@@ -10,11 +9,10 @@
          class: 'delete-hypothesis',   |
          title: 'Delete Hypothesis' do |
         %span.icon-trash
-      .hypothesis-title
+      .hypothesis-title{ title: t('labs.hypotheses.edit_title') }
         %span.bullet
         = hypothesis.description
-    .type.hypothesis-type-show{ data: { id: hypothesis.id } }= hypothesis.hypothesis_type_description
-    .click-edit - click here to edit
+    = render 'hypotheses/edit', hypothesis: hypothesis, hypothesis_types: hypothesis_types
   .content.row.collapse
     .goals
       - if hypothesis.goals.any?

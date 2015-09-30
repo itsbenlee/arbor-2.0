@@ -22,7 +22,10 @@ feature 'Create hypothesis' do
     within '.hypothesis-show' do
       expect(find('.hypothesis-title')).to have_text(hypothesis_description)
     end
-    expect(find('.hypothesis-type-show')).to have_text(hypothesis_type.description)
+
+    within '.hypothesis-type-edit' do
+      expect(find('#hypothesis_hypothesis_type_id')).to have_text(hypothesis_type.description)
+    end
   end
 
   scenario 'create hypothesis without description' do
