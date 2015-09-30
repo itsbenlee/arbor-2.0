@@ -2,65 +2,33 @@
 // BACKLOG SECTION
 // --------------------------------------------------------
 
-.backlog {
+.backlog.row {
   margin: 0;
+  max-width: 100%;
+  position: relative;
+
+  .user-stories-list-container { padding: 0; }
 
   .user-stories {
     color: $secondary-color;
 
-    ul { font-size: rem-calc(14); } // ul
+    ul {
+      font-size: rem-calc(14);
+      overflow: hidden;
+    }
 
     .user-story {
+      @include transition(background-color .25s ease-in);
       border-bottom: 1px solid $black-10;
       border-right: 1px solid $black-10;
-      padding: rem-calc(20 40 20 15);
+      cursor: pointer;
+      padding: rem-calc(20 45 20 15);
       position: relative;
 
-      .hover-options {
-        @include opacity(0); 
-        background-color: $black-10;
-        border-left: 1px solid $black-20;
-        height: 100%;
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: rem-calc(40);
+      &:active   { @include grabbing-cursor; }
+      &.selected { background-color: rgba($black, .05); }
 
-        &:hover { @include opacity(.8); }
-
-        span { display: block; }
-      }
-
-      .icon-arrow.up,
-      .icon-arrow.down {
-        color: $black-40;
-        font-size: rem-calc(13);
-        position: absolute;
-      }
-
-      .icon-arrow.up {
-        @include rotate(180deg);
-        right: rem-calc(11);
-        top: rem-calc(3);
-      } // arrow up
-
-      .icon-arrow.down {
-        bottom: rem-calc(3);
-        right: rem-calc(11);
-      } // arrow down
-
-      .center-icon {
-        background-color: $white;
-        padding: rem-calc (5 0);
-
-        .icon-trash {
-          @include translateY(-50%);
-          position: absolute;
-          right: rem-calc(11);
-          top: 50%;
-          vertical-align: middle;
-        }
-      }
+      &:hover .hover-options { @include opacity(1); }
 
       .number,
       .points {
@@ -91,6 +59,69 @@
     .delete-story { float: right; }
   } // user stories
 
+  .hover-options {
+    @include transition(opacity .25s ease-in);
+    @include opacity(0);
+    background-color: $black-10;
+    border-left: 1px solid $black-20;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: rem-calc(40);
+
+    span {
+      @include transition(color .25s ease-in);
+      bottom: 0;
+      color: $black-40;
+      display: block;
+      font-size: rem-calc(13);
+      height: 33.33%;
+      position: absolute;
+      right: 0;
+      width: 100%;
+
+      &:hover { color: $lab-color; }
+
+      &::before {
+        @include translate(-50%, -50%);
+        left: 50%;
+        position: absolute;
+        top: 50%;
+      }
+
+      &.icon-arrow.up,
+      &.icon-arrow.down {
+        @include grab-cursor;
+
+        &:active { @include grabbing-cursor; }
+      }
+
+      &.icon-arrow.up {
+        @include rotate(180deg);
+        bottom: auto;
+        top: 0;
+      } // arrow up
+    }
+
+    .center-icon {
+      cursor: pointer;
+
+      .icon-trash {
+        @include translateY(-50%);
+        background-color: $white;
+        bottom: auto;
+        color: $secondary-color;
+        padding: rem-calc(8 0);
+        text-align: center;
+        top: 50%;
+        width: 100%;
+      }
+
+      &:hover .icon-trash { color: $canvas-color; }
+    }
+  }
+
   .user-story-edit-form {
     padding: rem-calc(20 0 0 20);
 
@@ -119,10 +150,11 @@
       }
     }
 
-    .new-story {
+    .new-story,
+    .edit-story {
       // scss-lint:disable PlaceholderInExtend
       @extend .row;
-      padding-left: rem-calc(15);
+      padding: rem-calc(0 30);
     }
 
     .icon-edit { display: none; }
@@ -135,29 +167,6 @@
 
       @include input-placeholder { color: $secondary-color; }
     }
-
-    .role {
-      // scss-lint:disable PlaceholderInExtend
-      @extend .large-12;
-      input { width: 66%; }
-    }
-
-    .action {
-      // scss-lint:disable PlaceholderInExtend
-      @extend .large-12;
-      input { width: 63%; }
-    }
-
-    .result {
-      // scss-lint:disable PlaceholderInExtend
-      @extend .large-12;
-
-      input {
-        // scss-lint:disable PlaceholderInExtend
-        @extend .large-12;
-        width: 60%;
-      }
-    }//result
 
     .story-title,
     .number {
@@ -173,10 +182,20 @@
     label,
     .number { display: inline-block; }
 
+    .preview {
+      display: inline;
+
+      span {
+        font-size: rem-calc(27);
+      }
+    }
+
     .user-story-input {
       color: $black-30;
+      display: inline;
       font-size: rem-calc(27);
-      line-height: 1;
+      line-height: rem-calc(40);
+      max-width: 100%;
 
       label {
         color: $black-30;
@@ -185,12 +204,43 @@
         width: 100%;
       } // label
 
-      input,
-      p { font-size: rem-calc(27); }
+      p,
+      input {
+        display: inline;
+        font-size: rem-calc(27);
+      }
 
-      .action {
-        display: inline-block;
-        width: 50%;
+      input {
+        @include ellipsis;
+        max-width: 100%;
+        min-width: rem-calc(205);
+        width: rem-calc(205);
+
+        &.dynamic { min-width: 0; }
+      }
+
+      span {
+        @include transition(color .25s ease-in);
+        color: rgba($black, .75);
+
+        &:hover {
+          color: $black-30;
+          cursor: pointer;
+        }
+      }
+
+
+      &.role input {
+        min-width: rem-calc(174);
+        width: rem-calc(174);
+
+        &.dynamic { min-width: 0; }
+      }
+
+      &.role,
+      &.action,
+      &.result {
+        width: auto;
       }
     } // user story inputs
 
@@ -259,10 +309,16 @@
       line-height: .4;
       padding: rem-calc(0 0 20);
 
+      input {
+        cursor: pointer;
+        float: left;
+        margin: rem-calc(1 8 0 0);
+        width: auto;
+      }
+
       label {
-        color: $black-70;
+        color: $lab-color;
         font-size: rem-calc(12);
-        margin-left: 0;
         vertical-align: baseline;
         width: auto;
       }

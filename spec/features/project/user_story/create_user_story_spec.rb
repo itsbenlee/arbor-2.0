@@ -104,7 +104,7 @@ feature 'Create a new user story' do
         fill_in :user_story_role, with: user_story.role
         fill_in :user_story_action, with: user_story.action
         fill_in :user_story_result, with: user_story.result
-        check :user_story_epic
+        check :epic
 
         click_button 'Save'
       end

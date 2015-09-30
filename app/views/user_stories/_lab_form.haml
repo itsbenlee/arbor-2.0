@@ -11,7 +11,7 @@ url: form_url do |form|
   .user-story-input.epic
     = form.check_box :epic, id: user_story.id
     %label{ for: user_story.id }
-    %span epic
+    %span= t('backlog.user_stories.epic')
   .user-story-input.role
     = t('backlog.user_stories.role')
     = form.text_field(                                   |
