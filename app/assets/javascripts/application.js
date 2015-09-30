@@ -5,7 +5,7 @@
 //= require foundation
 //= require init
 //= require projects/projects.js.erb
+//= require canvases/canvases
 //= require_tree ./hypotheses
-//= require_tree ./canvases
 //= require_tree ./userStories
 //= require_tree ./vendor
