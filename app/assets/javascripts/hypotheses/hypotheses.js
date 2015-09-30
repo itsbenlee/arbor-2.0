@@ -1,4 +1,4 @@
-ARBOR.hypotheses.init = function() {
+function Hypotheses () {
   var $hypothesesList         = $('.hypotheses-list'),
       $valueProposition       = $('.title-value-proposition'),
       $valuePropositionForm   = $('form.hypotheses-value-proposition'),
@@ -61,8 +61,4 @@ ARBOR.hypotheses.init = function() {
     var $editForm = $(this).parent().parent('form')[0];
     $editForm.submit();
   });
-
-  new UserStory();
-  new Goal();
-  new HypothesisShow();
-};
+}

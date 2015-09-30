@@ -1,6 +1,6 @@
-function HypothesisShow() {
-  var $hypothesisShow = $('.hypothesis-show'),
-      $hypothesisShowType= $('.hypothesis-type-show');
+$(document).ready(function() {
+  var $hypothesisShow     = $('.hypothesis-show'),
+      $hypothesisShowType = $('.hypothesis-type-show');
 
   function displayEditForm(hypothesisId) {
     var $editHypothesisById = $('.hypothesis-edit[data-id=' +
@@ -33,4 +33,7 @@ function HypothesisShow() {
     var hypothesisId = $(this).data('id');
     displayEditForm(hypothesisId);
   });
-}
+
+  new UserStory();
+  new Goal();
+});

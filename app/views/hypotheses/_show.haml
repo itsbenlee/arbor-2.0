@@ -26,3 +26,6 @@
         = render 'user_stories/list', user_stories: hypothesis.user_stories, hypothesis: hypothesis
       .new-user-story.row
         = render 'user_stories/new', user_story: UserStory.new, project: project, hypothesis: hypothesis
+- content_for :custom_js do
+  = javascript_include_tag 'hypotheses/index'
+  = javascript_include_tag 'hypotheses/show'
