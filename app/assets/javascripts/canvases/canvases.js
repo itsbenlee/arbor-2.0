@@ -1,4 +1,4 @@
-ARBOR.canvases.init = function() {
+function Canvases() {
   var $canvasLinks       = $('li.canvas-item'),
       $canvasFields      = $('.canvas-fields'),
       $canvasTextarea    = $('.canvas-fields textarea'),
@@ -51,4 +51,4 @@ ARBOR.canvases.init = function() {
   $canvasTextarea.bind('keyup', function() {
     setCurrentQuestion($(this).data('question'));
   });
-};
+}
