@@ -16,6 +16,10 @@ class Project < ActiveRecord::Base
     super(only: [:name])
   end
 
+  def invite_exists(email)
+    invites.any? { |invite| invite.email == email }
+  end
+
   def reorder_user_stories(user_stories_hash)
     user_stories.update_all backlog_order: nil
 
