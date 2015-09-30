@@ -6,6 +6,8 @@
 //= require init
 //= require projects/projects.js.erb
 //= require canvases/canvases
-//= require_tree ./hypotheses
+//= require hypotheses/hypotheses
+//= require hypotheses/userStory
+//= require hypotheses/goal
 //= require_tree ./userStories
 //= require_tree ./vendor
