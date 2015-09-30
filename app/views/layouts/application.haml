@@ -33,4 +33,4 @@
         = render 'layouts/notices', alert: alert, notice: notice
         = yield
     = javascript_include_tag 'application'
-    = render 'shareable/partials/spec_performance'
+    = content_for :custom_js

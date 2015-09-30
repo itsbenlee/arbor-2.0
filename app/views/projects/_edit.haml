@@ -23,3 +23,5 @@
     = f.button 'New Member', id: 'new_member_button', type: :button
   %p
     = f.submit
+- content_for :custom_js do
+  = javascript_include_tag 'projects/edit'

@@ -6,7 +6,6 @@ ARBOR = {
       });
     }
   },
-  projects: {},
   canvases: {},
   hypotheses: {},
   user_stories:{}
