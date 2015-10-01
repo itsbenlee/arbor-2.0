@@ -45,6 +45,7 @@ class UserStory < ActiveRecord::Base
                     estimated_points: estimated_points,
                     priority: priority)
     replica.save
+    copy_criterions(replica.id)
   end
 
   private
@@ -64,5 +65,14 @@ class UserStory < ActiveRecord::Base
 
   def update_next_story_number
     project.update_attribute :next_story_number, project.next_story_number + 1
+  end
+
+  def copy_criterions(replica_id)
+    acceptance_criterions.each do |criterion|
+      criterion_replica =
+      AcceptanceCriterion.new(description: criterion.description,
+                              user_story_id: replica_id)
+      criterion_replica.save
+    end
   end
 end

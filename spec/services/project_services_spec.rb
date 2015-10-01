@@ -124,5 +124,31 @@ feature 'Collect log entries' do
       expect(user_story.estimated_points).to eq(copied_story.estimated_points)
       expect(user_story.priority).to eq(copied_story.priority)
     end
+
+    scenario 'should copy criterion on user stories without hypothesis' do
+      user_story = create :user_story, { project: project, hypothesis: nil }
+      acceptance_criterion =
+        create :acceptance_criterion, { user_story: user_story }
+
+      project_services = ProjectServices.new(project)
+      response = project_services.replicate
+
+      copied_criterion =
+        response.data[:project].user_stories[0].acceptance_criterions[0]
+      expect(acceptance_criterion.description).to eq(copied_criterion.description)
+    end
+
+    scenario 'should copy same amount of criterions on user stories without hypothesis' do
+      user_story = create :user_story, { project: project, hypothesis: nil }
+
+      3.times do
+        create :acceptance_criterion, { user_story: user_story }
+      end
+
+      project_services = ProjectServices.new(project)
+      response = project_services.replicate
+
+      expect(response.data[:project].user_stories[0].acceptance_criterions.count).to eq(3)
+    end
   end
 end
