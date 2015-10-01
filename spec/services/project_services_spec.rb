@@ -86,4 +86,43 @@ feature 'Collect log entries' do
       expect(log_entries.map(&:key)).to include key
     end
   end
+
+  feature 'Replicate project' do
+    let!(:user)    { create :user }
+    let!(:project) { create :project, owner: user }
+
+    scenario 'should update number of copies' do
+      user_story = create :user_story, { project: project, hypothesis: nil }
+      project_services = ProjectServices.new(project)
+      project_services.replicate
+      project.reload
+      expect(project.copies).to eq(1)
+    end
+
+    scenario 'should check user stories copied' do
+      3.times do
+        create :user_story, { project: project, hypothesis: nil }
+      end
+
+      project_services = ProjectServices.new(project)
+      response = project_services.replicate
+
+      expect(response.data[:project].user_stories.count).to eq(3)
+    end
+
+    scenario 'should copy the same data for user stories without hypothesis' do
+      user_story = create :user_story, { project: project, hypothesis: nil }
+
+      project_services = ProjectServices.new(project)
+      response = project_services.replicate
+
+      copied_story = response.data[:project].user_stories[0]
+
+      expect(user_story.role).to eq(copied_story.role)
+      expect(user_story.action).to eq(copied_story.action)
+      expect(user_story.result).to eq(copied_story.result)
+      expect(user_story.estimated_points).to eq(copied_story.estimated_points)
+      expect(user_story.priority).to eq(copied_story.priority)
+    end
+  end
 end

@@ -36,6 +36,17 @@ class UserStory < ActiveRecord::Base
     project
   end
 
+  def copy_in_project(new_id)
+    replica =
+      UserStory.new(role: role,
+                    action: action,
+                    result: result,
+                    project_id: new_id,
+                    estimated_points: estimated_points,
+                    priority: priority)
+    replica.save
+  end
+
   private
 
   def order_in_hypotheses

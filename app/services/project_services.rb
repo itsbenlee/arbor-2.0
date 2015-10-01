@@ -2,6 +2,7 @@ class ProjectServices
   def initialize(project)
     @project = project
     @entries_per_page = ProjectServices.entries_per_page
+    @common_response = CommonResponse.new(true, [])
   end
 
   def reorder_hypotheses(hypotheses)
@@ -37,6 +38,24 @@ class ProjectServices
     activities
       .sort_by(&:created_at)
       .reverse.in_groups_of @entries_per_page, false
+  end
+
+  def replicate
+    @project.copies += 1
+    replica =
+      Project.new(name: replica_name,
+                  owner: @project.owner)
+
+    if replica.save && @project.save
+      @project.copy_stories(replica)
+      @common_response.data[:project] = replica
+    end
+
+    @common_response
+  end
+
+  def replica_name
+    "Copy of #{@project.name} (#{@project.copies})"
   end
 
   private

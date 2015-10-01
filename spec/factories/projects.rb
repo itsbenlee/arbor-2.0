@@ -4,5 +4,6 @@ FactoryGirl.define do
     owner           { create :user }
     members         { [owner] }
     hypotheses      { [] }
+    copies          { 0 }
   end
 end
