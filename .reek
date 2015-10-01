@@ -50,7 +50,7 @@ ModuleInitialize:
   exclude: []
 NestedIterators:
   enabled: true
-  exclude: [HypothesesController#export, Hypothesis#self.to_csv]
+  exclude: [HypothesesController#export, Hypothesis#self.to_csv, UserStoriesController#update]
   max_allowed_nesting: 1
   ignore_iterators: []
 NilCheck:

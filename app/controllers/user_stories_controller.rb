@@ -24,11 +24,15 @@ class UserStoriesController < ApplicationController
   end
 
   def update
-    @user_story.update_attributes(user_story_params)
-    @user_story_service = UserStoryService.new(@project)
-    response =
-      @user_story_service.update_user_story(@user_story)
-    render json: response
+    respond_to do |format|
+      @user_story.update_attributes(user_story_params)
+      format.json do
+        json_update
+      end
+      format.html do
+        html_update
+      end
+    end
   end
 
   def destroy
@@ -42,6 +46,20 @@ class UserStoriesController < ApplicationController
   end
 
   private
+
+  def json_update
+    response = UserStoryService.new(@project).update_user_story(@user_story)
+    render json: response
+  end
+
+  def html_update
+    if @user_story.save
+      redirect_to :back
+    else
+      @errors = @user_story.errors.full_messages
+      render :edit, status: 400
+    end
+  end
 
   def set_project
     @project =
