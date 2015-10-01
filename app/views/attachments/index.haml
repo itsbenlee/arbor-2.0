@@ -6,9 +6,7 @@
         - @attachment.errors.full_messages.each do |error|
           %li= error
   .attachment-new
-    .attachment
-      .content.row
-        = render 'attachments/new', attachment: @attachment, project: @project
+    = render 'attachments/attachment_switcher', attachment: @attachment, project: @project
   - if @project.attachments.any?
     .attachments-list
       - @project.attachments.each do |attachment|

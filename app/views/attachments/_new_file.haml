@@ -1,0 +1,6 @@
+= form_for [project, attachment.becomes(Attachment)], html: { multipart: true } do |form|
+  - form.object = attachment.becomes(attachment.class)
+  %span.bullet
+  = form.file_field :content, placeholder: I18n.translate('attachment.file.select_file')
+  = form.hidden_field :table_type, value: 'FileAttachment'
+  = form.submit I18n.translate('save')

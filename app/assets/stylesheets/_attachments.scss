@@ -1,0 +1,9 @@
+#attachments {
+  .attachment-new {
+    .new-link,
+    .new-file {
+      &.active { display: block; }
+      &.inactive { display: none; }
+    }
+  }
+} // attachments
