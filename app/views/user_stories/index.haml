@@ -29,3 +29,5 @@
     user_story: @user_story,
     hypothesis: nil,
     form_url: project_user_stories_path(@project)
+- content_for :custom_js do
+  = javascript_include_tag 'userStories/index'
