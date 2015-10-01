@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: head
+    uri: https://trello.com/
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.6.0.1, ruby 2.1.5 (2014-11-13))
+      Accept:
+      - "*/*"
+      Date:
+      - Tue, 29 Sep 2015 14:04:37 GMT
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store, no-cache
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15768000
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Trello-Version:
+      - 1.482.0
+      X-Trello-Environment:
+      - Production
+      Set-Cookie:
+      - "___utmvatYuYsFI=HbB\x01wQey; path=/; Max-Age=900"
+      - '___utmvbtYuYsFI=jZD XIsObalo: btd; path=/; Max-Age=900'
+      - ___utmvmtYuYsFI=bsPjUCSWrjp; path=/; Max-Age=900
+      - dsc=11968c6c6cc849efbc1cedf1409851c1941c94575a9ee393e5a7194ddae29578; Path=/;
+        Expires=Fri, 02 Oct 2015 14:04:37 GMT; Secure
+      - incap_ses_281_168551=wFJpDAmkPRJpk3P1e1DmA3WaClYAAAAAOpOL0nCA1ehzflrHXp8npg==;
+        path=/; Domain=.trello.com
+      - sup=1; Path=/; Expires=Wed, 28 Sep 2016 14:04:37 GMT
+      - visid_incap_168551=YIXnXPYaRr2vpOJSCR/R/nWaClYAAAAAQUIPAAAAAADt5UTt1/WtUoNzbFwof8P6;
+        expires=Thu, 28 Sep 2017 11:22:59 GMT; path=/; Domain=.trello.com
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Length:
+      - '2554'
+      Etag:
+      - W/"0ktGmWdZJGqeMg3BFoQ2pA=="
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 29 Sep 2015 14:04:37 GMT
+      X-Iinfo:
+      - 9-36263166-36257787 PNNN RT(1443535476965 117) q(0 0 0 1) r(1 1) U6
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Tue, 29 Sep 2015 14:04:37 GMT
+recorded_with: VCR 2.9.3

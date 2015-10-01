@@ -29,6 +29,7 @@ FeatureEnvy:
     Project#reorder_user_stories,
     TrelloServices#config,
     ProjectServices#activities_by_pages,
+    LinkAttachmentServices#fetch_http_content_type
   ]
 IrresponsibleModule:
   enabled: false
@@ -117,7 +118,11 @@ UtilityFunction:
   exclude: [
     UserStoriesHelper#format_story_points,
     ApplicationHelper#meta_title,
-    ApplicationHelper#meta_description
-
+    ApplicationHelper#meta_description,
+    ThumbnailUploader#default_html_url,
+    ThumbnailUploader#default_image_url,
+    ThumbnailUploader#default_other_url,
+    ThumbnailUploader#default_pdf_url,
+    ThumbnailUploader#default_plain_url
   ]
   max_helper_calls: 1

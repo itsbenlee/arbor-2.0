@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150917123031) do
+ActiveRecord::Schema.define(version: 20150929022125) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,23 @@ ActiveRecord::Schema.define(version: 20150917123031) do
   add_index "activities", ["owner_id", "owner_type"], name: "index_activities_on_owner_id_and_owner_type", using: :btree
   add_index "activities", ["recipient_id", "recipient_type"], name: "index_activities_on_recipient_id_and_recipient_type", using: :btree
   add_index "activities", ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type", using: :btree
+
+  create_table "attachments", force: :cascade do |t|
+    t.string   "content",    null: false
+    t.string   "thumbnail"
+    t.string   "table_type"
+    t.integer  "project_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "mime_type",  null: false
+  end
+
+  add_index "attachments", ["content"], name: "index_attachments_on_content", using: :btree
+  add_index "attachments", ["project_id"], name: "index_attachments_on_project_id", using: :btree
+  add_index "attachments", ["table_type"], name: "index_attachments_on_table_type", using: :btree
+  add_index "attachments", ["thumbnail"], name: "index_attachments_on_thumbnail", using: :btree
+  add_index "attachments", ["user_id"], name: "index_attachments_on_user_id", using: :btree
 
   create_table "canvas", force: :cascade do |t|
     t.text     "problems"
@@ -168,5 +185,6 @@ ActiveRecord::Schema.define(version: 20150917123031) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "acceptance_criterions", "user_stories"
+  add_foreign_key "attachments", "projects"
   add_foreign_key "invites", "projects"
 end

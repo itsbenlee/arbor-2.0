@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: head
+    uri: http://www.pdf995.com/samples/pdf.pdf
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.6.0.1, ruby 2.1.5 (2014-11-13))
+      Accept:
+      - "*/*"
+      Date:
+      - Tue, 29 Sep 2015 14:04:36 GMT
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 29 Sep 2015 13:57:39 GMT
+      P3p:
+      - policyref="http://info.yahoo.com/w3c/p3p.xml", CP="CAO DSP COR CUR ADM DEV
+        TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND PHY
+        ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV"
+      Cache-Control:
+      - max-age=864000
+      Expires:
+      - Fri, 09 Oct 2015 13:57:39 GMT
+      Last-Modified:
+      - Sat, 13 Dec 2003 01:36:20 GMT
+      Accept-Ranges:
+      - bytes
+      Content-Length:
+      - '433994'
+      Content-Type:
+      - application/pdf
+      Age:
+      - '418'
+      Connection:
+      - keep-alive
+      Server:
+      - ATS/5.0.1
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Tue, 29 Sep 2015 14:04:36 GMT
+recorded_with: VCR 2.9.3
