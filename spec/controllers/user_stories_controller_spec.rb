@@ -21,9 +21,9 @@ RSpec.describe UserStoriesController do
       epic: 'false'
     }
 
-    it 'send a success response with the edit url' do
+    it 'sends a success response with the edit url from backlog' do
       request.env['HTTP_REFERER'] = project_user_stories_path(project.id)
-      put :update, id: user_story.id, user_story: {
+      put :update, format: :json, id: user_story.id, user_story: {
           role: 'admin',
           action: 'sign up',
           result: 'i can browse the database',
