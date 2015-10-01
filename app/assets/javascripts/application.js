@@ -9,5 +9,5 @@
 //= require hypotheses/hypotheses
 //= require hypotheses/userStory
 //= require hypotheses/goal
-//= require_tree ./userStories
+//= require userStories/userStories
 //= require_tree ./vendor
