@@ -13,5 +13,6 @@ module Railsroot
   class Application < Rails::Application
     config.middleware.use Rack::Deflater
     config.assets.initialize_on_precompile = false
+    config.active_record.raise_in_transactional_callbacks = true
   end
 end

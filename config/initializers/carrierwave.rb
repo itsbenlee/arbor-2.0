@@ -1,8 +1,4 @@
 CarrierWave.configure do |config|
-  config.ignore_integrity_errors = true
-  config.ignore_processing_errors = true
-  config.ignore_download_errors = true
-
   if Rails.env.production? || Rails.env.development?
     config.fog_provider = 'fog/aws'
     config.fog_credentials = {
