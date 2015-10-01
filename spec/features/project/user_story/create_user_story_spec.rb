@@ -31,6 +31,18 @@ feature 'Create a new user story' do
         expect{ click_button 'Save' }.to change{ UserStory.count }.from(0).to(1)
       end
     end
+
+    scenario 'should create a new user story without duplicate' do
+      create :hypothesis, { project: project }
+      visit project_hypotheses_path project
+      within "form.new_user_story[data-hypothesis-id='#{hypothesis.id}']" do
+        fill_in :user_story_role, with: user_story.role
+        fill_in :user_story_action, with: user_story.action
+        fill_in :user_story_result, with: user_story.result
+
+        expect{ click_button 'Save' }.to change{ UserStory.count }.from(0).to(1)
+      end
+    end
   end
 
   context 'backlog section' do

@@ -44,3 +44,6 @@
       .content.row
         = render 'hypotheses/new', hypothesis: @hypothesis,
         hypothesis_types: @hypothesis_types, project: @project
+- content_for :custom_js do
+  = javascript_include_tag 'hypotheses/index'
+  = javascript_include_tag 'hypotheses/show'
