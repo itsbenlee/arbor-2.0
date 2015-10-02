@@ -14,4 +14,6 @@
     font-weight: $font-weight-bold;
     margin-right: rem-calc(15);
   } // nav links
+
+  .f-dropdown:focus { outline-width: 0; }
 } // top nav
