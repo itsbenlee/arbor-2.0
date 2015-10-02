@@ -48,6 +48,7 @@ class ProjectServices
 
     if replica.save && @project.save
       @project.copy_stories(replica)
+      @project.copy_canvas(replica) if @project.canvas
       @common_response.data[:project] = replica
     end
 

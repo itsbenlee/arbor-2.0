@@ -44,4 +44,8 @@ class Project < ActiveRecord::Base
       story.copy_in_project(replica.id)
     end
   end
+
+  def copy_canvas(replica)
+    canvas.copy_in_project(replica.id)
+  end
 end
