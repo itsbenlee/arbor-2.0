@@ -34,6 +34,9 @@ class LinkAttachmentServices
     @link_attachment.remote_thumbnail_url = @link_attachment.content
   end
 
+  def set_metadata_other
+  end
+
   def determine_content_type
     http_content_type = fetch_http_content_type
     if http_content_type
@@ -46,7 +49,13 @@ class LinkAttachmentServices
   end
 
   def fetch_http_content_type
-    response = HTTPClient.new.head @link_attachment.content
-    response.content_type.split(';')[0] if response.status == 200
+    response = HTTPClient.new.head(
+      @link_attachment.content,
+      follow_redirect: true
+    )
+    return if response.status != 200
+    type = response.content_type
+    return type.split(';')[0] if type.include?(';')
+    type
   end
 end
