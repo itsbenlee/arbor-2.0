@@ -16,6 +16,11 @@ class Canvas < ActiveRecord::Base
     percentage
   end
 
+  def copy_in_project(new_id)
+    replica = dup
+    replica.update_attributes(project_id: new_id)
+  end
+
   private
 
   def complete?

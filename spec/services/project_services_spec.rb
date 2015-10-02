@@ -167,5 +167,20 @@ feature 'Collect log entries' do
 
       expect(response.data[:project].user_stories[0].constraints.count).to eq(3)
     end
+
+    scenario 'should copy canvas on a replica' do
+      canvas = create :canvas, project: project
+      project_services = ProjectServices.new(project)
+      response = project_services.replicate
+      expect(response.data[:project].canvas.problems).to eq(canvas.problems)
+      expect(response.data[:project].canvas.solutions).to eq(canvas.solutions)
+      expect(response.data[:project].canvas.alternative).to eq(canvas.alternative)
+      expect(response.data[:project].canvas.advantage).to eq(canvas.advantage)
+      expect(response.data[:project].canvas.segment).to eq(canvas.segment)
+      expect(response.data[:project].canvas.channel).to eq(canvas.channel)
+      expect(response.data[:project].canvas.value_proposition).to eq(canvas.value_proposition)
+      expect(response.data[:project].canvas.revenue_streams).to eq(canvas.revenue_streams)
+      expect(response.data[:project].canvas.cost_structure).to eq(canvas.cost_structure)
+    end
   end
 end
