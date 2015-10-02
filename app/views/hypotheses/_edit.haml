@@ -1,16 +1,12 @@
-.description.hypothesis-edit{ data: { id: hypothesis.id } }
-  = link_to                        |
-     hypothesis_path(hypothesis),  |
-     method: :delete,              |
-     class: 'delete-hypothesis',   |
-     title: 'Delete Hypothesis' do |
-    %span.icon-trash
+.description
   = form_for hypothesis do |form|
-    .hypothesis-title
+    .hypothesis-title.hypothesis-edit{ data: { id: hypothesis.id } }
       %span.bullet
       = form.text_field :description, class: 'hypothesis-title-field',
       data: { hypothesis_id: hypothesis.id }
     .small-12.columns.hypothesis-type-edit{ data: { id: hypothesis.id } }
       = form.select(:hypothesis_type_id,
-      hypothesis_types.all.collect { |ht|[ht.description, ht.id] }, {}, { class: 'type edit-type' })
+      hypothesis_types.all.collect { |ht|[ht.description, ht.id] }, { include_blank: t('labs.hypotheses.select_metric')}, { class: 'type edit-type' })
+      .click-edit= t('labs.hypotheses.edit')
+      %span.dynamic-width
     = form.submit :save, class: 'hide'

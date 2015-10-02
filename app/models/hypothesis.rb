@@ -1,5 +1,5 @@
 class Hypothesis < ActiveRecord::Base
-  validates_presence_of :description, :hypothesis_type, :project
+  validates_presence_of :description, :project
   validates_uniqueness_of :description, scope: :project_id
   validates_uniqueness_of :order, scope: :project_id
   before_create :order_in_project
@@ -9,7 +9,12 @@ class Hypothesis < ActiveRecord::Base
   has_many :user_stories
   has_many :goals, dependent: :destroy
 
-  delegate :description, :code, to: :hypothesis_type, prefix: true
+  delegate :description,
+           :code,
+           to: :hypothesis_type,
+           prefix: true,
+           allow_nil: true
+
   delegate :name, to: :project, prefix: true
 
   include AssociationLoggable
@@ -35,7 +40,7 @@ class Hypothesis < ActiveRecord::Base
   end
 
   def type
-    hypothesis_type.as_json
+    hypothesis_type.as_json if hypothesis_type
   end
 
   def reorder_user_stories(user_stories_hash)

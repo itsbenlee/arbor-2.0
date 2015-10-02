@@ -48,8 +48,11 @@ en:
   labs:
     undefined_hypothesis: 'Undefined hypotheses'
     hypotheses:
+      edit: "- edit success metric"
+      edit_title: "Edit Hypothesis Title"
       enter_description: "Write a new hypothesis"
       export: "Export"
+      select_metric: 'Select a success metric'
     goals:
       title: "Title"
       enter_title: "Enter Title"

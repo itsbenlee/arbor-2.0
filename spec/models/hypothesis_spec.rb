@@ -7,7 +7,6 @@ describe Hypothesis do
 
   it { should validate_presence_of :description }
   it { should validate_presence_of :project }
-  it { should validate_presence_of :hypothesis_type }
   it { should belong_to :project }
   it { should belong_to :hypothesis_type }
 
