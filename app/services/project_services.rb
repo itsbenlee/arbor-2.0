@@ -46,8 +46,7 @@ class ProjectServices
                   owner: @project.owner)
 
     if replica.save && @project.save
-      @project.copy_stories(replica)
-      @project.copy_canvas(replica) if @project.canvas
+      replicate_associations(replica)
       @common_response.data[:project] = replica
     end
 
@@ -107,5 +106,11 @@ class ProjectServices
   def self.entries_per_page
     env_value = ENV['LOG_ENTRIES_PER_PAGE']
     env_value ? env_value.to_i : 5
+  end
+
+  def replicate_associations(replica)
+    @project.copy_hypothesis(replica)
+    @project.copy_stories(replica)
+    @project.copy_canvas(replica) if @project.canvas
   end
 end

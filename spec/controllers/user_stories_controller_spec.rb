@@ -72,10 +72,14 @@ RSpec.describe UserStoriesController do
           it 'should reorder user stories' do
             stories =  { '0' => { id: @first_story.id, order: 2 },
                          '1' => { id: @second_story.id, order: 3 },
-                         '2' => { id:@third_story.id, order: 1 } }
+                         '2' => { id: @third_story.id, order: 1 } }
 
             put :update_order, project_id: project.id,
             hypotheses: { '0' => { id: hypothesis.id, stories: stories }}
+
+            @first_story.reload
+            @second_story.reload
+            @third_story.reload
 
             first_story_updated, second_story_updated, third_story_updated =
               get_reordered(@first_story, @second_story, @third_story)

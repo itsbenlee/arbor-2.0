@@ -182,5 +182,16 @@ feature 'Collect log entries' do
       expect(response.data[:project].canvas.revenue_streams).to eq(canvas.revenue_streams)
       expect(response.data[:project].canvas.cost_structure).to eq(canvas.cost_structure)
     end
+
+    scenario 'should copy user stories with hypothesis' do
+      hypothesis = create :hypothesis, project: project
+      create_list :user_story, 3, project: project, hypothesis: hypothesis
+      project.reload
+      hypothesis.reload
+      project_services = ProjectServices.new(project)
+      response = project_services.replicate
+
+      expect(response.data[:project].user_stories.count).to eq(3)
+    end
   end
 end

@@ -38,8 +38,8 @@ class Project < ActiveRecord::Base
   def recipient
   end
 
-  def copy_stories(replica)
-    stories = UserStory.where(project_id: id, hypothesis_id: nil)
+  def copy_stories(replica, hypothesis_id = nil)
+    stories = user_stories.where(hypothesis_id: hypothesis_id)
     stories.each do |story|
       story.copy_in_project(replica.id)
     end
@@ -47,5 +47,11 @@ class Project < ActiveRecord::Base
 
   def copy_canvas(replica)
     canvas.copy_in_project(replica.id)
+  end
+
+  def copy_hypothesis(replica)
+    hypotheses.each do |hypothesis|
+      hypothesis.copy_in_project(replica.id)
+    end
   end
 end
