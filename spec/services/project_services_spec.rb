@@ -92,7 +92,7 @@ feature 'Collect log entries' do
     let!(:project) { create :project, owner: user }
 
     scenario 'should update number of copies' do
-      user_story = create :user_story, { project: project, hypothesis: nil }
+      user_story = create :user_story, project: project, hypothesis: nil
       project_services = ProjectServices.new(project)
       project_services.replicate
       project.reload
@@ -100,9 +100,7 @@ feature 'Collect log entries' do
     end
 
     scenario 'should check user stories copied' do
-      3.times do
-        create :user_story, { project: project, hypothesis: nil }
-      end
+      create_list :user_story, 3, project: project, hypothesis: nil
 
       project_services = ProjectServices.new(project)
       response = project_services.replicate
@@ -111,7 +109,7 @@ feature 'Collect log entries' do
     end
 
     scenario 'should copy the same data for user stories without hypothesis' do
-      user_story = create :user_story, { project: project, hypothesis: nil }
+      user_story = create :user_story, project: project, hypothesis: nil
 
       project_services = ProjectServices.new(project)
       response = project_services.replicate
@@ -126,7 +124,7 @@ feature 'Collect log entries' do
     end
 
     scenario 'should copy criterion on user stories without hypothesis' do
-      user_story = create :user_story, { project: project, hypothesis: nil }
+      user_story = create :user_story, project: project, hypothesis: nil
       acceptance_criterion =
         create :acceptance_criterion, { user_story: user_story }
 
@@ -139,16 +137,35 @@ feature 'Collect log entries' do
     end
 
     scenario 'should copy same amount of criterions on user stories without hypothesis' do
-      user_story = create :user_story, { project: project, hypothesis: nil }
-
-      3.times do
-        create :acceptance_criterion, { user_story: user_story }
-      end
+      user_story = create :user_story, project: project, hypothesis: nil
+      create_list :acceptance_criterion, 3, user_story: user_story
 
       project_services = ProjectServices.new(project)
       response = project_services.replicate
 
       expect(response.data[:project].user_stories[0].acceptance_criterions.count).to eq(3)
+    end
+
+    scenario 'should copy constraint on user stories without hypothesis' do
+      user_story = create :user_story, project: project, hypothesis: nil
+      constraint = create :constraint, user_story: user_story
+
+      project_services = ProjectServices.new(project)
+      response = project_services.replicate
+
+      copied_constraint =
+        response.data[:project].user_stories[0].constraints[0]
+      expect(constraint.description).to eq(copied_constraint.description)
+    end
+
+    scenario 'should copy same amount of constraints on user stories without hypothesis' do
+      user_story = create :user_story, project: project, hypothesis: nil
+      create_list :constraint, 3, user_story: user_story
+
+      project_services = ProjectServices.new(project)
+      response = project_services.replicate
+
+      expect(response.data[:project].user_stories[0].constraints.count).to eq(3)
     end
   end
 end
