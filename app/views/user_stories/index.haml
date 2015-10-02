@@ -1,24 +1,20 @@
 - content_for :top_links do
-  #top-nav
-    = link_to destroy_user_session_path, method: :delete, class: 'logout nav-links' do
-      = image_tag('icons/signout-icon.svg', class: 'icon')
-      = t('backlog.logout')
-    = link_to '#', class: "nav-links" do
-      = image_tag('icons/search-icon.svg', class: 'icon')
-      = t('top_nav.search')
-    = link_to '#', {"aria-controls" => "drop1", "aria-expanded" => "false", id: "export-button", class: "nav-links", "data-dropdown" => "drop1"} do
-      = image_tag('icons/export-icon.svg', class: 'icon')
-      = t('top_nav.export')
-    = link_to project_user_stories_path(@project), class: "nav-links" do
-      = image_tag('icons/add-icon.svg', class: 'icon')
-      = t('backlog.user_stories.new')
-    %ul#drop1.f-dropdown{"aria-hidden" => "true", "data-dropdown-content" => "", :tabindex => "-1"}
-      %li#csv_export_link
-        = link_to t('csv'), project_hypotheses_export_path(@project, format: :csv)
-      %li#json_export_link
-        = link_to t('json'), project_hypotheses_export_path(@project, format: :json)
-      %li#trello_export_link
-        = link_to t('trello.export'), '#'
+  = link_to '#', class: "nav-links" do
+    = image_tag('icons/search-icon.svg', class: 'icon')
+    = t('top_nav.search')
+  = link_to '#', {"aria-controls" => "drop1", "aria-expanded" => "false", id: "export-button", class: "nav-links", "data-dropdown" => "drop1"} do
+    = image_tag('icons/export-icon.svg', class: 'icon')
+    = t('top_nav.export')
+  = link_to project_user_stories_path(@project), class: "nav-links" do
+    = image_tag('icons/add-icon.svg', class: 'icon')
+    = t('backlog.user_stories.new')
+  %ul#drop1.f-dropdown{"aria-hidden" => "true", "data-dropdown-content" => "", :tabindex => "-1"}
+    %li#csv_export_link
+      = link_to t('csv'), project_hypotheses_export_path(@project, format: :csv)
+    %li#json_export_link
+      = link_to t('json'), project_hypotheses_export_path(@project, format: :json)
+    %li#trello_export_link
+      = link_to t('trello.export'), '#'
 %section.backlog.row{ data: { project_id: @project.id } }
   .user-stories-preloader.large-5.columns
     = image_tag 'preloader.gif'
