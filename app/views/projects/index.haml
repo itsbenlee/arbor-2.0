@@ -1,8 +1,3 @@
-- content_for :top_links do
-  #top-nav
-    = link_to destroy_user_session_path, method: :delete, class: 'logout nav-links' do
-      = image_tag('icons/signout-icon.svg', class: 'icon')
-      = t('backlog.logout')
 #new-project.section-margin-top.row
   .large-6.large-centered.columns
     %p.create-project= t('create_project.title')
