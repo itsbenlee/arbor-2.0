@@ -17,8 +17,7 @@ class ProjectServices
   end
 
   def reorder_stories(new_order)
-    @project
-      .reorder_user_stories(new_order)
+    @project.reorder_user_stories(new_order)
     { success: true }
   end
 

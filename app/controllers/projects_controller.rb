@@ -59,7 +59,12 @@ class ProjectsController < ApplicationController
   end
 
   def backlog
-    project = Project.find(params[:project_id])
+    project = Project.includes(
+      user_stories: [:acceptance_criterions, :constraints],
+      members: {},
+      hypotheses: {})
+              .order('user_stories.backlog_order')
+              .find(params[:project_id])
     render partial: 'user_stories/backlog_list', locals: { project: project }
   end
 

@@ -64,10 +64,7 @@ class UserStoriesController < ApplicationController
   def set_project
     @project =
       @user_story.try(:project) ||
-      Project
-      .includes(user_stories: [:acceptance_criterions],
-                members: {},
-                hypotheses: {})
+      Project.includes(:user_stories)
       .order('user_stories.backlog_order')
       .find(params[:project_id])
   end
