@@ -109,8 +109,9 @@ class ProjectServices
   end
 
   def replicate_associations(replica)
-    @project.copy_hypothesis(replica)
-    @project.copy_stories(replica)
-    @project.copy_canvas(replica) if @project.canvas
+    threads = [Thread.new { @project.copy_hypothesis(replica) },
+               Thread.new { @project.copy_stories(replica) },
+               Thread.new { @project.copy_canvas(replica) if @project.canvas }]
+    threads.each(&:join)
   end
 end
