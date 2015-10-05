@@ -94,9 +94,10 @@ class Hypothesis < ActiveRecord::Base
   end
 
   def copy_associations(hypothesis_replica)
-    project.copy_stories(hypothesis_replica.project, id)
+    replica_id = hypothesis_replica.id
+    project.copy_stories(hypothesis_replica.project, id, replica_id)
     goals.each do |goal|
-      goal.copy_in_hypothesis(hypothesis_replica.id)
+      goal.copy_in_hypothesis(replica_id)
     end
   end
 end

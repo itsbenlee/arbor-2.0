@@ -39,11 +39,12 @@ class ProjectServices
       .reverse.in_groups_of @entries_per_page, false
   end
 
-  def replicate
+  def replicate(current_user)
     @project.copies += 1
     replica =
       Project.new(name: replica_name,
-                  owner: @project.owner)
+                  owner: current_user,
+                  members: [current_user])
 
     if replica.save && @project.save
       replicate_associations(replica)
@@ -110,7 +111,7 @@ class ProjectServices
 
   def replicate_associations(replica)
     threads = [Thread.new { @project.copy_hypothesis(replica) },
-               Thread.new { @project.copy_stories(replica) },
+               Thread.new { @project.copy_stories(replica, nil, nil) },
                Thread.new { @project.copy_canvas(replica) if @project.canvas }]
     threads.each(&:join)
   end

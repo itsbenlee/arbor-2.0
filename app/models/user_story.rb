@@ -36,12 +36,13 @@ class UserStory < ActiveRecord::Base
     project
   end
 
-  def copy_in_project(new_id)
+  def copy_in_project(new_id, new_hypothesis_id)
     replica =
       UserStory.new(role: role,
                     action: action,
                     result: result,
                     project_id: new_id,
+                    hypothesis_id: new_hypothesis_id,
                     estimated_points: estimated_points,
                     priority: priority)
     replica.save
