@@ -15,8 +15,6 @@
           %span.icon-edit
     %li
       =link_to t('create_project.project_button'), new_project_path, title: t('create_project.project_button'), class: 'button radius small success'
-      =link_to new_project_path, title: t('create_project.project_button'), class: 'create-project-icon' do
-        %span.icon-plus
   - if current_project && !current_project.new_record?
     .toolbar
       %ul#workspace

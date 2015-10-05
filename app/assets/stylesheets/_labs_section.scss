@@ -36,6 +36,7 @@
     background-color: rgba($white, .9);
     border: 1px solid $border-color;
     padding: rem-calc(20);
+    z-index: 10;
   }
 }
 
@@ -331,7 +332,8 @@
       @include opacity(0);
       color: $lab-color;
       font-weight: $font-weight-normal;
-      left: rem-calc(-32);
+      left: rem-calc(-38);
+      text-transform: uppercase;
       top: rem-calc(-6);
     }
 

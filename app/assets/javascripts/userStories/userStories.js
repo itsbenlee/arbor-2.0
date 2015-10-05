@@ -29,12 +29,15 @@ function UserStories() {
       bindNewConstraint();
       bindEditAcceptanceCriterion();
       bindEditConstraint();
+      refreshStories();
     });
   }
 
   function bindUserStoriesEvents() {
     $userStoriesOnList.click(function() {
       var url = $(this).data('url');
+      $userStoriesOnList.removeClass('selected');
+      $(this).addClass('selected');
       displayStoryForm(url);
     });
 
@@ -167,4 +170,155 @@ function UserStories() {
       return false;
     });
   }
+
+  function refreshStories() {
+    $('.user-story-edit-form .user-story-input input:text').each(function() {
+      var $this  = $(this),
+          $span  = $this.parent().find('span'),
+          $value = $this.val;
+
+      if ($value) {
+        $this.select();
+        $this.hide();
+        $span.html($this.val());
+      }
+    });
+  }
+}
+
+$(document).on('click', 'span', function () {
+  var $span  = $('.user-story-edit-form .user-story-input span'),
+      $input = $('.user-story-edit-form .user-story-input input:text');
+
+  $span.hide();
+  $input.show();
+  $(this).next('input:text').focus();
+  dynamicInput();
+});
+
+$(document).on('blur', '.user-story-edit-form .user-story-input input:text', function() {
+  var $this  = $(this),
+      $span  = $this.parent().find('span');
+
+  if (!$this.val() == '') {
+    $span.show().html($this.val());
+    $this.hide();
+  }
+});
+
+function setDynamicClass(input) {
+  var $input  = $(input);
+
+  if (!$input.val() == '') {
+    $input.addClass('dynamic');
+  } else {
+    $input.removeClass('dynamic');
+  }
+}
+
+$(document).on('keyup', '.user-story-edit-form .user-story-input input:text', function() {
+  setDynamicClass(this);
+});
+
+$(document).on('focus', '.user-story-edit-form .user-story-input input:text', function() {
+  setDynamicClass(this);
+});
+
+dynamicInput();
+
+function dynamicInput() {
+  var AutosizeInputOptions = (function() {
+    function AutosizeInputOptions(space) {
+      if (typeof space === 'undefined') { space = 30; }
+      this.space = space;
+    }
+
+    return AutosizeInputOptions;
+  })();
+
+  dynamicInput.AutosizeInputOptions = AutosizeInputOptions;
+
+  var AutosizeInput = (function() {
+    function AutosizeInput(input, options) {
+      var _this = this;
+      this._input = $(input);
+      this._options = $.extend({}, AutosizeInput.getDefaultOptions(), options);
+
+      this._mirror = $('<span style = "position: absolute; top: -999px; left: 0; white-space: pre;" />');
+
+      $.each(['fontFamily', 'fontSize', 'fontWeight', 'fontStyle', 'letterSpacing', 'textTransform', 'wordSpacing', 'textIndent'], function (i, val) {
+        _this._mirror[0].style[val] = _this._input.css(val);
+      });
+      $('body').append(this._mirror);
+
+      this._input.on('keydown keyup input propertychange change', function(e) {
+        _this.update();
+      });
+
+      (function () {
+        _this.update();
+      })();
+    }
+
+    AutosizeInput.prototype.getOptions = function() {
+      return this._options;
+    };
+
+    AutosizeInput.prototype.update = function() {
+      var value = this._input.val() || '';
+
+      if (value === this._mirror.text()) {
+        return;
+      }
+
+      this._mirror.text(value);
+
+      var newWidth = this._mirror.width() + this._options.space;
+
+      this._input.width(newWidth);
+    };
+
+    AutosizeInput.getDefaultOptions = function() {};
+
+    AutosizeInput.getInstanceKey = function() {
+      return 'autosizeInputInstance';
+    };
+
+    AutosizeInput._defaultOptions = new AutosizeInputOptions();
+    return AutosizeInput;
+  })();
+
+  dynamicInput.AutosizeInput = AutosizeInput;
+
+  (function($) {
+    var pluginDataAttributeName = 'autosize-input';
+    var validTypes = ['text', 'password', 'search', 'url', 'tel', 'email', 'number'];
+
+    $(document).on('focus', ':input', function() {
+      $(this).attr('autocomplete', 'off');
+    });
+
+    $.fn.autosizeInput = function (options) {
+      return this.each(function () {
+
+        if (!(this.tagName == 'INPUT' && $.inArray(this.type, validTypes) > -1)) {
+          return;
+        }
+
+        var $this = $(this);
+
+        if (!$this.data(dynamicInput.AutosizeInput.getInstanceKey())) {
+          if (options == undefined) {
+            options = $this.data(pluginDataAttributeName);
+          }
+
+          $this.data(dynamicInput.AutosizeInput.getInstanceKey(), new dynamicInput.AutosizeInput(this, options));
+        }
+      });
+    };
+
+    $(function () {
+      $('input[data-' + pluginDataAttributeName + ']').autosizeInput();
+    });
+  })($);
 }
