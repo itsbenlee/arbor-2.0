@@ -12,4 +12,9 @@ class Goal < ActiveRecord::Base
   def recipient
     hypothesis
   end
+
+  def copy_in_hypothesis(new_id)
+    replica = dup
+    replica.update_attributes(hypothesis_id: new_id)
+  end
 end

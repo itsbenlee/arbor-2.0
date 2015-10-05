@@ -65,7 +65,7 @@ class Hypothesis < ActiveRecord::Base
   def copy_in_project(new_id)
     replica = dup
     replica.update_attributes(project_id: new_id)
-    copy_associations(replica.project)
+    copy_associations(replica)
   end
 
   private
@@ -93,7 +93,10 @@ class Hypothesis < ActiveRecord::Base
     csv << [hypothesis.description]
   end
 
-  def copy_associations(project_replica)
-    project.copy_stories(project_replica, id)
+  def copy_associations(hypothesis_replica)
+    project.copy_stories(hypothesis_replica.project, id)
+    goals.each do |goal|
+      goal.copy_in_hypothesis(hypothesis_replica.id)
+    end
   end
 end
