@@ -62,6 +62,12 @@ class Hypothesis < ActiveRecord::Base
     project
   end
 
+  def copy_in_project(new_id)
+    replica = dup
+    replica.update_attributes(project_id: new_id)
+    copy_associations(replica.project)
+  end
+
   private
 
   def order_in_project
@@ -85,5 +91,9 @@ class Hypothesis < ActiveRecord::Base
   def self.hypothesis_csv(csv, hypothesis)
     csv << %w(hypothesis)
     csv << [hypothesis.description]
+  end
+
+  def copy_associations(project_replica)
+    project.copy_stories(project_replica, id)
   end
 end
