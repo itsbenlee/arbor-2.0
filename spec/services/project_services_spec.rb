@@ -193,5 +193,16 @@ feature 'Collect log entries' do
 
       expect(response.data[:project].user_stories.count).to eq(3)
     end
+
+    scenario 'should copy goals' do
+      hypothesis = create :hypothesis, project: project
+      create_list :goal, 3, hypothesis: hypothesis
+      project.reload
+      hypothesis.reload
+      project_services = ProjectServices.new(project)
+      response = project_services.replicate
+
+      expect(response.data[:project].hypotheses.first.goals.count).to eq(3)
+    end
   end
 end
