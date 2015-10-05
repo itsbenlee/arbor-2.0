@@ -101,6 +101,7 @@ en:
   attachment:
     link:
       enter_url: "Paste link here"
+      name_info: "added by"
     file:
       select_file: "Select file here"
     selector_file: "Upload File"
