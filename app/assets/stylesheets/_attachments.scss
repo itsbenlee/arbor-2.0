@@ -1,9 +1,61 @@
-#attachments {
-  .attachment-new {
-    .new-link,
-    .new-file {
-      &.active { display: block; }
-      &.inactive { display: none; }
-    }
+.attachment-new {
+  margin-top: rem-calc(15);
+
+  .new-link,
+  .new-file {
+    &.active { display: block; }
+    &.inactive { display: none; }
   }
-} // attachments
+} // attachment new
+
+.attachments-view {
+  padding: rem-calc(0 15);
+
+  .links-wrapper {
+    margin-top: rem-calc(30);
+
+    svg g path { fill: $black-30; }
+
+    .field {
+      display: inline-block;
+      padding-left: 0;
+    } // input field
+
+    .button { width: auto; }
+  } // wrapper
+
+  .item-wrapper { margin-bottom: rem-calc(20); }
+
+  .attachment-thumbnail img {
+    border: 1px solid $black-30;
+    height: rem-calc(90);
+    width: rem-calc(120);
+  } // thumb image
+
+  .link-info {
+    padding: rem-calc(15 0);
+
+    .attachment-content {
+      @include ellipsis;
+
+      a { color: $lab-color; }
+    }
+
+    .attachment-activity {
+      color: $black-30;
+      font-size: rem-calc(15);
+
+      .user-name {
+        display: inline-block;
+        font-weight: $font-weight-bold;
+        margin-top: rem-calc(5);
+
+        &:after {
+          color: $black-40;
+          content: '\2022';
+          font-size: rem-calc(15);
+        } // after
+      } // user name
+    } // activity info
+  } // link info
+} // attachments view
