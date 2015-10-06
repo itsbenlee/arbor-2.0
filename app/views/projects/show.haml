@@ -20,5 +20,8 @@
         = link_to @project, method: :delete, data: { confirm: t('project.delete_confirmation') }, class: 'delete-project' do
           = t('project.delete_project')
           %span.icon-trash
+      = link_to project_copy_path(@project), method: :post, class: 'copy-project', data: {} do
+        = t('project.copy_project')
+        %span.icon-plus
     .edit-project-form
       = render 'projects/edit', project: @project, errors: @errors

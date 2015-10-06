@@ -71,6 +71,7 @@ en:
     add_members: "Add Member"
   project:
     delete_project: 'Delete project'
+    copy_project: 'Copy project'
     delete_confirmation: |
       This project will be deleted permanently.
       Are you sure you want to continue?

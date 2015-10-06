@@ -42,4 +42,14 @@
       margin-right: rem-calc(10);
     }
   }
+
+  .copy-project {
+    @include single-transition(color, .25s, ease-in);
+    float: right;
+
+    span {
+      float: right;
+      margin-left: rem-calc(10);
+    }
+  }
 } // invite members

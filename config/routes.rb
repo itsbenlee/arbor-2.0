@@ -37,6 +37,8 @@ Railsroot::Application.routes.draw do
 
     get '/backlog', controller: :projects, action: :backlog
     resources :attachments, only: [:index, :create]
+
+    post '/copy', contoller: :projects, action: :copy
   end
 
   resources :hypotheses, only: [:destroy] do

@@ -94,7 +94,7 @@ feature 'Collect log entries' do
     scenario 'should update number of copies' do
       user_story = create :user_story, project: project, hypothesis: nil
       project_services = ProjectServices.new(project)
-      project_services.replicate
+      project_services.replicate(user)
       project.reload
       expect(project.copies).to eq(1)
     end
@@ -103,7 +103,7 @@ feature 'Collect log entries' do
       create_list :user_story, 3, project: project, hypothesis: nil
 
       project_services = ProjectServices.new(project)
-      response = project_services.replicate
+      response = project_services.replicate(user)
 
       expect(response.data[:project].user_stories.count).to eq(3)
     end
@@ -112,7 +112,7 @@ feature 'Collect log entries' do
       user_story = create :user_story, project: project, hypothesis: nil
 
       project_services = ProjectServices.new(project)
-      response = project_services.replicate
+      response = project_services.replicate(user)
 
       copied_story = response.data[:project].user_stories[0]
 
@@ -129,7 +129,7 @@ feature 'Collect log entries' do
         create :acceptance_criterion, { user_story: user_story }
 
       project_services = ProjectServices.new(project)
-      response = project_services.replicate
+      response = project_services.replicate(user)
 
       copied_criterion =
         response.data[:project].user_stories[0].acceptance_criterions[0]
@@ -141,7 +141,7 @@ feature 'Collect log entries' do
       create_list :acceptance_criterion, 3, user_story: user_story
 
       project_services = ProjectServices.new(project)
-      response = project_services.replicate
+      response = project_services.replicate(user)
 
       expect(response.data[:project].user_stories[0].acceptance_criterions.count).to eq(3)
     end
@@ -151,7 +151,7 @@ feature 'Collect log entries' do
       constraint = create :constraint, user_story: user_story
 
       project_services = ProjectServices.new(project)
-      response = project_services.replicate
+      response = project_services.replicate(user)
 
       copied_constraint =
         response.data[:project].user_stories[0].constraints[0]
@@ -163,7 +163,7 @@ feature 'Collect log entries' do
       create_list :constraint, 3, user_story: user_story
 
       project_services = ProjectServices.new(project)
-      response = project_services.replicate
+      response = project_services.replicate(user)
 
       expect(response.data[:project].user_stories[0].constraints.count).to eq(3)
     end
@@ -171,7 +171,7 @@ feature 'Collect log entries' do
     scenario 'should copy canvas on a replica' do
       canvas = create :canvas, project: project
       project_services = ProjectServices.new(project)
-      response = project_services.replicate
+      response = project_services.replicate(user)
       expect(response.data[:project].canvas.problems).to eq(canvas.problems)
       expect(response.data[:project].canvas.solutions).to eq(canvas.solutions)
       expect(response.data[:project].canvas.alternative).to eq(canvas.alternative)
@@ -189,7 +189,7 @@ feature 'Collect log entries' do
       project.reload
       hypothesis.reload
       project_services = ProjectServices.new(project)
-      response = project_services.replicate
+      response = project_services.replicate(user)
 
       expect(response.data[:project].user_stories.count).to eq(3)
     end
@@ -200,9 +200,25 @@ feature 'Collect log entries' do
       project.reload
       hypothesis.reload
       project_services = ProjectServices.new(project)
-      response = project_services.replicate
+      response = project_services.replicate(user)
 
       expect(response.data[:project].hypotheses.first.goals.count).to eq(3)
+    end
+
+    scenario 'should copy user stories under hypothesis' do
+      hypothesis = create :hypothesis, project: project
+      stories = create_list :user_story, 3, project: project,
+        hypothesis: hypothesis
+      project.reload
+      hypothesis.reload
+      project_services = ProjectServices.new(project)
+      response = project_services.replicate(user)
+
+      project_replica = response.data[:project]
+
+      project_replica.user_stories.each_with_index do |user_story, index|
+        expect(user_story.hypothesis_id).to eq(project_replica.hypotheses[0].id)
+      end
     end
   end
 end
