@@ -7,7 +7,6 @@ ARBOR = {
     }
   },
   user_stories:{},
-  attachments:{},
 };
 
 UTIL = {

@@ -1,1 +1,0 @@
-ARBOR.attachments.init = function() {}

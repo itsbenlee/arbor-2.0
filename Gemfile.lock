@@ -423,7 +423,7 @@ DEPENDENCIES
   foundation-rails
   haml-rails
   httpclient
-  i18n-js (>= 3.0.0.rc11)
+  i18n-js
   jbuilder (~> 1.2)
   jquery-rails
   jquery-ui-rails (= 5.0.5)

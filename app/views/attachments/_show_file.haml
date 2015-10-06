@@ -3,9 +3,9 @@
 .attachment-thumbnail
   = image_tag attachment.thumbnail
 .attachment-activity
-  added
+  = t('attachment.added')
   = attachment.created_at.to_formatted_s(:short)
-  by
+  = t('attachment.by')
   - if attachment.user
     = attachment.user_full_name
   - else

@@ -19,7 +19,7 @@ gem 'httpclient'
 gem 'metainspector'
 gem 'fog-aws'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
-gem 'i18n-js', '>= 3.0.0.rc11'
+gem 'i18n-js'
 
 group :doc do
   gem 'sdoc', require: false

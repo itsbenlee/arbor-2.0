@@ -44,12 +44,12 @@ FactoryGirl.define do
       end
 
       factory :image_file_attachment do
-        content   { File.open File.join(Rails.root, 'spec', 'support', 'files', 'image.jpg') }
+        content   { File.open File.join(Rails.root, 'spec', 'support', 'files', 'image.png') }
         mime_type { 'image' }
       end
 
       factory :other_file_attachment do
-        content   { File.open File.join(Rails.root, 'spec', 'support', 'files', 'xls.xls') }
+        content   { File.open File.join(Rails.root, 'spec', 'support', 'files', 'xls.xlsx') }
         mime_type { 'other' }
       end
     end
