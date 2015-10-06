@@ -45,7 +45,6 @@
   border-bottom: 1px solid $border-color;
   clear: both;
   color: $font-color-3;
-  margin: rem-calc(0 20);
   padding: rem-calc(20);
 
   .hypothesis-form:hover .description .icon-trash { @include opacity(1); }
@@ -107,7 +106,7 @@
     padding: rem-calc(9 9 9 24);
     position: relative;
     vertical-align: bottom;
-    width: 70%;
+    width: 100%;
     z-index: 1;
 
     &.hide { display: none; }
