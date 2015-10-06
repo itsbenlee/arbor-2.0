@@ -29,7 +29,8 @@ FeatureEnvy:
     Project#reorder_user_stories,
     TrelloServices#config,
     ProjectServices#activities_by_pages,
-    LinkAttachmentServices#fetch_http_content_type
+    LinkAttachmentServices#fetch_http_content_type,
+    FileUploader#extract_type
   ]
 IrresponsibleModule:
   enabled: false

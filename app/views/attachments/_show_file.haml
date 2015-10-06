@@ -1,0 +1,12 @@
+.attachment-content
+  = link_to attachment.content.file.filename, attachment.content.url
+.attachment-thumbnail
+  = image_tag attachment.thumbnail
+.attachment-activity
+  = t('attachment.added')
+  = attachment.created_at.to_formatted_s(:short)
+  = t('attachment.by')
+  - if attachment.user
+    = attachment.user_full_name
+  - else
+    = t('deleted_user')

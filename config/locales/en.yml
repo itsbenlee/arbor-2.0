@@ -101,6 +101,13 @@ en:
   attachment:
     link:
       enter_url: "Paste link here"
+    file:
+      select_file: "Select file here"
+    selector_file: "Upload File"
+    selector_link: "Paste Link"
+    by: "by"
+    added: "added"
+    or: "or"
   log:
     project:
       create: "The project was created."

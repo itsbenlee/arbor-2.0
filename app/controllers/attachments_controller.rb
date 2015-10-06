@@ -1,5 +1,5 @@
 class AttachmentsController < ApplicationController
-  ATTACHMENT_TYPES = [LinkAttachment]
+  ATTACHMENT_TYPES = [LinkAttachment, FileAttachment]
   before_action :set_project
 
   def index
@@ -23,7 +23,7 @@ class AttachmentsController < ApplicationController
     @attachment.project = @project
     @attachment.user = current_user
     service = attachment_type_service.new @attachment
-    service.set_metadata
+    service.set_metadata if @attachment.type == 'link'
   end
 
   def attachment_type

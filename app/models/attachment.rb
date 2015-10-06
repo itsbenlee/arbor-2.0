@@ -7,4 +7,8 @@ class Attachment < ActiveRecord::Base
   belongs_to :user
 
   delegate :full_name, to: :user, prefix: true
+
+  def type
+    self.class.name.to_s.gsub('Attachment', '').downcase
+  end
 end
