@@ -54,4 +54,20 @@ class Project < ActiveRecord::Base
       hypothesis.copy_in_project(replica.id)
     end
   end
+
+  def clean_log(current_user)
+    activities.delete_all
+    create_activity key: 'project.copied', owner: current_user
+    [clean_stories_log, clean_hypotheses_log].each(&:join)
+  end
+
+  private
+
+  def clean_stories_log
+    Thread.new { user_stories.each(&:clean_log) }
+  end
+
+  def clean_hypotheses_log
+    Thread.new { hypotheses.each(&:clean_log) }
+  end
 end

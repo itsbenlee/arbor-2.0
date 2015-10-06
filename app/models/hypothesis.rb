@@ -68,6 +68,11 @@ class Hypothesis < ActiveRecord::Base
     copy_associations(replica)
   end
 
+  def clean_log
+    activities.delete_all
+    goals.each { |goal| goal.activities.delete_all }
+  end
+
   private
 
   def order_in_project
@@ -96,8 +101,6 @@ class Hypothesis < ActiveRecord::Base
   def copy_associations(hypothesis_replica)
     replica_id = hypothesis_replica.id
     project.copy_stories(hypothesis_replica.project, id, replica_id)
-    goals.each do |goal|
-      goal.copy_in_hypothesis(replica_id)
-    end
+    goals.each { |goal| goal.copy_in_hypothesis(replica_id) }
   end
 end

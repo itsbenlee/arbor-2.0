@@ -40,14 +40,13 @@ class ProjectServices
   end
 
   def replicate(current_user)
-    @project.copies += 1
     replica =
       Project.new(name: replica_name,
                   owner: current_user,
                   members: [current_user])
 
     if replica.save && @project.save
-      replicate_associations(replica)
+      replicate_associations(replica, current_user)
       @common_response.data[:project] = replica
     end
 
@@ -55,7 +54,7 @@ class ProjectServices
   end
 
   def replica_name
-    "Copy of #{@project.name} (#{@project.copies})"
+    "Copy of #{@project.name} (#{@project.copies += 1})"
   end
 
   private
@@ -109,10 +108,12 @@ class ProjectServices
     env_value ? env_value.to_i : 5
   end
 
-  def replicate_associations(replica)
-    threads = [Thread.new { @project.copy_hypothesis(replica) },
-               Thread.new { @project.copy_stories(replica, nil, nil) },
-               Thread.new { @project.copy_canvas(replica) if @project.canvas }]
-    threads.each(&:join)
+  def replicate_associations(replica, current_user)
+    [
+      Thread.new { @project.copy_hypothesis(replica) },
+      Thread.new { @project.copy_stories(replica, nil, nil) },
+      Thread.new { @project.copy_canvas(replica) if @project.canvas }
+    ].each(&:join)
+    replica.clean_log(current_user)
   end
 end
