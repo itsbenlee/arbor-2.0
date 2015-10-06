@@ -10,8 +10,10 @@ class AttachmentsController < ApplicationController
   def create
     assign_values
     if @attachment.valid? && @attachment.save
+      send("set_#{@attachment.type}_flash_message")
       redirect_to project_attachments_path @project
     else
+      flash[:error] = I18n.t('attachment.error')
       render :index
     end
   end
@@ -39,5 +41,14 @@ class AttachmentsController < ApplicationController
     @project =
       @attachment.try(:project) ||
       Project.includes(:attachments).find(params[:project_id])
+  end
+
+  def set_link_flash_message
+    flash[:success] = I18n.t('attachment.link.success')
+  end
+
+  def set_file_flash_message
+    filename = @attachment.content.file.filename
+    flash[:success] = I18n.t('attachment.file.success', filename: filename)
   end
 end

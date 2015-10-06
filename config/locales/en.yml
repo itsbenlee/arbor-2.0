@@ -104,12 +104,12 @@ en:
     link:
       enter_url: "Paste link here"
       name_info: "added by"
+      success: "Your link was successfully saved"
     file:
       select_file: "Select file here"
+      success: "%{filename} was successfully uploaded"
     selector_file: "Upload File"
     selector_link: "Paste Link"
-    by: "by"
-    added: "added"
     or: "or"
   log:
     project:
@@ -201,4 +201,3 @@ en:
   activity:
     project:
       update: 'Project was updated'
-

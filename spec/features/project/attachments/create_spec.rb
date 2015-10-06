@@ -22,26 +22,18 @@ feature 'Create a new attachment' do
     expect(find('.new-file', visible: false).visible?).to be false
   end
 
-  scenario 'should let me switch to a file creation form and back', js: true do
+  scenario 'should let me switch to a file creation form', js: true do
     find('a#attachment-switcher').trigger('click')
     expect(find('.new-file', visible: false).visible?).to be true
     expect(find('.new-link', visible: false).visible?).to be false
     within '.new-file' do
       expect(page).to have_field :attachment_content
     end
-
-    find('a#attachment-switcher').trigger('click')
-    expect(find('.new-file', visible: false).visible?).to be false
-    expect(find('.new-link', visible: false).visible?).to be true
   end
 
   scenario 'should change the attachment switcher text', js: true do
     switcher = find 'a#attachment-switcher'
-    expect(switcher.text).to eq 'Upload File'
-    switcher.trigger('click')
-    expect(switcher.text).to eq 'Paste Link'
-    switcher.trigger('click')
-    expect(switcher.text).to eq 'Upload File'
+    expect(switcher.text).to eq 'UPLOAD FILE'
   end
 
   context 'as a link' do
