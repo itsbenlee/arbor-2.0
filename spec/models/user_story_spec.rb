@@ -15,6 +15,7 @@ RSpec.describe UserStory do
   it { should belong_to(:project) }
   it { should have_many :acceptance_criterions }
   it { should have_many :constraints }
+  it { should have_and_belong_to_many(:tags) }
   it { should validate_uniqueness_of(:story_number).scoped_to(:project_id)}
 
   it 'must increase user stories order' do

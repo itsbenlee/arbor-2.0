@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151007132703) do
+ActiveRecord::Schema.define(version: 20151007191007) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -144,6 +144,23 @@ ActiveRecord::Schema.define(version: 20151007132703) do
   add_index "projects", ["name"], name: "index_projects_on_name", using: :btree
   add_index "projects", ["owner_id"], name: "index_projects_on_owner_id", using: :btree
 
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "project_id"
+  end
+
+  add_index "tags", ["project_id"], name: "index_tags_on_project_id", using: :btree
+
+  create_table "tags_user_stories", force: :cascade do |t|
+    t.integer "tag_id",        null: false
+    t.integer "user_story_id", null: false
+  end
+
+  add_index "tags_user_stories", ["tag_id"], name: "index_tags_user_stories_on_tag_id", using: :btree
+  add_index "tags_user_stories", ["user_story_id"], name: "index_tags_user_stories_on_user_story_id", using: :btree
+
   create_table "user_stories", force: :cascade do |t|
     t.string   "role",             limit: 100,                    null: false
     t.string   "action",           limit: 255,                    null: false
@@ -187,4 +204,5 @@ ActiveRecord::Schema.define(version: 20151007132703) do
   add_foreign_key "acceptance_criterions", "user_stories"
   add_foreign_key "attachments", "projects"
   add_foreign_key "invites", "projects"
+  add_foreign_key "tags", "projects"
 end

@@ -11,6 +11,7 @@ describe Project do
   it { should have_many :hypotheses }
   it { should have_many :user_stories }
   it { should have_many :attachments }
+  it { should have_many :tags }
   it { should belong_to :owner }
 
   it_behaves_like 'a logged entity' do
