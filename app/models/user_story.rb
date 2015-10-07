@@ -9,6 +9,7 @@ class UserStory < ActiveRecord::Base
   before_create :order_in_hypotheses, :order_in_backlog, :assign_story_number
   after_create :update_next_story_number
 
+  has_and_belongs_to_many :tags
   has_many :acceptance_criterions, dependent: :destroy
   has_many :constraints, dependent: :destroy
   belongs_to :hypothesis

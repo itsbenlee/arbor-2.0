@@ -21,6 +21,7 @@ Railsroot::Application.routes.draw do
     resources :user_stories, except: [:show, :new] do
       resources :acceptance_criterions, only: [:create, :update]
       resources :constraints, only: [:create, :update]
+      resources :tags, only: :create
     end
 
     put 'hypotheses/order', controller: :hypotheses, action: :update_order
