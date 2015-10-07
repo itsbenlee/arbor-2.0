@@ -30,6 +30,10 @@ class UserStoryService
     @common_response
   end
 
+  def copy_stories(user_stories)
+    user_stories.each { |story| story.copy_in_project(@project.id, nil) }
+  end
+
   private
 
   def assign_common_response(user_story)
