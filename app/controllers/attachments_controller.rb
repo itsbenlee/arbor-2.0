@@ -22,17 +22,11 @@ class AttachmentsController < ApplicationController
     @attachment = attachment_type.new attachment_params
     @attachment.project = @project
     @attachment.user = current_user
-    service = attachment_type_service.new @attachment
-    service.set_metadata if @attachment.type == 'link'
   end
 
   def attachment_type
     type = attachment_params[:table_type].constantize
     type if type.in? ATTACHMENT_TYPES
-  end
-
-  def attachment_type_service
-    "#{attachment_type}Services".constantize if attachment_type
   end
 
   private

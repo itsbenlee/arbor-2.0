@@ -1,18 +1,10 @@
 require 'spec_helper'
 
 feature 'Create a new attachment' do
-  let!(:user)         { create :user }
-  let!(:project)      { create :project, owner: user }
-  let(:plain_link)    { build :plain_link_attachment }
-  let(:html_link)     { build :html_link_attachment }
-  let(:pdf_link)      { build :pdf_link_attachment }
-  let(:image_link)    { build :image_link_attachment }
-  let(:other_link)    { build :other_link_attachment }
-
-  let(:image_file)    { build :image_file_attachment }
-  let(:text_file)     { build :text_file_attachment }
-  let(:pdf_file)      { build :pdf_file_attachment }
-  let(:other_file)    { build :other_file_attachment }
+  let!(:user)    { create :user }
+  let!(:project) { create :project, owner: user }
+  let(:link)     { build :link_attachment }
+  let(:file)     { build :file_attachment }
 
   background do
     sign_in user
@@ -53,44 +45,10 @@ feature 'Create a new attachment' do
   end
 
   context 'as a link' do
-    context 'html attachment' do
-      it_behaves_like 'a link attachment' do
-        let(:entity)         { html_link }
-        let(:entity_name)    { 'html' }
-        let(:thumbnail_name) { 'home-hero.png' }
-      end
-    end
-
-    context 'plain attachment' do
-      it_behaves_like 'a link attachment' do
-        let(:entity)         { plain_link }
-        let(:entity_name)    { 'plain' }
-        let(:thumbnail_name) { 'default_thumbnail.jpg' }
-      end
-    end
-
-    context 'pdf attachment' do
-      it_behaves_like 'a link attachment' do
-        let(:entity)         { pdf_link }
-        let(:entity_name)    { 'pdf' }
-        let(:thumbnail_name) { 'default_thumbnail.jpg' }
-      end
-    end
-
-    context 'image attachment' do
-      it_behaves_like 'a link attachment' do
-        let(:entity)         { image_link }
-        let(:entity_name)    { 'image' }
-        let(:thumbnail_name) { 'PAL_signals.png' }
-      end
-    end
-
-    context 'other attachment' do
-      it_behaves_like 'a link attachment' do
-        let(:entity)         { other_link }
-        let(:entity_name)    { 'other link' }
-        let(:thumbnail_name) { 'default_thumbnail.jpg' }
-      end
+    it_behaves_like 'a link attachment' do
+      let(:entity)         { link }
+      let(:entity_name)    { 'link' }
+      let(:thumbnail_name) { 'default_link_thumbnail.jpg' }
     end
   end
 
@@ -104,36 +62,10 @@ feature 'Create a new attachment' do
       FileUploader.enable_processing = false
     end
 
-    context 'pdf file attachment' do
-      it_behaves_like 'a file attachment' do
-        let(:entity)         { pdf_file }
-        let(:entity_name)    { 'pdf file' }
-        let(:thumbnail_name) { 'default_thumbnail.jpg' }
-      end
-    end
-
-    context 'image file attachment' do
-      it_behaves_like 'a file attachment' do
-        let(:entity)         { image_file }
-        let(:entity_name)    { 'image file' }
-        let(:thumbnail_name) { 'default_thumbnail.jpg' }
-      end
-    end
-
-    context 'txt file attachment' do
-      it_behaves_like 'a file attachment' do
-        let(:entity)         { text_file }
-        let(:entity_name)    { 'text file' }
-        let(:thumbnail_name) { 'default_thumbnail.jpg' }
-      end
-    end
-
-    context 'other attachment' do
-      it_behaves_like 'a file attachment' do
-        let(:entity)         { other_file }
-        let(:entity_name)    { 'other file' }
-        let(:thumbnail_name) { 'default_thumbnail.jpg' }
-      end
+    it_behaves_like 'a file attachment' do
+      let(:entity)         { file }
+      let(:entity_name)    { 'file' }
+      let(:thumbnail_name) { 'default_file_thumbnail.jpg' }
     end
   end
 end
