@@ -4,6 +4,8 @@
       %ul
         - user_story.errors.full_messages.each do |error|
           %li= error
+  .alert-box.error.user-story-component-error{ data: { alert: '' } }
+    = link_to '×', '#', class: 'close'
   .row
     %span.story-title= t('backlog.story_span')
     .number
@@ -60,7 +62,16 @@
       %label
         = t('backlog.user_stories.epic')
         = form.check_box :epic, id: user_story.id
+  - if user_story.project
+    = t('backlog.tags')
+    - user_story.project.tags.each do |tag|
+      .user-story-tag
+        %label
+          = check_box_tag "user_story[tag_ids][]", tag.id, user_story.tags.include?(tag)
+          = tag.name
 - unless user_story.new_record?
+  .tag-form
+    = render 'tags/new', user_story: user_story
   .acceptance-criterion-form
     = render 'acceptance_criterions/new', user_story: user_story
     - user_story.acceptance_criterions.each do |acceptance_criterion|

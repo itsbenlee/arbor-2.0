@@ -16,6 +16,9 @@
           = "##{user_story.story_number}"
         %span.points
           = format_story_points(user_story)
+        %span.story-tags
+          - user_story.tags.each do |tag|
+            %span.label=tag.name
         .story-text
           %span.grey-prefix= t('backlog.user_stories.role')
           %span=user_story.role

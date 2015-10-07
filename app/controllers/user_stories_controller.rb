@@ -99,7 +99,8 @@ class UserStoriesController < ApplicationController
 
   def user_story_params
     params.require(:user_story).permit(
-      %i(role action result estimated_points priority hypothesis_id epic)
+      :role, :action, :result, :estimated_points,
+      :priority, :hypothesis_id, :epic, tag_ids: []
     )
   end
 
