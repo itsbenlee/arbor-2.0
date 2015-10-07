@@ -72,6 +72,7 @@ en:
   project:
     delete_project: 'Delete project'
     copy_project: 'Copy project'
+    copied: "Project copied by "
     delete_confirmation: |
       This project will be deleted permanently.
       Are you sure you want to continue?
@@ -197,3 +198,7 @@ en:
     attributes:
       link_attachment:
         content: 'URL'
+  activity:
+    project:
+      update: 'Project was updated'
+

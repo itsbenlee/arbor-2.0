@@ -49,6 +49,11 @@ class UserStory < ActiveRecord::Base
     copy_associations(replica.id)
   end
 
+  def clean_log
+    activities.delete_all
+    [clean_criterions_log, clean_constraints_log].each(&:join)
+  end
+
   private
 
   def order_in_hypotheses
@@ -89,5 +94,13 @@ class UserStory < ActiveRecord::Base
                      user_story_id: replica_id)
       constraint_replica.save
     end
+  end
+
+  def clean_criterions_log
+    Thread.new { acceptance_criterions.each(&:clean_log) }
+  end
+
+  def clean_constraints_log
+    Thread.new { constraints.each(&:clean_log) }
   end
 end

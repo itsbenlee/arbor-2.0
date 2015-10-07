@@ -1,5 +1,17 @@
 require 'spec_helper'
 
+def create_complete_project
+  hypothesis = create :hypothesis, project: project
+  user_story = create :user_story,
+                      project: project,
+                      hypothesis: hypothesis
+  create_list :goal, 3, hypothesis: hypothesis
+  create_list :acceptance_criterion, 3, user_story: user_story
+  create_list :constraint, 3, user_story: user_story
+  project.reload
+  hypothesis.reload
+end
+
 def set_new_order(first_hypothesis, second_hypothesis)
   first_hypothesis_ordered = {
     id: first_hypothesis.id,
@@ -38,15 +50,15 @@ feature 'Reorder hypothesis inside' do
 
   scenario 'should reorder user stories on project' do
     first_story, second_story, third_story = set_user_stories_on_project(project)
-    stories =  { '0' => {'id' => first_story.id, 'backlog_order' => 2},
-                 '1' => {'id' => second_story.id, 'backlog_order' => 3},
-                 '2' => {'id' => third_story.id, 'backlog_order' => 1} }
+    stories = { '0' => {'id' => first_story.id, 'backlog_order' => 2},
+                '1' => {'id' => second_story.id, 'backlog_order' => 3},
+                '2' => {'id' => third_story.id, 'backlog_order' => 1} }
 
     project_services = ProjectServices.new(project)
     project_services.reorder_stories(stories)
 
     first_story_updated, second_story_updated, third_story_updated =
-      get_reordered(first_story, second_story, third_story)
+    get_reordered(first_story, second_story, third_story)
 
     expect(first_story_updated.backlog_order).to eq 2
     expect(second_story_updated.backlog_order).to eq 3
@@ -87,7 +99,7 @@ feature 'Collect log entries' do
     end
   end
 
-  feature 'Replicate project' do
+  context 'Replicate project' do
     let!(:user)    { create :user }
     let!(:project) { create :project, owner: user }
 
@@ -219,6 +231,42 @@ feature 'Collect log entries' do
       project_replica.user_stories.each_with_index do |user_story, index|
         expect(user_story.hypothesis_id).to eq(project_replica.hypotheses[0].id)
       end
+    end
+  end
+
+  context 'Log activity for project replica' do
+    let!(:user)    { create :user }
+    let!(:project) { create :project, owner: user }
+
+    background do
+      PublicActivity.with_tracking do
+        create_complete_project
+        @project_services = ProjectServices.new(project)
+      end
+    end
+
+    scenario 'should copy project and create only one activity' do
+      PublicActivity.with_tracking do
+        @project_services.replicate(user)
+      end
+
+      expect(Project.last.activities.count).to eq(1)
+      expect(Project.last.activities[0].owner).to eq(user)
+    end
+
+    scenario 'should copy project and keep old project activity and add one activity' do
+      PublicActivity.with_tracking do
+        expect{ @project_services.replicate(user) }.to change{ project.reload.activities.count }.by(1)
+      end
+    end
+
+    scenario 'should copy project and keep add a updated project activity' do
+      PublicActivity.with_tracking do
+        @project_services.replicate(user)
+      end
+
+      last_activity = project.reload.activities.last
+      expect(last_activity.text).to eq(I18n.t('activity.project.update'))
     end
   end
 end

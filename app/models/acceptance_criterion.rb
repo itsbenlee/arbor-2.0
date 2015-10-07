@@ -13,4 +13,8 @@ class AcceptanceCriterion < ActiveRecord::Base
   def recipient
     user_story
   end
+
+  def clean_log
+    activities.delete_all
+  end
 end
