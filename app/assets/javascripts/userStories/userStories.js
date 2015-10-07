@@ -101,6 +101,7 @@ function UserStories() {
         type      = $(this).attr('method'),
         userStory = $(this).serialize();
 
+    $userStoryForm.removeClass('full-width');
     editFormAjax(url, type, userStory);
     return false;
   });
@@ -183,6 +184,14 @@ function UserStories() {
         $span.html($this.val());
       }
     });
+  }
+}
+
+fullWidthForm();
+
+function fullWidthForm() {
+  if (!$('.user-story-list').is(':visible')) {
+    $('.user-story-edit-form').addClass('full-width');
   }
 }
 

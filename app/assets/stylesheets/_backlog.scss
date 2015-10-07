@@ -3,14 +3,21 @@
 // --------------------------------------------------------
 
 .backlog.row {
+  height: 100%;
   margin: 0;
   max-width: 100%;
   position: relative;
 
-  .user-stories-list-container { padding: 0; }
+  .user-stories-list-container {
+    max-height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+    padding: 0;
+  }
 
   .user-stories {
     color: $secondary-color;
+    min-height: 100%;
 
     ul {
       font-size: rem-calc(14);
@@ -20,7 +27,6 @@
     .user-story {
       @include transition(background-color .25s ease-in);
       border-bottom: 1px solid $black-10;
-      border-right: 1px solid $black-10;
       cursor: pointer;
       padding: rem-calc(20 45 20 15);
       position: relative;
@@ -123,7 +129,15 @@
   }
 
   .user-story-edit-form {
-    padding: rem-calc(20 0 0 20);
+    border-left: 1px solid $black-10;
+    height: 100%;
+    overflow-y: auto;
+    padding: rem-calc(20 20 0 20);
+
+    &.full-width {
+      border: 0;
+      width: 100%;
+    }
 
     input {
       @include inline-block();
