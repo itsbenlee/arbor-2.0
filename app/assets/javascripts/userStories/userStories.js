@@ -74,6 +74,7 @@ function UserStories() {
       $userStoriesOnList = $('li.user-story');
       $userStoriesList   = $('ul.user-story-list');
       bindUserStoriesEvents();
+      bindSelectStoriesEvent();
       showBacklog();
     });
   }
@@ -185,6 +186,22 @@ function UserStories() {
       }
     });
   }
+
+  function bindSelectStoriesEvent() {
+    var $selectStoriesLnk = $('a#select_stories_lnk');
+
+    $selectStoriesLnk.click(function() {
+      var $copyStoriesLnk          = $('a#copy_stories_lnk'),
+          $copyStoriesChkContainer = $('.copy-story-check-box');
+
+      $(this).hide();
+      $copyStoriesLnk.show();
+      $copyStoriesChkContainer.show();
+      return false;
+    });
+  }
+
+  bindSelectStoriesEvent();
 }
 
 fullWidthForm();

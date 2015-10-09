@@ -3,6 +3,7 @@ class UserStoriesController < ApplicationController
   before_action :set_hypothesis, only: [:create]
   before_action :check_edit_permission,
     only: [:create, :destroy, :update, :update_order, :index, :edit]
+  before_action :copied_user_stories, only: :copy
 
   def index
     @user_story = UserStory.new
@@ -43,6 +44,12 @@ class UserStoriesController < ApplicationController
   def update_order
     @hypothesis_service = HypothesisServices.new(@project)
     render json: @hypothesis_service.reorder_stories(update_order_params)
+  end
+
+  def copy
+    user_story_service = UserStoryService.new(@project)
+    user_story_service.copy_stories(@copied_stories)
+    render json: { project_url: project_user_stories_path(@project) }
   end
 
   private
@@ -98,5 +105,18 @@ class UserStoriesController < ApplicationController
 
   def update_order_params
     params.require(:hypotheses)
+  end
+
+  def copy_stories_params
+    params.permit(:project_id, user_stories: [])
+  end
+
+  def copied_user_stories
+    @project =
+      Project.find(copy_stories_params[:project_id])
+    @copied_stories = []
+    copy_stories_params[:user_stories].each do |story_id|
+      @copied_stories.push(UserStory.find(story_id))
+    end
   end
 end

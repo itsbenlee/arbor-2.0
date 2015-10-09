@@ -1,0 +1,12 @@
+#copy_stories_modal.copy-stories-modal.reveal-modal{ aria: { hidden: true, labelledby: 'copy-stories-modal-title' }, data: { reveal: '', role: 'dialog' } }
+  %h2#copy-stories-modal-title=t('backlog.user_stories.copy_stories')
+  %a.close-reveal-modal{ aria: { label: 'Close' } }×
+  .row.some-air
+    .alert-box.error.copy-stories-error
+      = t('backlog.user_stories.no_stories')
+  .row.some-air
+    .medium-10.medium-offset-1.columns
+      = select_tag 'copy_story_project_id', options_from_collection_for_select(projects, 'id', 'name')
+      = button_tag t('backlog.user_stories.copy_stories'), class: 'button radius small success',
+      id: 'copy_stories_submit', data: { url: user_stories_copy_path }
+= javascript_include_tag 'userStories/copyModal'
