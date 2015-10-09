@@ -24,6 +24,11 @@ Railsroot::Application.routes.draw do
       resources :tags, only: :create
     end
 
+    get 'user_stories/export',
+      controller: :user_stories,
+      action: :export,
+      as: :backlog_export
+
     put 'hypotheses/order', controller: :hypotheses, action: :update_order
     get 'hypotheses/export', controller: :hypotheses, action: :export
     get 'hypotheses/export/trello',

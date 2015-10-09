@@ -1,0 +1,28 @@
+%section.backlog.row
+  .user-stories-list-container
+    .user-stories
+      - @project.user_stories.each do |user_story|
+        %ul.user-story-list
+          %li.user-story
+            .number
+              = "##{user_story.story_number}"
+            %span.points
+              = format_story_points(user_story)
+            .story-text
+              %span.grey-prefix= t('backlog.user_stories.role')
+              %span=user_story.role
+              %span.grey-prefix= t('backlog.user_stories.action', priority: user_story.priority)
+              %span=user_story.action
+              %span.grey-prefix= t('backlog.user_stories.result')
+              %span=user_story.result
+            %li.acceptance-criterions
+              = t('backlog.acceptance_criteria')
+              - user_story.acceptance_criterions.each do |ac|
+                .description
+                  = ac.description
+            %li.constraints
+              = t('backlog.constraints')
+              - user_story.constraints.each do |constraint|
+                .description
+                  = constraint.description
+

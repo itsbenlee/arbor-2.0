@@ -185,11 +185,15 @@ en:
   revenue_streams_title: "What is your revenue model, gross margin, and proposed path to revenue?"
   cost_structure: "Cost Structure"
   cost_structure_title: "What are your customer acquisition costs, distribution costs, people, hosting, integration partners, etc?"
-  csv: "CSV"
-  json: "Json"
+  csv:
+    export: "Export as CSV"
+  json:
+    export: "Export as JSON"
   trello:
     export: 'Export to Trello'
     default_list: 'Product Backlog'
+  pdf:
+    export: 'Export as PDF'
   mailer:
     invite:
       subject: 'Invitation instructions'

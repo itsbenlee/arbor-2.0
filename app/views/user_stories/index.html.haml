@@ -16,12 +16,8 @@
       = image_tag('icons/copy-icon.svg', class: 'icon')
       = t('backlog.user_stories.copy_stories')
   %ul#drop1.f-dropdown{"aria-hidden" => "true", "data-dropdown-content" => "", :tabindex => "-1"}
-    %li#csv_export_link
-      = link_to t('csv'), project_hypotheses_export_path(@project, format: :csv)
-    %li#json_export_link
-      = link_to t('json'), project_hypotheses_export_path(@project, format: :json)
-    %li#trello_export_link
-      = link_to t('trello.export'), '#'
+    %li#pdf_export_link
+      = link_to t('pdf.export'), project_backlog_export_path(@project, format: :pdf)
 %section.backlog.row{ data: { project_id: @project.id } }
   .user-stories-preloader.small-12.medium-5.columns
     = image_tag 'preloader.gif'
