@@ -1,7 +1,7 @@
 .image-uploader {
   cursor: pointer;
   display: inline;
-  margin-left: rem-calc(22);
+  margin: rem-calc(0 22 0 15);
   overflow: hidden;
   padding: rem-calc(5 20);
   position: relative;
@@ -25,8 +25,9 @@
   margin-top: rem-calc(15);
 
   .button {
-    padding-left: rem-calc(50);
-    padding-right: rem-calc(50);
+    margin-left: 0;
+    padding-left: rem-calc(40);
+    padding-right: rem-calc(40);
     width: auto;
   }
 
@@ -43,14 +44,14 @@
   padding: rem-calc(0 15);
 
   .links-wrapper {
-    margin-top: rem-calc(35);
+    margin: rem-calc(35 0 0);
 
     svg g path { fill: $black-30; }
 
     span {
       color: $black-30;
       font-size: rem-calc(13);
-      padding-right: rem-calc(5);
+      padding-right: rem-calc(10);
       text-transform: uppercase;
     } // file switcher span
 
@@ -59,18 +60,31 @@
       padding-left: 0;
     } // input field
 
-    .save-btn { padding-right: 0; }
+    .save-btn {
+      padding-left: 0;
+      padding-right: 0;
+
+      .button {
+        margin-right: rem-calc(15);
+        padding-left: rem-calc(35);
+        padding-right: rem-calc(35);
+      }
+    }
 
     .attachment-selector { padding-left: 0; }
   } // wrapper
 
-  .item-wrapper { margin-bottom: rem-calc(20); }
+  .item-wrapper { margin: rem-calc(0 0 20); }
 
-  .attachment-thumbnail img {
-    border: 1px solid $black-30;
-    height: rem-calc(90);
-    width: rem-calc(120);
-  } // thumb image
+  .attachment-thumbnail {
+    img {
+      border: 1px solid $black-30;
+      height: rem-calc(90);
+      width: rem-calc(120);
+    } // thumb image
+
+    @media #{$small-only} { padding-left: 0; }
+  }
 
   .link-info {
     padding: rem-calc(15 0);
