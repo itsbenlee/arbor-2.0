@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
-  before_action :load_project, only: [:show, :edit, :update, :destroy, :log]
+  before_action :load_project,
+                only: [:show, :edit, :update, :destroy, :log]
 
   def index
   end
@@ -59,8 +60,26 @@ class ProjectsController < ApplicationController
   end
 
   def backlog
-    project = Project.find(params[:project_id])
+    project = Project.includes(
+      user_stories: [:acceptance_criterions, :constraints],
+      members: {},
+      hypotheses: {})
+              .order('user_stories.backlog_order')
+              .find(params[:project_id])
     render partial: 'user_stories/backlog_list', locals: { project: project }
+  end
+
+  def copy
+    project =
+      Project
+      .includes(user_stories: [:acceptance_criterions, :constraints],
+                hypotheses: [:user_stories, :goals])
+      .find(params[:project_id])
+
+    project_services = ProjectServices.new(project)
+    project_services.replicate(current_user)
+
+    redirect_to :back
   end
 
   private

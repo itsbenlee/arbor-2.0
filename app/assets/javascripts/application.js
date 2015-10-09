@@ -3,6 +3,8 @@
 //= require jquery-ui/sortable
 //= require assets/global-vars
 //= require foundation
+//= require i18n
+//= require i18n/translations
 //= require init
 //= require projects/projects.js.erb
 //= require canvases/canvases
@@ -11,3 +13,4 @@
 //= require hypotheses/goal
 //= require userStories/userStories
 //= require_tree ./vendor
+//= require_tree ./attachments

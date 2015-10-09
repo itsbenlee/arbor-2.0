@@ -9,6 +9,7 @@ class UserStory < ActiveRecord::Base
   before_create :order_in_hypotheses, :order_in_backlog, :assign_story_number
   after_create :update_next_story_number
 
+  has_and_belongs_to_many :tags
   has_many :acceptance_criterions, dependent: :destroy
   has_many :constraints, dependent: :destroy
   belongs_to :hypothesis
@@ -36,16 +37,22 @@ class UserStory < ActiveRecord::Base
     project
   end
 
-  def copy_in_project(new_id)
+  def copy_in_project(new_id, new_hypothesis_id)
     replica =
       UserStory.new(role: role,
                     action: action,
                     result: result,
                     project_id: new_id,
+                    hypothesis_id: new_hypothesis_id,
                     estimated_points: estimated_points,
                     priority: priority)
     replica.save
     copy_associations(replica.id)
+  end
+
+  def clean_log
+    activities.delete_all
+    [clean_criterions_log, clean_constraints_log].each(&:join)
   end
 
   private
@@ -88,5 +95,13 @@ class UserStory < ActiveRecord::Base
                      user_story_id: replica_id)
       constraint_replica.save
     end
+  end
+
+  def clean_criterions_log
+    Thread.new { acceptance_criterions.each(&:clean_log) }
+  end
+
+  def clean_constraints_log
+    Thread.new { constraints.each(&:clean_log) }
   end
 end

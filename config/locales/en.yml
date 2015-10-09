@@ -71,6 +71,8 @@ en:
     add_members: "Add Member"
   project:
     delete_project: 'Delete project'
+    copy_project: 'Copy project'
+    copied: "Project copied by "
     delete_confirmation: |
       This project will be deleted permanently.
       Are you sure you want to continue?
@@ -85,10 +87,15 @@ en:
       action: "I %{priority} be able to"
       result: "so that"
       delete: "Delete User Story"
+      rearrange: "Rearrange User Story"
       edit_title: "Edit User Story"
       new: "New user story"
+      epic: "epic"
       enter_criterion: 'Write a new acceptance criterion here...'
       enter_constraint: "Write a new constraint here..."
+      edit_role: "Edit type of user"
+      edit_action: "Edit function"
+      edit_result: "Edit result"
     story_span: "Story"
     logout: "Sign out"
     acceptance_criteria: "Acceptance Criteria"
@@ -96,6 +103,14 @@ en:
   attachment:
     link:
       enter_url: "Paste link here"
+      name_info: "added by"
+      success: "Your link was successfully saved"
+    file:
+      select_file: "Select file here"
+      success: "%{filename} was successfully uploaded"
+    selector_file: "Upload File"
+    selector_link: "Paste Link"
+    or: "or"
   log:
     project:
       create: "The project was created."
@@ -183,3 +198,6 @@ en:
     attributes:
       link_attachment:
         content: 'URL'
+  activity:
+    project:
+      update: 'Project was updated'

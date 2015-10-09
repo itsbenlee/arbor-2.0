@@ -1,7 +1,8 @@
 function UserStory() {
   var $userStoriesList  = $('.user-story-list'),
       $newUserStoryForm = $('form#new_user_story'),
-      $appContent       = $('.right-app-content');
+      $appContent       = $('.right-app-content'),
+      $epicCheckbox     = $('.user-story-input.epic');
 
   function storiesAreReordered(hypothesisId, stories) {
     var changes = false;
@@ -90,6 +91,11 @@ function UserStory() {
         $appContent.scrollTo($userStoryForm, 200);
     });
   }
+
+  $epicCheckbox.change(function() {
+    var $editForm = $(this).parent();
+    $editForm.submit();
+  });
 
   function bindUserStoriesSortEvent() {
     var storyListSelector = '.user-story-list';

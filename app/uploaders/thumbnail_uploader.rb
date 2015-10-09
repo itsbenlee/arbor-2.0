@@ -6,38 +6,20 @@ class ThumbnailUploader < CarrierWave::Uploader::Base
   end
 
   def default_url
-    send "default_#{model.mime_type}_url"
+    send "default_#{model.type}_url"
   end
 
   private
 
-  def default_html_url
-    ActionController::Base.helpers.asset_path(
-      'link_attachments/default_thumbnail.png'
+  def default_link_url
+    ActionController::Base.helpers.image_path(
+      'fallbacks/attachments/default_link_thumbnail.jpg'
     )
   end
 
-  def default_plain_url
-    ActionController::Base.helpers.asset_path(
-      'link_attachments/default_thumbnail.png'
-    )
-  end
-
-  def default_pdf_url
-    ActionController::Base.helpers.asset_path(
-      'link_attachments/default_thumbnail.png'
-    )
-  end
-
-  def default_image_url
-    ActionController::Base.helpers.asset_path(
-      'link_attachments/default_thumbnail.png'
-    )
-  end
-
-  def default_other_url
-    ActionController::Base.helpers.asset_path(
-      'link_attachments/default_thumbnail.png'
+  def default_file_url
+    ActionController::Base.helpers.image_path(
+      'fallbacks/attachments/default_file_thumbnail.jpg'
     )
   end
 end

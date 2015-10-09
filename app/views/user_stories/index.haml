@@ -16,11 +16,11 @@
     %li#trello_export_link
       = link_to t('trello.export'), '#'
 %section.backlog.row{ data: { project_id: @project.id } }
-  .user-stories-preloader.large-5.columns
+  .user-stories-preloader.small-12.medium-5.columns
     = image_tag 'preloader.gif'
-  .user-stories-list-container
+  .user-stories-list-container.small-12.medium-5.columns
     = render 'user_stories/backlog_list', project: @project
-  .user-story-edit-form.large-7.columns
+  .user-story-edit-form.small-12.medium-7.columns
     = render 'user_stories/form', project: @project,
     user_story: @user_story,
     hypothesis: nil,

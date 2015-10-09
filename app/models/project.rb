@@ -9,6 +9,7 @@ class Project < ActiveRecord::Base
   has_many :user_stories, dependent: :destroy
   has_many :members_projects, class_name: MembersProject
   has_many :members, class_name: User, through: :members_projects
+  has_many :tags
 
   include AssociationLoggable
 
@@ -38,14 +39,36 @@ class Project < ActiveRecord::Base
   def recipient
   end
 
-  def copy_stories(replica)
-    stories = UserStory.where(project_id: id, hypothesis_id: nil)
+  def copy_stories(replica, old_hypothesis_id, hypothesis_replica_id)
+    stories = user_stories.where(hypothesis_id: old_hypothesis_id)
     stories.each do |story|
-      story.copy_in_project(replica.id)
+      story.copy_in_project(replica.id, hypothesis_replica_id)
     end
   end
 
   def copy_canvas(replica)
     canvas.copy_in_project(replica.id)
+  end
+
+  def copy_hypothesis(replica)
+    hypotheses.each do |hypothesis|
+      hypothesis.copy_in_project(replica.id)
+    end
+  end
+
+  def clean_log(current_user)
+    activities.delete_all
+    create_activity key: 'project.copied', owner: current_user
+    [clean_stories_log, clean_hypotheses_log].each(&:join)
+  end
+
+  private
+
+  def clean_stories_log
+    Thread.new { user_stories.each(&:clean_log) }
+  end
+
+  def clean_hypotheses_log
+    Thread.new { hypotheses.each(&:clean_log) }
   end
 end

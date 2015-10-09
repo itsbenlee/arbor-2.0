@@ -1,13 +1,2 @@
 .attachment
-  .attachment-content
-    = attachment.content
-  .attachment-thumbnail
-    = image_tag attachment.thumbnail
-  .attachment-activity
-    added
-    = attachment.created_at.to_formatted_s(:short)
-    by
-    - if attachment.user
-      = attachment.user_full_name
-    - else
-      = t('deleted_user')
+  = render "attachments/show_#{attachment.type}", attachment: attachment

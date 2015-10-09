@@ -64,3 +64,31 @@ feature 'create user story' do
     expect(story.epic).to eq(user_story_params[:epic])
   end
 end
+
+feature 'copy user story in other project' do
+  let(:project) { create :project }
+  let(:another_project)     { create :project }
+  let(:user_stories)     { create_list :user_story,
+                                        3,
+                                        project: project }
+
+  background do
+    user_story_services = UserStoryService.new(another_project)
+    user_story_services.copy_stories(user_stories)
+    another_project.user_stories.reload
+  end
+
+  scenario 'user stories amount is the same in both projects' do
+    expect(another_project.user_stories.count).to eq(3)
+  end
+
+  scenario 'user story data is copied successfully' do
+    user_stories.each_with_index do |user_story, index|
+      expect(another_project.user_stories[index].role).to eq(user_story.role)
+      expect(another_project.user_stories[index].action).to eq(user_story.action)
+      expect(another_project.user_stories[index].result).to eq(user_story.result)
+      expect(another_project.user_stories[index].priority).to eq(user_story.priority)
+      expect(another_project.user_stories[index].estimated_points).to eq(user_story.estimated_points)
+    end
+  end
+end

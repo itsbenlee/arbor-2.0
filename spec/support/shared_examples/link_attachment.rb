@@ -2,8 +2,10 @@ RSpec.shared_examples 'a link attachment' do
   feature 'create link attachment' do
     scenario "should create a link attachment" do
       VCR.use_cassette("create_#{entity_name}_link_attachment") do
-        fill_in :attachment_content, with: entity.content
-        click_button 'Save'
+        within '.new-link form#new_attachment' do
+          fill_in :attachment_content, with: entity.content
+          click_button 'Save'
+        end
       end
 
       within '.attachment-content' do

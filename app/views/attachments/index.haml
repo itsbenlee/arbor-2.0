@@ -1,4 +1,8 @@
-%section#attachments
+- if flash[:success]
+  .alert-box.warning.radius{ data: { alert: '' } }
+    = flash[:success]
+    = link_to '×', '#', class: 'close'
+.attachments-view
   - if @attachment.errors.any?
     .alert-box.alert.radius.attachment_errors{ data: { alert: '' } }
       = link_to '×', '#', class: 'close'
@@ -6,9 +10,7 @@
         - @attachment.errors.full_messages.each do |error|
           %li= error
   .attachment-new
-    .attachment
-      .content.row
-        = render 'attachments/new', attachment: @attachment, project: @project
+    = render 'attachments/attachment_switcher', attachment: @attachment, project: @project
   - if @project.attachments.any?
     .attachments-list
       - @project.attachments.each do |attachment|

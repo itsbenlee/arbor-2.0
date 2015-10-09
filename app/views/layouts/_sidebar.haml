@@ -15,8 +15,6 @@
           %span.icon-edit
     %li
       =link_to t('create_project.project_button'), new_project_path, title: t('create_project.project_button'), class: 'button radius small success'
-      =link_to new_project_path, title: t('create_project.project_button'), class: 'create-project-icon' do
-        %span.icon-plus
   - if current_project && !current_project.new_record?
     .toolbar
       %ul#workspace
@@ -49,7 +47,7 @@
             = render 'shareable/svg/members_icon'
             = t('sidebar.members')
         %li
-          = link_to log_project_path(current_project), { data: { reveal_id: 'log-modal', reveal_ajax: true } } do
+          = link_to log_project_path(current_project), { data: { reveal_id: 'log-modal', reveal_ajax: true }, class: 'activity-link' } do
             = render 'shareable/svg/activity_icon'
             = t('sidebar.activity')
   %ul.footer

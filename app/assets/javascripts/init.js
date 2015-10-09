@@ -6,7 +6,7 @@ ARBOR = {
       });
     }
   },
-  user_stories:{}
+  user_stories:{},
 };
 
 UTIL = {

@@ -17,8 +17,7 @@ class ProjectServices
   end
 
   def reorder_stories(new_order)
-    @project
-      .reorder_user_stories(new_order)
+    @project.reorder_user_stories(new_order)
     { success: true }
   end
 
@@ -40,15 +39,14 @@ class ProjectServices
       .reverse.in_groups_of @entries_per_page, false
   end
 
-  def replicate
-    @project.copies += 1
+  def replicate(current_user)
     replica =
       Project.new(name: replica_name,
-                  owner: @project.owner)
+                  owner: current_user,
+                  members: [current_user])
 
     if replica.save && @project.save
-      @project.copy_stories(replica)
-      @project.copy_canvas(replica) if @project.canvas
+      replicate_associations(replica, current_user)
       @common_response.data[:project] = replica
     end
 
@@ -56,7 +54,7 @@ class ProjectServices
   end
 
   def replica_name
-    "Copy of #{@project.name} (#{@project.copies})"
+    "Copy of #{@project.name} (#{@project.copies += 1})"
   end
 
   private
@@ -108,5 +106,14 @@ class ProjectServices
   def self.entries_per_page
     env_value = ENV['LOG_ENTRIES_PER_PAGE']
     env_value ? env_value.to_i : 5
+  end
+
+  def replicate_associations(replica, current_user)
+    [
+      Thread.new { @project.copy_hypothesis(replica) },
+      Thread.new { @project.copy_stories(replica, nil, nil) },
+      Thread.new { @project.copy_canvas(replica) if @project.canvas }
+    ].each(&:join)
+    replica.clean_log(current_user)
   end
 end

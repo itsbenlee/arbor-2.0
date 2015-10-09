@@ -1,0 +1,101 @@
+.image-uploader {
+  cursor: pointer;
+  display: inline;
+  margin-left: rem-calc(22);
+  overflow: hidden;
+  padding: rem-calc(5 20);
+  position: relative;
+
+  .upload-image {
+    @include opacity(0);
+    cursor: pointer;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: inherit;
+  }
+} // upload file form
+
+.submit-file { margin-left: rem-calc(15);}
+
+.attachment-new {
+  margin-top: rem-calc(15);
+
+  .button {
+    padding-left: rem-calc(50);
+    padding-right: rem-calc(50);
+    width: auto;
+  }
+
+  .new-link,
+  .new-file {
+    &.active { display: block; }
+    &.inactive { display: none; }
+  }
+
+  .new-file { margin-top: rem-calc(35); }
+} // attachment new
+
+.attachments-view {
+  padding: rem-calc(0 15);
+
+  .links-wrapper {
+    margin-top: rem-calc(35);
+
+    svg g path { fill: $black-30; }
+
+    span {
+      color: $black-30;
+      font-size: rem-calc(13);
+      padding-right: rem-calc(5);
+      text-transform: uppercase;
+    } // file switcher span
+
+    .field {
+      display: inline-block;
+      padding-left: 0;
+    } // input field
+
+    .save-btn { padding-right: 0; }
+
+    .attachment-selector { padding-left: 0; }
+  } // wrapper
+
+  .item-wrapper { margin-bottom: rem-calc(20); }
+
+  .attachment-thumbnail img {
+    border: 1px solid $black-30;
+    height: rem-calc(90);
+    width: rem-calc(120);
+  } // thumb image
+
+  .link-info {
+    padding: rem-calc(15 0);
+
+    .attachment-content {
+      @include ellipsis;
+
+      a { color: $lab-color; }
+    }
+
+    .attachment-activity {
+      color: $black-30;
+      font-size: rem-calc(15);
+
+      .user-name {
+        display: inline-block;
+        font-weight: $font-weight-bold;
+        margin-top: rem-calc(5);
+
+        &:after {
+          color: $black-40;
+          content: '\2022';
+          font-size: rem-calc(15);
+        } // after
+      } // user name
+    } // activity info
+  } // link info
+} // attachments view

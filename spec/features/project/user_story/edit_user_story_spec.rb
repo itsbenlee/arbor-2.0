@@ -66,6 +66,7 @@ feature 'Edit an user story' do
       js: true do
       visit project_user_stories_path project
       find('.user-story').click
+      find('span.show-role').click
 
       within 'form.edit_user_story' do
         fill_in 'user_story_role', with: changed_user_story.role

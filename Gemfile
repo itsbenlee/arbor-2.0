@@ -16,9 +16,9 @@ gem 'public_activity'
 gem 'rails_engine_decorators'
 gem 'ruby-trello'
 gem 'httpclient'
-gem 'metainspector'
 gem 'fog-aws'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'i18n-js'
 
 group :doc do
   gem 'sdoc', require: false
