@@ -12,3 +12,11 @@ selector_link.click(function() {
     selector_link.text(switch_to_link_text);
   }
 });
+
+var file_selector = $('#new_file input#attachment_content');
+file_selector.change(function() {
+  var filename = file_selector.val().replace(/^.*(\\|\/|\:)/, '');;
+  $('#new_file .image-uploader span').text(filename);
+});
+
+

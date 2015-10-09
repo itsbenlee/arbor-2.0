@@ -2,6 +2,3 @@
   = render 'attachments/new_link', attachment: attachment, project: project
 .new-file{ id: 'new_file', class: 'inactive' }
   = render 'attachments/new_file', attachment: attachment, project: project
-.attachment-selector
-  = t('attachment.or')
-  = link_to 'Upload File', '#', id: 'attachment-switcher'

@@ -22,11 +22,15 @@ ProtectMassAssignmentCheck: { }
 RemoveEmptyHelpersCheck: { }
 #RemoveTabCheck: { }
 RemoveTrailingWhitespaceCheck: { }
-RemoveUnusedMethodsInControllersCheck: { 
+RemoveUnusedMethodsInControllersCheck: {
   except_methods: [ RegistrationsController#new,
                     ProjectsController#order_stories,
                     HypothesesController#list_stories,
-                    ProjectsController#copy]
+                    ProjectsController#copy,
+                    AttachmentsController#set_link_flash_message,
+                    AttachmentsController#set_file_flash_message
+  ]
+
 }
 RemoveUnusedMethodsInHelpersCheck: { except_methods: [] }
 RemoveUnusedMethodsInModelsCheck: {

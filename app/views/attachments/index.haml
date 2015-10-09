@@ -1,3 +1,7 @@
+- if flash[:success]
+  .alert-box.warning.radius{ data: { alert: '' } }
+    = flash[:success]
+    = link_to '×', '#', class: 'close'
 .attachments-view
   - if @attachment.errors.any?
     .alert-box.alert.radius.attachment_errors{ data: { alert: '' } }
