@@ -104,14 +104,14 @@ en:
     link:
       enter_url: "Paste link here"
       name_info: "added by"
-      success: "Your link was successfully saved"
+      success: "The link was successfully saved"
+      error: "is invalid"
     file:
       select_file: "Select file here"
       success: "%{filename} was successfully uploaded"
     selector_file: "Upload File"
     selector_link: "Paste Link"
     or: "or"
-    error: "Your URL is invalid"
   log:
     project:
       create: "The project was created."
@@ -154,7 +154,6 @@ en:
       create: "A constraint was created"
       update: "A constraint was updated"
       destroy: "A constraint was deleted"
-  invalid_url: 'is invalid'
   deleted_user: "Deleted User"
   save: "Save"
   edit: "Edit"
