@@ -8,6 +8,13 @@
   = link_to project_user_stories_path(@project), class: "nav-links" do
     = image_tag('icons/add-icon.svg', class: 'icon')
     = t('backlog.user_stories.new')
+  - if @project.user_stories.any?
+    = link_to '#', class: "nav-links", id: 'select_stories_lnk' do
+      = image_tag('icons/add-icon.svg', class: 'icon')
+      = t('backlog.user_stories.select_to_copy')
+    = link_to '#', class: "nav-links copy-stories-lnk", id: 'copy_stories_lnk', data: { reveal_id: 'copy_stories_modal' } do
+      = image_tag('icons/add-icon.svg', class: 'icon')
+      = t('backlog.user_stories.copy_stories')
   %ul#drop1.f-dropdown{"aria-hidden" => "true", "data-dropdown-content" => "", :tabindex => "-1"}
     %li#csv_export_link
       = link_to t('csv'), project_hypotheses_export_path(@project, format: :csv)
@@ -25,5 +32,6 @@
     user_story: @user_story,
     hypothesis: nil,
     form_url: project_user_stories_path(@project)
+= render 'user_stories/copy_stories_modal', projects: @projects
 - content_for :custom_js do
   = javascript_include_tag 'userStories/index'

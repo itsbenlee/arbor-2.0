@@ -106,3 +106,7 @@ CommentAnnotation:
     - OPTIMIZE
     - HACK
     - REVIEW
+
+Metrics/ClassLength:
+  CountComments: false
+  Max: 300

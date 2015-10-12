@@ -47,6 +47,7 @@ Railsroot::Application.routes.draw do
     get '/user_stories', controller: :hypotheses, action: :list_stories
   end
 
+  post 'user_stories/copy', controller: :user_stories, action: :copy
   resources :goals, only: [:edit, :update, :destroy]
 
   devise_for :users, controllers: { registrations: 'registrations' }
