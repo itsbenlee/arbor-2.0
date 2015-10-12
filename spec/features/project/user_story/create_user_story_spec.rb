@@ -78,9 +78,12 @@ feature 'Create a new user story' do
       end
 
       visit project_hypotheses_path project
-      expect(page).to have_css 'section#user-stories-without-hypothesis'
 
-      within 'section#user-stories-without-hypothesis form' do
+      within ".hypothesis-show[data-id='#{project.hypotheses.reload.last.id}']" do
+        expect(find('.hypothesis-title')).to have_text (I18n.t('labs.undefined_hypothesis'))
+      end
+
+      within 'form.edit-story.edit_user_story' do
         expect(find('#user_story_role').value).to have_text user_story.role
         expect(find('#user_story_action').value).to have_text user_story.action
         expect(find('#user_story_result').value).to have_text user_story.result
