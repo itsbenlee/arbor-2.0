@@ -8,6 +8,6 @@
       = form.hidden_field :table_type, value: 'LinkAttachment'
     .save-btn
       = form.submit I18n.translate('save'), class: 'large-2 small-12 columns button small success radius'
-    .attachment-selector.large-3.small-12.columns
+    .attachment-selector.small-12.large-3.columns
       %span= t('attachment.or')
       = link_to 'Upload File', '#', id: 'attachment-switcher', class: 'button small success radius'
