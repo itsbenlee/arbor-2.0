@@ -7,6 +7,7 @@ class UserStory < ActiveRecord::Base
   validates_uniqueness_of :story_number, scope: :project_id
   validates_inclusion_of :priority, in: PRIORITIES
   before_create :order_in_hypotheses, :order_in_backlog, :assign_story_number
+  before_save :move_to_hypothesis
   after_create :update_next_story_number
 
   has_and_belongs_to_many :tags
@@ -103,5 +104,9 @@ class UserStory < ActiveRecord::Base
 
   def clean_constraints_log
     Thread.new { constraints.each(&:clean_log) }
+  end
+
+  def move_to_hypothesis
+    self.hypothesis_id ||= project.undefined_hypothesis.id
   end
 end

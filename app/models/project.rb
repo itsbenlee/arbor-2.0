@@ -62,6 +62,11 @@ class Project < ActiveRecord::Base
     [clean_stories_log, clean_hypotheses_log].each(&:join)
   end
 
+  def undefined_hypothesis
+    hypotheses
+      .find_or_create_by(description: I18n.t('labs.undefined_hypothesis'))
+  end
+
   private
 
   def clean_stories_log
