@@ -13,7 +13,6 @@ class AttachmentsController < ApplicationController
       send("set_#{@attachment.type}_flash_message")
       redirect_to project_attachments_path @project
     else
-      flash[:error] = I18n.t('attachment.error')
       render :index
     end
   end

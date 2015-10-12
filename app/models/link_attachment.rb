@@ -7,6 +7,6 @@ class LinkAttachment < Attachment
 
   def validate_content_url
     return if content =~ /\A#{URI.regexp(%w(http https))}\z/
-    errors[:content] << I18n.t('invalid_url')
+    errors[:content] << I18n.t('attachment.link.error')
   end
 end
