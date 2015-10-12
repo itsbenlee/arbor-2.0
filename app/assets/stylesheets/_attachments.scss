@@ -26,8 +26,7 @@
 
   .button {
     margin-left: 0;
-    padding-left: rem-calc(40);
-    padding-right: rem-calc(40);
+    padding: inherit rem-calc(40);
     width: auto;
   }
 
@@ -61,13 +60,11 @@
     } // input field
 
     .save-btn {
-      padding-left: 0;
-      padding-right: 0;
+      padding: inherit 0;
 
       .button {
         margin-right: rem-calc(15);
-        padding-left: rem-calc(35);
-        padding-right: rem-calc(35);
+        padding: inherit rem-calc(35);
       }
     }
 
