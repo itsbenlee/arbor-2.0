@@ -29,7 +29,7 @@ feature 'Copy project', js: true do
     end
 
     within '.copy-story-check-box' do
-      check "user_story_#{@user_story.id}"
+      find("#user_story_#{@user_story.id}", visible: false).trigger(:click)
     end
 
     within '#top-nav' do
