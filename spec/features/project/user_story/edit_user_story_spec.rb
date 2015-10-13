@@ -31,6 +31,16 @@ feature 'Edit an user story' do
       end
     end
 
+    scenario 'should save when checking epic', js: true do
+      visit project_hypotheses_path project
+      within 'form.edit_user_story' do
+        debugger
+        first('.user-story-input.epic input', visible:false).trigger('click')
+        visit current_path
+      end
+      expect(user_story.epic).to be_truthy
+    end
+
     scenario 'should be able to edit an user_story on lab section' do
       visit project_hypotheses_path project
       within 'form.edit_user_story' do
