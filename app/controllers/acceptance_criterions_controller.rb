@@ -6,7 +6,7 @@ class AcceptanceCriterionsController < ApplicationController
     @ac_service = AcceptanceCriterionServices.new(@user_story)
     response =
       @ac_service.new_acceptance_criterion(acceptance_criterion_params)
-    render json: response
+    render json: response, status: (response.success ? 201 : 422)
   end
 
   def update
@@ -15,7 +15,7 @@ class AcceptanceCriterionsController < ApplicationController
       AcceptanceCriterionServices.new(@acceptance_criterion.user_story)
     response =
       @ac_service.update_acceptance_criterion(@acceptance_criterion)
-    render json: response
+    render json: response, status: (response.success ? 201 : 422)
   end
 
   private
