@@ -342,6 +342,8 @@
   } // user story edit form
 } // backlog
 
+.user-story-component-error { display: none; }
+
 .user-stories-preloader {
   display: none;
   padding-left: rem-calc(172);

@@ -29,6 +29,8 @@ function UserStories() {
       bindNewConstraint();
       bindEditAcceptanceCriterion();
       bindEditConstraint();
+      bindNewTag();
+      bindTagCheckboxes();
       refreshStories();
     });
   }
@@ -92,6 +94,15 @@ function UserStories() {
           editUrl = response.data.edit_url
           displayStoryForm(editUrl);
         }
+      },
+      error: function (response) {
+        if(response.status === 422) {
+          var $errors = $.parseJSON(response.responseText).errors,
+              $errorsContainer = $('.user-story-component-error');
+          $errorsContainer.append($errors);
+          $errorsContainer.show();
+          refreshBacklog();
+        }
       }
     });
   }
@@ -116,6 +127,19 @@ function UserStories() {
           acriterion = $(this).serialize();
 
       editFormAjax(url, type, acriterion);
+      return false;
+    });
+  }
+
+  function bindNewTag() {
+    $newTagForm = $('.new_tag');
+
+    $newTagForm.submit(function() {
+      var url  = $(this).attr('action'),
+          type = $(this).attr('method'),
+          tag  = $(this).serialize();
+
+      editFormAjax(url, type, tag);
       return false;
     });
   }
@@ -202,6 +226,13 @@ function UserStories() {
   }
 
   bindSelectStoriesEvent();
+
+  function bindTagCheckboxes() {
+    $('.user-story-tag').change(function() {
+      var $editForm = $(this).parent();
+      $editForm.submit();
+    });
+  }
 }
 
 fullWidthForm();

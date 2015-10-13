@@ -100,10 +100,12 @@ en:
       copy_stories: "Copy stories"
       no_stories: "There are not stories selected to be copied."
       stories_copied: "The stories are copied successfully."
+      new_tag: 'Create a new tag here'
     story_span: "Story"
     logout: "Sign out"
     acceptance_criteria: "Acceptance Criteria"
     constraints: "Constraints"
+    tags: 'Tags'
   attachment:
     link:
       enter_url: "Paste link here"

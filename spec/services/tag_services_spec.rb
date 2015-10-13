@@ -3,7 +3,7 @@ require 'spec_helper'
 feature 'create tag' do
   let(:project)     { create :project }
   let(:user_story)  { create :user_story, project: project }
-  let(:tag_service) { TagServices.new(project, user_story) }
+  let(:tag_service) { TagServices.new(user_story) }
   let(:tag_params)  { { name: 'My new tag' } }
 
   scenario 'should create a Tag and add the user story' do
