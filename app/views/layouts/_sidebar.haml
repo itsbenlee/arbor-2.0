@@ -39,9 +39,9 @@
         %li
           = t('sidebar.extras')
         %li
-          = link_to project_attachments_path current_project, title: "#{current_project.name} Files" do
+          = link_to project_attachments_path(current_project), id: 'attachments', title: "#{current_project.name} Files" do
             = render 'shareable/svg/files_icon'
-            = t('sidebar.files')
+            = "#{t('sidebar.files')} (#{current_project.attachments.count})"
         %li
           = link_to current_project, title: "#{current_project.name} Members" do
             = render 'shareable/svg/members_icon'
