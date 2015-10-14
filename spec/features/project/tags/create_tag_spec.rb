@@ -38,6 +38,7 @@ feature 'Create tag', js: true do
       find('.user-story').click
       find('span.show-role').click
       check('MyTag')
+      expect { user_story.reload.tags.count }.to become_eq 1
     end
 
     scenario 'should assign them to user stories' do
@@ -46,8 +47,6 @@ feature 'Create tag', js: true do
     end
 
     scenario 'should not accept duplicates' do
-      pending 'fails randomly. Similar to constraints and AC tests failing'
-
       fill_in :tag_name, with: 'MyTag'
       find('input#save-tag', visible: false).trigger('click')
       expect(page).to have_content('Name has already been taken')

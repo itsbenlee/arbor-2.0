@@ -16,6 +16,7 @@ gem 'public_activity'
 gem 'rails_engine_decorators'
 gem 'ruby-trello'
 gem 'httpclient'
+gem 'http-cookie'
 gem 'fog-aws'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'i18n-js'
@@ -48,6 +49,7 @@ group :test do
   gem 'rspec-wait'
   gem 'webmock'
   gem 'vcr'
+  gem 'waiting_rspec_matchers'
 end
 
 group :production do

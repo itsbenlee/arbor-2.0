@@ -75,6 +75,7 @@ feature 'Edit an user story' do
         find('.user-story-submit', visible: false).trigger('click')
       end
 
+      expect{ UserStory.first.role }.to become_eq 'Admin'
       visit project_hypotheses_path project
 
       %i(role action result).each do |field|

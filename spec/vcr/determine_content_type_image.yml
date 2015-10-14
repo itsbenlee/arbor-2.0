@@ -12,7 +12,7 @@ http_interactions:
       Accept:
       - "*/*"
       Date:
-      - Tue, 29 Sep 2015 14:04:45 GMT
+      - Tue, 13 Oct 2015 15:36:47 GMT
   response:
     status:
       code: 200
@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx/1.9.4
       Date:
-      - Tue, 29 Sep 2015 14:04:45 GMT
+      - Tue, 13 Oct 2015 15:36:47 GMT
       Content-Type:
       - image/png
       Content-Length:
@@ -37,19 +37,24 @@ http_interactions:
       X-Timestamp:
       - '1381148028.61784'
       X-Trans-Id:
-      - tx26cfb88d7fa84f3b99f6b-005608db6d
+      - txd715676fe52f4dae916a2-00561cd660
       X-Varnish:
-      - 2266823123 2243926915, 1096912658 1008261074, 1800571201 1800540086
+      - 3640063872 3631897443, 2276532392 2261017002, 502408980 501160022
       Via:
       - 1.1 varnish, 1.1 varnish, 1.1 varnish
       Accept-Ranges:
       - bytes
       Age:
-      - '114448'
+      - '20143'
       X-Cache:
-      - cp1061 hit (35), cp3036 hit (604), cp3038 frontend hit (1)
+      - cp1061 hit (9), cp3036 hit (63), cp3044 frontend hit (9)
       Strict-Transport-Security:
       - max-age=31536000
+      Set-Cookie:
+      - WMF-Last-Access=13-Oct-2015;Path=/;HttpOnly;Expires=Sat, 14 Nov 2015 12:00:00
+        GMT
+      X-Analytics:
+      - https=1
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Expose-Headers:
@@ -60,5 +65,5 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Tue, 29 Sep 2015 14:04:45 GMT
+  recorded_at: Tue, 13 Oct 2015 15:36:47 GMT
 recorded_with: VCR 2.9.3

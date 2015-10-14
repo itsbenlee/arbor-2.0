@@ -18,7 +18,8 @@ RSpec.describe ConstraintsController do
           user_story_id: user_story.id,
           constraint:    { description: 'My new description' }
         )
-        expect(Constraint.count).to eq 1
+
+        expect { Constraint.count }.to become_eq 1
         hash_response = JSON.parse(response.body)
         expect(hash_response['success']).to eq(true)
         expect(hash_response['data']['edit_url']).to eq(edit_user_story_path(user_story))

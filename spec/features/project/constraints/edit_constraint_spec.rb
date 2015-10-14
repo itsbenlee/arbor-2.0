@@ -13,19 +13,19 @@ feature 'Update a constraint' do
   end
 
   scenario 'should show me a constraint edit form', js: true do
-    expect(page).to have_css 'form.edit_constraint'
+    expect(page).to have_selector 'form.edit_constraint'
+
     within 'form.edit_constraint' do
       expect(page).to have_field :constraint_description
     end
   end
 
   scenario 'should update a constraint', js: true do
-    pending 'Need to fix javascript/database cleaner/shared connection'
-
-    within 'form.edit-constraint' do
+    within 'form.edit_constraint' do
       fill_in :constraint_description, with: 'new description'
       find('input#save-constraint', visible: false).trigger('click')
     end
-    expect(Constraint.first.description).to eq 'new description'
+
+    expect{ Constraint.first.description }.to become_eq 'new description'
   end
 end
