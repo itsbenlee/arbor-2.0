@@ -21,7 +21,7 @@ class UserStoriesController < ApplicationController
     @user_story_service = UserStoryService.new(@project, @hypothesis)
     response =
       @user_story_service.new_user_story(user_story_params)
-    render json: response
+    render json: response, status: (response.success ? 201 : 422)
   end
 
   def update
@@ -56,7 +56,7 @@ class UserStoriesController < ApplicationController
 
   def json_update
     response = UserStoryService.new(@project).update_user_story(@user_story)
-    render json: response
+    render json: response, status: (response.success ? 201 : 422)
   end
 
   def html_update

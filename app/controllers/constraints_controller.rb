@@ -6,7 +6,7 @@ class ConstraintsController < ApplicationController
     @constraint_service = ConstraintServices.new(@user_story)
     response =
       @constraint_service.new_constraint(constraint_params)
-    render json: response
+    render json: response, status: (response.success ? 201 : 422)
   end
 
   def update
@@ -14,7 +14,7 @@ class ConstraintsController < ApplicationController
     @constraint_service = ConstraintServices.new(@constraint.user_story)
     response =
       @constraint_service.update_constraint(@constraint)
-    render json: response
+    render json: response, status: (response.success ? 201 : 422)
   end
 
   private

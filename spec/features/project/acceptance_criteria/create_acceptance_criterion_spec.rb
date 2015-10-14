@@ -4,7 +4,7 @@ feature 'Create a new acceptance criterion' do
   let!(:user)                 { create :user }
   let!(:project)              { create :project, owner: user }
   let!(:user_story)           { create :user_story, project: project }
-  let(:acceptance_criterion)  { build :acceptance_criterion }
+  let(:acceptance_criterion)  { build :acceptance_criterion, description: 'My description'  }
 
   background do
     sign_in user
@@ -30,5 +30,30 @@ feature 'Create a new acceptance criterion' do
       find('input#save-acceptance-criterion', visible: false).trigger('click')
     end
     expect(AcceptanceCriterion.count).to eq 1
+  end
+
+  def new_ac
+    within 'form.new_acceptance_criterion' do
+      fill_in(
+        :acceptance_criterion_description,
+        with: 'acceptance_criterion.description'
+      )
+      find('input#save-acceptance-criterion', visible: false).trigger('click')
+    end
+  end
+
+  scenario 'should show an error with duplicate acceptance criterions', js: true do
+    new_ac
+    new_ac
+    expect(page).to have_content('Description has already been taken')
+  end
+
+  scenario 'should show an error with blank criterions', js: true do
+    fill_in(
+      :acceptance_criterion_description,
+      with: '    '
+    )
+    find('input#save-acceptance-criterion', visible: false).trigger('click')
+    expect(page).to have_content("Description can't be blank")
   end
 end
