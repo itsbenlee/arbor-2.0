@@ -60,4 +60,16 @@ feature 'Create a new attachment' do
       let(:thumbnail_name) { 'default_file_thumbnail.jpg' }
     end
   end
+
+  context 'sidebar' do
+    scenario 'should show the number of attachments in the sidebar' do
+      expect(find('#sidebar a#attachments').text).to eq 'Files (0)'
+      create_list :link_attachment, 2, project: project
+      create_list :file_attachment, 3, project: project
+
+      visit current_path
+
+      expect(find('#sidebar a#attachments').text). to eq 'Files (5)'
+    end
+  end
 end
