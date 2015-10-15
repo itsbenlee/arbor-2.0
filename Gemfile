@@ -48,6 +48,7 @@ group :test do
   gem 'rspec-wait'
   gem 'webmock'
   gem 'vcr'
+  gem 'waiting_rspec_matchers'
 end
 
 group :production do

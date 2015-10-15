@@ -33,12 +33,27 @@ feature 'Edit an user story' do
 
     scenario 'should save when checking epic', js: true do
       visit project_hypotheses_path project
-      within 'form.edit_user_story' do
-        debugger
-        first('.user-story-input.epic input', visible:false).trigger('click')
-        visit current_path
+
+      within "form#edit_user_story_#{user_story.id}" do
+        all('.user-story-input.epic input', visible: false).find do |input|
+          input[:type] == 'checkbox'
+        end.trigger('click')
       end
-      expect(user_story.epic).to be_truthy
+
+      expect { user_story.reload.epic }.to become_eq true
+    end
+
+    scenario 'should save when unchecking epic', js: true do
+      user_story.update_attribute(:epic, true)
+      visit project_hypotheses_path project
+
+      within "form#edit_user_story_#{user_story.id}" do
+        all('.user-story-input.epic input', visible: false).find do |input|
+          input[:type] == 'checkbox'
+        end.trigger('click')
+      end
+
+      expect { user_story.reload.epic }.to become_eq false
     end
 
     scenario 'should be able to edit an user_story on lab section' do

@@ -94,10 +94,10 @@ function UserStory() {
   }
 
   function bindEpicCheckbox() {
-    $epicCheckbox = $('.user-story-input.epic');
+    $epicCheckbox = $('.user-story-input.epic input:checkbox');
 
-    $epicCheckbox.change(function() {
-      var $editForm = $(this).parent();
+    $epicCheckbox.click(function() {
+      var $editForm = $(this).closest('form.edit-story');
       $editForm.submit();
     });
   }
