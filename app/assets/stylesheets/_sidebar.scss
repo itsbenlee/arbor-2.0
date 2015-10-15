@@ -57,6 +57,7 @@
         color: inherit;
         display: block;
         font-size: rem-calc(15);
+        max-width: 90%;
         padding: rem-calc(10 0);
 
         &:hover,
@@ -67,7 +68,12 @@
         +a { display: inline; }
 
         &.my-projects,
-        &.current-project { @include transition(color .25s ease-in, opacity .25s ease-in .25s); }
+        &.current-project {
+          @include transition(color .25s ease-in, opacity .25s ease-in .25s);
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
       }
 
       .canvas .bullet::before  { color: $canvas-color; }
@@ -297,5 +303,3 @@
 
   &.full { width: calc(100% - 4.0625rem); }
 }
-
-
