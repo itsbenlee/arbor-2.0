@@ -149,7 +149,6 @@ input[type="password"] {
       vertical-align: top;
       width: rem-calc(22);
 
-
       &::before {
         @include transition(background-color .25s ease-in, border-color .25s ease-in);
         @include border-radius(rem-calc(2));

@@ -16,7 +16,7 @@ feature 'Show tag', js: true do
 
   scenario 'should view tags on the overview section' do
     within('.user-stories-list-container') do
-      expect(page).to have_content('MyTag')
+      expect(page).to have_content('MYTAG')
     end
   end
 end
