@@ -53,6 +53,7 @@
     padding-left: rem-calc(40);
 
     @media #{$small-only} { padding-left: 0; }
+    @media #{$medium-only} { padding-left: 0; }
 
     .canvas-fields {
       @include opacity(0);
