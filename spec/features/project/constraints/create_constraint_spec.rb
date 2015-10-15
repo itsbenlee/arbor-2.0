@@ -20,20 +20,19 @@ feature 'Create a new constraint' do
   end
 
   scenario 'should create a new constraint', js: true do
-    pending 'Need to fix javascript/database cleaner/shared connection'
-
     within 'form.new_constraint' do
       fill_in :constraint_description, with: constraint.description
       find('input#save-constraint', visible: false).trigger('click')
     end
-    expect(Constraint.count).to eq 1
+
+    expect{ Constraint.count }.to become_eq 1
   end
 
   def new_constraint
     within 'form.new_constraint' do
       fill_in(
         :constraint_description,
-        with: 'constraint.description'
+        with: constraint.description
       )
       find('input#save-constraint', visible: false).trigger('click')
     end
@@ -41,6 +40,8 @@ feature 'Create a new constraint' do
 
   scenario 'should show an error with duplicate constraints', js: true do
     new_constraint
+    expect{ Constraint.count }.to become_eq 1
+
     new_constraint
     expect(page).to have_content('Description has already been taken')
   end

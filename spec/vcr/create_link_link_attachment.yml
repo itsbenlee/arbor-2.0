@@ -12,7 +12,7 @@ http_interactions:
       Accept:
       - "*/*"
       Date:
-      - Tue, 13 Oct 2015 15:36:45 GMT
+      - Tue, 13 Oct 2015 15:41:08 GMT
   response:
     status:
       code: 200
@@ -33,16 +33,16 @@ http_interactions:
       X-Trello-Environment:
       - Production
       Set-Cookie:
-      - "___utmvaIYuYsFI=Rhi\x01OzMf; path=/; Max-Age=900"
-      - '___utmvbIYuYsFI=JZF XPVOCalv: vtt; path=/; Max-Age=900'
-      - ___utmvmIYuYsFI=svVLaPmagPa; path=/; Max-Age=900
-      - dsc=d52a00718fa1ebf3a0592dbcaa421c43f34e9a76b7372a670a09618f0099c1c6; Path=/;
-        Expires=Fri, 16 Oct 2015 15:36:45 GMT; Secure
-      - incap_ses_260_168551=jz/kI8ISSxsDtDnPmrWbAw0lHVYAAAAAxf15XwifXItAUgsmAOhHlg==;
+      - "___utmvatYuYsFI=fjQ\x01LXpz; path=/; Max-Age=900"
+      - '___utmvbtYuYsFI=hZU XFhOLalN: wtp; path=/; Max-Age=900'
+      - ___utmvmtYuYsFI=BSWyOgEAHOF; path=/; Max-Age=900
+      - dsc=2919b9e51b42c539aaa761080febf17b076a7cbe3feb20335bb171f6cedce2eb; Path=/;
+        Expires=Fri, 16 Oct 2015 15:41:08 GMT; Secure
+      - incap_ses_281_168551=rVUNfk1yUAReHCiigFDmAxQmHVYAAAAAPJTzBqI+fi3y1/ADmv5iuA==;
         path=/; Domain=.trello.com
-      - sup=1; Path=/; Expires=Wed, 12 Oct 2016 15:36:45 GMT
-      - visid_incap_168551=feM2tsofRRKgpOoA/+lF7Q0lHVYAAAAAQUIPAAAAAAC14I9/vJ20DUBVy6803mHc;
-        expires=Thu, 12 Oct 2017 08:55:23 GMT; path=/; Domain=.trello.com
+      - sup=1; Path=/; Expires=Wed, 12 Oct 2016 15:41:08 GMT
+      - visid_incap_168551=8ghzEL0dQLmSPdU26qAOARQmHVYAAAAAQUIPAAAAAABZlIRfWqDXohvPNjTvzK8u;
+        expires=Thu, 12 Oct 2017 09:52:27 GMT; path=/; Domain=.trello.com
       Content-Encoding:
       - gzip
       Content-Type:
@@ -54,14 +54,14 @@ http_interactions:
       Vary:
       - Accept-Encoding
       Date:
-      - Tue, 13 Oct 2015 15:36:45 GMT
+      - Tue, 13 Oct 2015 15:41:08 GMT
       X-Iinfo:
-      - 8-5377166-5375223 PNNN RT(1444750604805 97) q(0 0 0 -1) r(1 1) U6
+      - 9-81773029-81767536 PNNN RT(1444750867959 84) q(0 0 0 -1) r(1 1) U6
       X-Cdn:
       - Incapsula
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Tue, 13 Oct 2015 15:36:45 GMT
+  recorded_at: Tue, 13 Oct 2015 15:41:08 GMT
 recorded_with: VCR 2.9.3

@@ -13,15 +13,13 @@ feature 'Create a new acceptance criterion' do
   end
 
   scenario 'should show me an acceptance criterion creation form', js: true do
-    expect(page).to have_css 'form.new_acceptance_criterion'
+    expect(page).to have_selector 'form.new_acceptance_criterion'
     within 'form.new_acceptance_criterion' do
       expect(page).to have_field :acceptance_criterion_description
     end
   end
 
   scenario 'should create a new acceptance criterion', js: true do
-    pending 'Need to fix javascript/database cleaner/shared connection'
-
     within 'form.new_acceptance_criterion' do
       fill_in(
         :acceptance_criterion_description,
@@ -29,7 +27,7 @@ feature 'Create a new acceptance criterion' do
       )
       find('input#save-acceptance-criterion', visible: false).trigger('click')
     end
-    expect(AcceptanceCriterion.count).to eq 1
+    expect{ AcceptanceCriterion.count }.to become_eq 1
   end
 
   def new_ac
@@ -44,6 +42,8 @@ feature 'Create a new acceptance criterion' do
 
   scenario 'should show an error with duplicate acceptance criterions', js: true do
     new_ac
+    expect{ AcceptanceCriterion.count }.to become_eq 1
+
     new_ac
     expect(page).to have_content('Description has already been taken')
   end

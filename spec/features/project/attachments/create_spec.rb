@@ -1,10 +1,12 @@
 require 'spec_helper'
 
 feature 'Create a new attachment' do
-  let!(:user)    { create :user }
-  let!(:project) { create :project, owner: user }
-  let(:link)     { build :link_attachment }
-  let(:file)     { build :file_attachment }
+  let!(:user)      { create :user }
+  let!(:project)   { create :project, owner: user }
+  let(:link)       { build :link_attachment }
+  let(:image_link) { build :image_link_attachment }
+  let(:file)       { build :file_attachment }
+  let(:image_file) { build :image_file_attachment }
 
   background do
     sign_in user
@@ -12,14 +14,14 @@ feature 'Create a new attachment' do
   end
 
   scenario 'should show me a link creation form when I enter', js: true do
-    expect(find('.new-link', visible: false).visible?).to be true
+    expect(page).to have_selector '.new-link'
     within '.new-link' do
       expect(page).to have_field :attachment_content
     end
   end
 
   scenario 'should not show me a file creation form when I enter', js: true do
-    expect(find('.new-file', visible: false).visible?).to be false
+    expect(page).not_to have_selector '.new-file'
   end
 
   scenario 'should let me switch to a file creation form', js: true do
@@ -37,10 +39,20 @@ feature 'Create a new attachment' do
   end
 
   context 'as a link' do
-    it_behaves_like 'a link attachment' do
-      let(:entity)         { link }
-      let(:entity_name)    { 'link' }
-      let(:thumbnail_name) { 'default_link_thumbnail.jpg' }
+    context 'other attachment' do
+      it_behaves_like 'a link attachment' do
+        let(:entity)         { link }
+        let(:entity_name)    { 'link' }
+        let(:thumbnail_name) { 'default_link_thumbnail.jpg' }
+      end
+    end
+
+    context 'image attachment' do
+      it_behaves_like 'a link attachment' do
+        let(:entity)         { image_link }
+        let(:entity_name)    { 'image' }
+        let(:thumbnail_name) { 'PM5544_with_non-PAL_signals.png' }
+      end
     end
   end
 
@@ -54,10 +66,20 @@ feature 'Create a new attachment' do
       FileUploader.enable_processing = false
     end
 
-    it_behaves_like 'a file attachment' do
-      let(:entity)         { file }
-      let(:entity_name)    { 'file' }
-      let(:thumbnail_name) { 'default_file_thumbnail.jpg' }
+    context 'other attachment' do
+      it_behaves_like 'a file attachment' do
+        let(:entity)         { file }
+        let(:entity_name)    { 'file' }
+        let(:thumbnail_name) { 'default_file_thumbnail.jpg' }
+      end
+    end
+
+    context 'image attachment' do
+      it_behaves_like 'a file attachment' do
+        let(:entity)         { image_file }
+        let(:entity_name)    { 'image file' }
+        let(:thumbnail_name) { 'image.png' }
+      end
     end
   end
 
