@@ -112,8 +112,10 @@ input[type="password"] {
 .warning,
 .error {
   border: 0;
+  left: 20%;
   margin: rem-calc(10) auto;
   padding: rem-calc(10 20);
+  position: absolute;
   width: 60%;
 
   ul { font-size: rem-calc(14); }
