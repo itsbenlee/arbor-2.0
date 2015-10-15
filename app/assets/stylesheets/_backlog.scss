@@ -1,6 +1,15 @@
 // --------------------------------------------------------
 // BACKLOG SECTION
 // --------------------------------------------------------
+.ui-autocomplete {
+  background-color: $black-10;
+  max-height: 100px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.applied-filters { display: none; }
+
 
 .backlog.row {
   height: 100%;
@@ -336,7 +345,7 @@
   font-size: rem-calc(16);
   margin-bottom: rem-calc(20);
   padding-left: 0;
-  
+
   @include input-placeholder { font-style: italic; };
 } // backlog placeholders
 

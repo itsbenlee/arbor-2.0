@@ -1,8 +1,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui/sortable
-//= require assets/global-vars
 //= require foundation
+//= require mustache
+//= require jquery.mustache
+//= require jquery-ui/autocomplete
+//= require assets/global-vars
 //= require i18n
 //= require i18n/translations
 //= require init

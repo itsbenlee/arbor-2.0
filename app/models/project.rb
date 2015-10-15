@@ -9,7 +9,7 @@ class Project < ActiveRecord::Base
   has_many :user_stories, dependent: :destroy
   has_many :members_projects, class_name: MembersProject
   has_many :members, class_name: User, through: :members_projects
-  has_many :tags
+  has_many :tags, dependent: :destroy
 
   include AssociationLoggable
 
