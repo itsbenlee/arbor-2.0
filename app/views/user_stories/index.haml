@@ -10,10 +10,10 @@
     = t('backlog.user_stories.new')
   - if @project.user_stories.any?
     = link_to '#', class: "nav-links", id: 'select_stories_lnk' do
-      = image_tag('icons/add-icon.svg', class: 'icon')
+      = image_tag('icons/copy-icon.svg', class: 'icon')
       = t('backlog.user_stories.select_to_copy')
     = link_to '#', class: "nav-links copy-stories-lnk", id: 'copy_stories_lnk', data: { reveal_id: 'copy_stories_modal' } do
-      = image_tag('icons/add-icon.svg', class: 'icon')
+      = image_tag('icons/copy-icon.svg', class: 'icon')
       = t('backlog.user_stories.copy_stories')
   %ul#drop1.f-dropdown{"aria-hidden" => "true", "data-dropdown-content" => "", :tabindex => "-1"}
     %li#csv_export_link

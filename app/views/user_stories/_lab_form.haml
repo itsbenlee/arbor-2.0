@@ -8,7 +8,7 @@ url: form_url do |form|
         - user_story.errors.full_messages.each do |error|
           %li= error
   %span.icon-edit
-  .user-story-input.epic
+  .custom-checkbox.user-story-input.epic
     = form.check_box :epic, id: user_story.id
     %label{ for: user_story.id }
     %span= t('backlog.user_stories.epic')
