@@ -7,7 +7,9 @@ class InviteMailer < ActionMailer::Base
     @is_new = is_new
     @link_url = root_url
 
-    attachments.inline['logo.svg'] = File.read('public/arbor-logo.svg')
+    attachments.inline['logo.png'] = File.read(
+      File.join Rails.root, 'public', 'arbor-logo.png'
+    )
 
     mail to: data[:email], subject: t('mailer.invite.subject')
   end
