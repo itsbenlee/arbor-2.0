@@ -13,7 +13,7 @@ feature 'Create tag', js: true do
     background do
       visit project_user_stories_path project
       find('.user-story').click
-      find('span.show-role').click
+      expect(page).to have_content "STORY ##{user_story.story_number}"
     end
 
     scenario 'should create a tag' do
@@ -36,14 +36,14 @@ feature 'Create tag', js: true do
     background do
       visit project_user_stories_path project
       find('.user-story').click
-      find('span.show-role').click
-      check('MyTag')
+      expect(page).to have_content "STORY ##{user_story.story_number}"
+      expect(user_story.reload.tags.count).to eq 0
+      check 'MyTag'
       expect { user_story.reload.tags.count }.to become_eq 1
     end
 
     scenario 'should assign them to user stories' do
-      visit current_path
-      expect(user_story.tags.first).to eq(tag)
+      expect{ user_story.reload.tags.first }.to become_eq tag
     end
 
     scenario 'should not accept duplicates' do
