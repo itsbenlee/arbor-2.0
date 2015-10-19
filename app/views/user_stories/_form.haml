@@ -62,13 +62,13 @@
       %label
         = t('backlog.user_stories.epic')
         = form.check_box :epic, id: user_story.id
-  - if user_story.project
-    = t('backlog.tags')
-    - user_story.project.tags.each do |tag|
-      .user-story-tag
-        %label
-          = check_box_tag "user_story[tag_ids][]", tag.id, user_story.tags.include?(tag)
-          = tag.name
+    - if user_story.project
+      .uppercase-subtitle.criterion-group= t('backlog.tags')
+      - user_story.project.tags.each do |tag|
+        .user-story-tag
+          %label
+            = check_box_tag "user_story[tag_ids][]", tag.id, user_story.tags.include?(tag)
+            = tag.name
 - unless user_story.new_record?
   .tag-form
     = render 'tags/new', user_story: user_story
