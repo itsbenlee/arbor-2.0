@@ -26,7 +26,7 @@
 
   .button {
     margin-left: 0;
-    padding: inherit rem-calc(40);
+    padding: rem-calc(15 40);
     width: auto;
   }
 
@@ -64,7 +64,7 @@
 
       .button {
         margin-right: rem-calc(15);
-        padding: inherit rem-calc(35);
+        padding: rem-calc(15 35);
       }
     }
 
@@ -74,13 +74,19 @@
   .item-wrapper { margin: rem-calc(0 0 20); }
 
   .attachment-thumbnail {
-    img {
-      border: 1px solid $black-30;
-      height: rem-calc(90);
-      width: rem-calc(120);
-    } // thumb image
+    border: 1px solid $black-30;
+    height: rem-calc(90);
+    overflow: hidden;
+    position: relative;
+    width: rem-calc(120);
 
-    @media #{$small-only} { padding-left: 0; }
+    img {
+      @include translate(-50%, -50%);
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+    }
   }
 
   .link-info {
