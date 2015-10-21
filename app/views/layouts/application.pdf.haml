@@ -1,0 +1,10 @@
+!!!
+%html
+  %head
+    %meta{charset: 'utf-8'}
+    = wicked_pdf_stylesheet_link_tag 'application.pdf'
+    = csrf_meta_tags
+  %title
+    Backlog
+  %body
+    = yield

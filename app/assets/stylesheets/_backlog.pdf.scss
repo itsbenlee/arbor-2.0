@@ -1,0 +1,56 @@
+// --------------------------------------------------------
+// BACKLOG SECTION
+// --------------------------------------------------------
+
+.backlog.row {
+  height: 100%;
+  margin: 0;
+  max-width: 100%;
+
+  .user-stories-list-container {
+    max-height: 100%;
+    padding: 0;
+  }
+
+  .user-stories {
+    color: $secondary-color;
+    min-height: 100%;
+
+    ul {
+      font-size: rem-calc(14);
+      overflow: hidden;
+    }
+
+    .user-story {
+      border-bottom: 1px solid $black-10;
+      cursor: pointer;
+      padding: rem-calc(20 45 20 15);
+      position: relative;
+
+      .number,
+      .points {
+        font-size: rem-calc(11);
+        font-weight: 700;
+      } // number
+
+      .points {
+        color: $success-color;
+        text-transform: uppercase;
+      }
+    }
+
+    .number {
+      display: inline-block;
+
+      &:after {
+        color: $black-40;
+        content: '\2022';
+        font-size: rem-calc(15);
+      } // after
+    }
+
+    .story-text { display: block; }
+
+    .grey-prefix { color: $black-30; }
+  } // user stories
+} // backlog

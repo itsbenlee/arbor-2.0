@@ -38,14 +38,6 @@ feature 'Create a new constraint' do
     end
   end
 
-  scenario 'should show an error with duplicate constraints', js: true do
-    new_constraint
-    expect{ Constraint.count }.to become_eq 1
-
-    new_constraint
-    expect(page).to have_content('Description has already been taken')
-  end
-
   scenario 'should show an error with blank constraints', js: true do
     fill_in(
       :constraint_description,

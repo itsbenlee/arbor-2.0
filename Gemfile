@@ -20,6 +20,7 @@ gem 'http-cookie'
 gem 'fog-aws'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'i18n-js'
+gem 'wicked_pdf', github: 'mileszs/wicked_pdf'
 
 group :doc do
   gem 'sdoc', require: false
@@ -39,6 +40,7 @@ group :development, :test do
   gem 'scss-lint'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'wkhtmltopdf-binary-edge', '~> 0.12.2.1'
 end
 
 group :test do
@@ -56,6 +58,7 @@ group :production do
   gem 'rails_12factor'
   gem 'passenger', '5.0.15'
   gem 'mini_magick'
+  gem 'wkhtmltopdf-heroku'
 end
 
 gem 'devise'

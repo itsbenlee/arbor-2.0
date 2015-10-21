@@ -1,6 +1,7 @@
 class UserStoriesController < ApplicationController
   before_action :load_user_story, only: [:update, :destroy, :edit]
   before_action :set_hypothesis, only: [:create]
+  before_action :set_project, only: [:export]
   before_action :check_edit_permission,
     only: [:create, :destroy, :update, :update_order, :index, :edit]
   before_action :copied_user_stories, only: :copy
@@ -52,7 +53,31 @@ class UserStoriesController < ApplicationController
     render json: { project_url: project_user_stories_path(@project) }
   end
 
+  def export
+    content = export_content
+    save_pdf(content) unless params.key?('debug')
+  end
+
   private
+
+  def export_content
+    debug = params.key?('debug')
+    send(
+      debug ? :render : :render_to_string,
+      pdf:          "#{@project.name} Backlog",
+      layout:       'application.pdf.haml',
+      template:     'user_stories/index.pdf.haml',
+      show_as_html: debug
+    )
+  end
+
+  def save_pdf(content)
+    send_data(
+      content,
+      filename: "#{@project.name} Backlog.pdf",
+      type:     'application/pdf'
+    )
+  end
 
   def json_update
     response = UserStoryService.new(@project).update_user_story(@user_story)

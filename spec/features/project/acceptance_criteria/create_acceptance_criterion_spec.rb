@@ -40,14 +40,6 @@ feature 'Create a new acceptance criterion' do
     end
   end
 
-  scenario 'should show an error with duplicate acceptance criterions', js: true do
-    new_ac
-    expect{ AcceptanceCriterion.count }.to become_eq 1
-
-    new_ac
-    expect(page).to have_content('Description has already been taken')
-  end
-
   scenario 'should show an error with blank criterions', js: true do
     fill_in(
       :acceptance_criterion_description,

@@ -7,9 +7,9 @@
     = t('top_nav.export')
   %ul#drop1.f-dropdown{"aria-hidden" => "true", "data-dropdown-content" => "", :tabindex => "-1"}
     %li#csv_export_link
-      = link_to t('csv'), project_hypotheses_export_path(@project, format: :csv)
+      = link_to t('csv.export'), project_hypotheses_export_path(@project, format: :csv)
     %li#json_export_link
-      = link_to t('json'), project_hypotheses_export_path(@project, format: :json)
+      = link_to t('json.export'), project_hypotheses_export_path(@project, format: :json)
     %li#trello_export_link
       = link_to t('trello.export'), '#'
 - if @project.canvas

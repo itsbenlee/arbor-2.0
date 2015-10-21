@@ -6,7 +6,7 @@ describe Invite do
 
   it { should validate_presence_of :email }
   it { should validate_presence_of :project }
-  it { should validate_uniqueness_of(:email).scoped_to(:project_id)}
+  it { should validate_uniqueness_of(:email).scoped_to(:project_id) }
   it { should belong_to :project }
 
   it 'must not accept duplicate invites' do
