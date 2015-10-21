@@ -213,10 +213,9 @@
   }
 
   .icon-arrow {
-    @include rotate(180deg);
     @include transition(transform .25s ease-in, color .25s ease-in);
 
-    &.active { @include rotate(0); }
+    &.active { @include rotate(180deg); }
   }
 
   .arbor-version {
