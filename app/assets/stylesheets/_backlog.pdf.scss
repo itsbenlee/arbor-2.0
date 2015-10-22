@@ -1,8 +1,36 @@
 // --------------------------------------------------------
 // BACKLOG SECTION
 // --------------------------------------------------------
+.header-layout {
+  margin: rem-calc(10 0 20 15);
 
-.backlog.row {
+  .pdf-title::after {
+    content: '|';
+    padding-left: rem-calc(5);
+  }
+
+  h2 {
+    display: inline-block;
+    font-size: rem-calc(27);
+    padding-top: rem-calc(10);
+  }
+
+  .arbor-pdf-logo {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: rem-calc(90);
+  }
+}
+
+.uppercase-subtitle {
+  color: $black-30;
+  font-size: rem-calc(12);
+  padding-bottom: rem-calc(5);
+  text-transform: uppercase;
+}
+
+.backlog {
   height: 100%;
   margin: 0;
   max-width: 100%;
@@ -19,13 +47,22 @@
     ul {
       font-size: rem-calc(14);
       overflow: hidden;
+      padding-bottom: rem-calc(15);
+
+      .uppercase-subtitle { padding: rem-calc(20 0 10 0);  }
+
+      .description::before { content: '\2022'; }
     }
 
     .user-story {
       border-bottom: 1px solid $black-10;
-      cursor: pointer;
-      padding: rem-calc(20 45 20 15);
-      position: relative;
+      padding-left: 0;
+
+      .uppercase-subtitle {
+        color: $black-30;
+        font-size: rem-calc(12);
+        text-transform: uppercase;
+      }
 
       .number,
       .points {
@@ -49,7 +86,10 @@
       } // after
     }
 
-    .story-text { display: block; }
+    .story-text {
+      display: block;
+      padding-bottom: rem-calc(5);
+    }
 
     .grey-prefix { color: $black-30; }
   } // user stories
