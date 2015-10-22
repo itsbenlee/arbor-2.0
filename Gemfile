@@ -52,6 +52,8 @@ group :test do
   gem 'webmock'
   gem 'vcr'
   gem 'waiting_rspec_matchers'
+  gem 'rack-no_animations'
+  gem 'parallel_tests'
 end
 
 group :production do
