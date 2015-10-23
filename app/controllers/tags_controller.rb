@@ -6,7 +6,7 @@ class TagsController < ApplicationController
   def filter
     user_stories = []
     @tags.each do |tag|
-      user_stories += tag.user_stories.where(project_id: @project.id)
+      user_stories |= tag.user_stories.where(project_id: @project.id)
     end
 
     render partial: 'user_stories/backlog_list',
