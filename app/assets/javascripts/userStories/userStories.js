@@ -77,8 +77,9 @@ function UserStories() {
     $('#stories-filter').bind('keypress', function(e) {
       if(e.keyCode === 13) {
         var current_val = $(this).val(),
-            index = projectTags.indexOf(current_val);
-        if(index > -1) {
+            project_tag_index = projectTags.indexOf(current_val),
+            selected_tag_index = selectedTags.indexOf(current_val);
+        if(project_tag_index > -1 && selected_tag_index === -1 ) {
           var tag_name = current_val;
           selectedTags.push(tag_name);
           getUserStoriesByTags();
