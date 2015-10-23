@@ -1,6 +1,12 @@
 // --------------------------------------------------------
 // BACKLOG SECTION
 // --------------------------------------------------------
+.ui-autocomplete {
+  background-color: $black-10;
+  max-height: 100px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
 
 .backlog.row {
   height: 100%;
@@ -279,6 +285,7 @@
 
       input {
         color: $secondary-color;
+        font-size: rem-calc(14);
         padding-left: 0;
         @include input-placeholder { font-style: italic; };
       }
@@ -336,7 +343,7 @@
   font-size: rem-calc(16);
   margin-bottom: rem-calc(20);
   padding-left: 0;
-  
+
   @include input-placeholder { font-style: italic; };
 } // backlog placeholders
 
@@ -411,4 +418,41 @@
   margin-right: rem-calc(3);
   padding-top: rem-calc(5);
   text-transform: uppercase;
+}
+
+// --------------------------------------------------------
+// TAGS FILTER
+// --------------------------------------------------------
+
+.applied-filters {
+  display: none;
+  
+  li { display: inline-block; }
+} // applied filters
+
+.user-stories-filter {
+  margin: rem-calc(15 15 0 0);
+
+  input {
+    border-radius: $global-radius;
+    font-size: rem-calc(15);
+    margin-bottom: rem-calc(5);
+    padding-left: rem-calc(10);
+  }
+}
+
+.applied-tag label {
+  display: inline-block;
+  font-size: rem-calc(12);
+  margin-right: rem-calc(5);
+  text-transform: uppercase;
+
+  &:before {
+    @include border-radius(rem-calc(100));
+    background-color: $black-30;
+    color: $white;
+    content: 'x';
+    font-size: rem-calc(8);
+    padding: rem-calc(3 5);
+  }
 }

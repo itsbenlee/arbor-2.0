@@ -7,6 +7,105 @@ function UserStories() {
       $userStoriesContainer = $('.user-stories-list-container'),
       $backlogPreloader     = $('.user-stories-preloader'),
       projectId             = $backlogSection.data('projectId');
+      selectedTags          = [];
+      projectTags           = [];
+
+  function filterByTags(tags) {
+    $('#stories-filter').autocomplete({
+      source: function(request, response) {
+          var matcher = new RegExp(
+              '^' + $.ui.autocomplete.escapeRegex( request.term ), 'i' );
+          response( $.grep( tags, function( item ){
+              return matcher.test( item );
+          }));
+      },
+      minLength: 0,
+      autoFocus: true
+    });
+
+    $('#stories-filter').autocomplete( 'search', '' );
+  }
+
+  function displayAppliedTags() {
+    var template = $('#tagTemplate').html(),
+        tags = { 'tags': selectedTags },
+        html = Mustache.to_html(template, tags);
+
+    $('#tag-list').html(html);
+    $('.applied-filters').show();
+  }
+
+  function bindRemoveTag() {
+    $('.applied-tag').click(function() {
+      var tag_to_remove = $(this).text().trim(),
+          index = selectedTags.indexOf(tag_to_remove);
+      if (index > -1) {
+          selectedTags.splice(index, 1);
+      }
+      if (selectedTags.length > 0) {
+        getUserStoriesByTags();
+      }
+      else {
+        refreshBacklog();
+      }
+    });
+  }
+
+  function getUserStoriesByTags() {
+    $.ajax({
+      dataType: 'html',
+      method: 'GET',
+      url: 'tags/filter',
+      data: { tag_names: selectedTags },
+      success: function (response) {
+        $userStoriesContainer.html('');
+        $userStoriesContainer.html(response);
+        $userStoriesOnList = $('li.user-story');
+        $userStoriesList   = $('ul.user-story-list');
+        bindUserStoriesEvents();
+        bindSelectStoriesEvent();
+        bindTagFilter();
+        bindTagCheckboxes();
+        bindSubmitTag();
+        displayAppliedTags();
+        bindRemoveTag();
+      }
+    });
+  }
+
+  function bindSubmitTag() {
+    $('#stories-filter').bind('keypress', function(e) {
+      if(e.keyCode === 13) {
+        var current_val = $(this).val(),
+            index = projectTags.indexOf(current_val);
+        if(index > -1) {
+          var tag_name = current_val;
+          selectedTags.push(tag_name);
+          getUserStoriesByTags();
+        }
+      }
+    });
+  }
+
+  bindSubmitTag();
+  bindTagFilter();
+
+  function bindTagFilter() {
+    $('#stories-filter').click(function() {
+      $.ajax({
+        dataType: 'json',
+        method: 'GET',
+        url: 'tags/index',
+        data: $(this).data('project-id'),
+        success: function (response) {
+          if(response.success) {
+            projectTags = response.data.tags;
+            filterByTags(projectTags);
+          }
+        }
+      });
+    });
+  }
 
   function setBacklogOrder() {
     var newOrder = { stories: [] },
@@ -29,8 +128,8 @@ function UserStories() {
       bindNewConstraint();
       bindEditAcceptanceCriterion();
       bindEditConstraint();
-      bindNewTag();
       bindTagCheckboxes();
+      bindNewTag();
       refreshStories();
     });
   }
@@ -77,7 +176,11 @@ function UserStories() {
       $userStoriesList   = $('ul.user-story-list');
       bindUserStoriesEvents();
       bindSelectStoriesEvent();
+      bindTagCheckboxes();
+      bindTagFilter();
+      bindSubmitTag();
       showBacklog();
+      bindRemoveTag();
     });
   }
 

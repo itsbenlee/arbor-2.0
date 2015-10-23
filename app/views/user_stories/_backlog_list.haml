@@ -1,5 +1,9 @@
+.user-stories-filter
+  %input{ type: 'text', placeholder: t('backlog.filter'), id: 'stories-filter', data: { project_id: project.id } }
+.story-tags.applied-filters{ id: 'tag-list'}
+  = render 'tags/list'
 .user-stories
-  - project.user_stories.each do |user_story|
+  - user_stories.each do |user_story|
     %ul.user-story-list{ data: { url: project_reorder_backlog_path(project) } }
       %li.user-story{ data: { id: user_story.id,
         url: edit_user_story_path(user_story),

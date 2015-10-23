@@ -21,6 +21,7 @@ gem 'fog-aws'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'i18n-js'
 gem 'wicked_pdf', github: 'mileszs/wicked_pdf'
+gem 'mustache-js-rails'
 
 group :doc do
   gem 'sdoc', require: false

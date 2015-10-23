@@ -66,7 +66,8 @@ class ProjectsController < ApplicationController
       hypotheses: {})
               .order('user_stories.backlog_order')
               .find(params[:project_id])
-    render partial: 'user_stories/backlog_list', locals: { project: project }
+    render partial: 'user_stories/backlog_list',
+           locals: { user_stories: project.user_stories, project: project }
   end
 
   def copy
