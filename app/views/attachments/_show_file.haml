@@ -3,7 +3,7 @@
     = image_tag attachment.thumbnail
   .link-info.large-10.columns
     .attachment-content
-      = link_to attachment.content.file.filename, attachment.content.url
+      = link_to attachment.content.file.filename, attachment.content.url, target: :blank
     .attachment-activity
       %span= t('attachment.link.name_info')
       .user-name
