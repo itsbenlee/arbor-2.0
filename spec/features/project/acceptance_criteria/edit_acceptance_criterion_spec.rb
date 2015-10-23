@@ -22,12 +22,11 @@ feature 'Update an acceptance criterion' do
   end
 
   scenario 'should update an acceptance criterion', js: true do
-    pending 'Need to fix javascript/database cleaner/shared connection'
-
     within 'form.edit_acceptance_criterion' do
       fill_in :acceptance_criterion_description, with: 'new description'
       find('input#save-acceptance-criterion', visible: false).trigger('click')
     end
-    expect(AcceptanceCriterion.first.description).to eq 'new description'
+
+    expect{ AcceptanceCriterion.first.description }.to become_eq 'new description'
   end
 end

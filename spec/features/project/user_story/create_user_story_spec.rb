@@ -3,7 +3,7 @@ require 'spec_helper'
 feature 'Create a new user story' do
   let!(:user)       { create :user }
   let!(:project)    { create :project, owner: user }
-  let!(:hypothesis) { create :hypothesis, project: project }
+  let(:hypothesis)  { create :hypothesis, project: project }
   let(:user_story)  { build :user_story }
 
   background do
@@ -12,6 +12,7 @@ feature 'Create a new user story' do
 
   context 'lab section' do
     background do
+      hypothesis
       visit project_hypotheses_path project
     end
 
@@ -32,6 +33,16 @@ feature 'Create a new user story' do
       end
     end
 
+    scenario 'should show an error with empty fields' do
+      within 'form.new_user_story' do
+        fill_in :user_story_role, with: user_story.role
+        fill_in :user_story_action, with: '  '
+        fill_in :user_story_result, with: user_story.result
+        click_button 'Save'
+      end
+      expect(page).to have_content("Action can't be blank")
+    end
+
     scenario 'should create a new user story without duplicate' do
       create :hypothesis, { project: project }
       visit project_hypotheses_path project
@@ -50,8 +61,7 @@ feature 'Create a new user story' do
       visit project_user_stories_path project
     end
 
-    scenario 'should show me an user story creation form for each hypothesis on
-      backlog section' do
+    scenario 'should show me an user story creation form' do
       expect(page).to have_css 'form.new_user_story'
       %w(user_story_role user_story_action user_story_result).each do |input|
         expect(page).to have_field input
@@ -73,14 +83,19 @@ feature 'Create a new user story' do
         fill_in :user_story_role, with: user_story.role
         fill_in :user_story_action, with: user_story.action
         fill_in :user_story_result, with: user_story.result
-
         click_button 'Save'
       end
+      expect { UserStory.count }.to become_eq 1
 
       visit project_hypotheses_path project
-      expect(page).to have_css 'section#user-stories-without-hypothesis'
 
-      within 'section#user-stories-without-hypothesis form' do
+      within ".hypothesis-show" do
+        expect(find('.hypothesis-title')).to have_text(
+          I18n.t('labs.undefined_hypothesis')
+        )
+      end
+
+      within 'form.edit-story.edit_user_story' do
         expect(find('#user_story_role').value).to have_text user_story.role
         expect(find('#user_story_action').value).to have_text user_story.action
         expect(find('#user_story_result').value).to have_text user_story.result

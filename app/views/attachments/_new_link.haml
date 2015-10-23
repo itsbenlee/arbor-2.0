@@ -2,12 +2,12 @@
   - form.object = attachment.becomes(attachment.class)
   %span.bullet
   .links-wrapper.row
-    .field.large-7.columns
+    .field.large-7.small-12.columns
       = render 'shareable/svg/files_icon'
       = form.text_field :content, placeholder: I18n.translate('attachment.link.enter_url'), class: 'with-icon radius login'
       = form.hidden_field :table_type, value: 'LinkAttachment'
-    .save-btn.large-2.columns
-      = form.submit I18n.translate('save'), class: 'button small success radius'
-    .attachment-selector.large-3.columns
+    .save-btn
+      = form.submit I18n.translate('save'), class: 'large-2 small-12 columns button small success radius'
+    .attachment-selector.small-12.large-3.columns
       %span= t('attachment.or')
       = link_to 'Upload File', '#', id: 'attachment-switcher', class: 'button small success radius'

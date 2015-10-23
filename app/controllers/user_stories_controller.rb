@@ -1,8 +1,10 @@
 class UserStoriesController < ApplicationController
   before_action :load_user_story, only: [:update, :destroy, :edit]
   before_action :set_hypothesis, only: [:create]
+  before_action :set_project, only: [:export]
   before_action :check_edit_permission,
     only: [:create, :destroy, :update, :update_order, :index, :edit]
+  before_action :copied_user_stories, only: :copy
 
   def index
     @user_story = UserStory.new
@@ -20,7 +22,7 @@ class UserStoriesController < ApplicationController
     @user_story_service = UserStoryService.new(@project, @hypothesis)
     response =
       @user_story_service.new_user_story(user_story_params)
-    render json: response
+    render json: response, status: (response.success ? 201 : 422)
   end
 
   def update
@@ -45,11 +47,41 @@ class UserStoriesController < ApplicationController
     render json: @hypothesis_service.reorder_stories(update_order_params)
   end
 
+  def copy
+    user_story_service = UserStoryService.new(@project)
+    user_story_service.copy_stories(@copied_stories)
+    render json: { project_url: project_user_stories_path(@project) }
+  end
+
+  def export
+    content = export_content
+    save_pdf(content) unless params.key?('debug')
+  end
+
   private
+
+  def export_content
+    debug = params.key?('debug')
+    send(
+      debug ? :render : :render_to_string,
+      pdf:          "#{@project.name} Backlog",
+      layout:       'application.pdf.haml',
+      template:     'user_stories/index.pdf.haml',
+      show_as_html: debug
+    )
+  end
+
+  def save_pdf(content)
+    send_data(
+      content,
+      filename: "#{@project.name} Backlog.pdf",
+      type:     'application/pdf'
+    )
+  end
 
   def json_update
     response = UserStoryService.new(@project).update_user_story(@user_story)
-    render json: response
+    render json: response, status: (response.success ? 201 : 422)
   end
 
   def html_update
@@ -92,11 +124,25 @@ class UserStoriesController < ApplicationController
 
   def user_story_params
     params.require(:user_story).permit(
-      %i(role action result estimated_points priority hypothesis_id epic)
+      :role, :action, :result, :estimated_points,
+      :priority, :hypothesis_id, :epic, tag_ids: []
     )
   end
 
   def update_order_params
     params.require(:hypotheses)
+  end
+
+  def copy_stories_params
+    params.permit(:project_id, user_stories: [])
+  end
+
+  def copied_user_stories
+    @project =
+      Project.find(copy_stories_params[:project_id])
+    @copied_stories = []
+    copy_stories_params[:user_stories].each do |story_id|
+      @copied_stories.push(UserStory.find(story_id))
+    end
   end
 end

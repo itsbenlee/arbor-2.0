@@ -1,8 +1,7 @@
 function UserStory() {
   var $userStoriesList  = $('.user-story-list'),
       $newUserStoryForm = $('form#new_user_story'),
-      $appContent       = $('.right-app-content'),
-      $epicCheckbox     = $('.user-story-input.epic');
+      $appContent       = $('.right-app-content');
 
   function storiesAreReordered(hypothesisId, stories) {
     var changes = false;
@@ -87,15 +86,21 @@ function UserStory() {
         showHypothesis(hypothesisId);
 
         bindUserStoriesSortEvent();
+        bindEpicCheckbox();
+
         var $userStoryForm = $('#edit_user_story_' + userStoryId);
         $appContent.scrollTo($userStoryForm, 200);
     });
   }
 
-  $epicCheckbox.change(function() {
-    var $editForm = $(this).parent();
-    $editForm.submit();
-  });
+  function bindEpicCheckbox() {
+    $epicCheckbox = $('.user-story-input.epic input:checkbox');
+
+    $epicCheckbox.click(function() {
+      var $editForm = $(this).closest('form.edit-story');
+      $editForm.submit();
+    });
+  }
 
   function bindUserStoriesSortEvent() {
     var storyListSelector = '.user-story-list';
@@ -109,7 +114,9 @@ function UserStory() {
     });
   }
 
+  bindEpicCheckbox();
   bindUserStoriesSortEvent();
+
   $newUserStoryForm.submit(function() {
     var url          = $(this).attr('action'),
         type         = $(this).attr('method'),

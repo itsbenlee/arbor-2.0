@@ -1,9 +1,7 @@
 class TagServices
-  def initialize(project, user_story = nil)
-    @project = project
+  def initialize(user_story = nil)
     @user_story = user_story
     @common_response = CommonResponse.new(true, [])
-    @route_helper = Rails.application.routes.url_helpers
   end
 
   def new_tag(tag_params)
@@ -11,7 +9,8 @@ class TagServices
     assign_associations(tag)
 
     if tag.save
-      assign_common_response(tag)
+      @common_response.data[:edit_url] =
+        Rails.application.routes.url_helpers.edit_user_story_path(@user_story)
     else
       @common_response.success = false
       @common_response.errors += tag.errors.full_messages
@@ -19,16 +18,20 @@ class TagServices
     @common_response
   end
 
+  def tag_search(project)
+    tags = project.tags
+    if tags.count > 0
+      @common_response.data[:tags] = tags.map(&:name)
+    else
+      @common_response.success = false
+    end
+    @common_response
+  end
+
   private
 
   def assign_associations(tag)
-    tag.project = @project
-    tag.user_stories << @user_story if @user_story
-  end
-
-  def assign_common_response(tag)
-    @user_story.tags << tag
-    @common_response.data[:edit_url] =
-      @route_helper.edit_user_story_path(@user_story)
+    tag.project = @user_story.project
+    tag.user_stories << @user_story
   end
 end

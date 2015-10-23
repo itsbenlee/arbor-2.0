@@ -10,7 +10,7 @@ feature 'Export hypothesis to json as a project member' do
     visit project_hypotheses_path(project_id: project.id)
   end
 
-  scenario 'can download csv' do
+  scenario 'can download json' do
     visit project_hypotheses_export_path(project, format: :json)
     response_headers = page.response_headers
     expect(response_headers['Content-Disposition']).to have_text('inline')

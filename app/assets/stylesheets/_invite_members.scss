@@ -14,15 +14,32 @@
     border-radius: $global-radius;
     height: rem-calc(45);
     margin-bottom: rem-calc(20);
-    padding: rem-calc(10 20);
+    overflow: hidden;
+    padding: rem-calc(10 0 12 20);
 
     img {
       margin-right: 10px;
       padding-bottom: rem-calc(2);
+      vertical-align: baseline;
     } // img
 
+    .user-name,
     .user-mail {
       display: inline-block;
+      height: 100%;
+      max-width: 34%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .user-mail {
+      height: rem-calc(50);
+      max-width: 55%;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      vertical-align: top;
+
 
       &::before {
         color: $success-color;

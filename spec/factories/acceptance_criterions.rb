@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :acceptance_criterion do
-    sequence(:description) { |n| "#{Faker::Lorem.word}(#{n})" }
+    sequence(:description) { |n| "#{n}:#{Faker::Lorem.sentence(4)}" }
     user_story             { create :user_story }
   end
 end

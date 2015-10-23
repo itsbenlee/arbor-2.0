@@ -5,7 +5,8 @@
       - @project.members.each do |member|
         .user-info
           = image_tag('icons/user-icon.svg', class: 'icon')
-          = member.full_name
+          .user-name
+            = member.full_name
           .user-mail
             = member.email
       = link_to t("project_members.edit"),'#', id: 'edit_project', class: 'button radius success small'

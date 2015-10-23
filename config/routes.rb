@@ -21,8 +21,16 @@ Railsroot::Application.routes.draw do
     resources :user_stories, except: [:show, :new] do
       resources :acceptance_criterions, only: [:create, :update]
       resources :constraints, only: [:create, :update]
-      resources :tags, only: :create
+      resources :tags, only: [:create, :index]
     end
+
+    get 'user_stories/export',
+      controller: :user_stories,
+      action: :export,
+      as: :backlog_export
+
+    get 'tags/filter', controller: :tags, action: :filter
+    get 'tags/index', controller: :tags, action: :index
 
     put 'hypotheses/order', controller: :hypotheses, action: :update_order
     get 'hypotheses/export', controller: :hypotheses, action: :export
@@ -47,6 +55,7 @@ Railsroot::Application.routes.draw do
     get '/user_stories', controller: :hypotheses, action: :list_stories
   end
 
+  post 'user_stories/copy', controller: :user_stories, action: :copy
   resources :goals, only: [:edit, :update, :destroy]
 
   devise_for :users, controllers: { registrations: 'registrations' }

@@ -1,6 +1,12 @@
 // --------------------------------------------------------
 // BACKLOG SECTION
 // --------------------------------------------------------
+.ui-autocomplete {
+  background-color: $black-10;
+  max-height: 100px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
 
 .backlog.row {
   height: 100%;
@@ -44,6 +50,7 @@
 
       .points {
         color: $success-color;
+        margin-right: rem-calc(5);
         text-transform: uppercase;
       }
     }
@@ -58,7 +65,10 @@
       } // after
     }
 
-    .story-text { display: block; }
+    .story-text {
+      display: block;
+      margin-top: rem-calc(3);
+    }
 
     .grey-prefix { color: $black-30; }
 
@@ -143,7 +153,6 @@
       @include inline-block();
       background-color: transparent;
       border: 0;
-      font-size: rem-calc(40);
       height: inherit;
       line-height: 1.5;
       margin: 0;
@@ -243,7 +252,6 @@
         }
       }
 
-
       &.role input {
         min-width: rem-calc(174);
         width: rem-calc(174);
@@ -265,21 +273,11 @@
       padding-top: rem-calc(20);
     }
 
-    .estimation,
-    .priority {
-      padding: 0;
-
-      select {
-        background-color: $white;
-        border-radius: $global-radius;
-        color: $black-70;
-        font-size: rem-calc(12);
-        padding-left: rem-calc(15);
-        text-transform: uppercase;
-      }
+    .constraint-input,
+    .backlog-placeholder {
+      padding-left: 0;
+      width: 90%;
     }
-
-    .constraint-input { width: 70%; }
 
     .acceptance-criterion-form,
     .constraint-form {
@@ -287,7 +285,7 @@
 
       input {
         color: $secondary-color;
-        font-size: rem-calc(16);
+        font-size: rem-calc(14);
         padding-left: 0;
         @include input-placeholder { font-style: italic; };
       }
@@ -297,8 +295,6 @@
         width: auto;
       }
 
-      .backlog-placeholder { width: 90%; }
-
       .bullet::before {
         color: $lab-color;
         content: '\2022';
@@ -306,18 +302,18 @@
         margin-right: rem-calc(5);
         vertical-align: middle;
       }
-
-      .criterion-group {
-        border-top: 1px solid $black-10;
-        clear: both;
-        color: $black-30;
-        font-size: rem-calc(12);
-        margin-top: rem-calc(15);
-        padding-top: rem-calc(20);
-        text-transform: uppercase;
-        width: 100%;
-      }
     } // acceptance criteria
+
+    .criterion-group {
+      border-top: 1px solid $black-10;
+      clear: both;
+      color: $black-30;
+      font-size: rem-calc(12);
+      margin-top: rem-calc(15);
+      padding-top: rem-calc(20);
+      text-transform: uppercase;
+      width: 100%;
+    }
 
     .epic {
       line-height: .4;
@@ -342,6 +338,32 @@
   } // user story edit form
 } // backlog
 
+.backlog-placeholder {
+  color: $black-40;
+  font-size: rem-calc(16);
+  margin-bottom: rem-calc(20);
+  padding-left: 0;
+
+  @include input-placeholder { font-style: italic; };
+} // backlog placeholders
+
+.user-story-component-error { display: none; }
+
+.estimation,
+.priority,
+.destination-select {
+  padding: 0;
+
+  select {
+    background-color: $white;
+    border-radius: $global-radius;
+    color: $black-70;
+    font-size: rem-calc(12);
+    padding-left: rem-calc(15);
+    text-transform: uppercase;
+  }
+}
+
 .user-stories-preloader {
   display: none;
   padding-left: rem-calc(172);
@@ -353,4 +375,84 @@
   }//user-stories-preloader img
 }
 
+// --------------------------------------------------------
+// COPY USER STORIES
+// --------------------------------------------------------
+
+.copy-stories-lnk,
+.copy-story-check-box,
+.copy-stories-error,
+.copy-stories-success { display: none; }
+
 .new-icon { padding-bottom: rem-calc(2); }
+
+.copy-stories-modal {
+  max-width: 35%;
+  padding-bottom: rem-calc(40);
+
+  @media #{$small-only} { max-width: none; }
+
+  .close-reveal-modal {
+    font-size: rem-calc(20);
+    right: rem-calc(14);
+  }
+
+  .uppercase-subtitle { margin: rem-calc(15 0 5 0); }
+}
+
+.copy-story-check-box { line-height: 1; }
+
+// --------------------------------------------------------
+// USER STORY TAGS
+// --------------------------------------------------------
+
+.user-story-tag {
+  display: inline-block;
+  margin-right: rem-calc(10);
+}
+
+.story-tags span {
+  @include border-radius(rem-calc(50));
+  background-color: $lab-color;
+  font-size: rem-calc(8);
+  margin-right: rem-calc(3);
+  padding-top: rem-calc(5);
+  text-transform: uppercase;
+}
+
+// --------------------------------------------------------
+// TAGS FILTER
+// --------------------------------------------------------
+
+.applied-filters {
+  display: none;
+  
+  li { display: inline-block; }
+} // applied filters
+
+.user-stories-filter {
+  margin: rem-calc(15 15 0 0);
+
+  input {
+    border-radius: $global-radius;
+    font-size: rem-calc(15);
+    margin-bottom: rem-calc(5);
+    padding-left: rem-calc(10);
+  }
+}
+
+.applied-tag label {
+  display: inline-block;
+  font-size: rem-calc(12);
+  margin-right: rem-calc(5);
+  text-transform: uppercase;
+
+  &:before {
+    @include border-radius(rem-calc(100));
+    background-color: $black-30;
+    color: $white;
+    content: 'x';
+    font-size: rem-calc(8);
+    padding: rem-calc(3 5);
+  }
+}

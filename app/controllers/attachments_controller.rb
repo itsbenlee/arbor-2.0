@@ -13,7 +13,6 @@ class AttachmentsController < ApplicationController
       send("set_#{@attachment.type}_flash_message")
       redirect_to project_attachments_path @project
     else
-      flash[:error] = I18n.t('attachment.error')
       render :index
     end
   end
@@ -24,6 +23,8 @@ class AttachmentsController < ApplicationController
     @attachment = attachment_type.new attachment_params
     @attachment.project = @project
     @attachment.user = current_user
+    service = attachment_type_service.new @attachment
+    service.set_metadata
   end
 
   def attachment_type
@@ -50,5 +51,9 @@ class AttachmentsController < ApplicationController
   def set_file_flash_message
     filename = @attachment.content.file.filename
     flash[:success] = I18n.t('attachment.file.success', filename: filename)
+  end
+
+  def attachment_type_service
+    "#{attachment_type}Services".constantize if attachment_type
   end
 end

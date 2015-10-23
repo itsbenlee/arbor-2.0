@@ -8,22 +8,27 @@
   = link_to project_user_stories_path(@project), class: "nav-links" do
     = image_tag('icons/add-icon.svg', class: 'icon')
     = t('backlog.user_stories.new')
+  - if @project.user_stories.any?
+    = link_to '#', class: "nav-links", id: 'select_stories_lnk' do
+      = image_tag('icons/copy-icon.svg', class: 'icon')
+      = t('backlog.user_stories.select_to_copy')
+    = link_to '#', class: "nav-links copy-stories-lnk", id: 'copy_stories_lnk', data: { reveal_id: 'copy_stories_modal' } do
+      = image_tag('icons/copy-icon.svg', class: 'icon')
+      = t('backlog.user_stories.copy_stories')
   %ul#drop1.f-dropdown{"aria-hidden" => "true", "data-dropdown-content" => "", :tabindex => "-1"}
-    %li#csv_export_link
-      = link_to t('csv'), project_hypotheses_export_path(@project, format: :csv)
-    %li#json_export_link
-      = link_to t('json'), project_hypotheses_export_path(@project, format: :json)
-    %li#trello_export_link
-      = link_to t('trello.export'), '#'
+    %li#pdf_export_link
+      = link_to t('pdf.export'), project_backlog_export_path(@project, format: :pdf)
 %section.backlog.row{ data: { project_id: @project.id } }
   .user-stories-preloader.small-12.medium-5.columns
     = image_tag 'preloader.gif'
   .user-stories-list-container.small-12.medium-5.columns
-    = render 'user_stories/backlog_list', project: @project
+    - if @project.user_stories.count > 0
+      = render 'user_stories/backlog_list', user_stories: @project.user_stories, project: @project
   .user-story-edit-form.small-12.medium-7.columns
     = render 'user_stories/form', project: @project,
     user_story: @user_story,
     hypothesis: nil,
     form_url: project_user_stories_path(@project)
+= render 'user_stories/copy_stories_modal', projects: @projects
 - content_for :custom_js do
   = javascript_include_tag 'userStories/index'

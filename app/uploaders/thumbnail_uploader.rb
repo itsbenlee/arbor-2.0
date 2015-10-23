@@ -1,6 +1,8 @@
 class ThumbnailUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
+  process resize_to_fill: [120, 90]
+
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end

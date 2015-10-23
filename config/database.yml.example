@@ -7,11 +7,11 @@ development:
   username: yourpgusername
   password:
 
-test:
+test: &TEST
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: arbor_test
+  database: arbor_test<%= ENV['TEST_ENV_NUMBER'] %>
   pool:     5
   username: yourpgusername
   password:
@@ -24,3 +24,4 @@ production:
   pool:     5
   username: postgres
   password: postgres
+

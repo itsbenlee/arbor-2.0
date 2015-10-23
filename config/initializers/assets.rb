@@ -1,2 +1,9 @@
-Rails.application.config.assets.version = Time.now.to_i
-Rails.application.config.assets.precompile = %w(*.js)
+Rails.application.config.assets.precompile += %w(
+  hypotheses/index.js
+  hypotheses/show.js
+  canvases/form.js
+  projects/edit.js
+  projects/new.js
+  userStories/index.js
+  userStories/copyModal.js
+)

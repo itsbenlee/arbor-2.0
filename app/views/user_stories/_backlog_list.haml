@@ -1,5 +1,9 @@
+.user-stories-filter
+  %input{ type: 'text', placeholder: t('backlog.filter'), id: 'stories-filter', data: { project_id: project.id } }
+.story-tags.applied-filters{ id: 'tag-list'}
+  = render 'tags/list'
 .user-stories
-  - project.user_stories.each do |user_story|
+  - user_stories.each do |user_story|
     %ul.user-story-list{ data: { url: project_reorder_backlog_path(project) } }
       %li.user-story{ data: { id: user_story.id,
         url: edit_user_story_path(user_story),
@@ -10,10 +14,16 @@
             = link_to user_story_path(user_story), title: t('backlog.user_stories.delete'), class: 'trash-btn center-icon delete-story', method: :delete do
               %span.icon-trash
           %span.icon-arrow.down{ title: t('backlog.user_stories.rearrange') }
+        .custom-checkbox.copy-story-check-box
+          = check_box_tag "user_story_#{user_story.id}", user_story.id
+          %label{ for: "user_story_#{user_story.id}" }
         .number
           = "##{user_story.story_number}"
         %span.points
           = format_story_points(user_story)
+        %span.story-tags
+          - user_story.tags.each do |tag|
+            %span.label=tag.name
         .story-text
           %span.grey-prefix= t('backlog.user_stories.role')
           %span=user_story.role

@@ -26,4 +26,32 @@ RSpec.describe TagsController, type: :controller do
     end
   end
 
+  describe 'GET index' do
+    let!(:tag)         { create :tag, project: project }
+    let!(:another_tag) { create :tag, project: project }
+
+    it 'should return the project tags' do
+      post(:index, project_id: project.id)
+
+      hash_response = JSON.parse(response.body)
+      expect(hash_response['success']).to be_truthy
+      expect(hash_response['data']['tags']).to eq([tag.name, another_tag.name ])
+    end
+  end
+
+  describe 'GET filter' do
+    let!(:tag)           { create :tag, project: project }
+    let!(:another_story) { create :user_story, role: 'admin', project: project }
+    render_views
+
+    before :each do
+      another_story.tags << tag
+    end
+
+    it 'should render the filtered stories' do
+      get(:filter, project_id: project.id, tag_names: [tag.name] )
+      expect(response.body).to have_content(another_story.log_description)
+      expect(response.body).not_to have_content(user_story.log_description)
+    end
+  end
 end

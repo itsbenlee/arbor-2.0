@@ -9,7 +9,7 @@ class Project < ActiveRecord::Base
   has_many :user_stories, dependent: :destroy
   has_many :members_projects, class_name: MembersProject
   has_many :members, class_name: User, through: :members_projects
-  has_many :tags
+  has_many :tags, dependent: :destroy
 
   include AssociationLoggable
 
@@ -60,6 +60,11 @@ class Project < ActiveRecord::Base
     activities.delete_all
     create_activity key: 'project.copied', owner: current_user
     [clean_stories_log, clean_hypotheses_log].each(&:join)
+  end
+
+  def undefined_hypothesis
+    hypotheses
+      .find_or_create_by(description: I18n.t('labs.undefined_hypothesis'))
   end
 
   private

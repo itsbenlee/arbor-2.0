@@ -4,7 +4,7 @@ feature 'Create a new acceptance criterion' do
   let!(:user)                 { create :user }
   let!(:project)              { create :project, owner: user }
   let!(:user_story)           { create :user_story, project: project }
-  let(:acceptance_criterion)  { build :acceptance_criterion }
+  let(:acceptance_criterion)  { build :acceptance_criterion, description: 'My description'  }
 
   background do
     sign_in user
@@ -13,15 +13,13 @@ feature 'Create a new acceptance criterion' do
   end
 
   scenario 'should show me an acceptance criterion creation form', js: true do
-    expect(page).to have_css 'form.new_acceptance_criterion'
+    expect(page).to have_selector 'form.new_acceptance_criterion'
     within 'form.new_acceptance_criterion' do
       expect(page).to have_field :acceptance_criterion_description
     end
   end
 
   scenario 'should create a new acceptance criterion', js: true do
-    pending 'Need to fix javascript/database cleaner/shared connection'
-
     within 'form.new_acceptance_criterion' do
       fill_in(
         :acceptance_criterion_description,
@@ -29,6 +27,25 @@ feature 'Create a new acceptance criterion' do
       )
       find('input#save-acceptance-criterion', visible: false).trigger('click')
     end
-    expect(AcceptanceCriterion.count).to eq 1
+    expect{ AcceptanceCriterion.count }.to become_eq 1
+  end
+
+  def new_ac
+    within 'form.new_acceptance_criterion' do
+      fill_in(
+        :acceptance_criterion_description,
+        with: 'acceptance_criterion.description'
+      )
+      find('input#save-acceptance-criterion', visible: false).trigger('click')
+    end
+  end
+
+  scenario 'should show an error with blank criterions', js: true do
+    fill_in(
+      :acceptance_criterion_description,
+      with: '    '
+    )
+    find('input#save-acceptance-criterion', visible: false).trigger('click')
+    expect(page).to have_content("Description can't be blank")
   end
 end
