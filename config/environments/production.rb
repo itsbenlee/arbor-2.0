@@ -6,8 +6,8 @@ Railsroot::Application.configure do
   config.serve_static_files = false
   config.assets.js_compressor = :uglifier
   config.assets.compile = false
-  config.assets.digest = true
   config.assets.version = '1.0'
+  config.assets.digest = true
   config.log_level = :info
   config.assets.precompile += %w( vendor/modernizr.js )
   config.action_mailer.default_url_options = { host: ENV['DEFAULT_HOST'] }
