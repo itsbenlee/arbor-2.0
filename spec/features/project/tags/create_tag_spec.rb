@@ -45,11 +45,5 @@ feature 'Create tag', js: true do
     scenario 'should assign them to user stories' do
       expect{ user_story.reload.tags.first }.to become_eq tag
     end
-
-    scenario 'should not accept duplicates' do
-      fill_in :tag_name, with: 'MyTag'
-      find('input#save-tag', visible: false).trigger('click')
-      expect(page).to have_content('Name has already been taken')
-    end
   end
 end
