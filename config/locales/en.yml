@@ -93,7 +93,6 @@ en:
       rearrange: "Rearrange User Story"
       edit_title: "Edit User Story"
       new: "New user story"
-      epic: "epic"
       enter_criterion: 'Write a new acceptance criterion here...'
       enter_constraint: "Write a new constraint here..."
       edit_role: "Edit type of user"

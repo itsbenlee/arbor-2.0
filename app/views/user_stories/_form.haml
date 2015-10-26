@@ -58,10 +58,6 @@
     = form.hidden_field :hypothesis_id, value: hypothesis.id
   = form.submit I18n.translate('save'), class: 'hide user-story-submit'
   .row
-    .user-story-input.epic.large-12.columns
-      %label
-        = t('backlog.user_stories.epic')
-        = form.check_box :epic, id: user_story.id
     - if user_story.project
       .uppercase-subtitle.criterion-group= t('backlog.tags')
       - user_story.project.tags.each do |tag|

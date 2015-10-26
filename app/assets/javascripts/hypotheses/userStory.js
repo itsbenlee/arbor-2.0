@@ -86,19 +86,9 @@ function UserStory() {
         showHypothesis(hypothesisId);
 
         bindUserStoriesSortEvent();
-        bindEpicCheckbox();
 
         var $userStoryForm = $('#edit_user_story_' + userStoryId);
         $appContent.scrollTo($userStoryForm, 200);
-    });
-  }
-
-  function bindEpicCheckbox() {
-    $epicCheckbox = $('.user-story-input.epic input:checkbox');
-
-    $epicCheckbox.click(function() {
-      var $editForm = $(this).closest('form.edit-story');
-      $editForm.submit();
     });
   }
 
@@ -114,7 +104,6 @@ function UserStory() {
     });
   }
 
-  bindEpicCheckbox();
   bindUserStoriesSortEvent();
 
   $newUserStoryForm.submit(function() {
