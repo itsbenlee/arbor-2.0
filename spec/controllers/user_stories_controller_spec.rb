@@ -17,8 +17,7 @@ RSpec.describe UserStoriesController do
       action: 'sign up',
       result: 'i can browse the site',
       estimated_points: '3',
-      priority: 'should',
-      epic: 'false'
+      priority: 'should'
     }
 
     it 'sends a success response with the edit url from backlog' do
@@ -28,8 +27,7 @@ RSpec.describe UserStoriesController do
           action: 'sign up',
           result: 'i can browse the database',
           estimated_points: '3',
-          priority: 'should',
-          epic: 'false'
+          priority: 'should'
         }
 
       expect(UserStory.count).to eq(1)
@@ -50,8 +48,7 @@ RSpec.describe UserStoriesController do
           result: 'i can browse the site',
           estimated_points: '3',
           priority: 'should',
-          hypothesis_id: hypothesis.id,
-          epic: 'false'
+          hypothesis_id: hypothesis.id
         }
 
       expect(UserStory.count).to eq(1)

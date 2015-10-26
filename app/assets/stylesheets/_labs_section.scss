@@ -149,9 +149,7 @@
 
     &.editing {
       .enter { display: inline-block; }
-      .epic span { @include opacity(1); }
       .user-story-input { font-weight: $font-weight-bold; }
-      .new-story .epic label::before { border-color: $lab-color; }
     }
   }
 
@@ -212,13 +210,6 @@
 
     &.ui-sortable-helper {
       padding: rem-calc(0 20 0 40);
-
-      .epic {
-        left: rem-calc(10);
-
-        span { @include opacity(0); }
-      }
-
       .icon-trash { right: rem-calc(10); }
     }
 
@@ -227,13 +218,6 @@
       input,
       .user-story-input {
         color: $canvas-color;
-
-        &.epic input:checked +label::before {
-          background-color: $canvas-color;
-          border-color: $canvas-color;
-        }
-
-        &.epic input +label::before { border-color: $canvas-color; }
       }
     }
 
@@ -247,11 +231,6 @@
     .new-story {
       @include clearfix;
       padding: rem-calc(8 0);
-    }
-
-    .new-story .epic label::before {
-      @include grab-cursor;
-      border-color: $font-color-3;
     }
 
     .user-story-input {
@@ -320,23 +299,6 @@
     float: right;
     font-size: rem-calc(16);
     margin-top: 0;
-  }
-
-  .epic {
-    left: rem-calc(1);
-    position: absolute;
-    top: rem-calc(14);
-
-    input { display: none; }
-
-    span {
-      @include opacity(0);
-      color: $lab-color;
-      font-weight: $font-weight-normal;
-      left: rem-calc(-38);
-      text-transform: uppercase;
-      top: rem-calc(-6);
-    }
   }
 }// hypothesis item
 

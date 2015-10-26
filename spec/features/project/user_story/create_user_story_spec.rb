@@ -102,31 +102,6 @@ feature 'Create a new user story' do
       end
     end
 
-    scenario 'should create a new user story as a non epic' do
-      within 'form.new_user_story' do
-        fill_in :user_story_role, with: user_story.role
-        fill_in :user_story_action, with: user_story.action
-        fill_in :user_story_result, with: user_story.result
-
-        click_button 'Save'
-      end
-
-      expect(UserStory.first.epic).to be false
-    end
-
-    scenario 'should create a new user story as a an epic' do
-      within 'form.new_user_story' do
-        fill_in :user_story_role, with: user_story.role
-        fill_in :user_story_action, with: user_story.action
-        fill_in :user_story_result, with: user_story.result
-        check :epic
-
-        click_button 'Save'
-      end
-
-      expect(UserStory.first.epic).to be true
-    end
-
     scenario 'should create a new user story with another priority' do
       within 'form.new_user_story' do
         fill_in :user_story_role, with: user_story.role
