@@ -4,7 +4,7 @@
     .field
       = image_tag('icons/mail-icon.svg', class: 'icon')
       = f.email_field :email, autofocus: true, required: true, placeholder: t('login.email'), class: 'with-icon radius login'
-    .field
+    .field.password-input
       = image_tag('icons/password-icon.svg', class: 'icon')
       = f.password_field :password, placeholder: t('login.password'), class: 'with-icon radius login', autocomplete: 'off', required: true
     - if devise_mapping.rememberable?

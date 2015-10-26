@@ -10,6 +10,8 @@
 
   .password-information {
     color: $black-30;
+    font-size: rem-calc(13);
+    padding-bottom: rem-calc(10);
   }
 
   .forgot-password {
@@ -18,6 +20,8 @@
     text-decoration: underline;
   } // centered links
 } // section intro
+
+.password-input input { margin-bottom: rem-calc(5); }
 
 .password-length { color: $black-50; }
 
