@@ -3,7 +3,13 @@ require 'spec_helper'
 feature 'Sign up to Arbor' do
   let(:user) { build :user }
 
-  scenario 'when I enter all credentials correctly I can sign up' do
+  scenario 'should show me the minimum password length when I enter' do
+    visit new_user_session_path
+
+    expect(page).to have_content 'Minimum 8 characters'
+  end
+
+  scenario 'should sign me up when I enter all credentials correctly' do
     visit new_user_session_path
     within '#signup' do
       fill_in :user_full_name, with: user.full_name
@@ -17,7 +23,7 @@ feature 'Sign up to Arbor' do
     expect(page).to have_content 'Welcome! You have signed up successfully.'
   end
 
-  scenario 'When I enter mismatching passwords I should get an error' do
+  scenario 'should show me an error when I enter mismatching passwords' do
     visit new_user_session_path
     within '#signup' do
       fill_in :user_full_name, with: user.full_name
@@ -31,7 +37,7 @@ feature 'Sign up to Arbor' do
     expect(page).to have_content "Password confirmation doesn't match Password"
   end
 
-  scenario 'When I enter too short passwords I should get an error' do
+  scenario 'should show me an error when I enter too short passwords' do
     visit new_user_session_path
     within '#signup' do
       fill_in :user_full_name, with: user.full_name

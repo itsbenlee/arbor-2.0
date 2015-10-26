@@ -10,6 +10,8 @@
     .field
       = image_tag('icons/password-icon.svg', class: 'icon')
       = f.password_field :password, placeholder: t('sign_up.password'), class: 'with-icon radius', autocomplete: 'off', required: true
+      .password-information
+        = t('sign_up.password_length', length: resource.class.password_length.min)
     .field
       = image_tag('icons/password-icon.svg', class: 'icon')
       = f.password_field :password_confirmation, autocomplete: 'off', placeholder: t('sign_up.password_confirmation') , class: 'with-icon radius',
