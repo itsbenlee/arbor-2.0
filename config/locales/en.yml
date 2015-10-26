@@ -53,6 +53,7 @@ en:
       enter_description: "Write a new hypothesis"
       export: "Export"
       select_metric: 'Select a success metric'
+      delete_with_stories: 'You are not allowed to delete hypotheses with assigned user stories'
     goals:
       title: "Title"
       enter_title: "Enter Title"
