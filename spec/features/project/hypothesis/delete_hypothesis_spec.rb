@@ -4,7 +4,8 @@ feature 'Delete hypothesis' do
   let!(:user)       { create :user }
   let!(:project)    { create :project, owner: user }
   let!(:hypothesis) { create :hypothesis, project: project }
-  let(:user_story)  { build :user_story }
+  let(:user_story)  { create :user_story, hypothesis: hypothesis }
+
 
   background do
     sign_in user
@@ -24,23 +25,20 @@ feature 'Delete hypothesis' do
     expect(page).not_to have_content hypothesis.description
   end
 
-  scenario 'should not delete associated epics' do
-    user_story.hypothesis = hypothesis
-    user_story.save
-
+  scenario 'should not delete hypotheses with assigned user stories' do
+    hypothesis.user_stories << user_story
     visit project_hypotheses_path project
-
-    within "#edit_user_story_#{user_story.id}" do
-      expect(find('#user_story_role').value).to have_text user_story.role
-      expect(find('#user_story_action').value).to have_text user_story.action
-      expect(find('#user_story_result').value).to have_text user_story.result
-    end
 
     within '.hypothesis-show' do
       find('.delete-hypothesis').click
     end
 
-    expect(UserStory.count).to eq 1
-    expect(page).not_to have_css "#edit_user_story_#{user_story.id}"
+    expect(hypothesis.user_stories.count).to eq 1
+    expect(page).to have_content(
+      'You are not allowed to delete hypotheses with assigned user stories'
+    )
+    within "#edit_user_story_#{user_story.id}" do
+      expect(find('#user_story_action').value).to have_text user_story.action
+    end
   end
 end

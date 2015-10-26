@@ -33,7 +33,11 @@ class HypothesesController < ApplicationController
   end
 
   def destroy
-    @project.hypotheses.destroy(@hypothesis)
+    if @hypothesis.user_stories.any?
+      flash[:alert] = I18n.t('labs.hypotheses.delete_with_stories')
+    else
+      @project.hypotheses.destroy(@hypothesis)
+    end
 
     redirect_to project_hypotheses_path(@project)
   end
