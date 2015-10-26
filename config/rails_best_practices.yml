@@ -12,7 +12,12 @@ MoveCodeIntoControllerCheck: { }
 MoveCodeIntoHelperCheck: { array_count: 3 }
 MoveCodeIntoModelCheck: { use_count: 2 }
 MoveFinderToNamedScopeCheck: { }
-MoveModelLogicIntoModelCheck: { use_count: 4 }
+MoveModelLogicIntoModelCheck: {
+  use_count: 4,
+  ignored_files: [
+    'registrations_controller\.rb'
+  ]
+}
 NeedlessDeepNestingCheck: { nested_count: 2 }
 NotRescueExceptionCheck: { }
 NotUseDefaultRouteCheck: { }
@@ -23,14 +28,14 @@ RemoveEmptyHelpersCheck: { }
 #RemoveTabCheck: { }
 RemoveTrailingWhitespaceCheck: { }
 RemoveUnusedMethodsInControllersCheck: {
-  except_methods: [ RegistrationsController#new,
-                    ProjectsController#order_stories,
-                    HypothesesController#list_stories,
-                    ProjectsController#copy,
-                    AttachmentsController#set_link_flash_message,
-                    AttachmentsController#set_file_flash_message
+  except_methods: [
+    RegistrationsController#new,
+    ProjectsController#order_stories,
+    HypothesesController#list_stories,
+    ProjectsController#copy,
+    AttachmentsController#set_link_flash_message,
+    AttachmentsController#set_file_flash_message
   ]
-
 }
 RemoveUnusedMethodsInHelpersCheck: { except_methods: [] }
 RemoveUnusedMethodsInModelsCheck: {

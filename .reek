@@ -79,8 +79,10 @@ TooManyMethods:
   max_methods: 25
 TooManyStatements:
   enabled: true
-  exclude:
-  - initialize
+  exclude: [
+
+    RegistrationsController#create
+  ]
   max_statements: 6
 UncommunicativeMethodName:
   enabled: true
