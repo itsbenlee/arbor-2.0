@@ -7,11 +7,7 @@ url: form_url do |form|
       %ul
         - user_story.errors.full_messages.each do |error|
           %li= error
-  %span.icon-edit
-  .custom-checkbox.user-story-input.epic
-    = form.check_box :epic, id: user_story.id
-    %label{ for: user_story.id }
-    %span= t('backlog.user_stories.epic')
+  %span
   .user-story-input.role
     = t('backlog.user_stories.role')
     = form.text_field(                                   |

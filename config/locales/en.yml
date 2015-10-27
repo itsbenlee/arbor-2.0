@@ -6,6 +6,7 @@ en:
     password: "Password"
     password_confirmation: "Password confirmation"
     button_signup: "Sign up"
+    password_length: "Minimum %{length} characters"
   login:
     title: "Login"
     password: "Password"
@@ -53,6 +54,7 @@ en:
       enter_description: "Write a new hypothesis"
       export: "Export"
       select_metric: 'Select a success metric'
+      delete_with_stories: 'You are not allowed to delete hypotheses with assigned user stories'
     goals:
       title: "Title"
       enter_title: "Enter Title"
@@ -91,7 +93,6 @@ en:
       rearrange: "Rearrange User Story"
       edit_title: "Edit User Story"
       new: "New user story"
-      epic: "epic"
       enter_criterion: 'Write a new acceptance criterion here...'
       enter_constraint: "Write a new constraint here..."
       edit_role: "Edit type of user"

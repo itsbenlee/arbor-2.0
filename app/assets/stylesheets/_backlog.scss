@@ -1,12 +1,6 @@
 // --------------------------------------------------------
 // BACKLOG SECTION
 // --------------------------------------------------------
-.ui-autocomplete {
-  background-color: $black-10;
-  max-height: 100px;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
 
 .backlog.row {
   height: 100%;
@@ -315,25 +309,6 @@
       width: 100%;
     }
 
-    .epic {
-      line-height: .4;
-      padding: rem-calc(0 0 20);
-
-      input {
-        cursor: pointer;
-        float: left;
-        margin: rem-calc(1 8 0 0);
-        width: auto;
-      }
-
-      label {
-        color: $lab-color;
-        font-size: rem-calc(12);
-        vertical-align: baseline;
-        width: auto;
-      }
-    }  // epic
-
     .estimation { padding-right: rem-calc(15); }
   } // user story edit form
 } // backlog
@@ -424,9 +399,25 @@
 // TAGS FILTER
 // --------------------------------------------------------
 
+.ui-autocomplete {
+  @include opacity(.9);
+  background-color: $white;
+  border: 1px solid $black-20;
+  color: $black-60;
+  cursor: pointer;
+  max-height: rem-calc(130);
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-left: rem-calc(10);
+  width: 30%;
+
+  .ui-menu-item:hover { color: $black-90; }
+}
+
 .applied-filters {
   display: none;
-  
+  margin-right: rem-calc(15);
+
   li { display: inline-block; }
 } // applied filters
 
@@ -442,9 +433,10 @@
 }
 
 .applied-tag label {
+  color: $black-60;
   display: inline-block;
-  font-size: rem-calc(12);
-  margin-right: rem-calc(5);
+  font-size: rem-calc(11);
+  margin-left: rem-calc(5);
   text-transform: uppercase;
 
   &:before {
@@ -453,6 +445,9 @@
     color: $white;
     content: 'x';
     font-size: rem-calc(8);
-    padding: rem-calc(3 5);
+    padding: rem-calc(2 4);
+    vertical-align: middle;
   }
+
+  &:hover { @include opacity(.9); }
 }

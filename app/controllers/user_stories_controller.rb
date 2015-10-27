@@ -27,7 +27,7 @@ class UserStoriesController < ApplicationController
 
   def update
     respond_to do |format|
-      @user_story.update_attributes(user_story_params)
+      @user_story.update_attributes(story_update_params)
       format.json do
         json_update
       end
@@ -59,6 +59,12 @@ class UserStoriesController < ApplicationController
   end
 
   private
+
+  def story_update_params
+    params = user_story_params
+    params[:tag_ids] ||= []
+    params
+  end
 
   def export_content
     debug = params.key?('debug')
@@ -125,7 +131,7 @@ class UserStoriesController < ApplicationController
   def user_story_params
     params.require(:user_story).permit(
       :role, :action, :result, :estimated_points,
-      :priority, :hypothesis_id, :epic, tag_ids: []
+      :priority, :hypothesis_id, tag_ids: []
     )
   end
 
