@@ -22,7 +22,7 @@
               %span=user_story.result
             - if user_story.acceptance_criterions.any?
               %li.acceptance-criterions
-                .uppercase-subtitle= t('backlog.acceptance_criteria')
+                .uppercase-subtitle= t('backlog.acceptance_criterions')
                 - user_story.acceptance_criterions.each do |ac|
                   .description
                     = ac.description
