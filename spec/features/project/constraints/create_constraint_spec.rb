@@ -46,4 +46,17 @@ feature 'Create a new constraint' do
     find('input#save-constraint', visible: false).trigger('click')
     expect(page).to have_content("Description can't be blank")
   end
+
+  scenario 'should show constraints in correct order', js: true do
+    constraints = create_list :constraint, 2, user_story: user_story
+
+    visit current_path
+    find('.user-story').click
+    expect{ find('form#new_constraint') }.not_to become_eq nil
+    expect(
+      constraints.first.description
+    ).to appear_before(
+      constraints.second.description
+    )
+  end
 end
