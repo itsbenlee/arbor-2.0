@@ -1,3 +1,6 @@
+%script{src: "http://code.jquery.com/jquery-1.7.1.min.js"}
+%script{src: "//api.trello.com/1/client.js?key=#{ENV['TRELLO_DEVELOPER_PUBLIC_KEY']}"}
+
 - content_for :top_links do
   = link_to '#', class: "nav-links" do
     = image_tag('icons/search-icon.svg', class: 'icon')
@@ -18,6 +21,8 @@
   %ul#drop1.f-dropdown{"aria-hidden" => "true", "data-dropdown-content" => "", :tabindex => "-1"}
     %li#pdf_export_link
       = link_to t('pdf.export'), project_backlog_export_path(@project, format: :pdf)
+    %li#trello_export_link
+      = link_to t('trello.export'), '#'
 %section.backlog.row{ data: { project_id: @project.id } }
   .user-stories-preloader.small-12.medium-5.columns
     = image_tag 'preloader.gif'
