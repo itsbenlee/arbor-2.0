@@ -169,7 +169,7 @@ function UserStories() {
     $userStoriesContainer.show();
   }
 
-  function refreshBacklog() {
+  function refreshBacklog(editUrl) {
     $.get('backlog', function(backlogHTML) {
       $userStoriesContainer.html('');
       $userStoriesContainer.html(backlogHTML);
@@ -182,6 +182,10 @@ function UserStories() {
       bindSubmitTag();
       showBacklog();
       bindRemoveTag();
+      if (editUrl !== undefined) {
+        $userStoriesOnList.removeClass('selected');
+        $("[data-url='" + editUrl + "']").addClass('selected');
+      }
     });
   }
 
@@ -194,8 +198,8 @@ function UserStories() {
       data: currentObject,
       success: function (response) {
         if(response.success) {
-          refreshBacklog();
-          editUrl = response.data.edit_url
+          editUrl = response.data.edit_url;
+          refreshBacklog(editUrl);
           displayStoryForm(editUrl);
         }
       },
