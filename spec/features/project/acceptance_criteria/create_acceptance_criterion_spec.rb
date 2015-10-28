@@ -48,4 +48,17 @@ feature 'Create a new acceptance criterion' do
     find('input#save-acceptance-criterion', visible: false).trigger('click')
     expect(page).to have_content("Description can't be blank")
   end
+
+  scenario 'should show acceptance criterions in correct order', js: true do
+    acs = create_list :acceptance_criterion, 2, user_story: user_story
+
+    visit current_path
+    find('.user-story').click
+    expect{ find('form#new_acceptance_criterion') }.not_to become_eq nil
+    expect(
+      acs.first.description
+    ).to appear_before(
+      acs.second.description
+    )
+  end
 end
