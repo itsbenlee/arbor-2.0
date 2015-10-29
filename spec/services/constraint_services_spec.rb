@@ -36,3 +36,18 @@ feature 'update constraint' do
     expect(response.data[:edit_url]).to eq(edit_user_story_path(user_story))
   end
 end
+
+feature 'delete constraint' do
+  let(:user_story)         { create :user_story }
+  let(:constraint_service) { ConstraintServices.new(user_story) }
+  let(:constraint) {
+    create :constraint,
+    user_story: user_story
+  }
+
+  scenario 'should load the response with user story edit url' do
+    response = constraint_service.delete_constraint(constraint)
+    expect(response.success).to eq(true)
+    expect(response.data[:edit_url]).to eq(edit_user_story_path(user_story))
+  end
+end

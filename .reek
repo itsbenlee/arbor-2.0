@@ -67,7 +67,10 @@ PrimaDonnaMethod:
   exclude: []
 RepeatedConditional:
   enabled: true
-  exclude: []
+  exclude: [
+    'AcceptanceCriterionsController',
+    'ConstraintsController'
+  ]
   max_ifs: 2
 TooManyInstanceVariables:
   enabled: true

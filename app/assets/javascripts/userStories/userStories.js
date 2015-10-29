@@ -132,6 +132,8 @@ function UserStories() {
       bindTagCheckboxes();
       bindNewTag();
       refreshStories();
+      bindAcceptanceCriterionFadeOut();
+      bindConstraintFadeOut();
     });
   }
 
@@ -341,6 +343,18 @@ function UserStories() {
       $editForm.submit();
     });
   }
+
+  function bindConstraintFadeOut() {
+    $('a#delete_constraint').bind('ajax:success', function() {
+      $(this).parents('.delete-constraint-edit').fadeOut();
+    });
+  }
+
+  function bindAcceptanceCriterionFadeOut() {
+    $('a#delete_acceptance_criterion').bind('ajax:success', function() {
+      $(this).parents('.delete-acceptance-criterion-edit').fadeOut();
+    });
+  }
 }
 
 fullWidthForm();
@@ -487,3 +501,4 @@ function dynamicInput() {
     });
   })($);
 }
+

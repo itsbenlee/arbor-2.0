@@ -47,13 +47,16 @@ Railsroot::Application.routes.draw do
     get '/backlog', controller: :projects, action: :backlog
     resources :attachments, only: [:index, :create]
 
-    post '/copy', contoller: :projects, action: :copy
+    post '/copy', controller: :projects, action: :copy
   end
 
   resources :hypotheses, only: [:destroy] do
     resources :goals, only: [:create]
     get '/user_stories', controller: :hypotheses, action: :list_stories
   end
+
+  resources :constraints, only: :destroy
+  resources :acceptance_criterions, only: :destroy
 
   post 'user_stories/copy', controller: :user_stories, action: :copy
   resources :goals, only: [:edit, :update, :destroy]
