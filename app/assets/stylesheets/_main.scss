@@ -17,6 +17,8 @@
 input,
 select { outline: 0; }
 
+.resizable-text-area { min-height: rem-calc(1.7); }
+
 .arbor-logo {
   margin: rem-calc(60) auto rem-calc(45);
   width: rem-calc(130);
