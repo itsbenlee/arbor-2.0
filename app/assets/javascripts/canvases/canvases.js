@@ -24,6 +24,13 @@ function Canvases() {
     $('.' + type + '-field.canvas-fields').show();
   }
 
+  $canvasTextarea.bind('keypress', function(e) {
+    if(e.keyCode === 13) {
+       $(this.form).submit();
+       return false;
+    }
+  })
+
   function setVisited(type) {
     $canvasLinks.each(function(index, canvasItem) {
       var item = $(this);
