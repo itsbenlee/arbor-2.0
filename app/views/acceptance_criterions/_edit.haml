@@ -1,1 +1,3 @@
-= render 'acceptance_criterions/form', criterion: acceptance_criterion
+.delete-acceptance-criterion-edit
+  = render 'acceptance_criterions/form', criterion: acceptance_criterion
+  = link_to 'Delete', acceptance_criterion_path(acceptance_criterion), class: 'delete-acceptance-criterion', method: :delete, remote: true, id: 'delete_acceptance_criterion'

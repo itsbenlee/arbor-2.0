@@ -29,6 +29,17 @@ class AcceptanceCriterionServices
     @common_response
   end
 
+  def delete_acceptance_criterion(acceptance_criterion)
+    if acceptance_criterion.delete
+      @common_response.data[:edit_url] =
+      @route_helper.edit_user_story_path(@user_story)
+    else
+      @common_response.success = false
+      @common_response.errors += acceptance_criterion.errors.full_messages
+    end
+    @common_response
+  end
+
   private
 
   def assign_common_response(acceptance_criterion)

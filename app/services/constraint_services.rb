@@ -29,6 +29,17 @@ class ConstraintServices
     @common_response
   end
 
+  def delete_constraint(constraint)
+    if constraint.delete
+      @common_response.data[:edit_url] =
+        @route_helper.edit_user_story_path(@user_story)
+    else
+      @common_response.success = false
+      @common_response.errors += constraint.errors.full_messages
+    end
+    @common_response
+  end
+
   private
 
   def assign_common_response(constraint)

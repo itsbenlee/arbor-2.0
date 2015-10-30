@@ -37,3 +37,19 @@ feature 'update acceptance criterion' do
     expect(response.data[:edit_url]).to eq(edit_user_story_path(user_story))
   end
 end
+
+feature 'delete acceptance criterion' do
+  let(:user_story)           { create :user_story }
+  let(:criterion_service)    { AcceptanceCriterionServices.new(user_story) }
+  let(:acceptance_criterion) {
+    create :acceptance_criterion,
+    user_story: user_story
+  }
+
+  scenario 'should load the response with user story edit url' do
+    response = criterion_service.delete_acceptance_criterion(acceptance_criterion)
+
+    expect(response.success).to eq(true)
+    expect(response.data[:edit_url]).to eq(edit_user_story_path(user_story))
+  end
+end
