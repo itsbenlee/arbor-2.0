@@ -266,69 +266,94 @@
       margin-top: rem-calc(30);
       padding-top: rem-calc(20);
     }
-
-    .edit-backlog-inputs { padding-left: rem-calc(15); }
-
-    .constraint-input,
-    .backlog-placeholder {
-      padding-left: 0;
-      width: 90%;
-    }
-
-    .acceptance-criterion-form,
-    .constraint-form {
-      margin-bottom: rem-calc(5);
-
-      form { position: relative; }
-
-      input {
-        color: $secondary-color;
-        font-size: rem-calc(14);
-        padding-left: 0;
-        @include input-placeholder { font-style: italic; };
-      }
-
-      textarea {
-        background-color: $white;
-        border: 0;
-        color: $black-90;
-        display: inline-block;
-        font-size: rem-calc(14);
-        line-height: 1.4;
-        margin-bottom: 0;
-        padding: 0;
-        resize: none;
-      }
-
-      .edit-constraint input {
-        line-height: 1;
-        width: auto;
-      }
-
-      .bullet::before {
-        color: $lab-color;
-        content: '\2022';
-        font-size: rem-calc(30);
-        left: rem-calc(-15);
-        margin-right: rem-calc(5);
-        position: absolute;
-        top: rem-calc(-2);
-      }
-    } // acceptance criteria
-
-    .criterion-group {
-      border-top: 1px solid $black-10;
-      clear: both;
-      color: $black-30;
-      font-size: rem-calc(12);
-      margin-top: rem-calc(15);
-      padding-top: rem-calc(20);
-      text-transform: uppercase;
-      width: 100%;
-    }
-
-    .estimation { padding-right: rem-calc(15); }
   } // user story edit form
+
+  .edit-backlog-inputs:hover .icon-trash { @include opacity(1); }
+
+  .edit-backlog-inputs {
+    padding-left: rem-calc(15);
+    position: relative;
+
+    a {
+      .icon-trash {
+        @include opacity(0);
+        @include transition(color .25s ease-in, opacity .25s ease-in);
+        position: absolute;
+        right: 0;
+        top: rem-calc(1);
+        z-index: 99;
+      }
+
+      &:hover {
+        .icon-trash { color: $canvas-color; }
+
+        + form .bullet::before { color: $canvas-color; }
+        + form .backlog-placeholder { color: $canvas-color; }
+      }
+    }
+  }
+
+  .constraint-input,
+  .backlog-placeholder {
+    @include transition(color .25s ease-in);
+    padding-left: 0;
+    width: 90%;
+  }
+
+  .acceptance-criterion-form,
+  .constraint-form {
+    margin-bottom: rem-calc(5);
+
+    form { position: relative; }
+
+    input {
+      color: $secondary-color;
+      font-size: rem-calc(14);
+      padding-left: 0;
+      @include input-placeholder { font-style: italic; };
+    }
+
+    textarea {
+      background-color: $white;
+      border: 0;
+      color: $black-90;
+      display: inline-block;
+      font-size: rem-calc(14);
+      line-height: 1.4;
+      margin-bottom: 0;
+      padding: 0;
+      resize: none;
+    }
+
+    .edit-constraint input {
+      line-height: 1;
+      width: auto;
+    }
+
+    .bullet::before {
+      @include transition(color .25s ease-in);
+      color: $lab-color;
+      content: '\2022';
+      font-size: rem-calc(30);
+      left: rem-calc(-15);
+      margin-right: rem-calc(5);
+      position: absolute;
+      top: rem-calc(-2);
+    }
+  } // acceptance criteria
+
+  .criterion-group {
+    border-top: 1px solid $black-10;
+    clear: both;
+    color: $black-30;
+    font-size: rem-calc(12);
+    margin-top: rem-calc(15);
+    padding-top: rem-calc(20);
+    text-transform: uppercase;
+    width: 100%;
+  }
+
+  .estimation { padding-right: rem-calc(15); }
 } // backlog
 
 .backlog-placeholder {
