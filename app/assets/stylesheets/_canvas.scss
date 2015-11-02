@@ -49,6 +49,8 @@
     } // canvas ul
   } // left wrapper
 
+  .segment-field { @include input-placeholder { font-style: italic; }; }
+
   .right-content-wrapper {
     padding-left: rem-calc(40);
 
@@ -68,6 +70,8 @@
     textarea {
       @include transition(box-shadow .25s, ease-in, height .15s, ease-in);
       @include border-radius($global-radius);
+      background-color: $white;
+      border-color: $white;
       font-size: rem-calc(14);
       max-height: rem-calc(520);
       min-height: rem-calc(50);
