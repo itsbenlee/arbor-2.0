@@ -80,7 +80,18 @@
       &:focus {
         @include box-shadow(0 0 5px 0 $success-color);
         border-color: $success-color;
+
+        + .enter { display: block; }
       }
+    }
+
+    .enter {
+      color: $font-color-3;
+      display: none;
+      font-size: rem-calc(10);
+      font-weight: $font-weight-normal;
+      margin-bottom: rem-calc(15);
+      text-align: right;
     }
   } // right content
 } // canvas
