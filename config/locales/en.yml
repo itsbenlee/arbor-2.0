@@ -80,6 +80,7 @@ en:
       Are you sure you want to continue?
   backlog:
     filter: 'Type to filter by tags'
+    total_points: 'Total Points'
     user_stories:
       enter_role: "<type of user>"
       enter_action: "<some function>"
