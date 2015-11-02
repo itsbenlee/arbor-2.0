@@ -106,7 +106,7 @@ en:
       destination_project: "Select destination project"
     story_span: "Story"
     logout: "Sign out"
-    acceptance_criteria: "Acceptance Criteria"
+    acceptance_criterions: "Acceptance Criteria"
     constraints: "Constraints"
     tags: 'Tags'
   attachment:
