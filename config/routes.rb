@@ -45,7 +45,7 @@ Railsroot::Application.routes.draw do
       as: :user_stories_order
 
     get '/backlog', controller: :projects, action: :backlog
-    resources :attachments, only: [:index, :create]
+    resources :attachments, only: [:index, :create, :destroy]
 
     post '/copy', controller: :projects, action: :copy
   end
