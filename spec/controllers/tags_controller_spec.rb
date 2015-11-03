@@ -35,7 +35,9 @@ RSpec.describe TagsController, type: :controller do
 
       hash_response = JSON.parse(response.body)
       expect(hash_response['success']).to be_truthy
-      expect(hash_response['data']['tags']).to eq([tag.name, another_tag.name ])
+      expect(
+        (hash_response['data']['tags'] - [tag.name, another_tag.name]).empty?
+      ).to be_truthy
     end
   end
 

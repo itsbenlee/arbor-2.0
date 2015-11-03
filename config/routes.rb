@@ -11,14 +11,23 @@ Railsroot::Application.routes.draw do
 
   resources :projects, shallow: true do
     get 'log', on: :member
-    resources :hypotheses, only: [:index, :create, :update]
-    resources :canvases, only: [:index, :create]
+    resources :lab,
+      only: [:index, :create, :update],
+      as: :hypotheses,
+      controller: :hypotheses
+    resources :canvas,
+      only: [:index, :create],
+      as: :canvases,
+      controller: :canvases
     put 'user_stories/order',
         controller: :projects,
         action: :order_stories,
         as: :reorder_backlog
 
-    resources :user_stories, except: [:show, :new] do
+    resources :backlog,
+        except: [:show, :new],
+        as: :user_stories,
+        controller: :user_stories do
       resources :acceptance_criterions, only: [:create, :update]
       resources :constraints, only: [:create, :update]
       resources :tags, only: [:create, :index]
@@ -44,13 +53,16 @@ Railsroot::Application.routes.draw do
       action: :update_order,
       as: :user_stories_order
 
-    get '/backlog', controller: :projects, action: :backlog
+    get '/list_backlog', controller: :projects, action: :backlog
     resources :attachments, only: [:index, :create, :destroy]
 
     post '/copy', controller: :projects, action: :copy
   end
 
-  resources :hypotheses, only: [:destroy] do
+  resources :lab,
+    only: [:destroy],
+    as: :hypotheses,
+    controller: :hypotheses do
     resources :goals, only: [:create]
     get '/user_stories', controller: :hypotheses, action: :list_stories
   end
