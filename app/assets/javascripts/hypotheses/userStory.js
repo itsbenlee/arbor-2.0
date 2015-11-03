@@ -88,7 +88,11 @@ function UserStory() {
         bindUserStoriesSortEvent();
 
         //iterate over actions and set the size of the containers to fit their content
-        var elementsThatNeedWidthFixes = ['.action#user_story_action', '.result#user_story_result'];
+        var elementsThatNeedWidthFixes = [
+          '.action#user_story_action',
+          '.result#user_story_result',
+          '.role#user_story_role'
+        ];
         fixInputWidths(elementsThatNeedWidthFixes);
 
 
