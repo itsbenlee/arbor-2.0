@@ -27,7 +27,7 @@ class TrelloServices
     @project.user_stories.each do |user_story|
       new_card_name =
         "[#{user_story.story_number}] "\
-        "(#{user_story.estimated_points}) #{user_story.log_description}"
+        "(#{user_story.points_for_trello}) #{user_story.log_description}"
       new_card = Trello::Card.create(name: new_card_name, list_id: list.id)
 
       create_acceptance_criterions_checklist(user_story, new_card)

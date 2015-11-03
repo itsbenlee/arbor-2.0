@@ -44,6 +44,10 @@ class UserStory < ActiveRecord::Base
     project
   end
 
+  def points_for_trello
+    estimated_points.present? ? estimated_points : '*'
+  end
+
   def copy_in_project(new_id, new_hypothesis_id)
     replica =
       UserStory.new(role: role,
