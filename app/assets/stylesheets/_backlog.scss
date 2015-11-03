@@ -22,11 +22,13 @@
     ul {
       font-size: rem-calc(14);
       overflow: hidden;
+
+      &:last-child { border-bottom: 1px solid $black-10; }
     }
 
     .user-story {
       @include transition(background-color .25s ease-in);
-      border-bottom: 1px solid $black-10;
+      border-top: 1px solid $black-10;
       cursor: pointer;
       padding: rem-calc(20 45 20 15);
       position: relative;
@@ -472,3 +474,23 @@
 
   &:hover { @include opacity(.9); }
 }
+
+// --------------------------------------------------------
+//  TOTAL STORY POINTS
+// --------------------------------------------------------
+
+.total-points {
+  color: $lab-color;
+  font-size: rem-calc(14);
+  font-weight: $font-weight-bold;
+  padding: rem-calc(10 0 10 15);
+  text-transform: uppercase;
+
+  p {
+    color: $black;
+    display: inline-block;
+    font-size: rem-calc(13);
+    font-weight: $font-weight-bold;
+    margin-bottom: 0;
+  }
+} // total points
