@@ -60,4 +60,12 @@ RSpec.describe UserStory do
       expect(next_story.story_number).to eq 3
     end
   end
+
+  describe 'fibonacci series' do
+    it 'should only list the first 7 fibonacci numbers for estimation' do
+      numbers = UserStory.estimation_series
+      expect(numbers.count).to eq 8
+      expect(numbers).to eq [nil, 1, 2, 3, 5, 8, 13, 21]
+    end
+  end
 end

@@ -14,7 +14,7 @@
             = link_to user_story_path(user_story), title: t('backlog.user_stories.delete'), class: 'trash-btn center-icon delete-story', method: :delete do
               %span.icon-trash
           %span.icon-arrow.down{ title: t('backlog.user_stories.rearrange') }
-        .custom-checkbox.copy-story-check-box
+        .copy-story-check-box
           = check_box_tag "user_story_#{user_story.id}", user_story.id
           %label{ for: "user_story_#{user_story.id}" }
         .number

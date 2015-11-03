@@ -38,3 +38,5 @@
         = yield
     = javascript_include_tag 'application'
     = content_for :custom_js
+    - if ENV['USE_GOOGLE_ANALYTICS'] == 'true'
+      = render 'layouts/google_analytics'

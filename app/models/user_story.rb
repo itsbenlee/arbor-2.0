@@ -11,8 +11,10 @@ class UserStory < ActiveRecord::Base
   after_create :update_next_story_number
 
   has_and_belongs_to_many :tags
-  has_many :acceptance_criterions, dependent: :destroy
-  has_many :constraints, dependent: :destroy
+  has_many :acceptance_criterions,
+    -> { order(created_at: :asc) }, dependent: :destroy
+  has_many :constraints,
+    -> { order(created_at: :asc) }, dependent: :destroy
   belongs_to :hypothesis
   belongs_to :project
 
@@ -22,7 +24,7 @@ class UserStory < ActiveRecord::Base
 
   def self.estimation_series
     fib = ->(arg) { arg < 2 ? arg : fib[arg - 1] + fib[arg - 2] }
-    (2..12).map { |index| fib[index] }.unshift([nil])
+    (2..8).map { |index| fib[index] }.unshift([nil]).flatten
   end
 
   def log_description

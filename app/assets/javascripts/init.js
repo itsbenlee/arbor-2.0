@@ -185,5 +185,10 @@ $('.hypothesis input')
 
 $(document).ready(function() {
   UTIL.init();
-});
 
+  if ($('.alert-box').is(':visible')) {
+    setTimeout(function () {
+      $('.alert-box').fadeOut();
+    }, 2000);
+  }//if alert box is visible
+});

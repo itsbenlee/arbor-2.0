@@ -267,6 +267,8 @@
       padding-top: rem-calc(20);
     }
 
+    .edit-backlog-inputs { padding-left: rem-calc(15); }
+
     .constraint-input,
     .backlog-placeholder {
       padding-left: 0;
@@ -275,13 +277,27 @@
 
     .acceptance-criterion-form,
     .constraint-form {
-      margin-bottom: rem-calc(20);
+      margin-bottom: rem-calc(5);
+
+      form { position: relative; }
 
       input {
         color: $secondary-color;
         font-size: rem-calc(14);
         padding-left: 0;
         @include input-placeholder { font-style: italic; };
+      }
+
+      textarea {
+        background-color: $white;
+        border: 0;
+        color: $black-90;
+        display: inline-block;
+        font-size: rem-calc(14);
+        line-height: 1.4;
+        margin-bottom: 0;
+        padding: 0;
+        resize: none;
       }
 
       .edit-constraint input {
@@ -293,8 +309,10 @@
         color: $lab-color;
         content: '\2022';
         font-size: rem-calc(30);
+        left: rem-calc(-15);
         margin-right: rem-calc(5);
-        vertical-align: middle;
+        position: absolute;
+        top: rem-calc(-2);
       }
     } // acceptance criteria
 
@@ -314,12 +332,15 @@
 } // backlog
 
 .backlog-placeholder {
-  color: $black-40;
-  font-size: rem-calc(16);
   margin-bottom: rem-calc(20);
   padding-left: 0;
 
-  @include input-placeholder { font-style: italic; };
+  @include input-placeholder {
+    color: $black-40;
+    font-size: rem-calc(15);
+    font-style: italic;
+    padding: rem-calc(5 0);
+  };
 } // backlog placeholders
 
 .user-story-component-error { display: none; }

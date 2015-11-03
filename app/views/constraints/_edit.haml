@@ -1,1 +1,3 @@
-= render 'constraints/form', constraint: constraint
+.delete-constraint-edit.edit-backlog-inputs
+  = render 'constraints/form', constraint: constraint
+  = link_to 'Delete', constraint_path(constraint), class: 'delete-constraint', method: :delete, remote: true, id: 'delete_constraint'

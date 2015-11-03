@@ -151,7 +151,7 @@ feature 'Copy project', js: true do
     end
 
     within 'form.edit_constraint' do
-      expect(find('input.constraint-input').value).to have_text(constraint.description)
+      expect(find('textarea.constraint-input').value).to have_text(constraint.description)
     end
   end
 
@@ -174,7 +174,7 @@ feature 'Copy project', js: true do
     end
 
     within 'form.edit_acceptance_criterion' do
-      expect(find('input#acceptance_criterion_description').value).to have_text(criterion.description)
+      expect(find('textarea#acceptance_criterion_description').value).to have_text(criterion.description)
     end
   end
 end

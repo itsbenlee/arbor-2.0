@@ -132,6 +132,8 @@ function UserStories() {
       bindTagCheckboxes();
       bindNewTag();
       refreshStories();
+      bindAcceptanceCriterionFadeOut();
+      bindConstraintFadeOut();
     });
   }
 
@@ -169,7 +171,7 @@ function UserStories() {
     $userStoriesContainer.show();
   }
 
-  function refreshBacklog() {
+  function refreshBacklog(editUrl) {
     $.get('backlog', function(backlogHTML) {
       $userStoriesContainer.html('');
       $userStoriesContainer.html(backlogHTML);
@@ -182,6 +184,10 @@ function UserStories() {
       bindSubmitTag();
       showBacklog();
       bindRemoveTag();
+      if (editUrl !== undefined) {
+        $userStoriesOnList.removeClass('selected');
+        $("[data-url='" + editUrl + "']").addClass('selected');
+      }
     });
   }
 
@@ -194,8 +200,8 @@ function UserStories() {
       data: currentObject,
       success: function (response) {
         if(response.success) {
-          refreshBacklog();
-          editUrl = response.data.edit_url
+          editUrl = response.data.edit_url;
+          refreshBacklog(editUrl);
           displayStoryForm(editUrl);
         }
       },
@@ -335,6 +341,18 @@ function UserStories() {
     $('.user-story-tag').change(function() {
       var $editForm = $(this).parent();
       $editForm.submit();
+    });
+  }
+
+  function bindConstraintFadeOut() {
+    $('a#delete_constraint').bind('ajax:success', function() {
+      $(this).parents('.delete-constraint-edit').fadeOut();
+    });
+  }
+
+  function bindAcceptanceCriterionFadeOut() {
+    $('a#delete_acceptance_criterion').bind('ajax:success', function() {
+      $(this).parents('.delete-acceptance-criterion-edit').fadeOut();
     });
   }
 }
@@ -483,3 +501,4 @@ function dynamicInput() {
     });
   })($);
 }
+

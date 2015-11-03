@@ -46,4 +46,20 @@ RSpec.describe ConstraintsController do
       expect(hash_response['data']['edit_url']).to eq(edit_user_story_path(user_story))
     end
   end
+
+  describe 'DELETE destroy' do
+    let!(:constraint) { create :constraint, user_story: user_story }
+
+    it 'sends a success response with the edit url' do
+      request.env['HTTP_REFERER'] = project_user_stories_path(project.id)
+      delete :destroy, id: constraint.id
+
+      expect(Constraint.exists? constraint.id).to be_falsy
+      user_story = constraint.user_story
+      hash_response = JSON.parse(response.body)
+
+      expect(hash_response['success']).to eq(true)
+      expect(hash_response['data']['edit_url']).to eq(edit_user_story_path(user_story))
+    end
+  end
 end
