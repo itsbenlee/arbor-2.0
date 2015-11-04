@@ -462,6 +462,8 @@
   .ui-menu-item:hover { color: $black-90; }
 }
 
+.ui-helper-hidden-accessible { display: none; }
+
 .applied-filters {
   display: none;
   margin-right: rem-calc(15);
@@ -492,9 +494,12 @@
     background-color: $black-30;
     color: $white;
     content: 'x';
+    display: inline-block;
     font-size: rem-calc(8);
+    height: rem-calc(14);
+    margin-right: rem-calc(3);
     padding: rem-calc(2 4);
-    vertical-align: middle;
+    vertical-align: top;
   }
 
   &:hover { @include opacity(.9); }
