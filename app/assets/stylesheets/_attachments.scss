@@ -90,7 +90,7 @@
   }
 
   .link-info {
-    padding: rem-calc(15 0);
+    padding: rem-calc(10 0);
 
     .attachment-content {
       @include ellipsis;
@@ -115,4 +115,15 @@
       } // user name
     } // activity info
   } // link info
+
+  #delete-attachment {
+    @include transition(color .25s ease-in);
+    background: none;
+    border: 0;
+    color: $black-30;
+    margin: rem-calc(5 0 0);
+    padding: 0;
+
+    &:hover { color: $canvas-color; }
+  }
 } // attachments view
