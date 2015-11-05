@@ -431,12 +431,18 @@ function dynamicInput() {
       $('body').append(this._mirror);
 
       this._input.on('keydown keyup input propertychange change', function(e) {
+        //mock html5 validation if safari, Ale
+        if(is_safari && e.keyCode === 13 ) {
+          preSubmitForm(this);
+        }
+
         _this.update();
       });
 
       (function () {
         _this.update();
       })();
+
     }
 
     AutosizeInput.prototype.getOptions = function() {
@@ -502,3 +508,20 @@ function dynamicInput() {
   })($);
 }
 
+// html5 validation copycat, Ale
+function preSubmitForm(obj) {
+  var requiredFields = $('#'+obj.form.id).find('select, textarea, input').serializeArray();
+      isItOk = true;
+      message = 'Please complete all the fields';
+
+  $.each(requiredFields, function(i, field) {
+    if (!field.value)
+      isItOk = false;
+  });
+
+  if (isItOk) {
+    $(obj.form).submit();
+  } else {
+    alert(message);
+  }
+}
