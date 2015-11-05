@@ -18,3 +18,5 @@
 //= require userStories/userStories
 //= require_tree ./vendor
 //= require_tree ./attachments
+
+var is_safari = navigator.userAgent.indexOf('Safari') > -1;
