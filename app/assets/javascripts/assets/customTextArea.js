@@ -17,5 +17,5 @@ function CustomTextArea() {
       resizeTextarea(this);
       return false;
     }
-  })
+  });
 }
