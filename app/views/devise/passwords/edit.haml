@@ -2,19 +2,19 @@
   .arbor-logo
     = image_tag('arbor-logo.svg')
   .large-6.large-centered.columns.reset-form
-    %h2= t('login.recover_password.change')
+    %h2= t('recover_password.change')
     = form_for(resource, as: resource_name, url: password_path(resource_name),
     html: { method: :put }) do |f|
       = devise_error_messages!
       = f.hidden_field :reset_password_token
       .field
         - if @minimum_password_length
-          %span.password-length (#{@minimum_password_length} characters minimum)
+          %span.password-information (#{@minimum_password_length} characters minimum)
       .field.password-new
         = image_tag('icons/password-icon.svg', class: 'icon')
-        = f.password_field :password, placeholder: t('login.recover_password.password'), class: 'with-icon radius login', autocomplete: 'off', required: true
+        = f.password_field :password, placeholder: t('recover_password.password'), class: 'with-icon radius login', autocomplete: 'off', required: true
       .field
         = image_tag('icons/password-icon.svg', class: 'icon')
-        = f.password_field :password, placeholder: t('login.recover_password.confirm_password'), class: 'with-icon radius login', autocomplete: 'off', required: true
+        = f.password_field :password, placeholder: t('recover_password.confirm_password'), class: 'with-icon radius login', autocomplete: 'off', required: true
       .actions
-        = f.submit t('login.recover_password.submit'), class: 'button radius success small'
+        = f.submit t('recover_password.submit'), class: 'button radius success small'
