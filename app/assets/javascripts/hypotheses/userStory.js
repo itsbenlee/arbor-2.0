@@ -52,6 +52,10 @@ function UserStory() {
       var updatedHypothesis = $userStoriesList.filter('[data-hypothesis-id='+
         hypothesisId +']');
 
+      $.each(updatedHypothesis.children(), function() {
+        $(this).children('.edit-story').find("input[name='user_story[hypothesis_id]']").val(hypothesisId);
+      });
+
       newOrder.hypotheses.push(setHypothesisObject(updatedHypothesis));
     });
 
