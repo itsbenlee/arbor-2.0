@@ -287,10 +287,10 @@
       }
 
       &:hover {
-        .icon-trash { color: $canvas-color; }
+        .icon-trash { color: $black-40; }
 
-        + form .bullet::before { color: $canvas-color; }
-        + form .backlog-placeholder { color: $canvas-color; }
+        + form .bullet::before { color: $black-40; }
+        + form .backlog-placeholder { color: $black-40; }
       }
     }
   }
