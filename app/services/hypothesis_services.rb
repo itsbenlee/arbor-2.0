@@ -21,7 +21,6 @@ class HypothesisServices
         .find(hypothesis_hash['id'])
         .reorder_user_stories(hypothesis_hash['stories'])
     end
-
     response
   end
 

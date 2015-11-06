@@ -80,11 +80,12 @@ en:
       Are you sure you want to continue?
   backlog:
     filter: 'Type to filter by tags'
+    total_points: 'Total Points'
     user_stories:
       enter_role: "<type of user>"
       enter_action: "<some function>"
       enter_result: "<some benefit>"
-      role: "As a"
+      role: "As a/an"
       action_prefix: "I"
       action_suffix: "be able to"
       action: "I %{priority} be able to"

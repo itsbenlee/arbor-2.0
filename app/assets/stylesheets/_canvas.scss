@@ -64,18 +64,22 @@
 
     label {
       cursor: text;
+      font-weight: $font-weight-bold;
       margin-bottom: rem-calc(15);
     }
 
     textarea {
       @include transition(box-shadow .25s, ease-in, height .15s, ease-in);
       @include border-radius($global-radius);
-      background-color: $white;
-      border-color: $white;
+      background-color: $white;  
+      border: $white;
       font-size: rem-calc(14);
       max-height: rem-calc(520);
       min-height: rem-calc(50);
       resize: none;
+      @include input-placeholder { font-style: italic; };
+
+      &:empty { border: 1px solid $black-20; }
 
       &:focus {
         @include box-shadow(0 0 5px 0 $success-color);
@@ -83,7 +87,7 @@
 
         + .enter { display: block; }
       }
-    }
+    } // textarea
 
     .enter {
       color: $font-color-3;

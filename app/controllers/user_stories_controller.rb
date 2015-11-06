@@ -8,6 +8,8 @@ class UserStoriesController < ApplicationController
 
   def index
     @user_story = UserStory.new
+    @total_points =
+      UserStory.total_points(@project.user_stories)
   end
 
   def edit

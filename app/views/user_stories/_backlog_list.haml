@@ -2,6 +2,9 @@
   %input{ type: 'text', placeholder: t('backlog.filter'), id: 'stories-filter', data: { project_id: project.id } }
 .story-tags.applied-filters{ id: 'tag-list'}
   = render 'tags/list'
+.total-points
+  = total_points
+  %p= t('backlog.total_points')
 .user-stories
   - user_stories.each do |user_story|
     %ul.user-story-list{ data: { url: project_reorder_backlog_path(project) } }

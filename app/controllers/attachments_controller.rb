@@ -1,9 +1,9 @@
 class AttachmentsController < ApplicationController
   ATTACHMENT_TYPES = [LinkAttachment, FileAttachment]
-  before_action :set_project
+  before_action :set_project, only: [:index, :create, :destroy]
+  before_action :load_attachment, only: [:destroy]
 
   def index
-    @project = Project.find(params[:project_id])
     @attachment = Attachment.new(project: @project)
   end
 
@@ -15,6 +15,11 @@ class AttachmentsController < ApplicationController
     else
       render :index
     end
+  end
+
+  def destroy
+    @project.attachments.destroy(@attachment)
+    redirect_to project_attachments_path @project
   end
 
   private
@@ -55,5 +60,9 @@ class AttachmentsController < ApplicationController
 
   def attachment_type_service
     "#{attachment_type}Services".constantize if attachment_type
+  end
+
+  def load_attachment
+    @attachment = Attachment.find(params['id'])
   end
 end

@@ -12,3 +12,5 @@
         - else
           = t('deleted_user')
       = attachment.created_at.to_formatted_s(:short)
+      = button_to attachment_path(attachment), method: 'delete', params: {project_id: project.id}, id: 'delete-attachment' do
+        %span.icon-trash

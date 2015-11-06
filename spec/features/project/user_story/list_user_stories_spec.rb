@@ -70,6 +70,13 @@ feature 'List user stories' do
       end
     end
 
+    scenario 'should show the total story points' do
+      visit project_user_stories_path project
+      within '.user-stories-list-container' do
+        expect(page).to have_content('3 Total Points')
+      end
+    end
+
     scenario 'should show user story which does not belongs to a hypothesis',
       js: true do
       user_story = create :user_story, project: project, hypothesis: nil

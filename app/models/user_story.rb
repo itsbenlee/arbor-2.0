@@ -22,6 +22,10 @@ class UserStory < ActiveRecord::Base
 
   include AssociationLoggable
 
+  def self.total_points(user_stories)
+    user_stories.map(&:estimated_points).compact.sum
+  end
+
   def self.estimation_series
     fib = ->(arg) { arg < 2 ? arg : fib[arg - 1] + fib[arg - 2] }
     (2..8).map { |index| fib[index] }.unshift([nil]).flatten
@@ -38,6 +42,10 @@ class UserStory < ActiveRecord::Base
 
   def recipient
     project
+  end
+
+  def points_for_trello
+    estimated_points.present? ? estimated_points : '*'
   end
 
   def copy_in_project(new_id, new_hypothesis_id)

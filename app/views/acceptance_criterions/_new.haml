@@ -1,2 +1,3 @@
 .criterion-group= t('backlog.acceptance_criterions')
-= render 'acceptance_criterions/form', criterion: [user_story, AcceptanceCriterion.new]
+.new-criterion-field
+  = render 'acceptance_criterions/form', criterion: [user_story, AcceptanceCriterion.new]

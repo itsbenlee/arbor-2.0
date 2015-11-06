@@ -11,11 +11,11 @@ function CustomTextArea() {
     $(this).on('keyup input', function() { resizeTextarea(this); });
   });
 
-  $('.resizable-text-area').bind('keypress', function(e) {
+  $('.resizable-text-area').off('keypress').on('keypress', function(e) {
     if(e.keyCode === 13 ) {
       $(this.form).submit();
       resizeTextarea(this);
       return false;
     }
-  })
+  });
 }
