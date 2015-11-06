@@ -8,7 +8,7 @@ class CanvasesController < ApplicationController
 
   def create
     @canvas.update_attributes(canvas_params)
-    if env['HTTP_REFERER'].include? 'hypotheses'
+    if env['HTTP_REFERER'].include? 'lab'
       redirect_to :back
       return
     end

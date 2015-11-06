@@ -80,7 +80,7 @@ function UserStory() {
   }
 
   function refreshHypothesis(hypothesisId, userStoryId) {
-    $.get('/hypotheses/' + hypothesisId + '/user_stories',
+    $.get('/lab/' + hypothesisId + '/user_stories',
       function(storiesHTML) {
         var $storiesList = $('.stories-list[data-hypothesis-id=' +
               hypothesisId + ']');

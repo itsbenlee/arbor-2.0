@@ -172,7 +172,7 @@ function UserStories() {
   }
 
   function refreshBacklog(editUrl) {
-    $.get('backlog', function(backlogHTML) {
+    $.get('list_backlog', function(backlogHTML) {
       $userStoriesContainer.html('');
       $userStoriesContainer.html(backlogHTML);
       $userStoriesOnList = $('li.user-story');
