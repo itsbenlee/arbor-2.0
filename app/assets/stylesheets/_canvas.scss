@@ -71,7 +71,7 @@
     textarea {
       @include transition(box-shadow .25s, ease-in, height .15s, ease-in);
       @include border-radius($global-radius);
-      background-color: $white;  
+      background-color: $white;
       border: $white;
       font-size: rem-calc(14);
       max-height: rem-calc(520);
@@ -97,5 +97,7 @@
       margin-bottom: rem-calc(15);
       text-align: right;
     }
+
+    .resizable-text-area:hover { background-color: $black-10; }
   } // right content
 } // canvas
