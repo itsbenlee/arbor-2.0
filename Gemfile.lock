@@ -64,6 +64,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    acts_as_commentable (4.0.2)
     adamantium (0.2.0)
       ice_nine (~> 0.11.0)
       memoizable (~> 0.4.0)
@@ -413,6 +414,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_commentable
   better_errors
   binding_of_caller
   byebug

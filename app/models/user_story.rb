@@ -1,5 +1,6 @@
 class UserStory < ActiveRecord::Base
   PRIORITIES = %w(must should could would)
+  acts_as_commentable
 
   validates_presence_of :role, :action, :result
   validates_uniqueness_of :order, scope: :hypothesis_id, allow_nil: true
