@@ -13,9 +13,9 @@ class UserStory < ActiveRecord::Base
 
   has_and_belongs_to_many :tags
   has_many :acceptance_criterions,
-    -> { order(created_at: :asc) }, dependent: :destroy
+    -> { order(order: :asc) }, dependent: :destroy
   has_many :constraints,
-    -> { order(created_at: :asc) }, dependent: :destroy
+    -> { order(order: :asc) }, dependent: :destroy
   belongs_to :hypothesis
   belongs_to :project
 
@@ -65,6 +65,24 @@ class UserStory < ActiveRecord::Base
   def clean_log
     activities.delete_all
     [clean_criterions_log, clean_constraints_log].each(&:join)
+  end
+
+  def reorder_criterions(criterions_hash)
+    acceptance_criterions.update_all order: nil
+    criterions_hash.values.each do |criterion|
+      acceptance_criterions
+        .find(criterion['id'].to_i)
+        .update_attributes!(order: criterion['criterion_order'].to_i)
+    end
+  end
+
+  def reorder_constraints(constraints_hash)
+    constraints.update_all order: nil
+    constraints_hash.values.each do |constraint|
+      constraints
+        .find(constraint['id'].to_i)
+        .update_attributes!(order: constraint['constraint_order'].to_i)
+    end
   end
 
   private

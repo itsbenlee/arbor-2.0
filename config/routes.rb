@@ -74,5 +74,15 @@ Railsroot::Application.routes.draw do
   post 'user_stories/copy', controller: :user_stories, action: :copy
   resources :goals, only: [:edit, :update, :destroy]
 
+  put 'user_stories/order_criterions',
+      controller: :user_stories,
+      action: :reorder_criterions,
+      as: :reorder_criterions
+
+  put 'user_stories/order_constraints',
+      controller: :user_stories,
+      action: :reorder_constraints,
+      as: :reorder_constraints
+
   devise_for :users, controllers: { registrations: 'registrations' }
 end

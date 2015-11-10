@@ -84,7 +84,9 @@ TooManyStatements:
   enabled: true
   exclude: [
 
-    RegistrationsController#create
+    RegistrationsController#create,
+    AcceptanceCriterionServices#new_acceptance_criterion,
+    ConstraintServices#new_constraint
   ]
   max_statements: 6
 UncommunicativeMethodName:
@@ -132,5 +134,9 @@ UtilityFunction:
     ApplicationHelper#meta_description,
     ThumbnailUploader#default_link_url,
     ThumbnailUploader#default_file_url,
+    UserStory#reorder_criterions,
+    AcceptanceCriterionServices#get_order,
+    UserStory#reorder_constraints,
+    ConstraintServices#get_order
   ]
   max_helper_calls: 1
