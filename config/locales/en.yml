@@ -104,14 +104,15 @@ en:
       no_stories: "There are not stories selected to be copied."
       stories_copied: "The stories are copied successfully."
       new_tag: 'Create a new tag here'
-      new_comment: 'Leave a new comment here'
-      comment_user: "By %{user}"
+      new_comment: "Write a new comment here..."
+      comment_user: "%{user}"
       destination_project: "Select destination project"
     story_span: "Story"
     logout: "Sign out"
     acceptance_criterions: "Acceptance Criteria"
     constraints: "Constraints"
-    tags: 'Tags'
+    tags: "Tags"
+    comments: "Comments"
   canvas:
     textarea_placeholder: "Click here to enter text"
   attachment:
