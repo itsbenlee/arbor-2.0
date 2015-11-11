@@ -131,6 +131,7 @@ function UserStories() {
       bindEditConstraint();
       bindTagCheckboxes();
       bindNewTag();
+      bindNewComment();
       refreshStories();
       bindAcceptanceCriterionFadeOut();
       bindConstraintFadeOut();
@@ -245,6 +246,20 @@ function UserStories() {
       return false;
     });
   }
+
+  function bindNewComment() {
+    $newCommentForm = $('.new_comment');
+
+    $newCommentForm.submit(function() {
+      var url     = $(this).attr('action'),
+          type    = $(this).attr('method'),
+          comment = $(this).serialize();
+
+      editFormAjax(url, type, comment);
+      return false;
+    });
+  }
+
 
   function bindNewAcceptanceCriterion() {
     $newCriterionForm = $('.new_acceptance_criterion');

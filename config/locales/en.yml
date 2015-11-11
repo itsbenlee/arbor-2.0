@@ -104,6 +104,8 @@ en:
       no_stories: "There are not stories selected to be copied."
       stories_copied: "The stories are copied successfully."
       new_tag: 'Create a new tag here'
+      new_comment: 'Leave a new comment here'
+      comment_user: "By %{user}"
       destination_project: "Select destination project"
     story_span: "Story"
     logout: "Sign out"

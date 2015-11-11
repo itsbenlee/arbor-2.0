@@ -1,5 +1,5 @@
 class UserStoriesController < ApplicationController
-  before_action :load_user_story, only: [:update, :destroy, :edit]
+  before_action :load_user_story, only: [:update, :destroy, :edit, :comment]
   before_action :set_hypothesis, only: [:create]
   before_action :set_project, only: [:export]
   before_action :check_edit_permission,

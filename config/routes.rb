@@ -31,6 +31,7 @@ Railsroot::Application.routes.draw do
       resources :acceptance_criterions, only: [:create, :update]
       resources :constraints, only: [:create, :update]
       resources :tags, only: [:create, :index]
+      resources :comments, only: [:create]
     end
 
     get 'user_stories/export',
