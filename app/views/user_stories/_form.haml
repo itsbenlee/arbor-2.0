@@ -80,6 +80,7 @@
     = render 'comments/new', user_story: user_story
     - if user_story.comments.count > 0
       - user_story.comments.each do |comment|
-        .row
-          = comment.comment
+        .comment-user
           = t('backlog.user_stories.comment_user', user: comment.user_name)
+        .comment-field
+          = comment.comment
