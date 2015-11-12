@@ -458,7 +458,21 @@
 
 .user-story-tag {
   display: inline-block;
-  margin-right: rem-calc(10);
+  min-height: rem-calc(50);
+  min-width: rem-calc(100);
+  vertical-align: top;
+
+  &:after {
+    @include transition(color .25s ease-in, opacity .25s ease-in);
+    color: $font-color-3;
+    content: '⇧+click to delete';
+    display: block;
+    font-size: rem-calc(10);
+    font-weight: $font-weight-normal;
+    opacity: 0;
+  }
+
+  &:hover:after { opacity: 1; }
 }
 
 .story-tags span {

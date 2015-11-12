@@ -38,7 +38,9 @@ function UserStories() {
   }
 
   function bindRemoveTag() {
-    $('.applied-tag').click(function() {
+    $('.applied-tag').click(function(e) {
+      if (e.shiftKey) return;
+      
       var tag_to_remove = $(this).text().trim(),
           index = selectedTags.indexOf(tag_to_remove);
       if (index > -1) {
@@ -135,6 +137,7 @@ function UserStories() {
       bindEditConstraint();
       bindTagCheckboxes();
       bindNewTag();
+      bindDeleteTag();
       bindNewComment();
       refreshStories();
       bindAcceptanceCriterionFadeOut();
@@ -320,6 +323,46 @@ function UserStories() {
       return false;
     });
   }
+
+  function bindDeleteTag() {
+    $('.user-story-tag').click(function(e) {
+      if (e.shiftKey) {
+        e.preventDefault();
+        tagCheckbox = this.getElementsByTagName('input')[0];
+        tagId = tagCheckbox.value
+        tagCheckbox.checked = false;
+        userStory = $('.user-story-tag').data('user-story');
+
+        $.ajax({
+          dataType: 'json',
+          method: 'GET',
+          url: 'tag/delete',
+          data: {tag_id: tagId, user_story: userStory},
+          success: function (response) {
+            if(response.success) {
+              url = '/backlog/' + userStory + '/edit';
+              displayStoryForm(url);
+              refreshBacklog(url);
+              var displayPromise = displayStoryForm(url);
+              displayPromise.done(function() {
+                deferred.resolve();
+              });
+            }
+          },
+          error: function (response) {
+            if(response.status === 422) {
+              var $errors = $.parseJSON(response.responseText).errors,
+                  $errorsContainer = $('.user-story-component-error');
+              $errorsContainer.append($errors);
+              $errorsContainer.show();
+              refreshBacklog();
+            }
+          }
+        });
+      }
+    });
+  }
+
 
   function bindNewComment() {
     $newCommentForm = $('.new_comment');

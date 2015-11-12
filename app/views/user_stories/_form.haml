@@ -61,7 +61,7 @@
     - if user_story.project
       .uppercase-subtitle.criterion-group= t('backlog.tags')
       - user_story.project.tags.each do |tag|
-        .user-story-tag
+        .user-story-tag{ data: { user_story: user_story.id  } }
           %label
             = check_box_tag "user_story[tag_ids][]", tag.id, user_story.tags.include?(tag)
             = tag.name

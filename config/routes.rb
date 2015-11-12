@@ -41,6 +41,7 @@ Railsroot::Application.routes.draw do
 
     get 'tags/filter', controller: :tags, action: :filter
     get 'tags/index', controller: :tags, action: :index
+    get 'tag/delete', controller: :tags, action: :delete
 
     put 'hypotheses/order', controller: :hypotheses, action: :update_order
     get 'hypotheses/export', controller: :hypotheses, action: :export

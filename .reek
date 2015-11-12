@@ -69,7 +69,8 @@ RepeatedConditional:
   enabled: true
   exclude: [
     'AcceptanceCriterionsController',
-    'ConstraintsController'
+    'ConstraintsController',
+    'TagsController'
   ]
   max_ifs: 2
 TooManyInstanceVariables:
