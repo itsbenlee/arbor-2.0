@@ -8,12 +8,13 @@ feature 'create comment' do
   let(:comment_params)  {
     {
       user_story_id: user_story.id,
-      comment: 'My new comment'
+      comment: 'My new comment',
+      user: current_user
     }
   }
 
   scenario 'should create a Comment and assign the params' do
-    response = comment_service.new_comment(comment_params, current_user)
+    response = comment_service.new_comment(comment_params)
     expect(response.success).to eq(true)
     comment = Comment.last
     expect(comment).to be_a(Comment)

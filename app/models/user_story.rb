@@ -14,6 +14,7 @@ class UserStory < ActiveRecord::Base
   has_and_belongs_to_many :tags
   has_many :acceptance_criterions,
     -> { order(order: :asc) }, dependent: :destroy
+  has_many :comments
   has_many :constraints,
     -> { order(order: :asc) }, dependent: :destroy
   belongs_to :hypothesis
