@@ -282,7 +282,7 @@
         @include transition(color .25s ease-in, opacity .25s ease-in);
         position: absolute;
         right: 0;
-        top: rem-calc(15);
+        top: 0;
         z-index: 99;
       }
 
@@ -338,13 +338,17 @@
       width: auto;
     }
 
+    li { position: relative; }
+
     .bullet::before {
       @include transition(color .25s ease-in);
       color: $lab-color;
       content: '\2022';
       font-size: rem-calc(30);
-      left: rem-calc(-15);
+      left: 0;
+      line-height: .85;
       margin-right: rem-calc(5);
+      position: absolute;
       top: rem-calc(-2);
     }
   } // acceptance criteria

@@ -72,14 +72,14 @@
     = render 'acceptance_criterions/new', user_story: user_story
     %ul.criterions-list{ data: { url: reorder_criterions_path(user_story), user_story: user_story.id } }
       - user_story.acceptance_criterions.each do |acceptance_criterion|
-        %li.criterion{ data: { id: acceptance_criterion.id,
+        %li.bullet.criterion{ data: { id: acceptance_criterion.id,
           criterion_order: acceptance_criterion.order } }
           = render 'acceptance_criterions/edit', user_story: user_story, acceptance_criterion: acceptance_criterion
   .constraint-form
     = render 'constraints/new', user_story: user_story
     %ul.constraints-list{ data: { url: reorder_constraints_path(user_story), user_story: user_story.id  } }
       - user_story.constraints.each do |constraint|
-        %li.constraint{ data: { id: constraint.id,
+        %li.bullet.constraint{ data: { id: constraint.id,
           constraint_order: constraint.order } }
           = render 'constraints/edit', user_story: user_story, constraint: constraint
   .comment-form
