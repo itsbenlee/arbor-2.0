@@ -30,10 +30,10 @@ class ProjectServices
       user_stories
       constraints
       acceptance_criteria
+      comments
     ).each do |entity|
       activities += send("collect_#{entity}_log_entries")
     end
-
     activities
       .sort_by(&:created_at)
       .reverse.in_groups_of @entries_per_page, false
@@ -83,6 +83,15 @@ class ProjectServices
 
   def collect_user_stories_log_entries
     @project.user_stories.collect(&:activities).flatten
+  end
+
+  def collect_comments_log_entries
+    @project
+      .user_stories
+      .collect(&:comments)
+      .flatten
+      .collect(&:activities)
+      .flatten
   end
 
   def collect_constraints_log_entries

@@ -5,9 +5,9 @@ class CommentServices
     @route_helper = Rails.application.routes.url_helpers
   end
 
-  def new_comment(comment_params, current_user)
-    comment = @user_story.comments.create
-    comment.assign_elements(comment_params, current_user)
+  def new_comment(params)
+    comment = Comment.new(params)
+    @user_story.comments << comment
 
     if comment.save
       @common_response.data[:edit_url] =

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151109183719) do
+ActiveRecord::Schema.define(version: 20151113212611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,11 +88,13 @@ ActiveRecord::Schema.define(version: 20151109183719) do
     t.string   "role",                        default: "comments"
     t.datetime "created_at",                                       null: false
     t.datetime "updated_at",                                       null: false
+    t.integer  "user_story_id"
   end
 
   add_index "comments", ["commentable_id"], name: "index_comments_on_commentable_id", using: :btree
   add_index "comments", ["commentable_type"], name: "index_comments_on_commentable_type", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+  add_index "comments", ["user_story_id"], name: "index_comments_on_user_story_id", using: :btree
 
   create_table "constraints", force: :cascade do |t|
     t.string   "description",   limit: 255, null: false
@@ -220,6 +222,7 @@ ActiveRecord::Schema.define(version: 20151109183719) do
 
   add_foreign_key "acceptance_criterions", "user_stories"
   add_foreign_key "attachments", "projects"
+  add_foreign_key "comments", "user_stories"
   add_foreign_key "invites", "projects"
   add_foreign_key "tags", "projects"
 end

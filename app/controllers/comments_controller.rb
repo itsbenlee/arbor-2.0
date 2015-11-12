@@ -3,7 +3,8 @@ class CommentsController < ApplicationController
 
   def create
     comment_service = CommentServices.new(@user_story)
-    response = comment_service.new_comment(comment_params, current_user)
+    params = { comment: comment_params[:comment], user: current_user }
+    response = comment_service.new_comment(params)
     render json: response, status: (response.success ? 201 : 422)
   end
 

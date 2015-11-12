@@ -159,6 +159,7 @@ en:
       destroy: "A user story was deleted"
       add_acceptance_criterion: "An acceptance criteria was added to the user story"
       add_constraint: "A constraint was added to the user story"
+      add_comment: "A comment was added to the user story"
       remove_acceptance_criterion: "An acceptance criteria was removed from the user story"
       remove_constraint: "A constraint was removed from the user story"
     acceptance_criterion:
@@ -169,6 +170,8 @@ en:
       create: "A constraint was created"
       update: "A constraint was updated"
       destroy: "A constraint was deleted"
+    comment:
+      create: "A comment was created"
   deleted_user: "Deleted User"
   save: "Save"
   edit: "Edit"
