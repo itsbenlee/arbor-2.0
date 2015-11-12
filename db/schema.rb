@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20151109183719) do
     t.integer  "user_story_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "order"
   end
 
   add_index "acceptance_criterions", ["user_story_id"], name: "index_acceptance_criterions_on_user_story_id", using: :btree
@@ -98,6 +99,7 @@ ActiveRecord::Schema.define(version: 20151109183719) do
     t.integer  "user_story_id",             null: false
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.integer  "order"
   end
 
   add_index "constraints", ["description"], name: "index_constraints_on_description", using: :btree

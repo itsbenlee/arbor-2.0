@@ -6,9 +6,11 @@ function UserStories() {
       $backlogSection       = $('section.backlog'),
       $userStoriesContainer = $('.user-stories-list-container'),
       $backlogPreloader     = $('.user-stories-preloader'),
-      projectId             = $backlogSection.data('projectId');
-      selectedTags          = [];
-      projectTags           = [];
+      projectId             = $backlogSection.data('projectId'),
+      selectedTags          = [],
+      projectTags           = [],
+      $criterionsOnList     = $('li.criterion'),
+      $criterionsList       = $('ul.criterions-list');
 
   function filterByTags(tags) {
     $('#stories-filter').autocomplete({
@@ -125,6 +127,8 @@ function UserStories() {
       $userStoryForm.html('');
       $userStoryForm.html(editForm);
       bindUserStoryEditForm();
+      bindReorderCriterionsEvents();
+      bindReorderConstraintEvents();
       bindNewAcceptanceCriterion();
       bindNewConstraint();
       bindEditAcceptanceCriterion();
@@ -160,6 +164,76 @@ function UserStories() {
         });
       }
     });
+  }
+
+
+  function bindReorderCriterionsEvents() {
+    $('li.criterion').click(function() {
+      $('li.criterion').removeClass('selected');
+      $(this).addClass('selected');
+    });
+
+    $('ul.criterions-list').sortable({
+      connectWith: '.criterions-list',
+      stop: function() {
+        var newCriterionsOrder = setCriterionsOrder(),
+            url = $('ul.criterions-list').data('url');
+            userStory = $('ul.criterions-list').data('user-story');
+        $.ajax({
+          url: url,
+          dataType: 'json',
+          method: 'PUT',
+          data: { criterions: newCriterionsOrder.criterions, user_story: userStory }
+        });
+      }
+    });
+  }
+
+  function setCriterionsOrder() {
+    var newCriterionsOrder = { criterions: [] },
+        $updatedCriterionsOnList = $('li.criterion');
+
+    $.each($updatedCriterionsOnList, function(index) {
+      var criterion = { id: $(this).data('id'), criterion_order: index + 1 };
+      newCriterionsOrder.criterions.push(criterion);
+    });
+
+    return newCriterionsOrder;
+  }
+
+  function bindReorderConstraintEvents() {
+    $('li.constraint').click(function() {
+      $('li.constraint').removeClass('selected');
+      $(this).addClass('selected');
+    });
+
+    $('ul.constraints-list').sortable({
+      connectWith: '.constraints-list',
+      stop: function() {
+        var newConstraintsOrder = setConstraintsOrder(),
+            url = $('ul.constraints-list').data('url');
+            userStory = $('ul.criterions-list').data('user-story');
+
+        $.ajax({
+          url: url,
+          dataType: 'json',
+          method: 'PUT',
+          data: { constraints: newConstraintsOrder.constraints, user_story: userStory }
+        });
+      }
+    });
+  }
+
+  function setConstraintsOrder() {
+    var newConstraintsOrder = { constraints: [] },
+        $updatedConstraintsOnList = $('li.constraint');
+
+    $.each($updatedConstraintsOnList, function(index) {
+      var constraint = { id: $(this).data('id'), constraint_order: index + 1 };
+      newConstraintsOrder.constraints.push(constraint);
+    });
+
+    return newConstraintsOrder;
   }
 
   function hideBacklog() {

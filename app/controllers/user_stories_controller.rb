@@ -60,6 +60,18 @@ class UserStoriesController < ApplicationController
     save_pdf(content) unless params.key?('debug')
   end
 
+  def reorder_criterions
+    @user_story = UserStory.find(params['user_story'])
+    acceptance_criterion_service = AcceptanceCriterionServices.new(@user_story)
+    render json: acceptance_criterion_service.reorder_criterions(params)
+  end
+
+  def reorder_constraints
+    @user_story = UserStory.find(params['user_story'])
+    constraints_service = ConstraintServices.new(@user_story)
+    render json: constraints_service.reorder_constraints(params)
+  end
+
   private
 
   def story_update_params

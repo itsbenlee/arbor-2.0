@@ -48,7 +48,9 @@ feature 'Create a new constraint' do
   end
 
   scenario 'should show constraints in correct order', js: true do
-    constraints = create_list :constraint, 2, user_story: user_story
+    first_constraint = create :constraint, order: 1, user_story: user_story
+    second_constraint = create :constraint, order: 2, user_story: user_story
+    constraints = [first_constraint, second_constraint]
 
     visit current_path
     find('.user-story').click

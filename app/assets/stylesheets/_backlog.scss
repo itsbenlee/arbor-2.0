@@ -282,7 +282,7 @@
         @include transition(color .25s ease-in, opacity .25s ease-in);
         position: absolute;
         right: 0;
-        top: rem-calc(1);
+        top: rem-calc(15);
         z-index: 99;
       }
 
@@ -300,6 +300,11 @@
     @include transition(color .25s ease-in);
     padding-left: 0;
     width: 90%;
+  }
+
+  .ui-sortable-helper {
+    padding-bottom: rem-calc(50);
+    padding-top: 0;
   }
 
   .acceptance-criterion-form,
@@ -340,7 +345,6 @@
       font-size: rem-calc(30);
       left: rem-calc(-15);
       margin-right: rem-calc(5);
-      position: absolute;
       top: rem-calc(-2);
     }
   } // acceptance criteria
