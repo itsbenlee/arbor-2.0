@@ -85,5 +85,7 @@ Railsroot::Application.routes.draw do
       action: :reorder_constraints,
       as: :reorder_constraints
 
+  get 'export/:id/spreadhseet', to: 'projects#export_to_spreadhseet'
+
   devise_for :users, controllers: { registrations: 'registrations' }
 end
