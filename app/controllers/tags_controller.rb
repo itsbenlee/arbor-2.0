@@ -28,6 +28,12 @@ class TagsController < ApplicationController
     render json: response, status: (response.success ? 201 : 422)
   end
 
+  def delete
+    user_story = UserStory.find(params['user_story'])
+    response = TagServices.new(user_story).delete_tag(params['tag_id'])
+    render json: response, status: (response.success ? 201 : 422)
+  end
+
   private
 
   def tag_params
