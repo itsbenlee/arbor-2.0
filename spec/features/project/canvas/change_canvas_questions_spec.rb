@@ -12,7 +12,7 @@ feature 'Canvas question change for each canvas step' do
   scenario 'should stay on the answered question' do
     visit project_canvases_path(project)
     find('.solutions-field textarea').set('My solution proposal')
-    click_button 'save-canvas'
+    find('#save-canvas', visible: false).click
     within '.right-content-wrapper' do
       expect(page).to have_text(I18n.t('solutions_title'))
       expect(page).to have_text('My solution proposal')
@@ -80,5 +80,12 @@ feature 'Canvas question change for each canvas step' do
     find(".canvas-item[type='cost-structure']").click()
     question = 'What are your customer acquisition costs, distribution costs, people, hosting, integration partners, etc?'
     expect(find('.cost-structure-field label')).to have_content(question)
+  end
+
+  scenario 'save button remains hidden until textarea gains focus', js: true do
+    visit project_canvases_path(project)
+    expect(page).to have_selector('#save-canvas', visible: false)
+    find('.resizable-text-area').click
+    expect(page).to have_selector('#save-canvas', visible: true)
   end
 end
