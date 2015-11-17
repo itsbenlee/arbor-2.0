@@ -40,7 +40,7 @@ function UserStories() {
   function bindRemoveTag() {
     $('.applied-tag').click(function(e) {
       if (e.shiftKey) return;
-      
+
       var tag_to_remove = $(this).text().trim(),
           index = selectedTags.indexOf(tag_to_remove);
       if (index > -1) {
@@ -266,6 +266,7 @@ function UserStories() {
         $userStoriesOnList.removeClass('selected');
         $("[data-url='" + editUrl + "']").addClass('selected');
       }
+      fixArticlesForRolesOnBacklog();
     });
   }
 
@@ -438,7 +439,6 @@ function UserStories() {
 
   function bindUserStoryEditForm() {
     $editUserStoryForm = $('form.edit-story.edit_user_story');
-
     $editUserStoryForm.submit(function() {
       var url       = $(this).attr('action'),
           type      = $(this).attr('method'),
@@ -460,6 +460,13 @@ function UserStories() {
         $this.hide();
         $span.html($this.val());
       }
+
+      // correct articles when saved client story get clicked on backlog, Ale
+      prependGramaticallyCorrectArticle(this);
+      // bind key events for the new edit form to be created, Ale
+      $('.edit-story .row #user_story_role.role').on('keydown keyup', function(e) {
+        prependGramaticallyCorrectArticle(this);
+      });
     });
   }
 

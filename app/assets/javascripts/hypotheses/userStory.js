@@ -102,6 +102,7 @@ function UserStory() {
 
         var $userStoryForm = $('#edit_user_story_' + userStoryId);
         $appContent.scrollTo($userStoryForm, 200);
+        fixArticlesForRolesOnLab();
     });
   }
 

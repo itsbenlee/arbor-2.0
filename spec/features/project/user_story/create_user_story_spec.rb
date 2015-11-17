@@ -54,6 +54,16 @@ feature 'Create a new user story' do
         expect{ click_button 'Save' }.to change{ UserStory.count }.from(0).to(1)
       end
     end
+
+    scenario 'on lab should use the correct article on the role label', js: true do
+      find('#user_story_role').native.send_keys('a','d','m','i','n')
+      expect(find('.role-a-an').text).to eq('As an')
+
+      visit current_path
+
+      find('#user_story_role').native.send_keys('u','s','e','r')
+      expect(find('.role-a-an').text).to eq('As a')
+    end
   end
 
   context 'backlog section' do
