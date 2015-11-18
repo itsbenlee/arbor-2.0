@@ -18,4 +18,13 @@ function CustomTextArea() {
       return false;
     }
   });
+
+  $('.resizable-text-area').focus(function(){
+    $('#save-canvas').show();
+  });
+
+  $('.resizable-text-area').blur(function(){
+    $('#save-canvas').hide();
+  });
+
 }
