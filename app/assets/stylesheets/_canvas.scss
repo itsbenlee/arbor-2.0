@@ -79,11 +79,11 @@
       resize: none;
       @include input-placeholder { font-style: italic; };
 
-      &:empty { border: 1px solid $black-20; }
-
       &:focus {
         @include box-shadow(0 0 5px 0 $success-color);
         border-color: $success-color;
+
+        &:hover { background-color: $white; }
 
         + .enter { display: block; }
       }
@@ -100,6 +100,10 @@
       text-align: right;
     }
 
-    .resizable-text-area:hover { background-color: $black-10; }
+    .resizable-text-area:hover {
+      background-color: $black-10;
+
+      @include input-placeholder { color: $white; };
+    }
   } // right content
 } // canvas
