@@ -8,7 +8,7 @@ feature 'Show project details' do
   background do
     ENV['FROM_EMAIL_ADDRESS'] = 'no-reply@getarbor.io'
     sign_in user
-    visit project_path project
+    visit project_path project     
   end
 
   scenario 'should show the project name on the sidebar' do
