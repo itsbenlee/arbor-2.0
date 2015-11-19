@@ -44,7 +44,7 @@ RSpec.describe UserStory do
     let(:entity) do
       build :user_story, role: 'User', action: 'work', result: 'test'
     end
-    let(:description) { 'As a/an User I should be able to work so that test' }
+    let(:description) { 'As a User I should be able to work so that test' }
   end
 
   describe 'story_number' do

@@ -12,7 +12,7 @@
       = "##{user_story.story_number}"
   .row
     .user-story-input.role
-      = t('backlog.user_stories.role')
+      .role-a-an= t('backlog.user_stories.role')
       %span.show-role{ title: t('backlog.user_stories.edit_role') }
       = form.text_field(                                   |
         :role,                                             |

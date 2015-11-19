@@ -55,6 +55,18 @@ feature 'List user stories' do
         end
       end
     end
+
+    scenario 'should show the correct article for the user type assigned', js: true  do
+      visit project_hypotheses_path project
+
+      within "#edit_user_story_#{UserStory.first.id}" do
+        expect(find('.role-a-an').text).to eq 'As a'
+      end
+
+      within "#edit_user_story_#{UserStory.second.id}" do
+        expect(find('.role-a-an').text).to eq 'As an'
+      end
+    end
   end
 
   context 'backlog section' do
@@ -123,6 +135,18 @@ feature 'List user stories' do
 
       points_field = find ".user-story[data-id='#{UserStory.first.id}'] .points"
       expect(points_field.text).to be_empty
+    end
+
+    scenario 'should show the correct article for the user type assigned', js: true  do
+      visit project_user_stories_path project
+
+      within "li.user-story[data-id='#{UserStory.first.id}']" do
+        expect(find('.story-text').text).to have_content('As a')
+      end
+
+      within "li.user-story[data-id='#{UserStory.second.id}']"  do
+        expect(find('.story-text').text).to have_content('As an')
+      end
     end
   end
 end

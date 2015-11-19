@@ -85,7 +85,7 @@ en:
       enter_role: "<type of user>"
       enter_action: "<some function>"
       enter_result: "<some benefit>"
-      role: "As a/an"
+      role: "As a"
       action_prefix: "I"
       action_suffix: "be able to"
       action: "I %{priority} be able to"
