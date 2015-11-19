@@ -85,8 +85,12 @@
   .comment-form
     = render 'comments/new', user_story: user_story
     - if user_story.comments.count > 0
-      - user_story.comments.each do |comment|
+      - user_story.comments.recent.each do |comment|
         .comment-user
           = t('backlog.user_stories.comment_user', user: comment.user_name)
+        %abbr.action-time{ title: comment.created_at.getutc.iso8601 }
+          = comment.created_at.to_s
         .comment-field
           = comment.comment
+  :javascript
+    $('abbr.action-time').timeago();
