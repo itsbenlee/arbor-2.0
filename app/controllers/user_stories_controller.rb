@@ -82,12 +82,19 @@ class UserStoriesController < ApplicationController
 
   def export_content
     debug = params.key?('debug')
+    project_name = @project.name
+    cover_html = render_to_string(
+      partial: 'user_stories/cover.html.haml',
+      locals: { project_name: project_name }
+    )
     send(
       debug ? :render : :render_to_string,
-      pdf:          "#{@project.name} Backlog",
+      pdf:          "#{project_name}",
       layout:       'application.pdf.haml',
       template:     'user_stories/index.pdf.haml',
-      show_as_html: debug
+      show_as_html: debug,
+      cover: cover_html,
+      margin: { top: 30, bottom: 30 }
     )
   end
 
