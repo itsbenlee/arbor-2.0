@@ -94,7 +94,7 @@ feature 'Log lab activity' do
 
       scenario 'should log inviting members', js: true do
         click_button 'New Member'
-        fill_in 'member_0', with: invitee.email
+        fill_in 'input[member_0]', with: invitee.email
 
         PublicActivity.with_tracking do
           click_button 'Update Project'

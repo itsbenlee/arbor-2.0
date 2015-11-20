@@ -59,7 +59,7 @@ feature 'Edit a project' do
     context 'with invites' do
       background do
         click_button 'New Member'
-        fill_in 'member_0', with: 'email@email.com'
+        fill_in 'input[member_0]', with: 'email@email.com'
         click_button 'Update Project'
       end
 
@@ -86,7 +86,7 @@ feature 'Edit a project' do
 
     scenario 'should not modify the project owner when another user edits' do
       click_button 'New Member'
-      fill_in 'member_0', with: 'email@email.com'
+      fill_in 'input[member_0]', with: 'email@email.com'
       click_button 'Update Project'
 
       expect{ project.reload }.not_to change{ project.owner }

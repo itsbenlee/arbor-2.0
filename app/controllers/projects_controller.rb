@@ -23,15 +23,14 @@ class ProjectsController < ApplicationController
   end
 
   def remove_member_from_project
-    project = params['project_id']
+    project_id = params['project_id']
     member_to_destroy = MembersProject.find_by(member_id: params['member'],
-                                               project_id: project)
+                                               project_id: project_id)
 
     if member_to_destroy.destroy
-      redirect_to project_path(project)
+      redirect_to project_path(project_id)
     else
-      @errors = m.errors.full_messages
-      render :edit, status: 400
+      @errors = member_to_destroy.errors.full_messages
     end
   end
 

@@ -60,7 +60,7 @@ Railsroot::Application.routes.draw do
 
     post '/copy', controller: :projects, action: :copy
 
-    post 'remove_member_from_project',
+    delete 'remove_member_from_project',
       controller: :projects,
       action: :remove_member_from_project
   end

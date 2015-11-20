@@ -13,16 +13,16 @@
     %label{ for: 'project_members'} Members
     - project.members.each_with_index do |member, index|
       - member_id = "member_#{index}"
-      .member-field{id: member_id}
+      .member-field{ id: member_id }
         %input{                          |
           class: "member",               |
           type: 'email',                 |
-          id: member_id,                 |
+          id: "input[#{member_id}]",     |
           name: "project[#{member_id}]", |
           value: member.email            |
         }                                |
         - if member.id != project.owner.id
-          = link_to project_remove_member_from_project_path(project, member: member.id), class: 'delete-member', title: 'Delete member', method: :remove_member_from_project, params: {member: member_id} do
+          = link_to project_remove_member_from_project_path(project, member: member.id), class: 'delete-member', title: 'Delete member', method: :delete, params: { member: member_id } do
             %span.icon-trash
     = f.button 'New Member', id: 'new_member_button', type: :button
   %p
