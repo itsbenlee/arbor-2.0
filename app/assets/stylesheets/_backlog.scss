@@ -370,7 +370,7 @@
 
   .comment-form {
     .comment-user {
-      display: inline-block;
+      @include inline-block;
       font-size: rem-calc(13);
       font-weight: $font-weight-bold;
       padding-top: rem-calc(15);
