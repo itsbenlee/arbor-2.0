@@ -370,6 +370,7 @@
 
   .comment-form {
     .comment-user {
+      @include inline-block;
       font-size: rem-calc(13);
       font-weight: $font-weight-bold;
       padding-top: rem-calc(15);
@@ -387,6 +388,14 @@
       font-size: rem-calc(14);
       padding-bottom: rem-calc(15);
     }
+
+    .action-time {
+      @include inline-block;
+      border: 0;
+      color: $black-40;
+      cursor: default;
+      font-size: rem-calc(13);
+    } // comment date
   } // comment form
 } // backlog
 
