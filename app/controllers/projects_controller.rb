@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
   before_action :load_project,
                 only: [:show, :edit, :update, :destroy,
                        :log, :export_to_spreadhseet]
+  before_action :check_edit_permission, only: :show
 
   def index
   end
@@ -133,5 +134,13 @@ class ProjectsController < ApplicationController
 
   def update_order_params
     params.require(:stories)
+  end
+
+  def check_edit_permission
+    project_auth = ProjectAuthorization.new(@project)
+    return if project_auth.member?(current_user)
+
+    flash[:alert] = I18n.translate('can_not_edit')
+    redirect_to root_url
   end
 end
