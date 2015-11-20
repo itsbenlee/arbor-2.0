@@ -21,6 +21,8 @@ class UserStory < ActiveRecord::Base
   belongs_to :project
 
   scope :ordered, -> { order(order: :asc) }
+  scope :not_archived, -> { where(archived: false) }
+  scope :archived, -> { where(archived: true) }
 
   include AssociationLoggable
 

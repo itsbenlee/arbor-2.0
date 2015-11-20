@@ -37,6 +37,7 @@ en:
     powered_by: "Powered by"
     workspace: "Workspace"
     extras: "Extras"
+    archive: "Archive"
     canvas: "Canvas"
     lab: "Lab"
     backlog: "Backlog"
@@ -172,6 +173,10 @@ en:
       destroy: "A constraint was deleted"
     comment:
       create: "A comment was created"
+  archive:
+    link: "Archive"
+    empty_archive: "There are no archived stories"
+    restore: "Restore"
   deleted_user: "Deleted User"
   save: "Save"
   edit: "Edit"

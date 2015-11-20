@@ -16,6 +16,7 @@
 //= require hypotheses/userStory
 //= require hypotheses/goal
 //= require userStories/userStories
+//= require userStories/archive
 //= require userStories/a_an_grammar
 //= require_tree ./vendor
 //= require_tree ./attachments

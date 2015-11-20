@@ -50,6 +50,9 @@
           = link_to log_project_path(current_project), { data: { reveal_id: 'log-modal', reveal_ajax: true }, class: 'activity-link' } do
             = render 'shareable/svg/activity_icon'
             = t('sidebar.activity')
+        %li
+          = link_to project_archives_path(current_project) do
+            = t('sidebar.archive')
   %ul.footer
     %li
       %p

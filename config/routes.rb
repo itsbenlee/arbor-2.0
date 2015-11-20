@@ -63,6 +63,9 @@ Railsroot::Application.routes.draw do
     delete 'remove_member_from_project',
       controller: :projects,
       action: :remove_member_from_project
+
+    resources :archives, only: :index
+    get '/list_archived', controller: :archives, action: :list_archived
   end
 
   resources :lab,
