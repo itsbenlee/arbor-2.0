@@ -59,6 +59,10 @@ Railsroot::Application.routes.draw do
     resources :attachments, only: [:index, :create, :destroy]
 
     post '/copy', controller: :projects, action: :copy
+
+    delete 'remove_member_from_project',
+      controller: :projects,
+      action: :remove_member_from_project
   end
 
   resources :lab,

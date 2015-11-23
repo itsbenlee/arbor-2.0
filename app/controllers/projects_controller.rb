@@ -22,6 +22,18 @@ class ProjectsController < ApplicationController
     redirect_to projects_path
   end
 
+  def remove_member_from_project
+    project_id = params['project_id']
+    member_to_destroy = MembersProject.find_by(member_id: params['member'],
+                                               project_id: project_id)
+
+    if member_to_destroy.destroy
+      redirect_to project_path(project_id)
+    else
+      @errors = member_to_destroy.errors.full_messages
+    end
+  end
+
   def update
     @project.update_attributes(name: project_params[:name])
     assign_associations
