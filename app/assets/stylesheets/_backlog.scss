@@ -369,33 +369,37 @@
   .estimation { padding-right: rem-calc(15); }
 
   .comment-form {
-    .comment-user {
-      @include inline-block;
+    .comment-items {
       font-size: rem-calc(13);
-      font-weight: $font-weight-bold;
-      padding-top: rem-calc(15);
+      margin-top: rem-calc(10);
+      vertical-align: middle;
 
-      &:after {
-        color: $lab-color;
-        content: '\2022';
-        font-size: rem-calc(15);
-      }
-    } // user name
+      .comment-user {
+        @include inline-block;
+        font-weight: $font-weight-bold;
+
+        &:after {
+          color: $lab-color;
+          content: '\2022';
+          font-size: rem-calc(13);
+          // vertical-align: middle;
+        } // bullet
+      } // user name
+
+      .action-time {
+        @include inline-block;
+        border: 0;
+        color: $black-40;
+        cursor: default;
+      } // comment date
+    } // comm items
 
     .comment-field {
       border-bottom: 1px solid $black-10;
       display: block;
-      font-size: rem-calc(14);
+      font-size: rem-calc(13);
       padding-bottom: rem-calc(15);
     }
-
-    .action-time {
-      @include inline-block;
-      border: 0;
-      color: $black-40;
-      cursor: default;
-      font-size: rem-calc(13);
-    } // comment date
   } // comment form
 } // backlog
 
