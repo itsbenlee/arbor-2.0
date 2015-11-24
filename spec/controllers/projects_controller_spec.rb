@@ -45,4 +45,32 @@ RSpec.describe ProjectsController do
       end
     end
   end
+
+  describe 'GET show' do
+    let!(:user)       { create :user }
+    let!(:no_member)  { create :user }
+    let!(:project)    { create :project, owner: user }
+
+    context 'when the user is a project member' do
+      before :each do
+        sign_in user
+      end
+
+      it 'should be success' do
+        get :show, id: project.id
+        expect(response).to be_success
+      end
+    end
+
+    context 'when user is not a project member' do
+      before :each do
+        sign_in no_member
+      end
+
+      it 'should redirect the user' do
+        get :show, id: project.id
+        expect(response).to be_redirect
+      end
+    end
+  end
 end
