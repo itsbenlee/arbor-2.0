@@ -32,4 +32,10 @@ function CustomTextArea() {
     $('#save-canvas').hide();
   });
 
+  window.onresize = function() {
+    $('.ui-sortable-handle .backlog-placeholder.resizable-text-area').each(function(index, currentValue) {
+      var offset = currentValue.offsetHeight - currentValue.clientHeight;
+      $(currentValue).css('height', '10px').css('height', this.scrollHeight + offset);
+    });
+  }
 }
