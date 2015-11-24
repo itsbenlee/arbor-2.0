@@ -34,9 +34,8 @@ function CustomTextArea() {
 
   window.onresize = function() {
     $('.ui-sortable-handle .backlog-placeholder.resizable-text-area').each(function(index, currentValue) {
-      el = this
       var offset = currentValue.offsetHeight - currentValue.clientHeight;
-      $(this).css('height', '10px').css('height', this.scrollHeight + offset);
+      $(currentValue).css('height', '10px').css('height', this.scrollHeight + offset);
     });
   }
 }
