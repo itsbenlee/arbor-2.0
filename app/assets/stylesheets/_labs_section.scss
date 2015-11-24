@@ -65,6 +65,7 @@
       @include opacity(0);
       left: auto;
       right: 0;
+      top: 0;
       z-index: 2;
 
       &:hover { color: $black-40; }
@@ -281,6 +282,7 @@
     .hypothesis-title {
       @include single-transition(color, .25s, ease-in);
       cursor: text;
+      width: 97%;
 
       &:hover { color: $font-color-3; }
 
