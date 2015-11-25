@@ -1,0 +1,42 @@
+= hidden_field_tag 'require_canvas', id: 'require_canvas'
+= form_tag project_canvases_path(project), method: :post do
+  = hidden_field_tag 'current-question', current_question
+  .problems-field.canvas-fields
+    = label_tag :problems, t('problems_title')
+    = text_area_tag :problems, canvas.problems, data: { question: 'problems' }, class: 'resizable-text-area', placeholder: t('canvas.textarea_placeholder')
+    %p.enter press &#8629; to finish
+  .solutions-field.canvas-fields
+    = label_tag :solutions, t('solutions_title')
+    = text_area_tag :solutions, canvas.solutions, data: { question: 'solutions' }, class: 'resizable-text-area', placeholder: t('canvas.textarea_placeholder')
+    %p.enter press &#8629; to finish
+  .alternative-field.canvas-fields
+    = label_tag :alternative, t('alternative_title')
+    = text_area_tag :alternative, canvas.alternative, data: { question: 'alternative' }, class: 'resizable-text-area', placeholder: t('canvas.textarea_placeholder')
+    %p.enter press &#8629; to finish
+  .advantage-field.canvas-fields
+    = label_tag :advantage, t('advantage_title')
+    = text_area_tag :advantage, canvas.advantage, data: { question: 'advantage' }, class: 'resizable-text-area', placeholder: t('canvas.textarea_placeholder')
+    %p.enter press &#8629; to finish
+  .segment-field.canvas-fields
+    = label_tag :segment, t('segment_title')
+    = text_area_tag :segment, canvas.segment, data: { question: 'segment' }, class: 'resizable-text-area', placeholder: t('canvas.textarea_placeholder')
+    %p.enter press &#8629; to finish
+  .channel-field.canvas-fields
+    = label_tag :channel, t('channel_title')
+    = text_area_tag :channel, canvas.channel, data: { question: 'channel' }, class: 'resizable-text-area', placeholder: t('canvas.textarea_placeholder')
+    %p.enter press &#8629; to finish
+  .value-proposition-field.canvas-fields
+    = label_tag :value_proposition, t('value_proposition_title')
+    = text_area_tag :value_proposition, canvas.value_proposition, data: { question: 'value-proposition' }, class: 'resizable-text-area', placeholder: t('canvas.textarea_placeholder')
+    %p.enter press &#8629; to finish
+  .revenue-streams-field.canvas-fields
+    = label_tag :revenue_streams, t('revenue_streams_title')
+    = text_area_tag :revenue_streams, canvas.revenue_streams, data: { question: 'revenue-streams' }, class: 'resizable-text-area', placeholder: t('canvas.textarea_placeholder')
+    %p.enter press &#8629; to finish
+  .cost-structure-field.canvas-fields
+    = label_tag :cost_structure, t('cost_structure_title')
+    = text_area_tag :cost_structure, canvas.cost_structure, data: { question: 'cost-structure' }, class: 'resizable-text-area', placeholder: t('canvas.textarea_placeholder')
+    %p.enter press &#8629; to finish
+  = submit_tag :save, class: 'button radius small secondary-btn', id: 'save-canvas'
+- content_for :custom_js do
+  = javascript_include_tag 'canvases/form'

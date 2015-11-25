@@ -1,0 +1,203 @@
+$primary-nab-color: #22252e;
+$secondary-nab-color: #282c37;
+$hover-navigation: #30323b;
+
+@mixin fake-border($height, $color: false, $left: false, $top: false, $right: false, $bottom: false) {
+  &::before {
+    @if $color == false { $color: $backlog-color; }
+    @if $left { left: $left; }
+    @if $top { top: $top; }
+    @if $bottom { bottom: $bottom; }
+    @if $right { right: $right; }
+
+    @include background-image(linear-gradient(left, $color 0%, $color 100%));
+    content: '';
+    height: $height;
+    position: absolute;
+    width: 100%;
+  }//before nav
+}//mixing for creating a border
+
+.top-bar {
+  background-color: $primary-nab-color;
+  height: rem-calc(60);
+
+  section ul li { background-color: $primary-nab-color; }
+
+  li,
+  .right,
+  .top-bar-section,
+  .title-area,
+  .name,
+  .logo {
+    // scss-lint:disable ImportantRule
+    height: 100% !important;
+  }
+
+  .right {
+    a {
+      // scss-lint:disable ImportantRule
+      background-color: $primary-nab-color !important;
+      color: $black-30;
+      line-height: rem-calc(60) !important;
+    }
+  }
+
+  .logo {
+    left: 0;
+    padding: rem-calc(15);
+    position: absolute;
+    top: 0;
+    z-index: 10;
+  }
+
+  .name {
+    margin-left: rem-calc(60);
+
+    .current-project {
+      color: $white;
+      font-family: $font-family-sans-serif;
+      line-height: rem-calc(60);
+    }
+  }
+
+  .has-notification {
+    position: relative;
+
+    &:before {
+      color: $backlog-color;
+      content: '•';
+      font-size: rem-calc(24);
+      position: absolute;
+      right: rem-calc(13);
+      top: rem-calc(-3);
+    }
+  }
+
+  .profile {
+    .picture {
+      @include border-radius(100%);
+      @include inline-block;
+      background-size: cover;
+      height: rem-calc(40);
+      margin-left: rem-calc(10);
+      width: rem-calc(40);
+
+      @media #{$medium-only} { margin: rem-calc(10 15 0 0); }
+    }
+
+    .welcome {
+      display: none;
+
+      @media #{$large-up} { @include inline-block; }
+    }
+  }
+
+  .dropdown {
+    min-width: rem-calc(140);
+
+    a {
+      @include clearfix;
+      padding: 0;
+    }
+
+    span {
+      float: left;
+    }
+
+    .icon {
+      float: right;
+      margin: rem-calc(20 10 0 10);
+    }
+  }
+}//top-bar
+
+.bottom-bar-section {
+  @include clearfix;
+  background-color: $secondary-nab-color;
+  height: rem-calc(50);
+
+  ul,
+  li {
+    @include inline-block;
+    line-height: rem-calc(50);
+
+    a {
+      color: $black-30;
+      font-size: rem-calc(13);
+      margin-right: rem-calc(20);
+
+      &:hover { color: $white; }
+      &::last-child { margin-right: 0; }
+    }
+
+    &.hide { display: none; }
+  }
+
+  .sections {
+    margin-left: rem-calc(15);
+
+    a {
+      @include inline-block;
+      height: rem-calc(47);
+    }
+  }
+
+  .members {
+    margin-right: rem-calc(15);
+
+    a {
+      @include border-radius(100%);
+      @include inline-block;
+      background-size: cover;
+      height: rem-calc(30);
+      margin-right: rem-calc(10);
+      width: rem-calc(30);
+
+      @media #{$small-only} { display: none; }
+
+      &.add-member {
+        @include border-radius(100%);
+        @include inline-block;
+        background-color: $black-20;
+        color: $secondary-nab-color;
+        font-size: rem-calc(14);
+        height: rem-calc(20);
+        line-height: rem-calc(19);
+        margin-right: 0;
+        text-align: center;
+        vertical-align: middle;
+        width: rem-calc(20);
+
+        @media #{$small-only} { display: inline-block; }
+      }
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.active-path {
+  @include fake-border(3px, false, 0, false, false, 0);
+  position: relative;
+}
+
+#projet-actions {
+  background-color: $secondary-nab-color;
+  outline: 0;
+
+  li {
+    display: block;
+
+    a {
+      line-height: rem-calc(50);
+      padding: rem-calc(5);
+    }
+  }
+
+  li:hover { background-color: $hover-navigation; }
+
+  &::before { border-color: transparent transparent $hover-navigation;}
+}

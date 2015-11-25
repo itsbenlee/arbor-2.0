@@ -1,0 +1,80 @@
+%nav.top-bar{"data-topbar" => "", :role => "navigation"}
+  %ul.title-area
+    = link_to arbor_reloaded_root_path, class: 'logo' do
+      = render 'arbor_reloaded/logo'
+    %li.name
+      - if current_project && !current_project.new_record?
+        = link_to current_project.name, '#', class: 'current-project'
+    / Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
+    %li.toggle-topbar.menu-icon
+      %a{:href => "#"}
+        %span Menu
+  %section.top-bar-section
+    / Right Nav Section
+    %ul.right
+      %ul.sections
+        %li
+          = link_to 'Projects', arbor_reloaded_root_path
+        - if current_project
+          %li
+            = link_to 'People', arbor_reloaded_project_path(current_project)
+        %li.hide
+          %a{:href => "#"} FAQ
+        - if current_project
+          %li
+            = link_to log_arbor_reloaded_project_path(current_project) do
+              = image_tag('icons/notifications-icon.svg', class: 'icon')
+      %ul.profile
+        %li.has-dropdown
+          .avatar
+            .picture{ style: "background-image: url(#{ image_path('test-user.png') });" }
+            %a.welcome{:href => "#"}
+              Welcome,
+              %span= current_user.full_name
+          %ul.dropdown
+            %li
+              %a{:href => "#"}
+                %span Settings
+                = image_tag('icons/gear-icon.svg', class: 'icon')
+            %li
+              = link_to destroy_user_session_path, method: :delete, class: 'logout nav-links' do
+                %span= t('backlog.logout')
+                = image_tag('icons/signout-icon-v3.svg', class: 'icon')
+- if current_project
+  %nav.bottom-bar
+    %section.bottom-bar-section
+      %ul.left.sections
+        %li
+          = link_to 'Canvas', arbor_reloaded_project_canvases_path(current_project)
+        %li
+          = link_to 'Backlog', arbor_reloaded_project_user_stories_path(current_project)
+        %li.hide
+          %a{:href => "#"} Estimation
+        %li
+          = link_to 'Activity', log_arbor_reloaded_project_path(current_project)
+        %li
+          = link_to 'Assets', arbor_reloaded_project_attachments_path(current_project)
+        %li
+          %a{"aria-controls" => "projet-actions", "aria-expanded" => "false", "data-dropdown" => "projet-actions"} ...
+          %ul#projet-actions.f-dropdown{"aria-hidden" => "true", "data-dropdown-content" => "", :tabindex => "-1"}
+            %li
+              = link_to arbor_reloaded_project_copy_path(current_project), method: :post, class: 'copy-project', data: {} do
+                = t('project.copy_project')
+                %span.icon-plus
+            %li
+              = link_to current_project, method: :delete, data: { confirm: t('project.delete_confirmation') }, class: 'delete-project' do
+                = t('project.delete_project')
+                %span.icon-trash
+      %ul.right.members
+        %li
+          = link_to arbor_reloaded_project_path(current_project), { style: "background-image: url(#{ image_path('test-user.png') });"} do
+            = image_tag ('icons/user-icon.svg'), class: 'hide'
+        %li
+          = link_to arbor_reloaded_project_path(current_project), { style: "background-image: url(#{ image_path('test-user.png') });"} do
+            = image_tag ('icons/user-icon.svg'), class: 'hide'
+        %li
+          = link_to arbor_reloaded_project_path(current_project), { style: "background-image: url(#{ image_path('test-user.png') });"} do
+            = image_tag ('icons/user-icon.svg'), class: 'hide'
+        %li
+          = link_to arbor_reloaded_project_path(current_project), class: 'add-member' do
+            +
