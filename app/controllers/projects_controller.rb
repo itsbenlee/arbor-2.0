@@ -69,8 +69,6 @@ class ProjectsController < ApplicationController
   def log
     project_services = ProjectServices.new(@project)
     @activities_by_pages = project_services.activities_by_pages
-
-    render layout: false
   end
 
   def backlog

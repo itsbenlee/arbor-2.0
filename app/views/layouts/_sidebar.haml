@@ -47,7 +47,7 @@
             = render 'shareable/svg/members_icon'
             = t('sidebar.members')
         %li
-          = link_to log_project_path(current_project), { data: { reveal_id: 'log-modal', reveal_ajax: true }, class: 'activity-link' } do
+          = link_to log_project_path(current_project) do
             = render 'shareable/svg/activity_icon'
             = t('sidebar.activity')
   %ul.footer
@@ -61,4 +61,3 @@
         = t('sidebar.version') + ENV['SIDEBAR_VERSION']
       = link_to '#', title: t('sidebar.collapse'), class: 'collapse' do
         %span.icon-left
-#log-modal.reveal-modal{ data: { reveal: '' } }

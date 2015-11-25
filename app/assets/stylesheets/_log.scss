@@ -1,7 +1,7 @@
 #log {
   .log-page {
     &.active { display: block; }
-    &.inactive { display: none; }
+    &.inactive { display: block; }
 
     .log-entry {
 
@@ -15,3 +15,5 @@
     }
   }
 } // log
+
+.content-general { overflow: scroll; }
