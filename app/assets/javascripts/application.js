@@ -17,5 +17,6 @@
 //= require hypotheses/goal
 //= require userStories/userStories
 //= require userStories/a_an_grammar
+//= require userStories/disableArea
 //= require_tree ./vendor
 //= require_tree ./attachments

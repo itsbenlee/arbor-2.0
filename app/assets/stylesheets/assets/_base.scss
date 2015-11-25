@@ -29,3 +29,10 @@
   cursor: -ms-grabbing;
   cursor: grabbing;
 }
+
+@mixin non-selectable-text {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
