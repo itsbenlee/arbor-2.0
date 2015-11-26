@@ -41,8 +41,8 @@ url: form_url do |form|
       'data-autosize-input' => '{ "space": 10 }'           |
     )                                                      |
   .user-story-input.archive
-    = t('archive.link')
     = form.check_box(:archived)
+    = t('archive.link')
   .enter - press &#8629; to finish
   - if hypothesis
     = form.hidden_field :hypothesis_id, value: hypothesis.id

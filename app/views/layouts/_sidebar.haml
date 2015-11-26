@@ -52,6 +52,7 @@
             = t('sidebar.activity')
         %li
           = link_to project_archives_path(current_project) do
+            = render 'shareable/svg/archive_icon'
             = t('sidebar.archive')
   %ul.footer
     %li

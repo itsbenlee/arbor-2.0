@@ -175,6 +175,7 @@ en:
       create: "A comment was created"
   archive:
     link: "Archive"
+    title: "Archived user stories"
     empty_archive: "There are no archived stories"
     restore: "Restore"
   deleted_user: "Deleted User"
