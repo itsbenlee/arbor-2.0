@@ -292,7 +292,7 @@ function UserStories() {
         if(response.status === 422) {
           var $errors = $.parseJSON(response.responseText).errors,
               $errorsContainer = $('.user-story-component-error');
-          $errorsContainer.append($errors);
+          if ($errorsContainer.text().indexOf($errors) < 0) $errorsContainer.append($errors);
           $errorsContainer.show();
           refreshBacklog();
         }
