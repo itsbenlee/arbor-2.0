@@ -1,5 +1,4 @@
 function CustomTextArea() {
-  var errorsToControl = ["Description can't be blank"]
   var resizeTextarea = function(el) {
     var offset = el.offsetHeight - el.clientHeight;
     $(el).css('height', '10px').css('height', el.scrollHeight + offset);
@@ -8,18 +7,13 @@ function CustomTextArea() {
   $('.resizable-text-area').each(function() {
     $(this).height( 0 );
     $(this).height( this.scrollHeight );
-
     $(this).on('keyup input', function() { resizeTextarea(this); });
   });
 
   $('.resizable-text-area').off('keypress').on('keypress', function(e) {
     if(e.keyCode === 13 ) {
-      if($(this).text() == "") {
-        if($('.alert-box.error').text().indexOf("can't be blank") == -1) {
-          $(this.form).submit();
-          resizeTextarea(this);
-        }
-      }
+      $(this.form).submit();
+      resizeTextarea(this);
       return false;
     }
   });
