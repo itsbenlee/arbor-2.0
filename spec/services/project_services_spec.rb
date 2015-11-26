@@ -66,37 +66,11 @@ feature 'Reorder hypothesis inside' do
   end
 end
 
-feature 'Collect log entries' do
+feature 'Copy project' do
   let!(:user) { create :user }
 
   background do
     sign_in user
-  end
-
-  scenario 'should collect the log entries of all associated entities' do
-    PublicActivity.with_tracking do
-      @project = create :project
-      hypothesis = create :hypothesis
-      goal = create :goal
-      @project.hypotheses << hypothesis
-      hypothesis.goals << goal
-    end
-
-    project_services = ProjectServices.new(@project)
-    log_entries = project_services.activities_by_pages.flatten
-
-    %w(
-      hypothesis.add_goal
-      goal.update
-      project.add_hypothesis
-      hypothesis.update
-      goal.create
-      hypothesis.create
-      project.add_member
-      project.create
-    ).each do |key|
-      expect(log_entries.map(&:key)).to include key
-    end
   end
 
   context 'Replicate project' do
@@ -251,22 +225,7 @@ feature 'Collect log entries' do
       end
 
       expect(Project.last.activities.count).to eq(1)
-      expect(Project.last.activities[0].owner).to eq(user)
-    end
-
-    scenario 'should copy project and keep old project activity and add one activity' do
-      PublicActivity.with_tracking do
-        expect{ @project_services.replicate(user) }.to change{ project.reload.activities.count }.by(1)
-      end
-    end
-
-    scenario 'should copy project and keep add a updated project activity' do
-      PublicActivity.with_tracking do
-        @project_services.replicate(user)
-      end
-
-      last_activity = project.reload.activities.last
-      expect(last_activity.text).to eq(I18n.t('activity.project.update'))
+      expect(Project.last.activities[0].key).to eq('project.create_project')
     end
   end
 end

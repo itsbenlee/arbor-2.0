@@ -23,7 +23,7 @@ class UserStoriesController < ApplicationController
   def create
     @user_story_service = UserStoryService.new(@project, @hypothesis)
     response =
-      @user_story_service.new_user_story(user_story_params)
+      @user_story_service.new_user_story(user_story_params, current_user)
     render json: response, status: (response.success ? 201 : 422)
   end
 

@@ -1,4 +1,6 @@
 class UserStory < ActiveRecord::Base
+  include PublicActivity::Common
+
   PRIORITIES = %w(must should could would)
   acts_as_commentable
 
@@ -24,8 +26,6 @@ class UserStory < ActiveRecord::Base
   scope :not_archived, -> { where(archived: false) }
   scope :archived, -> { where(archived: true) }
 
-  include AssociationLoggable
-
   def self.total_points(user_stories)
     user_stories.map(&:estimated_points).compact.sum
   end
@@ -44,10 +44,6 @@ class UserStory < ActiveRecord::Base
     "#{result}"
   end
 
-  def recipient
-    project
-  end
-
   def points_for_trello
     estimated_points.present? ? estimated_points : '*'
   end
@@ -63,11 +59,6 @@ class UserStory < ActiveRecord::Base
                     priority: priority)
     replica.save
     copy_associations(replica.id)
-  end
-
-  def clean_log
-    activities.delete_all
-    [clean_criterions_log, clean_constraints_log].each(&:join)
   end
 
   def reorder_criterions(criterions_hash)
@@ -128,14 +119,6 @@ class UserStory < ActiveRecord::Base
                      user_story_id: replica_id)
       constraint_replica.save
     end
-  end
-
-  def clean_criterions_log
-    Thread.new { acceptance_criterions.each(&:clean_log) }
-  end
-
-  def clean_constraints_log
-    Thread.new { constraints.each(&:clean_log) }
   end
 
   def assign_hypothesis

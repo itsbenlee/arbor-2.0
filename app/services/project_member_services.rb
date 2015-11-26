@@ -35,6 +35,8 @@ class ProjectMemberServices
   def invite_user_to_project(user, data)
     return if @project.members.exists?(user.id)
     InviteMailer.project_invite_email(data, false).deliver_now
+    @project.create_activity :add_member,
+      parameters: { element: user.log_description }
   end
 
   def invite_new_user(data)

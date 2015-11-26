@@ -1,6 +1,4 @@
 class Constraint < ActiveRecord::Base
-  include WithoutAssociationLoggable
-
   validates_presence_of :description
   validates_uniqueness_of :description, scope: :user_story_id
 
@@ -8,13 +6,5 @@ class Constraint < ActiveRecord::Base
 
   def log_description
     description
-  end
-
-  def recipient
-    user_story
-  end
-
-  def clean_log
-    activities.delete_all
   end
 end

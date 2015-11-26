@@ -65,14 +65,7 @@ module ArborReloaded
     def create
       @project = Project.new(project_params)
       @project.owner = current_user
-
-      if @project.save
-        assign_associations
-        redirect_to arbor_reloaded_project_canvases_path(@project)
-      else
-        @errors = @project.errors.full_messages
-        render :new, status: 400
-      end
+      assist_creation
     end
 
     def order_stories
@@ -123,6 +116,17 @@ module ArborReloaded
     end
 
     private
+
+    def assist_creation
+      if @project.save
+        @project.create_activity :create_project
+        assign_associations
+        redirect_to project_canvases_path(@project)
+      else
+        @errors = @project.errors.full_messages
+        render :new, status: 400
+      end
+    end
 
     def project_params
       params.require(:project).permit(:name)

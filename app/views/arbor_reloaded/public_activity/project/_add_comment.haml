@@ -1,0 +1,8 @@
+%div.log-action
+  = activity.owner.log_description
+  = t("log.#{activity.key}")
+%div.log-entity
+  = activity.parameters[:user_story]
+- if activity.parameters[:comment]
+  %div.log-trackable
+    = "↳ #{activity.parameters[:comment]}"

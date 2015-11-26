@@ -18,6 +18,6 @@ class User < ActiveRecord::Base
   end
 
   def log_description
-    email
+    full_name
   end
 end
