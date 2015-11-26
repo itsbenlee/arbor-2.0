@@ -5,7 +5,7 @@ describe Project do
   subject       { project }
 
   it { should validate_presence_of :name }
-  it { should validate_uniqueness_of :name }
+  it { should validate_uniqueness_of(:name).scoped_to(:owner_id) }
   it { should have_many :invites }
   it { should have_many :members }
   it { should have_many :hypotheses }
