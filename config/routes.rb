@@ -31,6 +31,7 @@ Railsroot::Application.routes.draw do
       resources :acceptance_criterions, only: [:create, :update]
       resources :constraints, only: [:create, :update]
       resources :tags, only: [:create, :index]
+      resources :comments, only: [:create]
     end
 
     get 'user_stories/export',
@@ -40,6 +41,7 @@ Railsroot::Application.routes.draw do
 
     get 'tags/filter', controller: :tags, action: :filter
     get 'tags/index', controller: :tags, action: :index
+    get 'tag/delete', controller: :tags, action: :delete
 
     put 'hypotheses/order', controller: :hypotheses, action: :update_order
     get 'hypotheses/export', controller: :hypotheses, action: :export
@@ -72,6 +74,18 @@ Railsroot::Application.routes.draw do
 
   post 'user_stories/copy', controller: :user_stories, action: :copy
   resources :goals, only: [:edit, :update, :destroy]
+
+  put 'user_stories/order_criterions',
+      controller: :user_stories,
+      action: :reorder_criterions,
+      as: :reorder_criterions
+
+  put 'user_stories/order_constraints',
+      controller: :user_stories,
+      action: :reorder_constraints,
+      as: :reorder_constraints
+
+  get 'export/:id/spreadhseet', to: 'projects#export_to_spreadhseet'
 
   devise_for :users, controllers: { registrations: 'registrations' }
 end

@@ -67,7 +67,7 @@
       right: 0;
       z-index: 2;
 
-      &:hover { color: $canvas-color; }
+      &:hover { color: $black-40; }
     }
 
     &.bullet {
@@ -160,11 +160,11 @@
     padding-left: rem-calc(15);
 
     a:hover +.goal-title {
-      color: $canvas-color;
+      color: $black-40;
 
       span {
-        border-color: $canvas-color;
-        color: $canvas-color;
+        border-color: $black-40;
+        color: $black-40;
       }
     }
 
@@ -217,7 +217,7 @@
       span,
       input,
       .user-story-input {
-        color: $canvas-color;
+        color: $black-40;
       }
     }
 
@@ -264,6 +264,8 @@
       }
 
       .user-story-priority { display: inline; }
+
+      .role-a-an { display: inline; }
     }
   }
 
@@ -289,9 +291,9 @@
     }
 
     a:hover +.hypothesis-title {
-      color: $canvas-color;
+      color: $black-40;
 
-      span::before { color: $canvas-color; }
+      span::before { color: $black-40; }
     }
   }//description
 

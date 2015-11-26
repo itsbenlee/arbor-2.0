@@ -29,7 +29,7 @@ feature 'Change complete percentage' do
     sign_in member
     visit project_canvases_path(project)
     find('.problems-field textarea').set('My problem proposal')
-    click_button 'save-canvas'
+    find('#save-canvas', visible: false).click
     expect(find('.percentage span')).to have_text('11%')
   end
 end

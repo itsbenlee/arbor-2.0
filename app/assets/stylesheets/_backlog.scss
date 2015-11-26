@@ -268,6 +268,8 @@
       margin-top: rem-calc(30);
       padding-top: rem-calc(20);
     }
+
+    .role-a-an { display: inline; }
   } // user story edit form
 
   .edit-backlog-inputs:hover .icon-trash { @include opacity(1); }
@@ -282,15 +284,15 @@
         @include transition(color .25s ease-in, opacity .25s ease-in);
         position: absolute;
         right: 0;
-        top: rem-calc(1);
+        top: 0;
         z-index: 99;
       }
 
       &:hover {
-        .icon-trash { color: $canvas-color; }
+        .icon-trash { color: $black-40; }
 
-        + form .bullet::before { color: $canvas-color; }
-        + form .backlog-placeholder { color: $canvas-color; }
+        + form .bullet::before { color: $black-40; }
+        + form .backlog-placeholder { color: $black-40; }
       }
     }
   }
@@ -302,7 +304,13 @@
     width: 90%;
   }
 
+  .ui-sortable-helper {
+    padding-bottom: rem-calc(50);
+    padding-top: 0;
+  }
+
   .acceptance-criterion-form,
+  .comment-form,
   .constraint-form {
     margin-bottom: rem-calc(5);
 
@@ -332,12 +340,15 @@
       width: auto;
     }
 
+    li { position: relative; }
+
     .bullet::before {
       @include transition(color .25s ease-in);
       color: $lab-color;
       content: '\2022';
       font-size: rem-calc(30);
-      left: rem-calc(-15);
+      left: 0;
+      line-height: .85;
       margin-right: rem-calc(5);
       position: absolute;
       top: rem-calc(-2);
@@ -356,6 +367,27 @@
   }
 
   .estimation { padding-right: rem-calc(15); }
+
+  .comment-form {
+    .comment-user {
+      font-size: rem-calc(13);
+      font-weight: $font-weight-bold;
+      padding-top: rem-calc(15);
+
+      &:after {
+        color: $lab-color;
+        content: '\2022';
+        font-size: rem-calc(15);
+      }
+    } // user name
+
+    .comment-field {
+      border-bottom: 1px solid $black-10;
+      display: block;
+      font-size: rem-calc(14);
+      padding-bottom: rem-calc(15);
+    }
+  } // comment form
 } // backlog
 
 .backlog-placeholder {
@@ -366,6 +398,7 @@
     color: $black-40;
     font-size: rem-calc(15);
     font-style: italic;
+    line-height: .5;
     padding: rem-calc(5 0);
   };
 } // backlog placeholders
@@ -431,7 +464,21 @@
 
 .user-story-tag {
   display: inline-block;
-  margin-right: rem-calc(10);
+  min-height: rem-calc(50);
+  min-width: rem-calc(100);
+  vertical-align: top;
+
+  &:after {
+    @include transition(color .25s ease-in, opacity .25s ease-in);
+    color: $font-color-3;
+    content: '⇧+click to delete';
+    display: block;
+    font-size: rem-calc(10);
+    font-weight: $font-weight-normal;
+    opacity: 0;
+  }
+
+  &:hover:after { opacity: 1; }
 }
 
 .story-tags span {

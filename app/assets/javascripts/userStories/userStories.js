@@ -6,9 +6,11 @@ function UserStories() {
       $backlogSection       = $('section.backlog'),
       $userStoriesContainer = $('.user-stories-list-container'),
       $backlogPreloader     = $('.user-stories-preloader'),
-      projectId             = $backlogSection.data('projectId');
-      selectedTags          = [];
-      projectTags           = [];
+      projectId             = $backlogSection.data('projectId'),
+      selectedTags          = [],
+      projectTags           = [],
+      $criterionsOnList     = $('li.criterion'),
+      $criterionsList       = $('ul.criterions-list');
 
   function filterByTags(tags) {
     $('#stories-filter').autocomplete({
@@ -36,7 +38,9 @@ function UserStories() {
   }
 
   function bindRemoveTag() {
-    $('.applied-tag').click(function() {
+    $('.applied-tag').click(function(e) {
+      if (e.shiftKey) return;
+
       var tag_to_remove = $(this).text().trim(),
           index = selectedTags.indexOf(tag_to_remove);
       if (index > -1) {
@@ -125,12 +129,16 @@ function UserStories() {
       $userStoryForm.html('');
       $userStoryForm.html(editForm);
       bindUserStoryEditForm();
+      bindReorderCriterionsEvents();
+      bindReorderConstraintEvents();
       bindNewAcceptanceCriterion();
       bindNewConstraint();
       bindEditAcceptanceCriterion();
       bindEditConstraint();
       bindTagCheckboxes();
       bindNewTag();
+      bindDeleteTag();
+      bindNewComment();
       refreshStories();
       bindAcceptanceCriterionFadeOut();
       bindConstraintFadeOut();
@@ -161,6 +169,76 @@ function UserStories() {
     });
   }
 
+
+  function bindReorderCriterionsEvents() {
+    $('li.criterion').click(function() {
+      $('li.criterion').removeClass('selected');
+      $(this).addClass('selected');
+    });
+
+    $('ul.criterions-list').sortable({
+      connectWith: '.criterions-list',
+      stop: function() {
+        var newCriterionsOrder = setCriterionsOrder(),
+            url = $('ul.criterions-list').data('url');
+            userStory = $('ul.criterions-list').data('user-story');
+        $.ajax({
+          url: url,
+          dataType: 'json',
+          method: 'PUT',
+          data: { criterions: newCriterionsOrder.criterions, user_story: userStory }
+        });
+      }
+    });
+  }
+
+  function setCriterionsOrder() {
+    var newCriterionsOrder = { criterions: [] },
+        $updatedCriterionsOnList = $('li.criterion');
+
+    $.each($updatedCriterionsOnList, function(index) {
+      var criterion = { id: $(this).data('id'), criterion_order: index + 1 };
+      newCriterionsOrder.criterions.push(criterion);
+    });
+
+    return newCriterionsOrder;
+  }
+
+  function bindReorderConstraintEvents() {
+    $('li.constraint').click(function() {
+      $('li.constraint').removeClass('selected');
+      $(this).addClass('selected');
+    });
+
+    $('ul.constraints-list').sortable({
+      connectWith: '.constraints-list',
+      stop: function() {
+        var newConstraintsOrder = setConstraintsOrder(),
+            url = $('ul.constraints-list').data('url');
+            userStory = $('ul.criterions-list').data('user-story');
+
+        $.ajax({
+          url: url,
+          dataType: 'json',
+          method: 'PUT',
+          data: { constraints: newConstraintsOrder.constraints, user_story: userStory }
+        });
+      }
+    });
+  }
+
+  function setConstraintsOrder() {
+    var newConstraintsOrder = { constraints: [] },
+        $updatedConstraintsOnList = $('li.constraint');
+
+    $.each($updatedConstraintsOnList, function(index) {
+      var constraint = { id: $(this).data('id'), constraint_order: index + 1 };
+      newConstraintsOrder.constraints.push(constraint);
+    });
+
+    return newConstraintsOrder;
+  }
+
   function hideBacklog() {
     $userStoriesContainer.hide();
     $backlogPreloader.show();
@@ -188,6 +266,7 @@ function UserStories() {
         $userStoriesOnList.removeClass('selected');
         $("[data-url='" + editUrl + "']").addClass('selected');
       }
+      fixArticlesForRolesOnBacklog();
     });
   }
 
@@ -245,6 +324,60 @@ function UserStories() {
       return false;
     });
   }
+
+  function bindDeleteTag() {
+    $('.user-story-tag').click(function(e) {
+      if (e.shiftKey) {
+        e.preventDefault();
+        tagCheckbox = this.getElementsByTagName('input')[0];
+        tagId = tagCheckbox.value
+        tagCheckbox.checked = false;
+        userStory = $('.user-story-tag').data('user-story');
+
+        $.ajax({
+          dataType: 'json',
+          method: 'GET',
+          url: 'tag/delete',
+          data: {tag_id: tagId, user_story: userStory},
+          success: function (response) {
+            if(response.success) {
+              url = '/backlog/' + userStory + '/edit';
+              displayStoryForm(url);
+              refreshBacklog(url);
+              var displayPromise = displayStoryForm(url);
+              displayPromise.done(function() {
+                deferred.resolve();
+              });
+            }
+          },
+          error: function (response) {
+            if(response.status === 422) {
+              var $errors = $.parseJSON(response.responseText).errors,
+                  $errorsContainer = $('.user-story-component-error');
+              $errorsContainer.append($errors);
+              $errorsContainer.show();
+              refreshBacklog();
+            }
+          }
+        });
+      }
+    });
+  }
+
+
+  function bindNewComment() {
+    $newCommentForm = $('.new_comment');
+
+    $newCommentForm.submit(function() {
+      var url     = $(this).attr('action'),
+          type    = $(this).attr('method'),
+          comment = $(this).serialize();
+
+      editFormAjax(url, type, comment);
+      return false;
+    });
+  }
+
 
   function bindNewAcceptanceCriterion() {
     $newCriterionForm = $('.new_acceptance_criterion');
@@ -306,7 +439,6 @@ function UserStories() {
 
   function bindUserStoryEditForm() {
     $editUserStoryForm = $('form.edit-story.edit_user_story');
-
     $editUserStoryForm.submit(function() {
       var url       = $(this).attr('action'),
           type      = $(this).attr('method'),
@@ -328,6 +460,13 @@ function UserStories() {
         $this.hide();
         $span.html($this.val());
       }
+
+      // correct articles when saved client story get clicked on backlog, Ale
+      prependGramaticallyCorrectArticle(this);
+      // bind key events for the new edit form to be created, Ale
+      $('.edit-story .row #user_story_role.role').on('keydown keyup', function(e) {
+        prependGramaticallyCorrectArticle(this);
+      });
     });
   }
 

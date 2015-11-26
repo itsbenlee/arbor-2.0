@@ -85,7 +85,7 @@ en:
       enter_role: "<type of user>"
       enter_action: "<some function>"
       enter_result: "<some benefit>"
-      role: "As a/an"
+      role: "As a"
       action_prefix: "I"
       action_suffix: "be able to"
       action: "I %{priority} be able to"
@@ -94,7 +94,7 @@ en:
       rearrange: "Rearrange User Story"
       edit_title: "Edit User Story"
       new: "New user story"
-      enter_criterion: 'Write a new acceptance criterion here...'
+      enter_criterion: 'Write a new acceptance criteria here...'
       enter_constraint: "Write a new constraint here..."
       edit_role: "Edit type of user"
       edit_action: "Edit function"
@@ -104,12 +104,15 @@ en:
       no_stories: "There are not stories selected to be copied."
       stories_copied: "The stories are copied successfully."
       new_tag: 'Create a new tag here'
+      new_comment: "Write a new comment here..."
+      comment_user: "%{user}"
       destination_project: "Select destination project"
     story_span: "Story"
     logout: "Sign out"
     acceptance_criterions: "Acceptance Criteria"
     constraints: "Constraints"
-    tags: 'Tags'
+    tags: "Tags"
+    comments: "Comments"
   canvas:
     textarea_placeholder: "Click here to enter text"
   attachment:
@@ -154,18 +157,21 @@ en:
       create: "A user story was created"
       update: "A user story was updated"
       destroy: "A user story was deleted"
-      add_acceptance_criterion: "An acceptance criterion was added to the user story"
+      add_acceptance_criterion: "An acceptance criteria was added to the user story"
       add_constraint: "A constraint was added to the user story"
-      remove_acceptance_criterion: "An acceptance criterion was removed from the user story"
+      add_comment: "A comment was added to the user story"
+      remove_acceptance_criterion: "An acceptance criteria was removed from the user story"
       remove_constraint: "A constraint was removed from the user story"
     acceptance_criterion:
-      create: "An acceptance criterion was created"
-      update: "An acceptance criterion was updated"
-      destroy: "An acceptance criterion was deleted"
+      create: "An acceptance criteria was created"
+      update: "An acceptance criteria was updated"
+      destroy: "An acceptance criteria was deleted"
     constraint:
       create: "A constraint was created"
       update: "A constraint was updated"
       destroy: "A constraint was deleted"
+    comment:
+      create: "A comment was created"
   deleted_user: "Deleted User"
   save: "Save"
   edit: "Edit"

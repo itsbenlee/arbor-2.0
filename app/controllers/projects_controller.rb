@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :load_project,
-                only: [:show, :edit, :update, :destroy, :log]
+                only: [:show, :edit, :update, :destroy,
+                       :log, :export_to_spreadhseet]
 
   def index
   end
@@ -88,6 +89,11 @@ class ProjectsController < ApplicationController
     project_services.replicate(current_user)
 
     redirect_to :back
+  end
+
+  def export_to_spreadhseet
+    send_data(
+      SpreadsheetExporterService.export(@project), disposition: 'inline')
   end
 
   private

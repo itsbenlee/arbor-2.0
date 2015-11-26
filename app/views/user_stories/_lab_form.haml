@@ -9,7 +9,7 @@ url: form_url do |form|
           %li= error
   %span
   .user-story-input.role
-    = t('backlog.user_stories.role')
+    .role-a-an= t('backlog.user_stories.role')
     = form.text_field(                                   |
       :role,                                             |
       placeholder: t('backlog.user_stories.enter_role'), |

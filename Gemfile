@@ -22,6 +22,7 @@ gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'i18n-js'
 gem 'wicked_pdf', github: 'mileszs/wicked_pdf'
 gem 'mustache-js-rails'
+gem 'acts_as_commentable'
 
 group :doc do
   gem 'sdoc', require: false
@@ -65,3 +66,5 @@ group :production do
 end
 
 gem 'devise'
+
+gem 'migration_data'

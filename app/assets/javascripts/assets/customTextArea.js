@@ -1,7 +1,7 @@
 function CustomTextArea() {
   var resizeTextarea = function(el) {
     var offset = el.offsetHeight - el.clientHeight;
-    $(el).css('height', 'auto').css('height', el.scrollHeight + offset);
+    $(el).css('height', '10px').css('height', el.scrollHeight + offset);
   };
 
   $('.resizable-text-area').each(function() {
@@ -18,4 +18,13 @@ function CustomTextArea() {
       return false;
     }
   });
+
+  $('.resizable-text-area').focus(function(){
+    $('#save-canvas').show();
+  });
+
+  $('.resizable-text-area').blur(function(){
+    $('#save-canvas').hide();
+  });
+
 }

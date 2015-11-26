@@ -87,4 +87,46 @@ feature 'copy user story in other project' do
       expect(another_project.user_stories[index].estimated_points).to eq(user_story.estimated_points)
     end
   end
+
+  scenario 'should reorder acceptance criterions on user story' do
+    user_story = create :user_story
+    first_criterion, second_criterion, third_criterion = create_list :acceptance_criterion, 3, user_story: user_story
+    criterions = { 'criterions' => {
+                      '0' => {'id' => first_criterion.id, 'criterion_order' => 2},
+                      '1' => {'id' => second_criterion.id, 'criterion_order' => 3},
+                      '2' => {'id' => third_criterion.id, 'criterion_order' => 1}
+                    }
+                  }
+
+    acceptance_criterion_service = AcceptanceCriterionServices.new(user_story)
+    acceptance_criterion_service.reorder_criterions(criterions)
+
+    first_criterion_updated, second_criterion_updated, third_criterion_updated =
+    AcceptanceCriterion.find(first_criterion.id, second_criterion.id, third_criterion.id)
+
+    expect(first_criterion_updated.order).to eq 2
+    expect(second_criterion_updated.order).to eq 3
+    expect(third_criterion_updated.order).to eq 1
+  end
+
+  scenario 'should reorder constraints on user story' do
+    user_story = create :user_story
+    first_constraint, second_constraint, third_constraint = create_list :constraint, 3, user_story: user_story
+    constraints = { 'constraints' => {
+                      '0' => {'id' => first_constraint.id, 'constraint_order' => 2},
+                      '1' => {'id' => second_constraint.id, 'constraint_order' => 3},
+                      '2' => {'id' => third_constraint.id, 'constraint_order' => 1}
+                    }
+                  }
+
+    constraints_services = ConstraintServices.new(user_story)
+    constraints_services.reorder_constraints(constraints)
+
+    first_constraint_updated, second_constraint_updated, third_constraint_updated =
+    Constraint.find(first_constraint.id, second_constraint.id, third_constraint.id)
+
+    expect(first_constraint_updated.order).to eq 2
+    expect(second_constraint_updated.order).to eq 3
+    expect(third_constraint_updated.order).to eq 1
+  end
 end

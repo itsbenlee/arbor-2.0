@@ -28,6 +28,18 @@ class TagServices
     @common_response
   end
 
+  def delete_tag(tag_id)
+    tag = Tag.find(tag_id)
+    if tag.destroy
+      @common_response.data[:edit_url] =
+        Rails.application.routes.url_helpers.edit_user_story_path(@user_story)
+    else
+      @common_response.success = false
+      @common_response.errors += tag.errors.full_messages
+    end
+    @common_response
+  end
+
   private
 
   def assign_associations(tag)

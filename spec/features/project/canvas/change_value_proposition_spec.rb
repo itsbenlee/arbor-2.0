@@ -15,7 +15,7 @@ feature 'Edit value proposition' do
     find(".canvas-item[type='value-proposition']").click()
     updated_proposition = 'My new value proposition'
     fill_in :value_proposition, with: updated_proposition
-    find('#save-canvas').click()
+    find('#save-canvas', visible: false).click
     visit project_hypotheses_path(project_id: project.id)
     expect(find(hypothesis_title)).to have_text(updated_proposition)
   end

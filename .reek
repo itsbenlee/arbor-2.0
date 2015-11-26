@@ -56,6 +56,7 @@ NestedIterators:
     Hypothesis#self.to_csv,
     UserStoriesController#update,
     UserStoriesController#export,
+    SpreadsheetExporterService#self.export,
   ]
   max_allowed_nesting: 1
   ignore_iterators: []
@@ -69,7 +70,8 @@ RepeatedConditional:
   enabled: true
   exclude: [
     'AcceptanceCriterionsController',
-    'ConstraintsController'
+    'ConstraintsController',
+    'TagsController'
   ]
   max_ifs: 2
 TooManyInstanceVariables:
@@ -84,7 +86,9 @@ TooManyStatements:
   enabled: true
   exclude: [
 
-    RegistrationsController#create
+    RegistrationsController#create,
+    AcceptanceCriterionServices#new_acceptance_criterion,
+    ConstraintServices#new_constraint
   ]
   max_statements: 6
 UncommunicativeMethodName:
@@ -132,5 +136,9 @@ UtilityFunction:
     ApplicationHelper#meta_description,
     ThumbnailUploader#default_link_url,
     ThumbnailUploader#default_file_url,
+    UserStory#reorder_criterions,
+    AcceptanceCriterionServices#get_order,
+    UserStory#reorder_constraints,
+    ConstraintServices#get_order
   ]
   max_helper_calls: 1
