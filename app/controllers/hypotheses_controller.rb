@@ -15,7 +15,7 @@ class HypothesesController < ApplicationController
       Hypothesis.includes(:user_stories).find(params[:hypothesis_id])
 
     render partial: 'user_stories/list',
-           locals: { user_stories: hypothesis.user_stories.ordered,
+           locals: { user_stories: hypothesis.user_stories.not_archived.ordered,
                      hypothesis: hypothesis }
   end
 
