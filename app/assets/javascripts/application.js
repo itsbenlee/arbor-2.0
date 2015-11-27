@@ -19,5 +19,6 @@
 //= require userStories/archive
 //= require userStories/a_an_grammar
 //= require userStories/disableArea
+//= require lab/lab
 //= require_tree ./vendor
 //= require_tree ./attachments

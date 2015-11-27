@@ -3,7 +3,7 @@
     .hypothesis-title.hypothesis-edit{ data: { id: hypothesis.id } }
       %span.bullet
       = form.text_field :description, class: 'hypothesis-title-field',
-      data: { hypothesis_id: hypothesis.id }
+      data: { hypothesis_id: hypothesis.id }, required: true
     .small-12.columns.hypothesis-type-edit{ data: { id: hypothesis.id } }
       = form.select(:hypothesis_type_id,
       hypothesis_types.all.collect { |ht|[ht.description, ht.id] }, { include_blank: t('labs.hypotheses.select_metric')}, { class: 'type edit-type' })
