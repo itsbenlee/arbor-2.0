@@ -106,6 +106,24 @@ function collapseSidebar() {
   }
 }
 
+// html5 validation copycat, Ale
+function preSubmitForm(obj) {
+  var requiredFields = $('#'+obj.form.id).find(":input[required= 'required']").serializeArray();
+      isItOk = true;
+      message = 'Please complete all the fields';
+
+  $.each(requiredFields, function(i, field) {
+    if (!field.value)
+      isItOk = false;
+  });
+
+  if (isItOk) {
+    $(obj.form).submit();
+  } else {
+    alert(message);
+  }
+}
+
 if (toolBar.length) {
   projectsList.hide(); // Hide project list
 

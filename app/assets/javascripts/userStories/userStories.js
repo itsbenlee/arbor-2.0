@@ -656,21 +656,3 @@ function dynamicInput() {
     });
   })($);
 }
-
-// html5 validation copycat, Ale
-function preSubmitForm(obj) {
-  var requiredFields = $('#'+obj.form.id).find('select, textarea, input').serializeArray();
-      isItOk = true;
-      message = 'Please complete all the fields';
-
-  $.each(requiredFields, function(i, field) {
-    if (!field.value)
-      isItOk = false;
-  });
-
-  if (isItOk) {
-    $(obj.form).submit();
-  } else {
-    alert(message);
-  }
-}
