@@ -11,7 +11,7 @@ module ArborReloaded
 
     def create
       assign_values
-      if @attachment.valid? && @attachment.save
+      if @attachment.save?
         send("set_#{@attachment.type}_flash_message")
         redirect_to project_attachments_path @project
       else
@@ -27,7 +27,7 @@ module ArborReloaded
     private
 
     def assign_values
-      @attachment = attachment_type.new attachment_params
+      @attachment = attachment_type.new(attachment_params)
       @attachment.project = @project
       @attachment.user = current_user
       service = attachment_type_service.new @attachment

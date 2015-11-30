@@ -1,23 +1,23 @@
 %nav.top-bar{"data-topbar" => "", :role => "navigation"}
   %ul.title-area
     = link_to arbor_reloaded_root_path, class: 'logo' do
-      = render 'arbor_reloaded/logo'
+      = render 'shareable/svg/logo'
     %li.name
       - if current_project && !current_project.new_record?
         = link_to current_project.name, '#', class: 'current-project'
     / Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
     %li.toggle-topbar.menu-icon
       %a{:href => "#"}
-        %span Menu
+        %span= t('reloaded.navigation.menu')
   %section.top-bar-section
     / Right Nav Section
     %ul.right
       %ul.sections
         %li
-          = link_to 'Projects', arbor_reloaded_root_path
+          = link_to t('reloaded.navigation.projects'), arbor_reloaded_root_path
         - if current_project
           %li
-            = link_to 'People', arbor_reloaded_project_path(current_project)
+            = link_to t('reloaded.navigation.people'), arbor_reloaded_project_path(current_project)
         %li.hide
           %a{:href => "#"} FAQ
         - if current_project
@@ -29,12 +29,14 @@
           .avatar
             .picture{ style: "background-image: url(#{ image_path('test-user.png') });" }
             %a.welcome{:href => "#"}
-              Welcome,
-              %span= current_user.full_name
+              = t('reloaded.navigation.welcome')
+              %span
+                = current_user.full_name
+                !
           %ul.dropdown
             %li
               %a{:href => "#"}
-                %span Settings
+                %span= t('reloaded.navigation.settings')
                 = image_tag('icons/gear-icon.svg', class: 'icon')
             %li
               = link_to destroy_user_session_path, method: :delete, class: 'logout nav-links' do
@@ -45,15 +47,15 @@
     %section.bottom-bar-section
       %ul.left.sections
         %li
-          = link_to 'Canvas', arbor_reloaded_project_canvases_path(current_project)
+          = link_to t('reloaded.navigation.canvas'), arbor_reloaded_project_canvases_path(current_project)
         %li
-          = link_to 'Backlog', arbor_reloaded_project_user_stories_path(current_project)
+          = link_to t('reloaded.navigation.backlog'), arbor_reloaded_project_user_stories_path(current_project)
         %li.hide
-          %a{:href => "#"} Estimation
+          %a{:href => "#"}= t('reloaded.navigation.estimation')
         %li
-          = link_to 'Activity', log_arbor_reloaded_project_path(current_project)
+          = link_to t('reloaded.navigation.activity'), log_arbor_reloaded_project_path(current_project)
         %li
-          = link_to 'Assets', arbor_reloaded_project_attachments_path(current_project)
+          = link_to t('reloaded.navigation.assets'), arbor_reloaded_project_attachments_path(current_project)
         %li
           %a{"aria-controls" => "projet-actions", "aria-expanded" => "false", "data-dropdown" => "projet-actions"} ...
           %ul#projet-actions.f-dropdown{"aria-hidden" => "true", "data-dropdown-content" => "", :tabindex => "-1"}

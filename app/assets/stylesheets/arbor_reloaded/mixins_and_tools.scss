@@ -1,0 +1,22 @@
+///// Variables
+$primary-nav-color: #22252e;
+$secondary-nav-color: #282c37;
+$hover-navigation: #30323b;
+
+
+///// Mixins
+@mixin fake-border($height, $color: false, $left: false, $top: false, $right: false, $bottom: false) {
+  &::before {
+    @if $color == false { $color: $backlog-color; }
+    @if $left { left: $left; }
+    @if $top { top: $top; }
+    @if $bottom { bottom: $bottom; }
+    @if $right { right: $right; }
+
+    @include background-image(linear-gradient(left, $color 0%, $color 100%));
+    content: '';
+    height: $height;
+    position: absolute;
+    width: 100%;
+  }//before nav
+}//mixing for creating a border

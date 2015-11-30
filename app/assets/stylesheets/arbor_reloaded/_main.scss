@@ -1,28 +1,8 @@
-$primary-nab-color: #22252e;
-$secondary-nab-color: #282c37;
-$hover-navigation: #30323b;
-
-@mixin fake-border($height, $color: false, $left: false, $top: false, $right: false, $bottom: false) {
-  &::before {
-    @if $color == false { $color: $backlog-color; }
-    @if $left { left: $left; }
-    @if $top { top: $top; }
-    @if $bottom { bottom: $bottom; }
-    @if $right { right: $right; }
-
-    @include background-image(linear-gradient(left, $color 0%, $color 100%));
-    content: '';
-    height: $height;
-    position: absolute;
-    width: 100%;
-  }//before nav
-}//mixing for creating a border
-
 .top-bar {
-  background-color: $primary-nab-color;
+  background-color: $primary-nav-color;
   height: rem-calc(60);
 
-  section ul li { background-color: $primary-nab-color; }
+  section ul li { background-color: $primary-nav-color; }
 
   li,
   .right,
@@ -37,7 +17,7 @@ $hover-navigation: #30323b;
   .right {
     a {
       // scss-lint:disable ImportantRule
-      background-color: $primary-nab-color !important;
+      background-color: $primary-nav-color !important;
       color: $black-30;
       line-height: rem-calc(60) !important;
     }
@@ -75,6 +55,15 @@ $hover-navigation: #30323b;
   }
 
   .profile {
+    .has-dropdown:hover {
+      @include fake-border(1px, $primary-nav-color, 15px, false, 15px, 0);
+      // scss-lint:disable ImportantRule
+      background-color: $secondary-nav-color !important;
+
+      &:before { width: calc(100% - 30px);}
+      .welcome { background-color: $secondary-nav-color !important; }
+    }
+
     .picture {
       @include border-radius(100%);
       @include inline-block;
@@ -88,22 +77,36 @@ $hover-navigation: #30323b;
 
     .welcome {
       display: none;
+      font-size: rem-calc(13);
+
+      span {
+        color: $white;
+        font-weight: $font-weight-bold;
+      }
 
       @media #{$large-up} { @include inline-block; }
     }
   }
 
   .dropdown {
+    // scss-lint:disable ImportantRule
+    background-color: $secondary-nav-color !important;
     min-width: rem-calc(140);
 
     a {
       @include clearfix;
+      // scss-lint:disable ImportantRule
+      background-color: $secondary-nav-color !important;
+      color: $black-30 !important;
       padding: 0;
+
+      &:hover {
+        // scss-lint:disable ImportantRule
+        color: $white !important;
+      }
     }
 
-    span {
-      float: left;
-    }
+    span { float: left; }
 
     .icon {
       float: right;
@@ -114,7 +117,7 @@ $hover-navigation: #30323b;
 
 .bottom-bar-section {
   @include clearfix;
-  background-color: $secondary-nab-color;
+  background-color: $secondary-nav-color;
   height: rem-calc(50);
 
   ul,
@@ -160,7 +163,7 @@ $hover-navigation: #30323b;
         @include border-radius(100%);
         @include inline-block;
         background-color: $black-20;
-        color: $secondary-nab-color;
+        color: $secondary-nav-color;
         font-size: rem-calc(14);
         height: rem-calc(20);
         line-height: rem-calc(19);
@@ -173,9 +176,7 @@ $hover-navigation: #30323b;
       }
     }
 
-    img {
-      width: 100%;
-    }
+    img { width: 100%; }
   }
 }
 
@@ -185,15 +186,23 @@ $hover-navigation: #30323b;
 }
 
 #projet-actions {
-  background-color: $secondary-nab-color;
+  background-color: $secondary-nav-color;
   outline: 0;
 
   li {
     display: block;
 
     a {
+      display: block;
       line-height: rem-calc(50);
-      padding: rem-calc(5);
+      margin: 0;
+      padding: rem-calc(5 0 0 15);
+      position: relative;
+
+      span {
+        position: absolute;
+        right: rem-calc(15);
+      }
     }
   }
 
