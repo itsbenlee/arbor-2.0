@@ -10,6 +10,7 @@
 //= require i18n/translations
 //= require init
 //= require projects/projects.js.erb
+//= require projects/edit.js
 //= require assets/customTextArea
 //= require canvases/canvases
 //= require hypotheses/hypotheses
