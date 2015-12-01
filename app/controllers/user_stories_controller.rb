@@ -77,6 +77,7 @@ class UserStoriesController < ApplicationController
   def story_update_params
     params = user_story_params
     params[:tag_ids] ||= []
+    params[:archived]
     params
   end
 
@@ -152,7 +153,7 @@ class UserStoriesController < ApplicationController
   def user_story_params
     params.require(:user_story).permit(
       :role, :action, :result, :estimated_points,
-      :priority, :archived, :hypothesis_id, tag_ids: []
+      :priority, :archived, :hypothesis_id, :archived, tag_ids: []
     )
   end
 
