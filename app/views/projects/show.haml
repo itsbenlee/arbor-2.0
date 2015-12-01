@@ -5,6 +5,8 @@
       - @project.members.each do |member|
         .user-info
           = image_tag('icons/user-icon.svg', class: 'icon')
+          - if member.id == @project.owner_id
+            %span.owner-label owner
           .user-name
             = member.full_name
           .user-mail
