@@ -1,0 +1,17 @@
+- if flash[:success]
+  .alert-box.warning.radius{ data: { alert: '' } }
+    = flash[:success]
+    = link_to '×', '#', class: 'close'
+.attachments-view
+  - if @attachment.errors.any?
+    .alert-box.alert.radius.attachment_errors{ data: { alert: '' } }
+      = link_to '×', '#', class: 'close'
+      %ul
+        - @attachment.errors.full_messages.each do |error|
+          %li= error
+  .attachment-new
+    = render 'attachments/attachment_switcher', attachment: @attachment, project: @project
+  - if @project.attachments.any?
+    .attachments-list
+      - @project.attachments.each do |attachment|
+        = render 'attachments/show', attachment: attachment, project: @project

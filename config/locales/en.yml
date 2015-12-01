@@ -229,3 +229,15 @@ en:
   activity:
     project:
       update: 'Project was updated'
+  reloaded:
+    navigation:
+      menu: 'Menu'
+      projects: 'Projects'
+      people: 'People'
+      welcome: 'Welcome,'
+      settings: 'Settings'
+      canvas: 'Canvas'
+      backlog: 'Backlog'
+      estimation: 'Estimation'
+      activity: 'Activity'
+      assets: 'Assets'

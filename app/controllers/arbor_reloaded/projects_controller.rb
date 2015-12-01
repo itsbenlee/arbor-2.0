@@ -1,5 +1,6 @@
 module ArborReloaded
   class ProjectsController < ApplicationController
+    layout 'application_reload'
     before_action :load_project,
                   only: [:show, :edit, :update, :destroy,
                          :log, :export_to_spreadhseet]
@@ -69,8 +70,6 @@ module ArborReloaded
     def log
       project_services = ProjectServices.new(@project)
       @activities_by_pages = project_services.activities_by_pages
-
-      render layout: false
     end
 
     def backlog
