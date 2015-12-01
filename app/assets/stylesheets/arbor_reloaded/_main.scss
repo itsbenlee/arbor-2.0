@@ -54,40 +54,6 @@
     }
   }
 
-  .profile {
-    .has-dropdown:hover {
-      @include fake-border(1px, $primary-nav-color, 15px, false, 15px, 0);
-      // scss-lint:disable ImportantRule
-      background-color: $secondary-nav-color !important;
-
-      &:before { width: calc(100% - 30px);}
-      .welcome { background-color: $secondary-nav-color !important; }
-    }
-
-    .picture {
-      @include border-radius(100%);
-      @include inline-block;
-      background-size: cover;
-      height: rem-calc(40);
-      margin-left: rem-calc(10);
-      width: rem-calc(40);
-
-      @media #{$medium-only} { margin: rem-calc(10 15 0 0); }
-    }
-
-    .welcome {
-      display: none;
-      font-size: rem-calc(13);
-
-      span {
-        color: $white;
-        font-weight: $font-weight-bold;
-      }
-
-      @media #{$large-up} { @include inline-block; }
-    }
-  }
-
   .dropdown {
     // scss-lint:disable ImportantRule
     background-color: $secondary-nav-color !important;
@@ -114,6 +80,40 @@
     }
   }
 }//top-bar
+
+.profile {
+  .has-dropdown:hover {
+    @include fake-border(1px, $primary-nav-color, 15px, false, 15px, 0);
+    // scss-lint:disable ImportantRule
+    background-color: $secondary-nav-color !important;
+
+    &:before { width: calc(100% - 30px);}
+    .welcome { background-color: $secondary-nav-color !important; }
+  }
+
+  .picture {
+    @include border-radius(100%);
+    @include inline-block;
+    background-size: cover;
+    height: rem-calc(40);
+    margin-left: rem-calc(10);
+    width: rem-calc(40);
+
+    @media #{$medium-only} { margin: rem-calc(10 15 0 0); }
+  }
+
+  .welcome {
+    display: none;
+    font-size: rem-calc(13);
+
+    span {
+      color: $white;
+      font-weight: $font-weight-bold;
+    }
+
+    @media #{$large-up} { @include inline-block; }
+  }
+}
 
 .bottom-bar-section {
   @include clearfix;
@@ -225,4 +225,34 @@
   li:hover { background-color: $hover-navigation; }
 
   &::before { border-color: transparent transparent $hover-navigation;}
+}
+
+.reloaded-title {
+  color: $black-60;
+  // scss-lint:disable ImportantRule
+  font-family: $reloaded-font-family-sans-serif !important;
+  font-size: rem-calc(16);
+  font-weight: $font-weight-bold;
+  margin-bottom: 0;
+  padding: rem-calc(20);
+}
+
+.reloaded-tag {
+  @include border-radius(rem-calc(50));
+  background-color: $black-30;
+  color: $white;
+  font-size: rem-calc(8);
+  margin-left: rem-calc(5);
+  padding: rem-calc(4 6);
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.modal-btn {
+  display: block;
+  margin: 0 auto;
+  padding: rem-calc(15 30);
+  text-transform: none;
+  width: 30%;
 }

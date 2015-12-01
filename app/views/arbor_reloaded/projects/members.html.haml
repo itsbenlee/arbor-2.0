@@ -1,25 +1,42 @@
-.show-project-data
-  - project.members.each do |member|
-    .user-info
-      = image_tag('icons/user-icon.svg', class: 'icon')
-      .user-name
-        = member.full_name
-      .user-mail
-        = member.email
-  = link_to t("project_members.edit"),'#', id: 'edit_project', class: 'button radius success small'
-  - unless invites.empty?
-    .sent-invites
-      %label= t("project_members.already_invited")
-    - invites.each do |invite|
-      .user-info.email-invited
-        = image_tag('icons/mail-icon.svg', class: 'icon')
-        = invite.email
-  - if can_delete
-    = link_to project, method: :delete, data: { confirm: t('project.delete_confirmation') }, class: 'delete-project' do
-      = t('project.delete_project')
-      %span.icon-trash
-  = link_to project_copy_path(project), method: :post, class: 'copy-project', data: {} do
-    = t('project.copy_project')
-    %span.icon-plus
-.edit-project-form
-  = render 'projects/edit', project: project, errors: @errors
+.members-modal
+  %a.close-reveal-modal{"aria-label" => "Close"} ×
+  %h2.reloaded-title= t("project_members.title")
+  .project-members
+    .user-item.special-item.row
+      .profile.small-2.columns
+        .picture{ style: "background-image: url(#{ image_path('test-user.png') });" }
+      .user-data.small-10.columns
+        - owner = @project.members.find(@project.owner_id)
+        %p.user-name
+          = owner.full_name
+          %span.reloaded-tag=t ("reloaded.project_members.owner")
+        %p.user-mail
+          = owner.email
+    .show-project-data
+      - @project.members.each_with_index do |member, index|
+        - unless index == 0
+          .user-item.row
+            .profile.small-2.columns
+              .picture{ style: "background-image: url(#{ image_path('test-user.png') });" }
+            .user-data.small-10.columns
+              %p.user-name
+                = member.full_name
+              %p.user-mail
+                = member.email
+      - unless @invites.empty?
+        - @invites.each do |invite|
+          .user-item.invited.row
+            .profile.small-2.columns
+              .avatar-circle A
+            .user-data.small-10.columns
+              %span.reloaded-tag
+                =t ("reloaded.project_members.user_invited")
+              %p.user-mail
+                = invite.email
+  .footer
+    %input{ id: 'new-member-mail', |
+      type:"text", |
+      required:true, |
+      placeholder: t('reloaded.project_members.mail_invite'), |
+      data: { url: arbor_reloaded_project_path(@project), name: @project.name}}
+    = link_to t("reloaded.project_members.close"),'#', class: 'button radius small modal-btn', id: 'people-modal-footer-btn'

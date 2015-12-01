@@ -1,0 +1,103 @@
+.reveal-modal-bg { opacity: .6; }
+
+.reveal-modal {
+  @include scrollbars(.5em, $black-20);
+  @include border-radius($global-radius);
+  background-color: $light-bg;
+  border: 0;
+  box-shadow: none;
+  line-height: normal;
+  outline: 0;
+  padding: 0;
+
+  @media #{$medium-up} { width: rem-calc(430); }
+  @media #{$small-only} { top: 0; }
+
+  .avatar-circle {
+    @include border-radius(rem-calc(100));
+    background: $black-30;
+    color: $black-10;
+    font-size: rem-calc(24);
+    height: rem-calc(50);
+    line-height: rem-calc(50);
+    text-align: center;
+    width: rem-calc(50);
+  }
+
+  .profile {
+    margin: 0;
+    padding: 0;
+  }
+
+  .picture {
+    height: rem-calc(50);
+    margin: 0;
+    width: rem-calc(50);
+  }
+
+  .user-item {
+    border-bottom: 1px solid $black-20;
+    margin: rem-calc(0 30);
+    padding: rem-calc(20);
+    width: auto;
+
+    .container-user {
+      display: inline-flex;
+      padding-left: 0;
+    }
+
+    &.invited { .user-data { padding-top: rem-calc(5); }}
+    &.special-item {
+      border-top: 1px solid $black-20;
+      margin: 0;
+      padding: rem-calc(20 50);
+    }
+
+    &:last-child { border-bottom: 0; }
+  } // user item
+
+  .user-data {
+    p {
+      font-size: rem-calc(14);
+      margin: 0;
+    }
+
+    .user-mail {
+      @include ellipsis;
+      color: $black-40;
+    }
+  } // user data
+
+  .close-reveal-modal {
+    font-size: rem-calc(20);
+    top: rem-calc(25);
+  }
+
+  .show-project-data {
+    background-color: $black-10;
+    max-height: rem-calc(200);
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+
+  .footer {
+    border-top: 1px solid $black-20;
+    height: rem-calc(155);
+    padding: rem-calc(20 0 18);
+    text-align: center;
+
+    input {
+      @include border-radius($global-radius);
+      @include inline-block;
+      font-size: rem-calc(14);
+      margin-bottom: rem-calc(20);
+      padding: rem-calc(0 20);
+      width: 77%;
+    }
+  }
+}
+
+.reloaded-tag {
+  margin: rem-calc(0 0 10 0);
+  width: rem-calc(45);
+}
