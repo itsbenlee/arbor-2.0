@@ -16,12 +16,22 @@
     margin-bottom: rem-calc(20);
     overflow: hidden;
     padding: rem-calc(10 0 12 20);
+    position: relative;
 
     img {
       margin-right: 10px;
       padding-bottom: rem-calc(2);
       vertical-align: baseline;
     } // img
+
+    .owner-label {
+      color: $black-30;
+      font-size: rem-calc(8);
+      left: rem-calc(13);
+      position: absolute;
+      text-transform: uppercase;
+      top: rem-calc(22);
+    }
 
     .user-name,
     .user-mail {
