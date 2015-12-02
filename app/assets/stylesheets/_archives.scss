@@ -20,7 +20,7 @@
 }
 
 .restore-link,
-.user-story-input.archive {
+.archive-link {
   font-size: rem-calc(10);
   font-weight: $font-weight-bold;
   text-transform: uppercase;
@@ -31,3 +31,10 @@
     width: rem-calc(13);
   } // checkbox archive
 } // user story archived
+
+.archive-link {
+  opacity: 0;
+  text-align: right;
+  
+  &:hover { opacity: 1; }
+}
