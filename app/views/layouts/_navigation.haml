@@ -72,15 +72,24 @@
                 = t('project.delete_project')
                 %span.icon-trash
       %ul.right.members
-        %li
-          = link_to arbor_reloaded_project_path(current_project), { style: "background-image: url(#{ image_path('test-user.png') });"} do
-            = image_tag ('icons/user-icon.svg'), class: 'hide'
-        %li
-          = link_to arbor_reloaded_project_path(current_project), { style: "background-image: url(#{ image_path('test-user.png') });"} do
-            = image_tag ('icons/user-icon.svg'), class: 'hide'
-        %li
-          = link_to arbor_reloaded_project_path(current_project), { style: "background-image: url(#{ image_path('test-user.png') });"} do
-            = image_tag ('icons/user-icon.svg'), class: 'hide'
+        - current_project.members.each_with_index do |member, index|
+          - if index == 0
+            %li
+              = link_to arbor_reloaded_project_path(current_project), { style: "background-image: url(#{ image_path('icons/po_avatar.svg') });"} do
+                = image_tag ('icons/user-icon.svg'), class: 'hide'
+          - if index == 1
+            %li
+              = link_to arbor_reloaded_project_path(current_project), { style: "background-image: url(#{ image_path('icons/user-icon.svg') });"} do
+                = image_tag ('icons/user-icon.svg'), class: 'hide'
+          - if index == 2
+            %li
+              = link_to arbor_reloaded_project_path(current_project), { style: "background-image: url(#{ image_path('icons/user-icon.svg') });"} do
+                = image_tag ('icons/user-icon.svg'), class: 'hide'
+        - if current_project.members.count > 3
+          %li
+            = link_to arbor_reloaded_project_path(current_project), class: 'other-members' do
+              +
+              = current_project.members.count - 3
         %li
           = link_to arbor_reloaded_project_path(current_project), class: 'add-member' do
             +

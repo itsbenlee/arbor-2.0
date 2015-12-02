@@ -159,9 +159,8 @@
 
       @media #{$small-only} { display: none; }
 
-      &.add-member {
-        @include border-radius(100%);
-        @include inline-block;
+      &.add-member,
+      &.other-members {
         background-color: $black-20;
         color: $secondary-nav-color;
         font-size: rem-calc(14);
@@ -173,6 +172,20 @@
         width: rem-calc(20);
 
         @media #{$small-only} { display: inline-block; }
+      }
+
+      &.other-members {
+        background-color: transparent;
+        border: 1px solid $black-30;
+        color: $black-20;
+        font-size: rem-calc(12);
+        height: rem-calc(30);
+        letter-spacing: 0;
+        line-height: rem-calc(29);
+        margin-right: rem-calc(10);
+        width: rem-calc(30);
+
+        @media #{$small-only} { display: none; }
       }
     }
 
