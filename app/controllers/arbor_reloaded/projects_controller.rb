@@ -1,22 +1,36 @@
 module ArborReloaded
   class ProjectsController < ApplicationController
-    layout 'application_reload'
+    layout false, only: :members
     before_action :load_project,
                   only: [:show, :edit, :update, :destroy,
                          :log, :export_to_spreadhseet]
-
     def index
+      render layout: 'application_reload'
     end
 
     def new
+      render layout: 'application_reload'
     end
 
     def edit
+      render layout: 'application_reload'
     end
 
     def show
+      render layout: 'application_reload'
       @invites = Invite.where(project: @project)
       @can_delete = current_user.can_delete?(@project)
+    end
+
+    def members
+      @project = Project.find(params[:project_id])
+      @invites = Invite.where(project: @project)
+      @can_delete = current_user.can_delete?(@project)
+      render 'arbor_reloaded/projects/members', locals: {
+        project: @project,
+        invites: @invites,
+        can_delete: @can_delete
+      }
     end
 
     def destroy

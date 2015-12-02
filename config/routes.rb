@@ -23,7 +23,6 @@ Railsroot::Application.routes.draw do
         controller: :projects,
         action: :order_stories,
         as: :reorder_backlog
-
     resources :backlog,
         except: [:show, :new],
         as: :user_stories,
@@ -101,6 +100,9 @@ Railsroot::Application.routes.draw do
 
     resources :projects, shallow: true do
       get 'log', on: :member
+      get 'members',
+          controller: :projects,
+          action: :members
       resources :lab,
         only: [:index, :create, :update],
         as: :hypotheses,
@@ -153,6 +155,8 @@ Railsroot::Application.routes.draw do
       delete 'remove_member_from_project',
         controller: :projects,
         action: :remove_member_from_project
+
+      get 'members', controller: :projects, action: :members
     end
   end
 end
