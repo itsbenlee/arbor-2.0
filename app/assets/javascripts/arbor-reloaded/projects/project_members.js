@@ -10,6 +10,7 @@ $('#project-members-modal').on('opened.fndtn.reveal', function() {
 
   hideSpecifiedElements();
   bindActionsToButton();
+  displayInitialWhenNoAvatar();
 
   $(newMemberMailTextId).keyup(function(e) {
    if($(this).val() == '') {
@@ -35,6 +36,15 @@ function bindActionsToButton() {
     }
     if ($(this).text() == 'Invite') {
       $('#submit-modal-form').click();
+    }
+  });
+}
+
+function displayInitialWhenNoAvatar(){
+  $('.user-item.invited.row').has('.avatar-circle').each(function(index, currentValue) {
+    if ($(currentValue).children('.user-data').children('.reloaded-tag').text().trim() == 'Invited'){
+      var initial = $(currentValue).children('.user-data').children('.user-mail').text().trim().substring(0,1);
+      $(currentValue).children('.profile').children('.avatar-circle').text(initial.toUpperCase());
     }
   });
 }
