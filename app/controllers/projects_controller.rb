@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
   before_action :load_project,
                 only: [:show, :edit, :update, :destroy,
                        :log, :export_to_spreadhseet]
+  before_action :check_edit_permission, only: :show
 
   def index
   end
@@ -20,6 +21,18 @@ class ProjectsController < ApplicationController
   def destroy
     @project.destroy
     redirect_to projects_path
+  end
+
+  def remove_member_from_project
+    project_id = params['project_id']
+    member_to_destroy = MembersProject.find_by(member_id: params['member'],
+                                               project_id: project_id)
+
+    if member_to_destroy.destroy
+      redirect_to project_path(project_id)
+    else
+      @errors = member_to_destroy.errors.full_messages
+    end
   end
 
   def update
@@ -56,8 +69,6 @@ class ProjectsController < ApplicationController
   def log
     project_services = ProjectServices.new(@project)
     @activities_by_pages = project_services.activities_by_pages
-
-    render layout: false
   end
 
   def backlog
@@ -72,7 +83,7 @@ class ProjectsController < ApplicationController
     render partial: 'user_stories/backlog_list',
            locals:
            {
-             user_stories: user_stories,
+             user_stories: user_stories.not_archived,
              project: project,
              total_points: UserStory.total_points(user_stories)
            }
@@ -121,5 +132,13 @@ class ProjectsController < ApplicationController
 
   def update_order_params
     params.require(:stories)
+  end
+
+  def check_edit_permission
+    project_auth = ProjectAuthorization.new(@project)
+    return if project_auth.member?(current_user)
+
+    flash[:alert] = I18n.translate('can_not_edit')
+    redirect_to root_url
   end
 end

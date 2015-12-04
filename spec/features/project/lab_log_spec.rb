@@ -94,7 +94,7 @@ feature 'Log lab activity' do
 
       scenario 'should log inviting members', js: true do
         click_button 'New Member'
-        fill_in 'member_0', with: invitee.email
+        fill_in 'input[member_0]', with: invitee.email
 
         PublicActivity.with_tracking do
           click_button 'Update Project'
@@ -224,38 +224,6 @@ feature 'Log lab activity' do
       scenario 'should have 22 activities to work with' do
         activities = PublicActivity::Activity.all
         expect(activities.count).to eq 22
-      end
-
-      scenario 'should paginate the log entries in 3 pages' do
-        expect(all('#log .log-page').count).to eq 3
-      end
-
-      scenario 'should only show the first page at the beginning' do
-        expect(all('#log .active.log-page').count).to eq 1
-      end
-
-      scenario 'should hide the other 2 pages' do
-        expect(all('#log .inactive.log-page').count).to eq 2
-      end
-
-      scenario 'should only show 8 entries at first' do
-        expect(all('#log .active.log-page .log-entry').count).to eq 8
-      end
-
-      scenario 'should hide the other 14 entries' do
-        expect(all('#log .inactive.log-page .log-entry').count).to eq 14
-      end
-
-      scenario 'should have 8 entries on the second page' do
-        expect(
-          all('#log .inactive.log-page#log_page_1 .log-entry').count
-        ).to eq 8
-      end
-
-      scenario 'should only have 6 entries on the third page' do
-        expect(
-          all('#log .inactive.log-page#log_page_2 .log-entry').count
-        ).to eq 6
       end
     end
   end

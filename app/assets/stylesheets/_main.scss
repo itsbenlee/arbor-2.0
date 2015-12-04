@@ -132,3 +132,10 @@ input[type="password"] {
   font-size: rem-calc(12);
   text-transform: uppercase;
 }
+
+.disabled-items {
+  @include non-selectable-text;
+  cursor: default;
+
+  label { cursor: default; }
+}

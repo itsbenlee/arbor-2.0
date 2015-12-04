@@ -70,3 +70,14 @@
     }
   }
 } // invite members
+
+.member-field {
+  position: relative;
+
+  .delete-member {
+    @include translateY(-39%);
+    position: absolute;
+    right: rem-calc(13);
+    top: 50%;
+  }
+}

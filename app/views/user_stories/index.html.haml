@@ -28,7 +28,7 @@
     = image_tag 'preloader.gif'
   .user-stories-list-container.small-12.medium-5.columns
     - if @project.user_stories.count > 0
-      = render 'user_stories/backlog_list', user_stories: @project.user_stories, project: @project, total_points: @total_points
+      = render 'user_stories/backlog_list', user_stories: @project.user_stories.not_archived, project: @project, total_points: @total_points
   .user-story-edit-form.small-12.medium-7.columns
     = render 'user_stories/form', project: @project,
     user_story: @user_story,

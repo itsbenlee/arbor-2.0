@@ -22,7 +22,7 @@ NeedlessDeepNestingCheck: { nested_count: 2 }
 NotRescueExceptionCheck: { }
 NotUseDefaultRouteCheck: { }
 NotUseTimeAgoInWordsCheck: { }
-OveruseRouteCustomizationsCheck: { customize_count: 10 }
+OveruseRouteCustomizationsCheck: { customize_count: 11 }
 ProtectMassAssignmentCheck: { }
 RemoveEmptyHelpersCheck: { }
 #RemoveTabCheck: { }

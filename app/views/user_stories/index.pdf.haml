@@ -1,9 +1,53 @@
-%header.header-layout
-  %h2.pdf-title Backlog
-  %h2= @project.name
-  .arbor-pdf-logo
-    = wicked_pdf_image_tag('arbor-logo.png')
+- if @project.canvas.present?
+  - canvas = @project.canvas
+  %section.canvas
+    %div.section-title
+      .section-icon= render 'shareable/svg/canvas_icon'
+      %h2.title-text Canvas
+
+    %ul.pdf-canvas-item-list
+      - if canvas.problems.present?
+        %li.pdf-canvas-item
+          .uppercase-subtitle=t('problems')
+          .description= canvas.problems
+      - if canvas.solutions.present?
+        %li.pdf-canvas-item
+          .uppercase-subtitle=t('solutions')
+          .description= canvas.solutions
+      - if canvas.alternative.present?
+        %li.pdf-canvas-item
+          .uppercase-subtitle=t('alternative')
+          .description= canvas.alternative
+      - if canvas.advantage.present?
+        %li.pdf-canvas-item
+          .uppercase-subtitle=t('advantage')
+          .description= canvas.advantage
+      - if canvas.segment.present?
+        %li.pdf-canvas-item
+          .uppercase-subtitle=t('segment')
+          .description= canvas.segment
+      - if canvas.channel.present?
+        %li.pdf-canvas-item
+          .uppercase-subtitle=t('channel')
+          .description= canvas.channel
+      - if canvas.value_proposition.present?
+        %li.pdf-canvas-item
+          .uppercase-subtitle=t('value_proposition')
+          .description= canvas.value_proposition
+      - if canvas.revenue_streams.present?
+        %li.pdf-canvas-item
+          .uppercase-subtitle=t('revenue_streams')
+          .description= canvas.revenue_streams
+      - if canvas.cost_structure.present?
+        %li.pdf-canvas-item
+          .uppercase-subtitle=t('cost_structure')
+          .description= canvas.cost_structure
+
+
 %section.backlog
+  %div.section-title
+    .section-icon=render 'shareable/svg/backlog_icon'
+    %h2.title-text Backlog
   .user-stories-list-container
     .user-stories
       - @project.user_stories.each do |user_story|

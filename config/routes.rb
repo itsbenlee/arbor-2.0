@@ -59,6 +59,13 @@ Railsroot::Application.routes.draw do
     resources :attachments, only: [:index, :create, :destroy]
 
     post '/copy', controller: :projects, action: :copy
+
+    delete 'remove_member_from_project',
+      controller: :projects,
+      action: :remove_member_from_project
+
+    resources :archives, only: :index
+    get '/list_archived', controller: :archives, action: :list_archived
   end
 
   resources :lab,
@@ -88,4 +95,8 @@ Railsroot::Application.routes.draw do
   get 'export/:id/spreadhseet', to: 'projects#export_to_spreadhseet'
 
   devise_for :users, controllers: { registrations: 'registrations' }
+
+  namespace :arbor_reloaded do
+    root to: 'projects#index'
+  end
 end

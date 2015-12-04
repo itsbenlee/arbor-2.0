@@ -292,7 +292,7 @@ function UserStories() {
         if(response.status === 422) {
           var $errors = $.parseJSON(response.responseText).errors,
               $errorsContainer = $('.user-story-component-error');
-          $errorsContainer.append($errors);
+          if ($errorsContainer.text().indexOf($errors) < 0) $errorsContainer.append($errors);
           $errorsContainer.show();
           refreshBacklog();
         }
@@ -655,22 +655,4 @@ function dynamicInput() {
       $('input[data-' + pluginDataAttributeName + ']').autosizeInput();
     });
   })($);
-}
-
-// html5 validation copycat, Ale
-function preSubmitForm(obj) {
-  var requiredFields = $('#'+obj.form.id).find('select, textarea, input').serializeArray();
-      isItOk = true;
-      message = 'Please complete all the fields';
-
-  $.each(requiredFields, function(i, field) {
-    if (!field.value)
-      isItOk = false;
-  });
-
-  if (isItOk) {
-    $(obj.form).submit();
-  } else {
-    alert(message);
-  }
 }

@@ -106,6 +106,24 @@ function collapseSidebar() {
   }
 }
 
+// html5 validation copycat, Ale
+function preSubmitForm(obj) {
+  var requiredFields = $('#'+obj.form.id).find(":input[required= 'required']").serializeArray();
+      isItOk = true;
+      message = 'Please complete all the fields';
+
+  $.each(requiredFields, function(i, field) {
+    if (!field.value)
+      isItOk = false;
+  });
+
+  if (isItOk) {
+    $(obj.form).submit();
+  } else {
+    alert(message);
+  }
+}
+
 if (toolBar.length) {
   projectsList.hide(); // Hide project list
 
@@ -155,23 +173,6 @@ $(window).resize(collapseSidebar);
 
 $('select#user_story_priority').on('change', function() {
   $(this).closest('form#new_user_story').find('.user-story-priority').text(this.value);
-});
-
-$('#log-modal').on('opened.fndtn.reveal', function() {
-  var $modal_height = $('#log-modal').height();
-
-  $('#log-modal').on('scroll', function() {
-    var active_pages = $('#log .active.log-page').size()
-        inactive_pages = $('#log .inactive.log-page').size(),
-        number_pages = active_pages + inactive_pages,
-        pages_left = number_pages - inactive_pages > 0,
-        log_height = $('#log').height(),
-        scroll_from_top = $('#log-modal').scrollTop();
-
-    if (pages_left && scroll_from_top > log_height - $modal_height ) {
-      $('#log .inactive.log-page').first().toggleClass('active inactive');
-    }
-  });
 });
 
 $('.hypothesis input')
