@@ -166,12 +166,15 @@
         font-size: rem-calc(14);
         height: rem-calc(20);
         line-height: rem-calc(19);
-        margin-right: 0;
+        margin-right: rem-calc(10);
         text-align: center;
         vertical-align: middle;
         width: rem-calc(20);
 
-        @media #{$small-only} { display: inline-block; }
+        @media #{$small-only} {
+          display: inline-block;
+          margin-right: 0;
+        }
       }
 
       &.other-members {
@@ -182,7 +185,7 @@
         height: rem-calc(30);
         letter-spacing: 0;
         line-height: rem-calc(29);
-        margin-right: rem-calc(10);
+        margin-right: 0;
         width: rem-calc(30);
 
         @media #{$small-only} { display: none; }
