@@ -72,9 +72,6 @@
                 = t('project.delete_project')
                 %span.icon-trash
       %ul.right.members
-        %li
-          = link_to arbor_reloaded_project_path(current_project), class: 'add-member' do
-            +
         - current_project.members.each_with_index do |member, index|
           - if index == 0
             %li

@@ -20,3 +20,21 @@ $hover-navigation: #30323b;
     width: 100%;
   }//before nav
 }//mixing for creating a border
+
+@mixin appearance-none {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+} // appearance none mixin
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, $white, 50%)) {
+  ::-webkit-scrollbar {
+    height: $size;
+    width: $size;
+  }
+
+  ::-webkit-scrollbar-thumb { background: $foreground-color; }
+  ::-webkit-scrollbar-track { background: $background-color; }
+}

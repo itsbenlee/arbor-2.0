@@ -242,3 +242,8 @@ en:
       activity: 'Activity'
       assets: 'Assets'
       help: 'Help'
+    project_members:
+      owner: 'Owner'
+      user_invited: 'Invited'
+      mail_invite: 'Invite members by email address...'
+      close: 'Close'
