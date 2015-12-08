@@ -35,6 +35,7 @@ function UserStories() {
 
     $('#tag-list').html(html);
     $('.applied-filters').show();
+    fixArticlesForRolesOnBacklog();
   }
 
   function bindRemoveTag() {
