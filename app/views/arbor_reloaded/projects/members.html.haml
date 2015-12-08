@@ -34,9 +34,5 @@
               %p.user-mail
                 = invite.email
   .footer
-    %input{ id: 'new-member-mail', |
-      type:"text", |
-      required:true, |
-      placeholder: t('reloaded.project_members.mail_invite'), |
-      data: { url: arbor_reloaded_project_path(@project), name: @project.name}}
+    =render 'arbor_reloaded/projects/partials/invite_member', project: @project
     = link_to t("reloaded.project_members.close"),'#', class: 'button radius small modal-btn', id: 'people-modal-footer-btn'
