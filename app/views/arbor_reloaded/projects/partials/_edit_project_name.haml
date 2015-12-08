@@ -1,0 +1,4 @@
+= form_for project, url: project, html: { id: 'edit-project' }  do |f|
+  = f.label :name, class: 'hide'
+  = f.text_field :name, class: 'project-name'
+  = f.submit id: 'submit-edit-project-form', class: 'hide'

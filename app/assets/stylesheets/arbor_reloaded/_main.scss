@@ -14,6 +14,8 @@
     height: 100% !important;
   }
 
+  .title-area { z-index: 10; }
+
   .right {
     a {
       // scss-lint:disable ImportantRule
@@ -38,6 +40,25 @@
       color: $white;
       font-family: $font-family-sans-serif;
       line-height: rem-calc(60);
+    }
+
+    .project-name {
+      background-color: transparent;
+      border: 0;
+      color: $white;
+      font-family: $font-family-sans-serif;
+      font-size: rem-calc(16);
+      height: rem-calc(45);
+      line-height: rem-calc(60);
+      padding: 0;
+      top: 0;
+      width: rem-calc(235);
+
+      &:hover,
+      &:focus { color: $black-30; }
+
+      &:focus,
+      &:active { border-bottom: 1px dashed lighten($primary-nav-color, 20%); }
     }
   }
 
