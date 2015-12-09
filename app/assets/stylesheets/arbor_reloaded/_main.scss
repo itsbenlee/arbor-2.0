@@ -261,12 +261,15 @@
   @include border-radius(rem-calc(50));
   background-color: $black-30;
   color: $white;
+  float: left;
   font-size: rem-calc(8);
-  margin-left: rem-calc(5);
-  padding: rem-calc(4 6);
+  line-height: rem-calc(17);
+  margin: rem-calc(1 0 0 5);
+  padding: 0;
   text-align: center;
   text-transform: uppercase;
   vertical-align: middle;
+  width: rem-calc(45);
 }
 
 .modal-btn {
@@ -276,3 +279,30 @@
   text-transform: none;
   width: 30%;
 }
+
+// CIRCULAR CHECKBOX
+
+.circles {
+  @include appearance-none;
+  @include border-radius(100%);
+  @include translateY(-75%);
+  background-color: $white;
+  cursor: pointer;
+  float: right;
+  height: rem-calc(20);
+  // scss-lint:disable ImportantRule
+  margin-bottom: 0 !important;
+  position: relative;
+  width: rem-calc(20);
+} // circle
+
+.circles:checked:after {
+  @include rotate(45deg);
+  color: $black-70;
+  content: '+';
+  font-size: rem-calc(14);
+  font-weight: $font-weight-bold;
+  left: rem-calc(7);
+  position: absolute;
+  top: 0;
+} // checked circle

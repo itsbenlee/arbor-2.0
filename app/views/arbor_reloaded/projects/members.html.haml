@@ -8,8 +8,8 @@
       .user-data.small-10.columns
         - owner = @project.members.find(@project.owner_id)
         %p.user-name
-          = owner.full_name
           %span.reloaded-tag=t ("reloaded.project_members.owner")
+          = owner.full_name
         %p.user-mail
           = owner.email
     .show-project-data
@@ -33,6 +33,7 @@
                 =t ("reloaded.project_members.user_invited")
               %p.user-mail
                 = invite.email
+              %input.circles{ type: "checkbox" }
   .footer
     =render 'arbor_reloaded/projects/partials/invite_member', project: @project
     = link_to t("reloaded.project_members.close"),'#', class: 'button radius small modal-btn', id: 'people-modal-footer-btn'
