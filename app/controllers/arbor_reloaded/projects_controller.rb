@@ -24,11 +24,15 @@ module ArborReloaded
 
     def members
       @project = Project.find(params[:project_id])
+      @members = @project.members
+      @owner = @members.find(@project.owner_id)
       @invites = Invite.where(project: @project)
       @can_delete = current_user.can_delete?(@project)
       render 'arbor_reloaded/projects/members', locals: {
         project: @project,
+        members: @members,
         invites: @invites,
+        owner: @owner,
         can_delete: @can_delete
       }
     end
@@ -44,9 +48,10 @@ module ArborReloaded
                                                  project_id: project_id)
 
       if member_to_destroy.destroy
-        redirect_to project_path(project_id)
+        render json: { errors: [] }, status: 200
       else
         @errors = member_to_destroy.errors.full_messages
+        render json: { errors: @errors }, status: 422
       end
     end
 
