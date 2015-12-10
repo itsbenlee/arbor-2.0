@@ -36,7 +36,8 @@
       &:active   { @include grabbing-cursor; }
       &.selected { background-color: rgba($black, .05); }
 
-      &:hover .hover-options { @include opacity(1); }
+      &:hover .hover-options,
+      &:hover .archive-link { @include opacity(1); }
 
       .number,
       .points {

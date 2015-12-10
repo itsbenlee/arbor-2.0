@@ -1,0 +1,20 @@
+- page_activities.each do |activity|
+  %div.log-entry
+    %div.log-action
+      = t("log.#{activity.key}")
+    %div.log-description
+      - if activity.trackable
+        %div.log-entity
+          = activity.value
+      %div.log-trackable
+        - unless activity.crud_action? || !activity.trackable.log_description
+          = "↳ #{activity.trackable.log_description}"
+    %div.log-user
+      = time_ago_in_words activity.created_at
+      ago by
+      %a.activity-owner
+        - if activity.owner
+          = mail_to activity.owner.email, activity.owner.full_name
+        - else
+          = t('deleted_user')
+  %hr

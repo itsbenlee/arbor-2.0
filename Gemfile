@@ -23,6 +23,7 @@ gem 'i18n-js'
 gem 'wicked_pdf', github: 'mileszs/wicked_pdf'
 gem 'mustache-js-rails'
 gem 'acts_as_commentable'
+gem 'indefinite_article'
 
 group :doc do
   gem 'sdoc', require: false

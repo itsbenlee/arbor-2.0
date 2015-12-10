@@ -35,6 +35,7 @@ function UserStories() {
 
     $('#tag-list').html(html);
     $('.applied-filters').show();
+    fixArticlesForRolesOnBacklog();
   }
 
   function bindRemoveTag() {
@@ -142,6 +143,7 @@ function UserStories() {
       refreshStories();
       bindAcceptanceCriterionFadeOut();
       bindConstraintFadeOut();
+      bindArchiveLink();
     });
   }
 
@@ -424,6 +426,19 @@ function UserStories() {
     });
   }
 
+  function bindArchiveLink() {
+    $('.archive-link').click(function() {
+      var userStory = {
+            user_story: { archived: true }
+          }
+          url = $(this).data('url'),
+          type  = 'put';
+
+      editFormAjax(url, type, userStory);
+      return false;
+    });
+  }
+
   function bindEditConstraint() {
     $editConstraintForm = $('.edit_constraint');
 
@@ -450,7 +465,7 @@ function UserStories() {
   }
 
   function refreshStories() {
-    $('.user-story-edit-form .user-story-input input:text').each(function() {
+    $('.user-story-edit-form .user-story-input input.role:text').each(function() {
       var $this  = $(this),
           $span  = $this.parent().find('span'),
           $value = $this.val;

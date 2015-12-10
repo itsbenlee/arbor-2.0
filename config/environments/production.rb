@@ -12,6 +12,8 @@ Railsroot::Application.configure do
   config.assets.precompile += %w(
     vendor/modernizr.js
     stylesheets/application_pdf.css.scss
+    stylesheets/application_reload.scss
+    stylesheets/application_pdf.css.scss
   )
   config.action_mailer.default_url_options = { host: ENV['DEFAULT_HOST'] }
   config.i18n.fallbacks = true

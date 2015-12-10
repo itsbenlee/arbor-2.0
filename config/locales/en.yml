@@ -175,6 +175,7 @@ en:
       create: "A comment was created"
   archive:
     link: "Archive"
+    title: "Archived user stories"
     empty_archive: "There are no archived stories"
     restore: "Restore"
   deleted_user: "Deleted User"
@@ -228,3 +229,21 @@ en:
   activity:
     project:
       update: 'Project was updated'
+  reloaded:
+    navigation:
+      menu: 'Menu'
+      projects: 'Projects'
+      people: 'People'
+      welcome: 'Welcome,'
+      settings: 'Settings'
+      canvas: 'Canvas'
+      backlog: 'Backlog'
+      estimation: 'Estimation'
+      activity: 'Activity'
+      assets: 'Assets'
+      help: 'Help'
+    project_members:
+      owner: 'Owner'
+      user_invited: 'Invited'
+      mail_invite: 'Invite members by email address...'
+      close: 'Close'

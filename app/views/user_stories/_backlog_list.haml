@@ -34,3 +34,4 @@
           %span=user_story.action
           %span.grey-prefix= t('backlog.user_stories.result')
           %span=user_story.result
+        = link_to t('archive.link'), '#', class: 'archive-link', data: { url: user_story_path(user_story)}

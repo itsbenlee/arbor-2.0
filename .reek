@@ -30,7 +30,8 @@ FeatureEnvy:
     TrelloServices#config,
     ProjectServices#activities_by_pages,
     LinkAttachmentServices#fetch_http_content_type,
-    FileUploader#extract_type
+    FileUploader#extract_type,
+    UserStoriesController#story_update_params
   ]
 IrresponsibleModule:
   enabled: false

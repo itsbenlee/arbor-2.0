@@ -36,12 +36,12 @@ class UserStory < ActiveRecord::Base
   end
 
   def log_description
-    "#{I18n.t('backlog.user_stories.role')} "\
-      "#{role} "\
-      "#{I18n.t('backlog.user_stories.action', priority: priority)} "\
-      "#{action} "\
-      "#{I18n.t('backlog.user_stories.result')} "\
-      "#{result}"
+    "As #{role.indefinite_article} "\
+    "#{role} "\
+    "#{I18n.t('backlog.user_stories.action', priority: priority)} "\
+    "#{action} "\
+    "#{I18n.t('backlog.user_stories.result')} "\
+    "#{result}"
   end
 
   def recipient

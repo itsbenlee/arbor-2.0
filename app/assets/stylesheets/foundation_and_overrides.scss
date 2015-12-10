@@ -88,6 +88,7 @@ $include-html-global-classes: $include-html-classes;
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // We use these to define default font stacks
+$reloaded-font-family-sans-serif: "proxima-nova", Helvetica, sans-serif;
 $font-family-sans-serif: "aktiv-grotesk", Helvetica, sans-serif;
 $font-family-serif: Georgia, Cambria, Times, serif;
 // $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
@@ -1135,7 +1136,7 @@ $input-box-shadow: none;
 // We use these to control the style of the modal itself.
 // $reveal-modal-bg: $white;
 // $reveal-position-top: rem-calc(100);
-// $reveal-default-width: 80%;
+$reveal-default-width: 40%;
 // $reveal-max-width: $row-width;
 // $reveal-modal-padding: rem-calc(20);
 // $reveal-box-shadow: 0 0 10px rgba($black,.4);
@@ -1148,7 +1149,7 @@ $input-box-shadow: none;
 // $reveal-close-weight: $font-weight-bold;
 
 // We use this to set the default radius used throughout the core.
-// $reveal-radius: $global-radius;
+$reveal-radius: rem-calc(15);
 // $reveal-round: $global-rounded;
 
 // We use these to control the modal border

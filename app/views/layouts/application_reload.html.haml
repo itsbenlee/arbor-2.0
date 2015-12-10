@@ -1,0 +1,34 @@
+!!!
+%html
+  %head
+    %title
+      = meta_title
+    %meta{ content: "#{meta_description}", name: 'description' }
+    %meta{ charset: 'UTF-8' }
+    %meta{ content: 'IE=edge,chrome=1', 'http-equiv' => 'X-UA-Compatible' }
+    %meta{ content: 'True', name: 'HandheldFriendly' }
+    %meta{ content: '320', name: 'MobileOptimized' }
+    %meta{ content: 'width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0', name: 'viewport' }
+    %meta{ content: 'on', 'http-equiv' => 'cleartype' }
+    %meta{ content: 'telephone=no', name: 'format-detection' }
+    =favicon_link_tag('favicon.ico', rel: 'shortcut icon')
+    =favicon_link_tag('icons/favicons/arbor-favicon.png', rel: 'icon', type: 'image/png')
+    =favicon_link_tag('icons/favicons/arbor-icon-72.png', rel: 'apple-touch-icon-precomposed', sizes: '72x72')
+    =favicon_link_tag('icons/favicons/arbor-icon-76.png', rel: 'apple-touch-icon-precomposed', sizes: '76x76')
+    =favicon_link_tag('icons/favicons/arbor-icon-120.png', rel: 'apple-touch-icon-precomposed', sizes: '120x120')
+    =favicon_link_tag('icons/favicons/arbor-icon-152.png', rel: 'apple-touch-icon-precomposed', sizes: '152x152')
+    %meta{ content: '#ffffff', name: 'msapplication-TileColor' }
+    %meta{ content: 'icons/favicons/arbor-144.png', name: 'msapplication-TileImage' }
+    = stylesheet_link_tag 'application_reload'
+    = javascript_include_tag 'vendor/modernizr'
+    = csrf_meta_tags
+    %script{:src => "//use.typekit.net/uyn6gfv.js"}
+      :javascript
+        try{Typekit.load();}catch(e){}
+  %body{'data-action' => action_name, 'data-controller' => controller_name }
+    = render 'layouts/navigation', projects: @projects, current_project: @project
+    = yield
+    = javascript_include_tag 'application'
+    = content_for :custom_js
+    - if ENV['USE_GOOGLE_ANALYTICS'] == 'true'
+      = render 'layouts/google_analytics'
