@@ -251,3 +251,6 @@ en:
       no_projects: 'No projects yet'
       get_started: 'Get started by creating a new project'
       button: 'Create a Project'
+    create_project:
+      title: 'Create a Project'
+      project_name: 'Enter new project name here...'
