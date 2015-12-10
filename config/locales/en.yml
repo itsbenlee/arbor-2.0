@@ -247,3 +247,7 @@ en:
       user_invited: 'Invited'
       mail_invite: 'Invite members by email address...'
       close: 'Close'
+    project_dashboard:
+      no_projects: 'No projects yet'
+      get_started: 'Get started by creating a new project'
+      button: 'Create a Project'
