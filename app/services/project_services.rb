@@ -22,21 +22,8 @@ class ProjectServices
   end
 
   def activities_by_pages
-    activities = []
-    %w(
-      project
-      hypotheses
-      goals
-      user_stories
-      constraints
-      acceptance_criteria
-      comments
-    ).each do |entity|
-      activities += send("collect_#{entity}_log_entries")
-    end
-    activities
-      .sort_by(&:created_at)
-      .reverse.in_groups_of @entries_per_page, false
+    @project.activities.order(created_at: :desc)
+      .in_groups_of(@entries_per_page, false)
   end
 
   def replicate(current_user)
@@ -46,7 +33,7 @@ class ProjectServices
                   members: [current_user])
 
     if replica.save && @project.save
-      replicate_associations(replica, current_user)
+      replicate_associations(replica)
       @common_response.data[:project] = replica
     end
 
@@ -64,65 +51,17 @@ class ProjectServices
     @project.save
   end
 
-  def collect_project_log_entries
-    @project.activities
-  end
-
-  def collect_hypotheses_log_entries
-    @project.hypotheses.collect(&:activities).flatten
-  end
-
-  def collect_goals_log_entries
-    @project
-      .hypotheses
-      .collect(&:goals)
-      .flatten
-      .collect(&:activities)
-      .flatten
-  end
-
-  def collect_user_stories_log_entries
-    @project.user_stories.collect(&:activities).flatten
-  end
-
-  def collect_comments_log_entries
-    @project
-      .user_stories
-      .collect(&:comments)
-      .flatten
-      .collect(&:activities)
-      .flatten
-  end
-
-  def collect_constraints_log_entries
-    @project
-      .user_stories
-      .collect(&:constraints)
-      .flatten
-      .collect(&:activities)
-      .flatten
-  end
-
-  def collect_acceptance_criteria_log_entries
-    @project
-      .user_stories
-      .collect(&:acceptance_criterions)
-      .flatten
-      .collect(&:activities)
-      .flatten
-  end
-
   def self.entries_per_page
     env_value = ENV['LOG_ENTRIES_PER_PAGE']
     env_value ? env_value.to_i : 5
   end
 
-  def replicate_associations(replica, current_user)
+  def replicate_associations(replica)
     [
       Thread.new { @project.copy_hypothesis(replica) },
       Thread.new { @project.copy_stories(replica, nil, nil) },
       Thread.new { @project.copy_canvas(replica) if @project.canvas }
     ].each(&:join)
-    replica.clean_log(current_user)
+    replica.clean_log
   end
 end

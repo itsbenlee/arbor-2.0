@@ -4,7 +4,10 @@
       = render 'shareable/svg/logo'
     %li.name
       - if current_project && !current_project.new_record?
-        = link_to current_project.name, '#', class: 'current-project'
+        - if current_user.id == current_project.owner_id
+          =render 'arbor_reloaded/projects/partials/edit_project_name', project: current_project
+        - else
+          = link_to current_project.name, '#', class: 'current-project'
     / Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
     %li.toggle-topbar.menu-icon
       %a{:href => "#"}
@@ -72,11 +75,15 @@
                 = t('project.delete_project')
                 %span.icon-trash
       %ul.right.members
+        %li
+          = link_to '+', |
+          arbor_reloaded_project_members_path(current_project), |
+          { class: 'add-member', data: { reveal_id: 'project-members-modal', reveal_ajax: true } }
         - current_project.members.each_with_index do |member, index|
           - if index == 0
             %li
               = link_to arbor_reloaded_project_path(current_project), { style: "background-image: url(#{ image_path('icons/po_avatar.svg') });"} do
-                = image_tag ('icons/user-icon.svg'), class: 'hide'
+                = image_tag ('icons/po_avatar.svg'), class: 'hide'
           - if index == 1
             %li
               = link_to arbor_reloaded_project_path(current_project), { style: "background-image: url(#{ image_path('icons/user-icon.svg') });"} do

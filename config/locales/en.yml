@@ -75,7 +75,6 @@ en:
   project:
     delete_project: 'Delete project'
     copy_project: 'Copy project'
-    copied: "Project copied by "
     delete_confirmation: |
       This project will be deleted permanently.
       Are you sure you want to continue?
@@ -129,50 +128,12 @@ en:
     selector_link: "Paste Link"
     or: "or"
   log:
+    add_member_no_info: 'A new collaborator was added to the project'
     project:
-      create: "The project was created."
-      update: "The project was updated."
-      add_user_story: "A new user story was added to the project"
-      add_hypothesis: "A new hypothesis was added to the project"
-      add_member: "A new collaborator was added to the project"
-      add_invite: "A new collaborator was invited to the project"
-      add_goal: "A new goal was added to the project"
-      remove_user_story: "A user story was removed from the project"
-      remove_hypothesis: "A hypothesis was removed from the project"
-      remove_member: "A collaborator was removed from the project"
-      remove_invite: "An invite was reverted from the project"
-      remove_goal: "A goal was removed from the project"
-    hypothesis:
-      create: "A hypothesis was created"
-      update: "A hypothesis was updated"
-      destroy: "A hypothesis was deleted"
-      add_user_story: "New user story added to hypothesis"
-      add_goal: "New goal added to hypothesis"
-      remove_user_story: "A user story was removed from a hypothesis"
-      remove_goal: "A goal was removed from a hypothesis"
-    goal:
-      create: "A goal was created"
-      update: "A goal was updated"
-      destroy: "A goal was deleted"
-    user_story:
-      create: "A user story was created"
-      update: "A user story was updated"
-      destroy: "A user story was deleted"
-      add_acceptance_criterion: "An acceptance criteria was added to the user story"
-      add_constraint: "A constraint was added to the user story"
-      add_comment: "A comment was added to the user story"
-      remove_acceptance_criterion: "An acceptance criteria was removed from the user story"
-      remove_constraint: "A constraint was removed from the user story"
-    acceptance_criterion:
-      create: "An acceptance criteria was created"
-      update: "An acceptance criteria was updated"
-      destroy: "An acceptance criteria was deleted"
-    constraint:
-      create: "A constraint was created"
-      update: "A constraint was updated"
-      destroy: "A constraint was deleted"
-    comment:
-      create: "A comment was created"
+      create_project: 'The project was created.'
+      add_member: ' was added to the project.'
+      add_user_story: ' wrote a new user story.'
+      add_comment: ' commented on a story.'
   archive:
     link: "Archive"
     title: "Archived user stories"
@@ -247,3 +208,10 @@ en:
       user_invited: 'Invited'
       mail_invite: 'Invite members by email address...'
       close: 'Close'
+    project_dashboard:
+      no_projects: 'No projects yet'
+      get_started: 'Get started by creating a new project'
+      button: 'Create a Project'
+    create_project:
+      title: 'Create a Project'
+      project_name: 'Enter new project name here...'

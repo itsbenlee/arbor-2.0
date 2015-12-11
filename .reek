@@ -28,7 +28,6 @@ FeatureEnvy:
     RegistrationsController#add_member_to_projects,
     Project#reorder_user_stories,
     TrelloServices#config,
-    ProjectServices#activities_by_pages,
     LinkAttachmentServices#fetch_http_content_type,
     FileUploader#extract_type,
     UserStoriesController#story_update_params

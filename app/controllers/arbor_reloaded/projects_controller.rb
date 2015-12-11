@@ -24,11 +24,15 @@ module ArborReloaded
 
     def members
       @project = Project.find(params[:project_id])
+      @members = @project.members
+      @owner = @members.find(@project.owner_id)
       @invites = Invite.where(project: @project)
       @can_delete = current_user.can_delete?(@project)
       render 'arbor_reloaded/projects/members', locals: {
         project: @project,
+        members: @members,
         invites: @invites,
+        owner: @owner,
         can_delete: @can_delete
       }
     end
@@ -44,9 +48,10 @@ module ArborReloaded
                                                  project_id: project_id)
 
       if member_to_destroy.destroy
-        redirect_to project_path(project_id)
+        render json: { errors: [] }, status: 200
       else
         @errors = member_to_destroy.errors.full_messages
+        render json: { errors: @errors }, status: 422
       end
     end
 
@@ -65,14 +70,7 @@ module ArborReloaded
     def create
       @project = Project.new(project_params)
       @project.owner = current_user
-
-      if @project.save
-        assign_associations
-        redirect_to project_canvases_path(@project)
-      else
-        @errors = @project.errors.full_messages
-        render :new, status: 400
-      end
+      assist_creation
     end
 
     def order_stories
@@ -123,6 +121,17 @@ module ArborReloaded
     end
 
     private
+
+    def assist_creation
+      if @project.save
+        @project.create_activity :create_project
+        assign_associations
+        redirect_to arbor_reloaded_project_canvases_path(@project)
+      else
+        @errors = @project.errors.full_messages
+        render :new, status: 400
+      end
+    end
 
     def project_params
       params.require(:project).permit(:name)

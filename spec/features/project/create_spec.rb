@@ -34,6 +34,19 @@ feature 'Create a new project' do
     expect(Project.first.name).to eq 'Test Project'
   end
 
+  scenario 'should log the project creation' do
+    PublicActivity.with_tracking do
+      within '.content-general' do
+        click_link 'Create new project'
+      end
+      fill_in 'project_name', with: 'Test Project'
+      click_button 'Create Project'
+
+      expect(PublicActivity::Activity.count).to eq(1)
+      expect(PublicActivity::Activity.first.key).to eq('project.create_project')
+    end
+  end
+
   scenario 'should redirect to canvas after create' do
     within '.content-general' do
       click_link 'Create new project'
@@ -110,6 +123,20 @@ feature 'Create a new project' do
       expect(Project.first.members.count).to eq 2
       [user, additional_member].each do |member|
         expect(Project.first.members).to include user
+      end
+    end
+
+    scenario 'should log that a member was added' do
+      PublicActivity.with_tracking do
+        additional_member = create :user, email: 'existing@test.com'
+
+        click_button 'Add Member'
+        fill_in 'member_0', with: 'existing@test.com'
+        click_button 'Create Project'
+
+        expect(PublicActivity::Activity.count).to eq(2)
+        expect(PublicActivity::Activity.first.key).to eq('project.create_project')
+        expect(PublicActivity::Activity.last.key).to eq('project.add_member')
       end
     end
   end

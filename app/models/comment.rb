@@ -1,5 +1,5 @@
 class Comment < ActiveRecord::Base
-  include WithoutAssociationLoggable
+  include PublicActivity::Common
   include ActsAsCommentable::Comment
   belongs_to :commentable, polymorphic: true
   belongs_to :user
@@ -10,14 +10,6 @@ class Comment < ActiveRecord::Base
 
   def log_description
     comment
-  end
-
-  def clean_log
-    activities.delete_all
-  end
-
-  def recipient
-    user_story
   end
 
   def user_name

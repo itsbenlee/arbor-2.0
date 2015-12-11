@@ -43,8 +43,10 @@ class RegistrationsController < Devise::RegistrationsController
 
   def add_member_to_projects
     email = params[:user][:email]
+
     Invite.where(email: email).each do |invite|
-      invite.project.members << User.find_by(email: email)
+      user = User.find_by(email: email)
+      invite.project.add_member(user)
       invite.destroy
     end
   end
