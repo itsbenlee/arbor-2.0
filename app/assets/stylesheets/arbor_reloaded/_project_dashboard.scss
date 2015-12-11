@@ -9,16 +9,16 @@
 
   .title {
     color: $primary-nav-color;
+    font-size: rem-calc(19);
+    font-weight: $font-weight-bold;
     margin-bottom: rem-calc(5);
   }
 
   p {
     color: $black-30;
+    font-size: rem-calc(15);
     margin-bottom: rem-calc(30);
   }
-
-  .title,
-  p { font-size: rem-calc(15); }
 
   .button { display: inline; }
 }
