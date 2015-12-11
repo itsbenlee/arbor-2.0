@@ -285,7 +285,7 @@
 .circles {
   @include appearance-none;
   @include border-radius(100%);
-  @include translateY(-75%);
+  @include translateY(-35%);
   background-color: $white;
   cursor: pointer;
   float: right;
