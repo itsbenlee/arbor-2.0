@@ -60,7 +60,7 @@ module ArborReloaded
       assign_associations
 
       if @project.save
-        redirect_to project_path @project
+        redirect_to :back
       else
         @errors = @project.errors.full_messages
         render :edit, status: 400
