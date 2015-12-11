@@ -1,4 +1,6 @@
 class Project < ActiveRecord::Base
+  include PublicActivity::Common
+
   validates_presence_of :name
   validates_uniqueness_of :name, scope: :owner
 
@@ -11,8 +13,6 @@ class Project < ActiveRecord::Base
   has_many :members, class_name: User, through: :members_projects
   has_many :tags, dependent: :destroy
 
-  include AssociationLoggable
-
   has_many :attachments, dependent: :destroy
 
   def as_json
@@ -21,6 +21,12 @@ class Project < ActiveRecord::Base
 
   def invite_exists(email)
     invites.any? { |invite| invite.email == email }
+  end
+
+  def add_member(user)
+    create_activity :add_member,
+      parameters: { element: user.log_description }
+    members << user
   end
 
   def reorder_user_stories(user_stories_hash)
@@ -34,9 +40,6 @@ class Project < ActiveRecord::Base
   end
 
   def log_description
-  end
-
-  def recipient
   end
 
   def copy_stories(replica, old_hypothesis_id, hypothesis_replica_id)
@@ -56,24 +59,13 @@ class Project < ActiveRecord::Base
     end
   end
 
-  def clean_log(current_user)
+  def clean_log
     activities.delete_all
-    create_activity key: 'project.copied', owner: current_user
-    [clean_stories_log, clean_hypotheses_log].each(&:join)
+    create_activity :create_project
   end
 
   def undefined_hypothesis
     hypotheses
       .find_or_create_by(description: I18n.t('labs.undefined_hypothesis'))
-  end
-
-  private
-
-  def clean_stories_log
-    Thread.new { user_stories.each(&:clean_log) }
-  end
-
-  def clean_hypotheses_log
-    Thread.new { hypotheses.each(&:clean_log) }
   end
 end

@@ -20,7 +20,8 @@ feature 'update user story' do
 end
 
 feature 'create user story' do
-  let(:project)           { create :project }
+  let(:user)              { create :user }
+  let(:project)           { create :project, owner: user }
   let(:hypothesis)        { create :hypothesis, project: project }
   let(:story_service)     { UserStoryService.new(project, hypothesis) }
   let(:user_story_params) {
@@ -34,7 +35,7 @@ feature 'create user story' do
   }
 
   scenario 'should create a User Story and assign the project' do
-    response = story_service.new_user_story(user_story_params)
+    response = story_service.new_user_story(user_story_params, user)
     expect(response.success).to eq(true)
     story = UserStory.find(response.data[:user_story_id])
     expect(story).to be_a(UserStory)
@@ -47,7 +48,7 @@ feature 'create user story' do
   end
 
   scenario 'should create a User Story and assign the project and hypothesis' do
-    response = story_service.new_user_story(user_story_params)
+    response = story_service.new_user_story(user_story_params, user)
     expect(response.success).to eq(true)
     story = UserStory.find(response.data[:user_story_id])
     expect(story).to be_a(UserStory)

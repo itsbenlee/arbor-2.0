@@ -13,6 +13,24 @@ class ProjectsController < ApplicationController
   def edit
   end
 
+  def create
+    @project = Project.new(project_params)
+    @project.owner = current_user
+    assist_creation
+  end
+
+  def update
+    @project.update_attributes(name: project_params[:name])
+    assign_associations
+
+    if @project.save
+      redirect_to project_path @project
+    else
+      @errors = @project.errors.full_messages
+      render :edit, status: 400
+    end
+  end
+
   def show
     @invites = Invite.where(project: @project)
     @can_delete = current_user.can_delete?(@project)
@@ -32,31 +50,6 @@ class ProjectsController < ApplicationController
       redirect_to project_path(project_id)
     else
       @errors = member_to_destroy.errors.full_messages
-    end
-  end
-
-  def update
-    @project.update_attributes(name: project_params[:name])
-    assign_associations
-
-    if @project.save
-      redirect_to project_path @project
-    else
-      @errors = @project.errors.full_messages
-      render :edit, status: 400
-    end
-  end
-
-  def create
-    @project = Project.new(project_params)
-    @project.owner = current_user
-
-    if @project.save
-      assign_associations
-      redirect_to project_canvases_path(@project)
-    else
-      @errors = @project.errors.full_messages
-      render :new, status: 400
     end
   end
 
@@ -108,6 +101,17 @@ class ProjectsController < ApplicationController
   end
 
   private
+
+  def assist_creation
+    if @project.save
+      @project.create_activity :create_project
+      assign_associations
+      redirect_to project_canvases_path(@project)
+    else
+      @errors = @project.errors.full_messages
+      render :new, status: 400
+    end
+  end
 
   def project_params
     params.require(:project).permit(:name)

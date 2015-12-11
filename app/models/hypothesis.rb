@@ -17,8 +17,6 @@ class Hypothesis < ActiveRecord::Base
 
   delegate :name, to: :project, prefix: true
 
-  include AssociationLoggable
-
   def self.new_order(hypothesis_hash)
     hypothesis = Hypothesis.find(hypothesis_hash[:id])
     hypothesis.order = hypothesis_hash[:order]
@@ -58,19 +56,10 @@ class Hypothesis < ActiveRecord::Base
     description
   end
 
-  def recipient
-    project
-  end
-
   def copy_in_project(new_id)
     replica = dup
     replica.update_attributes(project_id: new_id)
     copy_associations(replica)
-  end
-
-  def clean_log
-    activities.delete_all
-    goals.each { |goal| goal.activities.delete_all }
   end
 
   private

@@ -33,6 +33,20 @@ feature 'Create a new user story' do
       end
     end
 
+    scenario 'should log the story creation' do
+      PublicActivity.with_tracking do
+        within 'form.new_user_story' do
+          fill_in :user_story_role, with: user_story.role
+          fill_in :user_story_action, with: user_story.action
+          fill_in :user_story_result, with: user_story.result
+
+          click_button 'Save'
+          expect(PublicActivity::Activity.count).to eq(1)
+          expect(PublicActivity::Activity.first.key).to eq('project.add_user_story')
+        end
+      end
+    end
+
     scenario 'should show an error with empty fields' do
       within 'form.new_user_story' do
         fill_in :user_story_role, with: user_story.role
