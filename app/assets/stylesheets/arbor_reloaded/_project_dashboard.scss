@@ -178,7 +178,7 @@
     width: 15%;
 
     @media #{$small-only} { width: 40%; }
-    @media #{$medium-only} {width: 20%; }
+    @media #{$medium-only} { width: 20%; }
 
     &::after {
       border-bottom: 1px solid $black-30;
@@ -197,3 +197,87 @@
     }
   }
 }
+
+// Search bar
+
+.dashboard-header {
+  // scss-lint:disable ImportantRule
+  margin-top: rem-calc(50) !important;
+
+  input,
+  li,
+  .recent-link { font-size: rem-calc(14); }
+
+  .search-bar {
+    @include scrollbars(.5em, $black-20);
+
+    &:hover { .collapse-project-list { opacity: 1; } }
+
+    input {
+      background-color: $white;
+      border: 0;
+      border-bottom: 1px solid $black-10;
+      margin-bottom: 0;
+      padding-left: rem-calc(40);
+      width: rem-calc(325);
+      @include input-placeholder { color: $black-60; }
+
+      &:focus { background-color: $white; }
+    } // search input
+
+    .input-icon {
+      left: rem-calc(30);
+      position: absolute;
+      top: rem-calc(15);
+    } // icon
+  }
+
+  .collapse-project-list {
+    @include clearfix;
+    background-color: $hover-items;
+    max-height: rem-calc(230);
+    opacity: 0;
+    overflow-y: scroll;
+    position: absolute;
+    width: rem-calc(325);
+    z-index: 10;
+
+    li {
+      @include ellipsis;
+      border-bottom: 1px solid $black-10;
+      padding: rem-calc(13 0 13 40);
+      position: relative;
+
+      &:last-child { border-bottom: 0; }
+
+      &:hover { background-color: $black-10; }
+
+      .icon {
+        @include border-radius(100%);
+        background-color: $white;
+        height: rem-calc(24);
+        left: rem-calc(9);
+        padding: rem-calc(3);
+        position: absolute;
+        top: rem-calc(12);
+        width: rem-calc(24);
+      } // icon
+    } // li
+  } // collapse list
+
+  .recent-link {
+    text-align: right;
+
+    a {
+      color: $black-50;
+      line-height: rem-calc(50);
+    }
+  } // recent
+
+  .create-project {text-align: right; }
+
+  .recent-link a,
+  .create-project {
+    @media #{$small-only} { margin-right: rem-calc(15);}
+  }
+} // dashboard header

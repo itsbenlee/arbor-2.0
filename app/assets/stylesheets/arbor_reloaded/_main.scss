@@ -277,7 +277,6 @@
   margin: 0 auto;
   padding: rem-calc(15 30);
   text-transform: none;
-  width: 30%;
 }
 
 // CIRCULAR CHECKBOX
@@ -332,5 +331,20 @@
 
     .field { width: rem-calc(350); }
     #create-project-btn { width: rem-calc(225); }
+  }
+}
+
+.reloaded-btn {
+  @include inline-block();
+  @include border-radius($global-radius);
+  background-color: $primary-color;
+  color: $white;
+  padding: rem-calc(13 30);
+  text-align: center;
+  width: auto;
+
+  &:hover {
+    color: $white;
+    opacity: .9;
   }
 }

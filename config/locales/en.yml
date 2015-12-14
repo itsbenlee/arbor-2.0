@@ -216,6 +216,8 @@ en:
       are_you_sure: 'Are you sure?'
       delete_project: 'Yes, delete it'
       cancel: 'Cancel'
+      search_input: 'Search'
+      recent_link: 'Recent'
     create_project:
       title: 'Create a Project'
       project_name: 'Enter new project name here...'
