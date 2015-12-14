@@ -209,6 +209,8 @@ en:
       mail_invite: 'Invite members by email address...'
       close: 'Close'
     project_dashboard:
+      all_projects: 'All projects ('
+      last_update: 'Last update:'
       no_projects: 'No projects yet'
       get_started: 'Get started by creating a new project'
       button: 'Create a Project'

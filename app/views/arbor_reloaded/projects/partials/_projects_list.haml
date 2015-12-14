@@ -1,0 +1,16 @@
+%ul.project-list
+  %span.breaker
+    = t('reloaded.project_dashboard.all_projects')
+    = projects.count
+    )
+  - projects.each do |project|
+    %li
+      = link_to arbor_reloaded_project_canvases_path(project_id: project.id), title: " Go to #{project.name}", class: 'project' do
+        .left
+          %p.title= project.name
+          %p.last-update
+            = t('reloaded.project_dashboard.last_update')
+            %span= project.updated_at.strftime("%b %d, %Y")
+        .right
+          %p.favorite
+          %p.others &#149&#149&#149
