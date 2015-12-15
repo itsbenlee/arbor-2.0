@@ -18,11 +18,6 @@
       %ul.sections
         %li
           = link_to t('reloaded.navigation.projects'), arbor_reloaded_root_path
-        - if current_project
-          %li
-            = link_to t('reloaded.navigation.people'), |
-            arbor_reloaded_project_members_path(current_project), |
-            { data: { reveal_id: 'project-members-modal', reveal_ajax: true } }
         %li
           %a{:href => 'mailto:feedback@getarbor.io', :target => '_top'}= t('reloaded.navigation.help')
         %li.hide
