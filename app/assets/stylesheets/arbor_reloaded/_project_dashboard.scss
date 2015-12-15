@@ -29,21 +29,26 @@
   .project,
   li { @include clearfix; }
 
-  li { border-bottom: 1px solid $black-30; }
+  li {
+    border-bottom: 1px solid $black-30;
+    overflow-x: hidden;
+    position: relative;
+
+    &:hover {
+      .project { background: $hover-items; }
+
+      .title,
+      .others,
+      .last-update { color: $black; }
+    }
+  }
 
   .project {
     border-bottom: 1px solid $white;
     border-top: 1px solid $white;
     display: block;
     padding: rem-calc(10 15);
-
-    &:hover {
-      background: $hover-items;
-
-      .title,
-      .others,
-      .last-update { color: $black; }
-    }
+    position: relative;
 
     .title {
       font-size: rem-calc(16);
@@ -60,6 +65,12 @@
       color: $black-30;
       line-height: 1;
     }
+  }
+
+  .right {
+    position: absolute;
+    right: rem-calc(15);
+    top: rem-calc(10);
 
     .favorite,
     .others {
@@ -69,6 +80,28 @@
       line-height: rem-calc(35);
       margin: 0;
       z-index: 99;
+    }
+  }
+
+  .actions {
+    @include opacity(0);
+    @include single-transition(all, 0.6s, ease-out);
+    position: absolute;
+    right: -900px;
+    height: 100%;
+    z-index: 999;
+    background:black;
+    top: 0;
+
+    a {
+      display: inline-block;
+      border: 0;
+    }
+
+    &.visible {
+      @include opacity(1);
+      @include single-transition(all, 0.6s, ease-out);
+      right: 0px;
     }
   }
 
