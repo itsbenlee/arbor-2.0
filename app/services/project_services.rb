@@ -1,8 +1,20 @@
 class ProjectServices
   def initialize(project)
     @project = project
-    @entries_per_page = ProjectServices.entries_per_page
     @common_response = CommonResponse.new(true, [])
+  end
+
+  def update_project
+    route_helper = Rails.application.routes.url_helpers
+
+    if @project.save
+      @common_response.data[:return_url] =
+        route_helper.arbor_reloaded_projects_list_path
+    else
+      @common_response.success = false
+      @common_response.errors += @project.errors.full_messages
+    end
+    @common_response
   end
 
   def reorder_hypotheses(hypotheses)
@@ -22,8 +34,9 @@ class ProjectServices
   end
 
   def activities_by_pages
+    entries_per_page = ProjectServices.entries_per_page
     @project.activities.order(created_at: :desc)
-      .in_groups_of(@entries_per_page, false)
+      .in_groups_of(entries_per_page, false)
   end
 
   def replicate(current_user)

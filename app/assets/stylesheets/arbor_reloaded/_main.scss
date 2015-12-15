@@ -79,6 +79,7 @@
     // scss-lint:disable ImportantRule
     background-color: $secondary-nav-color !important;
     min-width: rem-calc(140);
+    z-index: 99999;
 
     a {
       @include clearfix;

@@ -14,6 +14,8 @@ class Project < ActiveRecord::Base
   has_many :tags, dependent: :destroy
 
   has_many :attachments, dependent: :destroy
+  scope :favorite, -> { where(favorite: true) }
+  scope :non_favorite, -> { where(favorite: false) }
 
   def as_json
     super(only: [:name])
