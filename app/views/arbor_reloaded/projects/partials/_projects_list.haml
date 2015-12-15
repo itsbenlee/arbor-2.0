@@ -11,14 +11,14 @@
       .actions
         - if current_user.id == project.owner_id
           %a.delete-project
-            %span.icon-trash
+            %span.icn-delete
       .deleter
         %p
           = t('reloaded.project_dashboard.are_you_sure')
           = link_to arbor_reloaded_project_path(project), method: :delete, class: 'cancel-btn' do
             = t('reloaded.project_dashboard.delete_project')
         %a.cancel= t('reloaded.project_dashboard.cancel')
-        %span.icon-trash
+        %span.icn-delete
       = link_to arbor_reloaded_project_canvases_path(project_id: project.id), title: " Go to #{project.name}", class: 'project' do
         .left
           %p.title= project.name
@@ -37,14 +37,14 @@
       .actions
         - if current_user.id == project.owner_id
           %a.delete-project
-            %span.icon-trash
+            %span.icn-delete
       .deleter
         %p
           = t('reloaded.project_dashboard.are_you_sure')
           = link_to arbor_reloaded_project_path(project), method: :delete, class: 'cancel-btn' do
             = t('reloaded.project_dashboard.delete_project')
         %a.cancel= t('reloaded.project_dashboard.cancel')
-        %span.icon-trash
+        %span.icn-delete
       = link_to arbor_reloaded_project_canvases_path(project_id: project.id), title: " Go to #{project.name}", class: 'project' do
         .left
           %p.title= project.name
