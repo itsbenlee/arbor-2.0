@@ -15,9 +15,12 @@
         %p.favorite
         %a.others &#149&#149&#149
       .actions
-        = link_to arbor_reloaded_project_canvases_path(project_id: project.id), title: " Go to #{project.name}", class: 'project' do
-          %p copy
-        = link_to arbor_reloaded_project_canvases_path(project_id: project.id), title: " Go to #{project.name}", class: 'project' do
-          %p arquive
-        = link_to arbor_reloaded_project_canvases_path(project_id: project.id), title: " Go to #{project.name}", class: 'project' do
-          %p delete
+        %a.delete-project
+          %span.icon-trash
+      .deleter
+        %p
+          Are you sure?
+          = link_to project, method: :delete, class: 'dculo' do
+            = t('project.delete_project')
+        %a.cancel cancel
+        %span.icon-trash
