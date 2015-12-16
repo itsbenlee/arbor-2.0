@@ -39,3 +39,18 @@ $hover-items: #f8f8f8;
   ::-webkit-scrollbar-thumb { background: $foreground-color; }
   ::-webkit-scrollbar-track { background: $background-color; }
 }
+
+@mixin center($x: default, $y: default) {
+  position: absolute;
+  @if ($x and $y) {
+    @include transform(-50%, -50%);
+    left: 50%;
+    top: 50%;
+  } @else if ($x) {
+    @include transform(-50%, 0);
+    left: 50%;
+  } @else if ($y) {
+    @include transform(0, -50%);
+    top: 50%;
+  }
+}

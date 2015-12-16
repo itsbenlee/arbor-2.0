@@ -70,10 +70,6 @@
                 = t('project.delete_project')
                 %span.icon-trash
       %ul.right.members
-        %li
-          = link_to '+', |
-          arbor_reloaded_project_members_path(current_project), |
-          { class: 'add-member', data: { reveal_id: 'project-members-modal', reveal_ajax: true } }
         - current_project.members.each_with_index do |member, index|
           - if index == 0
             %li
@@ -92,4 +88,8 @@
             = link_to arbor_reloaded_project_path(current_project), class: 'other-members' do
               +
               = current_project.members.count - 3
+        %li
+          = link_to '+', |
+          arbor_reloaded_project_members_path(current_project), |
+          { class: 'add-member', data: { reveal_id: 'project-members-modal', reveal_ajax: true } }
   #project-members-modal.reveal-modal{ data: { reveal: '' } }

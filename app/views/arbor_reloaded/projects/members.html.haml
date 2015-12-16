@@ -1,5 +1,5 @@
 .members-modal
-  %a.close-reveal-modal{"aria-label" => "Close"} ×
+  = link_to '×', '#', 'aria-label' => 'Close', class: 'close-reveal-modal'
   %h2.reloaded-title= t("project_members.title")
   .project-members
     .user-item.special-item.row
@@ -11,10 +11,10 @@
           = owner.full_name
         %p.user-mail
           = owner.email
-    .show-project-data
+    %ul.show-project-data
       - members.each_with_index do |member, index|
         - if index >= 0 && member.id != owner.id
-          .user-item.row
+          %li.user-item.row
             .profile.small-2.columns
               .picture{ style: "background-image: url(#{ image_path('test-user.png') });" }
             .user-data.small-10.columns
@@ -25,7 +25,7 @@
               %input.circles{ id:'remove-member-check', type: 'checkbox', data:{ url: arbor_reloaded_project_remove_member_from_project_path(project, member: member.id)} }
       - unless invites.empty?
         - invites.each do |invite|
-          .user-item.invited.row
+          %li.user-item.invited.row
             .profile.small-2.columns
               .avatar-circle A
             .user-data.small-10.columns
