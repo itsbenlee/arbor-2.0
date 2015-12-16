@@ -20,8 +20,8 @@
             %span.icon-trash
       .deleter
         %p
-          Are you sure?
-          = link_to project, method: :delete, class: 'cancel-btn' do
-            Yes, delete it
-        %a.cancel cancel
+          = t('reloaded.project_dashboard.are_you_sure')
+          = link_to arbor_reloaded_project_path(project), method: :delete, class: 'cancel-btn' do
+            = t('reloaded.project_dashboard.delete_project')
+        %a.cancel= t('reloaded.project_dashboard.cancel')
         %span.icon-trash
