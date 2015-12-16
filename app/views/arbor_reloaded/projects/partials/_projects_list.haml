@@ -15,8 +15,9 @@
         %p.favorite
         %a.others &#149&#149&#149
       .actions
-        %a.delete-project
-          %span.icon-trash
+        - if current_user.id == project.owner_id
+          %a.delete-project
+            %span.icon-trash
       .deleter
         %p
           Are you sure?
