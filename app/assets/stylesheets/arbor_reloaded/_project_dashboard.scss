@@ -29,21 +29,27 @@
   .project,
   li { @include clearfix; }
 
-  li { border-bottom: 1px solid $black-30; }
+  li {
+    border-bottom: 1px solid $black-30;
+    overflow: hidden;
+    position: relative;
+
+    &:hover {
+      .project,
+      .actions { background: $hover-items; }
+
+      .title,
+      .others,
+      .last-update { color: $black; }
+    }
+  }
 
   .project {
     border-bottom: 1px solid $white;
     border-top: 1px solid $white;
     display: block;
     padding: rem-calc(10 15);
-
-    &:hover {
-      background: $hover-items;
-
-      .title,
-      .others,
-      .last-update { color: $black; }
-    }
+    position: relative;
 
     .title {
       font-size: rem-calc(16);
@@ -60,6 +66,12 @@
       color: $black-30;
       line-height: 1;
     }
+  }
+
+  .right {
+    position: absolute;
+    right: rem-calc(15);
+    top: rem-calc(10);
 
     .favorite,
     .others {
@@ -69,6 +81,87 @@
       line-height: rem-calc(35);
       margin: 0;
       z-index: 99;
+    }
+  }
+
+  .actions,
+  .deleter {
+    background: $white;
+    border-bottom: 1px solid $white;
+    bottom: 0;
+    display: none;
+    height: calc(100% - 1px);
+    min-width: 60px;
+    padding: rem-calc(1 0);
+    position: absolute;
+    z-index: 999;
+
+    &:hover { background-color: $hover-items; }
+
+    a {
+      @include translateY(-50%);
+      @include inline-block;
+      border: 0;
+      position: relative;
+      top: 50%;
+    }
+
+    &.visible {
+      display: block;
+      right: 0;
+    }
+
+    .delete-project {
+      @include border-radius(100%);
+      background-color: $black-10;
+      float: right;
+      font-size: rem-calc(13);
+      height: rem-calc(25);
+      line-height: rem-calc(27);
+      margin-right: rem-calc(15);
+      text-align: center;
+      width: rem-calc(25);
+    }
+  }
+
+  .deleter {
+    background-color: $black-20;
+    padding: rem-calc(1 15);
+    z-index: 9999;
+
+    &:hover { background-color: $black-20; }
+
+    p,
+    a {
+      @include inline-block;
+      @include translateY(0);
+      color: $white;
+      font-size: rem-calc(10);
+      line-height: rem-calc(51);
+      margin: 0;
+      top: 0;
+    }
+
+    .cancel-btn {
+      @include border-radius(rem-calc(3));
+      background-color: $hover-items;
+      color: $black;
+      line-height: 1;
+      margin: rem-calc(0 15 0 20);
+      padding: rem-calc(8 6);
+    }
+
+    span {
+      @include border-radius(100%);
+      @include inline-block;
+      background-color: $white;
+      color: $black;
+      font-size: rem-calc(13);
+      height: rem-calc(25);
+      margin: rem-calc(0 0 0 15);
+      width: rem-calc(25);
+
+      &::before { padding: rem-calc(6 5); }
     }
   }
 

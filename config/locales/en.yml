@@ -213,6 +213,9 @@ en:
       no_projects: 'No projects yet'
       get_started: 'Get started by creating a new project'
       button: 'Create a Project'
+      are_you_sure: 'Are you sure?'
+      delete_project: 'Yes, delete it'
+      cancel: 'Cancel'
     create_project:
       title: 'Create a Project'
       project_name: 'Enter new project name here...'
