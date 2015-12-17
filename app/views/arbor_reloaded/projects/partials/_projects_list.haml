@@ -12,6 +12,8 @@
         - if current_user.id == project.owner_id
           %a.delete-project
             %span.icn-delete
+          = link_to arbor_reloaded_project_copy_path(project), method: :post, class: 'copy-project', data: {} do
+            %span.icn-copy
       .deleter
         %p
           = t('reloaded.project_dashboard.are_you_sure')
@@ -38,6 +40,8 @@
         - if current_user.id == project.owner_id
           %a.delete-project
             %span.icn-delete
+          = link_to arbor_reloaded_project_copy_path(project), method: :post, class: 'copy-project', data: {} do
+            %span.icn-copy
       .deleter
         %p
           = t('reloaded.project_dashboard.are_you_sure')
