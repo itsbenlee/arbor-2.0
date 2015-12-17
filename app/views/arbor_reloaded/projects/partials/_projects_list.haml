@@ -12,6 +12,8 @@
         - if current_user.id == project.owner_id
           %a.delete-project
             %span.icon-trash
+          = link_to arbor_reloaded_project_copy_path(project), method: :post, class: 'copy-project', data: {} do
+            = image_tag('icons/copy-icon2.svg', class: 'icon')
       .deleter
         %p
           = t('reloaded.project_dashboard.are_you_sure')
@@ -38,6 +40,8 @@
         - if current_user.id == project.owner_id
           %a.delete-project
             %span.icon-trash
+          = link_to arbor_reloaded_project_copy_path(project), method: :post, class: 'copy-project', data: {} do
+            = image_tag('icons/copy-icon2.svg', class: 'icon')
       .deleter
         %p
           = t('reloaded.project_dashboard.are_you_sure')

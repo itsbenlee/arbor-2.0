@@ -116,7 +116,8 @@
       right: 0;
     }
 
-    .delete-project {
+    .delete-project,
+    .copy-project {
       @include border-radius(100%);
       background-color: $black-10;
       float: right;
@@ -126,10 +127,19 @@
       margin-right: rem-calc(15);
       text-align: center;
       width: rem-calc(25);
+
+      img {
+        display: block;
+        height: rem-calc(25);
+        margin: 0;
+        padding: rem-calc(6);
+        width: rem-calc(25);
+      }
     }
   }
 
-  .deleter {
+  .deleter,
+  .copier {
     background-color: $black-20;
     padding: rem-calc(1 15);
     z-index: 9999;
