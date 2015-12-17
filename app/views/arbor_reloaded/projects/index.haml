@@ -1,5 +1,6 @@
 .projects-dashbord.row
   - if @projects.count > 0
+    = render 'arbor_reloaded/projects/partials/search_bar'
     = render 'arbor_reloaded/projects/partials/projects_list', projects: @projects
   - else
     .no-projects
@@ -13,4 +14,4 @@
       .field
         = f.text_field :name, placeholder: t('reloaded.create_project.project_name'), class: 'project-name radius login'
       .action
-        = f.submit t('create_project.save_button'), class: 'button radius small modal-btn', id: 'create-project-btn'
+        = f.submit t('create_project.save_button'), class: 'button radius small modal-btn'
