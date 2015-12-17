@@ -1,12 +1,13 @@
-.projects-dashbord.row
+.projects-dashboard.row
   - if @projects.count > 0
     = render 'arbor_reloaded/projects/partials/search_bar'
-    = render 'arbor_reloaded/projects/partials/projects_list', projects: @projects
+    .projects-list-container
+      = render 'arbor_reloaded/projects/partials/projects_list', projects: @projects
   - else
     .no-projects
       %p.title= t('reloaded.project_dashboard.no_projects')
       %p= t('reloaded.project_dashboard.get_started')
-      =link_to t('reloaded.project_dashboard.button'), '#', class: 'button radius small modal-btn', data: { reveal_id: 'project-modal' }
+      =link_to t('reloaded.project_dashboard.create_button'), '#', class: 'button radius small modal-btn', data: { reveal_id: 'project-modal' }
   #project-modal.reveal-modal{"aria-hidden" => "true", "aria-labelledby" => "project-modal", "data-reveal" => "", :role => "dialog"}
     %a.close-reveal-modal{"aria-label" => "Close"} ×
     = form_for :project, url: '/arbor_reloaded/projects', html: { id: 'new_project' }  do |f|

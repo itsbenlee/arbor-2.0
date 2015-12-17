@@ -15,6 +15,9 @@ class Project < ActiveRecord::Base
 
   has_many :attachments, dependent: :destroy
 
+  scope :recent, -> { order(updated_at: :desc) }
+  scope :by_name, -> { order(name: :asc) }
+
   def as_json
     super(only: [:name])
   end
