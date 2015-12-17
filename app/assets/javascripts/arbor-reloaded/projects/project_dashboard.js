@@ -1,13 +1,27 @@
-function ajaxCall(url, type, currentObject) {
+function bindFavoriteIcon() {
+  $('.favorite-link').click(function() {
+    var project = {
+          project: { favorite: !($(this).data('favorite')) }
+        }
+        url = $(this).data('url'),
+        type  = 'put';
+
+    projectAjaxCall(url, type, project);
+    return false;
+  });
+}
+
+function projectAjaxCall(url, type, currentObject) {
   var deferred = $.Deferred();
+
   $.ajax({
     type: type,
     url: url,
     data: currentObject,
     success: function (response) {
       if(response.success) {
-        editUrl = response.data.edit_url;
-        var displayPromise = displayStoryForm(editUrl);
+        return_url = response.data.return_url;
+        var displayPromise = displayProjectsView(return_url);
         displayPromise.done(function() {
           deferred.resolve();
         });
@@ -27,16 +41,9 @@ function ajaxCall(url, type, currentObject) {
   return deferred;
 }
 
-// for security reasons javascript doesn't allow the click event, this simulates it, Ale
-function pseudoClickOnLink(linkToClick) {
-   window.location.href = linkToClick.attr('href');
-}
-
-// This is for avoid repeted bind, everytime neds to bind something call this, Butcher
-function generalBinds() {
-  if (typeof $('.project-list') != "undefined") {
-    displayActions();
-    displayHideDelete();
-    bindFavoriteIcon();
-  };
+function displayProjectsView(url) {
+  return $.get(url, function(indexProject) {
+    $('.project-list').html(indexProject);
+    generalBinds();
+  })
 }

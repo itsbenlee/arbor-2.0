@@ -35,8 +35,5 @@ function displayHideDelete() {
 }
 
 $( document ).ready(function() {
-  if (typeof $('.others') != "undefined") {
-    displayActions();
-  }
-  displayHideDelete();
+  generalBinds();
 });

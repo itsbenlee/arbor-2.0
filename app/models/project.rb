@@ -14,6 +14,8 @@ class Project < ActiveRecord::Base
   has_many :tags, dependent: :destroy
 
   has_many :attachments, dependent: :destroy
+  scope :favorite, -> { where(favorite: true) }
+  scope :non_favorite, -> { where(favorite: false) }
 
   scope :recent, -> { order(updated_at: :desc) }
   scope :by_name, -> { order(name: :asc) }

@@ -54,6 +54,7 @@ NestedIterators:
   exclude: [
     HypothesesController#export,
     Hypothesis#self.to_csv,
+    ProjectsController#update,
     UserStoriesController#update,
     UserStoriesController#export,
     SpreadsheetExporterService#self.export,

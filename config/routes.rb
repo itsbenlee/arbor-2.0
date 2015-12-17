@@ -98,6 +98,8 @@ Railsroot::Application.routes.draw do
   namespace :arbor_reloaded do
     root to: 'projects#index'
 
+    get 'projects/list', controller: :projects, action: :list_projects
+
     resources :projects, shallow: true do
       get 'log', on: :member
       get 'members',
