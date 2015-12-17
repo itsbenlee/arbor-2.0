@@ -211,8 +211,6 @@
   .search-bar {
     @include scrollbars(.5em, $black-20);
 
-    &:hover { .collapse-project-list { opacity: 1; } }
-
     input {
       background-color: $white;
       border: 0;
@@ -223,6 +221,9 @@
       @include input-placeholder { color: $black-60; }
 
       &:focus { background-color: $white; }
+
+      &:hover,
+      &:focus { +.collapse-project-list { opacity: 1; } }
     } // search input
 
     .input-icon {
