@@ -5,6 +5,8 @@ module ArborReloaded
                   only: [:show, :edit, :update, :destroy,
                          :log, :export_to_spreadhseet]
     def index
+      scope = params[:project_order] || 'recent'
+      @projects = @projects.send(scope)
       render layout: 'application_reload'
     end
 
