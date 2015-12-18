@@ -53,4 +53,10 @@ $hover-items: #f8f8f8;
     @include transform(0, -50%);
     top: 50%;
   }
+/// utility calsses
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

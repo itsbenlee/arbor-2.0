@@ -215,6 +215,7 @@ en:
       get_started: 'Get started by creating a new project'
       create_button: 'Create a Project'
       are_you_sure: 'Are you sure?'
+      are_you_sure2: 'Are you sure you want to delete:'
       delete_project: 'Yes, delete it'
       cancel: 'Cancel'
       search_input: 'Search'
