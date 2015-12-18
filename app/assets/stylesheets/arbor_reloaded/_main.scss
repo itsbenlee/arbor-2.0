@@ -78,7 +78,7 @@
   .dropdown {
     // scss-lint:disable ImportantRule
     background-color: $secondary-nav-color !important;
-    min-width: rem-calc(140);
+    width: 100%;
     z-index: 99999;
 
     a {
@@ -94,9 +94,7 @@
       }
     }
 
-    span { float: left; }
-
-    .icon {
+    span {
       float: right;
       margin: rem-calc(20 10 0 10);
     }
@@ -223,7 +221,7 @@
   position: relative;
 }
 
-#projet-actions {
+#project-actions {
   background-color: $secondary-nav-color;
   outline: 0;
 
@@ -234,10 +232,11 @@
       display: block;
       line-height: rem-calc(50);
       margin: 0;
-      padding: rem-calc(5 0 0 15);
+      padding: rem-calc(0 0 0 15);
       position: relative;
 
       span {
+        line-height: rem-calc(50);
         position: absolute;
         right: rem-calc(15);
       }

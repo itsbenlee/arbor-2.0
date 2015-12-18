@@ -26,6 +26,12 @@
 .project-list {
   margin: rem-calc(40 0);
 
+  .icn-delete {
+    font-size: rem-calc(13);
+    line-height: rem-calc(25);
+    vertical-align: top;
+  }
+
   .project,
   li { @include clearfix; }
 
@@ -166,7 +172,10 @@
       margin: rem-calc(0 0 0 15);
       width: rem-calc(25);
 
-      &::before { padding: rem-calc(6 5); }
+      &::before {
+        padding: rem-calc(6);
+        vertical-align: middle;
+      }
     }
   }
 

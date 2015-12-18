@@ -25,7 +25,7 @@
         - if current_project
           %li
             = link_to log_arbor_reloaded_project_path(current_project) do
-              = image_tag('icons/notifications-icon.svg', class: 'icon')
+              %span.icn-notifications
       %ul.profile
         %li.has-dropdown
           .avatar
@@ -37,13 +37,13 @@
                 !
           %ul.dropdown
             %li
-              %a{:href => "#"}
-                %span= t('reloaded.navigation.settings')
-                = image_tag('icons/gear-icon.svg', class: 'icon')
+              = link_to '#' do
+                = t('reloaded.navigation.settings')
+                %span.icn-settings
             %li
-              = link_to destroy_user_session_path, method: :delete, class: 'logout nav-links' do
-                %span= t('backlog.logout')
-                = image_tag('icons/signout-icon-v3.svg', class: 'icon')
+              = link_to '#' do
+                = t('backlog.logout')
+                %span.icn-signout
 - if current_project
   %nav.bottom-bar
     %section.bottom-bar-section
@@ -59,16 +59,16 @@
         %li
           = link_to t('reloaded.navigation.assets'), arbor_reloaded_project_attachments_path(current_project)
         %li
-          %a{"aria-controls" => "projet-actions", "aria-expanded" => "false", "data-dropdown" => "projet-actions"} ...
-          %ul#projet-actions.f-dropdown{"aria-hidden" => "true", "data-dropdown-content" => "", :tabindex => "-1"}
+          %a{"aria-controls" => "project-actions", "aria-expanded" => "false", "data-dropdown" => "project-actions"} ...
+          %ul#project-actions.f-dropdown{"aria-hidden" => "true", "data-dropdown-content" => "", :tabindex => "-1"}
             %li
               = link_to arbor_reloaded_project_copy_path(current_project), method: :post, class: 'copy-project', data: {} do
                 = t('project.copy_project')
-                %span.icon-plus
+                %span.icn-copy
             %li
               = link_to current_project, method: :delete, data: { confirm: t('project.delete_confirmation') }, class: 'delete-project' do
                 = t('project.delete_project')
-                %span.icon-trash
+                %span.icn-delete
       %ul.right.members
         %li
           = link_to '+', |
