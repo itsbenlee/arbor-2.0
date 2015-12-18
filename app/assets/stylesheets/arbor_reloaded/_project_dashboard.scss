@@ -259,6 +259,11 @@
         bottom: rem-calc(15);
         position: absolute;
         width: calc(100% - 20px);
+
+        .title {
+          color: $black;
+          font-size: rem-calc(18);
+        }
       }
     }
 
@@ -282,6 +287,11 @@
         background-color: $white;
         float: none;
         margin-right: rem-calc(10);
+
+        .icn-copy {
+          font-size: 14px;
+          line-height: 25px;
+        }
       }
 
       .favorite {
@@ -345,13 +355,8 @@
   margin-top: rem-calc(25);
   max-width: 100%;
 
-  @media #{$medium-only} {
-    padding: rem-calc(0 10);
-  }
-
-  @media #{$small-only} {
-    padding: rem-calc(0 10);
-  }
+  @media #{$medium-only} { padding: rem-calc(0 10); }
+  @media #{$small-only} { padding: rem-calc(0 10); }
 }
 // Search bar
 
