@@ -219,8 +219,7 @@ en:
       delete_project: 'Yes, delete it'
       cancel: 'Cancel'
       search_input: 'Search'
-      recent_link: 'Recent'
-      sort_by_recent: 'Recent'
+      sort_by_recent: 'Sort by date'
       sort_by_name: 'Sort by name'
     create_project:
       title: 'Create a Project'
