@@ -10,7 +10,7 @@
   outline: 0;
   padding: 0;
 
-  @media #{$medium-up} { width: rem-calc(430); }
+  @media #{$medium-up} { width: rem-calc(500); }
   @media #{$small-only} { top: 0; }
 
   .avatar-circle {
@@ -39,7 +39,7 @@
 
   .user-item {
     border-bottom: 1px solid $black-20;
-    margin: rem-calc(0 30);
+    margin: rem-calc(0 25 0 30);
     padding: rem-calc(15 20);
     width: auto;
 
@@ -48,7 +48,8 @@
       padding-left: 0;
     }
 
-    &.invited { .user-data { padding-top: rem-calc(5); }}
+    &.invited .user-data { padding-top: rem-calc(2); }
+
     &.special-item {
       border-top: 1px solid $black-20;
       margin: 0;
@@ -60,7 +61,7 @@
 
   .user-data {
     padding-right: 0;
-    transform: translateY(5%);
+    transform: translateY(10%);
 
     p {
       float: left;
@@ -83,30 +84,34 @@
   .invited .reloaded-tag { margin: rem-calc(0 0 5 0); }
 
   .close-reveal-modal {
+    @include transition(color .25s ease-in-out);
+    color: $white;
     font-size: rem-calc(20);
-    top: rem-calc(20);
+    position: absolute;
+    right: rem-calc(-20);
+    top: rem-calc(-20);
+
+    &:hover { color: $black-10; }
   }
 
   .show-project-data {
     background-color: $black-10;
-    max-height: rem-calc(200);
+    max-height: rem-calc(242);
     overflow: hidden;
     overflow-y: scroll;
   }
 
   .footer {
     border-top: 1px solid $black-20;
-    height: rem-calc(155);
     padding: rem-calc(20 0 18);
     text-align: center;
 
     input {
-      @include border-radius($global-radius);
       @include inline-block;
-      font-size: rem-calc(14);
-      margin-bottom: rem-calc(20);
+      @include border-radius($global-radius);
+      margin-bottom: rem-calc(40);
       padding: rem-calc(0 20);
-      width: 77%;
+      width: rem-calc(435);
     }
   }
 }

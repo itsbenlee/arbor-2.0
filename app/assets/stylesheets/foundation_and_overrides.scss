@@ -110,6 +110,7 @@ $success-color: #2ecc71;
 $canvas-color: #e62940; // red
 $lab-color: #4ba4f6;  // cyan
 $backlog-color: $success-color; //green
+$icon-color: #53565f;
 $light-bg: #fbfbfb;
 $font-color-2: #626262;
 $font-color-3: #b3b3b3;
@@ -650,11 +651,11 @@ $button-font-weight: $font-weight-bold;
 // $form-label-bottom-margin: 0;
 // $input-font-family: inherit;
 // $input-font-color: rgba(0,0,0,0.75);
-$input-font-size: rem-calc(17);
-$input-bg-color: $light-bg;
-$input-focus-bg-color: $black-10;
+$input-font-size: rem-calc(14);
+$input-bg-color: $white;
+$input-focus-bg-color: $white;
 $input-border-color: $black-20;
-// $input-focus-border-color: scale-color($white, $lightness: -40%);
+$input-focus-border-color: $success-color;
 // $input-border-style: solid;
 // $input-border-width: 1px;
 // $input-border-radius: $global-radius;

@@ -5,7 +5,14 @@ module ArborReloaded
                   only: [:show, :edit, :update, :destroy,
                          :log, :export_to_spreadhseet]
     def index
+      scope = params[:project_order] || 'recent'
+      @projects = @projects.send(scope)
       render layout: 'application_reload'
+    end
+
+    def list_projects
+      render partial: 'arbor_reloaded/projects/partials/projects_list',
+             locals: { projects: @projects }
     end
 
     def new
@@ -39,7 +46,7 @@ module ArborReloaded
 
     def destroy
       @project.destroy
-      redirect_to projects_path
+      redirect_to :back
     end
 
     def remove_member_from_project
@@ -56,14 +63,10 @@ module ArborReloaded
     end
 
     def update
-      @project.update_attributes(name: project_params[:name])
-      assign_associations
-
-      if @project.save
-        redirect_to project_path @project
-      else
-        @errors = @project.errors.full_messages
-        render :edit, status: 400
+      @project.update_attributes(project_params)
+      respond_to do |format|
+        format.json { json_update }
+        format.html { html_update }
       end
     end
 
@@ -122,6 +125,21 @@ module ArborReloaded
 
     private
 
+    def html_update
+      assign_associations
+      if @project.save
+        redirect_to :back
+      else
+        @errors = @project.errors.full_messages
+        render :edit, status: 400
+      end
+    end
+
+    def json_update
+      response = ProjectServices.new(@project).update_project
+      render json: response, status: (response.success ? 201 : 422)
+    end
+
     def assist_creation
       if @project.save
         @project.create_activity :create_project
@@ -134,7 +152,7 @@ module ArborReloaded
     end
 
     def project_params
-      params.require(:project).permit(:name)
+      params.require(:project).permit(:name, :favorite)
     end
 
     def load_project

@@ -33,6 +33,7 @@ RemoveUnusedMethodsInControllersCheck: {
     ProjectsController#order_stories,
     HypothesesController#list_stories,
     ProjectsController#copy,
+    ProjectsController#list_projects,
     AttachmentsController#set_link_flash_message,
     AttachmentsController#set_file_flash_message
   ]
@@ -42,7 +43,8 @@ RemoveUnusedMethodsInModelsCheck: {
   except_methods: [
     UserStory#estimation_series,
     Hypothesis#reorder_user_stories,
-    Project#reorder_user_stories
+    Project#reorder_user_stories,
+    Project#by_name,
   ]
 }
 ReplaceComplexCreationWithFactoryMethodCheck: { attribute_assignment_count: 2 }

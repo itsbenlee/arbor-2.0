@@ -1,0 +1,25 @@
+.dashboard-header
+  .search-bar.medium-6.column
+    = image_tag('icons/reloaded-search-icon.svg', class: 'icon input-icon')
+    %input{ type: 'text', placeholder: t('reloaded.project_dashboard.search_input')}
+    .collapse-project-list
+      %ul
+        %li
+          = image_tag('icons/favorite-icon.svg', class: 'icon')
+          =link_to 'Project 1'
+        %li
+          =link_to 'Project 2'
+        %li
+          =link_to 'Project 3'
+        %li
+          = image_tag('icons/favorite-icon.svg', class: 'icon')
+          =link_to 'Project 4'
+        %li
+          =link_to 'Project 5'
+        %li
+          =link_to 'Project 6'
+  .recent-link.medium-3.column
+    = select_tag 'project_order', options_for_select({ t('reloaded.project_dashboard.sort_by_name')=>'by_name',
+      t('reloaded.project_dashboard.sort_by_recent')=>'recent'}, 'recent'), data: { remote: true, url: arbor_reloaded_projects_path }
+  .create-project.medium-3.column
+    =link_to t('reloaded.project_dashboard.create_button'), '#', class: 'reloaded-btn radius small', id: 'create-project-btn', data: { reveal_id: 'project-modal' }

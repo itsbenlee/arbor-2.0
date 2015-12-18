@@ -14,6 +14,9 @@ $('#project-members-modal').on('opened.fndtn.reveal', function() {
   bindActionsToButton();
   bindActionsOnRemovalCheckboxes();
   displayInitialWhenNoAvatar();
+  lockBodyScroll();
+
+  $('body').addClass('locked');
 
   $(newMemberMailTextId).keyup(function(e) {
    if($(this).val() == '') {
@@ -24,6 +27,20 @@ $('#project-members-modal').on('opened.fndtn.reveal', function() {
  });
   new Projects();
 });
+
+unlockBodyScroll();
+
+function lockBodyScroll() {
+  if ($(this).is(':visible')) {
+    $('body').addClass('locked');
+  }
+}
+
+function unlockBodyScroll() {
+  $('#project-members-modal').on('closed.fndtn.reveal', function() {
+    $('body').toggleClass('locked');
+  });
+}
 
 function hideSpecifiedElements() {
   $('.hidden-input-element').each(function(index, currentValue) {

@@ -1,18 +1,13 @@
-.projects-dashbord.row
+.projects-dashboard.row
   - if @projects.count > 0
-    .large-6.large-centered.columns
-      %p.create-project= t('create_project.title')
-      =link_to t('reloaded.project_dashboard.button'), '#', class: 'button radius small modal-btn', data: { reveal_id: 'project-modal' }
-      - @projects.each do |project|
-        %li
-          = link_to project.name, arbor_reloaded_project_canvases_path(project_id: project.id), title: " Go to #{project.name}", class: 'sidebar-project-item'
-          = link_to edit_project_path(project), id: 'icon_edit_project' do
-            %span.icon-edit
+    = render 'arbor_reloaded/projects/partials/search_bar'
+    .projects-list-container
+      = render 'arbor_reloaded/projects/partials/projects_list', projects: @projects
   - else
     .no-projects
       %p.title= t('reloaded.project_dashboard.no_projects')
       %p= t('reloaded.project_dashboard.get_started')
-      =link_to t('reloaded.project_dashboard.button'), '#', class: 'button radius small modal-btn', data: { reveal_id: 'project-modal' }
+      =link_to t('reloaded.project_dashboard.create_button'), '#', class: 'button radius small modal-btn', data: { reveal_id: 'project-modal' }
   #project-modal.reveal-modal{"aria-hidden" => "true", "aria-labelledby" => "project-modal", "data-reveal" => "", :role => "dialog"}
     %a.close-reveal-modal{"aria-label" => "Close"} ×
     = form_for :project, url: '/arbor_reloaded/projects', html: { id: 'new_project' }  do |f|
@@ -20,4 +15,4 @@
       .field
         = f.text_field :name, placeholder: t('reloaded.create_project.project_name'), class: 'project-name radius login'
       .action
-        = f.submit t('create_project.save_button'), class: 'button radius small modal-btn', id: 'create-project-btn'
+        = f.submit t('create_project.save_button'), class: 'button radius small modal-btn'

@@ -1,3 +1,7 @@
+body {
+  &.locked { overflow: hidden; }
+}
+
 .top-bar {
   background-color: $primary-nav-color;
   height: rem-calc(60);
@@ -78,7 +82,8 @@
   .dropdown {
     // scss-lint:disable ImportantRule
     background-color: $secondary-nav-color !important;
-    min-width: rem-calc(140);
+    width: 100%;
+    z-index: 99999;
 
     a {
       @include clearfix;
@@ -93,9 +98,7 @@
       }
     }
 
-    span { float: left; }
-
-    .icon {
+    span {
       float: right;
       margin: rem-calc(20 10 0 10);
     }
@@ -182,7 +185,8 @@
 
       &.add-member,
       &.other-members {
-        background-color: $black-20;
+        @include transition(background-color .25s ease-in-out);
+        background-color: $icon-color;
         color: $secondary-nav-color;
         font-size: rem-calc(14);
         height: rem-calc(20);
@@ -191,6 +195,8 @@
         text-align: center;
         vertical-align: middle;
         width: rem-calc(20);
+
+        &:hover { background-color: $black-20; }
 
         @media #{$small-only} {
           display: inline-block;
@@ -222,7 +228,7 @@
   position: relative;
 }
 
-#projet-actions {
+#project-actions {
   background-color: $secondary-nav-color;
   outline: 0;
 
@@ -233,10 +239,11 @@
       display: block;
       line-height: rem-calc(50);
       margin: 0;
-      padding: rem-calc(5 0 0 15);
+      padding: rem-calc(0 0 0 15);
       position: relative;
 
       span {
+        line-height: rem-calc(50);
         position: absolute;
         right: rem-calc(15);
       }
@@ -272,40 +279,44 @@
   width: rem-calc(45);
 }
 
-.modal-btn {
-  display: block;
-  margin: 0 auto;
-  padding: rem-calc(15 30);
-  text-transform: none;
-  width: 30%;
-}
-
 // CIRCULAR CHECKBOX
 
 .circles {
   @include appearance-none;
   @include border-radius(100%);
-  @include translateY(-75%);
+  @include translateY(-35%);
   background-color: $white;
   cursor: pointer;
   float: right;
   height: rem-calc(20);
-  // scss-lint:disable ImportantRule
-  margin-bottom: 0 !important;
   position: relative;
   width: rem-calc(20);
-} // circle
 
-.circles:checked:after {
-  @include rotate(45deg);
-  color: $black-70;
-  content: '+';
-  font-size: rem-calc(14);
-  font-weight: $font-weight-bold;
-  left: rem-calc(7);
-  position: absolute;
-  top: 0;
-} // checked circle
+  &:after {
+    @include transition(opacity .25s ease-in-out, color .25s ease-in-out);
+    @include transform(rotate(45deg) translate(-50%, -50%));
+    @include opacity(0);
+    color: $black-50;
+    content: '+';
+    font-size: rem-calc(14);
+    font-weight: $font-weight-bold;
+    left: rem-calc(4);
+    line-height: normal;
+    position: absolute;
+    top: 50%;
+  }
+
+  &:hover:after { @include opacity(1); }
+
+  &:checked {
+    &:hover:after { color: $black-50; }
+
+    &:after {
+      @include opacity(1);
+      color: $black-70;
+    }
+  }
+} // circle
 
 #project-modal {
   padding: rem-calc(50 100 70);
@@ -332,5 +343,42 @@
 
     .field { width: rem-calc(350); }
     #create-project-btn { width: rem-calc(225); }
+  }
+}
+
+.button.modal-btn {
+  @include inline-block;
+  margin: 0 auto;
+  max-width: 60%;
+  padding: rem-calc(15 30);
+  text-transform: none;
+  width: auto;
+}
+
+.reloaded-btn {
+  @include inline-block();
+  @include border-radius($global-radius);
+  background-color: $primary-color;
+  color: $white;
+  padding: rem-calc(13 30);
+  text-align: center;
+  width: auto;
+
+  &:hover {
+    color: $white;
+    opacity: .9;
+  }
+}
+
+// -------  BASE FORM STYLES ------ //
+
+input {
+  @include transition(border-color .25s ease-in-out);
+
+  &:focus {
+    @include input-placeholder {
+      @include transition(opacity .25s ease-in-out);
+      @include opacity(.5);
+    }
   }
 }

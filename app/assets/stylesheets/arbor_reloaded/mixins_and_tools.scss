@@ -2,6 +2,7 @@
 $primary-nav-color: #22252e;
 $secondary-nav-color: #282c37;
 $hover-navigation: #30323b;
+$hover-items: #f8f8f8;
 
 
 ///// Mixins
@@ -37,4 +38,26 @@ $hover-navigation: #30323b;
 
   ::-webkit-scrollbar-thumb { background: $foreground-color; }
   ::-webkit-scrollbar-track { background: $background-color; }
+}
+
+@mixin center($x: default, $y: default) {
+  position: absolute;
+  @if ($x and $y) {
+    @include transform(-50%, -50%);
+    left: 50%;
+    top: 50%;
+  } @else if ($x) {
+    @include transform(-50%, 0);
+    left: 50%;
+  } @else if ($y) {
+    @include transform(0, -50%);
+    top: 50%;
+  }
+}
+/// utility calsses
+
+.truncate {
+  @include ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
