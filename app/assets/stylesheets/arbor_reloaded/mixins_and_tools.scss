@@ -54,3 +54,10 @@ $hover-items: #f8f8f8;
     top: 50%;
   }
 }
+/// utility calsses
+
+.truncate {
+  @include ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

@@ -40,7 +40,7 @@
     overflow: hidden;
     position: relative;
 
-    &:hover {
+    &:not(.favorite-project):hover {
       .project,
       .actions { background: $hover-items; }
 
@@ -48,10 +48,10 @@
       .others,
       .last-update { color: $black; }
 
-      .favorite .icon { @include inline-block; }
+      .favorite .icn-favorite-empty { @include inline-block; }
     }
 
-    &.favorite-project .favorite .icon { @include inline-block; }
+    &.favorite-project .favorite .icn-favorite-empty { @include inline-block; }
   }
 
   .project {
@@ -64,6 +64,7 @@
     .title {
       font-size: rem-calc(16);
       margin-bottom: rem-calc(5);
+      width: 100%;
     }
 
     .last-update {
@@ -82,7 +83,7 @@
     position: absolute;
     right: rem-calc(15);
     top: rem-calc(10);
-    z-index: 99;
+    z-index: 2;
 
     .favorite,
     .others {
@@ -91,7 +92,7 @@
       font-size: rem-calc(18);
       line-height: rem-calc(35);
       margin: 0;
-      z-index: 99;
+      z-index: 3;
     }
   }
 
@@ -105,7 +106,7 @@
     min-width: rem-calc(100);
     padding: rem-calc(1 0);
     position: absolute;
-    z-index: 999;
+    z-index: 3;
 
     &:hover { background-color: $hover-items; }
 
@@ -142,13 +143,19 @@
         width: rem-calc(25);
       }
     }
+
+    .icn-favorite-empty {
+      background-color: $black-10;
+      display: block;
+      margin-right: rem-calc(15);
+    }
   }
 
   .deleter,
   .copier {
     background-color: $black-20;
     padding: rem-calc(1 15);
-    z-index: 9999;
+    z-index: 4;
 
     &:hover { background-color: $black-20; }
 
@@ -189,18 +196,17 @@
     }
   }
 
-  .favorite {
+  .icn-favorite-empty {
+    @include border-radius(100%);
+    background-color: $white;
+    color: $black;
+    display: none;
+    height: rem-calc(25);
+    line-height: rem-calc(25);
     margin-right: rem-calc(5);
-
-    .icon {
-      @include border-radius(100%);
-      background-color: $black-10;
-      display: none;
-      height: rem-calc(25);
-      padding: rem-calc(5);
-      width: rem-calc(25);
-    }//icon
-  }// favorite
+    text-align: center;
+    width: rem-calc(25);
+  }//icon
 
   .breaker {
     background-color: $white;
@@ -231,13 +237,131 @@
         right: -75%;
         width: 245%;
       }
+
+      @media #{$medium-only} {
+        right: -200%;
+        width: 500%;
+      }
     }
   }
+  //Favorite projects vew
+  .favorite-project {
+    border: 0;
+    height: rem-calc(150);
+
+    .project {
+      @include border-radius(rem-calc(5));
+      background-color: $black-10;
+      border: 0;
+      height: 100%;
+
+      .left {
+        bottom: rem-calc(15);
+        position: absolute;
+        width: calc(100% - 20px);
+
+        .title {
+          color: $black;
+          font-size: rem-calc(18);
+        }
+      }
+    }
+
+    .right {
+      right: rem-calc(20);
+      top: rem-calc(5);
+    }
+
+    .actions {
+      background-color: $black-10;
+      border: 0;
+      float: right;
+      height: auto;
+      margin-top: rem-calc(9);
+      position: relative;
+      text-align: right;
+
+      .delete-project,
+      .copy-project {
+        @include translateY(0);
+        background-color: $white;
+        float: none;
+        margin-right: rem-calc(10);
+
+        .icn-copy {
+          font-size: 14px;
+          line-height: 25px;
+        }
+      }
+
+      .favorite {
+        @include translateY(0);
+        margin-right: rem-calc(10);
+      }
+    }//actions
+
+    .deleter {
+      @include border-radius(rem-calc(5));
+      border: 0;
+      height: calc(100% - 20px);
+      margin: rem-calc(0 10 0 0);
+      padding: rem-calc(0 10);
+      text-align: center;
+      top: 0;
+      width: calc(100% - 20px);
+
+      .icn-delete {
+        position: absolute;
+        right: rem-calc(10);
+        top: rem-calc(10);
+      }
+
+      p {
+        font-size: rem-calc(10);
+        line-height: 1;
+        margin-top: rem-calc(50);
+        width: 100%;
+
+        &.title {
+          color: $white;
+          font-size: rem-calc(18);
+          margin-top: rem-calc(10);
+        }
+      }
+
+      a {
+        line-height: 1;
+        margin-top: rem-calc(8);
+      }
+    }//deleter
+
+    .favorite {
+      .icn-favorite {
+        @include border-radius(100%);
+        background-color: $white;
+        color: $black;
+        display: block;
+        height: rem-calc(25);
+        line-height: rem-calc(25);
+        text-align: center;
+        width: rem-calc(25);
+      }
+    }
+  }//favorite-project
 }
 
+.favorites {
+  margin-left: 0;
+  margin-top: rem-calc(25);
+  max-width: 100%;
+
+  @media #{$medium-only} { padding: rem-calc(0 10); }
+  @media #{$small-only} { padding: rem-calc(0 10); }
+}
 // Search bar
 
 .dashboard-header {
+  @include clearfix;
   // scss-lint:disable ImportantRule
   margin-top: rem-calc(50) !important;
 
@@ -260,7 +384,7 @@
       &:focus { background-color: $white; }
 
       &:hover,
-      &:focus { +.collapse-project-list { opacity: 1; } }
+      &:focus { +.collapse-project-list { display: block; } }
     } // search input
 
     .input-icon {
@@ -273,8 +397,8 @@
   .collapse-project-list {
     @include clearfix;
     background-color: $hover-items;
+    display: none;
     max-height: rem-calc(230);
-    opacity: 0;
     overflow-y: scroll;
     position: absolute;
     width: rem-calc(325);
