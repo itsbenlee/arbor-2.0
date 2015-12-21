@@ -26,7 +26,8 @@
 .project-list {
   margin: rem-calc(40 0);
 
-  .icn-delete {
+  .icn-delete,
+  .icn-copy {
     font-size: rem-calc(13);
     line-height: rem-calc(25);
     vertical-align: top;
@@ -42,13 +43,21 @@
 
     &:not(.favorite-project):hover {
       .project,
-      .actions { background: $hover-items; }
+      .actions { background: $dashboard-hover-color; }
 
       .title,
       .others,
       .last-update { color: $black; }
 
       .favorite .icn-favorite-empty { @include inline-block; }
+    }
+
+    .icn-favorite-empty,
+    .copy-project,
+    .delete-project {
+      @include opacity(1);
+
+      &:hover { @include opacity(.8); }
     }
 
     &.favorite-project .favorite .icn-favorite-empty { @include inline-block; }
@@ -87,7 +96,7 @@
 
     .favorite,
     .others {
-      color: $black-30;
+      color: $black-70;
       display: inline-block;
       font-size: rem-calc(18);
       line-height: rem-calc(35);
@@ -101,6 +110,7 @@
     background: $white;
     border-bottom: 1px solid $white;
     bottom: 0;
+    color: $black;
     display: none;
     height: calc(100% - 1px);
     min-width: rem-calc(100);
@@ -108,7 +118,7 @@
     position: absolute;
     z-index: 3;
 
-    &:hover { background-color: $hover-items; }
+    &:hover { background-color: $dashboard-hover-color; }
 
     a {
       @include translateY(-50%);
@@ -153,17 +163,14 @@
 
   .deleter,
   .copier {
-    background-color: $black-20;
     padding: rem-calc(1 15);
     z-index: 4;
-
-    &:hover { background-color: $black-20; }
 
     p,
     a {
       @include inline-block;
       @include translateY(0);
-      color: $white;
+      color: $black-50;
       font-size: rem-calc(10);
       line-height: rem-calc(51);
       margin: 0;
@@ -172,17 +179,18 @@
 
     .cancel-btn {
       @include border-radius(rem-calc(3));
-      background-color: $hover-items;
-      color: $black;
+      background-color: $black-30;
+      color: $white;
+      font-weight: $font-weight-bold;
       line-height: 1;
       margin: rem-calc(0 15 0 20);
-      padding: rem-calc(8 6);
+      padding: rem-calc(8 10);
     }
 
     span {
       @include border-radius(100%);
       @include inline-block;
-      background-color: $white;
+      background-color: $dashboard-hover-color;
       color: $black;
       font-size: rem-calc(13);
       height: rem-calc(25);
@@ -198,7 +206,7 @@
 
   .icn-favorite-empty {
     @include border-radius(100%);
-    background-color: $white;
+    background-color: $black-10;
     color: $black;
     display: none;
     height: rem-calc(25);
@@ -206,6 +214,11 @@
     margin-right: rem-calc(5);
     text-align: center;
     width: rem-calc(25);
+
+    &:hover {
+      @include opacity(.7);
+
+      &:before { content: '\e908';} }
   }//icon
 
   .breaker {
@@ -263,6 +276,7 @@
         .title {
           color: $black;
           font-size: rem-calc(18);
+          width: calc(100% - 15px);
         }
       }
     }
@@ -270,6 +284,8 @@
     .right {
       right: rem-calc(20);
       top: rem-calc(5);
+
+      .others { padding: rem-calc(0 5); }
     }
 
     .actions {
@@ -287,11 +303,6 @@
         background-color: $white;
         float: none;
         margin-right: rem-calc(10);
-
-        .icn-copy {
-          font-size: 14px;
-          line-height: 25px;
-        }
       }
 
       .favorite {
@@ -302,6 +313,7 @@
 
     .deleter {
       @include border-radius(rem-calc(5));
+      background-color: $black-30;
       border: 0;
       height: calc(100% - 20px);
       margin: rem-calc(0 10 0 0);
@@ -310,16 +322,26 @@
       top: 0;
       width: calc(100% - 20px);
 
+      .cancel-btn {
+        background-color: $white;
+        color: $black-60;
+        font-weight: $font-weight-bold;
+        margin-left: 0;
+      }
+
       .icn-delete {
         position: absolute;
         right: rem-calc(10);
         top: rem-calc(10);
       }
 
+      a,
+      p { color: $white; }
+
       p {
         font-size: rem-calc(10);
         line-height: 1;
-        margin-top: rem-calc(50);
+        margin-top: rem-calc(45);
         width: 100%;
 
         &.title {
@@ -396,7 +418,7 @@
 
   .collapse-project-list {
     @include clearfix;
-    background-color: $hover-items;
+    background-color: $dashboard-hover-color;
     display: none;
     max-height: rem-calc(230);
     overflow-y: scroll;
