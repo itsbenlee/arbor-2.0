@@ -1,0 +1,215 @@
+// TOP BAR
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$topbar-margin: rem-calc(15);
+$avatar-dimension: rem-calc(40);
+
+.top-bar {
+  .logo {
+    left: $topbar-margin;
+    position: absolute;
+    top: $topbar-margin;
+  }//logo
+
+  .name {
+    margin-left: $topbar-height;
+
+    .current-project {
+      color: $white;
+      line-height: $topbar-height;
+    }
+
+    .project-name {
+      background-color: transparent;
+      border: 0;
+      color: $white;
+      font-size: rem-calc(16);
+      height: $topbar-height - $topbar-margin;
+      padding: 0;
+      top: $topbar-margin / 2;
+      width: rem-calc(235);
+
+      &:hover,
+      &:focus { color: $black-30; }
+
+      &:focus,
+      &:active { border-bottom: 1px dashed lighten($primary-nav-color, 20%); }
+    }
+
+    @media #{ $small-only } {
+      form,
+      .project-name { height: 100%; }
+    }
+  }// edit project name
+
+  .has-notification {
+    position: relative;
+
+    &:before {
+      color: $backlog-color;
+      content: '•';
+      font-size: rem-calc(28);
+      position: absolute;
+      right: $topbar-link-padding / 1.3;
+      top: rem-calc(-5);
+
+      @media #{ $small-only } { left: $topbar-link-padding * 1.8; }
+    }//notification bullet
+  }//notification on bell
+}//top-bar
+
+.top-bar-section .profile {
+  .user-dropdown { padding: 0 $topbar-margin; }
+
+  .avatar {
+    @include border-radius(100%);
+    @include inline-block;
+    background-size: cover;
+    height: $avatar-dimension;
+    width: $avatar-dimension;
+
+    @media #{$medium-only} { margin: rem-calc(10 15 0 0); }
+  }//avatar
+
+  a:not(.button) {
+    &#welcome {
+      color: $black-30;
+      display: none;
+      font-size: rem-calc(13);
+      padding-right: 0;
+      width: calc(100% - #{$avatar-dimension});
+
+      span {
+        color: $white;
+        font-weight: $font-weight-bold;
+      }
+
+      @media #{$large-up} { display: inline; }
+    }//welcome tag
+  }
+}//profile section in nav
+
+// DROPDOWNS
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.top-bar-section ul .f-dropdown,
+ul .f-dropdown {
+  li,
+  a:not(.button) {
+    background-color: $secondary-nav-color;
+    width: 100%;
+
+    span {
+      float: right;
+      margin: rem-calc(20 10 0 10);
+    }// span icons
+  }// li and a
+}//f-dropdown
+
+.top-bar-section ul .f-dropdown {
+  // scss-lint:disable ImportantRule
+  top: $topbar-height !important;
+}
+
+
+// SUB NAV
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.secondary-nav {
+  $sub-nav-height: rem-calc(50);
+  $member-avatar-dimension: rem-calc(30);
+  $user-edit-dimension: rem-calc(20);
+
+  @include clearfix;
+  background-color: $secondary-nav-color;
+  height: $sub-nav-height;
+
+  > ul > li {
+    @include inline-block;
+    height: $sub-nav-height;
+
+    > a {
+      @include inline-block;
+      color: $black-30;
+      font-size: rem-calc(13);
+      line-height: $sub-nav-height;
+      margin-right: rem-calc(20);
+      position: relative;
+
+      &:hover { color: $white; }
+      &::last-child { margin-right: 0; }
+    }//secondary nav specific first lvl selection
+  }// ul li
+
+  .left {
+    margin-left: $topbar-margin;
+
+    .f-dropdown {
+      a {
+        padding: ($topbar-height / 4);
+
+        &:hover { background-color: $topbar-bg; }
+        span { margin: 0; }
+      }//a
+
+      li { line-height: $f-dropdown-line-height; }
+    }//fdropdown
+
+    .link {
+      &:hover,
+      &:active,
+      &:focus { @include fake-border(4px, false, false, false, false, 0); }
+    }
+  }//left container
+
+  .members {
+    margin-right: $topbar-margin;
+
+    a {
+      @include border-radius(100%);
+      @include inline-block;
+      background-size: cover;
+      height: $member-avatar-dimension;
+      margin: (($sub-nav-height - $member-avatar-dimension) / 2) rem-calc(8) 0 0;
+      width: $member-avatar-dimension;
+
+      @media #{ $small-only } { display: none; }
+
+      &.add-member,
+      &.other-members {
+        @include transition(background-color .25s ease-in-out);
+        background-color: $icon-color;
+        color: $secondary-nav-color;
+        font-size: rem-calc(14);
+        height: $user-edit-dimension;
+        line-height: rem-calc(19);
+        margin-top: ($sub-nav-height - $user-edit-dimension) / 2;
+        text-align: center;
+        vertical-align: middle;
+        width: $user-edit-dimension;
+
+        &.add-member { margin-right: 0; }
+        &:hover { background-color: $black-20; }
+
+        @media #{$small-only} {
+          display: inline-block;
+          margin-right: 0;
+        }
+      }//add-member, other-members
+
+      &.other-members {
+        background-color: transparent;
+        border: 1px solid $black-30;
+        color: $black-20;
+        font-size: rem-calc(12);
+        height: rem-calc(30);
+        letter-spacing: 0;
+        line-height: rem-calc(29);
+        margin-right: 0;
+        width: rem-calc(30);
+
+        @media #{$small-only} { display: none; }
+      }
+    }
+  }
+}//secondary nav

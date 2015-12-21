@@ -1,0 +1,38 @@
+// MODALS
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+#project-modal {
+  padding: rem-calc(50 100 70);
+  text-align: center;
+  top: 200%;
+
+  h2 {
+    color: $primary-nav-color;
+    font-size: rem-calc(32);
+    margin: 0;
+  }
+
+  .project-name {
+    font-size: rem-calc(14);
+    margin: rem-calc(35 0 50);
+    text-align: center;
+
+    @include input-placeholder { font-size: rem-calc(14); }
+  }
+
+  @media #{$medium-up} {
+    width: rem-calc(540);
+
+    .field { width: rem-calc(350); }
+    #create-project-btn { width: rem-calc(225); }
+  }
+}
+
+.button.modal-btn {
+  @include inline-block;
+  margin: 0 auto;
+  max-width: 60%;
+  padding: rem-calc(15 30);
+  text-transform: none;
+  width: auto;
+}

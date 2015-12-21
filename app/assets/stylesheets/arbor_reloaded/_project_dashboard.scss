@@ -226,6 +226,7 @@
     color: $black-30;
     display: block;
     font-size: rem-calc(14);
+    font-weight: $font-weight-light;
     line-height: 1;
     margin: rem-calc(50) auto 0;
     position: relative;
@@ -384,16 +385,13 @@
 
 .dashboard-header {
   @include clearfix;
-  // scss-lint:disable ImportantRule
-  margin-top: rem-calc(50) !important;
+  padding-top: rem-calc(50);
 
   input,
   li,
   .recent-link { font-size: rem-calc(14); }
 
   .search-bar {
-    @include scrollbars(.5em, $black-20);
-
     input {
       background-color: $white;
       border: 0;
@@ -404,9 +402,6 @@
       @include input-placeholder { color: $black-60; }
 
       &:focus { background-color: $white; }
-
-      &:hover,
-      &:focus { +.collapse-project-list { display: block; } }
     } // search input
 
     .input-icon {
@@ -415,39 +410,6 @@
       top: rem-calc(15);
     } // icon
   }
-
-  .collapse-project-list {
-    @include clearfix;
-    background-color: $dashboard-hover-color;
-    display: none;
-    max-height: rem-calc(230);
-    overflow-y: scroll;
-    position: absolute;
-    width: rem-calc(325);
-    z-index: 10;
-
-    li {
-      @include ellipsis;
-      border-bottom: 1px solid $black-10;
-      padding: rem-calc(13 0 13 40);
-      position: relative;
-
-      &:last-child { border-bottom: 0; }
-
-      &:hover { background-color: $black-10; }
-
-      .icon {
-        @include border-radius(100%);
-        background-color: $white;
-        height: rem-calc(24);
-        left: rem-calc(9);
-        padding: rem-calc(3);
-        position: absolute;
-        top: rem-calc(12);
-        width: rem-calc(24);
-      } // icon
-    } // li
-  } // collapse list
 
   .right-search-content {
     .recent-link {

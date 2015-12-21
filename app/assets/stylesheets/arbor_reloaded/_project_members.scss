@@ -1,7 +1,6 @@
 .reveal-modal-bg { opacity: .6; }
 
 .reveal-modal {
-  @include scrollbars(.5em, $black-20);
   @include border-radius($global-radius);
   background-color: $light-bg;
   border: 0;
