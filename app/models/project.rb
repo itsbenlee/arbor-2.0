@@ -18,10 +18,18 @@ class Project < ActiveRecord::Base
   scope :non_favorite, -> { where(favorite: false) }
 
   scope :recent, -> { order(updated_at: :desc) }
-  scope :by_name, -> { order(name: :asc) }
+  scope :by_name, -> { order('LOWER(name)') }
 
   def as_json
     super(only: [:name])
+  end
+
+  def name_url_hash
+    {
+      label: name,
+      value: Rails.application.routes.url_helpers
+        .arbor_reloaded_project_user_stories_path(self)
+    }
   end
 
   def invite_exists(email)

@@ -39,10 +39,24 @@ RSpec.describe ArborReloaded::ProjectsController do
       let!(:project2) { create :project, owner: user, favorite: false }
       render_views
 
-      it 'returns the projects list partial' do
-        get :list_projects
+      it 'returns the projects list partial with html format' do
+        get :list_projects, format: :html
         expect(response.body).to have_content(project.name)
         expect(response.body).to have_content(project2.name)
+      end
+
+      it 'should send a success response and the projects with json format' do
+        get :list_projects, format: :json
+
+        hash_response = JSON.parse(response.body)
+        expect(hash_response['success']).to eq(true)
+        route_helper = Rails.application.routes.url_helpers(project)
+        expected_result =
+        [
+          { 'label' => project2.name, 'value' => route_helper.arbor_reloaded_project_user_stories_path(project2) },
+          { 'label' => project.name, 'value' => route_helper.arbor_reloaded_project_user_stories_path(project) }
+        ]
+        expect((hash_response['data']['projects'] - expected_result).blank?).to be_truthy
       end
     end
   end

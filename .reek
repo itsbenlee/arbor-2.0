@@ -55,6 +55,7 @@ NestedIterators:
     HypothesesController#export,
     Hypothesis#self.to_csv,
     ProjectsController#update,
+    ProjectsController#list_projects,
     UserStoriesController#update,
     UserStoriesController#export,
     SpreadsheetExporterService#self.export,

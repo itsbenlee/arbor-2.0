@@ -1,23 +1,7 @@
 .dashboard-header.row
   .search-bar.large-8.medium-6.column
     = image_tag('icons/reloaded-search-icon.svg', class: 'icon input-icon')
-    %input{ type: 'text', placeholder: t('reloaded.project_dashboard.search_input')}
-    .collapse-project-list
-      %ul
-        %li
-          = image_tag('icons/favorite-icon.svg', class: 'icon')
-          =link_to 'Project 1'
-        %li
-          =link_to 'Project 2'
-        %li
-          =link_to 'Project 3'
-        %li
-          = image_tag('icons/favorite-icon.svg', class: 'icon')
-          =link_to 'Project 4'
-        %li
-          =link_to 'Project 5'
-        %li
-          =link_to 'Project 6'
+    %input{ type: 'text', placeholder: t('reloaded.project_dashboard.search_input'), id: 'projects-filter', data: { url: arbor_reloaded_projects_list_path } }
   .right-search-content.large-4.medium-6.column
     .recent-link
       = select_tag 'project_order', options_for_select({ t('reloaded.project_dashboard.sort_by_name')=>'by_name',
