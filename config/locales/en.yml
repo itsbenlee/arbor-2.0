@@ -191,6 +191,10 @@ en:
     project:
       update: 'Project was updated'
   reloaded:
+    backlog:
+      role: 'As a'
+      action: 'I want'
+      result: 'so that'
     navigation:
       menu: 'Menu'
       projects: 'Projects'

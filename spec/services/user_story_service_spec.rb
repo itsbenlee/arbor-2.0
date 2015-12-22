@@ -34,6 +34,15 @@ feature 'create user story' do
     }
   }
 
+  scenario 'for Arbor Reloaded, should create and return it' do
+    story = story_service.create_user_story(user_story_params, user)
+    expect(story).to be_a(UserStory)
+    expect(story.project).to eq(project)
+    expect(story.role).to eq(user_story_params[:role])
+    expect(story.action).to eq(user_story_params[:action])
+    expect(story.result).to eq(user_story_params[:result])
+  end
+
   scenario 'should create a User Story and assign the project' do
     response = story_service.new_user_story(user_story_params, user)
     expect(response.success).to eq(true)

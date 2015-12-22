@@ -1,39 +1,6 @@
-%script{src: "http://code.jquery.com/jquery-1.7.1.min.js"}
-%script{src: "//api.trello.com/1/client.js?key=#{ENV['TRELLO_DEVELOPER_PUBLIC_KEY']}"}
-
-- content_for :top_links do
-  = link_to '#', class: "nav-links" do
-    = image_tag('icons/search-icon.svg', class: 'icon')
-    = t('top_nav.search')
-  = link_to '#', {"aria-controls" => "drop1", "aria-expanded" => "false", id: "export-button", class: "nav-links", "data-dropdown" => "drop1"} do
-    = image_tag('icons/export-icon.svg', class: 'icon')
-    = t('top_nav.export')
-  = link_to project_user_stories_path(@project), class: "nav-links" do
-    = image_tag('icons/add-icon.svg', class: 'icon')
-    = t('backlog.user_stories.new')
-  - if @project.user_stories.any?
-    = link_to '#', class: "nav-links", id: 'select_stories_lnk' do
-      = image_tag('icons/copy-icon.svg', class: 'icon')
-      = t('backlog.user_stories.select_to_copy')
-    = link_to '#', class: "nav-links copy-stories-lnk", id: 'copy_stories_lnk', data: { reveal_id: 'copy_stories_modal' } do
-      = image_tag('icons/copy-icon.svg', class: 'icon')
-      = t('backlog.user_stories.copy_stories')
-  %ul#drop1.f-dropdown{"aria-hidden" => "true", "data-dropdown-content" => "", :tabindex => "-1"}
-    %li#pdf_export_link
-      = link_to t('pdf.export'), project_backlog_export_path(@project, format: :pdf)
-    %li#trello_export_link
-      = link_to t('trello.export'), '#'
-%section.backlog.row{ data: { project_id: @project.id } }
-  .user-stories-preloader.small-12.medium-5.columns
-    = image_tag 'preloader.gif'
-  .user-stories-list-container.small-12.medium-5.columns
-    - if @project.user_stories.count > 0
-      = render 'user_stories/backlog_list', user_stories: @project.user_stories, project: @project, total_points: @total_points
-  .user-story-edit-form.small-12.medium-7.columns
-    = render 'user_stories/form', project: @project,
-    user_story: @user_story,
-    hypothesis: nil,
-    form_url: project_user_stories_path(@project)
-= render 'user_stories/copy_stories_modal', projects: @projects
-- content_for :custom_js do
-  = javascript_include_tag 'userStories/index'
+.new-backlog-story
+  = render 'arbor_reloaded/user_stories/form', user_story: UserStory.new, project: @project
+.backlog-story-list
+  - if @project.user_stories.count > 0
+    - @project.user_stories.each do |user_story|
+      = render 'arbor_reloaded/user_stories/user_story', user_story: user_story
