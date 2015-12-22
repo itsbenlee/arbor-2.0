@@ -1,38 +1,39 @@
 .project-list
-  %span.breaker
-    = t('reloaded.project_dashboard.favorite', count: projects.favorite.count)
-  %ul.favorites.small-block-grid-2.medium-block-grid-3.large-block-grid-4
-    - projects.favorite.each do |project|
-      %li.favorite-project
-        .right
-          = link_to '#', class: 'favorite-link favorite', data: { url: arbor_reloaded_project_path(project), favorite: project.favorite } do
-            %span.icn-favorite
-          %a.others &#149&#149&#149
-        .actions
-          = link_to '#', class: 'favorite-link favorite', data: { url: arbor_reloaded_project_path(project), favorite: project.favorite } do
-            %span.icn-favorite
-          = link_to arbor_reloaded_project_copy_path(project), method: :post, class: 'copy-project', data: {} do
-            %span.icn-copy
-          - if current_user.id == project.owner_id
-            %a.delete-project
-              %span.icn-delete
-        .deleter
-          %span.icn-delete
-          %p= t('reloaded.project_dashboard.are_you_sure2')
-          %p.truncate.title= project.name
-          = link_to arbor_reloaded_project_path(project), method: :delete, class: 'cancel-btn' do
-            = t('reloaded.project_dashboard.delete_project')
-          %a.cancel= t('reloaded.project_dashboard.cancel')
-        = link_to arbor_reloaded_project_canvases_path(project_id: project.id), title: " Go to #{project.name}", class: 'project' do
-          .left
+  - if projects.favorite.count > 0
+    %span.breaker
+      = t('reloaded.project_dashboard.favorite', count: projects.favorite.count)
+    %ul.favorites.small-block-grid-2.medium-block-grid-3.large-block-grid-4
+      - projects.favorite.each do |project|
+        %li.favorite-project
+          .right
+            = link_to '#', class: 'favorite-link favorite', data: { url: arbor_reloaded_project_path(project), favorite: project.favorite } do
+              %span.icn-favorite
+            %a.others &#149&#149&#149
+          .actions
+            = link_to '#', class: 'favorite-link favorite', data: { url: arbor_reloaded_project_path(project), favorite: project.favorite } do
+              %span.icn-favorite
+            = link_to arbor_reloaded_project_copy_path(project), method: :post, class: 'copy-project', data: {} do
+              %span.icn-copy
+            - if current_user.id == project.owner_id
+              %a.delete-project
+                %span.icn-delete
+          .deleter
+            %span.icn-delete
+            %p= t('reloaded.project_dashboard.are_you_sure2')
             %p.truncate.title= project.name
-            %p.last-update
-              = t('reloaded.project_dashboard.last_update')
-              %span= project.updated_at.strftime("%b %d, %Y")
+            = link_to arbor_reloaded_project_path(project), method: :delete, class: 'cancel-btn' do
+              = t('reloaded.project_dashboard.delete_project')
+            %a.cancel= t('reloaded.project_dashboard.cancel')
+          = link_to arbor_reloaded_project_canvases_path(project_id: project.id), title: " Go to #{project.name}", class: 'project' do
+            .left
+              %p.truncate.title= project.name
+              %p.last-update
+                = t('reloaded.project_dashboard.last_update')
+                %span= project.updated_at.strftime("%b %d, %Y")
   %span.breaker
     = t('reloaded.project_dashboard.all_projects', count: projects.non_favorite.count)
   %ul
-    - projects.non_favorite.each do |project|
+    - projects.each do |project|
       %li
         .right
           = link_to '#', class: 'favorite-link favorite', data: { url: arbor_reloaded_project_path(project), favorite: project.favorite } do

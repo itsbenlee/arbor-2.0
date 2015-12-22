@@ -1,95 +1,96 @@
-%nav.top-bar{'data-topbar' => '', :role => 'navigation'}
-  %ul.title-area
-    = link_to arbor_reloaded_root_path, class: 'logo' do
-      = render 'shareable/svg/logo'
-    %li.name
-      - if current_project && !current_project.new_record?
-        - if current_user.id == current_project.owner_id
-          =render 'arbor_reloaded/projects/partials/edit_project_name', project: current_project
-        - else
-          = link_to current_project.name, '#', class: 'current-project'
-    / Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
-    %li.toggle-topbar.menu-icon
-      %a{:href => "#"}
-        %span= t('reloaded.navigation.menu')
-  %section.top-bar-section
-    / Right Nav Section
-    %ul.right
-      %ul.sections
-        %li
-          = link_to t('reloaded.navigation.projects'), arbor_reloaded_root_path
-        %li
-          %a{:href => 'mailto:feedback@getarbor.io', :target => '_top'}= t('reloaded.navigation.help')
-        %li.hide
-          %a{:href => "#"} FAQ
-        - if current_project
+.sticky
+  %nav.top-bar{'data-topbar' => '', :role => 'navigation'}
+    %ul.title-area
+      = link_to arbor_reloaded_root_path, class: 'logo' do
+        = render 'shareable/svg/logo'
+      %li.name
+        - if current_project && !current_project.new_record?
+          - if current_user.id == current_project.owner_id
+            =render 'arbor_reloaded/projects/partials/edit_project_name', project: current_project
+          - else
+            = link_to current_project.name, '#', class: 'current-project'
+      / Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
+      %li.toggle-topbar.menu-icon
+        %a{:href => "#"}
+          %span= t('reloaded.navigation.menu')
+    %section.top-bar-section
+      / Right Nav Section
+      %ul.right
+        %ul.sections
           %li
-            = link_to log_arbor_reloaded_project_path(current_project) do
-              %span.icn-notifications
-      %ul.profile
-        %li.has-dropdown
-          .avatar
-            .picture{ style: "background-image: url(#{ image_path('test-user.png') });" }
-            %a.welcome{:href => "#"}
-              = t('reloaded.navigation.welcome')
-              %span
-                = current_user.full_name
-                !
-          %ul.dropdown
-            %li
-              = link_to '#' do
-                = t('reloaded.navigation.settings')
-                %span.icn-settings
-            %li
-              = link_to '#' do
-                = t('backlog.logout')
-                %span.icn-signout
-- if current_project
-  %nav.bottom-bar
-    %section.bottom-bar-section
-      %ul.left.sections
-        %li
-          = link_to t('reloaded.navigation.canvas'), arbor_reloaded_project_canvases_path(current_project)
-        %li
-          = link_to t('reloaded.navigation.backlog'), arbor_reloaded_project_user_stories_path(current_project)
-        %li.hide
-          %a{:href => "#"}= t('reloaded.navigation.estimation')
-        %li
-          = link_to t('reloaded.navigation.activity'), log_arbor_reloaded_project_path(current_project)
-        %li
-          = link_to t('reloaded.navigation.assets'), arbor_reloaded_project_attachments_path(current_project)
-        %li
-          %a{"aria-controls" => "project-actions", "aria-expanded" => "false", "data-dropdown" => "project-actions"} ...
-          %ul#project-actions.f-dropdown{"aria-hidden" => "true", "data-dropdown-content" => "", :tabindex => "-1"}
-            %li
-              = link_to arbor_reloaded_project_copy_path(current_project), method: :post, class: 'copy-project', data: {} do
-                = t('project.copy_project')
-                %span.icn-copy
-            %li
-              = link_to current_project, method: :delete, data: { confirm: t('project.delete_confirmation') }, class: 'delete-project' do
-                = t('project.delete_project')
-                %span.icn-delete
-      %ul.right.members
-        - current_project.members.each_with_index do |member, index|
-          - if index == 0
-            %li
-              = link_to arbor_reloaded_project_path(current_project), { style: "background-image: url(#{ image_path('icons/po_avatar.svg') });"} do
-                = image_tag ('icons/po_avatar.svg'), class: 'hide'
-          - if index == 1
-            %li
-              = link_to arbor_reloaded_project_path(current_project), { style: "background-image: url(#{ image_path('icons/user-icon.svg') });"} do
-                = image_tag ('icons/user-icon.svg'), class: 'hide'
-          - if index == 2
-            %li
-              = link_to arbor_reloaded_project_path(current_project), { style: "background-image: url(#{ image_path('icons/user-icon.svg') });"} do
-                = image_tag ('icons/user-icon.svg'), class: 'hide'
-        - if current_project.members.count > 3
+            = link_to t('reloaded.navigation.projects'), arbor_reloaded_root_path
           %li
-            = link_to arbor_reloaded_project_path(current_project), class: 'other-members' do
-              +
-              = current_project.members.count - 3
-        %li
-          = link_to '+', |
-          arbor_reloaded_project_members_path(current_project), |
-          { class: 'add-member', data: { reveal_id: 'project-members-modal', reveal_ajax: true } }
+            %a{:href => 'mailto:feedback@getarbor.io', :target => '_top'}= t('reloaded.navigation.help')
+          %li.hide
+            %a{:href => "#"} FAQ
+          - if current_project
+            %li.hide
+              = link_to log_arbor_reloaded_project_path(current_project) do
+                %span.icn-notifications
+        %ul.profile
+          %li.has-dropdown
+            .avatar
+              .picture{ style: "background-image: url(#{ image_path('test-user.png') });" }
+              %a.welcome{:href => "#"}
+                = t('reloaded.navigation.welcome')
+                %span
+                  = current_user.full_name
+                  !
+            %ul.dropdown
+              %li
+                = link_to '#' do
+                  = t('reloaded.navigation.settings')
+                  %span.icn-settings
+              %li
+                = link_to '#' do
+                  = t('backlog.logout')
+                  %span.icn-signout
+  - if current_project
+    %nav.bottom-bar
+      %section.bottom-bar-section
+        %ul.left.sections
+          %li.hide
+            = link_to t('reloaded.navigation.canvas'), arbor_reloaded_project_canvases_path(current_project)
+          %li
+            = link_to t('reloaded.navigation.backlog'), arbor_reloaded_project_user_stories_path(current_project)
+          %li.hide
+            %a{:href => "#"}= t('reloaded.navigation.estimation')
+          %li
+            = link_to t('reloaded.navigation.activity'), log_arbor_reloaded_project_path(current_project)
+          %li.hide
+            = link_to t('reloaded.navigation.assets'), arbor_reloaded_project_attachments_path(current_project)
+          %li
+            %a{"aria-controls" => "project-actions", "aria-expanded" => "false", "data-dropdown" => "project-actions"} ...
+            %ul#project-actions.f-dropdown{"aria-hidden" => "true", "data-dropdown-content" => "", :tabindex => "-1"}
+              %li
+                = link_to arbor_reloaded_project_copy_path(current_project), method: :post, class: 'copy-project', data: {} do
+                  = t('project.copy_project')
+                  %span.icn-copy
+              %li
+                = link_to current_project, method: :delete, data: { confirm: t('project.delete_confirmation') }, class: 'delete-project' do
+                  = t('project.delete_project')
+                  %span.icn-delete
+        %ul.right.members
+          - current_project.members.each_with_index do |member, index|
+            - if index == 0
+              %li
+                = link_to arbor_reloaded_project_path(current_project), { style: "background-image: url(#{ image_path('icons/po_avatar.svg') });"} do
+                  = image_tag ('icons/po_avatar.svg'), class: 'hide'
+            - if index == 1
+              %li
+                = link_to arbor_reloaded_project_path(current_project), { style: "background-image: url(#{ image_path('icons/user-icon.svg') });"} do
+                  = image_tag ('icons/user-icon.svg'), class: 'hide'
+            - if index == 2
+              %li
+                = link_to arbor_reloaded_project_path(current_project), { style: "background-image: url(#{ image_path('icons/user-icon.svg') });"} do
+                  = image_tag ('icons/user-icon.svg'), class: 'hide'
+          - if current_project.members.count > 3
+            %li
+              = link_to arbor_reloaded_project_path(current_project), class: 'other-members' do
+                +
+                = current_project.members.count - 3
+          %li
+            = link_to '+', |
+            arbor_reloaded_project_members_path(current_project), |
+            { class: 'add-member', data: { reveal_id: 'project-members-modal', reveal_ajax: true } }
   #project-members-modal.reveal-modal{ data: { reveal: '' } }
