@@ -1,33 +1,34 @@
 = form_for(user_story, remote: true, url: arbor_reloaded_project_user_stories_path) do |form|
-  .row
-    .backlog-story-input.role.large-4.columns
-      %span.role-a-an= t('reloaded.backlog.role')
-      = form.text_field(                                   |
-        :role,                                             |
-        placeholder: t('backlog.user_stories.enter_role'), |
-        required:    true,                                 |
-        maxlength:   100,                                  |
-        class:      'role',                                |
-        'data-autosize-input' => '{ "space": 10 }'         |
-      )                                                    |
-    .backlog-story-input.action.large-4.columns
-      %span= t('reloaded.backlog.action')
-      = form.text_field(                                     |
-        :action,                                             |
-        placeholder: t('backlog.user_stories.enter_action'), |
-        required:    true,                                   |
-        maxlength:   255,                                    |
-        class:      'action',                                |
-        'data-autosize-input' => '{ "space": 10 }'           |
-      )                                                      |
-    .backlog-story-input.result.large-4.columns
-      %span= t('reloaded.backlog.result')
-      = form.text_field(                                     |
-        :result,                                             |
-        placeholder: t('backlog.user_stories.enter_result'), |
-        required:    true,                                   |
-        maxlength:   255,                                    |
-        class:      'result',                                |
-        'data-autosize-input' => '{ "space": 10 }'           |
-      )                                                      |
-    = form.submit t('save'), id: 'save-user-story', class: 'hide'
+  .backlog-story-input.role
+    %span.role-a-an= t('reloaded.backlog.role')
+    = form.text_field(                                   |
+      :role,                                             |
+      placeholder: t('backlog.user_stories.enter_role'), |
+      required:    true,                                 |
+      maxlength:   100,                                  |
+      class:      'role',                                |
+      'data-autosize-input' => '{ "space": 10 }'         |
+    )                                                    |
+
+  .backlog-story-input.action
+    %span= t('reloaded.backlog.action')
+    = form.text_field(                                     |
+      :action,                                             |
+      placeholder: t('backlog.user_stories.enter_action'), |
+      required:    true,                                   |
+      maxlength:   255,                                    |
+      class:      'action',                                |
+      'data-autosize-input' => '{ "space": 10 }'           |
+    )                                                      |
+
+  .backlog-story-input.result
+    %span= t('reloaded.backlog.result')
+    = form.text_field(                                     |
+      :result,                                             |
+      placeholder: t('backlog.user_stories.enter_result'), |
+      required:    true,                                   |
+      maxlength:   255,                                    |
+      class:      'result',                                |
+      'data-autosize-input' => '{ "space": 10 }'           |
+    )                                                      |
+  = form.submit t('save'), id: 'save-user-story', class: 'hide'
