@@ -141,7 +141,7 @@ $body-font-family: $font-family-sans-serif;
 // $last-child-float: $opposite-direction;
 
 // We use these to make sure border radius matches unless we want it different.
-$global-radius: rem-calc(5);
+$global-radius: rem-calc(4);
 // $global-rounded: 1000px;
 
 // We use these to control inset shadow shiny edges and depressions.
@@ -456,7 +456,7 @@ $h5-font-size: rem-calc(16);
 $button-font-sml: rem-calc(14);
 // $button-font-med: rem-calc(16);
 // $button-font-lrg: rem-calc(20);
-$button-font-weight: $font-weight-bold;
+$button-font-weight: $font-weight-normal;
 // $button-font-align: center;
 
 // We use these to control various hover effects.
@@ -635,7 +635,7 @@ $f-dropdown-list-hover-bg: $hover-navigation;
 // $include-html-form-classes: $include-html-classes;
 
 // We use this to set the base for lots of form spacing and positioning styles
-// $form-spacing: rem-calc(16);
+$form-spacing: rem-calc(18);
 
 // We use these to style the labels in different ways
 // $form-label-pointer: pointer;
@@ -646,7 +646,7 @@ $f-dropdown-list-hover-bg: $hover-navigation;
 // $form-label-small-transform: capitalize;
 // $form-label-bottom-margin: 0;
 // $input-font-family: inherit;
-// $input-font-color: rgba(0,0,0,0.75);
+$input-font-color: $black-40;
 $input-font-size: rem-calc(14);
 $input-bg-color: $white;
 $input-focus-bg-color: $white;
@@ -1127,31 +1127,31 @@ $input-box-shadow: none;
 // $include-html-reveal-classes: $include-html-classes;
 
 // We use these to control the style of the reveal overlay.
-// $reveal-overlay-bg: rgba($black, .45);
+$reveal-overlay-bg: rgba($black, .6);
 // $reveal-overlay-bg-old: $black;
 
 // We use these to control the style of the modal itself.
-// $reveal-modal-bg: $white;
+$reveal-modal-bg: $light-bg;
 // $reveal-position-top: rem-calc(100);
-$reveal-default-width: 40%;
+//$reveal-default-width: 40%;
 // $reveal-max-width: $row-width;
-// $reveal-modal-padding: rem-calc(20);
-// $reveal-box-shadow: 0 0 10px rgba($black,.4);
+$reveal-modal-padding: rem-calc(15 30);
+$reveal-box-shadow: 0;
 
 // We use these to style the reveal close button
-// $reveal-close-font-size: rem-calc(40);
+$reveal-close-font-size: rem-calc(20);
 // $reveal-close-top: rem-calc(10);
 // $reveal-close-side: rem-calc(22);
 // $reveal-close-color: $base;
 // $reveal-close-weight: $font-weight-bold;
 
 // We use this to set the default radius used throughout the core.
-$reveal-radius: rem-calc(15);
+$reveal-radius: $global-radius;
 // $reveal-round: $global-rounded;
 
 // We use these to control the modal border
 // $reveal-border-style: solid;
-// $reveal-border-width: 1px;
+$reveal-border-width: 0;
 // $reveal-border-color: $steel;
 
 // $reveal-modal-class: "reveal-modal";

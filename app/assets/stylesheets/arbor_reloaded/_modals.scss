@@ -1,38 +1,39 @@
+
 // MODALS
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-#project-modal {
-  padding: rem-calc(50 100 70);
-  text-align: center;
-  top: 200%;
+$modal-sides-padding: rem-calc(30);
+$modal-padding: rem-calc(15) $modal-sides-padding;
+$modal-close-offset: rem-calc(20);
 
-  h2 {
-    color: $primary-nav-color;
-    font-size: rem-calc(32);
+.reveal-modal-bg { position: fixed; }
+
+.reveal-modal {
+  min-height: inherit;
+  outline: 0;
+
+  h5 {
+    @include border-top-radius($reveal-radius);
+    background-color: lighten($black-10, 6%);
     margin: 0;
-  }
+    padding: $modal-padding;
+  }//modal titles
 
-  .project-name {
-    font-size: rem-calc(14);
-    margin: rem-calc(35 0 50);
-    text-align: center;
+  h2 { font-weight: $font-weight-normal; }
 
-    @include input-placeholder { font-size: rem-calc(14); }
-  }
+  .close-reveal-modal {
+    @include transition(color .25s ease-in-out);
+
+    &:hover { color: $primary-color; }
+  }//close btn
 
   @media #{$medium-up} {
-    width: rem-calc(540);
+    max-width: rem-calc(500);
 
-    .field { width: rem-calc(350); }
-    #create-project-btn { width: rem-calc(225); }
-  }
-}
-
-.button.modal-btn {
-  @include inline-block;
-  margin: 0 auto;
-  max-width: 60%;
-  padding: rem-calc(15 30);
-  text-transform: none;
-  width: auto;
-}
+    .close-reveal-modal {
+      color: $white;
+      right: - $modal-close-offset;
+      top: - $modal-close-offset;
+    }//close btn
+  }//medium up
+}//reveal modal

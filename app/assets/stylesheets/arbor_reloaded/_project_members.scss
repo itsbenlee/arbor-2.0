@@ -1,16 +1,9 @@
-.reveal-modal-bg { opacity: .6; }
 
-.reveal-modal {
-  @include border-radius($global-radius);
-  background-color: $light-bg;
-  border: 0;
-  box-shadow: none;
-  line-height: normal;
-  outline: 0;
+// PROJECT MEMBERS MODAL
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+#project-members-modal {
   padding: 0;
-
-  @media #{$medium-up} { width: rem-calc(500); }
-  @media #{$small-only} { top: 0; }
 
   .avatar-circle {
     @include border-radius(rem-calc(100));
@@ -29,6 +22,7 @@
   }
 
   .picture {
+    @include border-radius(100%);
     height: rem-calc(50);
     margin: 0;
     width: rem-calc(50);
@@ -74,24 +68,12 @@
     .user-mail {
       @include ellipsis;
       clear: both;
-      color: $black-40;
       float: left;
       max-width: 85%;
     }
   } // user data
 
   .invited .reloaded-tag { margin: rem-calc(0 0 5 0); }
-
-  .close-reveal-modal {
-    @include transition(color .25s ease-in-out);
-    color: $white;
-    font-size: rem-calc(20);
-    position: absolute;
-    right: rem-calc(-20);
-    top: rem-calc(-20);
-
-    &:hover { color: $black-10; }
-  }
 
   .show-project-data {
     background-color: $black-10;
@@ -102,15 +84,7 @@
 
   .footer {
     border-top: 1px solid $black-20;
-    padding: rem-calc(20 0 18);
+    padding: rem-calc(20) $modal-sides-padding 0;
     text-align: center;
-
-    input {
-      @include inline-block;
-      @include border-radius($global-radius);
-      margin-bottom: rem-calc(40);
-      padding: rem-calc(0 20);
-      width: rem-calc(435);
-    }
   }
-}
+}// project members modal

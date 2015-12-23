@@ -1,0 +1,18 @@
+// NEW PROJECT MODALS
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+#project-modal {
+  @extend .text-center;
+
+  padding: $modal-padding;
+
+  h2 { font-size: rem-calc(32); }
+
+  .project-name {
+    font-size: rem-calc(14);
+    margin: rem-calc(35) auto;
+    text-align: center;
+
+    @include input-placeholder { font-size: rem-calc(14); }
+  }//project name input
+}//project modal
