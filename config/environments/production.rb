@@ -6,7 +6,7 @@ Railsroot::Application.configure do
   config.serve_static_files = false
   config.assets.js_compressor = :uglifier
   config.assets.compile = true
-  config.assets.version = '1.4'
+  config.assets.version = '1.5'
   config.assets.digest = true
   config.log_level = :info
   config.assets.precompile += %w(
