@@ -1,6 +1,5 @@
 .dashboard-header.row
   .search-bar.large-8.medium-6.column
-    = image_tag('icons/reloaded-search-icon.svg', class: 'icon input-icon')
     %input{ type: 'text', placeholder: t('reloaded.project_dashboard.search_input'), id: 'projects-filter', data: { url: arbor_reloaded_projects_list_path } }
   .right-search-content.large-4.medium-6.column
     .recent-link

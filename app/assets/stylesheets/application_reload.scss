@@ -1,6 +1,12 @@
-@import 'application';
-@import 'arbor_reloaded/mixins_and_tools';
+@import 'compass';
+@import 'compass/support';
+@import 'compass/css3';
+@import 'compass/css3/box';
+@import 'arbor_reloaded/assets/base';
+@import 'arbor_reloaded/foundation_and_overrides';
 @import 'arbor_reloaded/icons';
 @import 'arbor_reloaded/main';
+@import 'arbor_reloaded/modals';
+@import 'arbor_reloaded/navigation';
 @import 'arbor_reloaded/project_members';
 @import 'arbor_reloaded/project_dashboard';

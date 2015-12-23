@@ -5,6 +5,7 @@ scss_files: '**/*.scss'
 exclude:
   - 'app/assets/stylesheets/vendor/**'
   - 'app/assets/stylesheets/assets/**'
+  - 'app/assets/stylesheets/arbor_reloaded/assets/**'
 
 linters:
   BangFormat:
