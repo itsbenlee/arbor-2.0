@@ -1,5 +1,12 @@
-%div.log-action
-  = activity.owner.log_description
-  = t("log.#{activity.key}")
-%div.log-entity
-  = activity.parameters[:user_story]
+- if local_assigns.has_key?(:version) && local_assigns[:version] == 'reloaded'
+  .log-action
+    %span.person#person-name= activity.owner.log_description
+    %span.activity= t("log.#{activity.key}")
+  .log-entity
+    = activity.parameters[:user_story]
+- else
+  %div.log-action
+    = activity.owner.log_description
+    = t("log.#{activity.key}")
+  %div.log-entity
+    = activity.parameters[:user_story]

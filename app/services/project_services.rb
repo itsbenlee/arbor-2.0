@@ -21,7 +21,7 @@ class ProjectServices
 
     if @project.save
       @common_response.data[:return_url] =
-        route_helper.arbor_reloaded_projects_list_path
+        route_helper.projects_list_path
     else
       @common_response.success = false
       @common_response.errors += @project.errors.full_messages

@@ -1,5 +1,13 @@
-%div.log-action
-  - if activity.parameters[:element]
-    = activity.parameters[:element] + t("log.#{activity.key}")
-  - else
-    = t('log.add_member_no_info')
+- if local_assigns.has_key?(:version) && local_assigns[:version] == 'reloaded'
+  .log-action
+    - if activity.parameters[:element]
+      %span.person#person-name= activity.parameters[:element]
+      %span.activity= t("log.#{activity.key}")
+    - else
+      = t('log.add_member_no_info')
+- else
+  .log-action
+    - if activity.parameters[:element]
+      = activity.parameters[:element] + t("log.#{activity.key}")
+    - else
+      = t('log.add_member_no_info')
