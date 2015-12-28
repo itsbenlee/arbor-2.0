@@ -1,0 +1,22 @@
+//  CREATE USER STORY
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.new-backlog-story {
+  background-color: $black-10;
+  color: $black-40;
+  font-size: rem-calc(22);
+  margin-top: rem-calc(50);
+
+  input {
+    background-color: $black-10;
+    border: 1px solid red;
+    font-size: rem-calc(22);
+    min-width: rem-calc(90);
+    @include input-placeholder { color: $black-80; };
+
+    &:focus {
+      background-color: $black-10;
+      border: 0;
+    }
+  }
+}
