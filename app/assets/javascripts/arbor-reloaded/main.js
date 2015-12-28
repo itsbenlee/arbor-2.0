@@ -1,3 +1,8 @@
+//custom scrollbars setting, Ale
+$(window).load(function(){
+  assignCustomScrollbar();
+});
+
 function ajaxCall(url, type, currentObject) {
   var deferred = $.Deferred();
   $.ajax({
@@ -40,4 +45,14 @@ function generalBinds() {
     bindFavoriteIcon();
     bindProjectsFilter();
   }
+}
+
+// This will assign custom scrollbars to elements declared, Ale
+var elementsHavingCustomScrollBar = ['body'];
+function assignCustomScrollbar(){
+  $.each(elementsHavingCustomScrollBar, function(index, currentElementLocator){
+    $(currentElementLocator).mCustomScrollbar({
+      theme: 'minimal-dark'
+    });
+  });
 }
