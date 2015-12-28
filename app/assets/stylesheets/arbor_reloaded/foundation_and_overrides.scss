@@ -1434,10 +1434,10 @@ $topbar-link-padding: ($topbar-height / 4);
 
 // Style the top bar dropdown elements
 $topbar-dropdown-bg: $topbar-bg;
-// $topbar-dropdown-link-color: $white;
+$topbar-dropdown-link-color: $topbar-link-color;
 // $topbar-dropdown-link-color-hover: $topbar-link-color-hover;
-// $topbar-dropdown-link-bg: $oil;
-// $topbar-dropdown-link-bg-hover: $jet;
+$topbar-dropdown-link-bg: $secondary-nav-color;
+$topbar-dropdown-link-bg-hover: $topbar-bg;
 // $topbar-dropdown-link-weight: $font-weight-normal;
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: $white;

@@ -27,21 +27,20 @@
             = link_to log_arbor_reloaded_project_path(current_project) do
               %span.icn-notifications
       %ul.profile
-        %li.user-dropdown
+        %li.user-dropdown.has-dropdown.not-click
           .avatar{ style: "background-image: url(#{ image_path('test-user.png') });" }
-          = link_to '#', data: { dropdown: 'user-menu', options: 'is_hover:true' }, style: "background-image: url(#{image_path('default-avatar.jpg')});", id: 'welcome' do
+          = link_to '#', id: 'welcome' do
             = t('reloaded.navigation.welcome')
             %span
               = current_user.full_name
               !
-          %ul#user-menu.f-dropdown{ data: { dropdown: { content: '' }, options: {is_hover: true, hover_timeout: 5000}} }
-            -# data-options="is_hover:true; hover_timeout:5000"
+          %ul.dropdown
             %li
               = link_to '#' do
                 = t('reloaded.navigation.settings')
                 %span.icn-settings
             %li
-              = link_to '#' do
+              = link_to destroy_user_session_path, method: :delete do
                 = t('backlog.logout')
                 %span.icn-signout
 - if current_project
