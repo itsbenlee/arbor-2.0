@@ -15,6 +15,7 @@
 //= require arbor-reloaded/projects/project_actions
 //= require arbor-reloaded/projects/project_dashboard
 //= require arbor-reloaded/projects/project_members
+//= require arbor-reloaded/projects/project_backlog
 //= require arbor-reloaded/utils/canvases/canvases
 //= require arbor-reloaded/utils/canvases/form
 //= require arbor-reloaded/utils/userStories/a_an_grammar
@@ -24,4 +25,5 @@
 //= require arbor-reloaded/utils/userStories/index
 //= require arbor-reloaded/utils/userStories/userStories
 //= require arbor-reloaded/utils/customTextArea
+//= require arbor-reloaded/utils/vendor/jquery.auto-grow-input.min
 //= require arbor-reloaded/main

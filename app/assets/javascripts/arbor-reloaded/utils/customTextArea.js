@@ -31,5 +31,5 @@ function CustomTextArea() {
       var offset = currentValue.offsetHeight - currentValue.clientHeight;
       $(currentValue).css('height', '10px').css('height', this.scrollHeight + offset);
     });
-  }
+  };
 }

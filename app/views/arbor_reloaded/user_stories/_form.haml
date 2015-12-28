@@ -7,7 +7,7 @@
       required:    true,                                 |
       maxlength:   100,                                  |
       class:      'role',                                |
-      'data-autosize-input' => '{ "space": 10 }'         |
+      id:         'role-input',                          |
     )                                                    |
 
   .backlog-story-input.action
@@ -18,7 +18,7 @@
       required:    true,                                   |
       maxlength:   255,                                    |
       class:      'action',                                |
-      'data-autosize-input' => '{ "space": 10 }'           |
+      id:         'action-input',                          |
     )                                                      |
 
   .backlog-story-input.result
@@ -29,6 +29,6 @@
       required:    true,                                   |
       maxlength:   255,                                    |
       class:      'result',                                |
-      'data-autosize-input' => '{ "space": 10 }'           |
+      id:         'result-input',                          |
     )                                                      |
   = form.submit t('save'), id: 'save-user-story', class: 'hide'
