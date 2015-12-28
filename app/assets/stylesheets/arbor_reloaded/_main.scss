@@ -62,30 +62,11 @@ li { list-style: none; }
   }
 } // circle
 
-.reloaded-btn {
-  @include inline-block();
-  @include border-radius($global-radius);
-  background-color: $primary-color;
-  color: $white;
-  padding: rem-calc(13 30);
-  text-align: center;
-  width: auto;
-
-  &:hover {
-    color: $white;
-    opacity: .9;
-  }
-}
-
 // -------  BASE FORM STYLES ------ //
 
-input {
-  @include transition(border-color .25s ease-in-out);
-
-  &:focus {
-    @include input-placeholder {
-      @include transition(opacity .25s ease-in-out);
-      @include opacity(.5);
-    }
+input:focus {
+  @include input-placeholder {
+    @include transition(opacity .25s ease-in-out);
+    @include opacity(.5);
   }
 }

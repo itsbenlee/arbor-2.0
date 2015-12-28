@@ -1,7 +1,7 @@
 .row
   #copy_stories_modal.copy-stories-modal.reveal-modal.large-4.columns{ aria: { hidden: true, labelledby: 'copy-stories-modal-title' }, data: { reveal: '', role: 'dialog' } }
     %h2#copy-stories-modal-title=t('backlog.user_stories.copy_stories')
-    %a.close-reveal-modal{ aria: { label: 'Close' } }×
+    = link_to '×', '#', class: 'close-reveal-modal'
     .alert-box.error.copy-stories-error
       = t('backlog.user_stories.no_stories')
     .uppercase-subtitle= t('backlog.user_stories.destination_project')
