@@ -23,4 +23,3 @@
 //= require lab/lab
 //= require_tree ./vendor
 //= require_tree ./attachments
-//= require_tree ./arbor-reloaded
