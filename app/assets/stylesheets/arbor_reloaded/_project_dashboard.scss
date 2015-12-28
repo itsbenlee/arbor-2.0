@@ -124,6 +124,7 @@
       @include translateY(-50%);
       @include inline-block;
       border: 0;
+      line-height: 1;
       position: relative;
       top: 50%;
     }
@@ -218,7 +219,7 @@
     &:hover {
       @include opacity(.7);
 
-      &:before { content: '\e908';} }
+      &:before { content: '\e906'; }}
   }//icon
 
   .breaker {
