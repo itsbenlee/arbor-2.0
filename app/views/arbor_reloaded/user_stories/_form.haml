@@ -1,6 +1,6 @@
 = form_for(user_story, remote: true, url: arbor_reloaded_project_user_stories_path) do |form|
   .row
-    .backlog-story-input.role.large-3.columns
+    .backlog-story-input.role.large-4.columns
       %span.role-a-an= t('reloaded.backlog.role')
       = form.text_field(                                   |
         :role,                                             |
@@ -10,7 +10,7 @@
         class:      'role',                                |
         'data-autosize-input' => '{ "space": 10 }'         |
       )                                                    |
-    .backlog-story-input.action.large-3.columns
+    .backlog-story-input.action.large-4.columns
       %span= t('reloaded.backlog.action')
       = form.text_field(                                     |
         :action,                                             |
@@ -20,7 +20,7 @@
         class:      'action',                                |
         'data-autosize-input' => '{ "space": 10 }'           |
       )                                                      |
-    .backlog-story-input.result.large-3.columns
+    .backlog-story-input.result.large-4.columns
       %span= t('reloaded.backlog.result')
       = form.text_field(                                     |
         :result,                                             |
