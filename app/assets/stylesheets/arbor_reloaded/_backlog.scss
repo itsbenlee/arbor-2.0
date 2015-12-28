@@ -2,20 +2,41 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .new-backlog-story {
+  @include border-radius($global-radius);
   background-color: $dashboard-hover-color;
   color: $black-40;
   font-size: rem-calc(22);
   margin-top: rem-calc(50);
+  padding: rem-calc(25);
+
+  .backlog-story-input {
+    float: left;
+    padding: 0;
+    width: auto;
+  }
 
   input {
-    background-color: $black-10;
+    background-color: $dashboard-hover-color;
+    border: 0;
+    display: inline-block;
     font-size: rem-calc(22);
+    margin-bottom: 0;
     min-width: rem-calc(90);
     @include input-placeholder { color: $black-80; };
 
     &:focus {
-      background-color: $black-10;
+      background-color: $dashboard-hover-color;
       border: 0;
     }
-  }
+  } // input
+
+  #save-user-story {
+    @include border-radius($global-radius);
+    background-color: $white;
+    border: 1px solid $black-10;
+    float: right;
+    font-size: rem-calc(12);
+    padding: rem-calc(8 0);
+    text-transform: uppercase;
+  } // create button
 }

@@ -195,6 +195,7 @@ en:
       role: 'As a'
       action: 'I want'
       result: 'so that'
+      create: 'Create'
     navigation:
       menu: 'Menu'
       projects: 'Projects'
