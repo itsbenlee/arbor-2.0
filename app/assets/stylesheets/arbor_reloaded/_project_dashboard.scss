@@ -391,13 +391,13 @@ $search-width: rem-calc(300);
 .ui-autocomplete {
   @include opacity(1);
   background-color: $dashboard-hover-color;
-  border: 0;
   max-height: rem-calc(230);
+  overflow: scroll;
   padding-left: 0;
   width: $search-width;
   z-index: 10;
 
-  @media #{$small-only} { width: calc(100% - #{$column-gutter})/2;}
+  @media #{$small-only} { width: calc(100% - #{$column-gutter}) / 2; }
 
   li {
     border-top: 1px solid $black-30;
@@ -407,9 +407,9 @@ $search-width: rem-calc(300);
 
     &:hover {
       background-color: $black-10;
-      border: 0;
+      border-top: 1px solid $black-10;
 
-      +li { border-top: 0; }
+      +li { border-top: 1px solid $black-10; }
     } // hover
   } // project list result
 } // project searchbar
