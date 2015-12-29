@@ -40,3 +40,38 @@
     text-transform: uppercase;
   } // create button
 }
+
+.backlog-user-story {
+  border-bottom: 1px solid $black-30;
+  border-top: 1px solid $white;
+  padding: rem-calc(20 0 20 15);
+
+  &:first-child { border-top: 1px solid $black-30; }
+
+  &:hover {
+    background: $dashboard-hover-color;
+    cursor: pointer;
+  }
+
+  .story-points {
+    @include border-radius(rem-calc(100%));
+    background: $black-20;
+    font-size: rem-calc(16);
+    line-height: rem-calc(25);
+    // height: rem-calc(25);
+    margin-right: rem-calc(10);
+    padding: rem-calc(5 10);
+    text-align: center;
+    // width: rem-calc(25);
+  } // span
+
+  .story-text {
+    @include inline-block();
+    max-width: 90%; // momentary
+
+    .grey-prefix {
+      color: $black-40;
+      font-size: rem-calc(16);
+    } //grey text
+  }
+} //  user story
