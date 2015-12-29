@@ -7,7 +7,7 @@
   color: $black-40;
   font-size: rem-calc(22);
   margin-top: rem-calc(50);
-  padding: rem-calc(25);
+  padding: rem-calc(15 25);
 
   .backlog-story-input {
     float: left;
@@ -42,23 +42,30 @@
   } // create button
 }
 
+//  USER STORY LIST
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
 .backlog-user-story {
-  border-bottom: 1px solid $black-30;
-  border-top: 1px solid $white;
+  border-top: 1px solid $black-30;
   padding: rem-calc(20 0 20 15);
 
-  &:first-child { border-top: 1px solid $black-30; }
+  &:first-child { margin-top: rem-calc(30); }
+
+  &:last-child { border-bottom: 1px solid $black-30; }
 
   &:hover {
     background: $dashboard-hover-color;
     cursor: pointer;
+    border-top: 1px solid $black-10;
+
+    +li { border-top: 1px solid $black-10; }
   }
 
   .story-points {
     @include inline-block();
     @include border-radius(rem-calc(100%));
     background: $black-20;
-    font-size: rem-calc(16);
+    font-size: rem-calc(12);
     height: rem-calc(25);
     line-height: rem-calc(25);
     margin-right: rem-calc(10);
