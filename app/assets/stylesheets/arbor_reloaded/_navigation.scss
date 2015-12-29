@@ -59,22 +59,21 @@ $avatar-dimension: rem-calc(40);
 }//top-bar
 
 .top-bar-section .profile {
-  .user-dropdown { padding: 0 $topbar-margin; }
-
   .avatar {
     @include border-radius(100%);
-    @include inline-block;
     background-size: cover;
+    display: none;
     height: $avatar-dimension;
     width: $avatar-dimension;
 
-    @media #{$medium-only} { margin: rem-calc(10 15 0 0); }
+    @media #{ $medium-only } { margin: rem-calc(10 15 0 0); }
+    @media #{ $medium-up } { @include inline-block; }
   }//avatar
 
   a:not(.button) {
     &#welcome {
       color: $black-30;
-      display: none;
+      display: inline;
       font-size: rem-calc(13);
       padding-right: 0;
       width: calc(100% - #{$avatar-dimension});
@@ -84,7 +83,8 @@ $avatar-dimension: rem-calc(40);
         font-weight: $font-weight-bold;
       }
 
-      @media #{$large-up} { display: inline; }
+      @media #{ $small-only } { display: block; }
+      @media #{ $medium-only } { display: none; }
     }//welcome tag
   }
 }//profile section in nav
@@ -92,7 +92,6 @@ $avatar-dimension: rem-calc(40);
 // DROPDOWNS
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.top-bar-section ul .f-dropdown,
 ul .f-dropdown {
   li,
   a:not(.button) {
@@ -109,6 +108,15 @@ ul .f-dropdown {
 .top-bar-section ul .f-dropdown {
   // scss-lint:disable ImportantRule
   top: $topbar-height !important;
+}
+
+ul .dropdown {
+  span {
+    float: right;
+    margin: rem-calc(20 0 0 10);
+
+    @media #{ $small-only } { float: none; }
+  }// span icons
 }
 
 
