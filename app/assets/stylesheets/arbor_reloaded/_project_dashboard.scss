@@ -1,420 +1,9 @@
-.no-projects {
-  @include translateY(-50%);
-  font-size: rem-calc(15);
-  left: 0;
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  width: 100%;
-
-  .title {
-    color: $primary-nav-color;
-    font-size: rem-calc(19);
-    font-weight: $font-weight-bold;
-    margin-bottom: rem-calc(5);
-  }
-
-  p {
-    color: $black-30;
-    font-size: rem-calc(15);
-    margin-bottom: rem-calc(30);
-  }
-
-  .button { display: inline; }
-}
-
-.project-list {
-  margin: rem-calc(40 0);
-
-  .icn-delete,
-  .icn-copy {
-    font-size: rem-calc(13);
-    line-height: rem-calc(25);
-    vertical-align: top;
-  }
-
-  .project,
-  li { @include clearfix; }
-
-  li {
-    border-bottom: 1px solid $black-30;
-    overflow: hidden;
-    position: relative;
-
-    &:not(.favorite-project):hover {
-      .project,
-      .actions { background: $dashboard-hover-color; }
-
-      .title,
-      .others,
-      .last-update { color: $black; }
-
-      .favorite .icn-favorite-empty { @include inline-block; }
-    }
-
-    .icn-favorite-empty,
-    .copy-project,
-    .delete-project {
-      @include opacity(1);
-
-      &:hover { @include opacity(.8); }
-    }
-
-    &.favorite-project .favorite .icn-favorite-empty { @include inline-block; }
-  }
-
-  .project {
-    border-bottom: 1px solid $white;
-    border-top: 1px solid $white;
-    display: block;
-    padding: rem-calc(10 15);
-    position: relative;
-
-    .title {
-      font-size: rem-calc(16);
-      margin-bottom: rem-calc(5);
-      width: 100%;
-    }
-
-    .last-update {
-      font-size: rem-calc(12);
-      margin: 0;
-    }
-
-    .title,
-    .last-update {
-      color: $black-30;
-      line-height: 1;
-    }
-  }
-
-  .right {
-    position: absolute;
-    right: rem-calc(15);
-    top: rem-calc(10);
-    z-index: 2;
-
-    .favorite,
-    .others {
-      color: $black-70;
-      display: inline-block;
-      font-size: rem-calc(18);
-      line-height: rem-calc(35);
-      margin: 0;
-      z-index: 3;
-    }
-  }
-
-  .actions,
-  .deleter {
-    background: $white;
-    border-bottom: 1px solid $white;
-    bottom: 0;
-    color: $black;
-    display: none;
-    height: calc(100% - 1px);
-    min-width: rem-calc(100);
-    padding: rem-calc(1 0);
-    position: absolute;
-    z-index: 3;
-
-    &:hover { background-color: $dashboard-hover-color; }
-
-    a {
-      @include translateY(-50%);
-      @include inline-block;
-      border: 0;
-      line-height: 1;
-      position: relative;
-      top: 50%;
-    }
-
-    &.visible {
-      display: block;
-      right: 0;
-    }
-
-    .delete-project,
-    .copy-project {
-      @include border-radius(100%);
-      background-color: $black-10;
-      float: right;
-      font-size: rem-calc(13);
-      height: rem-calc(25);
-      line-height: rem-calc(27);
-      margin-right: rem-calc(15);
-      text-align: center;
-      width: rem-calc(25);
-
-      img {
-        display: block;
-        height: rem-calc(25);
-        margin: 0;
-        padding: rem-calc(6);
-        width: rem-calc(25);
-      }
-    }
-
-    .icn-favorite-empty {
-      background-color: $black-10;
-      display: block;
-      margin-right: rem-calc(15);
-    }
-  }
-
-  .deleter,
-  .copier {
-    padding: rem-calc(1 15);
-    z-index: 4;
-
-    p,
-    a {
-      @include inline-block;
-      @include translateY(0);
-      color: $black-50;
-      font-size: rem-calc(10);
-      line-height: rem-calc(51);
-      margin: 0;
-      top: 0;
-    }
-
-    .cancel-btn {
-      @include border-radius(rem-calc(3));
-      background-color: $black-30;
-      color: $white;
-      font-weight: $font-weight-bold;
-      line-height: 1;
-      margin: rem-calc(0 15 0 20);
-      padding: rem-calc(8 10);
-    }
-
-    span {
-      @include border-radius(100%);
-      @include inline-block;
-      background-color: $dashboard-hover-color;
-      color: $black;
-      font-size: rem-calc(13);
-      height: rem-calc(25);
-      margin: rem-calc(0 0 0 15);
-      width: rem-calc(25);
-
-      &::before {
-        padding: rem-calc(6);
-        vertical-align: middle;
-      }
-    }
-  }
-
-  .icn-favorite-empty {
-    @include border-radius(100%);
-    background-color: $black-10;
-    color: $black;
-    display: none;
-    height: rem-calc(25);
-    line-height: rem-calc(25);
-    margin-right: rem-calc(5);
-    text-align: center;
-    width: rem-calc(25);
-
-    &:hover {
-      @include opacity(.7);
-
-      &::before { content: '\e906'; }}
-  }//icon
-
-  .breaker {
-    background-color: $white;
-    color: $black-30;
-    display: block;
-    font-size: rem-calc(14);
-    font-weight: $font-weight-light;
-    line-height: 1;
-    margin: rem-calc(50) auto 0;
-    position: relative;
-    text-align: center;
-    text-transform: uppercase;
-    width: 15%;
-
-    @media #{$small-only} { width: 40%; }
-    @media #{$medium-only} { width: 20%; }
-
-    &::after {
-      border-bottom: 1px solid $black-30;
-      content: '';
-      height: 1px;
-      position: absolute;
-      right: -284%;
-      top: rem-calc(6);
-      width: 667%;
-      z-index: -1;
-
-      @media #{$small-only} {
-        right: -75%;
-        width: 245%;
-      }
-
-      @media #{$medium-only} {
-        right: -200%;
-        width: 500%;
-      }
-    }
-  }
-  //Favorite projects vew
-  .favorite-project {
-    border: 0;
-    height: rem-calc(150);
-
-    .project {
-      @include border-radius(rem-calc(5));
-      background-color: $black-10;
-      border: 0;
-      height: 100%;
-
-      .left {
-        bottom: rem-calc(15);
-        position: absolute;
-        width: calc(100% - 20px);
-
-        .title {
-          color: $black;
-          font-size: rem-calc(18);
-          width: calc(100% - 15px);
-        }
-      }
-    }
-
-    .right {
-      right: rem-calc(20);
-      top: rem-calc(5);
-
-      .others { padding: rem-calc(0 5); }
-    }
-
-    .actions {
-      background-color: $black-10;
-      border: 0;
-      float: right;
-      height: auto;
-      margin-top: rem-calc(9);
-      position: relative;
-      text-align: right;
-
-      .delete-project,
-      .copy-project {
-        @include translateY(0);
-        background-color: $white;
-        float: none;
-        margin-right: rem-calc(10);
-      }
-
-      .favorite {
-        @include translateY(0);
-        margin-right: rem-calc(10);
-      }
-    }//actions
-
-    .deleter {
-      @include border-radius(rem-calc(5));
-      background-color: $black-30;
-      border: 0;
-      height: calc(100% - 20px);
-      margin: rem-calc(0 10 0 0);
-      padding: rem-calc(0 10);
-      text-align: center;
-      top: 0;
-      width: calc(100% - 20px);
-
-      .cancel-btn {
-        background-color: $white;
-        color: $black-60;
-        font-weight: $font-weight-bold;
-        margin-left: 0;
-      }
-
-      .icn-delete {
-        position: absolute;
-        right: rem-calc(10);
-        top: rem-calc(10);
-      }
-
-      a,
-      p { color: $white; }
-
-      p {
-        font-size: rem-calc(10);
-        line-height: 1;
-        margin-top: rem-calc(45);
-        width: 100%;
-
-        &.title {
-          color: $white;
-          font-size: rem-calc(18);
-          margin-top: rem-calc(10);
-        }
-      }
-
-      a {
-        line-height: 1;
-        margin-top: rem-calc(8);
-      }
-    }//deleter
-
-    .favorite {
-      .icn-favorite {
-        @include border-radius(100%);
-        background-color: $white;
-        color: $black;
-        display: block;
-        height: rem-calc(25);
-        line-height: rem-calc(25);
-        text-align: center;
-        width: rem-calc(25);
-      }
-    }
-  }//favorite-project
-}
-
-.favorites {
-  margin-left: 0;
-  margin-top: rem-calc(25);
-  max-width: 100%;
-
-  @media #{$medium-only} { padding: rem-calc(0 10); }
-  @media #{$small-only} { padding: rem-calc(0 10); }
-}
-
-// SEARCH FILTER WIDGET
+// DASHBOARD
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
+// Dashboard header
+// - - - - - - - - - - -
 $search-width: rem-calc(300);
-
-.ui-autocomplete {
-  @include opacity(1);
-  background-color: $dashboard-hover-color;
-  max-height: rem-calc(230);
-  overflow: scroll;
-  padding-left: 0;
-  width: $search-width;
-  z-index: 10;
-
-  @media #{$small-only} { width: calc(100% - #{$column-gutter}) / 2; }
-
-  li {
-    border-top: 1px solid $black-30;
-    color: $black-70;
-    font-size: rem-calc(14);
-    padding: rem-calc(20 0 20 40);
-
-    &:hover {
-      background-color: $black-10;
-      border-top: 1px solid $black-10;
-
-      +li { border-top: 1px solid $black-10; }
-    } // hover
-  } // project list result
-} // project searchbar
-
-// - - - - - - - - - - - - - - - - - -
 
 .dashboard-header {
   @include clearfix;
@@ -452,11 +41,11 @@ $search-width: rem-calc(300);
       position: absolute;
       top: rem-calc(15);
     } // icon
-  }
+  }//dashboard header
 
   .right-search-content {
     .recent-link {
-      display: inline-block;
+      @include inline-block;
 
       select {
         background: $white rem-calc(97 12) url('icons/arrow-dropdown.png')  no-repeat;
@@ -473,5 +62,327 @@ $search-width: rem-calc(300);
     .create-project { float: right; }
 
     @media #{$small-only} { margin-top: rem-calc(20); }
+  }// right-search-content
+}// dashboard header
+
+// Search Filter Widget
+// - - - - - - - - - - - - - - - - - - -
+.ui-autocomplete {
+  @include opacity(1);
+  background-color: $dashboard-hover-color;
+  max-height: rem-calc(230);
+  overflow: scroll;
+  padding-left: 0;
+  width: $search-width;
+  z-index: 10;
+
+  @media #{$small-only} { width: calc(100% - #{$column-gutter}) / 2; }
+
+  li {
+    border-top: 1px solid $black-30;
+    color: $black-70;
+    font-size: rem-calc(14);
+    padding: rem-calc(20 0 20 40);
+
+    &:hover {
+      background-color: $black-10;
+      border-top: 1px solid $black-10;
+
+      +li { border-top: 1px solid $black-10; }
+    } // hover
+  } // project list result
+} // project searchbar
+
+// Dashboard empty
+// - - - - - - - - - - -
+.no-projects {
+  @include translateY(-50%);
+  font-size: rem-calc(15);
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 100%;
+
+  .title {
+    color: $primary-nav-color;
+    font-size: rem-calc(19);
+    font-weight: $font-weight-bold;
+    margin-bottom: rem-calc(5);
   }
-} // dashboard header
+
+  p {
+    color: $black-30;
+    font-size: rem-calc(15);
+    margin-bottom: rem-calc(30);
+  }
+
+  .button { display: inline; }
+}// no projects block
+
+
+// Dashboard with stories
+// - - - - - - - - - - - - - - -
+.project-list {
+  $action-circle-dimension: rem-calc(25);
+  $white-border: 1px solid $white;
+  $project-padding-top: rem-calc(10);
+  $project-padding-sides: rem-calc(15);
+  $project-padding: rem-calc(10 15);
+  $project-border: rem-calc(2);
+
+  margin: rem-calc(40 0);
+
+  [class^="icn-"] {
+    font-size: rem-calc(13);
+    line-height: $action-circle-dimension;
+    vertical-align: top;
+
+    &[class^="icn-favorite"] { font-size: rem-calc(18); }
+  }
+
+  .project,
+  li { @include clearfix; }
+
+  li {
+    border-bottom: 1px solid $black-10;
+    overflow: hidden;
+    position: relative;
+
+    &:not(.favorite-project) {
+      .project,
+      .actions,
+      .deleter { background-color: $white; }
+
+      &:hover {
+        .project,
+        .actions,
+        .deleter { background-color: $dashboard-hover-color; }
+
+        .title,
+        .others,
+        .last-update { color: $black; }
+
+        .favorite .icn-favorite-empty { @include inline-block; }
+      }
+    }//not favorite project entry
+
+    [class^="icn-"] {
+      @include opacity(1);
+
+      &:hover { @include opacity(.7); }
+    }
+  }//project li
+
+  // Project link
+  .project {
+    border-bottom: $white-border;
+    border-top: $white-border;
+    display: block;
+    padding: $project-padding;
+    position: relative;
+
+    .title {
+      margin-bottom: rem-calc(5);
+      width: 100%;
+    }
+
+    .last-update {
+      font-size: rem-calc(12);
+      margin: 0;
+    }
+
+    .title,
+    .last-update {
+      color: $black-40;
+      line-height: 1;
+    }
+  }//project link
+
+  .actions,
+  .deleter,
+  .right {
+    position: absolute;
+    right: $project-padding-sides;
+    top: $project-padding-top + $project-border;
+
+    .icn-favorite-empty:hover {
+      &::before { content: '\e906'; }
+    }//icon
+
+    .delete-project { margin-right: 0; }
+  }//all three floating sections on the right
+
+  //projects not set as favorite
+  .common-projects-list {
+    .actions,
+    .deleter,
+    .right {
+      @include translateY(-50%);
+      position: absolute;
+      right: $project-padding-sides;
+      top: 50%;
+    }
+  }// regular project list
+
+  // Right section with ... and favorite btn
+  .right {
+    line-height: $action-circle-dimension;
+    z-index: 2;
+
+    .favorite,
+    .others {
+      @include inline-block;
+      color: $black-70;
+      font-size: rem-calc(18);
+      z-index: 3;
+    }
+
+    [class^="icn-favorite"] {
+      color: $black;
+      display: none;
+      margin-right: rem-calc(5);
+    }//icon
+  }//right section
+
+  .actions,
+  .deleter {
+    @include clearfix;
+    color: $black;
+    display: none;
+    min-width: rem-calc(100);
+    z-index: 3;
+
+    &.visible { display: block; }
+
+    &.actions { .icn-favorite-empty { @include inline-block; }}
+  }//actions and deleter
+
+  // Delete user story overlay
+  .deleter {
+    z-index: 4;
+
+    p,
+    a:not(.button) {
+      @include inline-block;
+      color: $black-50;
+      font-size: rem-calc(10);
+      margin: 0;
+
+      &.cancel { margin-right: $project-padding-sides; }
+    }
+
+    .button { margin: 0 $project-padding-sides; }
+    .delete-project { float: none; }
+  }// deleter
+
+  .delete-project,
+  .copy-project,
+  [class^="icn-favorite"] {
+    @include inline-block;
+    @include border-radius(100%);
+    background-color: $black-10;
+    float: right;
+    font-size: rem-calc(13);
+    height: $action-circle-dimension;
+    line-height: $action-circle-dimension;
+    margin-right: $project-padding-top;
+    text-align: center;
+    width: $action-circle-dimension;
+  }// circled buttons
+
+  .favorite-link { padding-bottom: rem-calc(1); }
+
+  .breaker {
+    margin-top: rem-calc(50);
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+
+    &::after {
+      border-bottom: 1px solid $black-30;
+      content: '';
+      height: 1px;
+      left: 0;
+      position: absolute;
+      top: calc(50% - 1px);
+      width: 100%;
+      z-index: -1;
+    }//border
+
+    h5 {
+      @include inline-block;
+      background-color: $white;
+      color: $black-30;
+      font-size: rem-calc(14);
+      font-weight: $font-weight-medium;
+      line-height: 1;
+      margin: 0;
+      padding: rem-calc(0 15);
+    }
+  }//section separator
+
+  // Favorite projects
+  // - - - - - - - - - - - - - - - - -
+  .favorites {
+    margin-left: 0;
+    margin-top: rem-calc(25);
+    max-width: 100%;
+  }//favorites list
+
+  .favorite-project {
+    border: 0;
+    height: rem-calc(130) + $project-padding-top * 2;
+
+    .project,
+    .deleter {
+      @include border-radius($global-radius);
+      background-color: $light-grey;
+      border: 0;
+      height: 100%;
+
+      .title {
+        color: $white;
+        font-size: rem-calc(18);
+        margin-bottom: rem-calc(5);
+        width: 100%;
+      }//title
+
+      .left {
+        bottom: $project-padding-sides;
+        position: absolute;
+        width: calc(100% - #{$project-padding-sides} * 2);
+
+        .title { color: $header-font-color; }
+      }//card info
+    }//project
+
+    .actions,
+    .deleter,
+    .right {
+      background-color: $light-grey;
+      right: $project-padding-sides + $block-grid-default-spacing / 2;
+
+      .delete-project,
+      .copy-project,
+      [class^="icn-favorite"] { background-color: $white; }
+
+      &.deleter {
+        background-color: darken($light-grey, 60%);
+        height: calc(100% - #{$project-padding-top} * 2);
+        padding: $project-padding;
+        right: $block-grid-default-spacing / 2;
+        text-align: center;
+        top: 0;
+        width: calc(100% - #{$block-grid-default-spacing});
+
+        p,
+        [class^="icn-"] { color: $white; }
+
+        .title { margin-bottom: rem-calc(10); }
+      }//deleter
+    }
+
+    .right { [class^="icn-favorite"] { display: block; }}
+  }//favorite-project
+}//Dashboard with stories
