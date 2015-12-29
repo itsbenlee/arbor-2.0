@@ -40,7 +40,7 @@ group :development, :test do
   gem 'reek'
   gem 'rails_best_practices'
   gem 'rubocop'
-  gem 'scss-lint'
+  gem 'scss_lint', require: false
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'wkhtmltopdf-binary-edge', '~> 0.12.2.1'

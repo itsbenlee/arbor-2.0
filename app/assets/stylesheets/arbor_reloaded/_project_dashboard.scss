@@ -219,7 +219,7 @@
     &:hover {
       @include opacity(.7);
 
-      &:before { content: '\e906'; }}
+      &::before { content: '\e906'; }}
   }//icon
 
   .breaker {
