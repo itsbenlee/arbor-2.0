@@ -36,7 +36,7 @@ li { list-style: none; }
   position: relative;
   width: rem-calc(20);
 
-  &:after {
+  &::after {
     @include transition(opacity .25s ease-in-out, color .25s ease-in-out);
     @include transform(rotate(45deg) translate(-50%, -50%));
     @include opacity(0);
@@ -50,12 +50,12 @@ li { list-style: none; }
     top: 50%;
   }
 
-  &:hover:after { @include opacity(1); }
+  &:hover::after { @include opacity(1); }
 
   &:checked {
-    &:hover:after { color: $black-50; }
+    &:hover::after { color: $black-50; }
 
-    &:after {
+    &::after {
       @include opacity(1);
       color: $black-70;
     }

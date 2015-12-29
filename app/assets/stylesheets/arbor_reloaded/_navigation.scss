@@ -45,7 +45,7 @@ $avatar-dimension: rem-calc(40);
   .has-notification {
     position: relative;
 
-    &:before {
+    &::before {
       color: $backlog-color;
       content: '•';
       font-size: rem-calc(28);
@@ -137,7 +137,7 @@ ul .f-dropdown {
       position: relative;
 
       &:hover { color: $white; }
-      &::last-child { margin-right: 0; }
+      &:last-child { margin-right: 0; }
     }//secondary nav specific first lvl selection
   }// ul li
 

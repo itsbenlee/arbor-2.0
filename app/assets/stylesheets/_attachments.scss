@@ -107,7 +107,7 @@
         font-weight: $font-weight-bold;
         margin-top: rem-calc(5);
 
-        &:after {
+        &::after {
           color: $black-40;
           content: '\2022';
           font-size: rem-calc(15);
