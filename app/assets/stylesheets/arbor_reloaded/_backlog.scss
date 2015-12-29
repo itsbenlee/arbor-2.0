@@ -16,7 +16,6 @@
   }
 
   input {
-    @include input-placeholder { color: $black-80; };
     background-color: $dashboard-hover-color;
     border: 0;
     display: inline-block;
@@ -24,6 +23,7 @@
     margin-bottom: 0;
     min-width: rem-calc(90);
     text-align: center;
+    @include input-placeholder { color: $black-80; };
 
     &:focus {
       background-color: $dashboard-hover-color;
@@ -59,8 +59,8 @@
     @include border-radius(rem-calc(100%));
     background: $black-20;
     font-size: rem-calc(16);
-    line-height: rem-calc(25);
     height: rem-calc(25);
+    line-height: rem-calc(25);
     margin-right: rem-calc(10);
     position: absolute;
     text-align: center;
