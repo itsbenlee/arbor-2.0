@@ -2,9 +2,9 @@ function bindFavoriteIcon() {
   $('.favorite-link').click(function() {
     var project = {
           project: { favorite: !($(this).data('favorite')) }
-        }
-        url = $(this).data('url'),
-        type  = 'put';
+        };
+        url = $(this).data('url');
+        type = 'put';
 
     projectAjaxCall(url, type, project);
     return false;
@@ -45,7 +45,7 @@ function displayProjectsView(url) {
   return $.get(url, function(indexProject) {
     $('.project-list').html(indexProject);
     generalBinds();
-  })
+  });
 }
 
 function bindProjectsFilter() {
