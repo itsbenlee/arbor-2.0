@@ -55,24 +55,26 @@
   }
 
   .story-points {
+    @include inline-block();
     @include border-radius(rem-calc(100%));
     background: $black-20;
     font-size: rem-calc(16);
     line-height: rem-calc(25);
-    // height: rem-calc(25);
+    height: rem-calc(25);
     margin-right: rem-calc(10);
-    padding: rem-calc(5 10);
+    position: absolute;
     text-align: center;
-    // width: rem-calc(25);
+    width: rem-calc(25);
   } // span
 
   .story-text {
     @include inline-block();
     max-width: 90%; // momentary
+    padding-left: rem-calc(40);
 
     .grey-prefix {
       color: $black-40;
       font-size: rem-calc(16);
     } //grey text
-  }
+  } // text
 } //  user story
