@@ -382,7 +382,39 @@
   @media #{$medium-only} { padding: rem-calc(0 10); }
   @media #{$small-only} { padding: rem-calc(0 10); }
 }
-// Search bar
+
+// SEARCH FILTER WIDGET
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$search-width: rem-calc(300);
+
+.ui-autocomplete {
+  @include opacity(1);
+  background-color: $dashboard-hover-color;
+  border: 0;
+  max-height: rem-calc(230);
+  padding-left: 0;
+  width: $search-width;
+  z-index: 10;
+
+  @media #{$small-only} { width: calc(100% - #{$column-gutter})/2;}
+
+  li {
+    border-top: 1px solid $black-30;
+    color: $black-70;
+    font-size: rem-calc(14);
+    padding: rem-calc(20 0 20 40);
+
+    &:hover {
+      background-color: $black-10;
+      border: 0;
+
+      +li { border-top: 0; }
+    } // hover
+  } // project list result
+} // project searchbar
+
+// - - - - - - - - - - - - - - - - - -
 
 .dashboard-header {
   @include clearfix;
@@ -393,16 +425,26 @@
   .recent-link { font-size: rem-calc(14); }
 
   .search-bar {
+    position: relative;
+
+    .icn-search {
+      left: rem-calc(25);
+      position: absolute;
+      top: rem-calc(10);
+    }
+
     input {
       background-color: $white;
       border: 0;
       border-bottom: 1px solid $black-10;
       margin-bottom: 0;
+      max-width: $search-width;
       padding-left: rem-calc(40);
-      width: rem-calc(325);
       @include input-placeholder { color: $black-60; }
 
       &:focus { background-color: $white; }
+
+      @media #{$small-only} { max-width: 100%; }
     } // search input
 
     .input-icon {
