@@ -25,7 +25,6 @@ $('#project-members-modal').on('opened.fndtn.reveal', function() {
      $(footerButtonId).text('Invite');
    }
  });
-  new Projects();
 });
 
 unlockBodyScroll();
