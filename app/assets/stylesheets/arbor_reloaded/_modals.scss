@@ -11,6 +11,7 @@ $modal-close-offset: rem-calc(20);
 .reveal-modal {
   min-height: inherit;
   outline: 0;
+  position: fixed;
 
   h5 {
     @include border-top-radius($reveal-radius);
@@ -36,4 +37,10 @@ $modal-close-offset: rem-calc(20);
       top: - $modal-close-offset;
     }//close btn
   }//medium up
+
+  @media #{ $small-only } {
+    @include border-radius(0);
+    height: 100%;
+    top: 0;
+  }
 }//reveal modal
