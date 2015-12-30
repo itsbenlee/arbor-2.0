@@ -1,0 +1,77 @@
+//  CREATE USER STORY
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.new-backlog-story {
+  @include border-radius($global-radius);
+  background-color: $dashboard-hover-color;
+  color: $black-40;
+  font-size: rem-calc(22);
+  margin-top: rem-calc(50);
+  padding: rem-calc(15 25);
+
+  .backlog-story-input {
+    float: left;
+    width: auto;
+  }
+
+  input {
+    background-color: $dashboard-hover-color;
+    border: 0;
+    display: inline-block;
+    font-size: rem-calc(22);
+    margin-bottom: 0;
+    min-width: rem-calc(90);
+    text-align: center;
+    @include input-placeholder { color: $black-80; };
+
+    &:focus { background-color: $dashboard-hover-color; }
+  } // input
+
+  #save-user-story {
+    background-color: $white;
+    border: 1px solid $black-10;
+    color: $black-90;
+    float: right;
+    text-transform: uppercase;
+  } // create button
+}
+
+//  USER STORY LIST
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$story-points-dimension: rem-calc(25);
+$story-padding-sides: rem-calc(15);
+
+.backlog-user-story {
+  border-top: 1px solid $black-10;
+  padding: rem-calc(20 0 20 15);
+
+  &:first-child { margin-top: rem-calc(30); }
+
+  &:last-child { border-bottom: 1px solid $black-10; }
+
+  &:hover {
+    background: $dashboard-hover-color;
+    cursor: pointer;
+  }
+
+  .story-points {
+    @include inline-block();
+    @include border-radius(rem-calc(100%));
+    background: $black-20;
+    font-size: rem-calc(12);
+    height: $story-points-dimension;
+    line-height: $story-points-dimension;
+    margin-right: rem-calc(10);
+    position: absolute;
+    text-align: center;
+    width: $story-points-dimension;
+  } // span
+
+  .story-text {
+    @include inline-block();
+    padding-left: $story-points-dimension + $story-padding-sides;
+
+    .grey-prefix { color: $black-40; }
+  } // text
+} //  user story

@@ -5,24 +5,24 @@ function displayActions() {
   $actionCaller.on( "click", function( event ) {
     $('.actions').removeClass('visible');
     $actionContainer = $(this).closest('li');
-    $actionContainer.find($('.actions')).addClass('visible')
+    $actionContainer.find($('.actions')).addClass('visible');
     return false;
   });
 
   $('html').click(function() {
     if ($('.actions').hasClass('visible')) {
       $('.actions').removeClass('visible');
-    };
+    }
 
     if ($('.deleter').hasClass('visible')) {
       $('.deleter').removeClass('visible');
-    };
+    }
   });
 }
 
 function displayHideDelete() {
   var $deleteCaller = $('.delete-project'),
-      $cancel       = $('.cancel')
+      $cancel       = $('.cancel');
   $deleteCaller.on( "click", function( event ) {
     $deleteContainer = $(this).closest('li');
     $deleteContainer.find($('.deleter')).addClass('visible');
