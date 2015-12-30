@@ -55,8 +55,8 @@
 
   &:hover {
     background: $dashboard-hover-color;
-    cursor: pointer;
     border-top: 1px solid $black-10;
+    cursor: pointer;
 
     +li { border-top: 1px solid $black-10; }
   }
