@@ -26,6 +26,7 @@ function displayHideDelete() {
   $deleteCaller.on( "click", function( event ) {
     $deleteContainer = $(this).closest('li');
     $deleteContainer.find($('.deleter')).addClass('visible');
+    $(this).parent().removeClass('visible');
     return false;
   });
 

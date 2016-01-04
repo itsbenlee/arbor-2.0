@@ -145,7 +145,7 @@ ul .dropdown {
       position: relative;
 
       &:hover { color: $white; }
-      &:last-child { margin-right: 0; }
+      &:not(:last-child) { margin-right: 0; }
     }//secondary nav specific first lvl selection
   }// ul li
 
