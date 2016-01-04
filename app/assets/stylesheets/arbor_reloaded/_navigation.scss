@@ -20,6 +20,7 @@ $avatar-dimension: rem-calc(40);
     }
 
     .project-name {
+      @include ellipsis;
       background-color: transparent;
       border: 0;
       color: $white;
@@ -27,13 +28,16 @@ $avatar-dimension: rem-calc(40);
       height: $topbar-height - $topbar-margin;
       padding: 0;
       top: $topbar-margin / 2;
-      width: rem-calc(235);
+      width: rem-calc(500);
 
       &:hover,
       &:focus { color: $black-30; }
 
       &:focus,
       &:active { border-bottom: 1px dashed lighten($primary-nav-color, 20%); }
+
+      @media #{ $small-only } { width: rem-calc(150); }
+      @media #{ $medium-only } { width: rem-calc(300); }
     }
 
     @media #{ $small-only } {
@@ -146,6 +150,8 @@ ul .dropdown {
 
       &:hover { color: $white; }
       &:not(:last-child) { margin-right: 0; }
+
+      @media #{ $small-only } { margin-right: rem-calc(15); }
     }//secondary nav specific first lvl selection
   }// ul li
 
