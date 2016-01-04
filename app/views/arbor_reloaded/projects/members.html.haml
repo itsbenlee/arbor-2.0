@@ -12,14 +12,14 @@
   %ul.show-project-data
     - members.each_with_index do |member, index|
       - if index >= 0 && member.id != owner.id
-        %li.user-item.row
+        %li.user-item
           .picture{ style: "background-image: url(#{ image_path('test-user.png') });" }
           .user-data
             %p.user-name
               = member.full_name
             %p.user-mail
               = member.email
-            %input.circles{ id:'remove-member-check', type: 'checkbox', data:{ url: arbor_reloaded_project_remove_member_from_project_path(project, member: member.id)} }
+            %input.circle-checkbox{ id:'remove-member-check', type: 'checkbox', data:{ url: arbor_reloaded_project_remove_member_from_project_path(project, member: member.id)} }
     - unless invites.empty?
       - invites.each do |invite|
         %li.user-item.invited

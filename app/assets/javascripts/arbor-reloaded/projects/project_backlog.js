@@ -1,4 +1,8 @@
-var commonGrowInputOptions = { minWidth: 180, maxWidth: 600, comfortZone: 30 };
+var commonGrowInputOptions = { minWidth: 180, maxWidth: 600, comfortZone: 30 },
+    $backlogStoryList      = $('.backlog-story-list'),
+    $storyBulkInput        = $backlogStoryList.find('.circle-checkbox'),
+    $bulkMenu              = $backlogStoryList.find('.sticky-menu');
+
 $(document).ready(function() {
   if ($('.new-backlog-story').length > 0) {
     $('#role-input').autoGrowInput(commonGrowInputOptions);
@@ -6,6 +10,8 @@ $(document).ready(function() {
     $('#result-input').autoGrowInput(commonGrowInputOptions);
     autogrowInputs();
   }
+  showBulkMenu();
+  bindReorderStories();
 });
 
 // Attach autogrow on form submit, Ale
@@ -18,8 +24,6 @@ function autogrowInputs() {
   $('#action-input').trigger('autogrow');
   $('#result-input').trigger('autogrow');
 }
-
-bindReorderStories();
 
 function bindReorderStories() {
   $('.backlog-story-list').sortable({
@@ -48,4 +52,10 @@ function setStoriesOrder() {
   });
 
   return newStoriesOrder;
+}
+
+function showBulkMenu() {
+  $storyBulkInput.click(function() {
+    $bulkMenu[this.checked ? "show" : "hide"]();
+  });
 }
