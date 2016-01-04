@@ -158,7 +158,7 @@ module ArborReloaded
       if @project.save
         @project.create_activity :create_project
         assign_associations
-        redirect_to arbor_reloaded_project_canvases_path(@project)
+        redirect_to arbor_reloaded_project_user_stories_path(@project)
       else
         @errors = @project.errors.full_messages
         render :new, status: 400

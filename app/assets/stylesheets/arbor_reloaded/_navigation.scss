@@ -153,6 +153,8 @@ ul .dropdown {
 
       @media #{ $small-only } { margin-right: rem-calc(15); }
     }//secondary nav specific first lvl selection
+
+    &.not-ready { display: none; }
   }// ul li
 
   .left {
