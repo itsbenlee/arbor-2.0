@@ -1,12 +1,11 @@
 = link_to '×', '#', class: 'close-reveal-modal'
 %h5= t("project_members.title")
 .project-members
-  .user-item.special-item.row
-    .profile.small-2.columns
-      .picture{ style: "background-image: url(#{ image_path('test-user.png') });" }
-    .user-data.small-10.columns
+  .user-item.special-item
+    .picture{ style: "background-image: url(#{ image_path('test-user.png') });" }
+    .user-data
       %p.user-name
-        %span.reloaded-tag=t ("reloaded.project_members.owner")
+        %span.user-type-tag= t("reloaded.project_members.owner")
         = owner.full_name
       %p.user-mail
         = owner.email
@@ -14,9 +13,8 @@
     - members.each_with_index do |member, index|
       - if index >= 0 && member.id != owner.id
         %li.user-item.row
-          .profile.small-2.columns
-            .picture{ style: "background-image: url(#{ image_path('test-user.png') });" }
-          .user-data.small-10.columns
+          .picture{ style: "background-image: url(#{ image_path('test-user.png') });" }
+          .user-data
             %p.user-name
               = member.full_name
             %p.user-mail
@@ -24,12 +22,12 @@
             %input.circles{ id:'remove-member-check', type: 'checkbox', data:{ url: arbor_reloaded_project_remove_member_from_project_path(project, member: member.id)} }
     - unless invites.empty?
       - invites.each do |invite|
-        %li.user-item.invited.row
-          .profile.small-2.columns
-            .avatar-circle A
-          .user-data.small-10.columns
-            %span.reloaded-tag
-              =t ("reloaded.project_members.user_invited")
+        %li.user-item.invited
+          .picture.avatar-circle A
+          .user-data
+            %p
+              %span.user-type-tag
+                = t("reloaded.project_members.user_invited")
             %p.user-mail
               = invite.email
 .footer

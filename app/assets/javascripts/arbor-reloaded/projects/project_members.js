@@ -14,7 +14,6 @@ $('#project-members-modal').on('opened.fndtn.reveal', function() {
   bindActionsToButton();
   bindActionsOnRemovalCheckboxes();
   displayInitialWhenNoAvatar();
-  lockBodyScroll();
 
   $('body').addClass('locked');
 
@@ -26,20 +25,6 @@ $('#project-members-modal').on('opened.fndtn.reveal', function() {
    }
  });
 });
-
-unlockBodyScroll();
-
-function lockBodyScroll() {
-  if ($(this).is(':visible')) {
-    $('body').addClass('locked');
-  }
-}
-
-function unlockBodyScroll() {
-  $('#project-members-modal').on('closed.fndtn.reveal', function() {
-    $('body').toggleClass('locked');
-  });
-}
 
 function hideSpecifiedElements() {
   $('.hidden-input-element').each(function(index, currentValue) {
@@ -61,9 +46,9 @@ function bindActionsToButton() {
 
 function displayInitialWhenNoAvatar() {
   $('.user-item.invited.row').has('.avatar-circle').each(function(index, currentValue) {
-    if ($(currentValue).children('.user-data').children('.reloaded-tag').text().trim() == 'Invited'){
+    if ($(currentValue).children('.user-data').children('.user-type-tag').text().trim() == 'Invited'){
       var initial = $(currentValue).children('.user-data').children('.user-mail').text().trim().substring(0,1);
-      $(currentValue).children('.profile').children('.avatar-circle').text(initial.toUpperCase());
+      $(currentValue).children('.avatar-circle').text(initial.toUpperCase());
     }
   });
 }
