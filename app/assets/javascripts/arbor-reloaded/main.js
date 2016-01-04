@@ -32,7 +32,7 @@ function pseudoClickOnLink(linkToClick) {
    window.location.href = linkToClick.attr('href');
 }
 
-// This is for avoid repeted bind, everytime neds to bind something call this, Butcher
+// This is for avoid repeated bind, everytime needs to bind something call this, Butcher
 function generalBinds() {
   if (typeof $('.project-list') != "undefined") {
     displayActions();

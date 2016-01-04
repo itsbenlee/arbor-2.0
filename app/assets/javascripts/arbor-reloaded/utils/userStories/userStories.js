@@ -536,7 +536,6 @@ $(document).on('click', 'span', function () {
   $span.hide();
   $input.show();
   $(this).next('input:text').focus();
-  dynamicInput();
 });
 
 $(document).on('blur', '.user-story-edit-form .user-story-input input:text', function() {
