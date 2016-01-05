@@ -30,8 +30,47 @@ module ArborReloaded
       @common_response
     end
 
+    def reorder_stories(new_order)
+      @project.reorder_user_stories(new_order)
+      { success: true }
+    end
+
     def all_activities
       @project.activities.all.order(created_at: :desc)
+    end
+
+    def replicate(current_user)
+      replica =
+        Project.new(name: replica_name,
+                    owner: current_user,
+                    members: [current_user])
+
+      if replica.save && @project.save
+        replicate_associations(replica)
+        @common_response.data[:project] = replica
+      end
+
+      @common_response
+    end
+
+    def replica_name
+      "Copy of #{@project.name} (#{@project.copies += 1})"
+    end
+
+    private
+
+    def replicate_associations(replica)
+      [
+        Thread.new { copy_stories(replica) },
+        Thread.new { @project.copy_canvas(replica) if @project.canvas }
+      ].each(&:join)
+      replica.clean_log
+    end
+
+    def copy_stories(replica)
+      @project.user_stories.each do |story|
+        story.copy_in_project(replica.id)
+      end
     end
   end
 end
