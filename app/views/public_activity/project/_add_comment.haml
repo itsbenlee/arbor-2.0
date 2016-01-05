@@ -1,8 +1,14 @@
-%div.log-action
-  = activity.owner.log_description
-  = t("log.#{activity.key}")
-%div.log-entity
-  = activity.parameters[:user_story]
-- if activity.parameters[:comment]
-  %div.log-trackable
-    = "↳ #{activity.parameters[:comment]}"
+- if local_assigns.has_key?(:version) && local_assigns[:version] == 'reloaded'
+  .log-action
+    %span.person#person-name= activity.owner.log_description
+    %span.activity= t("log.reloaded_#{activity.key}")
+    %span.person= local_assigns[:project_name]
+-else
+  .log-action
+    = activity.owner.log_description
+    = t("log.#{activity.key}")
+  .log-entity
+    = activity.parameters[:user_story]
+  - if activity.parameters[:comment]
+    .log-trackable
+      = "↳ #{activity.parameters[:comment]}"

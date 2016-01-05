@@ -91,7 +91,8 @@ module ArborReloaded
 
     def log
       project_services = ProjectServices.new(@project)
-      @activities_by_pages = project_services.activities_by_pages
+      @activities = project_services.all_activities
+      render layout: 'application_reload'
     end
 
     def backlog
@@ -133,7 +134,7 @@ module ArborReloaded
     private
 
     def json_list
-      response = ProjectServices.new.projects_json_list(@projects)
+      response = ProjectServices.new(@project).projects_json_list(@projects)
       render json: response,
              status: (response.success ? 201 : 422)
     end

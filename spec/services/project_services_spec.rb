@@ -26,18 +26,6 @@ def set_new_order(first_hypothesis, second_hypothesis)
   { 0 => second_hypothesis_ordered, 1 => first_hypothesis_ordered }
 end
 
-feature 'update project' do
-  let(:project)         { create :project }
-  let(:project_service) { ProjectServices.new(project) }
-
-  scenario 'should load the response with the projects list url' do
-    response = project_service.update_project
-
-    expect(response.success).to eq(true)
-    expect(response.data[:return_url]).to eq(arbor_reloaded_projects_list_path)
-  end
-end
-
 feature 'List all projects' do
   let(:project_service) { ProjectServices.new(project) }
   let(:project)         { create :project }

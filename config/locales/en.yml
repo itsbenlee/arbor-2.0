@@ -134,6 +134,7 @@ en:
       add_member: ' was added to the project.'
       add_user_story: ' wrote a new user story.'
       add_comment: ' commented on a story.'
+      reloaded_add_comment: ' commented on '
   archive:
     link: "Archive"
     title: "Archived user stories"
@@ -229,3 +230,5 @@ en:
     create_project:
       title: 'Create a Project'
       project_name: 'Enter new project name here...'
+    activities:
+      title: "%{project_name} Activities"

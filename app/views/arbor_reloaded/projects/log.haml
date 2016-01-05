@@ -1,4 +1,18 @@
-%div#log
-  - @activities_by_pages.each_with_index do |activity_page|
-    %div.log-page{ id: 'log_page', class: 'active' }
-      = render 'log_page', page_activities: activity_page
+.section-log.row
+  .title
+    %h2= t('reloaded.activities.title', project_name: @project.name)
+  #log
+  - @activities.each do |activity|
+    - if activity.key == 'project.create_project'
+      .project-creation-line
+        %span.project-title= @project.name
+        %span= ' was Created on'
+        %span.created-at= activity.created_at.strftime("%b %e at %l:%M%P")
+    -else
+      .log-entry
+        .log-line-left
+          %span.created-at= activity.created_at.strftime("%b %e at %l:%M%P")
+        .log-line-right
+          .avatar-circle#avatar-circle
+          .log-details
+            = render_activity activity, locals: {version: 'reloaded', project_name: @project.name}

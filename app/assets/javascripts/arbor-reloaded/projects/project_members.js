@@ -18,7 +18,7 @@ $('#project-members-modal').on('opened.fndtn.reveal', function() {
   $('body').addClass('locked');
 
   $(newMemberMailTextId).keyup(function(e) {
-   if($(this).val() == '') {
+   if($(this).val() === '') {
      $(footerButtonId).text(footerButtonInitialText);
    } else {
      $(footerButtonId).text('Invite');

@@ -1,0 +1,85 @@
+//Activities
+.section-log {
+  $avatar-dimension: rem-calc(50);
+  $log-line-created-width: rem-calc(135);
+  $log-line-left-margin: rem-calc(30);
+
+  margin-top: rem-calc(30);
+
+  .log-entry {
+    @include clearfix;
+    border-bottom: $gainsboro 1px solid;
+  }
+
+  .log-entry,
+  .title {
+    color: $black-30;
+    display: block;
+    padding: rem-calc(10 15);
+    position: relative;
+
+    .log-line-left {
+      @include clearfix;
+      @include inline-block;
+      margin-right: $log-line-left-margin;
+      width: $log-line-created-width + $log-line-left-margin;
+
+      .created-at {
+        margin-top: $avatar-dimension / 3;
+        padding: rem-calc(0 15);
+      }
+    }//log-line-left
+
+    .avatar-circle,
+    .log-details {
+      float: left;
+    }
+
+    .avatar-circle {
+      @include border-radius(100%);
+      @include inline-block;
+      background: $black-30;
+      color: $black-10;
+      font-size: rem-calc(24);
+      height: $avatar-dimension;
+      line-height: $avatar-dimension;
+      margin-right: rem-calc(25);
+      text-align: center;
+      width: $avatar-dimension;
+    }
+
+    .log-line-left,
+    .log-details {
+      margin-top: ($avatar-dimension / 5);
+    }
+
+    .log-line-right,
+    .log-line-left {
+      float: left;
+
+      .log-entity { font-size: 12px; }
+    }
+
+    h2 {
+      background-color: $light-bg;
+      font-weight: $font-weight-normal;
+      margin-bottom: rem-calc(5);
+      padding: inherit;
+    }
+
+    .person { color: $success-color; }
+  } //log-entry, title
+
+  .project-creation-line {
+    background-color: $light-bg;
+    padding: rem-calc(38 94);
+    text-align: center;
+
+    span { color: $black-30; }
+
+    .project-title {
+      color: $black;
+      font-weight: $font-weight-bold;
+    }
+  }
+}
