@@ -1,12 +1,12 @@
 %nav.secondary-nav
   %ul.left
-    %li
+    %li.not-ready
       = link_to t('reloaded.navigation.canvas'), arbor_reloaded_project_canvases_path(current_project), class: 'link'
     %li
       = link_to t('reloaded.navigation.backlog'), arbor_reloaded_project_user_stories_path(current_project), class: 'link'
     %li
       = link_to t('reloaded.navigation.activity'), log_arbor_reloaded_project_path(current_project), class: 'link'
-    %li
+    %li.not-ready
       = link_to t('reloaded.navigation.assets'), arbor_reloaded_project_attachments_path(current_project), class: 'link'
     %li
       = link_to '...', '#', aria: { controls: 'project-actions', expanded: false }, data: {dropdown: 'project-actions' }
@@ -23,19 +23,19 @@
     - current_project.members.each_with_index do |member, index|
       - if index == 0
         %li
-          = link_to arbor_reloaded_project_path(current_project), { style: "background-image: url(#{ image_path('icons/po_avatar.svg') });"} do
+          = link_to arbor_reloaded_project_members_path(current_project), { data: { reveal_id: 'project-members-modal', reveal_ajax: true }, style: "background-image: url(#{ image_path('icons/po_avatar.svg') });"} do
             = image_tag ('icons/po_avatar.svg'), class: 'hide'
       - if index == 1
         %li
-          = link_to arbor_reloaded_project_path(current_project), { style: "background-image: url(#{ image_path('icons/user-icon.svg') });"} do
+          = link_to arbor_reloaded_project_members_path(current_project), { data: { reveal_id: 'project-members-modal', reveal_ajax: true }, style: "background-image: url(#{ image_path('icons/user-icon.svg') });"} do
             = image_tag ('icons/user-icon.svg'), class: 'hide'
       - if index == 2
         %li
-          = link_to arbor_reloaded_project_path(current_project), { style: "background-image: url(#{ image_path('icons/user-icon.svg') });"} do
+          = link_to arbor_reloaded_project_members_path(current_project), { data: { reveal_id: 'project-members-modal', reveal_ajax: true }, style: "background-image: url(#{ image_path('icons/user-icon.svg') });"} do
             = image_tag ('icons/user-icon.svg'), class: 'hide'
     - if current_project.members.count > 3
       %li
-        = link_to arbor_reloaded_project_path(current_project), class: 'other-members' do
+        = link_to arbor_reloaded_project_members_path(current_project),{ data: { reveal_id: 'project-members-modal', reveal_ajax: true }}, class: 'other-members' do
           +
           = current_project.members.count - 3
     %li
