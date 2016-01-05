@@ -112,6 +112,7 @@ $light-bg: #fbfbfb;
 $font-color-2: #626262;
 $font-color-3: #b3b3b3;
 $border-color: #cecece;
+$modal-bg-color: #ececec;
 
 // Grayscale
 $black-10:  darken($white, 10%) !default;
@@ -226,13 +227,13 @@ $header-font-color: $headers-font-color;
 // $h1-font-size: rem-calc(44);
 $h2-font-size: rem-calc(25);
 // $h3-font-size: rem-calc(25);
-// $h4-font-size: rem-calc(23);
+$h4-font-size: rem-calc(20);
 $h5-font-size: rem-calc(16);
 // $h6-font-size: 1rem;
 
 // We use these to control header size reduction on small screens
-// $h1-font-reduction: rem-calc(10);
-// $h2-font-reduction: rem-calc(10);
+$h1-font-reduction: rem-calc(5);
+$h2-font-reduction: rem-calc(5);
 // $h3-font-reduction: rem-calc(5);
 // $h4-font-reduction: rem-calc(5);
 // $h5-font-reduction: 0;

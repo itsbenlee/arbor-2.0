@@ -1,0 +1,27 @@
+#story-detail-modal.reveal-modal{ aria: { hidden: true, labelledby: 'project-modal' }, data: { reveal: ''}, role: 'dialog' }
+  = link_to '×', '#', class: 'close-reveal-modal'
+  %header
+    .story-actions
+      = link_to '···', '#', class: 'story-actions-link'
+    %h4
+      %span.story-points 3
+      .sentence
+        As
+        %span.grey-prefix a/an
+        client
+        %span.grey-prefix I should be able to
+        indicate my preference for meeting (audio, video or in-person)
+        %span.grey-prefix so that
+        the coach knows my preferences.
+    %p.created-data
+      %span.date Nov 19 at 5:45 PM
+      by
+      %span.author Napoleon Martinez
+  .modal-wrapper
+    %section.acceptance-criteria.story-modal-section
+      %h6.story-section-title= t('reloaded.story_modal.acceptance_criteria.title')
+      %input.radius{ type: 'text', placeholder: t('reloaded.story_modal.acceptance_criteria.placeholder'), id: 'acceptance-input' }
+      %ul#acceptance-list
+        %li I should be able to see the editor section
+        %li I should be able to see 3 sesh thumbs
+        %li And I can see the image, user name, user avatar, short description (length TBD) and featured icons (article, dispensary and strain) if avaiable

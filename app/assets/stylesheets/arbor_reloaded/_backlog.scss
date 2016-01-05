@@ -42,6 +42,23 @@
 $story-points-dimension: rem-calc(25);
 $story-padding-sides: rem-calc(15);
 
+.backlog-user-story,
+#story-detail-modal {
+  .grey-prefix { color: $black-40; }
+
+  .story-points,
+  .story-actions {
+    @include border-radius(rem-calc(100%));
+    background: $black-10;
+    font-size: rem-calc(12);
+    height: $story-points-dimension;
+    line-height: $story-points-dimension;
+    position: absolute;
+    text-align: center;
+    width: $story-points-dimension;
+  } // span
+}//styles for backlog user story and modal
+
 .backlog-user-story {
   border-top: 1px solid $black-10;
   padding: rem-calc(20 0 20 15);
@@ -55,23 +72,8 @@ $story-padding-sides: rem-calc(15);
     cursor: pointer;
   }
 
-  .story-points {
-    @include inline-block();
-    @include border-radius(rem-calc(100%));
-    background: $black-20;
-    font-size: rem-calc(12);
-    height: $story-points-dimension;
-    line-height: $story-points-dimension;
-    margin-right: rem-calc(10);
-    position: absolute;
-    text-align: center;
-    width: $story-points-dimension;
-  } // span
-
   .story-text {
     @include inline-block();
     padding-left: $story-points-dimension + $story-padding-sides;
-
-    .grey-prefix { color: $black-40; }
   } // text
 } //  user story

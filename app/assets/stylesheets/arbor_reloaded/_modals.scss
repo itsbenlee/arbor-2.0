@@ -3,7 +3,8 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 $modal-sides-padding: rem-calc(30);
-$modal-padding: rem-calc(15) $modal-sides-padding;
+$modal-padding-top: rem-calc(15);
+$modal-padding: $modal-padding-top $modal-sides-padding;
 $modal-close-offset: rem-calc(20);
 
 .reveal-modal-bg { position: fixed; }
@@ -11,7 +12,8 @@ $modal-close-offset: rem-calc(20);
 .reveal-modal {
   min-height: inherit;
   outline: 0;
-  position: fixed;
+
+  .modal-wrapper { padding: $modal-padding; }
 
   h5 {
     @include border-top-radius($reveal-radius);
@@ -29,7 +31,7 @@ $modal-close-offset: rem-calc(20);
   }//close btn
 
   @media #{$medium-up} {
-    max-width: rem-calc(500);
+    max-width: rem-calc(600);
 
     .close-reveal-modal {
       color: $white;

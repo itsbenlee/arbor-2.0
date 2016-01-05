@@ -232,3 +232,7 @@ en:
       project_name: 'Enter new project name here...'
     activities:
       title: "%{project_name} Activities"
+    story_modal:
+      acceptance_criteria:
+        title: 'Acceptance Criteria'
+        placeholder: 'Write your acceptance criteria here...'
