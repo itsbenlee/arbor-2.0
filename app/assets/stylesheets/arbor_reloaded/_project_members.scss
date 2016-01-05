@@ -43,6 +43,7 @@
   .user-data { float: left; }
 
   .picture {
+    @include background-size(cover);
     @include border-radius(100%);
     height: $avatar-dimension;
     line-height: $avatar-dimension;

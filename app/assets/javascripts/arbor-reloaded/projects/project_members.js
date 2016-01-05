@@ -45,11 +45,9 @@ function bindActionsToButton() {
 }
 
 function displayInitialWhenNoAvatar() {
-  $('.user-item.invited.row').has('.avatar-circle').each(function(index, currentValue) {
-    if ($(currentValue).children('.user-data').children('.user-type-tag').text().trim() == 'Invited'){
-      var initial = $(currentValue).children('.user-data').children('.user-mail').text().trim().substring(0,1);
-      $(currentValue).children('.avatar-circle').text(initial.toUpperCase());
-    }
+  $('#project-members-modal .user-item.invited').has('.avatar-circle').each(function(index, currentValue) {
+    var initial = $(currentValue).children('.user-data').children('.user-mail').text().trim().substring(0,1);
+    $(currentValue).children('.avatar-circle').text(initial.toUpperCase());
   });
 }
 
