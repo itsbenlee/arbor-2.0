@@ -21,11 +21,11 @@
       .sentence
         .story-text
           %span.grey-prefix= t('reloaded.backlog.role')
-          %span=@user_story.role
+          %span#role= @user_story.role
           %span.grey-prefix= t('reloaded.backlog.action')
-          %span=@user_story.action
+          %span#action= @user_story.action
           %span.grey-prefix= t('reloaded.backlog.result')
-          %span=@user_story.result
+          %span#result= @user_story.result
     %p.created-data
       %span.date Nov 19 at 5:45 PM
       by
@@ -35,6 +35,8 @@
     = link_to t('reloaded.project_dashboard.delete_project'), '#', method: :delete, class: 'button radius alert tiny'
     = link_to t('reloaded.project_dashboard.cancel'), '#', class: 'cancel'
     %p.disclaimer= t('reloaded.story_modal.delete.disclaimer')
+  .edition-form
+    = render 'arbor_reloaded/user_stories/edit_form', user_story: @user_story
 .modal-wrapper
   %section.acceptance-criteria.story-modal-section
     %h6.story-section-title= t('reloaded.story_modal.acceptance_criteria.title')

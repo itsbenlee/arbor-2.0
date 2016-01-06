@@ -71,6 +71,61 @@
       } // icons on menu
     }//story actions
 
+    .edition-form {
+      @include border-radius($global-radius);
+      @include clearfix;
+      @include opacity(1);
+      background-color: $white;
+      border: 1px solid $black-10;
+      display: none;
+      margin: $modal-padding;
+      padding: $modal-padding;
+      position: relative;
+      z-index: 1;
+
+      h4 { margin: 0; }
+
+      .backlog-story-input {
+        float: left;
+        width: auto;
+      }
+
+      .role-input,
+      .action-input,
+      .result-input {
+        @include inline-block;
+        border: 0;
+        color: $secondary-color;
+        font-size: inherit;
+        margin-bottom: 0;
+        max-width: rem-calc(410);
+        vertical-align: baseline;
+
+        @media #{$medium-only} { max-width: rem-calc(325); }
+        @media #{$small-only} { max-width: rem-calc(270); }
+      }
+
+      .actions {
+        bottom: 5px;
+        position: absolute;
+        right: 5px;
+
+        input,
+        a {
+          @include border-radius($global-radius);
+          background-color: $light-bg;
+          border: 1px solid $black-10;
+          color: $headers-font-color;
+          font-size: rem-calc(8);
+          margin: 0;
+          padding: rem-calc(5);
+          text-transform: uppercase;
+        }
+      }
+
+      &.active { display: block; }
+    }// edition form
+
     @media #{ $small-only } {
       .story-actions {
         right: $story-points-offset-sides;

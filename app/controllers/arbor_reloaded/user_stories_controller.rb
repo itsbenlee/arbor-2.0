@@ -1,7 +1,7 @@
 module ArborReloaded
   class UserStoriesController < ApplicationController
     layout 'application_reload'
-    before_action :load_user_story, only: [:edit, :show]
+    before_action :load_user_story, only: [:edit, :show, :update]
     before_action :check_edit_permission, only: [:create, :index]
     before_action :copied_user_stories, only: :copy
 
@@ -29,6 +29,13 @@ module ArborReloaded
         story_services.new_user_story(user_story_params, current_user)
     end
 
+    def update
+      @user_story.update_attributes(story_update_params)
+      respond_to do |format|
+        format.js {}
+      end
+    end
+
     def copy
       user_story_service = ArborReloaded::UserStoryService.new(@project)
       user_story_service.copy_stories(@copied_stories)
@@ -36,6 +43,12 @@ module ArborReloaded
     end
 
     private
+
+    def story_update_params
+      params = user_story_params
+      params[:tag_ids] ||= []
+      params
+    end
 
     def load_user_story
       @user_story =
