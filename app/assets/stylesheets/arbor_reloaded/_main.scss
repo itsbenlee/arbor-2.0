@@ -44,6 +44,8 @@ li { list-style: none; }
   } // checked
 } // circle
 
+.ui-helper-hidden-accessible { display: none; } // hide default search result text coming from the jquery widget
+
 // -------  BASE FORM STYLES ------ //
 
 input:focus {
