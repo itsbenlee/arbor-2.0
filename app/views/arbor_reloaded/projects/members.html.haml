@@ -12,7 +12,7 @@
   %ul.show-project-data
     - members.each_with_index do |member, index|
       - if index >= 0 && member.id != owner.id
-        %li.user-item.row
+        %li.user-item
           .picture{ style: "background-image: url(#{ image_path('test-user.png') });" }
           .user-data
             %p.user-name
