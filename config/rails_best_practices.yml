@@ -45,6 +45,9 @@ RemoveUnusedMethodsInModelsCheck: {
     Hypothesis#reorder_user_stories,
     Project#reorder_user_stories,
     Project#by_name,
+    Comment#recent,
+    Comment#user_name,
+    Project#recent
   ]
 }
 ReplaceComplexCreationWithFactoryMethodCheck: { attribute_assignment_count: 2 }

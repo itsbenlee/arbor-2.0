@@ -26,6 +26,25 @@ def set_new_order(first_hypothesis, second_hypothesis)
   { 0 => second_hypothesis_ordered, 1 => first_hypothesis_ordered }
 end
 
+feature 'List all projects' do
+  let(:project_service) { ProjectServices.new(project) }
+  let(:project)         { create :project }
+  let(:project2)        { create :project }
+
+  scenario 'should load the correct projects hash' do
+    response = project_service.projects_json_list([project, project2])
+    route_helper = Rails.application.routes.url_helpers
+
+    expect(response.success).to be_truthy
+    expect(response.data).to eq(
+    projects:
+      [
+        { label: project.name, value: route_helper.arbor_reloaded_project_user_stories_path(project) },
+        { label: project2.name, value: route_helper.arbor_reloaded_project_user_stories_path(project2) }
+      ])
+  end
+end
+
 feature 'Reorder hypothesis inside' do
   let!(:user)        { create :user }
   let!(:project)     { create :project, owner: user }

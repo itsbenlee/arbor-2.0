@@ -1,3 +1,7 @@
+// --------------------------------------------------------
+// ICONS
+// --------------------------------------------------------
+
 @font-face {
   font-family: 'arbor-reloaded';
   src: url('arbor-reloaded/arbor-reloaded.eot?8dmwm4');
@@ -11,8 +15,7 @@
 
 [class^='icn-'],
 [class*=' icn-'] {
-	// scss-lint:disable ImportantRule
-  font-family: 'arbor-reloaded' !important;
+  font-family: 'arbor-reloaded';
   font-size: rem-calc(17);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -25,16 +28,16 @@
   vertical-align: middle;
 }
 
-.icn-archive:before { content: '\e900'; }
-.icn-arrow-dropdown:before { content: '\e901'; }
-.icn-arrow:before { content: '\e902'; }
-.icn-comments:before { content: '\e903'; }
-.icn-copy:before { content: '\e904'; }
-.icn-cross:before { content: '\e905'; }
-.icn-delete:before { content: '\e906'; }
-.icn-favorite-empty:before { content: '\e907'; }
-.icn-favorite:before { content: '\e908'; }
-.icn-notifications:before { content: '\e909'; }
-.icn-search:before { content: '\e90a'; }
-.icn-settings:before { content: '\e90b'; }
-.icn-signout:before { content: '\e90c'; }
+.icn-favorite-empty::before { content: '\e904'; }
+.icn-favorite::before { content: '\e906'; }
+.icn-delete::before { content: '\e907'; }
+.icn-copy::before { content: '\e908'; }
+.icn-archive::before { content: '\e900'; }
+.icn-arrow-dropdown::before { content: '\e901'; }
+.icn-arrow::before { content: '\e902'; }
+.icn-comments::before { content: '\e903'; }
+.icn-cross::before { content: '\e905'; }
+.icn-notifications::before { content: '\e909'; }
+.icn-search::before { content: '\e90a'; }
+.icn-settings::before { content: '\e90b'; }
+.icn-signout::before { content: '\e90c'; }

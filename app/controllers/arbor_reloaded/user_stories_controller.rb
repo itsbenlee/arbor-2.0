@@ -2,7 +2,6 @@ module ArborReloaded
   class UserStoriesController < ApplicationController
     layout 'application_reload'
     before_action :load_user_story, only: [:update, :destroy, :edit, :comment]
-    before_action :set_hypothesis, only: [:create]
     before_action :set_project, only: [:export]
     before_action :check_edit_permission,
       only: [:create, :destroy, :update, :update_order, :index, :edit]
@@ -23,10 +22,9 @@ module ArborReloaded
     end
 
     def create
-      @user_story_service = UserStoryService.new(@project, @hypothesis)
-      response =
-        @user_story_service.new_user_story(user_story_params)
-      render json: response, status: (response.success ? 201 : 422)
+      story_services = ReloadedStoryService.new(@project)
+      @user_story =
+        story_services.new_user_story(user_story_params, current_user)
     end
 
     def update
@@ -130,11 +128,6 @@ module ArborReloaded
         .find(params[:project_id])
     end
 
-    def set_hypothesis
-      hypothesis_id = user_story_params[:hypothesis_id]
-      @hypothesis = hypothesis_id ? Hypothesis.find(hypothesis_id) : nil
-    end
-
     def check_edit_permission
       set_project
       project_auth = ProjectAuthorization.new(@project)
@@ -154,7 +147,7 @@ module ArborReloaded
     def user_story_params
       params.require(:user_story).permit(
         :role, :action, :result, :estimated_points,
-        :priority, :hypothesis_id, tag_ids: []
+        :priority, tag_ids: []
       )
     end
 

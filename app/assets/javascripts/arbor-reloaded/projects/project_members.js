@@ -14,33 +14,17 @@ $('#project-members-modal').on('opened.fndtn.reveal', function() {
   bindActionsToButton();
   bindActionsOnRemovalCheckboxes();
   displayInitialWhenNoAvatar();
-  lockBodyScroll();
 
   $('body').addClass('locked');
 
   $(newMemberMailTextId).keyup(function(e) {
-   if($(this).val() == '') {
+   if($(this).val() === '') {
      $(footerButtonId).text(footerButtonInitialText);
    } else {
      $(footerButtonId).text('Invite');
    }
  });
-  new Projects();
 });
-
-unlockBodyScroll();
-
-function lockBodyScroll() {
-  if ($(this).is(':visible')) {
-    $('body').addClass('locked');
-  }
-}
-
-function unlockBodyScroll() {
-  $('#project-members-modal').on('closed.fndtn.reveal', function() {
-    $('body').toggleClass('locked');
-  });
-}
 
 function hideSpecifiedElements() {
   $('.hidden-input-element').each(function(index, currentValue) {
@@ -61,11 +45,9 @@ function bindActionsToButton() {
 }
 
 function displayInitialWhenNoAvatar() {
-  $('.user-item.invited.row').has('.avatar-circle').each(function(index, currentValue) {
-    if ($(currentValue).children('.user-data').children('.reloaded-tag').text().trim() == 'Invited'){
-      var initial = $(currentValue).children('.user-data').children('.user-mail').text().trim().substring(0,1);
-      $(currentValue).children('.profile').children('.avatar-circle').text(initial.toUpperCase());
-    }
+  $('#project-members-modal .user-item.invited').has('.avatar-circle').each(function(index, currentValue) {
+    var initial = $(currentValue).children('.user-data').children('.user-mail').text().trim().substring(0,1);
+    $(currentValue).children('.avatar-circle').text(initial.toUpperCase());
   });
 }
 

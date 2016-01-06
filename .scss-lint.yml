@@ -5,6 +5,7 @@ scss_files: '**/*.scss'
 exclude:
   - 'app/assets/stylesheets/vendor/**'
   - 'app/assets/stylesheets/assets/**'
+  - 'app/assets/stylesheets/arbor_reloaded/assets/**'
 
 linters:
   BangFormat:
@@ -94,7 +95,7 @@ linters:
     max_depth: 5
 
   PlaceholderInExtend:
-    enabled: true
+    enabled: false
 
   PropertyCount:
     enabled: false

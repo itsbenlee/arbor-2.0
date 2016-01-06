@@ -134,6 +134,7 @@ en:
       add_member: ' was added to the project.'
       add_user_story: ' wrote a new user story.'
       add_comment: ' commented on a story.'
+      reloaded_add_comment: ' commented on '
   archive:
     link: "Archive"
     title: "Archived user stories"
@@ -191,6 +192,11 @@ en:
     project:
       update: 'Project was updated'
   reloaded:
+    backlog:
+      role: 'As a'
+      action: 'I want'
+      result: 'so that'
+      create: 'Create'
     navigation:
       menu: 'Menu'
       projects: 'Projects'
@@ -219,9 +225,10 @@ en:
       delete_project: 'Yes, delete it'
       cancel: 'Cancel'
       search_input: 'Search'
-      recent_link: 'Recent'
-      sort_by_recent: 'Recent'
+      sort_by_recent: 'Sort by date'
       sort_by_name: 'Sort by name'
     create_project:
       title: 'Create a Project'
       project_name: 'Enter new project name here...'
+    activities:
+      title: "%{project_name} Activities"

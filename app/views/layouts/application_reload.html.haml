@@ -22,13 +22,13 @@
     = stylesheet_link_tag 'application_reload'
     = javascript_include_tag 'vendor/modernizr'
     = csrf_meta_tags
-    %script{:src => "//use.typekit.net/uyn6gfv.js"}
-      :javascript
-        try{Typekit.load();}catch(e){}
+    = javascript_include_tag '//use.typekit.net/uyn6gfv.js'
+    :javascript
+      try{Typekit.load();}catch(e){}
   %body{'data-action' => action_name, 'data-controller' => controller_name }
     = render 'layouts/navigation', projects: @projects, current_project: @project
     = yield
-    = javascript_include_tag 'application'
+    = javascript_include_tag 'application-reloaded'
     = content_for :custom_js
     - if ENV['USE_GOOGLE_ANALYTICS'] == 'true'
       = render 'layouts/google_analytics'

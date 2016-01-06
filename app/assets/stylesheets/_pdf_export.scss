@@ -79,7 +79,7 @@
     .number {
       display: inline-block;
 
-      &:after {
+      &::after {
         color: $black-40;
         content: '\2022';
         font-size: rem-calc(15);

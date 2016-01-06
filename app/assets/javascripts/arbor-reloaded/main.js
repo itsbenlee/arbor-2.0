@@ -38,5 +38,6 @@ function generalBinds() {
     displayActions();
     displayHideDelete();
     bindFavoriteIcon();
-  };
+    bindProjectsFilter();
+  }
 }

@@ -11,8 +11,15 @@ module ArborReloaded
     end
 
     def list_projects
-      render partial: 'arbor_reloaded/projects/partials/projects_list',
-             locals: { projects: @projects }
+      respond_to do |format|
+        format.html do
+          render partial: 'arbor_reloaded/projects/partials/projects_list',
+                 locals: { projects: @projects }
+        end
+        format.json do
+          json_list
+        end
+      end
     end
 
     def new
@@ -84,7 +91,8 @@ module ArborReloaded
 
     def log
       project_services = ProjectServices.new(@project)
-      @activities_by_pages = project_services.activities_by_pages
+      @activities = project_services.all_activities
+      render layout: 'application_reload'
     end
 
     def backlog
@@ -124,6 +132,12 @@ module ArborReloaded
     end
 
     private
+
+    def json_list
+      response = ProjectServices.new(@project).projects_json_list(@projects)
+      render json: response,
+             status: (response.success ? 201 : 422)
+    end
 
     def html_update
       assign_associations

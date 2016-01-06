@@ -1,0 +1,90 @@
+// --------------------------------------------------------
+// BASE STYLES
+// --------------------------------------------------------
+
+
+// -------  VARIABLES ------ //
+
+$primary-nav-color: #22252e;
+$secondary-nav-color: #282c37;
+$hover-navigation: #30323b;
+$dashboard-hover-color: #f8f8f8;
+$white: #fff;
+$black: #000;
+
+$headers-font-color: #393939;
+
+// -------  MIXINS ------ //
+
+@mixin input-placeholder {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
+@mixin grab-cursor {
+  cursor: url('data:image/vnd.microsoft.icon;base64,AAACAAEAICACAAcABQAwAQAAFgAAACgAAAAgAAAAQAAAAAEAAQAAAAAAAAEAAAAAAAAAAAAAAgAAAAAAAAAAAAAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD8AAAA/AAAAfwAAAP+AAAH/gAAB/8AAA//AAAd/wAAGf+AAAH9gAADbYAAA2yAAAZsAAAGbAAAAGAAAAAAAAA//////////////////////////////////////////////////////////////////////////////////////gH///4B///8Af//+AD///AA///wAH//4AB//8AAf//AAD//5AA///gAP//4AD//8AF///AB///5A////5///8='), all-scroll;
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: -o-grab;
+  cursor: -ms-grab;
+  cursor: grab;
+}
+
+@mixin grabbing-cursor {
+  cursor: url('data:image/vnd.microsoft.icon;base64,AAACAAEAICACAAcABQAwAQAAFgAAACgAAAAgAAAAQAAAAAEAAQAAAAAAAAEAAAAAAAAAAAAAAgAAAAAAAAAAAAAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD8AAAA/AAAAfwAAAP+AAAH/gAAB/8AAAH/AAAB/wAAA/0AAANsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////////////////////////////////////////////////////////////////////////////////gH///4B///8Af//+AD///AA///wAH//+AB///wAf//4AH//+AD///yT/////////////////////////////8='), all-scroll;
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+  cursor: -o-grabbing;
+  cursor: -ms-grabbing;
+  cursor: grabbing;
+}
+
+@mixin fake-border($height, $color: false, $left: false, $top: false, $right: false, $bottom: false) {
+  &::before {
+    @if $color == false { $color: $backlog-color; }
+    @if $left { left: $left; }
+    @if $top { top: $top; }
+    @if $bottom { bottom: $bottom; }
+    @if $right { right: $right; }
+
+    @include background-image(linear-gradient(left, $color 0%, $color 100%));
+    content: '';
+    height: $height;
+    position: absolute;
+    width: 100%;
+  }//before nav
+}//mixing for creating a border
+
+@mixin appearance-none {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+} // appearance none mixin
+
+@mixin center($x: default, $y: default) {
+  position: absolute;
+  @if ($x and $y) {
+    @include transform(-50%, -50%);
+    left: 50%;
+    top: 50%;
+  } @else if ($x) {
+    @include transform(-50%, 0);
+    left: 50%;
+  } @else if ($y) {
+    @include transform(0, -50%);
+    top: 50%;
+  }
+}
+
+// -------  UTILITY CLASSES ------ //
+
+.truncate {
+  @include ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

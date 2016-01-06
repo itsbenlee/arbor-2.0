@@ -1,9 +1,0 @@
-= form_for project, url:  project, html: { id: 'edit_project' }  do |f|
-  = f.text_field :name, class: 'hidden-input-element'
-  %input{ id: "member_#{project.members.count}", |
-    class: 'new-member-mail', |
-    name: "project[member_#{project.members.count}]", |
-    type: "email", |
-    required: true, |
-    placeholder: t('reloaded.project_members.mail_invite')}
-  = f.submit id: 'submit-modal-form', class: 'hidden-input-element'
