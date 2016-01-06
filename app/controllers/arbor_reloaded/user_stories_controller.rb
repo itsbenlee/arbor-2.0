@@ -1,7 +1,8 @@
 module ArborReloaded
   class UserStoriesController < ApplicationController
     layout 'application_reload'
-    before_action :load_user_story, only: [:update, :destroy, :edit, :comment]
+    before_action :load_user_story,
+                  only: [:update, :destroy, :edit, :comment, :show]
     before_action :set_project, only: [:export]
     before_action :check_edit_permission,
       only: [:create, :destroy, :update, :update_order, :index, :edit]
@@ -11,6 +12,10 @@ module ArborReloaded
       @user_story = UserStory.new
       @total_points =
         UserStory.total_points(@project.user_stories)
+    end
+
+    def show
+      render layout: false
     end
 
     def edit
