@@ -48,4 +48,17 @@ $modal-close-offset: rem-calc(20);
     height: 100%;
     top: 0;
   }
+
+  .show-project-data {
+    background-color: $black-10;
+    max-height: rem-calc(242);
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+
+  .modal-footer {
+    border-top: 1px solid $black-20;
+    padding: $modal-close-offset $modal-sides-padding 0;
+    text-align: center;
+  }
 }//reveal modal

@@ -43,10 +43,10 @@ $story-points-dimension: rem-calc(25);
 $story-padding-sides: rem-calc(15);
 $story-padding-top: rem-calc(20);
 
-.backlog-user-story,
-#story-detail-modal {
-  .grey-prefix { color: $black-40; }
 
+.backlog-user-story,
+#story-delete-modal,
+#story-detail-modal {
   .story-points,
   .story-actions {
     @include border-radius(rem-calc(100%));
