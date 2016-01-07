@@ -10,7 +10,6 @@ $('#project-members-modal').on('opened.fndtn.reveal', function() {
       removeMemberFromProjectLink = $('.remove-member-link a'),
       footerButtonInitialText = $(footerButtonId).text();
 
-  hideSpecifiedElements();
   bindActionsToButton();
   bindActionsOnRemovalCheckboxes();
   displayInitialWhenNoAvatar();
@@ -25,12 +24,6 @@ $('#project-members-modal').on('opened.fndtn.reveal', function() {
    }
  });
 });
-
-function hideSpecifiedElements() {
-  $('.hidden-input-element').each(function(index, currentValue) {
-    $(currentValue).hide();
-  });
-}
 
 //button function depending on what it says, Ale
 function bindActionsToButton() {
