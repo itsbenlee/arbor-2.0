@@ -82,17 +82,4 @@
       vertical-align: middle;
     }
   } // user data
-
-  .show-project-data {
-    background-color: $black-10;
-    max-height: rem-calc(242);
-    overflow: hidden;
-    overflow-y: scroll;
-  }
-
-  .footer {
-    border-top: 1px solid $black-20;
-    padding: rem-calc(20) $modal-sides-padding 0;
-    text-align: center;
-  }
 }// project members modal

@@ -30,6 +30,6 @@
                 = t("reloaded.project_members.user_invited")
             %p.user-mail
               = invite.email
-.footer
+.modal-footer
   = render 'arbor_reloaded/projects/partials/invite_member', project: project
   = link_to t("reloaded.project_members.close"),'#', class: 'button radius small', id: 'people-modal-footer-btn'

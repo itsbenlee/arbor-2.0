@@ -1,0 +1,50 @@
+//  DELETE STORY MODAL
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+#story-delete-modal {
+  $story-item-margin-sides: rem-calc(25);
+  $story-item-margin: 0 $story-item-margin-sides;
+  $story-item-padding-top: rem-calc(18);
+  $story-item-padding: $story-item-padding-top $story-item-margin-sides;
+
+  padding: 0;
+
+  header {
+    margin: $story-item-margin-sides auto;
+
+    h2 {
+      font-size: rem-calc(18);
+      margin-bottom: 0;
+      text-align: center;
+    } // h2
+  } // header
+
+  .story-item {
+    @include clearfix;
+    border-bottom: 1px solid $black-20;
+    margin: $story-item-margin;
+    padding: $story-item-padding-top $story-item-margin-sides $story-item-padding-top ($story-item-margin-sides + $story-item-margin-sides / 3);
+    position: relative;
+
+    &:last-child { border-bottom: 0; }
+
+    .story-points {
+      background-color: $white;
+      left: 0;
+    } // points
+  } // story item
+
+  .modal-footer {
+    p {
+      color: $black-30;
+      font-size: rem-calc(12);
+      font-style: italic;
+    }
+
+    .secondary {
+      background-color: $black-10;
+      color: $black-80;
+      margin-left: $button-margin-bottom * 2;
+    }
+  } // footer
+} // delete modal

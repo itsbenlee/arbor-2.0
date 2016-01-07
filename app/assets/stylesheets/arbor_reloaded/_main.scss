@@ -46,6 +46,8 @@ li { list-style: none; }
 
 .ui-helper-hidden-accessible { display: none; } // hide default search result text coming from the jquery widget
 
+.grey-prefix { color: $black-40; }
+
 // -------  BASE FORM STYLES ------ //
 
 input:focus {
