@@ -21,6 +21,8 @@
     .story-actions-link {
       font-size: rem-calc(25);
       line-height: $story-points-dimension - rem-calc(2);
+
+      &.open { display: none; }
     }
 
     .sentence,
@@ -36,7 +38,25 @@
     }
 
     .author { color: $body-font-color; }
-    .story-actions { right: $modal-sides-padding; }
+
+    .story-actions {
+      right: $modal-sides-padding;
+
+      [class^='icn-'] {
+        @include border-radius(100%);
+        background-color: $black-10;
+        display: none;
+        font-size: rem-calc(13);
+        height: $story-points-dimension;
+        line-height: $story-points-dimension;
+        margin-bottom: $story-points-dimension / 2;
+        text-align: center;
+        width: $story-points-dimension;
+
+        &:hover { @include opacity(.6); }
+        &.active { @include inline-block(); }
+      } // icons on menu
+    }//story actions
 
     @media #{ $small-only } {
       .story-actions {

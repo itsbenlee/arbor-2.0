@@ -76,18 +76,6 @@ $story-padding-top: rem-calc(20);
     .circle-checkbox { @include opacity(1); }
   }
 
-  .story-points {
-    @include inline-block();
-    @include border-radius(100%);
-    background: $black-10;
-    font-size: rem-calc(12);
-    height: $story-points-dimension;
-    line-height: $story-points-dimension;
-    position: absolute;
-    text-align: center;
-    width: $story-points-dimension;
-  } // span
-
   .story-text {
     @include inline-block();
     padding-left: $story-points-dimension + $story-padding-sides;
