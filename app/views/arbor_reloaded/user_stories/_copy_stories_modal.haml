@@ -1,0 +1,7 @@
+#copy-stories-modal.reveal-modal{ aria: { hidden: true, labelledby: 'project-modal' }, data: { reveal: ''}, role: 'dialog' }
+  = link_to '×', '#', class: 'close-reveal-modal'
+  %h2= t('reloaded.copy_stories_modal.title')
+  %p= t('reloaded.copy_stories_modal.subtitle')
+  %select{ class: 'radius login'}
+  = link_to t('reloaded.copy_stories_modal.confirm_button'),'#', class: 'button radius tiny'
+  = link_to t('reloaded.copy_stories_modal.cancel_button'),'#', class: 'button radius tiny secondary'
