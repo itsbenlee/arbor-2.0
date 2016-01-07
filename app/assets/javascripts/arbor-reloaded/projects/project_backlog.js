@@ -51,9 +51,8 @@ function showBulkMenu() {
 }
 
 function toggleModalStoryDropdown() {
-  var $storyActions = $storyModal.find('.story-actions'),
-      $trigger      = $storyActions.find('.story-actions-link'),
-      $actions      = $storyActions.find('a').not($trigger);
+  var $trigger = $storyActions.find('.story-actions-link'),
+      $actions = $storyActions.find('a').not($trigger);
 
   $trigger.click(function() {
     $(this).addClass('open');
@@ -71,8 +70,7 @@ function toggleModalStoryDropdown() {
 }//toggle actions dropwdon on modal
 
 function toggleDeleteConfirmation() {
-  var $storyActions        = $storyModal.find('.story-actions'),
-      $delete              = $storyActions.find('.icn-delete'),
+  var $delete              = $storyActions.find('.icn-delete'),
       $confirmationWarning = $storyModal.find('.delete-confirmation-overlay'),
       $headerWrapper       = $storyModal.find('header .header-wrapper');
 
@@ -91,6 +89,15 @@ function toggleDeleteConfirmation() {
   });
 }//show delete confirmation
 
+function changeFibonnacciEstimation() {
+  var $estimationPoints = $storyModal.find('.story-points'),
+      $dropdown = $storyModal.find('.fibonacci-select');
+
+  $dropdown.change(function(event) {
+    $estimationPoints.html(this.value);
+  });
+}
+
 $(document).ready(function() {
   if ($('.new-backlog-story').length > 0) {
     $('#role-input').autoGrowInput(commonGrowInputOptions);
@@ -105,7 +112,9 @@ $(document).ready(function() {
   }
 
   $storyModal.on('opened.fndtn.reveal', function() {
+    $storyActions = $storyModal.find('.story-actions');
     toggleModalStoryDropdown();
     toggleDeleteConfirmation();
+    changeFibonnacciEstimation();
   });
 });

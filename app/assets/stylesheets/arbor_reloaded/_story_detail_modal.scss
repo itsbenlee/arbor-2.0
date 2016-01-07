@@ -22,6 +22,15 @@
     .story-points,
     .story-actions { top: $modal-padding-top + $header-top-margin; }
 
+    .fibonacci-select {
+      @include opacity(0);
+      @include appearance-none;
+      left: $modal-sides-padding;
+      outline: none;
+      position: absolute;
+      width: $story-points-dimension;
+    }//fibonacci dropdown
+
     .story-actions-link {
       font-size: rem-calc(25);
       line-height: $story-points-dimension - rem-calc(2);

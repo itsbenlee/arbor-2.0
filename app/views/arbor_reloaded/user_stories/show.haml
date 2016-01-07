@@ -8,6 +8,16 @@
       = link_to '', '#', method: :post, class: 'icn-archive'
     %h4
       %span.story-points 3
+      %select.fibonacci-select
+        %option{ value: '?', selected: true } ?
+        %option{ value: '0' } 0
+        %option{ value: '1' } 1
+        %option{ value: '2' } 2
+        %option{ value: '5' } 5
+        %option{ value: '8' } 8
+        %option{ value: '13' } 13
+        %option{ value: '21' } 21
+
       .sentence
         .story-text
           %span.grey-prefix= t('reloaded.backlog.role')
