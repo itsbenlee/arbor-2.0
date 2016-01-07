@@ -2,7 +2,7 @@ require 'spec_helper'
 module ArborReloaded
   feature 'update user story' do
     let(:project)       { create :project }
-    let(:story_service) { UserStoryService.new(project) }
+    let(:story_service) { ArborReloaded::UserStoryService.new(project) }
     let(:user_story)    {
       create :user_story,
       role: 'User',
@@ -22,8 +22,7 @@ module ArborReloaded
   feature 'create user story' do
     let(:user)              { create :user }
     let(:project)           { create :project, owner: user }
-    let(:hypothesis)        { create :hypothesis, project: project }
-    let(:story_service)     { UserStoryService.new(project, hypothesis) }
+    let(:story_service)     { ArborReloaded::UserStoryService.new(project) }
     let(:user_story_params) {
       {
         role: 'User',
@@ -53,13 +52,12 @@ module ArborReloaded
       expect(story.priority).to eq(user_story_params[:priority])
     end
 
-    scenario 'should create a User Story and assign the project and hypothesis' do
+    scenario 'should create a User Story' do
       response = story_service.new_user_story(user_story_params, user)
       expect(response.success).to eq(true)
       story = UserStory.find(response.data[:user_story_id])
       expect(story).to be_a(UserStory)
       expect(story.project).to eq(project)
-      expect(story.hypothesis).to eq(hypothesis)
       expect(story.role).to eq(user_story_params[:role])
       expect(story.action).to eq(user_story_params[:action])
       expect(story.result).to eq(user_story_params[:result])
@@ -76,7 +74,7 @@ module ArborReloaded
                                           project: project }
 
     background do
-      user_story_services = UserStoryService.new(another_project)
+      user_story_services = ArborReloaded::UserStoryService.new(another_project)
       user_story_services.copy_stories(user_stories)
       another_project.user_stories.reload
     end
