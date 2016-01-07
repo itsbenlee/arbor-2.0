@@ -236,3 +236,6 @@ en:
       acceptance_criteria:
         title: 'Acceptance Criteria'
         placeholder: 'Write your acceptance criteria here...'
+      delete:
+        confirmation_text: 'Are you sure you want to delete this user story?'
+        disclaimer: 'This change cannot be undone'

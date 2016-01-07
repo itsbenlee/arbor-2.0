@@ -11,7 +11,11 @@
   padding: 0;
 
   header {
-    padding: $modal-padding;
+    .header-wrapper {
+      padding: $modal-padding;
+
+      &.inactive { display: none; }
+    }//header wrapper
 
     h4 { font-weight: $font-weight-normal; }
 
@@ -94,4 +98,28 @@
       list-style: disc inside;
     }
   }//acceptance list
+
+  .delete-confirmation-overlay {
+    @include clearfix;
+    @include border-top-radius($reveal-radius);
+    background-color: $black-40;
+    color: $white;
+    display: none;
+    padding: $modal-padding;
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+
+    &.active { display: block; }
+    p:not(.title) { margin: 0; }
+
+    .title { font-size: rem-calc(18); }
+    .disclaimer { font-size: rem-calc(10); }
+
+    .cancel {
+      color: $white;
+      font-size: $button-font-tny;
+      padding-left: $button-tny;
+    }//cancel btn
+  }//delete confirmation overlay
 }//project modal

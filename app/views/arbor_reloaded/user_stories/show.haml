@@ -1,24 +1,30 @@
 = link_to '×', '#', class: 'close-reveal-modal'
 %header
-  .story-actions
-    = link_to '···', '#', class: 'story-actions-link'
-    = link_to '', '#', class: 'icn-delete'
-    = link_to '', '#', method: :post, class: 'icn-copy'
-    = link_to '', '#', method: :post, class: 'icn-archive'
-  %h4
-    %span.story-points 3
-    .sentence
-      .story-text
-        %span.grey-prefix= t('reloaded.backlog.role')
-        %span=@user_story.role
-        %span.grey-prefix= t('reloaded.backlog.action')
-        %span=@user_story.action
-        %span.grey-prefix= t('reloaded.backlog.result')
-        %span=@user_story.result
-  %p.created-data
-    %span.date Nov 19 at 5:45 PM
-    by
-    %span.author Napoleon Martinez
+  .header-wrapper
+    .story-actions
+      = link_to '···', '#', class: 'story-actions-link'
+      = link_to '', '#', class: 'icn-delete'
+      = link_to '', '#', method: :post, class: 'icn-copy'
+      = link_to '', '#', method: :post, class: 'icn-archive'
+    %h4
+      %span.story-points 3
+      .sentence
+        .story-text
+          %span.grey-prefix= t('reloaded.backlog.role')
+          %span=@user_story.role
+          %span.grey-prefix= t('reloaded.backlog.action')
+          %span=@user_story.action
+          %span.grey-prefix= t('reloaded.backlog.result')
+          %span=@user_story.result
+    %p.created-data
+      %span.date Nov 19 at 5:45 PM
+      by
+      %span.author Napoleon Martinez
+  .delete-confirmation-overlay
+    %p.title= t('reloaded.story_modal.delete.confirmation_text')
+    = link_to t('reloaded.project_dashboard.delete_project'), '#', method: :delete, class: 'button radius alert tiny'
+    = link_to t('reloaded.project_dashboard.cancel'), '#', class: 'cancel'
+    %p.disclaimer= t('reloaded.story_modal.delete.disclaimer')
 .modal-wrapper
   %section.acceptance-criteria.story-modal-section
     %h6.story-section-title= t('reloaded.story_modal.acceptance_criteria.title')

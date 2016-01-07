@@ -13,7 +13,10 @@ $modal-close-offset: rem-calc(20);
   min-height: inherit;
   outline: 0;
 
-  .modal-wrapper { padding: $modal-padding; }
+  .modal-wrapper {
+    @include border-bottom-radius($reveal-radius);
+    padding: $modal-padding;
+  }
 
   h5 {
     @include border-top-radius($reveal-radius);

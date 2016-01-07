@@ -74,7 +74,9 @@ $story-padding-top: rem-calc(20);
     cursor: pointer;
 
     .circle-checkbox { @include opacity(1); }
-  }
+  }//backlog user story hover
+
+  .story-detail-link { display: block; }//story link to details
 
   .story-text {
     @include inline-block();
