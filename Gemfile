@@ -69,3 +69,6 @@ end
 gem 'devise'
 
 gem 'migration_data'
+
+# CircleCi better tests metadata
+gem 'rspec_junit_formatter', '0.2.2'
