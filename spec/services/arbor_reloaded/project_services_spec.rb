@@ -91,7 +91,7 @@ module ArborReloaded
       user_story = create :user_story, project: project
       create_list :acceptance_criterion, 3, user_story: user_story
 
-      project_services = ProjectServices.new(project)
+      project_services = ArborReloaded::ProjectServices.new(project)
       response = project_services.replicate(user)
 
       expect(response.data[:project].user_stories[0].acceptance_criterions.count).to eq(3)

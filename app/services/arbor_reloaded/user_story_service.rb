@@ -1,9 +1,8 @@
 module ArborReloaded
   class UserStoryService
-    def initialize(project, hypothesis = nil)
+    def initialize(project)
       @common_response = CommonResponse.new(true, [])
       @project = project
-      @hypothesis = hypothesis
       @route_helper = Rails.application.routes.url_helpers
     end
 
@@ -51,10 +50,6 @@ module ArborReloaded
     def update_associations(user_story)
       user_story.project = @project
       @project.user_stories << user_story
-
-      return unless @hypothesis
-      @hypothesis.user_stories << user_story
-      user_story.hypothesis = @hypothesis
     end
   end
 end
