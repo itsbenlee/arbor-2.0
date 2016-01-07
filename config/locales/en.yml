@@ -245,3 +245,8 @@ en:
       delete_button: 'Yes, delete them'
       cancel_button: 'Cancel'
       delete_warning_text: 'Be careful! This action cannot be undone'
+    copy_stories_modal:
+      title: 'Copy Stories'
+      subtitle: 'Select destination project'
+      confirm_button: 'Copy stories'
+      cancel_button: 'Cancel'

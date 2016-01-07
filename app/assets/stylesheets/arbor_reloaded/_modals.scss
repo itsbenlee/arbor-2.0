@@ -7,6 +7,15 @@ $modal-padding-top: rem-calc(15);
 $modal-padding: $modal-padding-top $modal-sides-padding;
 $modal-close-offset: rem-calc(20);
 
+#copy-stories-modal,
+#project-modal {
+  @extend .text-center;
+
+  padding: $modal-padding;
+
+  h2 { font-size: rem-calc(32); }
+}
+
 .reveal-modal-bg { position: fixed; }
 
 .reveal-modal {
@@ -61,4 +70,10 @@ $modal-close-offset: rem-calc(20);
     padding: $modal-close-offset $modal-sides-padding 0;
     text-align: center;
   }
+
+  .secondary {
+    background-color: $black-10;
+    color: $black-80;
+    margin-left: $button-margin-bottom;
+  } // secondary btn
 }//reveal modal
