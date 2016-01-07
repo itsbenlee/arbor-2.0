@@ -28,8 +28,7 @@
 .modal-wrapper
   %section.acceptance-criteria.story-modal-section
     %h6.story-section-title= t('reloaded.story_modal.acceptance_criteria.title')
-    %input.radius{ type: 'text', placeholder: t('reloaded.story_modal.acceptance_criteria.placeholder'), id: 'acceptance-input' }
+    = render 'arbor_reloaded/acceptance_criterions/form', criterion: [@user_story, AcceptanceCriterion.new], user_story: @user_story
     %ul#acceptance-list
-      %li I should be able to see the editor section
-      %li I should be able to see 3 sesh thumbs
-      %li And I can see the image, user name, user avatar, short description (length TBD) and featured icons (article, dispensary and strain) if avaiable
+      - @user_story.acceptance_criterions.each do |criterion|
+        = render 'arbor_reloaded/acceptance_criterions/acceptance_criterion', acceptance_criterion: criterion

@@ -1,0 +1,5 @@
+= form_for(criterion, remote: true, url: arbor_reloaded_user_story_acceptance_criterions_path(user_story_id: user_story.id)) do |form|
+  = form.text_area :description, class: 'backlog-placeholder resizable-text-area', maxlength: 254, placeholder: t('backlog.user_stories.enter_criterion')
+  = form.submit t('save'), id: 'save-acceptance-criterion', class: 'hide'
+:javascript
+  new CustomTextArea();
