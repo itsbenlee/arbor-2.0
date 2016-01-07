@@ -119,7 +119,7 @@ Railsroot::Application.routes.draw do
           as: :reorder_backlog
 
       resources :backlog,
-          only: [:create, :index, :show, :update],
+          only: [:create, :index, :show, :update, :destroy],
           as: :user_stories,
           controller: :user_stories do
         resources :acceptance_criterions, only: [:create]
