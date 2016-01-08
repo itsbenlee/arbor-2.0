@@ -1,1 +1,6 @@
-%li=acceptance_criterion.description
+.criterion
+  .show-criterion{data: { id: acceptance_criterion.id } }
+    %li=acceptance_criterion.description
+  .edit-criterion{data: { id: acceptance_criterion.id } }
+    = render 'arbor_reloaded/acceptance_criterions/edit_criterion',
+    acceptance_criterion: acceptance_criterion
