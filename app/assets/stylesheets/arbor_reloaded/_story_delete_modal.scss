@@ -22,6 +22,7 @@
   .story-item {
     @include clearfix;
     border-bottom: 1px solid $black-20;
+    font-size: rem-calc(12);
     margin: $story-item-margin;
     padding: $story-item-padding-top $story-item-margin-sides $story-item-padding-top ($story-item-margin-sides + $story-item-margin-sides / 3);
     position: relative;
@@ -35,10 +36,9 @@
   } // story item
 
   .modal-footer {
-    p {
+    .disclaimer {
       color: $black-30;
       font-size: rem-calc(12);
-      font-style: italic;
-    }
+    } // disclaimer
   } // footer
 } // delete modal

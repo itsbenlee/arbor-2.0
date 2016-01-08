@@ -26,7 +26,6 @@
       @include opacity(0);
       @include appearance-none;
       left: $modal-sides-padding;
-      outline: none;
       position: absolute;
       width: $story-points-dimension;
     }//fibonacci dropdown
@@ -123,6 +122,7 @@
     p:not(.title) { margin: 0; }
 
     .title { font-size: rem-calc(18); }
+
     .disclaimer { font-size: rem-calc(10); }
 
     .cancel {

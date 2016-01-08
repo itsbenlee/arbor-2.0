@@ -58,6 +58,8 @@ $modal-close-offset: rem-calc(20);
     top: 0;
   }
 
+  .disclaimer { font-style: italic; }
+
   .show-project-data {
     background-color: $black-10;
     max-height: rem-calc(242);
