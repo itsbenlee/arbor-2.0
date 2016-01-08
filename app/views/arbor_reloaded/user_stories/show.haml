@@ -40,7 +40,9 @@
 .modal-wrapper
   %section.acceptance-criteria.story-modal-section
     %h6.story-section-title= t('reloaded.story_modal.acceptance_criteria.title')
-    = render 'arbor_reloaded/acceptance_criterions/form', criterion: [@user_story, AcceptanceCriterion.new], user_story: @user_story
+    = render 'arbor_reloaded/acceptance_criterions/form',
+    criterion: [:arbor_reloaded, @user_story, AcceptanceCriterion.new]
     %ul#acceptance-list
       - @user_story.acceptance_criterions.each do |criterion|
-        = render 'arbor_reloaded/acceptance_criterions/acceptance_criterion', acceptance_criterion: criterion
+        = render 'arbor_reloaded/acceptance_criterions/acceptance_criterion',
+        acceptance_criterion: criterion

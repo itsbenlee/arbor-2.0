@@ -138,5 +138,23 @@ $(document).ready(function() {
     toggleModalStoryDropdown();
     toggleDeleteConfirmation();
     changeFibonnacciEstimation();
+    toggleEditCriterion();
   });
 });
+
+function toggleEditCriterion() {
+  $('#acceptance-list .criterion').click(function() {
+    $('.show-criterion').removeClass('inactive');
+    $(this).find('.show-criterion').addClass('inactive');
+    $('.edit-criterion').removeClass('active');
+    $(this).find('.edit-criterion').addClass('active');
+    return false;
+  });
+
+  $('html').click(function() {
+    if ($('.show-criterion').hasClass('inactive')) {
+      $('.show-criterion').removeClass('inactive');
+      $('.edit-criterion').removeClass('active');
+    }
+  });
+}

@@ -162,6 +162,16 @@
     }
   }//acceptance list
 
+  .show-criterion {
+    &.inactive { display: none; }
+  }
+
+  .edit-criterion {
+    display: none;
+
+    &.active { display: block; }
+  }
+
   .delete-confirmation-overlay {
     @include clearfix;
     @include border-top-radius($reveal-radius);
