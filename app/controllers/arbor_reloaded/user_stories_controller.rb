@@ -1,7 +1,7 @@
 module ArborReloaded
   class UserStoriesController < ApplicationController
     layout 'application_reload'
-    before_action :load_user_story, only: [:edit, :show, :update]
+    before_action :load_user_story, only: [:edit, :show, :update, :destroy]
     before_action :check_edit_permission, only: [:create, :index]
     before_action :copied_user_stories, only: :copy
 
@@ -40,6 +40,11 @@ module ArborReloaded
       user_story_service = ArborReloaded::UserStoryService.new(@project)
       user_story_service.copy_stories(@copied_stories)
       render json: { project_url: project_user_stories_path(@project) }
+    end
+
+    def destroy
+      @user_story.destroy
+      redirect_to :back
     end
 
     private

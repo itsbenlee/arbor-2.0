@@ -63,7 +63,6 @@ function toggleModalStoryDropdown() {
     if ($trigger.hasClass('open')) {
       $trigger.removeClass('open');
       $actions.removeClass('active');
-      return false;
     }
   });
 }//toggle actions dropwdon on modal
@@ -83,7 +82,6 @@ function toggleDeleteConfirmation() {
     if ($confirmationWarning.hasClass('active')) {
       $confirmationWarning.removeClass('active');
       $headerWrapper.removeClass('inactive');
-      return false;
     }
   });
 }//show delete confirmation
