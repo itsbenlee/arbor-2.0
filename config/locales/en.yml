@@ -197,6 +197,8 @@ en:
       action: 'I want'
       result: 'so that'
       create: 'Create'
+      save: 'Save'
+      cancel: 'Cancel'
     navigation:
       menu: 'Menu'
       projects: 'Projects'

@@ -1,4 +1,5 @@
 var commonGrowInputOptions = { minWidth: 180, maxWidth: 600, comfortZone: 30 },
+    formGrowInputOptions   = { minWidth: 50, maxWidth: 410, comfortZone: 0 },
     $backlogStoryList      = $('.backlog-story-list'),
     $storyModal            = $('#story-detail-modal'),
     $storyBulkInput        = $backlogStoryList.find('.circle-checkbox'),
@@ -96,6 +97,22 @@ function changeFibonnacciEstimation() {
   });
 }
 
+function displayEditionForm() {
+  var $editUserStory       = $('.edit_user_story'),
+      $editUserStoryInputs = $editUserStory.find('input').not(':input[type=button], :input[type=submit], :input[type=reset]');
+  $('.story-text').on( "click", function() {
+    $editUserStoryInputs.autoGrowInput(formGrowInputOptions);
+    $('.edition-form').addClass('active');
+    $('.header-wrapper').addClass('inactive');
+  });
+
+  $('.actions .close-edition').on( "click", function() {
+    $('.edition-form').removeClass('active');
+    $('.header-wrapper').removeClass('inactive');
+  });
+}
+
+
 $(document).ready(function() {
   if ($('.new-backlog-story').length > 0) {
     $('#role-input').autoGrowInput(commonGrowInputOptions);
@@ -108,6 +125,15 @@ $(document).ready(function() {
     showBulkMenu();
     bindReorderStories();
   }
+
+  $('#story-detail-modal').foundation('reveal', {
+    opened: function () {
+      displayEditionForm();
+    },
+    closed: function () {
+      location.reload();
+    }
+  });
 
   $storyModal.on('opened.fndtn.reveal', function() {
     $storyActions = $storyModal.find('.story-actions');
