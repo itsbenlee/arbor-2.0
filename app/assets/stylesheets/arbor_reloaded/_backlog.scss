@@ -6,7 +6,7 @@
   background-color: $dashboard-hover-color;
   color: $black-40;
   font-size: rem-calc(22);
-  margin-top: rem-calc(50);
+  margin: rem-calc(50) auto rem-calc(30);
   padding: rem-calc(15 25);
 
   .backlog-story-input {

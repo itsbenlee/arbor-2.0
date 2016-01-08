@@ -1,7 +1,7 @@
 = form_for project, url:  arbor_reloaded_project_path(project), html: { id: 'edit_project' }  do |f|
   = f.text_field :name, class: 'hidden-input-element'
   %input{ id: "member_#{project.members.count}", |
-    class: 'new-member-mail', |
+    class: 'new-member-mail radius', |
     name: "project[member_#{project.members.count}]", |
     type: "email", |
     required: true, |
