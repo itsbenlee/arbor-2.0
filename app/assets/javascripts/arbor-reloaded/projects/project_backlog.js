@@ -127,9 +127,6 @@ $(document).ready(function() {
   $('#story-detail-modal').foundation('reveal', {
     opened: function () {
       displayEditionForm();
-    },
-    closed: function () {
-      location.reload();
     }
   });
 
