@@ -10,9 +10,7 @@ $('#new_user_story').submit(function() {
 });
 
 function autogrowInputs() {
-  $('#role-input').trigger('autogrow');
-  $('#action-input').trigger('autogrow');
-  $('#result-input').trigger('autogrow');
+  $('#role-input, #action-input, #result-input').trigger('autogrow');
 }
 
 function bindReorderStories() {
