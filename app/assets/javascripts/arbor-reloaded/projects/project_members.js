@@ -14,8 +14,6 @@ $('#project-members-modal').on('opened.fndtn.reveal', function() {
   bindActionsOnRemovalCheckboxes();
   displayInitialWhenNoAvatar();
 
-  $('body').addClass('locked');
-
   $(newMemberMailTextId).keyup(function(e) {
    if($(this).val() === '') {
      $(footerButtonId).text(footerButtonInitialText);
