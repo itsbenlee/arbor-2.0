@@ -6,7 +6,7 @@ RSpec.describe ApiSlack::UserStoriesController do
     let!(:project)     { create :project, owner: user }
 
     it 'should create the story and send a success response' do
-      post :create,
+      put :create,
         format: :json,
         project_id: project.id,
         text: 'As an Admin I want to have privileges to all the database so that I can check the tables.'
@@ -20,7 +20,7 @@ RSpec.describe ApiSlack::UserStoriesController do
     end
 
     it 'should fail when text is wrong and send a failure response' do
-      post :create,
+      put :create,
         format: :json,
         project_id: project.id,
         text: 'I want to have privileges to all the database so that I can check the tables.'
