@@ -12,6 +12,7 @@
 
   header {
     .header-wrapper {
+      min-height: rem-calc(135);
       padding: $modal-padding;
 
       &.inactive { display: none; }
