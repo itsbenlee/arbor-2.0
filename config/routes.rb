@@ -161,4 +161,8 @@ Railsroot::Application.routes.draw do
       get 'members', controller: :projects, action: :members
     end
   end
+
+  namespace :api_slack do
+    resources :user_stories, only: [:create]
+  end
 end
