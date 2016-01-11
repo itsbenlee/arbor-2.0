@@ -15,12 +15,13 @@ function autogrowInputs() {
 }
 
 function bindReorderStories() {
-  $('.backlog-story-list').sortable({
-    connectWith: '.backlog-story-list',
+  var $reorder_stories = $backlogStoryList.find('.reorder-user-stories');
+  $reorder_stories.sortable({
+    connectWith: '.reorder-user-stories',
     stop: function() {
       var newStoriesOrder = setStoriesOrder(),
-          url = $('.backlog-story-list').data('url');
-          project = $('.backlog-story-list').data('project');
+          url = $reorder_stories.data('url');
+          project = $reorder_stories.data('project');
       $.ajax({
         url: url,
         dataType: 'json',

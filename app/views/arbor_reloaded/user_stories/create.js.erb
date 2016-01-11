@@ -2,5 +2,5 @@ $('.backlog-story-input.role input').val('');
 $('.backlog-story-input.role input').focus();
 $('.backlog-story-input.action input').val('');
 $('.backlog-story-input.result input').val('');
-$('.backlog-story-list').append('<%= j render(@user_story) %>');
+$('.user-stories-container').empty().html("<%= j render 'arbor_reloaded/user_stories/user_stories_list', project: @user_story.project.reload %>");
 autogrowInputs();
