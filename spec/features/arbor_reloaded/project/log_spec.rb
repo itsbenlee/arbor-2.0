@@ -52,7 +52,7 @@ feature 'Log activity' do
         click_link 'Activity'
       end
 
-      expect(page).to have_css('#log')
+      expect(current_path).to eq("/arbor_reloaded/projects/#{project.id}/log")
     end
 
     context 'user stories' do

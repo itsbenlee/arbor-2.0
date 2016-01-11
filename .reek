@@ -30,7 +30,8 @@ FeatureEnvy:
     TrelloServices#config,
     LinkAttachmentServices#fetch_http_content_type,
     FileUploader#extract_type,
-    UserStoriesController#story_update_params
+    UserStoriesController#story_update_params,
+    SlackIntegrationService#validate_message_for_story_creation
   ]
 IrresponsibleModule:
   enabled: false
@@ -87,10 +88,10 @@ TooManyMethods:
 TooManyStatements:
   enabled: true
   exclude: [
-
     RegistrationsController#create,
     AcceptanceCriterionServices#new_acceptance_criterion,
-    ConstraintServices#new_constraint
+    ConstraintServices#new_constraint,
+    SlackIntegrationService#validate_message_for_story_creation
   ]
   max_statements: 6
 UncommunicativeMethodName:
@@ -141,6 +142,7 @@ UtilityFunction:
     UserStory#reorder_criterions,
     AcceptanceCriterionServices#get_order,
     UserStory#reorder_constraints,
-    ConstraintServices#get_order
+    ConstraintServices#get_order,
+    SlackIntegrationService
   ]
   max_helper_calls: 1

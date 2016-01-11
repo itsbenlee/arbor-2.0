@@ -85,12 +85,12 @@ module ArborReloaded
 
     def order_stories
       project = Project.includes(:user_stories).find(params[:project_id])
-      project_services = ProjectServices.new(project)
+      project_services = ArborReloaded::ProjectServices.new(project)
       render json: project_services.reorder_stories(update_order_params)
     end
 
     def log
-      project_services = ProjectServices.new(@project)
+      project_services = ArborReloaded::ProjectServices.new(@project)
       @activities = project_services.all_activities
       render layout: 'application_reload'
     end
@@ -120,7 +120,7 @@ module ArborReloaded
                   hypotheses: [:user_stories, :goals])
         .find(params[:project_id])
 
-      project_services = ProjectServices.new(project)
+      project_services = ArborReloaded::ProjectServices.new(project)
       project_services.replicate(current_user)
 
       redirect_to :back
@@ -134,9 +134,9 @@ module ArborReloaded
     private
 
     def json_list
-      response = ProjectServices.new(@project).projects_json_list(@projects)
-      render json: response,
-             status: (response.success ? 201 : 422)
+      response = ArborReloaded::ProjectServices.new(@project)
+                 .projects_json_list(@projects)
+      render json: response, status: (response.success ? 201 : 422)
     end
 
     def html_update
@@ -150,7 +150,7 @@ module ArborReloaded
     end
 
     def json_update
-      response = ProjectServices.new(@project).update_project
+      response = ArborReloaded::ProjectServices.new(@project).update_project
       render json: response, status: (response.success ? 201 : 422)
     end
 
@@ -158,7 +158,7 @@ module ArborReloaded
       if @project.save
         @project.create_activity :create_project
         assign_associations
-        redirect_to arbor_reloaded_project_canvases_path(@project)
+        redirect_to arbor_reloaded_project_user_stories_path(@project)
       else
         @errors = @project.errors.full_messages
         render :new, status: 400

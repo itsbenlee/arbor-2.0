@@ -1,0 +1,189 @@
+// STORY DETAIL MODALS
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+#story-detail-modal {
+  $story-points-offset-top: rem-calc(5);
+  $story-points-offset-sides: rem-calc(12);
+  $story-body-offset-sides: $story-points-offset-sides + $story-points-dimension;
+  $story-section-padding: rem-calc(25);
+  $story-section-margin: rem-calc(20);
+
+  padding: 0;
+
+  header {
+    .header-wrapper {
+      padding: $modal-padding;
+
+      &.inactive { display: none; }
+    }//header wrapper
+
+    h4 { font-weight: $font-weight-normal; }
+
+    .story-points,
+    .story-actions { top: $modal-padding-top + $header-top-margin; }
+
+    .fibonacci-select {
+      @include opacity(0);
+      @include appearance-none;
+      left: $modal-sides-padding;
+      position: absolute;
+      width: $story-points-dimension;
+    }//fibonacci dropdown
+
+    .story-actions-link {
+      font-size: rem-calc(25);
+      line-height: $story-points-dimension - rem-calc(2);
+
+      &.open { display: none; }
+    }
+
+    .sentence,
+    .created-data {
+      padding: 0 ($story-body-offset-sides / 2);
+
+      @media #{ $medium-up } { padding: 0 $story-body-offset-sides; }
+    }
+
+    .created-data {
+      color: $black-40;
+      font-size: rem-calc(12);
+    }
+
+    .author { color: $body-font-color; }
+
+    .story-actions {
+      right: $modal-sides-padding;
+
+      [class^='icn-'] {
+        @include border-radius(100%);
+        background-color: $black-10;
+        display: none;
+        font-size: rem-calc(13);
+        height: $story-points-dimension;
+        line-height: $story-points-dimension;
+        margin-bottom: $story-points-dimension / 2;
+        text-align: center;
+        width: $story-points-dimension;
+
+        &:hover { @include opacity(.6); }
+        &.active { @include inline-block(); }
+      } // icons on menu
+    }//story actions
+
+    .edition-form {
+      @include border-radius($global-radius);
+      @include clearfix;
+      @include opacity(1);
+      background-color: $white;
+      border: 1px solid $black-10;
+      display: none;
+      margin: $modal-padding;
+      padding: $modal-padding;
+      position: relative;
+      z-index: 1;
+
+      h4 { margin: 0; }
+
+      .backlog-story-input {
+        float: left;
+        width: auto;
+      }
+
+      .role-input,
+      .action-input,
+      .result-input {
+        @include inline-block;
+        border: 0;
+        color: $secondary-color;
+        font-size: inherit;
+        margin-bottom: 0;
+        max-width: rem-calc(410);
+        vertical-align: baseline;
+
+        @media #{$medium-only} { max-width: rem-calc(325); }
+        @media #{$small-only} { max-width: rem-calc(270); }
+      }
+
+      .actions {
+        bottom: 5px;
+        position: absolute;
+        right: 5px;
+
+        input,
+        a {
+          @include border-radius($global-radius);
+          background-color: $light-bg;
+          border: 1px solid $black-10;
+          color: $headers-font-color;
+          font-size: rem-calc(8);
+          margin: 0;
+          padding: rem-calc(5);
+          text-transform: uppercase;
+        }
+      }
+
+      &.active { display: block; }
+    }// edition form
+
+    @media #{ $small-only } {
+      .story-actions {
+        right: $story-points-offset-sides;
+        top: $modal-padding-top + $header-line-height;
+      }
+
+      .story-points { left: $story-points-offset-sides; }
+    }//small only
+  }//header
+
+  .modal-wrapper {
+    background-color: $modal-bg-color;
+    border-top: 1px solid $black-20;
+  }//modal wrapper
+
+  // Story Modal sections
+  .story-modal-section {
+    border-bottom: 1px solid $black-20;
+    margin-bottom: $story-section-margin;
+    padding-bottom: $story-section-padding;
+  }//story modal section
+
+  .story-section-title {
+    font-size: rem-calc(12);
+    font-weight: $font-weight-medium;
+    text-transform: uppercase;
+  }//story section title
+
+  // Acceptance Criteria Section (.acceptance-criteria)
+  #acceptance-list {
+    li {
+      color: $black-40;
+      font-size: rem-calc(14);
+      list-style: disc inside;
+    }
+  }//acceptance list
+
+  .delete-confirmation-overlay {
+    @include clearfix;
+    @include border-top-radius($reveal-radius);
+    background-color: $black-40;
+    color: $white;
+    display: none;
+    padding: $modal-padding;
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+
+    &.active { display: block; }
+    p:not(.title) { margin: 0; }
+
+    .title { font-size: rem-calc(18); }
+
+    .disclaimer { font-size: rem-calc(10); }
+
+    .cancel {
+      color: $white;
+      font-size: $button-font-tny;
+      padding-left: $button-tny;
+    }//cancel btn
+  }//delete confirmation overlay
+}//project modal

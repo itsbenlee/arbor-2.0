@@ -3,15 +3,29 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 $modal-sides-padding: rem-calc(30);
-$modal-padding: rem-calc(15) $modal-sides-padding;
+$modal-padding-top: rem-calc(15);
+$modal-padding: $modal-padding-top $modal-sides-padding;
 $modal-close-offset: rem-calc(20);
+
+#copy-stories-modal,
+#project-modal {
+  @extend .text-center;
+
+  padding: $modal-padding;
+
+  h2 { font-size: rem-calc(32); }
+}
 
 .reveal-modal-bg { position: fixed; }
 
 .reveal-modal {
   min-height: inherit;
   outline: 0;
-  position: fixed;
+
+  .modal-wrapper {
+    @include border-bottom-radius($reveal-radius);
+    padding: $modal-padding;
+  }
 
   h5 {
     @include border-top-radius($reveal-radius);
@@ -29,7 +43,7 @@ $modal-close-offset: rem-calc(20);
   }//close btn
 
   @media #{$medium-up} {
-    max-width: rem-calc(500);
+    max-width: rem-calc(600);
 
     .close-reveal-modal {
       color: $white;
@@ -43,4 +57,25 @@ $modal-close-offset: rem-calc(20);
     height: 100%;
     top: 0;
   }
+
+  .disclaimer { font-style: italic; }
+
+  .show-project-data {
+    background-color: $black-10;
+    max-height: rem-calc(242);
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+
+  .modal-footer {
+    border-top: 1px solid $black-20;
+    padding: $modal-close-offset $modal-sides-padding 0;
+    text-align: center;
+  }
+
+  .secondary {
+    background-color: $black-10;
+    color: $black-80;
+    margin-left: $button-margin-bottom;
+  } // secondary btn
 }//reveal modal

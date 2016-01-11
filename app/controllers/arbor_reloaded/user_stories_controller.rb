@@ -1,16 +1,18 @@
 module ArborReloaded
   class UserStoriesController < ApplicationController
     layout 'application_reload'
-    before_action :load_user_story, only: [:update, :destroy, :edit, :comment]
-    before_action :set_project, only: [:export]
-    before_action :check_edit_permission,
-      only: [:create, :destroy, :update, :update_order, :index, :edit]
+    before_action :load_user_story, only: [:edit, :show, :update, :destroy]
+    before_action :check_edit_permission, only: [:create, :index]
     before_action :copied_user_stories, only: :copy
 
     def index
       @user_story = UserStory.new
       @total_points =
         UserStory.total_points(@project.user_stories)
+    end
+
+    def show
+      render layout: false
     end
 
     def edit
@@ -28,48 +30,21 @@ module ArborReloaded
     end
 
     def update
+      @user_story.update_attributes(story_update_params)
       respond_to do |format|
-        @user_story.update_attributes(story_update_params)
-        format.json do
-          json_update
-        end
-        format.html do
-          html_update
-        end
+        format.js {}
       end
     end
 
-    def destroy
-      @project.user_stories.destroy(@user_story)
-      redirect_to :back
-    end
-
-    def update_order
-      @hypothesis_service = HypothesisServices.new(@project)
-      render json: @hypothesis_service.reorder_stories(update_order_params)
-    end
-
     def copy
-      user_story_service = UserStoryService.new(@project)
+      user_story_service = ArborReloaded::UserStoryService.new(@project)
       user_story_service.copy_stories(@copied_stories)
       render json: { project_url: project_user_stories_path(@project) }
     end
 
-    def export
-      content = export_content
-      save_pdf(content) unless params.key?('debug')
-    end
-
-    def reorder_criterions
-      @user_story = UserStory.find(params['user_story'])
-      acceptanc_criterion_service = AcceptanceCriterionServices.new(@user_story)
-      render json: acceptanc_criterion_service.reorder_criterions(params)
-    end
-
-    def reorder_constraints
-      @user_story = UserStory.find(params['user_story'])
-      constraints_service = ConstraintServices.new(@user_story)
-      render json: constraints_service.reorder_constraints(params)
+    def destroy
+      @user_story.destroy
+      redirect_to :back
     end
 
     private
@@ -80,44 +55,11 @@ module ArborReloaded
       params
     end
 
-    def export_content
-      debug = params.key?('debug')
-      project_name = @project.name
-      cover_html = render_to_string(
-        partial: 'user_stories/cover.html.haml',
-        locals: { project_name: project_name }
-      )
-      send(
-        debug ? :render : :render_to_string,
-        pdf:          "#{project_name}",
-        layout:       'application.pdf.haml',
-        template:     'user_stories/index.pdf.haml',
-        show_as_html: debug,
-        cover: cover_html,
-        margin: { top: 30, bottom: 30 }
-      )
-    end
-
-    def save_pdf(content)
-      send_data(
-        content,
-        filename: "#{@project.name} Backlog.pdf",
-        type:     'application/pdf'
-      )
-    end
-
-    def json_update
-      response = UserStoryService.new(@project).update_user_story(@user_story)
-      render json: response, status: (response.success ? 201 : 422)
-    end
-
-    def html_update
-      if @user_story.save
-        redirect_to :back
-      else
-        @errors = @user_story.errors.full_messages
-        render :edit, status: 400
-      end
+    def load_user_story
+      @user_story =
+        UserStory
+        .includes(project: [:user_stories, :members, :hypotheses])
+        .find(params[:id])
     end
 
     def set_project
@@ -137,22 +79,11 @@ module ArborReloaded
       redirect_to root_url
     end
 
-    def load_user_story
-      @user_story =
-        UserStory
-        .includes(project: [:user_stories, :members, :hypotheses])
-        .find(params[:id])
-    end
-
     def user_story_params
       params.require(:user_story).permit(
         :role, :action, :result, :estimated_points,
         :priority, tag_ids: []
       )
-    end
-
-    def update_order_params
-      params.require(:hypotheses)
     end
 
     def copy_stories_params

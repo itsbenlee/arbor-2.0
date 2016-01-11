@@ -1,8 +1,5 @@
-body {
-  &.locked { overflow: hidden; }
-}
-
 li,
+select,
 a { outline: 0; }
 
 ul { margin: 0; }
@@ -10,26 +7,23 @@ li { list-style: none; }
 
 // CIRCULAR CHECKBOX
 
-.circles {
+.circle-checkbox {
   @include appearance-none;
   @include border-radius(100%);
-  @include translateY(-35%);
-  background-color: $white;
+  background: $black-10;
   cursor: pointer;
-  float: right;
   height: rem-calc(20);
-  position: relative;
+  outline: 0;
+  position: absolute;
   width: rem-calc(20);
 
   &::after {
-    @include transition(opacity .25s ease-in-out, color .25s ease-in-out);
-    @include transform(rotate(45deg) translate(-50%, -50%));
     @include opacity(0);
+    @include transform(rotate(45deg) translate(-50%, -50%));
     color: $black-50;
-    content: '+';
+    content: '';
     font-size: rem-calc(14);
     font-weight: $font-weight-bold;
-    left: rem-calc(4);
     line-height: normal;
     position: absolute;
     top: 50%;
@@ -38,14 +32,18 @@ li { list-style: none; }
   &:hover::after { @include opacity(1); }
 
   &:checked {
-    &:hover::after { color: $black-50; }
-
     &::after {
       @include opacity(1);
       color: $black-70;
     }
-  }
+
+    &:hover::after { color: $black-50; }
+  } // checked
 } // circle
+
+.ui-helper-hidden-accessible { display: none; } // hide default search result text coming from the jquery widget
+
+.grey-prefix { color: $black-40; }
 
 // -------  BASE FORM STYLES ------ //
 

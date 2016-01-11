@@ -1,0 +1,21 @@
+#story-delete-modal.reveal-modal{ aria: { hidden: true, labelledby: 'project-modal' }, data: { reveal: ''}, role: 'dialog' }
+  = link_to '×', '#', class: 'close-reveal-modal'
+  %header
+    %h2
+      = t('reloaded.delete_story_modal.confirm_delete_title_first')
+      %br
+      = t('reloaded.delete_story_modal.confirm_delete_title_second')
+  %ul.show-project-data
+    %li.story-item
+      %span.story-points 3
+      %span As
+      %span.grey-prefix a/an
+      client
+      %span.grey-prefix I should be able to
+      indicate my preference for meeting (audio, video or in-person)
+      %span.grey-prefix so that
+      the coach knows my preferences.
+  .modal-footer
+    = link_to t('reloaded.delete_story_modal.delete_button'),'#', class: 'button radius tiny'
+    = link_to t('reloaded.delete_story_modal.cancel_button'),'#', class: 'button radius tiny secondary'
+    %p.disclaimer= t('reloaded.delete_story_modal.delete_warning_text')

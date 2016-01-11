@@ -1,9 +1,11 @@
-%li.backlog-user-story
-  %span.story-points 3
-  .story-text
-    %span.grey-prefix= t('reloaded.backlog.role')
-    %span=user_story.role
-    %span.grey-prefix= t('reloaded.backlog.action')
-    %span=user_story.action
-    %span.grey-prefix= t('reloaded.backlog.result')
-    %span=user_story.result
+%li.backlog-user-story{ data: { id: user_story.id } }
+  %input.circle-checkbox{ id:'select-stories', type: 'checkbox' }
+  = link_to arbor_reloaded_user_story_path(user_story), class: 'story-detail-link', data: { reveal_id: 'story-detail-modal', reveal_ajax: 'true'} do
+    %span.story-points 3
+    .story-text
+      %span.grey-prefix= t('reloaded.backlog.role')
+      %span= user_story.role
+      %span.grey-prefix= t('reloaded.backlog.action')
+      %span= user_story.action
+      %span.grey-prefix= t('reloaded.backlog.result')
+      %span= user_story.result

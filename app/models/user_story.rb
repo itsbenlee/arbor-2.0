@@ -48,7 +48,7 @@ class UserStory < ActiveRecord::Base
     estimated_points.present? ? estimated_points : '*'
   end
 
-  def copy_in_project(new_id, new_hypothesis_id)
+  def copy_in_project(new_id, new_hypothesis_id = nil)
     replica =
       UserStory.new(role: role,
                     action: action,
