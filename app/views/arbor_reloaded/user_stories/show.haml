@@ -7,16 +7,15 @@
       = link_to '', '#', method: :post, class: 'icn-copy'
       = link_to '', '#', method: :post, class: 'icn-archive'
     %h4
-      %span.story-points 3
-      %select.fibonacci-select
-        %option{ value: '?', selected: true } ?
-        %option{ value: '0' } 0
-        %option{ value: '1' } 1
-        %option{ value: '2' } 2
-        %option{ value: '5' } 5
-        %option{ value: '8' } 8
-        %option{ value: '13' } 13
-        %option{ value: '21' } 21
+      %span.story-points= @user_story.estimated_points ||= '?'
+      %select.fibonacci-select{ data: { url: arbor_reloaded_user_story_path(@user_story) } }
+        %option{ value: '?' } ?
+        %option{ value: '1', selected: (@user_story.estimated_points == 1)} 1
+        %option{ value: '2', selected: (@user_story.estimated_points == 2) } 2
+        %option{ value: '5', selected: (@user_story.estimated_points == 5) } 5
+        %option{ value: '8', selected: (@user_story.estimated_points == 8)} 8
+        %option{ value: '13', selected: (@user_story.estimated_points == 13) } 13
+        %option{ value: '21', selected: (@user_story.estimated_points == 21) } 21
 
       .sentence
         .story-text
