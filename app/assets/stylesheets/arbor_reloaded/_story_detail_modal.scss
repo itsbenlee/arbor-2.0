@@ -7,8 +7,11 @@
   $story-body-offset-sides: $story-points-offset-sides + $story-points-dimension;
   $story-section-padding: rem-calc(25);
   $story-section-margin: rem-calc(20);
+  $author-margin: rem-calc(7);
 
   padding: 0;
+
+  .author { color: $body-font-color; }
 
   header {
     .header-wrapper {
@@ -49,8 +52,6 @@
       color: $black-40;
       font-size: rem-calc(12);
     }
-
-    .author { color: $body-font-color; }
 
     .story-actions {
       right: $modal-sides-padding;
@@ -139,6 +140,9 @@
   .modal-wrapper {
     background-color: $modal-bg-color;
     border-top: 1px solid $black-20;
+    max-height: rem-calc(420);
+    overflow: hidden;
+    overflow-y: scroll;
   }//modal wrapper
 
   // Story Modal sections
@@ -155,11 +159,13 @@
   }//story section title
 
   // Acceptance Criteria Section (.acceptance-criteria)
-  #acceptance-list {
+  #acceptance-list li { list-style: disc inside; }
+
+  #acceptance-list,
+  #comment-list {
     li {
       color: $black-40;
       font-size: rem-calc(14);
-      list-style: disc inside;
     }
   }//acceptance list
 
@@ -172,6 +178,25 @@
 
     &.active { display: block; }
   }
+
+  // Comments Section (.comments)
+  #comment-list {
+    li {
+      margin-bottom: $story-section-margin;
+
+      &:last-child { margin-bottom: 0; }
+    } // li
+
+    .author {
+      font-weight: $font-weight-bold;
+      margin-right: $author-margin;
+    } // author
+
+    .date { font-size: rem-calc(10); }
+    .comment { display: block; }
+  } // comment list
+
+  .modal-footer { height: rem-calc(40); }
 
   .delete-confirmation-overlay {
     @include clearfix;
