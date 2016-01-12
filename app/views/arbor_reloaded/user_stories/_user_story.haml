@@ -1,7 +1,8 @@
 %li.backlog-user-story{ data: { id: user_story.id } }
   %input.circle-checkbox{ id:'select-stories', type: 'checkbox' }
   = link_to arbor_reloaded_user_story_path(user_story), class: 'story-detail-link', data: { reveal_id: 'story-detail-modal', reveal_ajax: 'true'} do
-    %span.story-points 3
+    %span.story-points
+      = user_story.estimated_points ||= '?'
     .story-text
       %span.grey-prefix= t('reloaded.backlog.role')
       %span= user_story.role

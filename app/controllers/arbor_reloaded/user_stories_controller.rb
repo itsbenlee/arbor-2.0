@@ -32,7 +32,12 @@ module ArborReloaded
     def update
       @user_story.update_attributes(story_update_params)
       respond_to do |format|
-        format.js {}
+        format.json do
+          json_update
+        end
+        format.js do
+          @user_story
+        end
       end
     end
 
@@ -49,8 +54,16 @@ module ArborReloaded
 
     private
 
+    def json_update
+      response =
+        ArborReloaded::UserStoryService
+        .new(@project).update_user_story(@user_story)
+      render json: response, status: (response.success ? 201 : 422)
+    end
+
     def story_update_params
       params = user_story_params
+      params[:estimated_points] = nil if params[:estimated_points] == '?'
       params[:tag_ids] ||= []
       params
     end

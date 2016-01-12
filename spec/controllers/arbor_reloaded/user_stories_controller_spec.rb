@@ -21,4 +21,20 @@ RSpec.describe ArborReloaded::UserStoriesController do
       expect(UserStory.count).to eq(1)
     end
   end
+
+  describe 'PUT update' do
+    let(:user_story) { create :user_story, estimated_points: 5 }
+
+    it 'updates a user story' do
+      put :update, format: :json, id: user_story.id, user_story: {
+          estimated_points: '3' }
+
+      hash_response = JSON.parse(response.body)
+      user_story.reload
+
+      expect(hash_response['success']).to eq(true)
+      expect(hash_response['data']['id']).to eq(user_story.id)
+      expect(hash_response['data']['estimated_points']).to eq(user_story.estimated_points)
+    end
+  end
 end
