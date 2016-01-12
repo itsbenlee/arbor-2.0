@@ -547,3 +547,7 @@ $(document).on('blur', '.user-story-edit-form .user-story-input input:text', fun
     $this.hide();
   }
 });
+
+$('#save-user-story').click(function() {
+    $('.no-user-stories').hide();
+});
