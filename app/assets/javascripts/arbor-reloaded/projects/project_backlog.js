@@ -1,9 +1,6 @@
 var commonGrowInputOptions = { minWidth: 180, maxWidth: 600, comfortZone: 30 },
     formGrowInputOptions   = { minWidth: 50, maxWidth: 410, comfortZone: 0 },
-    $backlogStoryList      = $('.backlog-story-list'),
-    $storyModal            = $('#story-detail-modal'),
-    $storyBulkInput        = $backlogStoryList.find('.circle-checkbox'),
-    $bulkMenu              = $backlogStoryList.find('.sticky-menu');
+    $backlogStoryList      = $('.backlog-story-list');
 
 // Attach autogrow on form submit, Ale
 $('#new_user_story').submit(function() {
@@ -45,6 +42,10 @@ function setStoriesOrder() {
 }
 
 function showBulkMenu() {
+  var $storyModal     = $('#story-detail-modal'),
+      $storyBulkInput = $backlogStoryList.find('.circle-checkbox'),
+      $bulkMenu       = $backlogStoryList.find('.sticky-menu');
+
   $storyBulkInput.click(function() {
     $bulkMenu[$storyBulkInput.is(':checked') ? "show" : "hide"]();
   });
@@ -63,3 +64,9 @@ $(document).ready(function() {
     bindReorderStories();
   }
 });
+
+function backlogGeneralBinds() {
+  showBulkMenu();
+  bindReorderStories();
+  autogrowInputs();
+}
