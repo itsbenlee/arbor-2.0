@@ -46,3 +46,17 @@
       - @user_story.acceptance_criterions.each do |criterion|
         = render 'arbor_reloaded/acceptance_criterions/acceptance_criterion',
         acceptance_criterion: criterion
+  %section.comments.story-modal-section
+    %h6.story-section-title= t('reloaded.story_modal.comments.title')
+    = render 'arbor_reloaded/acceptance_criterions/form',
+    criterion: [:arbor_reloaded, @user_story, AcceptanceCriterion.new]
+    %ul#comment-list
+      %li
+        %span.author Martin Garrido
+        %span.date Nov 06 at 5:45 PM
+        %span.comment And I can see the image, user name, user avatar, short description (length TBD) and featured icons (article, dispensary and strain) if avaiable
+      %li
+        %span.author Santiago Mollajoli
+        %span.date Nov 25 at 2:41 PM
+        %span.comment But also I need to be able to indicate my preference for meeting (audio, video or in-person) and featured icons.
+.modal-footer
