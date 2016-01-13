@@ -8,8 +8,8 @@ feature 'Create a new comment' do
 
   background do
     sign_in user
-    visit project_user_stories_path project
-    find('.user-story').click
+    visit arbor_reloaded_project_user_stories_path project
+    find('.story-text').click
   end
 
   scenario 'should show me a comment creation form', js: true do
@@ -26,7 +26,7 @@ feature 'Create a new comment' do
     end
 
     expect{ Comment.count }.to become_eq 1
-    within '.user-story-edit-form' do
+    within '#comment-list' do
       expect(page).to have_content(comment.comment)
       expect(page).to have_content(comment.user_name)
     end
@@ -34,7 +34,7 @@ feature 'Create a new comment' do
 
   scenario 'should log the creation', js: true do
     PublicActivity.with_tracking do
-      within 'form.new_comment' do
+      within '#new_comment' do
         fill_in(:comment_comment, with: comment.comment)
         find('input#save-comment', visible: false).trigger('click')
         wait_for_ajax
