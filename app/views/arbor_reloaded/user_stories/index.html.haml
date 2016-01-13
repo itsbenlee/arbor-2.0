@@ -1,6 +1,6 @@
 .new-backlog-story.row
   = render 'arbor_reloaded/user_stories/form', user_story: UserStory.new, project: @project
-.backlog-story-list.row{ data: { url: arbor_reloaded_project_reorder_backlog_path(@project), project: @project.id  } }
+.backlog-story-list.row
   .sticky-menu
     = link_to '', '#', class: 'icn-copy', data: { reveal_id: 'copy-stories-modal'}
     = link_to '', '#', class: 'icn-archive'

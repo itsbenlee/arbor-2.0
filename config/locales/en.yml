@@ -199,6 +199,9 @@ en:
       create: 'Create'
       save: 'Save'
       cancel: 'Cancel'
+    user_stories:
+      write_title: 'Write some User Stories'
+      write_subtitle: 'On the field above, enter a user story to start filling up your project'
     navigation:
       menu: 'Menu'
       projects: 'Projects'
