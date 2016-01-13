@@ -19,6 +19,7 @@ function copyStories() {
     }
   });
 }
+
 function getStoriesId(storiesElements) {
   var storiesId = [];
   $.map(storiesElements, function(story) {

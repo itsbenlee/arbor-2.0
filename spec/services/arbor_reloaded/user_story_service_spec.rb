@@ -87,4 +87,15 @@ module ArborReloaded
       end
     end
   end
+
+  feature 'destroy user story' do
+    let(:project)       { create :project }
+    let(:story_service) { ArborReloaded::UserStoryService.new(project) }
+    let(:user_story)    { create :user_story }
+
+    scenario 'should load the response' do
+      response = story_service.destroy_stories(user_story)
+      expect(response.success).to eq(true)
+    end
+  end
 end

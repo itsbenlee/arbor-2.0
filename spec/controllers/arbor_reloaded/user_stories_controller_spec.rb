@@ -47,4 +47,15 @@ RSpec.describe ArborReloaded::UserStoriesController do
       expect(hash_response['data']['estimated_points']).to eq(user_story.estimated_points)
     end
   end
+
+  describe 'DELETE :destroy_stories' do
+
+    it 'destroy the story' do
+      delete :destroy_stories, format: :json, project_id: project.id,
+        user_stories: [user_story.id]
+
+      hash_response = JSON.parse(response.body)
+      expect(hash_response['success']).to eq(true)
+    end
+  end
 end
