@@ -3,7 +3,7 @@
   = link_to arbor_reloaded_user_story_path(user_story), class: 'story-detail-link', data: { reveal_id: 'story-detail-modal', reveal_ajax: 'true'} do
     %span.story-points
       = user_story.estimated_points ||= '?'
-    .story-text
+    .story-text{ id: "story-text-#{user_story.id}"}
       %span.grey-prefix= t('reloaded.backlog.role')
       %span= user_story.role
       %span.grey-prefix= t('reloaded.backlog.action')
