@@ -7,8 +7,9 @@
       = link_to '', '#', method: :post, class: 'icn-copy'
       = link_to '', '#', method: :post, class: 'icn-archive'
     %h4
-      %span.story-points= @user_story.estimated_points ||= '?'
-      %select.fibonacci-select{ data: { url: arbor_reloaded_user_story_path(@user_story) } }
+      %span.story-points{ data: { id: @user_story.id } }= @user_story.estimated_points ||= '?'
+      %select.fibonacci-select{ id: 'fibonacci-dropdown',
+      data: { id: @user_story.id, url: arbor_reloaded_user_story_path(@user_story) } }
         %option{ value: '?' } ?
         %option{ value: '1', selected: (@user_story.estimated_points == 1)} 1
         %option{ value: '2', selected: (@user_story.estimated_points == 2) } 2
@@ -59,3 +60,5 @@
         %span.date Nov 25 at 2:41 PM
         %span.comment But also I need to be able to indicate my preference for meeting (audio, video or in-person) and featured icons.
 .modal-footer
+:javascript
+  new UserStory();
