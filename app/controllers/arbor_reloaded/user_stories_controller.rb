@@ -44,7 +44,8 @@ module ArborReloaded
     def copy
       user_story_service = ArborReloaded::UserStoryService.new(@project)
       user_story_service.copy_stories(@copied_stories)
-      render json: { project_url: project_user_stories_path(@project) }
+      render json:
+      { project_url: arbor_reloaded_project_user_stories_path(@project) }
     end
 
     def destroy

@@ -2,6 +2,7 @@
   = link_to '×', '#', class: 'close-reveal-modal'
   %h2= t('reloaded.copy_stories_modal.title')
   %p= t('reloaded.copy_stories_modal.subtitle')
-  %select{ class: 'radius login'}
-  = link_to t('reloaded.copy_stories_modal.confirm_button'),'#', class: 'button radius tiny'
-  = link_to t('reloaded.copy_stories_modal.cancel_button'),'#', class: 'button radius tiny secondary'
+  = select_tag 'copy_story_project_id', options_from_collection_for_select(projects, 'id', 'name'), class: 'radius login'
+  = button_tag t('reloaded.copy_stories_modal.confirm_button'), class: 'button radius tiny',
+  id: 'copy_stories_submit', data: { url: arbor_reloaded_user_stories_copy_path }
+  = link_to t('reloaded.copy_stories_modal.cancel_button'),'#', class: 'button radius tiny secondary close'
