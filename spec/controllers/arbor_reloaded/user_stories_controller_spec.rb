@@ -3,6 +3,8 @@ require 'spec_helper'
 RSpec.describe ArborReloaded::UserStoriesController do
   let!(:user)        { create :user }
   let!(:project)     { create :project, owner: user }
+  let!(:project2)     { create :project, owner: user }
+  let!(:user_story)  { create :user_story, project: project}
 
   before :each do
     sign_in user
@@ -18,7 +20,15 @@ RSpec.describe ArborReloaded::UserStoriesController do
           priority: 'should',
         }
 
-      expect(UserStory.count).to eq(1)
+      expect(UserStory.count).to eq(2)
+    end
+  end
+
+  describe 'POST copy' do
+    it 'copies some stories' do
+      post :copy, format: :js, project_id: project2.id,
+        user_stories: [project.user_stories.last.id]
+      expect(project2.user_stories.last.role).to eq(project.user_stories.last.role)
     end
   end
 

@@ -160,6 +160,8 @@ Railsroot::Application.routes.draw do
 
       get 'members', controller: :projects, action: :members
     end
+
+    post 'user_stories/copy', controller: :user_stories, action: :copy
   end
 
   namespace :api_slack do
