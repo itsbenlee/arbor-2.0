@@ -13,7 +13,8 @@ feature 'Story list' do
   scenario 'should list all stories' do
     user_stories.each do |story|
       within '.user-stories-container' do
-        expect(find("#story-text-#{story.id}").text).to have_content("As a #{story.role} I want #{story.action} so that #{story.result}")
+        expect(find("#story-text-#{story.id}").text)
+        .to have_content("As a #{story.role} I want #{story.action} so that #{story.result}")
       end
     end
   end
