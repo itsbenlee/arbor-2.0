@@ -37,7 +37,6 @@ feature 'Story detail modal', js:true do
     find('.story-actions').click
     within '#story-detail-modal' do
       expect(page).to have_css('a.icn-delete')
-      expect(page).to have_css('a.icn-copy')
       expect(page).to have_css('a.icn-archive')
     end
   end

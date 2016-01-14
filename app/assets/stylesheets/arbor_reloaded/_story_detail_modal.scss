@@ -185,6 +185,7 @@
       margin-bottom: $story-section-margin;
 
       &:last-child { margin-bottom: 0; }
+      &:hover { .icn-delete { display: block; } }
     } // li
 
     .author {
@@ -193,7 +194,20 @@
     } // author
 
     .date { font-size: rem-calc(10); }
-    .comment { display: block; }
+
+    .comment {
+      cursor: default;
+      display: block;
+    } // comment
+
+    .icn-delete {
+      display: none;
+      float: right;
+      font-size: rem-calc(14);
+      margin-right: rem-calc(10);
+
+      &:hover { @include opacity(.8); }
+    } // icn delete
   } // comment list
 
   .modal-footer { height: rem-calc(40); }

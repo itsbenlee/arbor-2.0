@@ -29,6 +29,8 @@
     = render 'layouts/navigation', projects: @projects, current_project: @project
     // Intercom plugin
     = render 'arbor_reloaded/intercom/intercom_plugin'
+    // Mouseflow plugin
+    = render 'arbor_reloaded/mouseflow/mouseflow'
     = yield
     = javascript_include_tag 'application-reloaded'
     = content_for :custom_js

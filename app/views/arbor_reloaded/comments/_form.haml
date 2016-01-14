@@ -1,4 +1,4 @@
 = form_for(comment, remote: true) do |form|
-  = form.text_area :comment, class: 'backlog-placeholder resizable-text-area',
+  = form.text_area :comment, class: 'backlog-placeholder resizable-text-area radius',
   placeholder: t('backlog.user_stories.new_comment')
   = form.submit t('save'), id: 'save-comment', class: 'hide'
