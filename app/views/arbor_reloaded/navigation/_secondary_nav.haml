@@ -16,6 +16,8 @@
             = t('project.copy_project')
             %span.icn-copy
         %li
+          = react_component('SlackButton', {}, {prerender: false})
+        %li
           = link_to current_project, method: :delete, data: { confirm: t('project.delete_confirmation') }, class: 'delete-project' do
             = t('project.delete_project')
             %span.icn-delete
@@ -43,3 +45,5 @@
       arbor_reloaded_project_members_path(current_project), |
       { class: 'add-member', data: { reveal_id: 'project-members-modal', reveal_ajax: true } }
 #project-members-modal.reveal-modal{ data: { reveal: '' } }
+%div
+  = react_component('SlackModal', {}, {prerender: false})

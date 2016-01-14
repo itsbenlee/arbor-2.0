@@ -1,0 +1,89 @@
+.slack-modal {
+  $modal-container-bg: #fbfbfb;
+  $modal-container-border: #666;
+  $modal-container-title-bg: whitesmoke;
+  $modal-container-title-border: #ccc;
+  $modal-content-paragraph: #777;
+
+  &.modal {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1004;
+  }
+
+  .modal-bg {
+    background: rgba($black, .2);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1005;
+  }
+
+  .modal-container {
+    @include border-radius($reveal-radius);
+    @include border-radius($reveal-radius);
+    background-color: $modal-container-bg;
+    border: solid 0 $modal-container-border;
+    box-sizing: border-box;
+    height: auto;
+    left: 50%;
+    margin-left: rem-calc(-300);
+    position: absolute;
+    top: 15%;
+    width: rem-calc(600);
+    z-index: 1006;
+
+    h5 {
+      @include border-top-left-radius($reveal-radius);
+      @include border-top-right-radius($reveal-radius);
+      background-color: $modal-container-title-bg;
+      border-bottom: rem-calc(1) solid $modal-container-title-border;
+      margin: 0;
+      padding: $modal-padding;
+    }
+
+    .modal-close-btn {
+      color: $white;
+      cursor: pointer;
+      font-size: rem-calc(20);
+      font-weight: 700;
+      line-height: 1;
+      position: absolute;
+      right: - $modal-close-offset;
+      top: - $modal-close-offset;
+    }
+
+    .modal-content {
+      padding: rem-calc(30);
+      position: relative;
+      text-align: center;
+
+      .legend {
+
+        h6,
+        p {
+          text-align: left;
+        }
+
+        p {
+          color: $modal-content-paragraph;
+          margin: 0;
+        }
+
+      }
+
+      a {
+        height: rem-calc(40);
+        margin-top: rem-calc(-20);
+        position: absolute;
+        right: rem-calc(40);
+        top: 50%;
+      }
+    }
+  }
+}
