@@ -24,6 +24,7 @@ gem 'wicked_pdf', github: 'mileszs/wicked_pdf'
 gem 'mustache-js-rails'
 gem 'acts_as_commentable'
 gem 'indefinite_article'
+gem 'react-rails', '~> 1.5.0'
 
 group :doc do
   gem 'sdoc', require: false
