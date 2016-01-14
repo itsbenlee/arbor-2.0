@@ -41,10 +41,8 @@
     %h6.story-section-title= t('reloaded.story_modal.acceptance_criteria.title')
     = render 'arbor_reloaded/acceptance_criterions/form',
     criterion: [:arbor_reloaded, @user_story, AcceptanceCriterion.new]
-    %ul#acceptance-list
-      - @user_story.acceptance_criterions.each do |criterion|
-        = render 'arbor_reloaded/acceptance_criterions/acceptance_criterion',
-        acceptance_criterion: criterion
+    .criterions-container
+      = render 'arbor_reloaded/acceptance_criterions/index', user_story: @user_story
   %section.comments.story-modal-section
     %h6.story-section-title= t('reloaded.story_modal.comments.title')
     = render 'arbor_reloaded/comments/form', comment: [:arbor_reloaded, @user_story, Comment.new]

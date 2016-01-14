@@ -173,7 +173,8 @@
     &.inactive { display: none; }
   }
 
-  .edit-criterion {
+  .edit-criterion,
+  .delete-criterion {
     display: none;
 
     &.active { display: block; }
