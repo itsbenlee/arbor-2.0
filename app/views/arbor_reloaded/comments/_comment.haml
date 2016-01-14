@@ -1,0 +1,5 @@
+%li
+  %span.author= comment.user_name
+  %span.date= comment.created_at.to_s
+  = link_to '', '#', class: 'icn-delete'
+  %span.comment= comment.comment

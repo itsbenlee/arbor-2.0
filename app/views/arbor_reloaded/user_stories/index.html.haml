@@ -1,13 +1,11 @@
 .new-backlog-story.row
   = render 'arbor_reloaded/user_stories/form', user_story: UserStory.new, project: @project
-.backlog-story-list.row{ data: { url: arbor_reloaded_project_reorder_backlog_path(@project), project: @project.id  } }
+.backlog-story-list.row
   .sticky-menu
     = link_to '', '#', class: 'icn-copy', data: { reveal_id: 'copy-stories-modal'}
     = link_to '', '#', class: 'icn-archive'
     = link_to '', '#', class: 'icn-delete story-delete-link', data: { reveal_id: 'story-delete-modal'}
-  - if @project.user_stories.count > 0
-    - @project.user_stories.each do |user_story|
-      = render 'arbor_reloaded/user_stories/user_story', user_story: user_story
-      = render 'arbor_reloaded/user_stories/story_detail_modal', user_story: user_story
+  .user-stories-container
+    = render 'arbor_reloaded/user_stories/user_stories_list', project: @project
 = render 'arbor_reloaded/user_stories/story_delete_modal'
-= render 'arbor_reloaded/user_stories/copy_stories_modal'
+= render 'arbor_reloaded/user_stories/copy_stories_modal', projects: @projects

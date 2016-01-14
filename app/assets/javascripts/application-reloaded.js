@@ -17,6 +17,8 @@
 //= require arbor-reloaded/projects/project_members
 //= require arbor-reloaded/projects/project_backlog
 //= require arbor-reloaded/projects/project_log
+//= require arbor-reloaded/projects/user_story_modal
+//= require arbor-reloaded/projects/copy_user_story_modal
 //= require arbor-reloaded/utils/canvases/canvases
 //= require arbor-reloaded/utils/canvases/form
 //= require arbor-reloaded/utils/userStories/a_an_grammar

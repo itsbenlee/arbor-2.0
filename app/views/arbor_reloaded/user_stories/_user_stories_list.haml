@@ -1,0 +1,9 @@
+- if project.user_stories.count > 0
+  .reorder-user-stories{ data: { url: arbor_reloaded_project_reorder_backlog_path(project), project: project.id  } }
+    - project.user_stories.each do |user_story|
+      = render 'arbor_reloaded/user_stories/user_story', user_story: user_story
+      = render 'arbor_reloaded/user_stories/story_detail_modal', user_story: user_story
+- else
+  .no-user-stories
+    %h5= t('reloaded.user_stories.write_title')
+    %p= t('reloaded.user_stories.write_subtitle')

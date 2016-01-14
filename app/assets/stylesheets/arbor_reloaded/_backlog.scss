@@ -6,7 +6,7 @@
   background-color: $dashboard-hover-color;
   color: $black-40;
   font-size: rem-calc(22);
-  margin: rem-calc(50) auto rem-calc(30);
+  margin: rem-calc(50) auto 0;
   padding: rem-calc(15 25);
 
   .backlog-story-input {
@@ -133,3 +133,19 @@ $story-padding-top: rem-calc(20);
     width: $story-points-dimension;
   } // icons on menu
 } // sticky menu
+
+
+//  STORIES EMPTY
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.no-user-stories {
+  h5,
+  p { text-align: center; }
+
+  p { color: black-30; }
+
+  h5 {
+    font-size: rem-calc(20);
+    margin-top: rem-calc(90);
+  } // h5
+} // empty user story list
