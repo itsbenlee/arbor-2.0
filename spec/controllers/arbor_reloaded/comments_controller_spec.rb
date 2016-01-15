@@ -25,4 +25,13 @@ RSpec.describe ArborReloaded::CommentsController do
       end
     end
   end
+
+  describe 'DELETE destroy' do
+    let!(:comment) { create :comment, user_story: user_story, user: user }
+
+    it 'deletes the comment' do
+      delete :destroy, format: :js, id: comment.id
+      expect(Comment.exists? comment.id).to be false
+    end
+  end
 end
