@@ -1,82 +1,90 @@
 .slack-modal {
 
+  $modal-bg: #000;
+  $modal-container-bg: #fbfbfb;
+  $modal-container-border: #666;
+  $modal-container-title-bg: whitesmoke;
+  $modal-container-title-border: #ccc;
+  $modal-content-paragraph: #777;
+
   &.modal {
-    position: fixed;
-    top: 0;
-    right: 0;
     bottom: 0;
     left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
     z-index: 1004;
   }
 
   .modal-bg {
-    position: absolute;
-    top: 0;
-    right: 0;
+    background: rgba($modal-bg, .2);
     bottom: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    right: 0;
+    top: 0;
     z-index: 1005;
   }
 
   .modal-container {
-    position: absolute;
-    width: 600px;
-    height: auto;
-    top: 20%;
-    left: 50%;
-    margin-left: -300px;
-    border-radius: 2.5px;
-    z-index: 1006;
-    background-color: #fbfbfb;
-    border: solid 0 #666666;
+    @include border-radius($reveal-radius);
+    @include border-radius($reveal-radius);
+    background-color: $modal-container-bg;
+    border: solid 0 $modal-container-border;
     box-sizing: border-box;
+    height: auto;
+    left: 50%;
+    margin-left: rem-calc(-300);
+    position: absolute;
+    top: 15%;
+    width: rem-calc(600);
+    z-index: 1006;
 
     h5 {
-      -moz-border-radius-topleft: 2.5px;
-      -webkit-border-top-left-radius: 2.5px;
-      border-top-left-radius: 2.5px;
-      -moz-border-radius-topright: 2.5px;
-      -webkit-border-top-right-radius: 2.5px;
-      border-top-right-radius: 2.5px;
-      background-color: whitesmoke;
+      @include border-top-left-radius($reveal-radius);
+      @include border-top-right-radius($reveal-radius);
+      background-color: $modal-container-title-bg;
+      border-bottom: rem-calc(1) solid $modal-container-title-border;
       margin: 0;
-      padding: 0.8rem 1.8rem;
-      border-bottom: 1px solid #cccccc;
+      padding: $modal-padding;
     }
 
     .modal-close-btn {
-      color: #fff;
-      right: -18px;
-      top: -18px;
+      color: $white;
       cursor: pointer;
-      font-size: 1.25rem;
+      font-size: rem-calc(20);
       font-weight: 700;
       line-height: 1;
       position: absolute;
+      right: - $modal-close-offset;
+      top: - $modal-close-offset;
     }
 
     .modal-content {
-      padding: 1.5rem 1.9rem 2.5rem;
-      text-align: center;
+      padding: rem-calc(30);
       position: relative;
+      text-align: center;
 
       .legend {
-        h6, p {
+
+        h6,
+        p {
           text-align: left;
         }
+
         p {
-          color: #777;
+          color: $modal-content-paragraph;
           margin: 0;
         }
+
       }
 
       a {
+        height: rem-calc(40);
+        margin-top: rem-calc(-20);
         position: absolute;
-        height: 40px;
+        right: rem-calc(40);
         top: 50%;
-        margin-top: -20px;
-        right: 40px;
       }
     }
   }
