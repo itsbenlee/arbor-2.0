@@ -43,7 +43,7 @@
     criterion: [:arbor_reloaded, @user_story, AcceptanceCriterion.new]
     .criterions-container
       = render 'arbor_reloaded/acceptance_criterions/index', user_story: @user_story
-  %section.comments.story-modal-section
+  %section.comments.story-modal-section.hide
     %h6.story-section-title= t('reloaded.story_modal.comments.title')
     = render 'arbor_reloaded/comments/form', comment: [:arbor_reloaded, @user_story, Comment.new]
     %ul#comment-list
