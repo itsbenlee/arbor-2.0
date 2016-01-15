@@ -1,5 +1,4 @@
 .slack-button {
-
   .configure-slack {
     > span {
       &:first-child {
@@ -9,10 +8,9 @@
   }
 
   .icn-slack {
-    background: url('/assets/icons/slack-icon.png') no-repeat;
+    background: image-url('icons/slack-icon.png') no-repeat;
     background-size: 100%;
     height: rem-calc(20);
     width: rem-calc(20);
   }
-
 }
