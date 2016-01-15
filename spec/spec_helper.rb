@@ -8,6 +8,8 @@ Spork.prefork do
   ENV['FROM_EMAIL_ADDRESS'] = 'no-reply@getarbor.io'
   ENV['MAXIMUM_MEMBER_COUNT'] = '16'
   ENV['SIDEBAR_VERSION'] = '1.0'
+  ENV['INTERCOM_APP_ID'] = 'q2wxbu8q'
+  ENV['MOUSEFLOW_SRC'] = '//cdn.mouseflow.com/projects/51a89e86-f3d8-469d-80d2-4971f0cdb36b.js'
 
   require File.expand_path('../../config/environment', __FILE__)
   require 'rspec/rails'
