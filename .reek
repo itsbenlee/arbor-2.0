@@ -65,7 +65,11 @@ NestedIterators:
   ignore_iterators: []
 NilCheck:
   enabled: true
-  exclude: []
+  exclude: [
+    UserStoriesController#check_project_member_relationship,
+    UserStoriesController#set_project_using_slack_id,
+    UserStoriesController#set_user_using_slack_id
+  ]
 PrimaDonnaMethod:
   enabled: true
   exclude: []
