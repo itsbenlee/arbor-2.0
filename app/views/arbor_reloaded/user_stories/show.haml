@@ -4,19 +4,18 @@
     .story-actions
       = link_to '···', '#', class: 'story-actions-link'
       = link_to '', '#', class: 'icn-delete'
-      = link_to '', '#', method: :post, class: 'icn-copy'
       = link_to '', '#', method: :post, class: 'icn-archive'
     %h4
-      %span.story-points 3
-      %select.fibonacci-select
-        %option{ value: '?', selected: true } ?
-        %option{ value: '0' } 0
-        %option{ value: '1' } 1
-        %option{ value: '2' } 2
-        %option{ value: '5' } 5
-        %option{ value: '8' } 8
-        %option{ value: '13' } 13
-        %option{ value: '21' } 21
+      %span.story-points{ data: { id: @user_story.id } }= @user_story.estimated_points ||= '?'
+      %select.fibonacci-select{ id: 'fibonacci-dropdown',
+      data: { id: @user_story.id, url: arbor_reloaded_user_story_path(@user_story) } }
+        %option{ value: '?' } ?
+        %option{ value: '1', selected: (@user_story.estimated_points == 1)} 1
+        %option{ value: '2', selected: (@user_story.estimated_points == 2) } 2
+        %option{ value: '5', selected: (@user_story.estimated_points == 5) } 5
+        %option{ value: '8', selected: (@user_story.estimated_points == 8)} 8
+        %option{ value: '13', selected: (@user_story.estimated_points == 13) } 13
+        %option{ value: '21', selected: (@user_story.estimated_points == 21) } 21
 
       .sentence
         .story-text
@@ -40,7 +39,16 @@
 .modal-wrapper
   %section.acceptance-criteria.story-modal-section
     %h6.story-section-title= t('reloaded.story_modal.acceptance_criteria.title')
-    = render 'arbor_reloaded/acceptance_criterions/form', criterion: [@user_story, AcceptanceCriterion.new], user_story: @user_story
-    %ul#acceptance-list
-      - @user_story.acceptance_criterions.each do |criterion|
-        = render 'arbor_reloaded/acceptance_criterions/acceptance_criterion', acceptance_criterion: criterion
+    = render 'arbor_reloaded/acceptance_criterions/form',
+    criterion: [:arbor_reloaded, @user_story, AcceptanceCriterion.new]
+    .criterions-container
+      = render 'arbor_reloaded/acceptance_criterions/index', user_story: @user_story
+  %section.comments.story-modal-section.hide
+    %h6.story-section-title= t('reloaded.story_modal.comments.title')
+    = render 'arbor_reloaded/comments/form', comment: [:arbor_reloaded, @user_story, Comment.new]
+    %ul#comment-list
+      - @user_story.comments.each do |comment|
+        = render 'arbor_reloaded/comments/comment', comment: comment
+.modal-footer
+:javascript
+  new UserStory();

@@ -1,0 +1,4 @@
+%ul#acceptance-list
+  - user_story.acceptance_criterions.each do |criterion|
+    = render 'arbor_reloaded/acceptance_criterions/acceptance_criterion',
+    acceptance_criterion: criterion

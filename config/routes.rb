@@ -122,7 +122,7 @@ Railsroot::Application.routes.draw do
           only: [:create, :index, :show, :update, :destroy],
           as: :user_stories,
           controller: :user_stories do
-        resources :acceptance_criterions, only: [:create]
+        resources :acceptance_criterions, only: [:create, :update, :destroy]
         resources :constraints, only: [:create, :update]
         resources :tags, only: [:create, :index]
         resources :comments, only: [:create]
@@ -160,5 +160,11 @@ Railsroot::Application.routes.draw do
 
       get 'members', controller: :projects, action: :members
     end
+
+    post 'user_stories/copy', controller: :user_stories, action: :copy
+  end
+
+  namespace :api_slack do
+    resources :user_stories, only: [:create]
   end
 end

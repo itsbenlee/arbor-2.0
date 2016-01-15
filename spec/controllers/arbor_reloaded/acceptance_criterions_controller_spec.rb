@@ -24,4 +24,13 @@ RSpec.describe ArborReloaded::AcceptanceCriterionsController do
       expect(AcceptanceCriterion.last.description).to eq('My new description')
     end
   end
+
+  describe 'DELETE destroy' do
+    let!(:acceptance_criterion) { create :acceptance_criterion, user_story: user_story }
+
+    it 'deletes the criterion' do
+      delete :destroy, format: :js, id: acceptance_criterion.id
+      expect(AcceptanceCriterion.exists? acceptance_criterion.id).to be_falsy
+    end
+  end
 end

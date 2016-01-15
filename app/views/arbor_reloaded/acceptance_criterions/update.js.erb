@@ -1,0 +1,5 @@
+$('.edit-criterion[data-id="<%= @acceptance_criterion.id %>"]').removeClass('active');
+
+$show_criterion = $('.show-criterion[data-id="<%= @acceptance_criterion.id %>"]');
+$show_criterion.removeClass('inactive');
+$show_criterion.find('li').text('<%= @acceptance_criterion.description %>');
