@@ -12,20 +12,24 @@ feature 'Story detail modal', js:true do
   end
 
   scenario 'should display the details modal' do
-    skip 'This test fails because we hide a section which still requires backend work so we are hiding it'
     expect(page).to have_css('#story-detail-modal')
   end
 
   scenario 'should be able to estimate a story' do
-    skip 'This test fails because we hide a section which still requires backend work so we are hiding it'
     find('#fibonacci-dropdown').find('option[value="13"]').select_option
     wait_for_ajax
     user_story.reload
     expect(user_story.estimated_points).to eq(13)
   end
 
+  scenario 'the estimation includes the first 7 fibonacci numbers' do
+    options = find('#fibonacci-dropdown').all('option').collect(&:value)
+    fibonacci_numbers = UserStory.estimation_series.map(&:to_s)
+
+    expect(options[1..-1]).to eq(fibonacci_numbers[1..-1])
+  end
+
   scenario 'should be able to edit a story' do
-    skip 'This test fails because we hide a section which still requires backend work so we are hiding it'
     within '#story-detail-modal' do
       find('.sentence').click
       fill_in 'role-input', with: 'developer'
@@ -37,7 +41,6 @@ feature 'Story detail modal', js:true do
   end
 
   scenario 'should be able to see other actions' do
-    skip 'This test fails because we hide a section which still requires backend work so we are hiding it'
     find('.story-actions').click
     within '#story-detail-modal' do
       expect(page).to have_css('a.icn-delete')
