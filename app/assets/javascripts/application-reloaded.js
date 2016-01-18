@@ -1,6 +1,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui/sortable
+//= require react
+//= require react_ujs
+//= require components
 //= require foundation
 //= require mustache
 //= require jquery.mustache
@@ -34,6 +37,3 @@
 //= require arbor-reloaded/utils/customTextArea
 //= require arbor-reloaded/utils/vendor/jquery.auto-grow-input.min
 //= require arbor-reloaded/main
-//= require react
-//= require react_ujs
-//= require components

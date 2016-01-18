@@ -11,4 +11,6 @@ Railsroot::Application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 7000 }
   config.active_support.deprecation = :stderr
   config.middleware.use Rack::NoAnimations
+  config.react.variant = :production
+  config.react.addons = true
 end

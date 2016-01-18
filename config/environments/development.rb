@@ -12,4 +12,5 @@ Railsroot::Application.configure do
   config.action_mailer.smtp_settings = { address: 'localhost', port: 1025 }
   config.log_level = :debug
   config.react.variant = :development
+  config.react.addons = true
 end
