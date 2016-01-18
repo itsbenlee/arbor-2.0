@@ -122,7 +122,7 @@ Railsroot::Application.routes.draw do
           only: [:create, :index, :show, :update, :destroy],
           as: :user_stories,
           controller: :user_stories do
-        resources :acceptance_criterions, only: [:create, :update]
+        resources :acceptance_criterions, only: [:create, :update, :destroy]
         resources :constraints, only: [:create, :update]
         resources :tags, only: [:create, :index]
         resources :comments, only: [:create]

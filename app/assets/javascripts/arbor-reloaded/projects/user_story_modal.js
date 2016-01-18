@@ -91,7 +91,10 @@ function UserStory() {
       $('.show-criterion').removeClass('inactive');
       $(this).find('.show-criterion').addClass('inactive');
       $('.edit-criterion').removeClass('active');
+      $('#acceptance-list .delete-criterion').removeClass('active');
+
       $(this).find('.edit-criterion').addClass('active');
+      $('#acceptance-list .delete-criterion[data-id='+ $(this).data('id') +']').addClass('active');
       return false;
     });
 
@@ -99,6 +102,7 @@ function UserStory() {
       if ($('.show-criterion').hasClass('inactive')) {
         $('.show-criterion').removeClass('inactive');
         $('.edit-criterion').removeClass('active');
+        $('.delete-criterion').removeClass('active');
       }
     });
   }

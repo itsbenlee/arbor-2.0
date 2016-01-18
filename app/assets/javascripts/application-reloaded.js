@@ -1,6 +1,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui/sortable
+//= require react
+//= require react_ujs
+//= require components
 //= require foundation
 //= require mustache
 //= require jquery.mustache

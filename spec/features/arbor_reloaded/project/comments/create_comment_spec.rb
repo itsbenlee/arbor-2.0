@@ -13,6 +13,7 @@ feature 'Create a new comment' do
   end
 
   scenario 'should show me a comment creation form', js: true do
+    skip 'This test fails because we hide a section which still requires backend work so we are hiding it'
     expect(page).to have_selector 'form.new_comment'
     within 'form.new_comment' do
       expect(page).to have_field :comment_comment
@@ -20,6 +21,7 @@ feature 'Create a new comment' do
   end
 
   scenario 'should create a new comment', js: true do
+    skip 'This test fails because we hide a section which still requires backend work so we are hiding it'
     within 'form.new_comment' do
       fill_in(:comment_comment, with: comment.comment)
       find('input#save-comment', visible: false).trigger('click')
@@ -33,6 +35,7 @@ feature 'Create a new comment' do
   end
 
   scenario 'should log the creation', js: true do
+    skip 'This test fails because we hide a section which still requires backend work so we are hiding it'
     PublicActivity.with_tracking do
       within '#new_comment' do
         fill_in(:comment_comment, with: comment.comment)

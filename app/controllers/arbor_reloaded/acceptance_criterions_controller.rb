@@ -1,7 +1,7 @@
 module ArborReloaded
   class AcceptanceCriterionsController < ApplicationController
     before_action :set_user_story, only: [:create]
-    before_action :load_acceptance_criterion, only: [:update]
+    before_action :load_acceptance_criterion, only: [:update, :destroy]
 
     def create
       ac_service = CriterionServices.new(@user_story)
@@ -11,6 +11,11 @@ module ArborReloaded
 
     def update
       @acceptance_criterion.update_attributes(acceptance_criterion_params)
+    end
+
+    def destroy
+      @user_story = @acceptance_criterion.user_story
+      @acceptance_criterion.destroy
     end
 
     private
