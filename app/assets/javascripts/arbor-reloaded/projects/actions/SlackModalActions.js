@@ -1,9 +1,11 @@
 'use strict';
 
-window.SlackModalActions = alt.createActions({
+function SlackModalActions() {}
 
-  toggle: function (show) {
-    return show;
-  }
+SlackModalActions.prototype.toggle = function (data) {
+  return data;
+};
 
-});
+SlackModalActions.displayName = 'SlackModalActions';
+
+window.SlackModalActions = alt.createActions(SlackModalActions);

@@ -3,12 +3,16 @@
 function SlackModalStore() {
 
   this.bindListeners({
-    toggle: SlackModalActions.toggle
+    toggle: SlackModalActions.TOGGLE
   });
   
 }
 
-SlackModalStore.prototype.toggle = function () {}
+SlackModalStore.prototype.toggle = function (data) {
+  this.setState({
+    toggle: data
+  });
+};
 
 SlackModalStore.displayName = 'SlackModalStore';
 

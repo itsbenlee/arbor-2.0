@@ -40,9 +40,9 @@ var SlackModal = React.createClass({
     return null;
   },
 
-  _toggleModal: function (show) {
+  _toggleModal: function (data) {
     this.setState({
-      show: show
+      show: data ? data.toggle : false || false
     });
   },
 
