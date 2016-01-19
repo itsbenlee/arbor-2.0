@@ -3,6 +3,7 @@ class Project < ActiveRecord::Base
 
   validates_presence_of :name
   validates_uniqueness_of :name, scope: :owner
+  validates_uniqueness_of :slack_channel_id
 
   belongs_to :owner, class_name: User
   has_one :canvas, dependent: :destroy

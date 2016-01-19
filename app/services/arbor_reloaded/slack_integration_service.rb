@@ -16,7 +16,6 @@ module ArborReloaded
 
     def build_user_story(story_text, current_user)
       user_story_service = ArborReloaded::UserStoryService.new(@project)
-
       if valid_message?(story_text)
         @common_response = user_story_service.new_user_story(
           parse_new_user_story(story_text),

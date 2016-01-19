@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   validates_presence_of :full_name
   validates_presence_of :email
   validates_uniqueness_of :email
+  validates_uniqueness_of :slack_id
 
   has_many :members_projects,
            foreign_key: :member_id,
