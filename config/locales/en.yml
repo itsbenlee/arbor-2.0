@@ -207,6 +207,7 @@ en:
       projects: 'Projects'
       welcome: 'Welcome,'
       settings: 'Settings'
+      profile: 'Profile'
       canvas: 'Canvas'
       backlog: 'Backlog'
       estimation: 'Estimation'
@@ -257,3 +258,5 @@ en:
       subtitle: 'Select destination project'
       confirm_button: 'Copy stories'
       cancel_button: 'Cancel'
+    users:
+      profile: 'Profile'

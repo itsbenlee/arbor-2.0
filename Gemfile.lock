@@ -169,6 +169,7 @@ GEM
       sass (>= 3.3.0, < 3.5)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    gravtastic (3.2.6)
     haml (4.0.7)
       tilt
     haml-rails (0.9.0)
@@ -435,6 +436,7 @@ DEPENDENCIES
   faker
   fog-aws
   foundation-rails
+  gravtastic
   haml-rails
   http-cookie
   httpclient
