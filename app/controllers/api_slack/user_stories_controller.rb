@@ -39,21 +39,20 @@ module ApiSlack
     end
 
     def check_project_member_relationship
-      fail("User doesn't have permissions on project") if
-        MembersProject
-        .find_by(member_id: @user.id, project_id: @project.id).nil?
+      fail("User doesn't have permissions on project") unless
+        MembersProject.find_by(member_id: @user.id, project_id: @project.id)
     end
 
     def set_project_using_slack_id
       @project = Project.find_by(slack_channel_id: slack_params[:channel_id])
       fail(
         "Can't find project related to the given slack channel id"
-      ) if @project.nil?
+      ) unless @project
     end
 
     def set_user_using_slack_id
       @user = User.find_by(slack_id: slack_params[:user_id])
-      fail("Can't find user with the given user id") if @user.nil?
+      fail("Can't find user with the given user id") unless @user
     end
   end
 end

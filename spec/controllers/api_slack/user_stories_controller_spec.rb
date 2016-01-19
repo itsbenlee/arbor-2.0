@@ -13,7 +13,6 @@ RSpec.describe ApiSlack::UserStoriesController do
         text: 'As an Admin I want to have privileges to all the database so that I can check the tables.',
         channel_id: '23456'
 
-
       hash_response = JSON.parse(response.body)
       expect(hash_response['success']).to eq(true)
       expect(Project.find(project.id).user_stories.last.role).to eq('Admin')
@@ -21,7 +20,7 @@ RSpec.describe ApiSlack::UserStoriesController do
       expect(Project.find(project.id).user_stories.last.result).to eq('so that I can check the tables.')
     end
 
-    it 'should fail when text is wrong and send a failure response' do
+    it 'should fail when text lacks Role and send a failure response' do
       post :create,
         format: :json,
         project_id: project.id,
