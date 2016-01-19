@@ -143,6 +143,14 @@
     max-height: rem-calc(420);
     overflow: hidden;
     overflow-y: scroll;
+
+    .icn-delete {
+      float: right;
+      font-size: rem-calc(14);
+      margin-right: rem-calc(10);
+
+      &:hover { @include opacity(.8); }
+    } // icn delete
   }//modal wrapper
 
   // Story Modal sections
@@ -194,21 +202,14 @@
       margin-right: $author-margin;
     } // author
 
+    .icn-delete { display: none; }
+
     .date { font-size: rem-calc(10); }
 
     .comment {
       cursor: default;
       display: block;
     } // comment
-
-    .icn-delete {
-      display: none;
-      float: right;
-      font-size: rem-calc(14);
-      margin-right: rem-calc(10);
-
-      &:hover { @include opacity(.8); }
-    } // icn delete
   } // comment list
 
   .modal-footer { height: rem-calc(40); }
