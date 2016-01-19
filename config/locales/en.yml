@@ -202,6 +202,15 @@ en:
     user_stories:
       write_title: 'Write some User Stories'
       write_subtitle: 'On the field above, enter a user story to start filling up your project'
+    estimation:
+      separator_title: 'Estimation'
+      save_button: 'Save Changes'
+      total_points: 'Total points'
+      total_cost: 'Total cost'
+      total_weeks: 'Weeks'
+      modal_title: 'Update Estimation Numbers'
+      modal_velocity: 'Velocity'
+      modal_cost: 'Cost per week'
     navigation:
       menu: 'Menu'
       projects: 'Projects'

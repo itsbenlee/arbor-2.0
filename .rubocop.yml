@@ -51,7 +51,7 @@ RegexpLiteral:
                  `MaxSlashes` '/' characters.
                  Use %r only for regular expressions matching more than
                  `MaxSlashes` '/' character.
-  MaxSlashes: 1
+
 
 # Align with the style guide.
 CollectionMethods:
