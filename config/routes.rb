@@ -93,7 +93,8 @@ Railsroot::Application.routes.draw do
 
   get 'export/:id/spreadhseet', to: 'projects#export_to_spreadhseet'
 
-  devise_for :users, controllers: { registrations: 'registrations' }
+  devise_for :users,
+    controllers: { registrations: 'registrations', sessions: 'sessions' }
 
   namespace :arbor_reloaded do
     root to: 'projects#index'

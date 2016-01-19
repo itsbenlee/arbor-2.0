@@ -3,8 +3,12 @@ class RegistrationsController < Devise::RegistrationsController
   skip_before_action :authenticate_user!
   after_action :add_member_to_projects, only: :create
 
-  def new
-    redirect_to new_user_session_path
+  def after_sign_up_path_for(resource)
+    if ENV['ENABLE_RELOADED'] == 'true'
+      arbor_reloaded_root_path
+    else
+      super
+    end
   end
 
   def create # rubocop:disable all
