@@ -14,3 +14,5 @@
     .action
       = f.submit t('login.button_login'), class: 'button radius success small', id: 'login_button'
   = render 'devise/shared/links'
+  Don't have an account yet?
+  = link_to 'Sign up', new_user_registration_path, class: 'link'

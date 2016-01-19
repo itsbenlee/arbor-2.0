@@ -18,3 +18,5 @@
       required: true
     .action
       = f.submit t('sign_up.button_signup'), class: 'button radius success small'
+  Already have an account?
+  = link_to 'Log in', new_user_session_path, class: 'link'

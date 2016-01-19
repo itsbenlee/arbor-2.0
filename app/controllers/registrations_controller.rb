@@ -3,10 +3,6 @@ class RegistrationsController < Devise::RegistrationsController
   skip_before_action :authenticate_user!
   after_action :add_member_to_projects, only: :create
 
-  def new
-    redirect_to new_user_session_path
-  end
-
   def create # rubocop:disable all
     build_resource(sign_up_params)
 
