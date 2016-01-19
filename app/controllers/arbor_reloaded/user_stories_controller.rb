@@ -4,6 +4,7 @@ module ArborReloaded
     before_action :load_user_story, only: [:edit, :show, :update, :destroy]
     before_action :check_edit_permission, only: [:create, :index]
     before_action :copied_user_stories, only: :copy
+    before_action :set_project, only: :destroy_stories
 
     def index
       @user_story = UserStory.new
@@ -51,6 +52,13 @@ module ArborReloaded
     def destroy
       @user_story.destroy
       redirect_to :back
+    end
+
+    def destroy_stories
+      response =
+        ArborReloaded::UserStoryService
+        .new(@project).destroy_stories(destroy_stories_params[:user_stories])
+      render json: response, status: (response.success ? 201 : 422)
     end
 
     private
@@ -101,6 +109,11 @@ module ArborReloaded
     end
 
     def copy_stories_params
+      params.permit(:project_id, user_stories: [])
+    end
+
+    def destroy_stories_params
+      params.require(:project_id)
       params.permit(:project_id, user_stories: [])
     end
 

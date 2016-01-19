@@ -4,8 +4,8 @@
   .sticky-menu
     = link_to '', '#', class: 'icn-copy', data: { reveal_id: 'copy-stories-modal'}
     = link_to '', '#', class: 'icn-archive'
-    = link_to '', '#', class: 'icn-delete story-delete-link', data: { reveal_id: 'story-delete-modal'}
+    = link_to'', '#', class: 'icn-delete story-delete-link', data: { reveal_id: 'story-delete-modal' }
   .user-stories-container
     = render 'arbor_reloaded/user_stories/user_stories_list', project: @project
-= render 'arbor_reloaded/user_stories/story_delete_modal'
+= render 'arbor_reloaded/user_stories/story_delete_modal', project: @project
 = render 'arbor_reloaded/user_stories/copy_stories_modal', projects: @projects
