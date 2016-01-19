@@ -13,6 +13,12 @@ module ArborReloaded
           comment: @comment.comment } if @comment.save
     end
 
+    def destroy
+      comment = current_user.comments.find(params[:id])
+      @user_story = comment.user_story
+      comment.destroy
+    end
+
     private
 
     def comment_params

@@ -1,0 +1,3 @@
+%ul#comment-list
+  - user_story.comments.each do |comment|
+    = render 'arbor_reloaded/comments/comment', comment: comment

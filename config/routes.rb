@@ -125,7 +125,7 @@ Railsroot::Application.routes.draw do
         resources :acceptance_criterions, only: [:create, :update, :destroy]
         resources :constraints, only: [:create, :update]
         resources :tags, only: [:create, :index]
-        resources :comments, only: [:create]
+        resources :comments, only: [:create, :destroy]
       end
 
       get 'user_stories/export',
