@@ -5,7 +5,7 @@ describe Project do
   subject       { project }
 
   it { should validate_presence_of :name }
-  it { should validate_uniqueness_of(:name).scoped_to(:owner_id) }
+  it { should validate_uniqueness_of(:name).scoped_to(:owner_id).with_message('Project name already exists') }
   it { should validate_uniqueness_of(:slack_channel_id) }
   it { should have_many :invites }
   it { should have_many :members }

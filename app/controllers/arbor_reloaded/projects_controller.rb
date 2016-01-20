@@ -7,6 +7,7 @@ module ArborReloaded
     def index
       scope = params[:project_order] || 'recent'
       @projects = @projects.send(scope)
+      @new_project = Project.new
       render layout: 'application_reload'
     end
 
@@ -78,8 +79,8 @@ module ArborReloaded
     end
 
     def create
-      @project = Project.new(project_params)
-      @project.owner = current_user
+      @new_project = Project.new(project_params)
+      @new_project.owner = current_user
       assist_creation
     end
 
@@ -140,6 +141,7 @@ module ArborReloaded
     end
 
     def html_update
+      @new_project = @project
       assign_associations
       if @project.save
         redirect_to :back
@@ -155,13 +157,12 @@ module ArborReloaded
     end
 
     def assist_creation
-      if @project.save
-        @project.create_activity :create_project
+      if @new_project.save
+        @new_project.create_activity :create_project
         assign_associations
-        redirect_to arbor_reloaded_project_user_stories_path(@project)
+        redirect_to arbor_reloaded_project_user_stories_path(@new_project)
       else
-        @errors = @project.errors.full_messages
-        render :new, status: 400
+        render 'arbor_reloaded/projects/index', layout: 'application_reload'
       end
     end
 
@@ -180,9 +181,9 @@ module ArborReloaded
     end
 
     def assign_associations
-      @project.owner ||= current_user
+      @new_project.owner ||= current_user
       ProjectMemberServices.new(
-        @project, current_user, member_emails
+        @new_project, current_user, member_emails
       ).invite_members
     end
 

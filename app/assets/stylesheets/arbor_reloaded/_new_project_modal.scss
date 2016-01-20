@@ -1,12 +1,18 @@
 // NEW PROJECT MODALS
 // - - - - - - - - - - - - - - - - - - - - - - - - -
-
 #project-modal {
   .project-name {
     font-size: rem-calc(14);
-    margin: rem-calc(35) auto;
+    margin: rem-calc(35) auto rem-calc(10);
     text-align: center;
 
     @include input-placeholder { font-size: rem-calc(14); }
   }//project name input
+
+  .errors {
+    color: $canvas-color;
+    font-family: $font-family-sans-serif;
+    font-size: rem-calc(14);
+    margin-bottom: rem-calc(30);
+  }
 }//project modal
