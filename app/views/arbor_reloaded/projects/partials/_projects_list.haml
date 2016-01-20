@@ -1,6 +1,6 @@
 .project-list
   - if projects.favorite.count > 0
-    .breaker
+    .title-breaker
       %h5= t('reloaded.project_dashboard.favorite', count: projects.favorite.count)
     %ul.favorites.small-block-grid-1.medium-block-grid-3.large-block-grid-4
       - projects.favorite.each do |project|
@@ -29,7 +29,7 @@
               %p.last-update
                 = t('reloaded.project_dashboard.last_update')
                 %span= project.updated_at.strftime("%b %d, %Y")
-  .breaker
+  .title-breaker
     %h5= t('reloaded.project_dashboard.all_projects', count: projects.non_favorite.count)
   %ul.common-projects-list
     - projects.each do |project|

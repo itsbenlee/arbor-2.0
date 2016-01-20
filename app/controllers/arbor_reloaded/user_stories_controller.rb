@@ -10,6 +10,8 @@ module ArborReloaded
       @user_story = UserStory.new
       @total_points =
         UserStory.total_points(@project.user_stories)
+      @velocity = 0
+      @cost_per_week = 0
     end
 
     def show

@@ -1,0 +1,13 @@
+#edit-estimation-modal.reveal-modal{ aria: { hidden: true, labelledby: 'project-modal' }, data: { reveal: ''}, role: 'dialog' }
+  = link_to '×', '#', class: 'close-reveal-modal'
+  %header
+    %h5= t('reloaded.estimation.modal_title')
+  .edit-wrapper.row
+    .estimation-item.small-12.large-6.column
+      %h4.title= t('reloaded.estimation.modal_velocity')
+      %input{ type: 'text', placeholder: '0' }
+    .estimation-item.small-12.large-6.column
+      %h4.title= t('reloaded.estimation.modal_cost')
+      %input{ type: 'text', placeholder: '$0'}
+  .modal-footer
+    = link_to t('reloaded.estimation.save_button'),'#', class: 'button radius tiny'

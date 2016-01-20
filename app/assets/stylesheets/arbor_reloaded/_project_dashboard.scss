@@ -141,6 +141,8 @@ $search-width: rem-calc(300);
     &[class^="icn-favorite"] { font-size: rem-calc(18); }
   }
 
+  .title-breaker { margin-top: rem-calc(50); }
+
   .project,
   li { @include clearfix; }
 
@@ -292,35 +294,6 @@ $search-width: rem-calc(300);
   }// circled buttons
 
   .favorite-link { padding-bottom: rem-calc(1); }
-
-  .breaker {
-    margin-top: rem-calc(50);
-    position: relative;
-    text-align: center;
-    text-transform: uppercase;
-
-    &::after {
-      border-bottom: 1px solid $black-30;
-      content: '';
-      height: 1px;
-      left: 0;
-      position: absolute;
-      top: calc(50% - 1px);
-      width: 100%;
-      z-index: -1;
-    }//border
-
-    h5 {
-      @include inline-block;
-      background-color: $white;
-      color: $black-30;
-      font-size: rem-calc(14);
-      font-weight: $font-weight-medium;
-      line-height: 1;
-      margin: 0;
-      padding: rem-calc(0 15);
-    }
-  }//section separator
 
   // Favorite projects
   // - - - - - - - - - - - - - - - - -
