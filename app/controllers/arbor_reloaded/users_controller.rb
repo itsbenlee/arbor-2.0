@@ -2,7 +2,7 @@ module ArborReloaded
   class UsersController < ApplicationController
     layout 'application_reload'
     before_action :authenticate_user!
-    before_action :check_edit_permission, only: [:update, :show]
+    before_action :check_edit_permission, only: [:update]
 
     def show
     end
