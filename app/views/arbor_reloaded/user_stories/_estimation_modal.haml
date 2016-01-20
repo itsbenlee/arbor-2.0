@@ -2,12 +2,15 @@
   = link_to '×', '#', class: 'close-reveal-modal'
   %header
     %h5= t('reloaded.estimation.modal_title')
-  .edit-wrapper.row
-    .estimation-item.small-12.large-6.column
-      %h4.title= t('reloaded.estimation.modal_velocity')
-      %input{ type: 'text', placeholder: '0' }
-    .estimation-item.small-12.large-6.column
-      %h4.title= t('reloaded.estimation.modal_cost')
-      %input{ type: 'text', placeholder: '$0'}
-  .modal-footer
-    = link_to t('reloaded.estimation.save_button'),'#', class: 'button radius tiny'
+  = form_for project, url: arbor_reloaded_project_path(project), html: { id: 'edit-project' }  do |f|
+    .edit-wrapper.row
+      .estimation-item.small-12.large-6.column
+        %h4.title= t('reloaded.estimation.modal_velocity')
+        = f.label :velocity, class: 'hide'
+        = f.number_field :velocity, placeholder: project.velocity
+      .estimation-item.small-12.large-6.column
+        %h4.title= t('reloaded.estimation.modal_cost')
+        = f.label :cost_per_week, class: 'hide'
+        = f.number_field :cost_per_week, placeholder: ''
+    .modal-footer
+      = f.submit t('reloaded.estimation.save_button'), id: 'submit-edit-project-form', class: 'button radius tiny'
