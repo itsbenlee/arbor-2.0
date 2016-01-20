@@ -41,3 +41,10 @@ function generalBinds() {
     bindProjectsFilter();
   }
 }
+
+function bindAutoReveal() {
+  $('div[data-auto-reveal]').foundation('reveal', 'open');
+  $('#create-project-btn').click(function() {
+    $('#project-modal').foundation('reveal', 'open');
+  });
+}
