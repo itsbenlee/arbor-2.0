@@ -30,4 +30,5 @@
 //= require arbor-reloaded/utils/userStories/userStories
 //= require arbor-reloaded/utils/customTextArea
 //= require arbor-reloaded/utils/vendor/jquery.auto-grow-input.min
+//= require arbor-reloaded/utils/vendor/mCustomScrollbar
 //= require arbor-reloaded/main
