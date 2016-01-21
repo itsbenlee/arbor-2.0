@@ -1,7 +1,9 @@
 .title-breaker
   %h5
     = t('reloaded.estimation.separator_title')
-    (356)
+    (
+    = total_points
+    )
   = link_to '', '#', class: 'icn-settings', data: { reveal_id: 'edit-estimation-modal'}
 .estimation-wrapper
   %ul.small-block-grid-1.large-block-grid-3
@@ -9,15 +11,18 @@
       .estimation-item
         %h4.title= t('reloaded.estimation.total_points')
         .value
-          %p 356
+          %p.total_points= total_points
     %li
       .estimation-item
         %h4.title= t('reloaded.estimation.total_cost')
         .cost
-          %p $ 849.965
+          %p.total_cost
+            $
+            = total_cost(project)
     %li
       .estimation-item
         %h4.title= t('reloaded.estimation.total_weeks')
         .value
-          %p 45
-= render 'arbor_reloaded/user_stories/estimation_modal', velocity: velocity, cost_per_week: cost_per_week
+          %p.total_weeks
+            = total_weeks(project)
+= render 'arbor_reloaded/user_stories/estimation_modal', project: project

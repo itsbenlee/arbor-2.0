@@ -1,7 +1,7 @@
 .new-backlog-story.row
   = render 'arbor_reloaded/user_stories/form', user_story: UserStory.new, project: @project
 .estimation.row
-  = render 'arbor_reloaded/user_stories/estimation', velocity: @velocity, cost_per_week: @cost_per_week
+  = render 'arbor_reloaded/user_stories/estimation', project: @project, total_points: @total_points
 .backlog-story-list.row
   .sticky-menu
     = link_to '', '#', class: 'icn-copy', data: { reveal_id: 'copy-stories-modal'}

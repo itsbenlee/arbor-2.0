@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160118184551) do
+ActiveRecord::Schema.define(version: 20160120190810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -162,6 +162,8 @@ ActiveRecord::Schema.define(version: 20160118184551) do
     t.boolean  "favorite",                      default: false
     t.string   "slack_channel_id"
     t.string   "slack_token"
+    t.integer  "velocity"
+    t.integer  "cost_per_week"
   end
 
   add_index "projects", ["name"], name: "index_projects_on_name", using: :btree

@@ -167,7 +167,10 @@ module ArborReloaded
     end
 
     def project_params
-      params.require(:project).permit(:name, :favorite)
+      params.require(:project).permit(:name,
+                                      :favorite,
+                                      :velocity,
+                                      :cost_per_week)
     end
 
     def load_project
