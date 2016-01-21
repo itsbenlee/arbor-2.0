@@ -1,0 +1,77 @@
+//   PROFILE VIEW
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$profile-margin: rem-calc(20);
+$icon-dimension: rem-calc(30);
+$avatar-dimension: rem-calc(150);
+
+.section-profile {
+  margin-top: rem-calc(55);
+  text-align: center;
+
+  .user-avatar {
+    height: $avatar-dimension;
+    margin: 0 auto;
+    position: relative;
+    width: $avatar-dimension;
+
+    img {
+      @include border-radius(100%);
+      background-color: $black-10;
+    }
+
+    .icn-edit {
+      @include border-radius(100%);
+      @include box-shadow(rgba($black-50, .4) 2px 2px 5px);
+      background-color: $success-color;
+      color: $white;
+      font-size: rem-calc(15);
+      height: $icon-dimension;
+      line-height: $icon-dimension;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      top: 0;
+      width: $icon-dimension;
+    } // edit
+  } // user avatar
+
+  .user-name {
+    font-weight: $font-weight-normal;
+    margin: $profile-margin 0;
+  }
+
+  .title-breaker { margin-bottom: $profile-margin; }
+
+  .user-description {
+    margin: 0 auto;
+    width: 57%;
+  } // user bio
+
+  .profile,
+  .mail-title {
+    color: $black-20;
+    font-size: rem-calc(14);
+    font-weight: $font-weight-normal;
+    text-transform: uppercase;
+  }
+
+  .mail-title {
+    font-size: rem-calc(12);
+    margin-top: $profile-margin;
+  }
+
+  .user-mail {
+    display: block;
+    font-size: rem-calc(18);
+  }
+
+  .cancel-link {
+    color: $canvas-color;
+    display: block;
+    font-size: rem-calc(12);
+    margin-top: $profile-margin / 2;
+  }
+
+  .button { margin-top: $profile-margin * 2; }
+} // profile section

@@ -269,3 +269,6 @@ en:
       cancel_button: 'Cancel'
     users:
       profile: 'Profile'
+      mail: 'Email'
+      edit: 'Edit'
+      cancel: 'Cancel my account'
