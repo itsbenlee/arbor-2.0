@@ -1,6 +1,9 @@
+include Gravtastic
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  gravtastic default: 'blank'
 
   validates_presence_of :full_name
   validates_presence_of :email

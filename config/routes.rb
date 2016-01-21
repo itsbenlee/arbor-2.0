@@ -162,9 +162,12 @@ Railsroot::Application.routes.draw do
     end
 
     post 'user_stories/copy', controller: :user_stories, action: :copy
+
     delete 'user_stories/destroy_stories',
       controller: :user_stories,
       action: :destroy_stories
+
+    resources :users, only: [:update, :show]
   end
 
   namespace :api_slack do
