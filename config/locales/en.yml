@@ -214,6 +214,8 @@ en:
     navigation:
       menu: 'Menu'
       projects: 'Projects'
+      people: 'People'
+      change_password: 'Change Password'
       welcome: 'Welcome,'
       settings: 'Settings'
       profile: 'Profile'
