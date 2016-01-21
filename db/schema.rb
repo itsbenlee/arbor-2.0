@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160120190810) do
+ActiveRecord::Schema.define(version: 20160122175447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -186,6 +186,22 @@ ActiveRecord::Schema.define(version: 20160120190810) do
   add_index "tags_user_stories", ["tag_id"], name: "index_tags_user_stories_on_tag_id", using: :btree
   add_index "tags_user_stories", ["user_story_id"], name: "index_tags_user_stories_on_user_story_id", using: :btree
 
+  create_table "team_users", force: :cascade do |t|
+    t.integer "team_id", null: false
+    t.integer "user_id", null: false
+  end
+
+  add_index "team_users", ["team_id"], name: "index_team_users_on_team_id", using: :btree
+  add_index "team_users", ["user_id"], name: "index_team_users_on_user_id", using: :btree
+
+  create_table "teams", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "teams", ["id"], name: "index_teams_on_id", using: :btree
+
   create_table "user_stories", force: :cascade do |t|
     t.string   "role",             limit: 100,                    null: false
     t.string   "action",           limit: 255,                    null: false
@@ -232,4 +248,6 @@ ActiveRecord::Schema.define(version: 20160120190810) do
   add_foreign_key "comments", "user_stories"
   add_foreign_key "invites", "projects"
   add_foreign_key "tags", "projects"
+  add_foreign_key "team_users", "teams"
+  add_foreign_key "team_users", "users"
 end
