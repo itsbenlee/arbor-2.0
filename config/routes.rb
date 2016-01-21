@@ -168,6 +168,7 @@ Railsroot::Application.routes.draw do
       action: :destroy_stories
 
     resources :users, only: [:update, :show]
+    resources :teams, only: :show
   end
 
   namespace :api_slack do
