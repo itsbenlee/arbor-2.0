@@ -1,4 +1,7 @@
 = render 'arbor_reloaded/navigation/user_nav'
-.section-profile.row
-    = image_tag current_user.gravatar_url
-    %h2= t('reloaded.reloaded.profile')
+= render 'arbor_reloaded/users/user_header'
+.section-people.row
+  .title-breaker
+    %h5= t('reloaded.users.people')
+  %h2= t('reloaded.reloaded.people')
+  = render 'arbor_reloaded/teams/index'
