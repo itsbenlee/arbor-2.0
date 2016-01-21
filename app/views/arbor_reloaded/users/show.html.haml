@@ -1,4 +1,12 @@
 = render 'arbor_reloaded/navigation/user_nav'
 .section-profile.row
-    = image_tag current_user.gravatar_url
-    %h2= t('reloaded.reloaded.profile')
+  = render 'arbor_reloaded/users/user_header'
+  .title-breaker
+    %h5= t('reloaded.users.profile')
+  %p.user-description.hide
+    This is a paragraph. Paragraphs are preset with a font size, line height and spacing to match the overall vertical rhythm. To show what a paragraph looks like this needs a little more content -- so, did you know thads.
+  %h5.mail-title= t('reloaded.users.mail')
+  %span.user-mail
+    = current_user.email
+  = link_to t('reloaded.users.edit'),'#', class: 'button radius tiny', id: 'edit-profile-btn'
+  = link_to t('reloaded.users.cancel'),'#', class: 'cancel-link'
