@@ -19,6 +19,8 @@ Railsroot::Application.configure do
   config.i18n.fallbacks = true
   config.active_support.deprecation = :notify
   config.log_formatter = ::Logger::Formatter.new
+  config.react.variant = :production
+  config.react.addons = true
 end
 
 ActionMailer::Base.smtp_settings = {
