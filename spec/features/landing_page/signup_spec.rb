@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 feature 'Sign up to Arbor' do
-  let(:user) { build :user }
+  let(:user)              { build :user }
+  let!(:template_project) { create :project, is_template: true }
 
   background do
     visit new_user_registration_path
@@ -20,7 +21,6 @@ feature 'Sign up to Arbor' do
 
       click_button 'Sign up'
     end
-
     expect(page).to have_selector '#sidebar'
   end
 

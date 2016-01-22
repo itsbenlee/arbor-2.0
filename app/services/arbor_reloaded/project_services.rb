@@ -53,6 +53,16 @@ module ArborReloaded
       @common_response
     end
 
+    def replicate_template(current_user)
+      replica =
+        Project.new(name: @project.name,
+                    owner: current_user,
+                    favorite: true,
+                    members: [current_user])
+
+      replicate_associations(replica) if replica.save && @project.save
+    end
+
     def replica_name
       "Copy of #{@project.name} (#{@project.copies += 1})"
     end

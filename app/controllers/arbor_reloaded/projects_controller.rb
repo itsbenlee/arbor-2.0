@@ -117,8 +117,7 @@ module ArborReloaded
     def copy
       project =
         Project
-        .includes(user_stories: [:acceptance_criterions, :constraints],
-                  hypotheses: [:user_stories, :goals])
+        .includes(user_stories: [:acceptance_criterions, :constraints])
         .find(params[:project_id])
 
       project_services = ArborReloaded::ProjectServices.new(project)
