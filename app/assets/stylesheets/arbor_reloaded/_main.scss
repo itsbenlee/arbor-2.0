@@ -7,6 +7,8 @@ a { color: $secondary-color; }
 ul { margin: 0; }
 li { list-style: none; }
 
+input { outline: 0; }
+
 // CIRCULAR CHECKBOX
 
 .circle-checkbox {
@@ -46,6 +48,12 @@ li { list-style: none; }
 .ui-helper-hidden-accessible { display: none; } // hide default search result text coming from the jquery widget
 
 .grey-prefix { color: $black-40; }
+
+.button.secondary {
+  background-color: $black-10;
+  color: $black-80;
+  margin-left: $button-margin-bottom;
+} // secondary grey btn
 
 // -------  BASE FORM STYLES ------ //
 

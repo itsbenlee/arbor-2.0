@@ -8,5 +8,6 @@
   %h5.mail-title= t('reloaded.users.mail')
   %span.user-mail
     = current_user.email
-  = link_to t('reloaded.users.edit'),'#', class: 'button radius tiny', id: 'edit-profile-btn'
-  = link_to t('reloaded.users.cancel'),'#', class: 'cancel-link'
+  = link_to t('reloaded.users.edit'), '#', class: 'button radius tiny', id: 'edit-profile-btn'
+  .hide
+    = link_to t('reloaded.users.cancel'), '#', class: 'cancel-link'
