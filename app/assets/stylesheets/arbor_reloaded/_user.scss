@@ -1,0 +1,43 @@
+//   PROFILE VIEW
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$user-header-padding: rem-calc(20);
+$icon-dimension: rem-calc(30);
+$avatar-dimension: rem-calc(150);
+
+.user-header {
+  margin-top: rem-calc(55);
+  text-align: center;
+
+  .user-avatar {
+    height: $avatar-dimension;
+    margin: 0 auto;
+    position: relative;
+    width: $avatar-dimension;
+
+    img {
+      @include border-radius(100%);
+      background-color: $black-10;
+    }
+
+    .icn-edit {
+      @include border-radius(100%);
+      @include box-shadow(rgba($black-50, .4) 2px 2px 5px);
+      background-color: $success-color;
+      color: $white;
+      font-size: rem-calc(15);
+      height: $icon-dimension;
+      line-height: $icon-dimension;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      top: 0;
+      width: $icon-dimension;
+    } // edit
+  } // user avatar
+
+  .user-name {
+    font-weight: $font-weight-normal;
+    margin: $user-header-padding 0;
+  }
+} // user header
