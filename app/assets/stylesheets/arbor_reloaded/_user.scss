@@ -22,7 +22,7 @@ $avatar-dimension: rem-calc(150);
 
     .icn-edit {
       @include border-radius(100%);
-      @include box-shadow(rgba($black-50, .4) 2px 2px 5px);
+      @include box-shadow($shadow-depth-1);
       background-color: $success-color;
       color: $white;
       font-size: rem-calc(15);

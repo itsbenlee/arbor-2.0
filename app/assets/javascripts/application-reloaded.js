@@ -38,3 +38,4 @@
 //= require arbor-reloaded/utils/customTextArea
 //= require arbor-reloaded/utils/vendor/jquery.auto-grow-input.min
 //= require arbor-reloaded/main
+//= require arbor-reloaded/teams

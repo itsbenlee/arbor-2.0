@@ -1,14 +1,15 @@
-.project-list
+.project-list.white-blocks-list
   - if projects.favorite.count > 0
     .title-breaker
       %h5= t('reloaded.project_dashboard.favorite', count: projects.favorite.count)
     %ul.favorites.small-block-grid-1.medium-block-grid-3.large-block-grid-4
       - projects.favorite.each do |project|
-        %li.favorite-project
+        %li.favorite-project.white-block
           .right
             = link_to '#', class: 'favorite-link favorite', data: { url: arbor_reloaded_project_path(project), favorite: project.favorite } do
               %span.icn-favorite
-            %a.others &#149&#149&#149
+            = link_to '#', class: 'others' do
+              &#149&#149&#149
           .actions
             - if current_user.id == project.owner_id
               %a.delete-project
@@ -17,27 +18,28 @@
               %span.icn-copy
             = link_to '#', class: 'favorite-link favorite', data: { url: arbor_reloaded_project_path(project), favorite: project.favorite } do
               %span.icn-favorite-empty
+          = link_to arbor_reloaded_project_user_stories_path(project_id: project.id), title: " Go to #{project.name}", class: 'project block-wrapper radius' do
+            .left
+              %p.truncate.title= project.name
+              %p.last-update
+                = t('reloaded.project_dashboard.last_update')
+                %span= project.updated_at.strftime("%b %d, %Y")
           .deleter
             %span.icn-delete
             %p= t('reloaded.project_dashboard.are_you_sure2')
             %p.truncate.title= project.name
             = link_to t('reloaded.project_dashboard.delete_project'), arbor_reloaded_project_path(project), method: :delete, class: 'button radius alert tiny'
             = link_to t('reloaded.project_dashboard.cancel'), '#', class: 'cancel'
-          = link_to arbor_reloaded_project_user_stories_path(project_id: project.id), title: " Go to #{project.name}", class: 'project' do
-            .left
-              %p.truncate.title= project.name
-              %p.last-update
-                = t('reloaded.project_dashboard.last_update')
-                %span= project.updated_at.strftime("%b %d, %Y")
   .title-breaker
     %h5= t('reloaded.project_dashboard.all_projects', count: projects.non_favorite.count)
-  %ul.common-projects-list
+  %ul.common-projects-list.white-blocks-list
     - projects.each do |project|
-      %li
+      %li.white-block
         .right
           = link_to '#', class: 'favorite-link favorite', data: { url: arbor_reloaded_project_path(project), favorite: project.favorite } do
             %span.icn-favorite-empty
-          %a.others &#149&#149&#149
+          = link_to '#', class: 'others' do
+            &#149&#149&#149
         .actions
           - if current_user.id == project.owner_id
             %a.delete-project
@@ -46,6 +48,12 @@
             %span.icn-copy
           = link_to '#', class: 'favorite-link favorite', data: { url: arbor_reloaded_project_path(project), favorite: project.favorite } do
             %span.icn-favorite-empty
+        = link_to arbor_reloaded_project_user_stories_path(project_id: project.id), title: " Go to #{project.name}", class: 'project block-wrapper' do
+          .left
+            %p.title= project.name
+            %p.last-update
+              = t('reloaded.project_dashboard.last_update')
+              %span= project.updated_at.strftime("%b %d, %Y")
         .deleter
           %p
             = t('reloaded.project_dashboard.are_you_sure')
@@ -53,9 +61,3 @@
           %a.cancel= t('reloaded.project_dashboard.cancel')
           %a.delete-project
             %span.icn-delete
-        = link_to arbor_reloaded_project_user_stories_path(project_id: project.id), title: " Go to #{project.name}", class: 'project' do
-          .left
-            %p.title= project.name
-            %p.last-update
-              = t('reloaded.project_dashboard.last_update')
-              %span= project.updated_at.strftime("%b %d, %Y")
