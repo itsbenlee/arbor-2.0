@@ -31,8 +31,9 @@ select { outline: 0; }
 .reset-form {
   border: 1px solid $black-20;
   border-radius: $global-radius;
-  margin-top: rem-calc(15);
+  margin: rem-calc(10) auto;
   padding: rem-calc(30);
+  width: 40%;
 } //user session style
 
 .button {

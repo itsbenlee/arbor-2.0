@@ -10,15 +10,21 @@
 
   .forgot-password {
     color: $black-40;
-    display: block;
     text-decoration: underline;
   } // centered links
 } // section intro
 
+.shared-links,
+.user-session-footer {
+  text-align: center;
+
+  span { color: $black-40; }
+  .login-question { margin-top: rem-calc(15); }
+}
+
+#signup .user-session-footer { margin-top: rem-calc(15); }
 .password-input input { margin-bottom: rem-calc(5); }
-
 .password-length { color: $black-50; }
-
 .password-new { margin-top: rem-calc(10); }
 
 .password-information {

@@ -1,10 +1,5 @@
-%section#user-session
+#user-session
   .arbor-logo
     = image_tag('arbor-logo.svg')
-  .row
-    .large-6.columns
-      .login-form
-        = render 'devise/sessions/login'
-    .large-6.columns
-      .signup-form
-        = render 'devise/registrations/sign_up'
+  .login-form
+    = render 'devise/sessions/login'

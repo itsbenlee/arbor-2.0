@@ -13,4 +13,7 @@
         = f.label :remember_me, t('login.remember_me')
     .action
       = f.submit t('login.button_login'), class: 'button radius success small', id: 'login_button'
-  = render 'devise/shared/links'
+  .user-session-footer
+    = render 'devise/shared/links'
+    %span= t('links.dont_have_account')
+    = link_to t('login.signup'), new_user_registration_path, class: 'link forgot-password text-center'
