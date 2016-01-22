@@ -168,9 +168,8 @@ module ArborReloaded
 
     def project_params
       params.require(:project).permit(:name,
-                                      :favorite,
-                                      :velocity,
-                                      :cost_per_week)
+        :favorite, :velocity, :cost_per_week,
+        :slack_token, :slack_channel_id)
     end
 
     def load_project

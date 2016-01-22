@@ -46,4 +46,4 @@
       { class: 'add-member', data: { reveal_id: 'project-members-modal', reveal_ajax: true } }
 #project-members-modal.reveal-modal{ data: { reveal: '' } }
 %div
-  = react_component('SlackModal', {}, {prerender: false})
+  = react_component('SlackModal', { url: arbor_reloaded_project_path(current_project), slackToken: current_project.slack_token, slackChannelId: current_project.slack_channel_id }, {prerender: false})
