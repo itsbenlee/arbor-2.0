@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
   has_many :owned_projects, foreign_key: :owner_id, class_name: Project
   has_many :attachments
   has_many :comments
+  has_many :team_users
+  has_many :teams, through: :team_users
 
   def can_delete?(project)
     self == project.owner
