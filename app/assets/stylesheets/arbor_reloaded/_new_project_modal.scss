@@ -15,4 +15,8 @@
     font-size: rem-calc(14);
     margin-bottom: rem-calc(30);
   }
+
+  &.with-errors {
+    .project-name { border-color: $canvas-color;}
+  }
 }//project modal
