@@ -69,4 +69,5 @@ function backlogGeneralBinds() {
   showBulkMenu();
   bindReorderStories();
   autogrowInputs();
+  checkEstimation();
 }

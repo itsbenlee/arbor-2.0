@@ -25,6 +25,7 @@
 //= require arbor-reloaded/projects/user_story_modal
 //= require arbor-reloaded/projects/copy_user_story_modal
 //= require arbor-reloaded/user_stories/delete_from_modal
+//= require arbor-reloaded/user_stories/estimation
 //= require arbor-reloaded/projects/actions/SlackModalActions
 //= require arbor-reloaded/projects/stores/SlackModalStore
 //= require arbor-reloaded/utils/canvases/canvases
