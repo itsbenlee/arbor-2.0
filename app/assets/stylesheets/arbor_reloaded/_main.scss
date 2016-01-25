@@ -88,6 +88,7 @@ input:focus {
 }//section separator
 
 // -------  BLOCK ELEMENT AND ACTIONS' BUTTONS ------ //
+
 $action-circle-dimension: rem-calc(25);
 $action-circle-margin: rem-calc(10);
 $block-padding: rem-calc(15);
@@ -120,8 +121,11 @@ $bottom-square-height: rem-calc(7);
       .others {
         font-size: rem-calc(18);
 
-        &.others { color: $light-blue; }
-      }
+        &.others {
+          color: $light-blue;
+          cursor: pointer;
+        }//other
+      }//other and favorite
 
       .delete-project,
       .copy-project,
