@@ -44,6 +44,7 @@ function generalBinds() {
 
 function bindAutoReveal() {
   $('div[data-auto-reveal]').foundation('reveal', 'open');
+  $('div[data-auto-reveal]').addClass('with-errors');
   $('#create-project-btn').click(function() {
     $('#project-modal').foundation('reveal', 'open');
   });
