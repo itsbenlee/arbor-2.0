@@ -149,7 +149,10 @@ $bottom-square-height: rem-calc(7);
         width: $action-circle-dimension;
       }// circled buttons
 
-      .favorite-link { padding-bottom: rem-calc(1); }
+      .favorite-link {
+        @include inline-block;
+        padding-bottom: rem-calc(1);
+      }
 
       .icn-favorite-empty:hover {
         &::before { content: '\e906'; }

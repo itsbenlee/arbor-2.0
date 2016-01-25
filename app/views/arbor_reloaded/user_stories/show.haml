@@ -3,8 +3,8 @@
   .header-wrapper
     .story-actions
       = link_to '···', '#', class: 'story-actions-link'
-      = link_to '', '#', class: 'icn-delete'
-      = link_to '', '#', method: :post, class: 'icn-archive'
+      = link_to '', '#', class: 'icn-delete has-tip tip-left', aria: { haspopup: true }, data: { tooltip: '' }, title: t('reloaded.tooltips.delete_story')
+      = link_to '', '#', method: :post, class: 'icn-archive has-tip tip-left', aria: { haspopup: true }, data: { tooltip: '' }, title: t('reloaded.tooltips.archive_story')
     %h4
       %span.story-points{ data: { id: @user_story.id } }= @user_story.estimated_points ||= '?'
       %select.fibonacci-select{ id: 'fibonacci-dropdown',

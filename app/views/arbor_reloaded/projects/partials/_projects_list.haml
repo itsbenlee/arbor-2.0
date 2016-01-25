@@ -6,17 +6,17 @@
       - projects.favorite.each do |project|
         %li.favorite-project.white-block
           .right
-            = link_to '#', class: 'favorite-link favorite', data: { url: arbor_reloaded_project_path(project), favorite: project.favorite } do
+            = link_to '#', class: 'favorite-link favorite has-tip', title: t('reloaded.tooltips.unfavorite_project'), aria: { haspopup: true }, data: { url: arbor_reloaded_project_path(project), favorite: project.favorite, tooltip: '' } do
               %span.icn-favorite
             = link_to '#', class: 'others' do
               &#149&#149&#149
           .actions
             - if current_user.id == project.owner_id
-              %a.delete-project
+              %a.delete-project.has-tip{aria: {haspopup: true}, data: {tooltip: ''}, title: t('reloaded.tooltips.delete_project')}
                 %span.icn-delete
-            = link_to arbor_reloaded_project_copy_path(project), method: :post, class: 'copy-project', data: {} do
+            = link_to arbor_reloaded_project_copy_path(project), method: :post, class: 'copy-project has-tip', aria: { haspopup: true }, title: t('reloaded.tooltips.copy_project'), data: { tooltip: '' } do
               %span.icn-copy
-            = link_to '#', class: 'favorite-link favorite', data: { url: arbor_reloaded_project_path(project), favorite: project.favorite } do
+            = link_to '#', class: 'favorite-link favorite has-tip', aria: { haspopup: true }, title: t('reloaded.tooltips.favorite_project'), data: { url: arbor_reloaded_project_path(project), favorite: project.favorite,tooltip: '' } do
               %span.icn-favorite-empty
           = link_to arbor_reloaded_project_user_stories_path(project_id: project.id), title: " Go to #{project.name}", class: 'project block-wrapper radius' do
             .left
@@ -36,17 +36,17 @@
     - projects.each do |project|
       %li.white-block
         .right
-          = link_to '#', class: 'favorite-link favorite', data: { url: arbor_reloaded_project_path(project), favorite: project.favorite } do
+          = link_to '#', class: 'favorite-link favorite has-tip', aria: { haspopup: true }, title: t('reloaded.tooltips.favorite_project'), data: { url: arbor_reloaded_project_path(project), favorite: project.favorite, tooltip: '' } do
             %span.icn-favorite-empty
           = link_to '#', class: 'others' do
             &#149&#149&#149
         .actions
           - if current_user.id == project.owner_id
-            %a.delete-project
+            %a.delete-project.has-tip{aria: {haspopup: true}, data: {tooltip: ''}, title: t('reloaded.tooltips.delete_project')}
               %span.icn-delete
-          = link_to arbor_reloaded_project_copy_path(project), method: :post, class: 'copy-project', data: {} do
+          = link_to arbor_reloaded_project_copy_path(project), method: :post, class: 'copy-project has-tip', aria: { haspopup: true }, title: t('reloaded.tooltips.copy_project'),data: { tooltip: '' } do
             %span.icn-copy
-          = link_to '#', class: 'favorite-link favorite', data: { url: arbor_reloaded_project_path(project), favorite: project.favorite } do
+          = link_to '#', class: 'favorite-link favorite has-tip', aria: { haspopup: true }, title: t('reloaded.tooltips.favorite_project'), data: { url: arbor_reloaded_project_path(project), favorite: project.favorite, tooltip: '' } do
             %span.icn-favorite-empty
         = link_to arbor_reloaded_project_user_stories_path(project_id: project.id), title: " Go to #{project.name}", class: 'project block-wrapper' do
           .left
