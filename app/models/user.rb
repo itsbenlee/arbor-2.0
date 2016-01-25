@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  gravtastic default: 'identicon', size: 150
+  gravtastic default: 'blank', size: 150
 
   validates_presence_of :full_name
   validates_presence_of :email
@@ -20,6 +20,8 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :team_users
   has_many :teams, through: :team_users
+
+  mount_uploader :avatar, GenericImageUploader
 
   def can_delete?(project)
     self == project.owner

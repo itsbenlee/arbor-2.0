@@ -1,17 +1,99 @@
+//   USER HEADER
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$user-header-padding: rem-calc(20);
+$icon-dimension: rem-calc(30);
+$avatar-dimension: rem-calc(150);
+$profile-margin: $user-header-padding;
+
+.user-header {
+  margin-top: rem-calc(55);
+  text-align: center;
+
+  .user-name {
+    color: $black-50;
+    font-size: $h2-font-size;
+    width: 35%;
+  }
+
+  .user-avatar {
+    height: $avatar-dimension;
+    margin: 0 auto;
+    position: relative;
+    width: $avatar-dimension;
+
+    .avatar-img,
+    .avatar-circle {
+      @include border-radius(100%);
+      background-color: $black-20;
+      height: $avatar-dimension;
+      line-height: $avatar-dimension;
+      width: $avatar-dimension;
+    }
+
+    .avatar-img {
+      @include background-size(cover);
+      background-position: center;
+      text-align: center;
+    }
+
+    .avatar-circle {
+      color: $white;
+      font-size: rem-calc(50);
+      position: absolute;
+      top: 0;
+    }
+
+    .icn-edit {
+      @include border-radius(100%);
+      @include box-shadow($shadow-depth-1);
+      background-color: $success-color;
+      border: 0;
+      color: $white;
+      cursor: pointer;
+      font-size: rem-calc(15);
+      height: $icon-dimension;
+      line-height: $icon-dimension;
+      padding-left: rem-calc(7);
+      position: absolute;
+      right: rem-calc(10);
+      text-align: center;
+      top: 0;
+      width: $icon-dimension;
+      z-index: 10;
+
+      &:focus,
+      &:active {
+        outline: none;
+      }
+    } // edit
+  } // user avatar
+} // user header
+
+.user-header .user-name,
+.section-profile .user-mail {
+  background: none;
+  border: 0;
+  margin: $user-header-padding auto;
+  text-align: center;
+
+  &:disabled { background: none; }
+}
+
 //   PROFILE VIEW
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$profile-margin: rem-calc(20);
-$icon-dimension: rem-calc(30);
-$avatar-dimension: rem-calc(150);
-
 .section-profile {
+  margin-top: $profile-margin;
   text-align: center;
 
   .user-description {
     margin: 0 auto;
     width: 57%;
   } // user bio
+
+  #save-user-profile,
+  #cancel-btn { display: none; }
 
   .profile,
   .mail-title {
@@ -21,14 +103,15 @@ $avatar-dimension: rem-calc(150);
     text-transform: uppercase;
   }
 
+  .user-mail {
+    color: $black-50;
+    font-size: rem-calc(18);
+    width: 50%;
+  }
+
   .mail-title {
     font-size: rem-calc(12);
     margin-top: $profile-margin;
-  }
-
-  .user-mail {
-    display: block;
-    font-size: rem-calc(18);
   }
 
   .cancel-link {
@@ -40,3 +123,8 @@ $avatar-dimension: rem-calc(150);
 
   .button { margin-top: $profile-margin * 2; }
 } // profile section
+
+.editable-field {
+  &:focus,
+  &:active { border-bottom: 1px dashed lighten($primary-nav-color, 20%); }
+}

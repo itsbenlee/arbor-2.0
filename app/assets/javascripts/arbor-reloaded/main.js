@@ -40,6 +40,12 @@ function generalBinds() {
     bindFavoriteIcon();
     bindProjectsFilter();
   }
+  if ($('.section-profile').length) {
+    displayInitialWhenNoAvatar();
+    bindUpdateOnImageSelect();
+    revealSaveCanelButtons();
+    hideSaveCanelButtons();
+  }
 }
 
 function bindAutoReveal() {

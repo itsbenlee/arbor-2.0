@@ -77,5 +77,10 @@ gem 'rspec_junit_formatter', '0.2.2'
 # Gravatar integration
 gem 'gravtastic'
 
+
 # HTTP Party
 gem 'httparty'
+
+# Piet image optimization Gems
+gem 'piet'
+gem 'piet-binary'

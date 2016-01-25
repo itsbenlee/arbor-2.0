@@ -169,8 +169,15 @@ Railsroot::Application.routes.draw do
       action: :destroy_stories
 
     resources :users, only: [:update, :show]
+<<<<<<< 6150c67aba9151b2a68f1e0740785d93643d43c8
     resources :teams, only: [:index, :create]
     get 'team_members', controller: :teams, action: :members
+=======
+    put 'users/ajax_update',
+      controller: :users,
+      action: :ajax_update
+    resources :teams, only: :show
+>>>>>>> User profile edit
   end
 
   namespace :api_slack do
