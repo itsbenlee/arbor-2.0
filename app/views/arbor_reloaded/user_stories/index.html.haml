@@ -1,6 +1,6 @@
 .new-backlog-story.row
   = render 'arbor_reloaded/user_stories/form', user_story: UserStory.new, project: @project
-.estimation.row
+.estimation.row{class: @project.user_stories.count > 0 ? 'visible' : 'hide'}
   = render 'arbor_reloaded/user_stories/estimation', project: @project, total_points: @total_points
 .backlog-story-list.row
   .sticky-menu
