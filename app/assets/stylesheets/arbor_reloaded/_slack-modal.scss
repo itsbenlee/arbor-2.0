@@ -26,7 +26,6 @@
 
   .modal-container {
     @include border-radius($reveal-radius);
-    @include border-radius($reveal-radius);
     background-color: $modal-container-bg;
     border: solid 0 $modal-container-border;
     box-sizing: border-box;
@@ -59,7 +58,7 @@
     }
 
     .modal-content {
-      padding: rem-calc(30);
+      padding: rem-calc(40);
       position: relative;
       text-align: center;
 
@@ -77,12 +76,36 @@
 
       }
 
+      hr {
+        border: 0;
+        border-top: 1px solid $modal-container-border;
+        display: block;
+        height: 1px;
+        margin-top: rem-calc(50);
+      }
+
       a {
         height: rem-calc(40);
-        margin-top: rem-calc(-20);
+        margin-top: rem-calc(-40);
         position: absolute;
         right: rem-calc(40);
-        top: 50%;
+      }
+
+      .save-settings {
+        @include border-radius($reveal-radius);
+        background-color: $white;
+        border: 1px solid $modal-container-border;
+        color: $modal-container-border;
+        font-weight: $font-weight-bold;
+        height: 35px;
+        margin-top: -5px;
+        padding-top: 5px;
+        width: 136px;
+
+        &:hover {
+          background-color: $modal-container-border;
+          color: $white;
+        }
       }
     }
   }

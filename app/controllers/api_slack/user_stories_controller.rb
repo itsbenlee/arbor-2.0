@@ -1,6 +1,7 @@
 module ApiSlack
   class UserStoriesController < ApplicationController
     layout false
+    skip_before_filter :verify_authenticity_token
     skip_before_action :authenticate_user!
     protect_from_forgery with: :null_session
     @project = nil
