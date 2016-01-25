@@ -167,7 +167,7 @@ Railsroot::Application.routes.draw do
     delete 'user_stories/destroy_stories',
       controller: :user_stories,
       action: :destroy_stories
-
+      
     resources :users, only: [:update, :show]
 <<<<<<< 6150c67aba9151b2a68f1e0740785d93643d43c8
     resources :teams, only: [:index, :create]

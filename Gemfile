@@ -77,7 +77,6 @@ gem 'rspec_junit_formatter', '0.2.2'
 # Gravatar integration
 gem 'gravtastic'
 
-
 # HTTP Party
 gem 'httparty'
 
