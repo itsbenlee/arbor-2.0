@@ -48,7 +48,7 @@ $search-width: rem-calc(300);
       @include inline-block;
 
       select {
-        background: transparent rem-calc(97 14) url('icons/arrow-dropdown.png')  no-repeat;
+        background: transparent right bottom rem-calc(15) image-url('icons/arrow-dropdown.png')  no-repeat;
         border: 0;
         color: $black-50;
         cursor: pointer;

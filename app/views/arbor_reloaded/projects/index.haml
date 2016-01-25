@@ -19,5 +19,12 @@
         %li.errors
           *
           = msg
+    %select.team-select
+      %option{disabled: 'disabled', selected: 'selected'}
+        = t('reloaded.create_project.select_placeholder')
+      %option Myself
+      %option Grape
+      %option Watermelon
+      %option Peach
     .action
       = f.submit t('create_project.save_button'), class: 'button radius tiny'
