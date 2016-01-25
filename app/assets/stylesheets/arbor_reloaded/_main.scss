@@ -2,6 +2,8 @@ li,
 select,
 a { outline: 0; }
 
+a { color: $secondary-color; }
+
 ul { margin: 0; }
 li { list-style: none; }
 
@@ -57,12 +59,13 @@ input:focus {
 // -------  SECTION'S SEPARATOR ------ //
 
 .title-breaker {
+  margin: rem-calc(35) 0;
   position: relative;
   text-align: center;
   text-transform: uppercase;
 
   &::after {
-    border-bottom: 1px solid $black-10;
+    border-bottom: 1px solid $light-blue-2;
     content: '';
     height: 1px;
     left: 0;
@@ -75,7 +78,7 @@ input:focus {
   h5 {
     @include inline-block;
     background-color: $body-bg;
-    color: $black-30;
+    color: $light-blue;
     font-size: rem-calc(14);
     font-weight: $font-weight-normal;
     line-height: 1;
@@ -83,3 +86,170 @@ input:focus {
     padding: rem-calc(0 15);
   }
 }//section separator
+
+// -------  BLOCK ELEMENT AND ACTIONS' BUTTONS ------ //
+$action-circle-dimension: rem-calc(25);
+$action-circle-margin: rem-calc(10);
+$block-padding: rem-calc(15);
+$block-min-height: rem-calc(140);
+$bottom-square-height: rem-calc(7);
+
+.white-blocks-list {
+  .white-block {
+    position: relative;
+
+    .actions,
+    .deleter,
+    .right {
+      line-height: $action-circle-dimension;
+      position: absolute;
+      right: $block-padding + $block-grid-default-spacing / 2;
+      top: $block-padding;
+      z-index: 2;
+
+      [class^="icn-"] {
+        @include opacity(1);
+        font-size: rem-calc(13);
+        line-height: $action-circle-dimension;
+        vertical-align: top;
+
+        &:hover { @include opacity(.7); }
+      }
+
+      [class^="icn-favorite"],
+      .others {
+        font-size: rem-calc(18);
+
+        &.others { color: $light-blue; }
+      }
+
+      .delete-project,
+      .copy-project,
+      [class^="icn-favorite"] {
+        @include inline-block;
+        @include border-radius(100%);
+        background-color: $black-10;
+        float: right;
+        height: $action-circle-dimension;
+        line-height: $action-circle-dimension;
+        margin-right: $action-circle-margin;
+        text-align: center;
+        width: $action-circle-dimension;
+      }// circled buttons
+
+      .favorite-link { padding-bottom: rem-calc(1); }
+
+      .icn-favorite-empty:hover {
+        &::before { content: '\e906'; }
+      }//icon
+
+      .delete-project { margin-right: 0; }
+    }//all three floating sections on the right
+
+    .actions,
+    .deleter {
+      @include clearfix;
+      color: $secondary-color;
+      display: none;
+      min-width: rem-calc(100);
+      z-index: 3;
+
+      &.visible { display: block; }
+
+      &.actions {
+        background-color: $white;
+
+        .icn-favorite-empty { @include inline-block; }}
+    }//actions and deleter
+
+    // Delete user story overlay
+    .deleter {
+      z-index: 4;
+
+      .title {
+        display: block;
+        font-size: rem-calc(20);
+        margin-bottom: rem-calc(10);
+      }
+
+      p,
+      a:not(.button) {
+        @include inline-block;
+        color: $black-50;
+        font-size: rem-calc(10);
+        margin: 0;
+
+        &.cancel { margin-right: $block-padding; }
+      }
+
+      .button { margin: 0 $block-padding; }
+      .delete-project { float: none; }
+    }// deleter
+
+    // Right section with ... and favorite btn
+    .right {
+      .favorite,
+      .others {
+        @include inline-block;
+      }
+
+      [class^="icn-favorite"] {
+        display: none;
+        margin-right: rem-calc(5);
+      }//icon
+    }//right section
+
+    &:hover {
+      z-index: 1;
+
+      .others { color: $secondary-color; }
+      .block-wrapper {
+        @include box-shadow($shadow-depth-hover);
+
+        &::after { background-color: $success-color; }
+      }
+    }//hover
+  }//white block
+
+  .block-wrapper {
+    @include single-transition(box-shadow, .25s, ease-in);
+    @include box-shadow($shadow-depth-1);
+    background-color: $white;
+    display: block;
+    padding: $block-padding;
+    position: relative;
+
+    &.with-border::after {
+      @include single-transition(background-color, .25s, ease-in);
+      background-color: $light-blue;
+      bottom: 0;
+      content: '';
+      height: $bottom-square-height;
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }//if block has border below
+
+    &.radius {
+      @include border-radius($global-radius);
+
+      &.with-border::after { @include border-bottom-radius($global-radius); }
+
+      + .deleter {
+        @include border-radius($global-radius);
+        background-color: darken($light-grey, 60%);
+        height: calc(100% - #{$block-grid-default-spacing} );
+        padding: $block-padding;
+        right: $block-grid-default-spacing / 2;
+        text-align: center;
+        top: 0;
+        width: calc(100% - #{$block-grid-default-spacing});
+
+        p,
+        [class^="icn-"] { color: $white; }
+      }//sibiling deleter
+    }//if block has rounded corners
+
+    .data { margin-bottom: $bottom-square-height; }
+  }//block wrapper
+}//blocks container
