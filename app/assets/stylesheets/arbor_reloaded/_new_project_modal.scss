@@ -19,4 +19,11 @@
   &.with-errors {
     .project-name { border-color: $canvas-color;}
   }
+
+  .team-select {
+    background: transparent right rem-calc(10) bottom rem-calc(15) image-url('icons/arrow-dropdown.png')  no-repeat;
+    border: 0;
+    border-bottom: 2px dashed $black-10;
+    font-size: rem-calc(18);
+  }
 }//project modal
