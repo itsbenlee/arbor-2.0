@@ -36,13 +36,9 @@
               !
           %ul.dropdown
             %li
-              = link_to '#' do
-                = t('reloaded.navigation.settings')
-                %span.icn-settings
-            %li
               = link_to arbor_reloaded_user_path(current_user) do
                 = t('reloaded.navigation.profile')
-                %span.icn-settings
+                %span.icn-user
             %li
               = link_to destroy_user_session_path, method: :delete do
                 = t('backlog.logout')
