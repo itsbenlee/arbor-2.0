@@ -2,7 +2,47 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .section-people {
+  $animation-delay: .40s;
+
+  .circle-btn {
+    @include translateY(-50%);
+    @include circle-btn($light-blue);
+    position: absolute;
+    right: 0;
+    top: 50%;
+  }//circled btn
+
   .teams-list {
-    .block-wrapper { min-height: $block-min-height; }
+    .block-wrapper {
+      min-height: $block-min-height;
+
+      &::after { @include single-transition(height, .25s, ease-in $animation-delay); }
+    }
+
+    .block-wrapper:hover {
+      .data { bottom: $block-padding; }
+
+      &::after { height: $bottom-square-height + $block-padding / 2; }
+    }//hover on team thumbnails
+
+    .data {
+      @include single-transition(bottom, .25s, ease-in $animation-delay);
+      bottom: $block-padding / 2;
+      position: absolute;
+      width: calc(100% - #{$block-padding} * 2);
+    }//data
+
+    .title {
+      font-size: rem-calc(18);
+      line-height: 1;
+      margin-bottom: rem-calc(5);
+      width: 100%;
+    }//title
+
+    .members-amount {
+      color: $black-30;
+      font-size: rem-calc(14);
+      margin: 0;
+    }//members amount
   }//teams list
 }//section people

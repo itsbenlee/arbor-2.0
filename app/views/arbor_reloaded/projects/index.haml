@@ -7,7 +7,7 @@
     .no-projects
       %p.title= t('reloaded.project_dashboard.no_projects')
       %p= t('reloaded.project_dashboard.get_started')
-      =link_to t('reloaded.project_dashboard.create_button'), '#', class: 'button radius small', data: { reveal_id: 'project-modal' }
+      = link_to t('reloaded.project_dashboard.create_button'), '#', class: 'button radius small', data: { reveal_id: 'project-modal' }
 
 #project-modal.reveal-modal{'aria-hidden' => 'true', 'aria-labelledby' => 'project-modal', 'data-reveal' => '', 'data-auto-reveal' => @new_project.errors.present?, :role => 'dialog' }
   = link_to '×', '#', class: 'close-reveal-modal'

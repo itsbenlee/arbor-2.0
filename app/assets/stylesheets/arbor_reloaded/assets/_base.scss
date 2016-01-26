@@ -114,6 +114,28 @@ $shadow-depth-hover: rgba($black-50, .2) 3px 8px 25px;
   }
 }
 
+// -------  ROUNDED BUTTON ------ //
+
+@mixin circle-btn($bg-color: $primary-color, $dimension: 48, $font-size: 24) {
+  @include single-transition(box-shadow, .25s, ease-in);
+  @include border-radius(100%);
+  @include box-shadow($shadow-depth-1);
+  background-color: $bg-color;
+  color: $white;
+  cursor: pointer;
+  display: block;
+  height: rem-calc($dimension);
+  font-size: rem-calc($font-size);
+  line-height: rem-calc($dimension);
+  text-align: center;
+  width: rem-calc($dimension);
+
+  &:hover {
+    @include opacity(.8);
+    @include box-shadow($shadow-depth-hover);
+  }
+}//circle btn
+
 // -------  UTILITY CLASSES ------ //
 
 .truncate {
