@@ -1,0 +1,9 @@
+= render 'arbor_reloaded/navigation/user_nav'
+= render 'arbor_reloaded/users/user_header'
+.section-people.row
+  .title-breaker
+    %h5= t('reloaded.users.people')
+  %h2= t('reloaded.reloaded.people')
+%ul.small-block-grid-1.medium-block-grid-3.large-block-grid-3
+  - @teams.each do |team|
+    %li= team.name

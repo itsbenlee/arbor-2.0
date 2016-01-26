@@ -135,6 +135,7 @@ UnusedParameters:
 UtilityFunction:
   enabled: true
   exclude: [
+    TeamsController#create,
     ProjectHelper#total_weeks,
     ProjectHelper#total_cost,
     UserStoriesHelper#format_story_points,
