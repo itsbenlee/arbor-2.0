@@ -1,34 +1,47 @@
-%h2
-  Edit #{resource_name.to_s.humanize}
-= form_for(resource, as: resource_name, url: registration_path(resource_name),
-html: { method: :put }) do |f|
-  = devise_error_messages!
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, required: true
-  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    %div
-      Currently waiting confirmation for: #{resource.unconfirmed_email}
-  .field
-    = f.label :password
-    %i (leave blank if you don't want to change it)
-    %br/
-    = f.password_field :password, autocomplete: 'off', required: true
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: 'off',
-    required: true
-  .field
-    = f.label :current_password
-    %i (we need your current password to confirm your changes)
-    %br/
-    = f.password_field :current_password, autocomplete: 'off', required: true
-  .actions
-    = f.submit 'Update'
-%h3 Cancel my account
-%p
-  Unhappy? #{button_to 'Cancel my account', registration_path(resource_name),
-  data: { confirm: 'Are you sure?' }, method: :delete}
-= link_to 'Back', :back
+- if local_assigns.has_key?(:version) && local_assigns[:version] == 'reloaded'
+  = render 'arbor_reloaded/navigation/user_nav'
+  = render 'arbor_reloaded/users/user_header'
+  .change-password.row
+    .title-breaker
+      %h5= t('reloaded.users.profile')
+    .edit-inputs
+      %input.enter-password{ type: 'password', placeholder: t('reloaded.users.enter_password') }
+      %input.confirm-password{ type: 'password', placeholder: t('reloaded.users.confirm_password') }
+    %input.current-password{ type: 'password', placeholder: t('reloaded.users.current_password') }
+    = link_to t('reloaded.users.save_btn'),'#', class: 'button tiny radius'
+    = link_to t('reloaded.users.cancel_btn'),'#', class: 'button tiny radius secondary'
+- else
+  %h2
+    Edit #{resource_name.to_s.humanize}
+  = form_for(resource, as: resource_name, url: registration_path(resource_name),
+  html: { method: :put }) do |f|
+    = devise_error_messages!
+    .field
+      = f.label :email
+      %br/
+      = f.email_field :email, autofocus: true, required: true
+    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+      %div
+        Currently waiting confirmation for: #{resource.unconfirmed_email}
+    .field
+      = f.label :password
+      %i (leave blank if you don't want to change it)
+      %br/
+      = f.password_field :password, autocomplete: 'off', required: true
+    .field
+      = f.label :password_confirmation
+      %br/
+      = f.password_field :password_confirmation, autocomplete: 'off',
+      required: true
+    .field
+      = f.label :current_password
+      %i (we need your current password to confirm your changes)
+      %br/
+      = f.password_field :current_password, autocomplete: 'off', required: true
+    .actions
+      = f.submit 'Update'
+  %h3 Cancel my account
+  -# %p
+  -#   Unhappy? #{button_to 'Cancel my account', registration_path(resource_name),
+  -#   data: { confirm: 'Are you sure?' }, method: :delete}
+  = link_to 'Back', :back

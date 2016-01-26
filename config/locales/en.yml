@@ -278,3 +278,8 @@ en:
       mail: 'Email'
       edit: 'Edit'
       cancel: 'Cancel my account'
+      save_btn: 'Save'
+      cancel_btn: 'Cancel'
+      enter_password: 'Enter new password'
+      confirm_password: 'Confirm password'
+      current_password: 'Current password'
