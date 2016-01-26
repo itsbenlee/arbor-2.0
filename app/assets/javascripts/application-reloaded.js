@@ -8,7 +8,7 @@
 //= require mustache
 //= require jquery.mustache
 //= require jquery-ui/autocomplete
-//= require assets/global-vars
+//= require arbor-reloaded/utils/globalVars
 //= require i18n
 //= require i18n/translations
 //= require init
@@ -38,5 +38,7 @@
 //= require arbor-reloaded/utils/userStories/userStories
 //= require arbor-reloaded/utils/customTextArea
 //= require arbor-reloaded/utils/vendor/jquery.auto-grow-input.min
+//= require arbor-reloaded/utils/vendor/jquery.mousewheel.min
+//= require arbor-reloaded/utils/vendor/jquery.mCustomScrollbar.concat.min
 //= require arbor-reloaded/main
 //= require arbor-reloaded/teams
