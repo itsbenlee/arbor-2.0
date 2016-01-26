@@ -63,7 +63,7 @@ $modal-close-offset: rem-calc(20);
   .show-project-data {
     background-color: $black-10;
     max-height: rem-calc(242);
-    overflow: auto;
+    overflow: hidden;
     overflow-y: scroll;
   }
 
