@@ -7,6 +7,7 @@ $deleteModal.on('opened.fndtn.reveal', function() {
   displayStoriesOnModal();
   bindDelete();
   bindModalClose();
+  customScroll();
 });
 
 function bindModalClose() {

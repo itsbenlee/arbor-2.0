@@ -49,3 +49,14 @@ function bindAutoReveal() {
     $('#project-modal').foundation('reveal', 'open');
   });
 }
+
+function customScroll() {
+  var $target = $('.custom-scroll');
+
+  if ($target.length) {
+    $target.mCustomScrollbar({
+      theme: 'dark',
+      autoHideScrollbar: 'true'
+    });
+  }
+}//custom scroll

@@ -9,7 +9,7 @@
         = owner.full_name
       %p.user-mail
         = owner.email
-  %ul.show-project-data
+  %ul.show-project-data.custom-scroll
     - members.each_with_index do |member, index|
       - if index >= 0 && member.id != owner.id
         %li.user-item
