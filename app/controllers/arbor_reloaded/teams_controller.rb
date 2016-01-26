@@ -5,37 +5,22 @@ module ArborReloaded
 
     def new
       render layout: 'application_reload'
+    end
 
     def index
+      @new_team = Team.new
       @teams = current_user.teams
     end
 
-    def show
-      @new_team = Team.new
-      @team = Team.find(params[:id])
-    end
-
-    def index
-    end
-
     def create
-      @new_team = Team.new(name: team_params[:name],
-                           manager_id: current_user.id)
-      assist_creation
+      @team = Team.create(name: team_params[:name], owner: current_user)
+      @team.users << current_user
     end
 
     private
 
     def team_params
       params.require(:team).permit(:name)
-    end
-
-    def assist_creation
-      if @new_team.save
-        redirect_to arbor_reloaded_team_path(@new_team)
-      else
-        render 'arbor_reloaded/teams/index', layout: 'application_reload'
-      end
     end
   end
 end
