@@ -5,6 +5,9 @@ module ArborReloaded
 
     def new
       render layout: 'application_reload'
+
+    def index
+      @teams = current_user.teams
     end
 
     def show
