@@ -8,7 +8,8 @@ $modal-padding: $modal-padding-top $modal-sides-padding;
 $modal-close-offset: rem-calc(20);
 
 #copy-stories-modal,
-#project-modal {
+#project-modal,
+#team-modal {
   @extend .text-center;
 
   padding: $modal-padding;

@@ -1,0 +1,6 @@
+- if teams.count > 0
+  %ul.teams-list.white-blocks-list.small-block-grid-1.medium-block-grid-3.large-block-grid-3
+    - teams.each do |team|
+      = render 'arbor_reloaded/teams/team', team: team
+- else
+  = t('reloaded.team.no_teams')
