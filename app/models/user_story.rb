@@ -101,6 +101,13 @@ class UserStory < ActiveRecord::Base
   def copy_associations(replica_id)
     copy_criterions(replica_id)
     copy_constraints(replica_id)
+    copy_comments(replica_id)
+  end
+
+  def copy_comments(replica_id)
+    comments.each do |comment|
+      comment.copy_comment(replica_id)
+    end
   end
 
   def copy_criterions(replica_id)

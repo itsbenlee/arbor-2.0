@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Project do
-  let(:project) { create :project }
+  let(:project) { create :project, is_template: false }
   subject       { project }
 
   it { should validate_presence_of :name }
@@ -14,6 +14,15 @@ describe Project do
   it { should have_many :attachments }
   it { should have_many :tags }
   it { should belong_to :owner }
+  it { should_not validate_uniqueness_of(:is_template) }
+
+  context 'if is_tremplate is true' do
+    before :each do
+      project.update_attributes(is_template: true)
+    end
+
+    it { should validate_uniqueness_of(:is_template) }
+  end
 
   it_behaves_like 'a logged entity' do
     let(:entity)      { build :project, name: 'Test project' }

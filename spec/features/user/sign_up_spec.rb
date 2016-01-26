@@ -1,9 +1,11 @@
 require 'spec_helper'
 
 feature 'Sign up' do
+  let!(:template_project)  { create :project, is_template: true }
+
   context 'for a user with invites' do
     let!(:project)  { create :project }
-    let!(:invite)   { create :invite, email: 'testing@test.com', project: project}
+    let!(:invite)   { create :invite, email: 'testing@test.com', project: project }
 
     def create_user
       visit new_user_registration_path
@@ -26,7 +28,6 @@ feature 'Sign up' do
     scenario 'should add user as member of the invite project' do
       create_user
       user = User.find_by(email:'testing@test.com')
-      expect(user.projects.count).to eq(1)
       expect(user.projects.first.name).to eq(project.name)
     end
   end
