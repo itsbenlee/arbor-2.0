@@ -1,0 +1,24 @@
+= render 'arbor_reloaded/navigation/user_nav'
+= render 'arbor_reloaded/users/user_header'
+.section-people.row
+  .title-breaker
+    = link_to '+', '#', class: 'circle-btn', data: { reveal_id: 'team-modal' }
+    %h5= t('reloaded.users.people')
+  - if @teams.count > 0
+    %ul#teams-list.teams-list.white-blocks-list.small-block-grid-1.medium-block-grid-3.large-block-grid-3
+      = @teams.each do |team|
+        = render 'arbor_reloaded/teams/team', team: team
+  - else
+    = t('reloaded.team.no_teams')
+#team-modal.reveal-modal{'aria-hidden' => 'true', 'aria-labelledby' => 'team-modal', 'data-reveal' => '', 'data-auto-reveal' => @new_team.errors.present?, :role => 'dialog' }
+  = link_to '×', '#', class: 'close-reveal-modal'
+  = form_for @new_team, url: '/arbor_reloaded/teams', html: { id: 'new_team' }, remote: true do |f|
+    %h2= t('reloaded.team.create')
+    = f.text_field :name, placeholder: t('reloaded.team.name'), class: 'team-name radius login'
+    %ul
+      - @new_team.errors.each do |attr, msg|
+        %li.errors
+          *
+          = msg
+    .action
+      = f.submit t('reloaded.team.save'), class: 'button radius tiny create_team'
