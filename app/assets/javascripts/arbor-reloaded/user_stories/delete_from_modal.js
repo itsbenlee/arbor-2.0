@@ -28,7 +28,7 @@ function loadStories() {
 
 function displayStoriesOnModal() {
   var storiesList = $('#stories-list');
-  storiesList.empty();
+  storiesList.remove('li');
   $.each($fullStories, function(index, currentStory){
     opt = $('<li></li>');
     opt.append(currentStory.children());
