@@ -12,6 +12,7 @@ feature 'Index Teams' do
   scenario "it should list the user's teams" do
     within '.section-people' do
       teams.each do |team|
+        debugger
         expect(page).to have_content(team.name)
         expect(page).to have_text("#{team.users.count} members")
       end
