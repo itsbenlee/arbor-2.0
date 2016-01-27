@@ -11,4 +11,6 @@ RSpec.describe User do
   it { should have_many(:projects) }
   it { should have_many(:comments) }
   it { should have_many(:owned_projects) }
+  it { should have_many(:teams) }
+  it { should have_many(:owned_teams) }
 end
