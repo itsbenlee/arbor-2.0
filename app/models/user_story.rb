@@ -25,6 +25,7 @@ class UserStory < ActiveRecord::Base
   scope :ordered, -> { order(order: :asc) }
   scope :not_archived, -> { where(archived: false) }
   scope :archived, -> { where(archived: true) }
+  scope :backlog_ordered, -> { order(backlog_order: :desc) }
 
   def self.total_points(user_stories)
     user_stories.map(&:estimated_points).compact.sum
