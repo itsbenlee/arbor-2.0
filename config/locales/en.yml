@@ -233,7 +233,7 @@ en:
       mail_invite: 'Invite members by email address...'
       close: 'Close'
     project_dashboard:
-      all_projects: 'All projects (%{count})'
+      my_projects: 'My Projects (%{count})'
       favorite: 'Favorite (%{count})'
       last_update: 'Last update:'
       no_projects: 'No projects yet'
@@ -242,6 +242,7 @@ en:
       are_you_sure: 'Are you sure?'
       are_you_sure2: 'Are you sure you want to delete:'
       delete_project: 'Yes, delete it'
+      join_project: 'Join as Collaborator'
       cancel: 'Cancel'
       search_input: 'Search'
       sort_by_recent: 'Sort by date'
