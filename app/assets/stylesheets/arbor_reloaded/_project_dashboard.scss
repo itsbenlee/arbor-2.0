@@ -135,7 +135,12 @@ $search-width: rem-calc(300);
     border-bottom: 1px solid $black-10;
     position: relative;
 
-    &:not(.favorite-project) {
+    .join-btn {
+      display: none;
+      margin: 0;
+    }
+
+    &:not(.favorite-project):not(.not-member) {
       .project,
       .actions,
       .deleter { background-color: $white; }
@@ -144,6 +149,12 @@ $search-width: rem-calc(300);
         .favorite .icn-favorite-empty { @include inline-block; }
       }
     }//not favorite project entry
+
+    &.not-member {
+      &:hover {
+        .join-btn { @include inline-block; }
+      }
+    }//project user is no member
   }//project li
 
   // Project link

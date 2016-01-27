@@ -44,6 +44,8 @@
       = link_to '+', |
       arbor_reloaded_project_members_path(current_project), |
       { class: 'add-member', data: { reveal_id: 'project-members-modal', reveal_ajax: true } }
+    -# TODO this link should only appear if the user is not a member of this project, and should't see the plus and members items, MOJO {remove .hidden-element for enable it}
+    %li= link_to t('reloaded.project_dashboard.join_project'), '#', class: 'button radius success tiny join-btn hidden-element'
 #project-members-modal.reveal-modal{ data: { reveal: '' } }
 %div
   = react_component('SlackModal', { url: arbor_reloaded_project_path(current_project), slackToken: current_project.slack_token, slackChannelId: current_project.slack_channel_id }, {prerender: false})

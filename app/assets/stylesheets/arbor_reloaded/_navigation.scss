@@ -181,7 +181,7 @@ ul .dropdown {
   .members {
     margin-right: $topbar-margin;
 
-    a {
+    a:not(.button) {
       @include border-radius(100%);
       @include inline-block;
       background-size: cover;
@@ -225,7 +225,12 @@ ul .dropdown {
         width: rem-calc(30);
 
         @media #{$small-only} { display: none; }
-      }
-    }
-  }
+      }//other members
+    }//a
+
+    .button {
+      display: inline;
+      margin: 0;
+    }//button
+  }//members
 }//secondary nav
