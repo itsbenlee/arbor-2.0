@@ -1,7 +1,7 @@
 #reset-password.row
   .arbor-logo
     = image_tag('arbor-logo.svg')
-  .large-6.large-centered.columns.reset-form
+  .reset-form.medium-8.large-6.medium-centered.columns
     %h2
       = t('recover_password.forgot')
     = form_for(resource, as: resource_name, url: password_path(resource_name),

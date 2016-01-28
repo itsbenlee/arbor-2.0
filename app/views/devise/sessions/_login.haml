@@ -15,5 +15,5 @@
       = f.submit t('login.button_login'), class: 'button radius success small', id: 'login_button'
   .user-session-footer
     = render 'devise/shared/links'
-    %span= t('links.dont_have_account')
-    = link_to t('login.signup'), new_user_registration_path, class: 'link forgot-password text-center'
+    %span.hide= t('links.dont_have_account')
+    = link_to t('login.signup'), new_user_registration_path, class: 'link forgot-password text-center hide'

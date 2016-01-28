@@ -16,10 +16,9 @@
     / Right Nav Section
     %ul.right
       %ul
-        %li
-          = link_to t('reloaded.navigation.projects'), arbor_reloaded_root_path
-        %li
-          %a{:href => 'mailto:feedback@getarbor.io', :target => '_top'}= t('reloaded.navigation.help')
+        %li= link_to t('reloaded.navigation.projects'), arbor_reloaded_root_path
+        %li= link_to t('reloaded.navigation.help'), 'mailto:feedback@getarbor.io', target: '_top', class: 'hidden-element'
+        %li= link_to t('reloaded.navigation.people'), arbor_reloaded_teams_path
         %li.hide
           %a{:href => "#"} FAQ
         - if current_project
