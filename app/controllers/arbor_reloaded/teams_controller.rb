@@ -22,6 +22,10 @@ module ArborReloaded
       end
     end
 
+    def members
+      render layout: false
+    end
+
     private
 
     def team_params

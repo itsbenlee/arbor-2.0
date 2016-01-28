@@ -210,6 +210,8 @@ en:
       create: 'Create a team'
       name: 'Enter new team name here...'
       save: 'Create Team'
+      modal:
+        mail_invite: 'Invite members by email address'
     estimation:
       separator_title: 'Estimation'
       save_button: 'Save Changes'

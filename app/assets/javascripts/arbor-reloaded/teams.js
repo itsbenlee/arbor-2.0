@@ -5,6 +5,10 @@ function teamBinds() {
   }
 }
 
+$('#team-members-modal').on('opened.fndtn.reveal', function() {
+  customScroll();
+});
+
 $( document ).ready(function() {
   teamBinds();
 });

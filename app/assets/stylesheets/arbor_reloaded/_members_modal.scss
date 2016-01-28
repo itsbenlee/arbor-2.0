@@ -7,7 +7,8 @@
   font-size: rem-calc(24);
 }
 
-#project-members-modal {
+#project-members-modal,
+#team-members-modal {
   $avatar-dimension: rem-calc(50);
   $user-item-margin-sides: rem-calc(25);
   $user-item-margin: 0 $user-item-margin-sides;
