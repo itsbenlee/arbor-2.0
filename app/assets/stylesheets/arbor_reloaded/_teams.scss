@@ -46,3 +46,22 @@
     }//members amount
   }//teams list
 }//section people
+////// Team modal
+
+#team-modal {
+  .team-name {
+    font-size: rem-calc(14);
+    margin: rem-calc(35) auto rem-calc(10);
+    text-align: center;
+
+    @include input-placeholder { font-size: rem-calc(14); }
+  }//project name input
+
+  .new-team-errors {
+    color: $canvas-color;
+    font-size: rem-calc(14);
+    margin-bottom: rem-calc(30);
+  }
+
+  &.with-errors { .team-name { border-color: $canvas-color;} }
+}//project modal
