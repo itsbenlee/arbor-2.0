@@ -8,4 +8,5 @@ RSpec.describe Team, type: :model do
   it { should validate_uniqueness_of(:name) }
   it { should have_many :users }
   it { should belong_to :owner }
+  it { should have_many :projects }
 end

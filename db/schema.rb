@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160127132154) do
+ActiveRecord::Schema.define(version: 20160128140951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -166,10 +166,12 @@ ActiveRecord::Schema.define(version: 20160127132154) do
     t.integer  "velocity"
     t.integer  "cost_per_week"
     t.boolean  "is_template",                   default: false
+    t.integer  "team_id"
   end
 
   add_index "projects", ["name"], name: "index_projects_on_name", using: :btree
   add_index "projects", ["owner_id"], name: "index_projects_on_owner_id", using: :btree
+  add_index "projects", ["team_id"], name: "index_projects_on_team_id", using: :btree
 
   create_table "tags", force: :cascade do |t|
     t.string   "name"
@@ -242,6 +244,7 @@ ActiveRecord::Schema.define(version: 20160127132154) do
     t.string   "full_name"
     t.boolean  "admin",                  default: false
     t.string   "slack_id"
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -251,6 +254,7 @@ ActiveRecord::Schema.define(version: 20160127132154) do
   add_foreign_key "attachments", "projects"
   add_foreign_key "comments", "user_stories"
   add_foreign_key "invites", "projects"
+  add_foreign_key "projects", "teams"
   add_foreign_key "tags", "projects"
   add_foreign_key "team_users", "teams"
   add_foreign_key "team_users", "users"

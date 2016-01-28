@@ -10,6 +10,7 @@ class Project < ActiveRecord::Base
     if: proc { |project| project.is_template }
 
   belongs_to :owner, class_name: User
+  belongs_to :team
   has_one :canvas, dependent: :destroy
   has_many :hypotheses, dependent: :destroy
   has_many :invites, dependent: :destroy

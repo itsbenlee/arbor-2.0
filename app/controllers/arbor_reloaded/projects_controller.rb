@@ -3,12 +3,18 @@ module ArborReloaded
     layout false, only: :members
     before_action :load_project,
                   only: [:show, :edit, :update, :destroy,
-                         :log, :export_to_spreadhseet]
+                         :log]
     def index
       scope = params[:project_order] || 'recent'
       @projects = @projects.send(scope)
       @new_project = Project.new
       render layout: 'application_reload'
+    end
+
+    def create
+      @new_project = Project.new(project_params)
+      assign_team
+      assist_creation
     end
 
     def list_projects
@@ -78,12 +84,6 @@ module ArborReloaded
       end
     end
 
-    def create
-      @new_project = Project.new(project_params)
-      @new_project.owner = current_user
-      assist_creation
-    end
-
     def order_stories
       project = Project.includes(:user_stories).find(params[:project_id])
       project_services = ArborReloaded::ProjectServices.new(project)
@@ -126,12 +126,22 @@ module ArborReloaded
       redirect_to :back
     end
 
-    def export_to_spreadhseet
-      send_data(
-        SpreadsheetExporterService.export(@project), disposition: 'inline')
+    private
+
+    def assign_team
+      selected_team_name = team_params[:team]
+      if selected_team_name.blank?
+        @new_project.owner = current_user
+      else
+        team = Team.find_by(name: selected_team_name)
+        @new_project.owner = team.owner
+        @new_project.team = team
+      end
     end
 
-    private
+    def team_params
+      params.require(:project).permit(:team)
+    end
 
     def json_list
       response = ArborReloaded::ProjectServices.new(@project)

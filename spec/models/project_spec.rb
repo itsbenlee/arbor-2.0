@@ -14,6 +14,7 @@ describe Project do
   it { should have_many :attachments }
   it { should have_many :tags }
   it { should belong_to :owner }
+  it { should belong_to :team }
   it { should_not validate_uniqueness_of(:is_template) }
 
   context 'if is_tremplate is true' do

@@ -256,6 +256,8 @@ en:
       title: 'Create a Project'
       project_name: 'Enter new project name here...'
       select_placeholder: 'Created by'
+      save_button: 'Create'
+      team_title: 'Team'
     activities:
       title: "%{project_name} Activities"
     story_modal:
