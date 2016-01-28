@@ -27,13 +27,7 @@
     &:focus { background-color: $dashboard-hover-color; }
   } // input
 
-  #save-user-story {
-    background-color: $white;
-    border: 1px solid $black-10;
-    color: $black-90;
-    float: right;
-    text-transform: uppercase;
-  } // create button
+  #save-user-story { float: right; }
 }
 
 //  USER STORY LIST

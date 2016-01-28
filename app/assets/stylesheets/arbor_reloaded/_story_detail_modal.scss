@@ -137,6 +137,15 @@
     }//small only
   }//header
 
+  .save-ac-button {
+    @extend .tiny-btn;
+    margin-left: rem-calc(10);
+    padding: rem-calc(5 8);
+  }
+
+  .edit-criterion .backlog-placeholder { margin-bottom: rem-calc(10); }
+  .edit-criterion form { @include clearfix; }
+
   .modal-wrapper {
     background-color: $modal-bg-color;
     border-top: 1px solid $black-20;
@@ -144,13 +153,18 @@
     overflow: hidden;
 
     .icn-delete {
-      float: right;
       font-size: rem-calc(14);
       margin-right: rem-calc(10);
 
       &:hover { @include opacity(.8); }
     } // icn delete
   }//modal wrapper
+
+  .delete-criterion {
+    bottom: $button-margin-bottom;
+    position: absolute;
+    right: 0;
+  }
 
   // Story Modal sections
   .story-modal-section {
@@ -177,14 +191,19 @@
   }//acceptance list
 
   .show-criterion {
+    clear: both;
+
     &.inactive { display: none; }
   }
+
+  .criterions-container { position: relative; }
 
   .edit-criterion,
   .delete-criterion {
     display: none;
 
     &.active { display: block; }
+    &.edit-criterion { position: relative; }
   }
 
   // Comments Section (.comments)

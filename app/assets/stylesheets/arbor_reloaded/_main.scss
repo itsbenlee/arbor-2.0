@@ -268,3 +268,11 @@ $bottom-square-height: rem-calc(7);
     .data { margin-bottom: $bottom-square-height; }
   }//block wrapper
 }//blocks container
+
+.tiny-btn {
+  @include border-radius($global-radius);
+  background-color: $white;
+  border: 1px solid $black-10;
+  color: $black-90;
+  text-transform: uppercase;
+} // create button
