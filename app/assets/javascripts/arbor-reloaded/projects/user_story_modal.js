@@ -52,6 +52,17 @@ function UserStory() {
   toggleEditCriterion();
   displayEditionForm();
   NavigateUserStories();
+  displaySaveButton();
+
+  function displaySaveButton() {
+    $('.show-criterion').on("click", function() {
+      $(this).next().find('#save-acceptance-criterion').removeClass('hidden-element');
+    });
+
+    $('.save-ac-button').on( "click", function() {
+      $(this).addClass('hidden-element');
+    });
+  }
 
   function displayEditionForm() {
     var $editUserStory       = $('.edit_user_story'),
