@@ -57,22 +57,18 @@ $profile-margin: $user-header-padding;
       padding-left: rem-calc(7);
       position: absolute;
       right: rem-calc(10);
-      text-align: center;
       top: 0;
       width: $icon-dimension;
       z-index: 10;
 
       &:focus,
-      &:active {
-        outline: none;
-      }
+      &:active { outline: none; }
     } // edit
   } // user avatar
 } // user header
 
 .user-header .user-name,
 .section-profile .user-mail {
-  background: none;
   border: 0;
   margin: $user-header-padding auto;
   text-align: center;
