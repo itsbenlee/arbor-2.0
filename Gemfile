@@ -79,3 +79,7 @@ gem 'gravtastic'
 
 # HTTP Party
 gem 'httparty'
+
+# Piet image optimization Gems
+gem 'piet'
+gem 'piet-binary'

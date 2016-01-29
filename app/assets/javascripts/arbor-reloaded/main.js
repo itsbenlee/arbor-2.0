@@ -60,3 +60,41 @@ function customScroll() {
     });
   }
 }//custom scroll
+
+// this functions needs a HashTable as param and deals with the disabled prop, Ale
+/**
+ * @param {HashTable} elements The HashTable of elements to deal with
+ * @param {boolean} elements The HashTable of elements to deal with
+ */
+function setDisabledState(elements, reversed) {
+  $.each(elements.keys(), function( index, value ) {
+    if (reversed) {
+      $(value).prop('disabled', !elements.getItem(value));
+    } else {
+      $(value).prop('disabled', elements.getItem(value));
+    }
+  });
+}
+
+// this functions needs a HashTable as param and deals with the visible prop, Ale
+/**
+ * @param {HashTable} elements The HashTable of elements to deal with
+ * @param {boolean} elements The HashTable of elements to deal with
+ */
+function setVisibleState(elements, reversed){
+  $.each(elements.keys(), function( index, value ) {
+    if (reversed) {
+      if (elements.getItem(value)) {
+        $(value).hide();
+      } else {
+        $(value).show();
+      }
+    } else {
+      if (elements.getItem(value)) {
+        $(value).show();
+      } else {
+        $(value).hide();
+      }
+    }
+  });
+}

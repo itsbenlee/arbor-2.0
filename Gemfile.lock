@@ -240,6 +240,7 @@ GEM
       mini_portile (~> 0.6.0)
     oauth (0.4.7)
     orm_adapter (0.5.0)
+    os (0.9.6)
     parallel (1.6.1)
     parallel_tests (1.9.0)
       parallel
@@ -249,6 +250,13 @@ GEM
       rack
       rake (>= 0.8.1)
     pg (0.18.3)
+    piet (0.2.2)
+      png_quantizator
+    piet-binary (0.2.0)
+      os (~> 0.9.6)
+      piet (>= 0.2.0)
+      png_quantizator
+    png_quantizator (0.2.1)
     poltergeist (1.6.0)
       capybara (~> 2.1)
       cliver (~> 0.3.1)
@@ -470,6 +478,8 @@ DEPENDENCIES
   parallel_tests
   passenger (= 5.0.15)
   pg
+  piet
+  piet-binary
   poltergeist
   public_activity
   rack-no_animations

@@ -268,3 +268,25 @@ $bottom-square-height: rem-calc(7);
     .data { margin-bottom: $bottom-square-height; }
   }//block wrapper
 }//blocks container
+
+// ALERTS
+.alert,
+.warning,
+.error {
+  border: 0;
+  left: 20%;
+  margin: rem-calc(10) auto;
+  padding: rem-calc(10 20);
+  position: absolute;
+  width: 60%;
+  z-index: 9999;
+
+  ul { font-size: rem-calc(14); }
+}
+
+.alert-box.error,
+.alert-box.alert {
+  background-color: $alert-color;
+}
+
+.alert-box.warning { background-color: $success-color; }

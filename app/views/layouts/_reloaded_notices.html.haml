@@ -1,0 +1,8 @@
+- if notice
+  .alert-box.warning{ data: { alert: '' } }
+    = notice
+    = link_to '×', '#', class: 'close'
+- if alert
+  .alert-box.error{ data: { alert: '' } }
+    = alert
+    = link_to '×', '#', class: 'close'
