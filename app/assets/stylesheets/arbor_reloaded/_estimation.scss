@@ -76,9 +76,10 @@ $estimation-margin: rem-calc(40);
       border: 0;
       color: $black;
       font-size: rem-calc(40);
+      height: rem-calc(50);
       line-height: rem-calc(50);
       margin: 0 auto;
-      padding: 0;
+      padding: 0 0 0 rem-calc(15);
       text-align: center;
     } // input
   } // edit wrapper
