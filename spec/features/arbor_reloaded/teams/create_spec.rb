@@ -24,4 +24,25 @@ feature 'Create a new team', js: true do
       expect(page).to have_content 'Test team'
     end
   end
+
+  context 'by a user that has a team with that name' do
+    let!(:team) { create :team, users: [user], name: 'Test team' }
+
+    scenario 'should not save the team' do
+      visit current_path
+
+      find('#new-team-button').trigger('click')
+      within 'form.new_team' do
+        fill_in(:team_name, with: 'Test team')
+        find('input#save-team').trigger('click')
+      end
+
+      within 'form.new_team' do
+        expect(page).to have_content('You are member of a team with that name, choose a different one.')
+      end
+
+      expect(Team.count).to eq(1)
+      expect(Team.first.id).to eq(team.id)
+    end
+  end
 end

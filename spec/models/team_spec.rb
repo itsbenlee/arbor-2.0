@@ -5,7 +5,7 @@ RSpec.describe Team, type: :model do
   subject    { team }
 
   it { should validate_presence_of :name }
-  it { should validate_uniqueness_of(:name) }
+  it { should validate_presence_of :owner }
   it { should have_many :users }
   it { should belong_to :owner }
   it { should have_many :projects }
