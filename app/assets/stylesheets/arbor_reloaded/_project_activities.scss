@@ -35,6 +35,8 @@
       float: left;
     }
 
+    .log-details { width: calc(100% - 80px); }
+
     .avatar-circle {
       @include border-radius(100%);
       @include inline-block;
@@ -59,6 +61,8 @@
 
       .log-entity { font-size: 12px; }
     }
+
+    .log-line-right { max-width: calc(100% - 200px); }
 
     h2 {
       background-color: $light-bg;
