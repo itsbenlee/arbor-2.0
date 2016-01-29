@@ -1,4 +1,6 @@
 en:
+  user_sessions:
+    login: 'Log in'
   sign_up:
     title: "Sign up"
     name: "Full name"
