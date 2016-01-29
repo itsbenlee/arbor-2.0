@@ -1,6 +1,24 @@
+// Hashtables, formed by [element_id, default_disabled_state/default_visible_state], Ale
+var interactiveTextFields = new HashTable({
+      '.user-name#user_full_name': true,
+      '.user-mail#user_email': true
+  }),
+    interactiveButtons = new HashTable({
+      '#edit-user-profile-btn': true,
+      '#save-user-profile': false,
+      '#cancel-btn': false
+  });
+
+
 $(document).ready(function(){
-  $('.user-name').prop('disabled', true);
-  $('.user-mail').prop('disabled', true);
+  if ($('.section-profile').length) {
+    //first we set te default state, Ale
+    setDisabledState(interactiveTextFields, false);
+    setVisibleState(interactiveButtons, false);
+
+    displayInitialWhenNoAvatar();
+    bindUpdateOnImageSelect();
+  }
 });
 
 function displayInitialWhenNoAvatar() {
@@ -10,30 +28,18 @@ function displayInitialWhenNoAvatar() {
 
 // firing update when avatar image selected, Ale
 function bindUpdateOnImageSelect() {
-  $("#edit-user-avatar-link").change(function () {
-      $('#save-user-profile').click();
+  $("#edit-user-avatar-link").change(function(){
+    $('#save-user-profile').click();
   });
 }
 
-function revealSaveCanelButtons() {
-  $("#edit-user-profile-btn").click(function () {
-      $('#save-user-profile').show();
-      $('#cancel-btn').show();
-      $('#edit-user-profile-btn').hide();
+$("#edit-user-profile-btn").click(function(){
+  setVisibleState(interactiveButtons, true);
+  setDisabledState(interactiveTextFields, true);
+  $('.user-name#user_full_name').focus();
+});
 
-      $('.user-name').prop('disabled', false);
-      $('.user-mail').prop('disabled', false);
-      $('.user-name').focus();
-  });
-}
-
-function hideSaveCanelButtons() {
-  $("#cancel-btn").click(function () {
-      $('#save-user-profile').hide();
-      $('#cancel-btn').hide();
-      $('#edit-user-profile-btn').show();
-
-      $('.user-name').prop('disabled', true);
-      $('.user-mail').prop('disabled', true);
-  });
-}
+$("#cancel-btn").click(function(){
+  setVisibleState(interactiveButtons, false);
+  setDisabledState(interactiveTextFields, false);
+});
