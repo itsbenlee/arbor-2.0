@@ -7,7 +7,7 @@
       %span.icn-delete
     = link_to '#', class: 'copy-project' do
       %span.icn-copy
-  = link_to '#', class: 'block-wrapper with-border radius' do
+  = link_to arbor_reloaded_team_members_path, { class: 'block-wrapper with-border radius', data: { reveal_id: 'team-members-modal', reveal_ajax: true }} do
     .data
       %p.truncate.title= team.name
       %p.members-amount

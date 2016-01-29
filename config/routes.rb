@@ -170,6 +170,7 @@ Railsroot::Application.routes.draw do
 
     resources :users, only: [:update, :show]
     resources :teams, only: [:index, :create]
+    get 'team_members', controller: :teams, action: :members
   end
 
   namespace :api_slack do
