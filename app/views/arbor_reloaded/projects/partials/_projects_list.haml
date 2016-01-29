@@ -34,10 +34,8 @@
     %h5= t('reloaded.project_dashboard.my_projects', count: projects.non_favorite.count)
   %ul.common-projects-list.white-blocks-list
     - projects.each do |project|
-      -# TODO add .not-member class to li if the project belongs to a team you're not in this will show the "Join as collaborator" btn, Mojo
       %li.white-block
         .right
-          = link_to t('reloaded.project_dashboard.join_project'), '#', class: 'button radius success tiny join-btn'
           = link_to '#', class: 'favorite-link favorite has-tip', aria: { haspopup: true }, title: t('reloaded.tooltips.favorite_project'), data: { url: arbor_reloaded_project_path(project), favorite: project.favorite, tooltip: '' } do
             %span.icn-favorite-empty
           = link_to '#', class: 'others' do
@@ -63,3 +61,18 @@
           %a.cancel= t('reloaded.project_dashboard.cancel')
           %a.delete-project
             %span.icn-delete
+  - current_user.teams.each do |team|
+    - if team.projects.count > 0
+      .title-breaker
+        %h5= team.name
+      %ul.common-projects-list.white-blocks-list
+        - team.projects.each do |project|
+          %li.white-block.not-member
+            .right
+              = link_to t('reloaded.project_dashboard.join_project'), '#', class: 'button radius success tiny join-btn'
+            .project.block-wrapper
+              .left
+                %p.title= project.name
+                %p.last-update
+                  = t('reloaded.project_dashboard.last_update')
+                  %span= project.updated_at.strftime("%b %d, %Y")
