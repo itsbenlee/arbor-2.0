@@ -12,7 +12,7 @@ $('#project-members-modal').on('opened.fndtn.reveal', function() {
 
   bindActionsToButton();
   bindActionsOnRemovalCheckboxes();
-  displayInitialWhenNoAvatar();
+  modalDisplayInitialWhenNoAvatar();
   customScroll();
 
   $(newMemberMailTextId).keyup(function(e) {
@@ -36,7 +36,7 @@ function bindActionsToButton() {
   });
 }
 
-function displayInitialWhenNoAvatar() {
+function modalDisplayInitialWhenNoAvatar() {
   $('#project-members-modal .user-item.invited').has('.avatar-circle').each(function(index, currentValue) {
     var initial = $(currentValue).children('.user-data').children('.user-mail').text().trim().substring(0,1);
     $(currentValue).children('.avatar-circle').text(initial.toUpperCase());
