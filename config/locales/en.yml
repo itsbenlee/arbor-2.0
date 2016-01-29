@@ -77,7 +77,7 @@ en:
     add_members: "Add Member"
   project:
     delete_project: 'Delete project'
-    copy_project: 'Copy project'
+    copy_project: 'Duplicate project'
     delete_confirmation: |
       This project will be deleted permanently.
       Are you sure you want to continue?
@@ -222,7 +222,7 @@ en:
     navigation:
       menu: 'Menu'
       projects: 'Projects'
-      people: 'People'
+      people: 'Teams'
       change_password: 'Change Password'
       welcome: 'Welcome,'
       profile: 'Account Profile'
@@ -292,7 +292,7 @@ en:
       favorite_project: 'Favorite project'
       unfavorite_project: 'Unfavorite project'
       delete_project: 'Delete project'
-      copy_project: 'Copy project'
+      copy_project: 'Duplicate project'
       delete_story: 'Delete story'
       delete_stories: 'Delete stories'
       copy_story: 'Copy story'
