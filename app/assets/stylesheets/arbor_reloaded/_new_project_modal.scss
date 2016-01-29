@@ -21,9 +21,16 @@
   }
 
   .team-select {
-    background: transparent right rem-calc(10) bottom rem-calc(15) image-url('icons/arrow-dropdown.png')  no-repeat;
-    border: 0;
-    border-bottom: 2px dashed $black-10;
-    font-size: rem-calc(18);
+    h4 {
+      font-weight: $font-weight-normal;
+      margin-top: rem-calc(20);
+    }
+
+    select {
+      background: transparent right rem-calc(10) bottom rem-calc(15) image-url('icons/arrow-dropdown.png')  no-repeat;
+      border: 0;
+      border-bottom: 2px dashed $black-10;
+      font-size: rem-calc(18);
+    } // select
   }
 }//project modal

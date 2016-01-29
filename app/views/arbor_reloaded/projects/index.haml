@@ -19,12 +19,8 @@
         %li.errors
           *
           = msg
-    %select.team-select
-      %option{disabled: 'disabled', selected: 'selected'}
-        = t('reloaded.create_project.select_placeholder')
-      %option Myself
-      %option Grape
-      %option Watermelon
-      %option Peach
+    .team-select
+      %h4= t('reloaded.create_project.team_title')
+      = f.select(:team, options_for_select(current_user.teams.map(&:name).sort_by(&:downcase)), include_blank: '(none)')
     .action
-      = f.submit t('create_project.save_button'), class: 'button radius tiny'
+      = f.submit t('reloaded.create_project.save_button'), class: 'button radius tiny'

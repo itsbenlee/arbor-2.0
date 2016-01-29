@@ -7,4 +7,8 @@ FactoryGirl.define do
     hypotheses                  { [] }
     copies                      { 0 }
   end
+
+  trait :with_team do
+    team { create :team }
+  end
 end
