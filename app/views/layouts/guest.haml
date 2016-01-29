@@ -24,6 +24,8 @@
       = javascript_include_tag 'vendor/modernizr'
       = csrf_meta_tags
       = javascript_include_tag '//use.typekit.net/iac3ber.js'
+      :javascript
+        try{Typekit.load();}catch(e){}
     - else
       = stylesheet_link_tag 'application'
       = javascript_include_tag 'vendor/modernizr'

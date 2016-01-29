@@ -1,14 +1,15 @@
-#reset-password.row
-  .arbor-logo
-    = image_tag('arbor-logo.svg')
-  .reset-form.medium-8.large-6.medium-centered.columns
-    %h2
-      = t('recover_password.forgot')
-    = form_for(resource, as: resource_name, url: password_path(resource_name),
-    html: { method: :post }) do |f|
-      = devise_error_messages!
-      .field
-        = image_tag('icons/mail-icon.svg', class: 'icon')
-        = f.email_field :email, autofocus: true, required: true, placeholder: t('email_address'), class: 'with-icon radius login'
-      .actions
-        = f.submit t('reset_password'), class: 'button radius success small'
+#user-session
+  .row
+  #reset-password.small-12.medium-8.large-6.small-centered.columns
+    .arbor-logo
+      = image_tag('arbor-logo.svg')
+    .reset-form.medium-8.large-6.medium-centered.columns
+      .title-breaker
+        %h5= t('recover_password.forgot')
+      = form_for(resource, as: resource_name, url: password_path(resource_name),
+      html: { method: :post }) do |f|
+        = devise_error_messages!
+        .field
+          = f.email_field :email, autofocus: true, required: true, placeholder: t('email_address'), class: 'with-icon radius login'
+        .actions
+          = f.submit t('reset_password'), class: 'button radius success small'
