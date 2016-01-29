@@ -192,6 +192,9 @@ GEM
       ruby_parser (~> 3.5)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
+    httparty (0.13.7)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     httpclient (2.6.0.1)
     i18n (0.7.0)
     i18n-js (3.0.0.rc11)
@@ -223,6 +226,7 @@ GEM
     mini_portile (0.6.2)
     minitest (5.8.0)
     multi_json (1.11.2)
+    multi_xml (0.5.5)
     mustache-js-rails (2.0.2)
       railties (>= 3.1, <= 5.0)
     net-scp (1.2.1)
@@ -452,6 +456,7 @@ DEPENDENCIES
   gravtastic
   haml-rails
   http-cookie
+  httparty
   httpclient
   i18n-js
   indefinite_article

@@ -175,5 +175,7 @@ Railsroot::Application.routes.draw do
 
   namespace :api_slack do
     resources :user_stories, only: [:create]
+
+    resources :channels, only: [:index]
   end
 end
