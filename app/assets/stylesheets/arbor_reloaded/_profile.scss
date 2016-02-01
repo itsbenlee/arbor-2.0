@@ -8,12 +8,11 @@ $profile-margin: $user-header-padding;
 
 .user-header {
   margin-top: rem-calc(55);
-  text-align: center;
 
   .user-name {
     color: $black-50;
     font-size: $h2-font-size;
-    width: 35%;
+    width: 100%;
   }
 
   .user-avatar {
@@ -70,10 +69,28 @@ $profile-margin: $user-header-padding;
 .user-header .user-name,
 .section-profile .user-mail {
   border: 0;
-  margin: $user-header-padding auto;
+  border-bottom: 1px dashed $black-20;
+  margin: 0 auto;
+  padding-bottom: $user-header-padding;
   text-align: center;
 
   &:disabled { background: none; }
+}
+
+.profile,
+.mail-title {
+  color: $black-20;
+  font-size: rem-calc(14);
+  font-weight: $font-weight-normal;
+  text-transform: uppercase;
+}
+
+.mail-title { margin-left: $user-header-padding; }
+
+.field-title {
+  margin: $user-header-padding auto;
+  text-align: left;
+  width: 40%;
 }
 
 //   PROFILE VIEW
@@ -91,23 +108,10 @@ $profile-margin: $user-header-padding;
   #save-user-profile,
   #cancel-btn { display: none; }
 
-  .profile,
-  .mail-title {
-    color: $black-20;
-    font-size: rem-calc(14);
-    font-weight: $font-weight-normal;
-    text-transform: uppercase;
-  }
-
   .user-mail {
     color: $black-50;
     font-size: rem-calc(18);
-    width: 50%;
-  }
-
-  .mail-title {
-    font-size: rem-calc(12);
-    margin-top: $profile-margin;
+    width: 100%;
   }
 
   .cancel-link {
@@ -121,6 +125,5 @@ $profile-margin: $user-header-padding;
 } // profile section
 
 .editable-field {
-  &:focus,
-  &:active { border-bottom: 1px dashed lighten($primary-nav-color, 20%); }
+  &:focus { border-bottom: 1px dashed lighten($primary-nav-color, 20%); }
 }
