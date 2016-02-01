@@ -4,7 +4,7 @@ $estimation-margin: rem-calc(40);
 .edit-wrapper h4 { font-weight: normal; }
 
 .estimation {
-  .title-breaker &:hover { cursor: pointer; }
+  .title-breaker h5:hover { cursor: pointer; }
 
   .icn-settings {
     background-color: $body-bg;
