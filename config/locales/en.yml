@@ -285,7 +285,7 @@ en:
       confirm_button: 'Copy stories'
       cancel_button: 'Cancel'
     users:
-      profile: 'Profile'
+      name: 'Name'
       mail: 'Email'
       edit: 'Edit'
       save: 'Save'
