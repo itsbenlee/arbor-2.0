@@ -65,6 +65,17 @@
       margin: 0;
     }
 
+    .circle-checkbox {
+      background-color: $white;
+      right: 0;
+      top: 30%;
+
+      &::after {
+        content: '+';
+        right: rem-calc(7);
+      }
+    }
+
     .user-mail {
       @include ellipsis;
       margin-top: rem-calc(5);
