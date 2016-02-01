@@ -15,6 +15,6 @@ $( document ).ready(function() {
 });
 
 function displayInitialWhenNoAvatarTeams() {
-  var initial = $('#user_full_name').val().trim().substring(0,1);
+  var initial = $('#user_full_name').text().trim().substring(0,1);
   $('#avatar-circle').text(initial.toUpperCase());
 }
