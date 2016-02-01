@@ -1,6 +1,9 @@
-%form
-  %input{ class: 'new-member-mail radius', |
+= form_for team, url:  arbor_reloaded_team_path(team), html: { id: 'edit_project' }  do |f|
+  = f.text_field :name, class: 'hidden-element'
+  %input{ id: "member_#{team.users.count}", |
+    class: 'new-member-mail radius', |
+    name: "team[member_#{team.users.count}]", |
     type: "email", |
     required: true, |
-    placeholder: t('reloaded.team.modal.mail_invite')}
-  %input{type: 'submit', class: 'hidden-element', id: 'submit-modal-form'}
+    placeholder: t('reloaded.project_members.mail_invite')}
+  = f.submit id: 'submit-modal-form', class: 'hidden-element'
