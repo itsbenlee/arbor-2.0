@@ -214,6 +214,7 @@ en:
       save: 'Create Team'
       modal:
         mail_invite: 'Invite members by email address'
+      name_uniqueness: 'You are member of a team with that name, choose a different one.'
     estimation:
       separator_title: 'Estimation'
       save_button: 'Save Changes'

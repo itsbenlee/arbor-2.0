@@ -3,22 +3,16 @@ module ArborReloaded
     layout 'application_reload'
     before_action :authenticate_user!
 
-    def new
-      render layout: 'application_reload'
-    end
-
     def index
       @new_team = Team.new
       @teams = current_user.teams
     end
 
     def create
-      team = Team.new(name: team_params[:name], owner: current_user)
-      team.users.push(current_user)
-      if team.save
-        @teams = current_user.teams
+      if current_user.teams.map(&:name).include?(team_params[:name])
+        @errors = [t('reloaded.team.name_uniqueness')]
       else
-        @errors = team.errors.full_messages
+        create_team
       end
     end
 
@@ -27,6 +21,16 @@ module ArborReloaded
     end
 
     private
+
+    def create_team
+      team = Team.new(name: team_params[:name], owner: current_user)
+      team.users.push(current_user)
+      if team.save
+        @teams = current_user.reload.teams
+      else
+        @errors = team.errors.full_messages
+      end
+    end
 
     def team_params
       params.require(:team).permit(:name)
