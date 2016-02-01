@@ -6,7 +6,7 @@
       - projects.favorite.each do |project|
         %li.favorite-project.white-block
           .right
-            = link_to '#', class: 'favorite-link favorite has-tip', title: t('reloaded.tooltips.unfavorite_project'), aria: { haspopup: true }, data: { url: arbor_reloaded_project_path(project), favorite: project.favorite, tooltip: '' } do
+            = link_to '#', class: 'favorite-link favorite has-tip', title: t('reloaded.tooltips.favorite_project'), aria: { haspopup: true }, data: { url: arbor_reloaded_project_path(project), favorite: project.favorite, tooltip: '' } do
               %span.icn-favorite
             = link_to '#', class: 'others' do
               &#149&#149&#149

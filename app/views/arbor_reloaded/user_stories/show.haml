@@ -4,11 +4,10 @@
     .story-actions
       = link_to '···', '#', class: 'story-actions-link'
       = link_to '', '#', class: 'icn-delete has-tip tip-left', aria: { haspopup: true }, data: { tooltip: '' }, title: t('reloaded.tooltips.delete_story')
-      = link_to '', '#', method: :post, class: 'icn-archive has-tip tip-left', aria: { haspopup: true }, data: { tooltip: '' }, title: t('reloaded.tooltips.archive_story')
+      = link_to '', '#', method: :post, class: 'icn-archive hidden-element has-tip tip-left', aria: { haspopup: true }, data: { tooltip: '' }, title: t('reloaded.tooltips.archive_story')
     %h4
       %span.story-points{ data: { id: @user_story.id } }= @user_story.estimated_points ||= '?'
-      %select.fibonacci-select{ id: 'fibonacci-dropdown',
-      data: { id: @user_story.id, url: arbor_reloaded_user_story_path(@user_story) } }
+      %select.fibonacci-select{ id: 'fibonacci-dropdown', class: 'has-tip', aria: { haspopup: true }, title: t('reloaded.tooltips.estimate'), data: { id: @user_story.id, url: arbor_reloaded_user_story_path(@user_story), tooltip: '' } }
         %option{ value: '?' } ?
         %option{ value: '1', selected: (@user_story.estimated_points == 1) } 1
         %option{ value: '2', selected: (@user_story.estimated_points == 2) } 2
