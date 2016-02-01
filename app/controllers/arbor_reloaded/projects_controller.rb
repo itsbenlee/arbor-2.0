@@ -3,11 +3,18 @@ module ArborReloaded
     layout false, only: :members
     before_action :load_project,
                   only: [:show, :edit, :update, :destroy,
-                         :log, :export_to_spreadhseet]
+                         :log]
     def index
       scope = params[:project_order] || 'recent'
       @projects = @projects.send(scope)
+      @new_project = Project.new
       render layout: 'application_reload'
+    end
+
+    def create
+      @new_project = Project.new(project_params)
+      assign_team
+      assist_creation
     end
 
     def list_projects
@@ -77,12 +84,6 @@ module ArborReloaded
       end
     end
 
-    def create
-      @project = Project.new(project_params)
-      @project.owner = current_user
-      assist_creation
-    end
-
     def order_stories
       project = Project.includes(:user_stories).find(params[:project_id])
       project_services = ArborReloaded::ProjectServices.new(project)
@@ -116,8 +117,7 @@ module ArborReloaded
     def copy
       project =
         Project
-        .includes(user_stories: [:acceptance_criterions, :constraints],
-                  hypotheses: [:user_stories, :goals])
+        .includes(user_stories: [:acceptance_criterions, :constraints])
         .find(params[:project_id])
 
       project_services = ArborReloaded::ProjectServices.new(project)
@@ -126,12 +126,22 @@ module ArborReloaded
       redirect_to :back
     end
 
-    def export_to_spreadhseet
-      send_data(
-        SpreadsheetExporterService.export(@project), disposition: 'inline')
+    private
+
+    def assign_team
+      selected_team_name = team_params[:team]
+      if selected_team_name.blank?
+        @new_project.owner = current_user
+      else
+        team = Team.find_by(name: selected_team_name)
+        @new_project.owner = team.owner
+        @new_project.team = team
+      end
     end
 
-    private
+    def team_params
+      params.require(:project).permit(:team)
+    end
 
     def json_list
       response = ArborReloaded::ProjectServices.new(@project)
@@ -140,6 +150,7 @@ module ArborReloaded
     end
 
     def html_update
+      @new_project = @project
       assign_associations
       if @project.save
         redirect_to :back
@@ -155,18 +166,19 @@ module ArborReloaded
     end
 
     def assist_creation
-      if @project.save
-        @project.create_activity :create_project
+      if @new_project.save
+        @new_project.create_activity :create_project
         assign_associations
-        redirect_to arbor_reloaded_project_user_stories_path(@project)
+        redirect_to arbor_reloaded_project_user_stories_path(@new_project)
       else
-        @errors = @project.errors.full_messages
-        render :new, status: 400
+        render 'arbor_reloaded/projects/index', layout: 'application_reload'
       end
     end
 
     def project_params
-      params.require(:project).permit(:name, :favorite)
+      params.require(:project).permit(:name,
+        :favorite, :velocity, :cost_per_week,
+        :slack_token, :slack_channel_id)
     end
 
     def load_project
@@ -180,9 +192,9 @@ module ArborReloaded
     end
 
     def assign_associations
-      @project.owner ||= current_user
+      @new_project.owner ||= current_user
       ProjectMemberServices.new(
-        @project, current_user, member_emails
+        @new_project, current_user, member_emails
       ).invite_members
     end
 

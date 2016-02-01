@@ -25,6 +25,7 @@ class UserStory < ActiveRecord::Base
   scope :ordered, -> { order(order: :asc) }
   scope :not_archived, -> { where(archived: false) }
   scope :archived, -> { where(archived: true) }
+  scope :backlog_ordered, -> { order(backlog_order: :desc) }
 
   def self.total_points(user_stories)
     user_stories.map(&:estimated_points).compact.sum
@@ -101,6 +102,13 @@ class UserStory < ActiveRecord::Base
   def copy_associations(replica_id)
     copy_criterions(replica_id)
     copy_constraints(replica_id)
+    copy_comments(replica_id)
+  end
+
+  def copy_comments(replica_id)
+    comments.each do |comment|
+      comment.copy_comment(replica_id)
+    end
   end
 
   def copy_criterions(replica_id)

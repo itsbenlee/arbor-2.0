@@ -11,5 +11,6 @@ CarrierWave.configure do |config|
     config.cache_dir = "#{Rails.root}/tmp/uploads"
   else
     config.storage = :file
+    config.enable_processing = false
   end
 end

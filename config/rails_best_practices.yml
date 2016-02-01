@@ -30,6 +30,9 @@ RemoveTrailingWhitespaceCheck: { }
 RemoveUnusedMethodsInControllersCheck: {
   except_methods: [
     RegistrationsController#new,
+    RegistrationsController#after_sign_in_path_for,
+    SessionsController#new,
+    SessionsController#after_sign_in_path_for,
     ProjectsController#order_stories,
     HypothesesController#list_stories,
     ProjectsController#copy,

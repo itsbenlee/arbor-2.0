@@ -1,0 +1,86 @@
+$estimation-margin: rem-calc(40);
+
+.estimation-wrapper h4,
+.edit-wrapper h4 { font-weight: normal; }
+
+.estimation {
+  .title-breaker &:hover { cursor: pointer; }
+
+  .icn-settings {
+    background-color: $body-bg;
+    color: $black-20;
+    float: right;
+    line-height: rem-calc(24);
+    padding-left: rem-calc(10);
+
+    &:hover { color: $black-30; }
+  }
+
+  .estimation-wrapper {
+    margin: 0 auto;
+
+    @media #{$medium-up} { width: 75%; }
+
+    .estimation-item {
+      @include border-radius($global-radius);
+      background-color: $white;
+      border: 1px solid $border-color;
+      padding: 0;
+      text-align: center;
+      text-transform: uppercase;
+
+      p { margin-bottom: 0; }
+
+      .title {
+        border-bottom: 1px solid $border-color;
+        color: $black-80;
+        font-size: rem-calc(12);
+        padding: $estimation-margin / 2;
+      }
+
+      .cost,
+      .value { height: rem-calc(140); }
+
+      .value p { font-size: rem-calc(88); }
+
+      .cost p {
+        @include translateY(50%);
+        font-size: rem-calc(40);
+      }
+    } // item box
+  }
+} // estimation
+
+//  ESTIMATION MODAL
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+#edit-estimation-modal {
+  padding: 0;
+  text-align: center;
+  width: rem-calc(400);
+
+  h5 { border-bottom: 1px solid $black-20;}
+  .estimation-item { text-align: center; }
+
+  .title {
+    font-size: rem-calc(12);
+    text-transform: uppercase;
+  }
+
+  .edit-wrapper {
+    margin: $estimation-margin 0;
+    width: auto;
+
+    input {
+      background-color: $light-bg;
+      border: 0;
+      color: $black;
+      font-size: rem-calc(40);
+      height: rem-calc(50);
+      line-height: rem-calc(50);
+      margin: 0 auto;
+      padding: 0 0 0 rem-calc(15);
+      text-align: center;
+    } // input
+  } // edit wrapper
+} // modal

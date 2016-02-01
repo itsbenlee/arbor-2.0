@@ -60,6 +60,7 @@ NestedIterators:
     UserStoriesController#update,
     UserStoriesController#export,
     SpreadsheetExporterService#self.export,
+    UserStoryService#destroy_stories
   ]
   max_allowed_nesting: 1
   ignore_iterators: []
@@ -134,6 +135,8 @@ UnusedParameters:
 UtilityFunction:
   enabled: true
   exclude: [
+    ProjectHelper#total_weeks,
+    ProjectHelper#total_cost,
     UserStoriesHelper#format_story_points,
     ApplicationHelper#meta_title,
     ApplicationHelper#meta_description,

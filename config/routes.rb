@@ -93,7 +93,8 @@ Railsroot::Application.routes.draw do
 
   get 'export/:id/spreadhseet', to: 'projects#export_to_spreadhseet'
 
-  devise_for :users, controllers: { registrations: 'registrations' }
+  devise_for :users,
+    controllers: { registrations: 'registrations', sessions: 'sessions' }
 
   namespace :arbor_reloaded do
     root to: 'projects#index'
@@ -125,7 +126,7 @@ Railsroot::Application.routes.draw do
         resources :acceptance_criterions, only: [:create, :update, :destroy]
         resources :constraints, only: [:create, :update]
         resources :tags, only: [:create, :index]
-        resources :comments, only: [:create]
+        resources :comments, only: [:create, :destroy]
       end
 
       get 'user_stories/export',
@@ -162,9 +163,23 @@ Railsroot::Application.routes.draw do
     end
 
     post 'user_stories/copy', controller: :user_stories, action: :copy
+
+    delete 'user_stories/destroy_stories',
+      controller: :user_stories,
+      action: :destroy_stories
+
+    resources :users, only: [:update, :show]
+    resources :teams, only: [:index, :create]
+    get 'team_members', controller: :teams, action: :members
+
+    put 'users/ajax_update',
+      controller: :users,
+      action: :ajax_update
   end
 
   namespace :api_slack do
     resources :user_stories, only: [:create]
+
+    resources :channels, only: [:index]
   end
 end

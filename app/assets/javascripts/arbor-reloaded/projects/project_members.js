@@ -13,6 +13,7 @@ $('#project-members-modal').on('opened.fndtn.reveal', function() {
   bindActionsToButton();
   bindActionsOnRemovalCheckboxes();
   displayInitialWhenNoAvatar();
+  customScroll();
 
   $(newMemberMailTextId).keyup(function(e) {
    if($(this).val() === '') {

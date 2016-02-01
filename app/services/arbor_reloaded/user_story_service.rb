@@ -33,6 +33,14 @@ module ArborReloaded
       user_stories.each { |story| story.copy_in_project(@project.id, nil) }
     end
 
+    def destroy_stories(user_stories)
+      @common_response.work do
+        user_stories
+          .select { |story| !@project.user_stories.find(story).destroy }
+          .map { |story| "Error destroying user_story: #{story}" }
+      end
+    end
+
     private
 
     def assign_response_and_activity(user_story, current_user)

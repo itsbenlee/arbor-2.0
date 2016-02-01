@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151214192944) do
+ActiveRecord::Schema.define(version: 20160128140951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "pg_stat_statements"
 
   create_table "acceptance_criterions", force: :cascade do |t|
     t.text     "description"
@@ -161,10 +160,17 @@ ActiveRecord::Schema.define(version: 20151214192944) do
     t.integer  "next_story_number",             default: 1,     null: false
     t.integer  "copies",                        default: 0
     t.boolean  "favorite",                      default: false
+    t.string   "slack_channel_id"
+    t.string   "slack_token"
+    t.integer  "velocity"
+    t.integer  "cost_per_week"
+    t.boolean  "is_template",                   default: false
+    t.integer  "team_id"
   end
 
   add_index "projects", ["name"], name: "index_projects_on_name", using: :btree
   add_index "projects", ["owner_id"], name: "index_projects_on_owner_id", using: :btree
+  add_index "projects", ["team_id"], name: "index_projects_on_team_id", using: :btree
 
   create_table "tags", force: :cascade do |t|
     t.string   "name"
@@ -182,6 +188,24 @@ ActiveRecord::Schema.define(version: 20151214192944) do
 
   add_index "tags_user_stories", ["tag_id"], name: "index_tags_user_stories_on_tag_id", using: :btree
   add_index "tags_user_stories", ["user_story_id"], name: "index_tags_user_stories_on_user_story_id", using: :btree
+
+  create_table "team_users", force: :cascade do |t|
+    t.integer "team_id", null: false
+    t.integer "user_id", null: false
+  end
+
+  add_index "team_users", ["team_id"], name: "index_team_users_on_team_id", using: :btree
+  add_index "team_users", ["user_id"], name: "index_team_users_on_user_id", using: :btree
+
+  create_table "teams", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "owner_id",   null: false
+  end
+
+  add_index "teams", ["id"], name: "index_teams_on_id", using: :btree
+  add_index "teams", ["owner_id"], name: "index_teams_on_owner_id", using: :btree
 
   create_table "user_stories", force: :cascade do |t|
     t.string   "role",             limit: 100,                    null: false
@@ -218,6 +242,8 @@ ActiveRecord::Schema.define(version: 20151214192944) do
     t.datetime "updated_at",                             null: false
     t.string   "full_name"
     t.boolean  "admin",                  default: false
+    t.string   "slack_id"
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -227,5 +253,8 @@ ActiveRecord::Schema.define(version: 20151214192944) do
   add_foreign_key "attachments", "projects"
   add_foreign_key "comments", "user_stories"
   add_foreign_key "invites", "projects"
+  add_foreign_key "projects", "teams"
   add_foreign_key "tags", "projects"
+  add_foreign_key "team_users", "teams"
+  add_foreign_key "team_users", "users"
 end

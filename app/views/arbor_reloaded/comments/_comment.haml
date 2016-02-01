@@ -1,5 +1,8 @@
 %li
   %span.author= comment.user_name
   %span.date= comment.created_at.to_s
-  = link_to '', '#', class: 'icn-delete'
+  - if current_user == comment.user
+    .delete-comment
+      = link_to arbor_reloaded_comment_path(comment), remote: true, method: :delete do
+        %span.icn-delete
   %span.comment= comment.comment

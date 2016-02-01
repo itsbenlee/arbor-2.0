@@ -1,0 +1,75 @@
+= link_to '×', '#', class: 'close-reveal-modal'
+%h5 Team title
+.team-members
+  .user-item.special-item
+    .picture{ style: "background-image: url(#{ image_path('test-user.png') });" }
+    .user-data
+      %p.user-name
+        %span.user-type-tag= t("reloaded.project_members.owner")
+        Napolen
+      %p.user-mail
+        napoleon@napoleon.com
+  %ul.show-project-data.custom-scroll
+    %li.user-item
+      .picture{ style: "background-image: url(#{ image_path('test-user.png') });" }
+      .user-data
+        %p.user-name
+          Damian Cardozo
+        %p.user-mail
+          damian.cardozo@damian.com
+    %li.user-item.invited
+      .picture.avatar-circle
+      .user-data
+        %p
+          %span.user-type-tag
+            = t("reloaded.project_members.user_invited")
+        %p.user-mail
+          mojo@mojo.com
+    %li.user-item
+      .picture{ style: "background-image: url(#{ image_path('test-user.png') });" }
+      .user-data
+        %p.user-name
+          Damian Cardozo
+        %p.user-mail
+          damian.cardozo@damian.com
+    %li.user-item.invited
+      .picture.avatar-circle
+      .user-data
+        %p
+          %span.user-type-tag
+            = t("reloaded.project_members.user_invited")
+        %p.user-mail
+          mojo@mojo.com
+    %li.user-item
+      .picture{ style: "background-image: url(#{ image_path('test-user.png') });" }
+      .user-data
+        %p.user-name
+          Damian Cardozo
+        %p.user-mail
+          damian.cardozo@damian.com
+    %li.user-item.invited
+      .picture.avatar-circle
+      .user-data
+        %p
+          %span.user-type-tag
+            = t("reloaded.project_members.user_invited")
+        %p.user-mail
+          mojo@mojo.com
+    %li.user-item
+      .picture{ style: "background-image: url(#{ image_path('test-user.png') });" }
+      .user-data
+        %p.user-name
+          Damian Cardozo
+        %p.user-mail
+          damian.cardozo@damian.com
+    %li.user-item.invited
+      .picture.avatar-circle
+      .user-data
+        %p
+          %span.user-type-tag
+            = t("reloaded.project_members.user_invited")
+        %p.user-mail
+          mojo@mojo.com
+.modal-footer
+  = render 'arbor_reloaded/teams/partials/invite_members'
+  = link_to t("reloaded.project_members.close"),'#', class: 'button radius small', id: 'team-modal-footer-btn'

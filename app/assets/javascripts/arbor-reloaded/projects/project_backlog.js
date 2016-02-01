@@ -32,9 +32,10 @@ function bindReorderStories() {
 function setStoriesOrder() {
   var newStoriesOrder = { stories: [] },
       $updatedStoriesOnList = $('li.backlog-user-story');
+      length = $updatedStoriesOnList.length + 1;
 
   $.each($updatedStoriesOnList, function(index) {
-    var story = { id: $(this).data('id'), backlog_order: index + 1 };
+    var story = { id: $(this).data('id'), backlog_order: length - index };
     newStoriesOrder.stories.push(story);
   });
 
@@ -69,4 +70,5 @@ function backlogGeneralBinds() {
   showBulkMenu();
   bindReorderStories();
   autogrowInputs();
+  checkEstimation();
 }

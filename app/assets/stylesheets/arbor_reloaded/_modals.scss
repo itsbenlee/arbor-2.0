@@ -8,7 +8,8 @@ $modal-padding: $modal-padding-top $modal-sides-padding;
 $modal-close-offset: rem-calc(20);
 
 #copy-stories-modal,
-#project-modal {
+#project-modal,
+#team-modal {
   @extend .text-center;
 
   padding: $modal-padding;
@@ -64,7 +65,6 @@ $modal-close-offset: rem-calc(20);
     background-color: $black-10;
     max-height: rem-calc(242);
     overflow: hidden;
-    overflow-y: scroll;
   }
 
   .modal-footer {
@@ -72,10 +72,4 @@ $modal-close-offset: rem-calc(20);
     padding: $modal-close-offset $modal-sides-padding 0;
     text-align: center;
   }
-
-  .secondary {
-    background-color: $black-10;
-    color: $black-80;
-    margin-left: $button-margin-bottom;
-  } // secondary btn
 }//reveal modal

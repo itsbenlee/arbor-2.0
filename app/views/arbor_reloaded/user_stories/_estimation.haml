@@ -1,0 +1,28 @@
+.title-breaker
+  %h5
+    = t('reloaded.estimation.separator_title')
+    (
+    = total_points
+    )
+  = link_to '', '#', class: 'icn-settings has-tip', data: { reveal_id: 'edit-estimation-modal', tooltip: '' }, aria: { haspopup: true }, title: t('reloaded.tooltips.update_estimation')
+.estimation-wrapper
+  %ul.small-block-grid-1.large-block-grid-3
+    %li
+      .estimation-item
+        %h4.title= t('reloaded.estimation.total_points')
+        .value
+          %p.total_points= total_points
+    %li
+      .estimation-item
+        %h4.title= t('reloaded.estimation.total_cost')
+        .cost
+          %p.total_cost
+            $
+            = total_cost(project)
+    %li
+      .estimation-item
+        %h4.title= t('reloaded.estimation.total_weeks')
+        .value
+          %p.total_weeks
+            = total_weeks(project)
+= render 'arbor_reloaded/user_stories/estimation_modal', project: project

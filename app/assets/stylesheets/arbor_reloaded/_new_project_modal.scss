@@ -1,12 +1,36 @@
 // NEW PROJECT MODALS
 // - - - - - - - - - - - - - - - - - - - - - - - - -
-
 #project-modal {
   .project-name {
     font-size: rem-calc(14);
-    margin: rem-calc(35) auto;
+    margin: rem-calc(35) auto rem-calc(10);
     text-align: center;
 
     @include input-placeholder { font-size: rem-calc(14); }
   }//project name input
+
+  .errors {
+    color: $canvas-color;
+    font-family: $font-family-sans-serif;
+    font-size: rem-calc(14);
+    margin-bottom: rem-calc(30);
+  }
+
+  &.with-errors {
+    .project-name { border-color: $canvas-color;}
+  }
+
+  .team-select {
+    h4 {
+      font-weight: $font-weight-normal;
+      margin-top: rem-calc(20);
+    }
+
+    select {
+      background: transparent right rem-calc(10) bottom rem-calc(15) image-url('icons/arrow-dropdown.png')  no-repeat;
+      border: 0;
+      border-bottom: 2px dashed $black-10;
+      font-size: rem-calc(18);
+    } // select
+  }
 }//project modal

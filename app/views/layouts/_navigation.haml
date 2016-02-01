@@ -16,10 +16,9 @@
     / Right Nav Section
     %ul.right
       %ul
-        %li
-          = link_to t('reloaded.navigation.projects'), arbor_reloaded_root_path
-        %li
-          %a{:href => 'mailto:feedback@getarbor.io', :target => '_top'}= t('reloaded.navigation.help')
+        %li= link_to t('reloaded.navigation.projects'), arbor_reloaded_root_path
+        %li= link_to t('reloaded.navigation.help'), 'mailto:feedback@getarbor.io', target: '_top', class: 'hidden-element'
+        %li= link_to t('reloaded.navigation.people'), arbor_reloaded_teams_path
         %li.hide
           %a{:href => "#"} FAQ
         - if current_project
@@ -36,9 +35,9 @@
               !
           %ul.dropdown
             %li
-              = link_to '#' do
-                = t('reloaded.navigation.settings')
-                %span.icn-settings
+              = link_to arbor_reloaded_user_path(current_user) do
+                = t('reloaded.navigation.profile')
+                %span.icn-user
             %li
               = link_to destroy_user_session_path, method: :delete do
                 = t('backlog.logout')
