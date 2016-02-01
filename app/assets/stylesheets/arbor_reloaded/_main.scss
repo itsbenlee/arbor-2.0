@@ -24,7 +24,6 @@ input { outline: 0; }
   &::after {
     @include opacity(0);
     @include transform(rotate(45deg) translate(-50%, -50%));
-    color: $black-50;
     content: '';
     font-size: rem-calc(14);
     font-weight: $font-weight-bold;
