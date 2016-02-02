@@ -1,6 +1,13 @@
 //   TEAMS VIEW
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
+.avatar-circle {
+  color: $white;
+  font-size: rem-calc(50);
+  position: absolute;
+  top: 0;
+}
+
 .section-people {
   $animation-delay: .40s;
 
