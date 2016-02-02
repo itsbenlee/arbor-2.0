@@ -16,7 +16,7 @@
       This is a paragraph. Paragraphs are preset with a font size, line height and spacing to match the overall vertical rhythm. To show what a paragraph looks like this needs a little more content -- so, did you know thads.
     .field-title
       %h5.mail-title= t('reloaded.users.mail')
-      = f.text_field :email, class: 'user-mail editable-field'
+      = f.email_field :email, class: 'user-mail editable-field'
     = link_to t('reloaded.users.edit'),'#', class:  'button radius tiny', id: 'edit-user-profile-btn'
     = f.submit t('reloaded.users.save'), class: 'button radius tiny ', id: 'save-user-profile'
     = link_to t('reloaded.users.cancel_btn'), '#', class: 'button radius secondary tiny', id: 'cancel-btn'

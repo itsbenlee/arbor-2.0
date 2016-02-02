@@ -125,6 +125,14 @@ $profile-margin: $user-header-padding;
   .button { margin-top: $profile-margin * 2; }
 } // profile section
 
+.section-profile,
+.user-header {
+  input {
+    [type="email"],
+    [type="text"] { background-color: transparent; }
+  }
+}
+
 .editable-field {
   &:focus { border-bottom: 1px dashed lighten($primary-nav-color, 20%); }
 }
