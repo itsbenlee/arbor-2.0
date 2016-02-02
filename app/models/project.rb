@@ -25,6 +25,7 @@ class Project < ActiveRecord::Base
 
   scope :recent, -> { order(updated_at: :desc) }
   scope :by_name, -> { order('LOWER(name)') }
+  scope :no_team, -> { where(team: nil) }
 
   def as_json
     super(only: [:name])

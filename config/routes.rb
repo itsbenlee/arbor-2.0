@@ -101,7 +101,7 @@ Railsroot::Application.routes.draw do
 
     get 'projects/list', controller: :projects, action: :list_projects
 
-    resources :projects, shallow: true do
+    resources :projects, except: [:new, :edit], shallow: true do
       get 'log', on: :member
       get 'members',
           controller: :projects,
@@ -128,6 +128,8 @@ Railsroot::Application.routes.draw do
         resources :tags, only: [:create, :index]
         resources :comments, only: [:create, :destroy]
       end
+
+      put 'add_member', controller: :projects, action: :add_member
 
       get 'user_stories/export',
         controller: :user_stories,
