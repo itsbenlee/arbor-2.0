@@ -1,5 +1,5 @@
 .projects-dashboard.row
-  - if @projects.count > 0
+  - if @projects.count + current_user.teams.map(&:projects).count > 0
     = render 'arbor_reloaded/projects/partials/search_bar'
     .projects-list-container
       = render 'arbor_reloaded/projects/partials/projects_list', projects: @projects

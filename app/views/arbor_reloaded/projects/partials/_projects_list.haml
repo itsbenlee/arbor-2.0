@@ -39,7 +39,7 @@
     - if team.projects.count > 0
       .title-breaker
         %h5= team.name
-      %ul.common-projects-list.white-blocks-list
+      %ul.team-projects-list.white-blocks-list
         - team.projects.each do |project|
           - if project.members.include? current_user
             = render 'arbor_reloaded/projects/partials/project_line_element', project: project

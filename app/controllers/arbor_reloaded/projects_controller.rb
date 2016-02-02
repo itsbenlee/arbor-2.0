@@ -56,7 +56,8 @@ module ArborReloaded
     end
 
     def add_member
-      @project.members.push(current_user)
+      members = @project.members
+      members.push(current_user) unless members.include?(current_user)
       redirect_to arbor_reloaded_project_user_stories_path(@project)
     end
 
