@@ -17,10 +17,11 @@
             %span.icn-copy
         %li
           = react_component('SlackButton', {}, {prerender: false})
-        %li
-          = link_to current_project, method: :delete, data: { confirm: t('project.delete_confirmation') }, class: 'delete-project' do
-            = t('project.delete_project')
-            %span.icn-delete
+        - if current_user.id == current_project.owner_id
+          %li
+            = link_to current_project, method: :delete, data: { confirm: t('project.delete_confirmation') }, class: 'delete-project' do
+              = t('project.delete_project')
+              %span.icn-delete
   %ul.right.members
     - current_project.members.each_with_index do |member, index|
       - if index == 0
