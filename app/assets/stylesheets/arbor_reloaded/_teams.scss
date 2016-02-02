@@ -55,13 +55,13 @@
     text-align: center;
 
     @include input-placeholder { font-size: rem-calc(14); }
+
+    &.errors { border-color: $alert-color; }
   }//project name input
 
   .new-team-errors {
-    color: $canvas-color;
+    color: $alert-color;
     font-size: rem-calc(14);
     margin-bottom: rem-calc(30);
   }
-
-  &.with-errors { .team-name { border-color: $canvas-color;} }
 }//project modal
