@@ -209,7 +209,7 @@ en:
       write_subtitle: 'On the field above, enter a user story to start filling up your project'
     team:
       no_teams: "You don't have any teams yet. Create one by clicking on the plus sign."
-      create: 'Create a team'
+      create: 'Create a Team'
       name: 'Enter new team name here...'
       save: 'Create Team'
       modal:
