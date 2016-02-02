@@ -1,5 +1,6 @@
 - if ENV['ENABLE_RELOADED'] == 'true'
-  = render 'arbor_reloaded/navigation/user_nav'
+  - content_for :user_nav do
+    = render 'arbor_reloaded/navigation/user_nav'
   .change-password.row
     .small-12.medium-6.small-centered.columns.text-center
       .title-breaker

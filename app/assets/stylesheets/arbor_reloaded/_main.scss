@@ -1,3 +1,8 @@
+//   GENERAL STYLES
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$page-wrapper-margin:  rem-calc(50);
+
 li,
 select,
 a { outline: 0; }
@@ -101,6 +106,13 @@ $action-circle-margin: rem-calc(10);
 $block-padding: rem-calc(15);
 $block-min-height: rem-calc(140);
 $bottom-square-height: rem-calc(7);
+$block-animation-delay: .40s;
+
+%data {
+  bottom: $block-padding;
+  position: absolute;
+  width: calc(100% - #{$block-padding} * 2);
+}
 
 .white-blocks-list {
   .white-block {
@@ -233,15 +245,28 @@ $bottom-square-height: rem-calc(7);
     padding: $block-padding;
     position: relative;
 
-    &.with-border::after {
-      @include single-transition(background-color, .25s, ease-in);
-      background-color: $light-blue;
-      bottom: 0;
-      content: '';
-      height: $bottom-square-height;
-      left: 0;
-      position: absolute;
-      width: 100%;
+    .data { @extend %data; }
+
+    &.with-border {
+      &::after {
+        @include transition(background-color, height, .25s, ease-in);
+        background-color: $light-blue;
+        bottom: 0;
+        content: '';
+        height: $bottom-square-height;
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
+
+      .data {
+        @include single-transition(bottom, .25s, ease-in $block-animation-delay);
+        bottom: $block-padding / 2;
+        position: absolute;
+        width: calc(100% - #{$block-padding} * 2);
+      }//data
+
+      &:hover .data { bottom: $block-padding; }
     }//if block has border below
 
     &.radius {
@@ -263,15 +288,13 @@ $bottom-square-height: rem-calc(7);
         [class^="icn-"] { color: $white; }
       }//sibiling deleter
     }//if block has rounded corners
-
-    .data { margin-bottom: $bottom-square-height; }
   }//block wrapper
 }//blocks container
 
 // ALERTS
-.alert,
-.warning,
-.error {
+.alert-box .alert,
+.alert-box .warning,
+.alert-box .error {
   border: 0;
   left: 20%;
   margin: rem-calc(10) auto;
@@ -284,8 +307,8 @@ $bottom-square-height: rem-calc(7);
 }
 
 .alert-box.error,
-.alert-box.alert {
-  background-color: $alert-color;
-}
+.alert-box.alert { background-color: $alert-color; }
 
 .alert-box.warning { background-color: $success-color; }
+
+.page-wrapper { margin: $page-wrapper-margin 0; }

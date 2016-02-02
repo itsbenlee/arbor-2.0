@@ -12,6 +12,8 @@ $avatar-dimension: rem-calc(40);
   }//logo
 
   .name {
+    color: $white;
+    line-height: $topbar-height;
     margin-left: $topbar-height;
 
     .current-project {

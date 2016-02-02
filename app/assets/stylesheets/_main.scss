@@ -105,9 +105,9 @@ input[type="password"] {
 
 .section-margin-top { margin-top: rem-calc(150); }
 
-.alert,
-.warning,
-.error {
+.alert-box .alert,
+.alert-box .warning,
+.alert-box .error {
   border: 0;
   left: 20%;
   margin: rem-calc(10) auto;
@@ -120,9 +120,7 @@ input[type="password"] {
 }
 
 .alert-box.error,
-.alert-box.alert {
-  background-color: $canvas-color;
-}
+.alert-box.alert { background-color: $alert-color; }
 
 .alert-box.warning { background-color: $success-color; }
 

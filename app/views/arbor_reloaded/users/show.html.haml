@@ -1,4 +1,7 @@
-= render 'arbor_reloaded/navigation/user_nav'
+- content_for :user_nav do
+  = render 'arbor_reloaded/navigation/user_nav'
+- content_for :page_title do
+  = t('page_title.profile', name: current_user.full_name)
 = form_for current_user, url: arbor_reloaded_user_path(current_user) do |f|
   .user-header
     .user-avatar
