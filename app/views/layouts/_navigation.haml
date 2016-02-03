@@ -4,8 +4,8 @@
       = render 'shareable/svg/logo'
     %li.name
       - if current_project && !current_project.new_record?
-        - if current_user.id == current_project.owner_id
-          = render 'arbor_reloaded/projects/partials/edit_project_name', project: current_project
+        - if current_user == current_project.owner
+          =render 'arbor_reloaded/projects/partials/edit_project_name', project: current_project
         - else
           = link_to current_project.name, '#', class: 'current-project'
       = yield :page_title
