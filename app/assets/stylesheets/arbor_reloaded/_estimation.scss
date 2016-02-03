@@ -6,14 +6,41 @@ $estimation-margin: rem-calc(40);
 .estimation {
   .title-breaker h5:hover { cursor: pointer; }
 
+  .toggle-estimation,
   .icn-settings {
     background-color: $body-bg;
     color: $black-20;
     float: right;
-    line-height: rem-calc(24);
-    padding-left: rem-calc(10);
 
     &:hover { color: $black-30; }
+  }
+
+  .toggle-estimation {
+    @include border-radius(rem-calc(2));
+    border: 1px solid $black-20;
+    font-size: rem-calc(12);
+    height: rem-calc(15);
+    line-height: rem-calc(10);
+    margin-top: rem-calc(4);
+    text-align: center;
+    width: rem-calc(15);
+
+    &::before {
+      content: '+';
+      vertical-align: text-bottom;
+    }
+
+    &.active {
+      &::before {
+        content: '-';
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .icn-settings {
+    line-height: rem-calc(24);
+    padding: rem-calc(0 7 0 15);
   }
 
   .estimation-wrapper {

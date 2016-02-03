@@ -78,15 +78,3 @@ function filterProjects(projects) {
     }
   });
 }
-
-function hideShowEstimation() {
-  var triggerHideShow = $('.estimation .title-breaker h5'),
-      estimationBoxes = $('.estimation-wrapper');
-  triggerHideShow.click(function () {
-    if (estimationBoxes.css('display') == 'none'){
-      estimationBoxes.fadeIn('slow');
-    } else {
-      estimationBoxes.fadeOut('slow');
-    }
-  });
-}
