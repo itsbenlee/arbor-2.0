@@ -5,9 +5,10 @@
     %li.name
       - if current_project && !current_project.new_record?
         - if current_user.id == current_project.owner_id
-          =render 'arbor_reloaded/projects/partials/edit_project_name', project: current_project
+          = render 'arbor_reloaded/projects/partials/edit_project_name', project: current_project
         - else
           = link_to current_project.name, '#', class: 'current-project'
+      = yield :page_title
     / Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
     %li.toggle-topbar.menu-icon
       %a{:href => "#"}

@@ -6,8 +6,6 @@
   $log-line-left-margin: rem-calc(30);
   $log-line-total-with: $log-line-created-width + $log-line-left-margin;
 
-  margin-top: rem-calc(30);
-
   .log-entry {
     @include clearfix;
     border-bottom: $gainsboro 1px solid;

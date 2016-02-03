@@ -7,7 +7,6 @@ $search-width: rem-calc(300);
 
 .dashboard-header {
   @include clearfix;
-  padding-top: rem-calc(50);
 
   input,
   li,
@@ -205,9 +204,7 @@ $search-width: rem-calc(300);
     .project,
     .deleter {
       .left {
-        bottom: $block-padding;
-        position: absolute;
-        width: calc(100% - #{$block-padding} * 2);
+        @extend %data;
 
         .title { color: $header-font-color; }
       }//card info
