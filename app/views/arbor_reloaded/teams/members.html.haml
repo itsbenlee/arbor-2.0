@@ -9,7 +9,7 @@
         Napolen
       %p.user-mail
         napoleon@napoleon.com
-  %ul.show-project-data.custom-scroll
+  %ul.show-project-data.custom-scroll.hide
     %li.user-item
       .picture{ style: "background-image: url(#{ image_path('test-user.png') });" }
       .user-data
@@ -17,6 +17,7 @@
           Damian Cardozo
         %p.user-mail
           damian.cardozo@damian.com
+        %input.circle-checkbox{ id:'remove-member-check', type: 'checkbox' }
     %li.user-item.invited
       .picture.avatar-circle
       .user-data
