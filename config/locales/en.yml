@@ -1,6 +1,10 @@
 en:
   user_sessions:
     login: 'Log in'
+    change_password: 'Change Password'
+    change_password:
+      leave_blank: "(leave blank if you don't want to change it)"
+      need_current_password: '(we need your current password to confirm your changes)'
   sign_up:
     title: "Sign up"
     name: "Full name"
