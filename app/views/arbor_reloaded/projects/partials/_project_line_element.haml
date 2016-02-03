@@ -1,0 +1,27 @@
+%li.white-block
+  .right
+    = link_to '#', class: 'favorite-link favorite has-tip', aria: { haspopup: true }, title: t('reloaded.tooltips.favorite_project'), data: { url: arbor_reloaded_project_path(project), favorite: project.favorite, tooltip: '' } do
+      %span.icn-favorite-empty
+    = link_to '#', class: 'others' do
+      &#149&#149&#149
+  .actions
+    - if current_user.id == project.owner_id
+      %a.delete-project.has-tip{aria: {haspopup: true}, data: {tooltip: ''}, title: t('reloaded.tooltips.delete_project')}
+        %span.icn-delete
+    = link_to arbor_reloaded_project_copy_path(project), method: :post, class: 'copy-project has-tip', aria: { haspopup: true }, title: t('reloaded.tooltips.copy_project'),data: { tooltip: '' } do
+      %span.icn-copy
+    = link_to '#', class: 'favorite-link favorite has-tip', aria: { haspopup: true }, title: t('reloaded.tooltips.favorite_project'), data: { url: arbor_reloaded_project_path(project), favorite: project.favorite, tooltip: '' } do
+      %span.icn-favorite-empty
+  = link_to arbor_reloaded_project_user_stories_path(project_id: project.id), title: " Go to #{project.name}", class: 'project block-wrapper' do
+    .left
+      %p.title= project.name
+      %p.last-update
+        = t('reloaded.project_dashboard.last_update')
+        %span= project.updated_at.strftime("%b %d, %Y")
+  .deleter
+    %p
+      = t('reloaded.project_dashboard.are_you_sure')
+      = link_to t('reloaded.project_dashboard.delete_project'), arbor_reloaded_project_path(project), method: :delete, class: 'button radius alert tiny'
+    %a.cancel= t('reloaded.project_dashboard.cancel')
+    %a.delete-project
+      %span.icn-delete

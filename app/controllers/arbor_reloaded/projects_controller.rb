@@ -3,7 +3,7 @@ module ArborReloaded
     layout false, only: :members
     before_action :load_project,
                   only: [:show, :edit, :update, :destroy,
-                         :log]
+                         :log, :add_member]
     def index
       scope = params[:project_order] || 'recent'
       @projects = @projects.send(scope)
@@ -27,14 +27,6 @@ module ArborReloaded
           json_list
         end
       end
-    end
-
-    def new
-      render layout: 'application_reload'
-    end
-
-    def edit
-      render layout: 'application_reload'
     end
 
     def show
@@ -61,6 +53,12 @@ module ArborReloaded
     def destroy
       @project.destroy
       redirect_to :back
+    end
+
+    def add_member
+      members = @project.members
+      members.push(current_user) unless members.include?(current_user)
+      redirect_to arbor_reloaded_project_user_stories_path(@project)
     end
 
     def remove_member_from_project
@@ -182,7 +180,8 @@ module ArborReloaded
     end
 
     def load_project
-      @project = Project.find(params[:id])
+      id = params[:id] || params[:project_id]
+      @project = Project.find(id)
     end
 
     def member_emails
