@@ -1,9 +1,9 @@
-- if local_assigns.has_key?(:version) && local_assigns[:version] == 'reloaded'
+- if ENV['ENABLE_RELOADED'] == 'true'
   .log-action
     %span.person#person-name= activity.owner.log_description
     %span.activity= t("log.reloaded_#{activity.key}")
     %span.person= local_assigns[:project_name]
--else
+- else
   .log-action
     = activity.owner.log_description
     = t("log.#{activity.key}")
