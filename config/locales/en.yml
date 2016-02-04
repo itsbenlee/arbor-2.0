@@ -229,7 +229,7 @@ en:
       total_points: 'Total points'
       total_cost: 'Total cost'
       total_weeks: 'Weeks'
-      modal_title: 'Update Estimation Numbers'
+      modal_title: 'Estimation Settings'
       modal_velocity: 'Velocity'
       modal_cost: 'Cost per week'
     navigation:
@@ -321,3 +321,5 @@ en:
       estimate: 'Estimate'
       hide: 'Toggle Estimation'
       add_members: 'Add/Remove people'
+      estimation_velocity: 'This is an estimate of how many points your team can complete each week. You can use it to get a sense for how long development will take.'
+      estimation_cost: 'This is the cost of a sprint. Different development teams charge differently, but the average cost of a week of work is a good benchmark.'
