@@ -3,7 +3,10 @@ function UserStory() {
       $sentence     = $('.sentence'),
       $criterion    = $('.show-criterion'),
       $storyModal   = $('#story-detail-modal'),
-      $storyActions = $storyModal.find('.story-actions');
+      $storyActions = $storyModal.find('.story-actions'),
+      $storyList    = $('.user-stories-container'),
+      $story        = $storyList.find('.story-detail-link'),
+      $storyOpened  = $('.story-detail-link.opened');
 
   $points.change(function(event) {
     var story_id = $(this).data('id'),
@@ -20,17 +23,35 @@ function UserStory() {
             $('.backlog-user-story[data-id='+ response.data.id +']')
             .find('.story-points').text(response.data.estimated_points);
           else {
-            $('.backlog-user-story[data-id='+ response.data.id +']').find('.story-points').text('?')
+            $('.backlog-user-story[data-id='+ response.data.id +']').find('.story-points').text('?');
           }
         }
       }
     });
   });
 
+  function NavigateUserStories() {
+    $(document).unbind('keydown');
+    $(document).bind('keydown', function(e){
+      var $nextStory = $storyModal.find('.icn-arrow-right'),
+          $prevStory = $storyModal.find('.icn-arrow-left');
+
+      switch (e.which) {
+        case 37:
+          $prevStory.trigger('click');
+          break;
+        case 39:
+          $nextStory.trigger('click');
+          break;
+      }
+    });
+  }//navigate user stories
+
   toggleDeleteConfirmation();
   toggleModalStoryDropdown();
   toggleEditCriterion();
   displayEditionForm();
+  NavigateUserStories();
 
   function displayEditionForm() {
     var $editUserStory       = $('.edit_user_story'),
@@ -106,4 +127,8 @@ function UserStory() {
       }
     });
   }
+
+  $storyModal.on('close.fndtn.reveal', function() {
+    $(document).unbind('keydown');
+  });
 }

@@ -8,10 +8,23 @@
   $story-section-padding: rem-calc(25);
   $story-section-margin: rem-calc(20);
   $author-margin: rem-calc(7);
+  $arrows-offset: rem-calc(40);
 
   padding: 0;
 
   .author { color: $body-font-color; }
+
+  //navigation arrows
+  [class^="icn-arrow-"] {
+    @include opacity(.2);
+    font-size: rem-calc(30);
+    position: absolute;
+    top: 50%;
+
+    &.icn-arrow-left { left: - $arrows-offset; }
+    &.icn-arrow-right { right: - $arrows-offset; }
+    &:hover { @include opacity(.7); }
+  }//navigation arrows
 
   header {
     .header-wrapper {
