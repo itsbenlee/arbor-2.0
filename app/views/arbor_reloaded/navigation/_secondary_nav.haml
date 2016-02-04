@@ -23,6 +23,10 @@
               = t('project.delete_project')
               %span.icn-delete
   %ul.right.members
+    %li
+      = link_to '+', |
+      arbor_reloaded_project_members_path(current_project), |
+      { class: 'add-member has-tip', data: { reveal_id: 'project-members-modal', reveal_ajax: true, tooltip: '' }, aria: { haspopup: true }, title: t('reloaded.tooltips.add_members') }
     - current_project.members.each_with_index do |member, index|
       - if index == 0
         %li
@@ -41,10 +45,6 @@
         = link_to arbor_reloaded_project_members_path(current_project),{ data: { reveal_id: 'project-members-modal', reveal_ajax: true }}, class: 'other-members' do
           +
           = current_project.members.count - 3
-    %li
-      = link_to '+', |
-      arbor_reloaded_project_members_path(current_project), |
-      { class: 'add-member', data: { reveal_id: 'project-members-modal', reveal_ajax: true } }
     -# TODO this link should only appear if the user is not a member of this project, and should't see the plus and members items, MOJO {remove .hidden-element for enable it}
     %li= link_to t('reloaded.project_dashboard.join_project'), '#', class: 'button radius success tiny join-btn hidden-element'
 #project-members-modal.reveal-modal{ data: { reveal: '' } }
