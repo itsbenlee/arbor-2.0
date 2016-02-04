@@ -5,6 +5,7 @@
       = link_to '···', '#', class: 'story-actions-link'
       = link_to '', '#', class: 'icn-delete has-tip tip-left', aria: { haspopup: true }, data: { tooltip: '' }, title: t('reloaded.tooltips.delete_story')
       = link_to '', '#', method: :post, class: 'icn-archive hidden-element has-tip tip-left', aria: { haspopup: true }, data: { tooltip: '' }, title: t('reloaded.tooltips.archive_story')
+      = link_to '', '#', method: :post, class: 'icn-copy hidden-element has-tip tip-left', aria: { haspopup: true }, data: { tooltip: '' }, title: t('reloaded.tooltips.duplicate_story')
     %h4
       %span.story-points{ data: { id: @user_story.id } }= @user_story.estimated_points ||= '?'
       %select.fibonacci-select{ id: 'fibonacci-dropdown', class: 'has-tip', aria: { haspopup: true }, title: t('reloaded.tooltips.estimate'), data: { id: @user_story.id, url: arbor_reloaded_user_story_path(@user_story), tooltip: '' } }
@@ -50,6 +51,5 @@
       = render 'arbor_reloaded/comments/form', comment: [:arbor_reloaded, @user_story, Comment.new]
       .comments-container
         = render 'arbor_reloaded/comments/index', user_story: @user_story
-.modal-footer
 :javascript
   new UserStory();

@@ -140,7 +140,6 @@
   .modal-wrapper {
     background-color: $modal-bg-color;
     border-top: 1px solid $black-20;
-    max-height: rem-calc(420);
     overflow: hidden;
 
     .icn-delete {
@@ -153,11 +152,6 @@
   }//modal wrapper
 
   // Story Modal sections
-  .story-modal-section {
-    border-bottom: 1px solid $black-20;
-    margin-bottom: $story-section-margin;
-    padding-bottom: $story-section-padding;
-  }//story modal section
 
   .story-section-title {
     font-size: rem-calc(12);
@@ -210,8 +204,6 @@
       display: block;
     } // comment
   } // comment list
-
-  .modal-footer { height: rem-calc(40); }
 
   .delete-confirmation-overlay {
     @include clearfix;
