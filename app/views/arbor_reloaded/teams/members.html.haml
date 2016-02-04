@@ -6,9 +6,9 @@
     .user-data
       %p.user-name
         %span.user-type-tag= t("reloaded.project_members.owner")
-        = @team.owner.full_name
+        = @team.owner_name
       %p.user-mail
-        = @team.owner.email
+        = @team.owner_email
   %ul.show-project-data.custom-scroll
     - @team.users.each do |member|
       - if member.id != @team.owner.id
@@ -19,7 +19,7 @@
               = member.full_name
             %p.user-mail
               = member.email
-            %input.circle-checkbox{ id:'remove-member-check', type: 'checkbox' }
+            %input.circle-checkbox{ id:'remove-member-check', type: 'checkbox', class: 'hidden-element'  }
 .modal-footer
   = render 'arbor_reloaded/teams/partials/invite_members', team: @team
-  = link_to t("reloaded.project_members.close"),'#', class: 'button radius small', id: 'team-modal-footer-btn'
+  = link_to t("reloaded.project_members.close"), '#', class: 'team-members-button button radius small'

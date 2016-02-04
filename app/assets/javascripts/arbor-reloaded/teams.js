@@ -2,37 +2,39 @@ function teamBinds() {
   if ($('.teams-list').length) {
     displayActions();
     displayHideDelete();
+    teamMembersBind();
   }
 }
 
-$('#team-members-modal').on('opened.fndtn.reveal', function() {
-  var newMemberMailTextId     = $('.new-member-mail'),
-      footerButtonId          = $('#team-modal-footer-btn'),
-      footerButtonInitialText = $(footerButtonId).text();
+function teamMembersBind() {
+  $('#team-members-modal').on('opened.fndtn.reveal', function() {
+    footerButtonId  = $('.team-members-button'),
+    teamMemberEmail = $('.team-member-email');
 
-  $(newMemberMailTextId).keyup(function(e) {
-    if($(this).val() === '') {
-      $(footerButtonId).text(footerButtonInitialText);
-    } else {
-      $(footerButtonId).text('Invite');
-    }
+    teamMemberEmail.keyup(function(e) {
+      if($(this).val() === '') {
+        footerButtonId.text('Close');
+      } else {
+        footerButtonId.text('Invite');
+      }
+    });
+
+    customScroll();
+    bindActionsToButton();
   });
-
-  customScroll();
-  bindActionsToButton();
-});
+}
 
 function bindActionsToButton() {
-  $('#team-modal-footer-btn').click(function() {
+  $('.team-members-button').click(function() {
     if ($(this).text() == 'Close') {
       $('#team-members-modal').foundation('reveal', 'close');
     }
     if ($(this).text() == 'Invite') {
-      $('#submit-modal-form').click();
+      $('.new-member').submit();
     }
   });
 }
 
-$( document ).ready(function() {
+$(document).ready(function() {
   teamBinds();
 });

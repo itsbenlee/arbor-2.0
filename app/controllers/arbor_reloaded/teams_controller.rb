@@ -2,7 +2,7 @@ module ArborReloaded
   class TeamsController < ApplicationController
     layout 'application_reload'
     before_action :authenticate_user!
-    before_action :load_team, only: [:members, :update]
+    before_action :load_team, only: [:members, :add_member]
 
     def index
       @new_team = Team.new
@@ -17,9 +17,14 @@ module ArborReloaded
       end
     end
 
-    def update
-      @team.update_attributes(team_params)
-      add_new_members
+    def add_member
+      @errors = []
+      add_new_member(member_params[:member])
+      if @team.save
+        @teams = current_user.teams
+      else
+        @errors = @team.errors.full_messages
+      end
     end
 
     def members
@@ -36,24 +41,33 @@ module ArborReloaded
       else
         @errors = team.errors.full_messages
       end
-
-    def member_emails
-      params[:team].select do |id, email|
-        email if id.starts_with?('member') && email != current_user.email
-      end.values.reject(&:blank?).uniq
     end
 
-    def add_new_members
-      emails = []
-      member_emails.each do |email|
-        user = User.find_by(email: email)
-        @team.users << user if user
+    def add_new_member(email)
+      user = User.find_by(email: email)
+      if user
+        team_users = @team.users
+        team_users << user unless team_users.include? user
+      else
+        return_error(email)
       end
-      redirect_to :back if @team.save
+    end
+
+    def return_error(email)
+      if email.empty?
+        @errors << t('reloaded.team.no_email')
+      else
+        @errors << t('reloaded.team.no_user')
+      end
     end
 
     def load_team
-      @team = Team.find(params[:id])
+      id = params[:id] || params[:team_id]
+      @team = Team.find(id)
+    end
+
+    def member_params
+      params.permit(:member)
     end
 
     def team_params

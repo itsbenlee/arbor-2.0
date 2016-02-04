@@ -216,6 +216,8 @@ en:
       write_title: 'Write some User Stories'
       write_subtitle: 'On the field above, enter a user story to start filling up your project'
     team:
+      no_email: 'Please type an email on the field to submit'
+      no_user: 'This email is not registered on Arbor'
       no_teams: "You don't have any teams yet. Create one by clicking on the plus sign."
       create: 'Create a Team'
       name: 'Enter new team name here...'
