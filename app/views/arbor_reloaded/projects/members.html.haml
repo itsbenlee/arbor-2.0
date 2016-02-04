@@ -2,7 +2,7 @@
 %h5= t("project_members.title")
 .project-members
   .user-item.special-item
-    .picture{ style: "background-image: url(#{ image_path('test-user.png') });" }
+    .picture{ style: "background-image: url(#{ owner.avatar_url });" }
     .user-data
       %p.user-name
         %span.user-type-tag= t("reloaded.project_members.owner")
@@ -13,7 +13,7 @@
     - members.each_with_index do |member, index|
       - if index >= 0 && member.id != owner.id
         %li.user-item
-          .picture{ style: "background-image: url(#{ image_path('test-user.png') });" }
+          .picture{ style: "background-image: url(#{ member.avatar_url });" }
           .user-data
             %p.user-name
               = member.full_name
