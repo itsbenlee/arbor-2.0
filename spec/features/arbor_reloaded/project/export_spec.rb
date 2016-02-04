@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 feature 'Export backlog' do
-  let!(:user)         { create :user }
-  let!(:project)      { create :project, owner: user }
+  let!(:user)    { create :user }
+  let!(:project) { create :project, owner: user }
 
   background do
     sign_in user

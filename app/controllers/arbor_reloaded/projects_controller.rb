@@ -2,8 +2,9 @@ module ArborReloaded
   class ProjectsController < ApplicationController
     layout false, only: :members
     before_action :load_project,
-                  only: [:members, :show, :edit, :update, :destroy,
-                         :log, :add_member, :export_backlog]
+      only: [:members, :show, :edit, :update, :destroy, :log, :add_member,
+             :export_backlog]
+
     def index
       scope = params[:project_order] || 'recent'
       @projects = @projects.send(scope)
@@ -82,11 +83,9 @@ module ArborReloaded
     def export_backlog
       parameters = params.permit(:estimation)
       @estimation = parameters[:estimation]
-      send_data(
-        export_content,
-        filename: "#{@project.name} Backlog.pdf",
-        type:     'application/pdf'
-      )
+      send_data(export_content,
+                filename: "#{@project.name} Backlog.pdf",
+                type:     'application/pdf')
     end
 
     def order_stories
@@ -135,18 +134,16 @@ module ArborReloaded
 
     def export_content
       project_name = @project.name
-      cover_html = render_to_string(
-        partial: 'arbor_reloaded/projects/pdf_cover.html.haml',
-        locals: { project_name: project_name }
-      )
-      send(
-        :render_to_string,
-        pdf:      "#{project_name}",
-        layout:   'application.pdf.haml',
-        template: 'arbor_reloaded/projects/index.pdf.haml',
-        cover: cover_html,
-        margin: { top: 30, bottom: 30 }
-      )
+      cover_html =
+        render_to_string(partial: 'arbor_reloaded/projects/pdf_cover.html.haml',
+                         locals: { project_name: project_name })
+
+      send(:render_to_string,
+           pdf: project_name,
+           layout: 'application.pdf.haml',
+           template: 'arbor_reloaded/projects/index.pdf.haml',
+           cover: cover_html,
+           margin: { top: 30, bottom: 30 })
     end
 
     def team_params

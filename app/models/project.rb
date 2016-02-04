@@ -47,7 +47,7 @@ class Project < ActiveRecord::Base
     if selected_team_name.blank?
       self.owner = current_user
     else
-      self.team = Team.find_by(name: selected_team_name)
+      self.team = current_user.teams.find_by(name: selected_team_name)
       self.owner = team.owner
     end
   end
