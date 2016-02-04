@@ -102,6 +102,9 @@ Railsroot::Application.routes.draw do
     get 'projects/list', controller: :projects, action: :list_projects
 
     resources :projects, except: [:new, :edit], shallow: true do
+      get 'export_backlog',
+        controller: :projects,
+        action: :export_backlog
       get 'log', on: :member
       get 'members',
           controller: :projects,
@@ -131,26 +134,9 @@ Railsroot::Application.routes.draw do
 
       put 'add_member', controller: :projects, action: :add_member
 
-      get 'user_stories/export',
-        controller: :user_stories,
-        action: :export,
-        as: :backlog_export
-
       get 'tags/filter', controller: :tags, action: :filter
       get 'tags/index', controller: :tags, action: :index
       get 'tag/delete', controller: :tags, action: :delete
-
-      put 'hypotheses/order', controller: :hypotheses, action: :update_order
-      get 'hypotheses/export', controller: :hypotheses, action: :export
-      get 'hypotheses/export/trello',
-        controller: :hypotheses,
-        action: :export_to_trello,
-        as: :trello_export
-
-      put 'hypotheses/user_stories/order',
-        controller: :user_stories,
-        action: :update_order,
-        as: :user_stories_order
 
       get '/list_backlog', controller: :projects, action: :backlog
       resources :attachments, only: [:index, :create, :destroy]
