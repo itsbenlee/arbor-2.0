@@ -1,4 +1,5 @@
 $estimation-margin: rem-calc(40);
+$icon-dimension: rem-calc(15);
 
 .estimation-wrapper h4,
 .edit-wrapper h4 { font-weight: normal; }
@@ -19,11 +20,11 @@ $estimation-margin: rem-calc(40);
     @include border-radius(rem-calc(2));
     border: 1px solid $black-20;
     font-size: rem-calc(12);
-    height: rem-calc(15);
+    height: $icon-dimension;
     line-height: rem-calc(10);
     margin-top: rem-calc(4);
     text-align: center;
-    width: rem-calc(15);
+    width: $icon-dimension;
 
     &::before {
       content: '+';
@@ -90,7 +91,9 @@ $estimation-margin: rem-calc(40);
   .estimation-item { text-align: center; }
 
   .title {
+    @include inline-block();
     font-size: rem-calc(12);
+    margin: 0;
     text-transform: uppercase;
   }
 
@@ -110,4 +113,17 @@ $estimation-margin: rem-calc(40);
       text-align: center;
     } // input
   } // edit wrapper
+
+  .estimation-info {
+    @include inline-block();
+    @include border-radius(100%);
+    border: 1px solid $black-20;
+    color: $black-20;
+    font-size: rem-calc(10);
+    font-weight: inherit;
+    height: $icon-dimension;
+    line-height: $icon-dimension;
+    text-align: center;
+    width: $icon-dimension;
+  }
 } // modal
