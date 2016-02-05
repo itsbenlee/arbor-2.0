@@ -10,22 +10,18 @@ $('#project-members-modal').on('opened.fndtn.reveal', function() {
       removeMemberFromProjectLink = $('.remove-member-link a'),
       footerButtonInitialText = $(footerButtonId).text();
 
-  bindActionsToButton();
   bindActionsOnRemovalCheckboxes();
   modalDisplayInitialWhenNoAvatar();
   customScroll();
 
   $(newMemberMailTextId).keyup(function(e) {
-   if($(this).val() === '') {
-     $(footerButtonId).text(footerButtonInitialText);
-   } else {
-     $(footerButtonId).text('Invite');
-   }
- });
-});
+    if($(this).val() === '') {
+      $(footerButtonId).text(footerButtonInitialText);
+    } else {
+      $(footerButtonId).text('Invite');
+    }
+  });
 
-//button function depending on what it says, Ale
-function bindActionsToButton() {
   $('#people-modal-footer-btn').click(function() {
     if ($(this).text() == 'Close') {
       closeMembersModal();
@@ -34,7 +30,7 @@ function bindActionsToButton() {
       $('#submit-modal-form').click();
     }
   });
-}
+});
 
 function modalDisplayInitialWhenNoAvatar() {
   $('#project-members-modal .user-item.invited').has('.avatar-circle').each(function(index, currentValue) {
