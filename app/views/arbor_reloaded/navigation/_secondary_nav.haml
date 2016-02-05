@@ -12,6 +12,14 @@
       = link_to '...', '#', aria: { controls: 'project-actions', expanded: false }, data: {dropdown: 'project-actions' }
       %ul#project-actions.f-dropdown{ data: { dropdown: { content: '' } } }
         %li
+          = link_to arbor_reloaded_project_export_backlog_path(current_project, format: :pdf, estimation: true) do
+            = t('reloaded.navigation.export_with_estimation')
+            %span.icn-export
+        %li
+          = link_to arbor_reloaded_project_export_backlog_path(current_project, format: :pdf, estimation: false) do
+            = t('reloaded.navigation.export_without_estimation')
+            %span.icn-export
+        %li
           = link_to arbor_reloaded_project_copy_path(current_project), method: :post, class: 'copy-project' do
             = t('project.copy_project')
             %span.icn-copy

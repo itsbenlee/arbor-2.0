@@ -21,9 +21,9 @@ GIT
 
 GIT
   remote: git://github.com/mileszs/wicked_pdf.git
-  revision: 803f8d55aba7a80a68899bba1c9cfb31313df336
+  revision: faa3c0d5f21be4e54293fecde930244288c69802
   specs:
-    wicked_pdf (0.11.0)
+    wicked_pdf (1.0.4)
 
 GEM
   remote: https://rubygems.org/
