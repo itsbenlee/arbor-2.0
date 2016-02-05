@@ -43,6 +43,15 @@ class Project < ActiveRecord::Base
     invites.any? { |invite| invite.email == email }
   end
 
+  def assign_team(selected_team_name, current_user)
+    if selected_team_name.blank?
+      self.owner = current_user
+    else
+      self.team = current_user.teams.find_by(name: selected_team_name)
+      self.owner = team.owner
+    end
+  end
+
   def add_member(user)
     create_activity :add_member,
       parameters: { element: user.log_description }
