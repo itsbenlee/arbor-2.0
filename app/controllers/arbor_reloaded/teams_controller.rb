@@ -2,6 +2,7 @@ module ArborReloaded
   class TeamsController < ApplicationController
     layout 'application_reload'
     before_action :authenticate_user!
+    before_action :load_team, only: [:members, :add_member]
 
     def index
       @new_team = Team.new
@@ -13,6 +14,16 @@ module ArborReloaded
         @errors = [t('reloaded.team.name_uniqueness')]
       else
         create_team
+      end
+    end
+
+    def add_member
+      @errors = []
+      add_new_member(member_params[:member])
+      if @team.save
+        @teams = current_user.teams
+      else
+        @errors = @team.errors.full_messages
       end
     end
 
@@ -30,6 +41,33 @@ module ArborReloaded
       else
         @errors = team.errors.full_messages
       end
+    end
+
+    def add_new_member(email)
+      user = User.find_by(email: email)
+      if user
+        team_users = @team.users
+        team_users << user unless team_users.include? user
+      else
+        return_error(email)
+      end
+    end
+
+    def return_error(email)
+      if email.empty?
+        @errors << t('reloaded.team.no_email')
+      else
+        @errors << t('reloaded.team.no_user')
+      end
+    end
+
+    def load_team
+      id = params[:id] || params[:team_id]
+      @team = Team.find(id)
+    end
+
+    def member_params
+      params.permit(:member)
     end
 
     def team_params

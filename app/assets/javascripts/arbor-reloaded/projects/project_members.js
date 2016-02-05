@@ -26,7 +26,7 @@ $('#project-members-modal').on('opened.fndtn.reveal', function() {
 
 //button function depending on what it says, Ale
 function bindActionsToButton() {
-  $('#people-modal-footer-btn').click(function(){
+  $('#people-modal-footer-btn').click(function() {
     if ($(this).text() == 'Close') {
       closeMembersModal();
     }

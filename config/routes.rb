@@ -157,7 +157,10 @@ Railsroot::Application.routes.draw do
       action: :destroy_stories
 
     resources :users, only: [:update, :show]
-    resources :teams, only: [:index, :create]
+    resources :teams, only: [:index, :create] do
+      put 'add_member', controller: :teams, action: :add_member
+    end
+
     get 'team_members', controller: :teams, action: :members
 
     put 'users/ajax_update',
