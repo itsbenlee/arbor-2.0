@@ -310,7 +310,8 @@ en:
       errors:
         edit: 'An error ocurred editing your user profile'
     tooltips:
-      favorite_project: 'Favorite or unfavorite'
+      favorite_project: 'Favorite'
+      unfavorite_project: 'Unfavorite'
       delete_project: 'Delete'
       copy_project: 'Duplicate'
       delete_story: 'Delete'
@@ -321,7 +322,7 @@ en:
       archive_story: 'Archive story'
       update_estimation: 'Settings'
       estimate: 'Estimate'
-      hide: 'Toggle Estimation'
+      hide: 'Show / Hide'
       add_members: 'Add/Remove people'
       estimation_velocity: 'This is an estimate of how many points your team can complete each week. You can use it to get a sense for how long development will take.'
       estimation_cost: 'This is the cost of a sprint. Different development teams charge differently, but the average cost of a week of work is a good benchmark.'
