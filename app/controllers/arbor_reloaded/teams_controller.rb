@@ -2,7 +2,7 @@ module ArborReloaded
   class TeamsController < ApplicationController
     layout 'application_reload'
     before_action :authenticate_user!
-    before_action :load_team, only: [:members, :add_member]
+    before_action :load_team, only: [:members, :add_member, :remove_member]
 
     def index
       @new_team = Team.new
@@ -25,6 +25,15 @@ module ArborReloaded
       else
         @errors = @team.errors.full_messages
       end
+    end
+
+    def remove_member
+      member = User.find(member_params[:member])
+      @team.projects.each do |project|
+        project.members.delete(member)
+      end
+      @team.users.delete(member)
+      @team.save
     end
 
     def members

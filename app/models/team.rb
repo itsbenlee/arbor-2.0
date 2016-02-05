@@ -14,4 +14,9 @@ class Team < ActiveRecord::Base
   def owner_email
     owner.email
   end
+
+  def members_string
+    users_count = users.count
+    users_count == 1 ? "#{users_count} member" : "#{users_count} members"
+  end
 end
