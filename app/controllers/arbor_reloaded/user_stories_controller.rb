@@ -1,10 +1,11 @@
 module ArborReloaded
   class UserStoriesController < ApplicationController
     layout 'application_reload'
-    before_action :load_user_story, only: [:edit, :show, :update, :destroy]
+    before_action :load_user_story, only: [:edit, :update, :destroy]
     before_action :check_edit_permission, only: [:create, :index]
     before_action :copied_user_stories, only: :copy
     before_action :set_project, only: :destroy_stories
+    before_action :next_and_prev_story, only: :show
 
     def index
       @user_story = UserStory.new
@@ -124,6 +125,16 @@ module ArborReloaded
       copy_stories_params[:user_stories].each do |story_id|
         @copied_stories.push(UserStory.find(story_id))
       end
+    end
+
+    def next_and_prev_story
+      load_user_story
+      user_stories = @user_story.project.user_stories
+      story_order = @user_story.backlog_order
+      @prev_story =
+        user_stories.find_by(backlog_order: story_order + 1)
+      @next_story =
+        user_stories.find_by(backlog_order: story_order - 1)
     end
   end
 end

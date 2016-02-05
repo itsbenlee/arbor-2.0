@@ -1,3 +1,7 @@
+- if @next_story
+  = link_to '', arbor_reloaded_user_story_path(@next_story.id), class: 'icn-arrow-right', data: { reveal_id: 'story-detail-modal', reveal_ajax: 'true'}
+- if @prev_story
+  = link_to '', arbor_reloaded_user_story_path(@prev_story.id), class: 'icn-arrow-left', data: { reveal_id: 'story-detail-modal', reveal_ajax: 'true'}
 = link_to '×', '#', class: 'close-reveal-modal'
 %header
   .header-wrapper
