@@ -1,4 +1,5 @@
 <% if @errors.count > 0 %>
+  $('.team-member-email').addClass('errors');
   $('.team-member-errors').html('*<%= @errors[0] %>');
 <% else %>
   $('.new-member-mail').val('');
