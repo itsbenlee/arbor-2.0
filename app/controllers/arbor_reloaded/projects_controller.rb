@@ -95,6 +95,7 @@ module ArborReloaded
     end
 
     def log
+      @users = @project.members
       project_services = ArborReloaded::ProjectServices.new(@project)
       @activities = project_services.all_activities
       render layout: 'application_reload'

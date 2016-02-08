@@ -23,8 +23,10 @@ $profile-margin: $user-header-padding;
 
     .avatar-img,
     .avatar-circle {
+      @include background-size(cover);
       @include border-radius(100%);
       background-color: $black-20;
+      background-position: center;
       height: $avatar-dimension;
       line-height: $avatar-dimension;
       width: $avatar-dimension;

@@ -66,8 +66,9 @@ $avatar-dimension: rem-calc(40);
 
 .top-bar-section .profile {
   .avatar {
+    @include background-size(cover);
     @include border-radius(100%);
-    background-size: cover;
+    background-position: center;
     display: none;
     height: $avatar-dimension;
     width: $avatar-dimension;
@@ -184,9 +185,10 @@ ul .dropdown {
     margin-right: $topbar-margin;
 
     a:not(.button) {
+      @include background-size(cover);
       @include border-radius(100%);
       @include inline-block;
-      background-size: cover;
+      background-position: center;
       height: $member-avatar-dimension;
       margin: (($sub-nav-height - $member-avatar-dimension) / 2) 0 0 rem-calc(8);
       width: $member-avatar-dimension;

@@ -46,6 +46,7 @@
   .picture {
     @include background-size(cover);
     @include border-radius(100%);
+    background-position: center;
     height: $avatar-dimension;
     line-height: $avatar-dimension;
     text-align: center;

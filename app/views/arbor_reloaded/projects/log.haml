@@ -8,11 +8,14 @@
         %span.project-title= @project.name
         %span= ' was Created on'
         %span.created-at= activity.created_at.strftime("%b %e at %l:%M%P")
-    -else
+    - else
       .log-entry
         .log-line-left
           %span.created-at= activity.created_at.strftime("%b %e at %l:%M%P")
         .log-line-right
-          .avatar-circle#avatar-circle
+          - if !activity.owner_id.blank?
+            .avatar-circle#avatar-circle{ style: "background-image: url(#{ @users.find(activity.owner_id).avatar_url }); color: transparent;" }
+          - else
+            .avatar-circle#avatar-circle.no-avatar
           .log-details
             = render_activity activity, locals: {version: 'reloaded', project_name: @project.name}
