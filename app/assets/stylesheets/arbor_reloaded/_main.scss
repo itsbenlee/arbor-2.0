@@ -312,3 +312,21 @@ $block-animation-delay: .40s;
 .alert-box.warning { background-color: $success-color; }
 
 .page-wrapper { margin: $page-wrapper-margin 0; }
+
+// DASHED INPUT
+.dashed-input {
+  &[type="text"],
+  &[type="email"],
+  &[type="password"] {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px dashed $black-20;
+    padding-bottom: $form-spacing;
+    text-align: center;
+
+    &:focus {
+      background-color: transparent;
+      border-bottom: 1px dashed lighten($primary-nav-color, 20%);
+    }
+  }
+}//dashed input
