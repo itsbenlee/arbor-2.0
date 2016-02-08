@@ -1,6 +1,6 @@
 = form_for(criterion, remote: true) do |form|
   = form.text_area :description, class: 'backlog-placeholder resizable-text-area radius',
   maxlength: 254, placeholder: t('backlog.user_stories.enter_criterion')
-  = form.submit t('save'), id: 'save-acceptance-criterion', class: 'button tiny hidden-element save-ac-button'
+  = form.submit t('save'), id: 'save-acceptance-criterion', class: 'button tiny hidden-element save-ac-button radius'
 :javascript
   new CustomTextArea();

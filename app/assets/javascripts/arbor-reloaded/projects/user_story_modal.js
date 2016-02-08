@@ -127,7 +127,7 @@ function UserStory() {
 
       $(this).find('.edit-criterion').addClass('active');
       $('#acceptance-list .delete-criterion[data-id='+ $(this).data('id') +']').addClass('active');
-      return false;
+      event.stopPropagation();
     });
 
     $('html').click(function() {

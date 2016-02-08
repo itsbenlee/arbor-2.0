@@ -4,6 +4,6 @@
   .edit-criterion{data: { id: acceptance_criterion.id } }
     = render 'arbor_reloaded/acceptance_criterions/edit_criterion',
     acceptance_criterion: acceptance_criterion
-    .delete-criterion{data: { id: acceptance_criterion.id } }
-      = link_to arbor_reloaded_acceptance_criterion_path(acceptance_criterion), remote: true, method: :delete do
-        %span.icn-delete
+.delete-criterion{data: { id: acceptance_criterion.id } }
+  = link_to arbor_reloaded_acceptance_criterion_path(acceptance_criterion), remote: true, method: :delete do
+    %span.icn-delete

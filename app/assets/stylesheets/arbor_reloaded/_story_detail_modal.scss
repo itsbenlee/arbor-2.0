@@ -152,7 +152,7 @@
 
   .save-ac-button {
     @extend .tiny-btn;
-    margin-left: rem-calc(10);
+    margin-bottom: 0;
     padding: rem-calc(5 8);
   }
 
@@ -179,11 +179,13 @@
   }//modal wrapper
 
   .delete-criterion {
-    bottom: $button-margin-bottom;
-    position: absolute;
-    right: 0;
+    a {
+      bottom: rem-calc(30);
+      float: right;
+      position: relative;
+      right: 0;
+    }
   }
-
   // Story Modal sections
 
   .story-section-title {
