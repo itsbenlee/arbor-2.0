@@ -4,6 +4,12 @@
 .section-people {
   .button.add-team { float: right; }
 
+  #teams-list {
+    float: left;
+    margin-top: rem-calc(30);
+    width: 100%;
+  }
+
   .teams-list {
     .block-wrapper {
       min-height: $block-min-height;
