@@ -69,17 +69,6 @@ $profile-margin: $user-header-padding;
   } // user avatar
 } // user header
 
-.user-header .user-name,
-.section-profile .user-mail {
-  border: 0;
-  border-bottom: 1px dashed $black-20;
-  margin: 0 auto;
-  padding-bottom: $user-header-padding;
-  text-align: center;
-
-  &:disabled { background: none; }
-}
-
 .profile,
 .mail-title {
   color: $black-20;
@@ -118,7 +107,7 @@ $profile-margin: $user-header-padding;
   }
 
   .cancel-link {
-    color: $canvas-color;
+    color: $alert-color;
     display: block;
     font-size: rem-calc(12);
     margin-top: $profile-margin / 2;
@@ -130,11 +119,11 @@ $profile-margin: $user-header-padding;
 .section-profile,
 .user-header {
   input {
-    [type="email"],
-    [type="text"] { background-color: transparent; }
-  }
-}
+    &[type="email"],
+    &[type="text"] {
+      background-color: transparent;
 
-.editable-field {
-  &:focus { border-bottom: 1px dashed lighten($primary-nav-color, 20%); }
+      &:focus { background-color: transparent; }
+    }
+  }
 }

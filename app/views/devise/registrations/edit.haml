@@ -10,17 +10,12 @@
         = devise_error_messages!
         .edit-inputs
           .field
-            %small= t('user_sessions.change_password.leave_blank')
-            %br/
-            = f.password_field :password, autocomplete: 'off', required: true, placeholder: t('reloaded.users.enter_password'), class: 'radius'
+            = f.password_field :password, autocomplete: 'off', required: true, placeholder: t('reloaded.users.enter_password'), class: 'dashed-input'
           .field
-            = f.password_field :password_confirmation, autocomplete: 'off', required: true, placeholder: :password_confirmation, class: 'radius'
+            = f.password_field :password_confirmation, autocomplete: 'off', required: true, placeholder: :password_confirmation, class: 'dashed-input'
           .field
-            %small= t('user_sessions.change_password.need_current_password')
-            %br/
-            = f.password_field :current_password, autocomplete: 'off', required: true, placeholder: :current_password, class: 'radius'
-        = f.submit t('reloaded.users.save_btn'), class: 'button tiny radius'
-        = link_to t('reloaded.users.cancel_btn'), arbor_reloaded_user_path(current_user), class: 'button tiny radius secondary'
+            = f.password_field :current_password, autocomplete: 'off', required: true, placeholder: :current_password, class: 'dashed-input'
+        = f.submit t('user_sessions.change_password'), class: 'button small radius'
 - else
   %h2
     Edit #{resource_name.to_s.humanize}
