@@ -28,8 +28,8 @@ feature 'Sign up to Arbor' do
         end
       end
 
-      scenario 'should redirect me to arbor reloaded' do
-        expect(current_path).to eq('/arbor_reloaded')
+      scenario 'should redirect me to root' do
+        expect(current_path).to eq(root_path)
       end
 
       scenario 'should create a template project' do
@@ -50,7 +50,7 @@ feature 'Sign up to Arbor' do
       end
     end
 
-    scenario 'after log in should redirect me to arbor reloaded' do
+    scenario 'after log in should redirect me to root' do
       visit new_user_session_path
 
       within '#login' do
@@ -59,7 +59,7 @@ feature 'Sign up to Arbor' do
         find('#login_button').click()
       end
 
-      expect(current_path).to eq('/arbor_reloaded')
+      expect(current_path).to eq(root_path)
     end
   end
 
@@ -81,7 +81,7 @@ feature 'Sign up to Arbor' do
         click_button 'Sign up'
       end
 
-      expect(current_path).to eq(root_path)
+      expect(current_path).to eq('/projects')
     end
 
     scenario 'after log in should redirect me to old arbor' do
@@ -93,7 +93,7 @@ feature 'Sign up to Arbor' do
         find('#login_button').click()
       end
 
-      expect(current_path).to eq(root_path)
+      expect(current_path).to eq('/projects')
     end
   end
 end

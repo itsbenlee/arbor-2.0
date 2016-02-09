@@ -4,6 +4,7 @@ feature 'Sign in', js: true do
   context 'when the user logs in' do
     background do
       sign_in create :user
+      visit projects_path
     end
 
     scenario 'should show the logout button' do

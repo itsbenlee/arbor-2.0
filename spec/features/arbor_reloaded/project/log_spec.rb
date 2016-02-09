@@ -1,20 +1,21 @@
 require 'spec_helper'
 
-feature 'Log activity' do
+feature 'Log activity'do
   let!(:user) { create :user }
 
   background do
+    ENV['ENABLE_RELOADED'] = 'true'
     sign_in user
   end
 
   context 'for creating projects' do
     scenario 'should log project creation' do
       PublicActivity.with_tracking do
-        within '.content-general' do
-          click_link 'Create new project'
+        within '.projects-dashboard' do
+          find('#create-project-button').click
         end
         fill_in 'project_name', with: 'Test Project'
-        find('.create-project-btn').click
+        find('input#save-project').click
       end
 
       project_activities = Project.first.activities
@@ -24,10 +25,10 @@ feature 'Log activity' do
 
     scenario 'should not create logs when the save fails' do
       PublicActivity.with_tracking do
-        within '.content-general' do
-          click_link 'Create new project'
+        within '.projects-dashboard' do
+          find('.button').click
         end
-        find('.create-project-btn').click
+        find('input#save-project').click
       end
 
       expect(PublicActivity::Activity.all).to be_empty
@@ -56,11 +57,10 @@ feature 'Log activity' do
     end
 
     context 'user stories' do
-      let!(:hypothesis) { create :hypothesis, project: project }
       let(:user_story)  { build :user_story }
 
       background do
-        visit project_hypotheses_path project
+        visit project_user_stories_path project
       end
 
       scenario 'should log adding user stories' do

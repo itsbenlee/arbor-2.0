@@ -7,7 +7,8 @@ feature 'Display projects only for members' do
   end
 
   scenario 'should show the project on sidebar' do
-    visit root_url
+    visit projects_path
+
     within 'aside' do
       expect(page).to have_text @project.name
     end
@@ -15,7 +16,8 @@ feature 'Display projects only for members' do
 
   scenario 'should not to show the project on sidebar' do
     project_not_member = create :project
-    visit root_url
+    visit projects_path
+
     within 'aside' do
       expect(page).not_to have_text project_not_member.name
     end

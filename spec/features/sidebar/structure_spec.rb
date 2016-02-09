@@ -14,6 +14,7 @@ feature 'Sidebar structure changes' do
 
     background do
       sign_in user
+      visit projects_path
     end
 
     scenario 'the sidebar is displayed' do
