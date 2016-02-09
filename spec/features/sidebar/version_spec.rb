@@ -6,6 +6,7 @@ feature 'Check version string' do
   background do
     ENV['SIDEBAR_VERSION'] = 'MY_VERSION'
     sign_in user
+    visit projects_path
   end
 
   scenario 'sidebar version is displayed' do

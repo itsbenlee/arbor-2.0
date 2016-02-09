@@ -6,6 +6,7 @@ feature 'Sign up to Arbor' do
 
   background do
     visit new_user_registration_path
+    ENV['ENABLE_RELOADED'] = 'true'
   end
 
   scenario 'should show me the minimum password length when I enter' do
@@ -21,7 +22,7 @@ feature 'Sign up to Arbor' do
 
       click_button 'Sign up'
     end
-    expect(page).to have_selector '#sidebar'
+    expect(current_path).to eq(root_path)
   end
 
   scenario 'should not show me the signup successful message' do

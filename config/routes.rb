@@ -1,7 +1,7 @@
 Railsroot::Application.routes.draw do
   devise_scope :user do
     authenticated :user do
-      root to: 'projects#index', as: :authenticated_root
+      root to: 'arbor_reloaded/projects#index', as: :authenticated_root
     end
 
     unauthenticated :user do
