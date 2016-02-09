@@ -36,18 +36,14 @@
       arbor_reloaded_project_members_path(current_project), |
       { class: 'add-member has-tip', data: { reveal_id: 'project-members-modal', reveal_ajax: true, tooltip: '' }, aria: { haspopup: true }, title: t('reloaded.tooltips.add_members') }
     - current_project.members.each_with_index do |member, index|
-      - if index == 0
+      - if index < 3
         %li
-          = link_to arbor_reloaded_project_members_path(current_project), { data: { reveal_id: 'project-members-modal', reveal_ajax: true }, style: "background-image: url(#{ member.avatar_url });"} do
-            = image_tag ('icons/po_avatar.svg'), class: 'hide'
-      - if index == 1
-        %li
-          = link_to arbor_reloaded_project_members_path(current_project), { data: { reveal_id: 'project-members-modal', reveal_ajax: true }, style: "background-image: url(#{ member.avatar_url });"} do
-            = image_tag ('icons/user-icon.svg'), class: 'hide'
-      - if index == 2
-        %li
-          = link_to arbor_reloaded_project_members_path(current_project), { data: { reveal_id: 'project-members-modal', reveal_ajax: true }, style: "background-image: url(#{ member.avatar_url});"} do
-            = image_tag ('icons/user-icon.svg'), class: 'hide'
+          = link_to arbor_reloaded_project_members_path(current_project), { data: { reveal_id: 'project-members-modal', reveal_ajax: true }} do
+            -  if member.avatar?
+              .avatar-img{ style: "background-image: url(#{member.avatar_url})" }
+            - else
+              = image_tag(member.gravatar_url, class: 'avatar-img', onerror: "this.src=''")
+              .avatar-circle#avatar-circle= user_initial(member)
     - if current_project.members.count > 3
       %li
         = link_to arbor_reloaded_project_members_path(current_project),{ data: { reveal_id: 'project-members-modal', reveal_ajax: true }}, class: 'other-members' do
