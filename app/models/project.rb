@@ -25,6 +25,7 @@ class Project < ActiveRecord::Base
 
   scope :recent, -> { order(updated_at: :desc) }
   scope :by_name, -> { order('LOWER(name)') }
+  scope :no_team, -> { where(team: nil) }
 
   def as_json
     super(only: [:name])
@@ -40,6 +41,15 @@ class Project < ActiveRecord::Base
 
   def invite_exists(email)
     invites.any? { |invite| invite.email == email }
+  end
+
+  def assign_team(selected_team_name, current_user)
+    if selected_team_name.blank?
+      self.owner = current_user
+    else
+      self.team = current_user.teams.find_by(name: selected_team_name)
+      self.owner = team.owner
+    end
   end
 
   def add_member(user)

@@ -1,4 +1,14 @@
 en:
+  page_title:
+    dashboard: 'Dashboard'
+    teams: 'Teams'
+    profile: "%{name} Profile"
+  user_sessions:
+    login: 'Log in'
+    change_password: 'Change Password'
+    change_password:
+      leave_blank: "(leave blank if you don't want to change it)"
+      need_current_password: '(we need your current password to confirm your changes)'
   sign_up:
     title: "Sign up"
     name: "Full name"
@@ -206,19 +216,22 @@ en:
       write_title: 'Write some User Stories'
       write_subtitle: 'On the field above, enter a user story to start filling up your project'
     team:
+      no_email: 'Please type an email on the field to submit'
+      no_user: 'This email is not registered on Arbor'
       no_teams: "You don't have any teams yet. Create one by clicking on the plus sign."
-      create: 'Create a team'
+      create: 'Create a Team'
       name: 'Enter new team name here...'
       save: 'Create Team'
       modal:
         mail_invite: 'Invite members by email address'
+      name_uniqueness: 'You are member of a team with that name, choose a different one.'
     estimation:
       separator_title: 'Estimation'
       save_button: 'Save Changes'
       total_points: 'Total points'
       total_cost: 'Total cost'
       total_weeks: 'Weeks'
-      modal_title: 'Update Estimation Numbers'
+      modal_title: 'Estimation Settings'
       modal_velocity: 'Velocity'
       modal_cost: 'Cost per week'
     navigation:
@@ -283,7 +296,7 @@ en:
       confirm_button: 'Copy stories'
       cancel_button: 'Cancel'
     users:
-      profile: 'Profile'
+      name: 'Name'
       mail: 'Email'
       edit: 'Edit'
       save: 'Save'
@@ -297,14 +310,18 @@ en:
       errors:
         edit: 'An error ocurred editing your user profile'
     tooltips:
-      favorite_project: 'Favorite project'
-      unfavorite_project: 'Unfavorite project'
-      delete_project: 'Delete project'
-      copy_project: 'Duplicate project'
-      delete_story: 'Delete story'
+      favorite_project: 'Favorite or unfavorite'
+      delete_project: 'Delete'
+      copy_project: 'Duplicate'
+      delete_story: 'Delete'
       delete_stories: 'Delete stories'
-      copy_story: 'Copy story'
-      copy_stories: 'Copy stories'
+      duplicate_story: 'Duplicate story'
+      copy_stories: 'Duplicate stories'
       archive_stories: 'Archive stories'
       archive_story: 'Archive story'
-      update_estimation: 'Update estimation'
+      update_estimation: 'Settings'
+      estimate: 'Estimate'
+      hide: 'Toggle Estimation'
+      add_members: 'Add/Remove people'
+      estimation_velocity: 'This is an estimate of how many points your team can complete each week. You can use it to get a sense for how long development will take.'
+      estimation_cost: 'This is the cost of a sprint. Different development teams charge differently, but the average cost of a week of work is a good benchmark.'

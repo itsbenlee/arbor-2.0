@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   has_many :team_users
   has_many :teams, through: :team_users
 
-  mount_uploader :avatar, GenericImageUploader
+  mount_uploader :avatar, UserAvatarImageUploader
 
   def can_delete?(project)
     self == project.owner

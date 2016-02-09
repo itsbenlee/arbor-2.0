@@ -146,6 +146,7 @@ UtilityFunction:
     AcceptanceCriterionServices#get_order,
     UserStory#reorder_constraints,
     ConstraintServices#get_order,
-    SlackIntegrationService
+    SlackIntegrationService,
+    UserAvatarImageUploader#default_url
   ]
   max_helper_calls: 1

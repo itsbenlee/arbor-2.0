@@ -1,6 +1,4 @@
-%form
-  %input{ class: 'new-member-mail radius', |
-    type: "email", |
-    required: true, |
-    placeholder: t('reloaded.team.modal.mail_invite')}
-  %input{type: 'submit', class: 'hidden-element', id: 'submit-modal-form'}
+= form_tag arbor_reloaded_team_add_member_path(team), method: :put, remote: true, class: 'new-member' do
+  = text_field_tag :member, nil, type: :email, placeholder: t('reloaded.project_members.mail_invite'), class: 'team-member-email'
+  .team-member-errors
+  = submit_tag :submit, class: 'submit-team-members hidden-element'

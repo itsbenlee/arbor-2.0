@@ -1,23 +1,48 @@
-%section#signup
-  %h2= t('sign_up.title')
-  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-    .field
-      = image_tag('icons/user-icon.svg', class: 'icon')
-      = f.text_field :full_name, autofocus: true, required: true, placeholder: t('sign_up.name'), class: 'with-icon radius'
-    .field
-      = image_tag('icons/mail-icon.svg', class: 'icon')
-      = f.email_field :email, autofocus: true, required: true, placeholder: t('sign_up.mail'), class: 'with-icon radius'
-    .field.password-input
-      = image_tag('icons/password-icon.svg', class: 'icon')
-      = f.password_field :password, placeholder: t('sign_up.password'), class: 'with-icon radius', autocomplete: 'off', required: true
-      .password-information
-        = t('sign_up.password_length', length: resource.class.password_length.min)
-    .field
-      = image_tag('icons/password-icon.svg', class: 'icon')
-      = f.password_field :password_confirmation, autocomplete: 'off', placeholder: t('sign_up.password_confirmation') , class: 'with-icon radius',
-      required: true
-    .action
-      = f.submit t('sign_up.button_signup'), class: 'button radius success small'
-  .user-session-footer
-    %span.login-question= t('links.already_have_account')
-    = link_to 'Log in', new_user_session_path, class: 'link forgot-password text-center'
+- if ENV['ENABLE_RELOADED'] == 'true'
+  .row
+    %section#signup.small-12.medium-8.large-6.small-centered.columns
+      .title-breaker
+        %h5= t('sign_up.title')
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        .field
+          = f.text_field :full_name, autofocus: true, required: true, placeholder: t('sign_up.name'), class: 'with-icon radius'
+        .field
+          = f.email_field :email, autofocus: true, required: true, placeholder: t('sign_up.mail'), class: 'with-icon radius'
+        .field.password-input
+          = f.password_field :password, placeholder: t('sign_up.password'), class: 'with-icon radius', autocomplete: 'off', required: true
+          .password-information
+            = t('sign_up.password_length', length: resource.class.password_length.min)
+        .field
+          = f.password_field :password_confirmation, autocomplete: 'off', placeholder: t('sign_up.password_confirmation') , class: 'with-icon radius',
+          required: true
+        .actions
+          = f.submit t('sign_up.button_signup'), class: 'button radius success small'
+      .user-session-footer
+        %span.login-question= t('links.already_have_account')
+        = link_to t('user_sessions.login'), new_user_session_path, class: 'link forgot-password text-center'
+
+- else
+  .row
+    %section#signup.small-12.medium-8.large-6.small-centered.columns
+      %h2= t('sign_up.title')
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        .field
+          = image_tag('icons/user-icon.svg', class: 'icon')
+          = f.text_field :full_name, autofocus: true, required: true, placeholder: t('sign_up.name'), class: 'with-icon radius'
+        .field
+          = image_tag('icons/mail-icon.svg', class: 'icon')
+          = f.email_field :email, autofocus: true, required: true, placeholder: t('sign_up.mail'), class: 'with-icon radius'
+        .field.password-input
+          = image_tag('icons/password-icon.svg', class: 'icon')
+          = f.password_field :password, placeholder: t('sign_up.password'), class: 'with-icon radius', autocomplete: 'off', required: true
+          .password-information
+            = t('sign_up.password_length', length: resource.class.password_length.min)
+        .field
+          = image_tag('icons/password-icon.svg', class: 'icon')
+          = f.password_field :password_confirmation, autocomplete: 'off', placeholder: t('sign_up.password_confirmation') , class: 'with-icon radius',
+          required: true
+        .action
+          = f.submit t('sign_up.button_signup'), class: 'button radius success small'
+      .user-session-footer
+        %span.login-question= t('links.already_have_account')
+        = link_to t('user_sessions.login'), new_user_session_path, class: 'link forgot-password text-center'

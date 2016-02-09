@@ -6,7 +6,6 @@
   background-color: $dashboard-hover-color;
   color: $black-40;
   font-size: rem-calc(22);
-  margin: rem-calc(50) auto 0;
   padding: rem-calc(15 25);
 
   .backlog-story-input {
@@ -110,6 +109,7 @@ $circle-dimension: $story-points-dimension;
 
   .circle-checkbox {
     @include opacity(0);
+    background-color: $black-10;
     height: $story-points-dimension;
     left: -(($story-padding-sides * 2) + ($story-points-dimension / 2));
     top: $story-padding-top;

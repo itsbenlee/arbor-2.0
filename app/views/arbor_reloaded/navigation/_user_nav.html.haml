@@ -1,6 +1,5 @@
 %nav.secondary-nav
   %ul.left
-    %li= link_to t('reloaded.navigation.profile'), '#', class: 'link'
-    %li= link_to t('reloaded.navigation.people'), arbor_reloaded_teams_path, class: 'link'
+    %li= link_to t('reloaded.navigation.profile'), arbor_reloaded_user_path(current_user), class: 'link'
     %li= link_to t('reloaded.navigation.change_password'), edit_user_registration_path, class: 'link', locals: {version: 'reloaded'}
   %ul.right.members

@@ -20,6 +20,7 @@ $modal-close-offset: rem-calc(20);
 .reveal-modal-bg { position: fixed; }
 
 .reveal-modal {
+  margin-bottom: $modal-sides-padding;
   min-height: inherit;
   outline: 0;
 

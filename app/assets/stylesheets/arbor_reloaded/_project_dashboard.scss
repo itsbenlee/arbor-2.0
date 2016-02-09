@@ -7,7 +7,6 @@ $search-width: rem-calc(300);
 
 .dashboard-header {
   @include clearfix;
-  padding-top: rem-calc(50);
 
   input,
   li,
@@ -23,15 +22,13 @@ $search-width: rem-calc(300);
     }
 
     input {
-      background-color: $white;
+      background-color: $transparent;
       border: 0;
       border-bottom: 1px solid $black-10;
       margin-bottom: 0;
       max-width: $search-width;
       padding-left: rem-calc(40);
       @include input-placeholder { color: $black-60; }
-
-      &:focus { background-color: $white; }
 
       @media #{$small-only} { max-width: 100%; }
     } // search input
@@ -205,9 +202,7 @@ $search-width: rem-calc(300);
     .project,
     .deleter {
       .left {
-        bottom: $block-padding;
-        position: absolute;
-        width: calc(100% - #{$block-padding} * 2);
+        @extend %data;
 
         .title { color: $header-font-color; }
       }//card info

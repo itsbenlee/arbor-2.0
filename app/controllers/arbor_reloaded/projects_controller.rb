@@ -2,8 +2,9 @@ module ArborReloaded
   class ProjectsController < ApplicationController
     layout false, only: :members
     before_action :load_project,
-                  only: [:show, :edit, :update, :destroy,
-                         :log]
+      only: [:members, :show, :edit, :update, :destroy, :log, :add_member,
+             :export_backlog]
+
     def index
       scope = params[:project_order] || 'recent'
       @projects = @projects.send(scope)
@@ -12,8 +13,9 @@ module ArborReloaded
     end
 
     def create
+      selected_team_name = team_params[:team]
       @new_project = Project.new(project_params)
-      assign_team
+      @new_project.assign_team(selected_team_name, current_user)
       assist_creation
     end
 
@@ -29,14 +31,6 @@ module ArborReloaded
       end
     end
 
-    def new
-      render layout: 'application_reload'
-    end
-
-    def edit
-      render layout: 'application_reload'
-    end
-
     def show
       render layout: 'application_reload'
       @invites = Invite.where(project: @project)
@@ -44,23 +38,25 @@ module ArborReloaded
     end
 
     def members
-      @project = Project.find(params[:project_id])
-      @members = @project.members
-      @owner = @members.find(@project.owner_id)
-      @invites = Invite.where(project: @project)
-      @can_delete = current_user.can_delete?(@project)
+      members = @project.members
       render 'arbor_reloaded/projects/members', locals: {
         project: @project,
-        members: @members,
-        invites: @invites,
-        owner: @owner,
-        can_delete: @can_delete
+        members: members,
+        invites: Invite.where(project: @project),
+        owner: members.find(@project.owner_id),
+        can_delete: current_user.can_delete?(@project)
       }
     end
 
     def destroy
       @project.destroy
       redirect_to :back
+    end
+
+    def add_member
+      members = @project.members
+      members.push(current_user) unless members.include?(current_user)
+      redirect_to arbor_reloaded_project_user_stories_path(@project)
     end
 
     def remove_member_from_project
@@ -82,6 +78,14 @@ module ArborReloaded
         format.json { json_update }
         format.html { html_update }
       end
+    end
+
+    def export_backlog
+      parameters = params.permit(:estimation)
+      @estimation = parameters[:estimation]
+      send_data(export_content,
+                filename: "#{@project.name} Backlog.pdf",
+                type:     'application/pdf')
     end
 
     def order_stories
@@ -128,15 +132,18 @@ module ArborReloaded
 
     private
 
-    def assign_team
-      selected_team_name = team_params[:team]
-      if selected_team_name.blank?
-        @new_project.owner = current_user
-      else
-        team = Team.find_by(name: selected_team_name)
-        @new_project.owner = team.owner
-        @new_project.team = team
-      end
+    def export_content
+      project_name = @project.name
+      cover_html =
+        render_to_string(partial: 'arbor_reloaded/projects/pdf_cover.html.haml',
+                         locals: { project_name: project_name })
+
+      send(:render_to_string,
+           pdf: project_name,
+           layout: 'application.pdf.haml',
+           template: 'arbor_reloaded/projects/index.pdf.haml',
+           cover: cover_html,
+           margin: { top: 30, bottom: 30 })
     end
 
     def team_params
@@ -182,7 +189,8 @@ module ArborReloaded
     end
 
     def load_project
-      @project = Project.find(params[:id])
+      id = params[:id] || params[:project_id]
+      @project = Project.find(id)
     end
 
     def member_emails

@@ -1,7 +1,11 @@
+.export_backlog
+  = link_to 'Export without estimation', arbor_reloaded_project_export_backlog_path(@project, format: :pdf, estimation: false), class: 'hidden-element'
+  = link_to 'Export with estimation', arbor_reloaded_project_export_backlog_path(@project, format: :pdf, estimation: true), class: 'hidden-element'
 .new-backlog-story.row
   = render 'arbor_reloaded/user_stories/form', user_story: UserStory.new, project: @project
 .estimation.row{class: @project.user_stories.count > 0 ? 'visible' : 'hide'}
-  = render 'arbor_reloaded/user_stories/estimation', project: @project, total_points: @total_points
+  .small-12.columns
+    = render 'arbor_reloaded/user_stories/estimation', project: @project, total_points: @total_points
 .backlog-story-list.row
   .sticky-menu
     = link_to '', '#', class: 'icn-copy has-tip tip-left', data: { reveal_id: 'copy-stories-modal', tooltip: '' }, aria: { haspopup: true }, title: t('reloaded.tooltips.copy_stories')

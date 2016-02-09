@@ -2,35 +2,16 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .section-people {
-  $animation-delay: .40s;
-
-  .circle-btn {
-    @include translateY(-50%);
-    @include circle-btn($light-blue);
-    position: absolute;
-    right: 0;
-    top: 50%;
-  }//circled btn
+  .button.add-team { float: right; }
 
   .teams-list {
     .block-wrapper {
       min-height: $block-min-height;
-
-      &::after { @include single-transition(height, .25s, ease-in $animation-delay); }
     }
 
     .block-wrapper:hover {
-      .data { bottom: $block-padding; }
-
       &::after { height: $bottom-square-height + $block-padding / 2; }
     }//hover on team thumbnails
-
-    .data {
-      @include single-transition(bottom, .25s, ease-in $animation-delay);
-      bottom: $block-padding / 2;
-      position: absolute;
-      width: calc(100% - #{$block-padding} * 2);
-    }//data
 
     .title {
       font-size: rem-calc(18);
@@ -55,13 +36,13 @@
     text-align: center;
 
     @include input-placeholder { font-size: rem-calc(14); }
+
+    &.errors { border-color: $alert-color; }
   }//project name input
 
   .new-team-errors {
-    color: $canvas-color;
+    color: $alert-color;
     font-size: rem-calc(14);
     margin-bottom: rem-calc(30);
   }
-
-  &.with-errors { .team-name { border-color: $canvas-color;} }
 }//project modal

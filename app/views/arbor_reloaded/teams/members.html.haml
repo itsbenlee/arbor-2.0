@@ -1,75 +1,25 @@
 = link_to '×', '#', class: 'close-reveal-modal'
-%h5 Team title
+%h5= @team.name
 .team-members
   .user-item.special-item
     .picture{ style: "background-image: url(#{ image_path('test-user.png') });" }
     .user-data
       %p.user-name
         %span.user-type-tag= t("reloaded.project_members.owner")
-        Napolen
+        = @team.owner_name
       %p.user-mail
-        napoleon@napoleon.com
+        = @team.owner_email
   %ul.show-project-data.custom-scroll
-    %li.user-item
-      .picture{ style: "background-image: url(#{ image_path('test-user.png') });" }
-      .user-data
-        %p.user-name
-          Damian Cardozo
-        %p.user-mail
-          damian.cardozo@damian.com
-    %li.user-item.invited
-      .picture.avatar-circle
-      .user-data
-        %p
-          %span.user-type-tag
-            = t("reloaded.project_members.user_invited")
-        %p.user-mail
-          mojo@mojo.com
-    %li.user-item
-      .picture{ style: "background-image: url(#{ image_path('test-user.png') });" }
-      .user-data
-        %p.user-name
-          Damian Cardozo
-        %p.user-mail
-          damian.cardozo@damian.com
-    %li.user-item.invited
-      .picture.avatar-circle
-      .user-data
-        %p
-          %span.user-type-tag
-            = t("reloaded.project_members.user_invited")
-        %p.user-mail
-          mojo@mojo.com
-    %li.user-item
-      .picture{ style: "background-image: url(#{ image_path('test-user.png') });" }
-      .user-data
-        %p.user-name
-          Damian Cardozo
-        %p.user-mail
-          damian.cardozo@damian.com
-    %li.user-item.invited
-      .picture.avatar-circle
-      .user-data
-        %p
-          %span.user-type-tag
-            = t("reloaded.project_members.user_invited")
-        %p.user-mail
-          mojo@mojo.com
-    %li.user-item
-      .picture{ style: "background-image: url(#{ image_path('test-user.png') });" }
-      .user-data
-        %p.user-name
-          Damian Cardozo
-        %p.user-mail
-          damian.cardozo@damian.com
-    %li.user-item.invited
-      .picture.avatar-circle
-      .user-data
-        %p
-          %span.user-type-tag
-            = t("reloaded.project_members.user_invited")
-        %p.user-mail
-          mojo@mojo.com
+    - @team.users.each do |member|
+      - if member.id != @team.owner.id
+        %li.user-item
+          .picture{ style: "background-image: url(#{ image_path('test-user.png') });" }
+          .user-data
+            %p.user-name
+              = member.full_name
+            %p.user-mail
+              = member.email
+            %input.circle-checkbox{ id:'remove-member-check', type: 'checkbox', class: 'hidden-element'  }
 .modal-footer
-  = render 'arbor_reloaded/teams/partials/invite_members'
-  = link_to t("reloaded.project_members.close"),'#', class: 'button radius small', id: 'team-modal-footer-btn'
+  = render 'arbor_reloaded/teams/partials/invite_members', team: @team
+  = link_to t("reloaded.project_members.close"), '#', class: 'team-members-button button radius small'

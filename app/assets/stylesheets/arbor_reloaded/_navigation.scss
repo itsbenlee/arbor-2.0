@@ -12,6 +12,8 @@ $avatar-dimension: rem-calc(40);
   }//logo
 
   .name {
+    color: $white;
+    line-height: $topbar-height;
     margin-left: $topbar-height;
 
     .current-project {
@@ -186,7 +188,7 @@ ul .dropdown {
       @include inline-block;
       background-size: cover;
       height: $member-avatar-dimension;
-      margin: (($sub-nav-height - $member-avatar-dimension) / 2) rem-calc(8) 0 0;
+      margin: (($sub-nav-height - $member-avatar-dimension) / 2) 0 0 rem-calc(8);
       width: $member-avatar-dimension;
 
       @media #{ $small-only } { display: none; }

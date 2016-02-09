@@ -1,15 +1,26 @@
-- if local_assigns.has_key?(:version) && local_assigns[:version] == 'reloaded'
-  = render 'arbor_reloaded/navigation/user_nav'
-  = render 'arbor_reloaded/users/user_header'
+- if ENV['ENABLE_RELOADED'] == 'true'
+  - content_for :user_nav do
+    = render 'arbor_reloaded/navigation/user_nav'
   .change-password.row
-    .title-breaker
-      %h5= t('reloaded.users.profile')
-    .edit-inputs
-      %input.enter-password{ type: 'password', placeholder: t('reloaded.users.enter_password') }
-      %input.confirm-password{ type: 'password', placeholder: t('reloaded.users.confirm_password') }
-    %input.current-password{ type: 'password', placeholder: t('reloaded.users.current_password') }
-    = link_to t('reloaded.users.save_btn'),'#', class: 'button tiny radius'
-    = link_to t('reloaded.users.cancel_btn'),'#', class: 'button tiny radius secondary'
+    .small-12.medium-6.small-centered.columns.text-center
+      .title-breaker
+        %h5= t('reloaded.user_sessions.change_password')
+      = form_for(resource, as: resource_name, url: registration_path(resource_name),
+      html: { method: :put }) do |f|
+        = devise_error_messages!
+        .edit-inputs
+          .field
+            %small= t('user_sessions.change_password.leave_blank')
+            %br/
+            = f.password_field :password, autocomplete: 'off', required: true, placeholder: t('reloaded.users.enter_password'), class: 'radius'
+          .field
+            = f.password_field :password_confirmation, autocomplete: 'off', required: true, placeholder: :password_confirmation, class: 'radius'
+          .field
+            %small= t('user_sessions.change_password.need_current_password')
+            %br/
+            = f.password_field :current_password, autocomplete: 'off', required: true, placeholder: :current_password, class: 'radius'
+        = f.submit t('reloaded.users.save_btn'), class: 'button tiny radius'
+        = link_to t('reloaded.users.cancel_btn'), arbor_reloaded_user_path(current_user), class: 'button tiny radius secondary'
 - else
   %h2
     Edit #{resource_name.to_s.humanize}

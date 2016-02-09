@@ -11,3 +11,7 @@ Devise.setup do |config|
   config.reset_password_within = 6.hours
   config.sign_out_via = :delete
 end
+
+Devise::RegistrationsController.layout proc {
+  user_signed_in? ? 'application_reload' : 'guest'
+}
