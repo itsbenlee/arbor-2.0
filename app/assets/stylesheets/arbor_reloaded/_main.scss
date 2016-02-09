@@ -329,3 +329,10 @@ $block-animation-delay: .40s;
     }
   }
 }//dashed input
+
+.tiny-btn {
+  background-color: $white;
+  border: 1px solid $black-10;
+  color: $black-90;
+  text-transform: uppercase;
+} // create button
