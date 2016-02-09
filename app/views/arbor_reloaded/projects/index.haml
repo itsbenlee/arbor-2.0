@@ -1,7 +1,7 @@
 - content_for :page_title do
   = t('page_title.dashboard')
 .projects-dashboard.row
-  - if @projects.count + current_user.teams.map(&:projects).count > 0
+  - if @projects.count + current_user.teams.map{ |team| team.projects.count }.sum > 0
     = render 'arbor_reloaded/projects/partials/search_bar'
     .small-12.columns
       .projects-list-container

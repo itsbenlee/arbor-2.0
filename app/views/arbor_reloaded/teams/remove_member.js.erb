@@ -1,0 +1,5 @@
+$('.team-members-list').empty().html("<%= j render 'arbor_reloaded/teams/partials/member_list', team: @team %>");
+$('.white-block[data-id="<%= @team.id %>"] .members-amount').text('<%= @team.members_string %>')
+bindActionsToButton();
+removeMembers();
+customScroll();
