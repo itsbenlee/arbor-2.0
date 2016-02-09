@@ -83,6 +83,9 @@ en:
     project_members: "Project members"
     add_members: "Add Member"
   project:
+    default:
+      velocity: '10'
+      cost_per_week: '2500'
     delete_project: 'Delete project'
     copy_project: 'Duplicate project'
     delete_confirmation: |

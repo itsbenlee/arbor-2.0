@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 feature 'Story list' do
+  include ActionView::Helpers::NumberHelper
   let!(:user)         { create :user }
   let!(:project)      { create :project, owner: user }
   let!(:user_stories) { create_list :user_story, 2, project: project }
@@ -8,6 +9,10 @@ feature 'Story list' do
   background do
     sign_in user
     visit arbor_reloaded_project_user_stories_path(project)
+  end
+
+  def separate_comma(number)
+    new = number_with_delimiter(number, delimiter: ',')
   end
 
   scenario 'should list all stories' do
@@ -43,7 +48,8 @@ feature 'Story list' do
     end
 
     within('.total_cost') do
-      expect(page).to have_content(total_points * 500)
+      total_cost = (total_points * 500)
+      expect(page).to have_content(number_with_delimiter(total_cost, delimiter: ','))
     end
 
     within('.total_weeks') do
