@@ -165,9 +165,8 @@ $block-animation-delay: .40s;
         padding-bottom: rem-calc(1);
       }
 
-      .icn-favorite-empty:hover {
-        &::before { content: '\e906'; }
-      }//icon
+      .icn-favorite-empty:hover,
+      .is-favorite .icn-favorite-empty { &::before { content: '\e906'; } }//icon
 
       .delete-project { margin-right: 0; }
     }//all three floating sections on the right

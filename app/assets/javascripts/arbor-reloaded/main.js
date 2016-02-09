@@ -38,6 +38,7 @@ function generalBinds() {
     displayActions();
     displayHideDelete();
     bindFavoriteIcon();
+    setFavoriteState();
     bindProjectsFilter();
   }
 }
