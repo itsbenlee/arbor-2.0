@@ -1,6 +1,4 @@
 .section-log.row
-  .title
-    %h2= t('reloaded.activities.title', project_name: @project.name)
   #log
   - @activities.each do |activity|
     - if activity.key == 'project.create_project'
