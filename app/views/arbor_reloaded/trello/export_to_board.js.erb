@@ -1,0 +1,11 @@
+$('.select-board-list').hide();
+<% if @response.success %>
+  $('.trello-export-result').html('*<%= @response.data[:message] %>');
+<% elsif @response.data[:token_error] %>
+  $('.trello-authorize-link').removeClass('hide');
+  authorizeTrello();
+  authorizedTrelloExportBoard();
+  authorizedTrelloExport();
+<% else %>
+  $('.trello-export-result').html('*<%= @response.errors %>');
+<% end %>

@@ -182,8 +182,13 @@ en:
   json:
     export: "Export as JSON"
   trello:
-    export: 'Export to Trello'
-    default_list: 'Product Backlog'
+    authorize: 'Authorize'
+    reauthorize: 'Reauthorize Arbor on Trello and try again'
+    new_board: 'Export to a new Trello board'
+    existing_board: 'Export to an existing Trello board'
+    success: 'Project exported to Trello succesfully'
+    default_list: 'Arbor Backlog Export'
+    error: 'There was an error exporting your project to Trello. Please try again later'
   pdf:
     export: 'Export as PDF'
   mailer:

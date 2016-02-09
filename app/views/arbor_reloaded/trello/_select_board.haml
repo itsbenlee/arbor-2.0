@@ -1,0 +1,9 @@
+- if response.success
+  = form_tag arbor_reloaded_project_export_to_board_path(project), remote: true, method: :get do
+    = hidden_field_tag 'token', token
+    = select_tag 'board_id', options_for_select(response.data[:boards].collect {|board| [ board.name, board.id ] }), include_blank: true
+    = submit_tag :submit, class: 'submit-destination-board hidden-element'
+- else
+  = t('trello.reauthorize')
+  = link_to '#', { id: 'authorize-arbor-on-trello', class: 'copy-project', data: { url: arbor_reloaded_project_authorize_path(project) } } do
+    = t('trello.authorize')
