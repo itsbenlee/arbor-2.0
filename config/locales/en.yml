@@ -215,6 +215,10 @@ en:
     user_stories:
       write_title: 'Write some User Stories'
       write_subtitle: 'On the field above, enter a user story to start filling up your project'
+      actions:
+        are_you_sure: 'Are you sure?'
+        confirm: 'Yes, delete it'
+        cancel: 'Cancel'
     team:
       no_email: 'Please type an email on the field to submit'
       no_user: 'Email is not registered on Arbor.'

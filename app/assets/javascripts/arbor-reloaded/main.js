@@ -41,6 +41,10 @@ function generalBinds() {
     setFavoriteState();
     bindProjectsFilter();
   }
+  if ($('.backlog-story-list').length) {
+    displayActions();
+    displayHideDelete();
+  }
 }
 
 function bindAutoReveal() {

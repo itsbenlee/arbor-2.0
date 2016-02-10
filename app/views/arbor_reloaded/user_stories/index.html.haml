@@ -6,7 +6,7 @@
 .estimation.row{class: @project.user_stories.count > 0 ? 'visible' : 'hide'}
   .small-12.columns
     = render 'arbor_reloaded/user_stories/estimation', project: @project, total_points: @total_points
-.backlog-story-list.row
+.backlog-story-list.white-blocks-list.row
   .sticky-menu
     = link_to '', '#', class: 'icn-copy has-tip tip-left', data: { reveal_id: 'copy-stories-modal', tooltip: '' }, aria: { haspopup: true }, title: t('reloaded.tooltips.copy_stories')
     = link_to '', '#', class: 'icn-archive has-tip tip-left', aria: { haspopup: true }, data: { tooltip: '' }, title: t('reloaded.tooltips.archive_stories')
