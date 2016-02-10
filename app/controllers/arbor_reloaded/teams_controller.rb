@@ -2,7 +2,8 @@ module ArborReloaded
   class TeamsController < ApplicationController
     layout 'application_reload'
     before_action :authenticate_user!
-    before_action :load_team, only: [:members, :add_member, :remove_member]
+    before_action :load_team,
+      only: [:members, :add_member, :remove_member, :destroy]
 
     def index
       @new_team = Team.new
@@ -38,6 +39,14 @@ module ArborReloaded
 
     def members
       render layout: false
+    end
+
+    def destroy
+      TeamUser.find_by(team: @team).destroy
+      unless @team.delete
+        flash[:alert] = I18n.t('reloaded.team.can_not_delete_team')
+      end
+      redirect_to :back
     end
 
     private

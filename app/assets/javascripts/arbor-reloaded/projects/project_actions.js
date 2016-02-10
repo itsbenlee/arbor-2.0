@@ -33,7 +33,7 @@ function displayHideDelete() {
     $deleteContainer = $(this).closest('li');
     $deleteContainer.find($('.deleter')).addClass('visible');
     $(this).parent().removeClass('visible');
-    return false;
+    event.stopPropagation();
   });
 
   $cancel.on('click', function( e ) {
