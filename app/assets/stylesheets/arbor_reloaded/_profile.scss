@@ -16,35 +16,11 @@ $profile-margin: $user-header-padding;
   }
 
   .user-avatar {
+    @include user-avatar($avatar-dimension);
     height: $avatar-dimension;
     margin: 0 auto;
     position: relative;
     width: $avatar-dimension;
-
-    .avatar-img,
-    .avatar-circle {
-      @include background-size(cover);
-      @include border-radius(100%);
-      background-color: $black-20;
-      background-position: center;
-      height: $avatar-dimension;
-      line-height: $avatar-dimension;
-      width: $avatar-dimension;
-    }
-
-    .avatar-img {
-      @include background-size(cover);
-      background-position: center;
-      text-align: center;
-    }
-
-    .avatar-circle {
-      color: $white;
-      font-size: rem-calc(50);
-      position: absolute;
-      text-align: center;
-      top: 0;
-    }
 
     .icn-edit {
       @include border-radius(100%);

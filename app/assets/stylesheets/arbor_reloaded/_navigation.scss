@@ -66,12 +66,7 @@ $avatar-dimension: rem-calc(40);
 
 .top-bar-section .profile {
   .avatar {
-    @include background-size(cover);
-    @include border-radius(100%);
-    background-position: center;
-    display: none;
-    height: $avatar-dimension;
-    width: $avatar-dimension;
+    @include user-avatar($avatar-dimension, rem-calc(20));
 
     @media #{ $medium-only } { margin: rem-calc(10 15 0 0); }
     @media #{ $medium-up } { @include inline-block; }
@@ -182,16 +177,13 @@ ul .dropdown {
   }//left container
 
   .members {
+    @include user-avatar($member-avatar-dimension, rem-calc(15));
     margin-right: $topbar-margin;
 
     a:not(.button) {
-      @include background-size(cover);
-      @include border-radius(100%);
       @include inline-block;
-      background-position: center;
-      height: $member-avatar-dimension;
+      line-height: 1;
       margin: (($sub-nav-height - $member-avatar-dimension) / 2) 0 0 rem-calc(8);
-      width: $member-avatar-dimension;
 
       @media #{ $small-only } { display: none; }
 
@@ -208,7 +200,11 @@ ul .dropdown {
         vertical-align: middle;
         width: $user-edit-dimension;
 
-        &.add-member { margin-right: 0; }
+        &.add-member {
+          @include border-radius(100%);
+          margin-right: 0;
+        }
+
         &:hover { background-color: $black-20; }
 
         @media #{$small-only} {

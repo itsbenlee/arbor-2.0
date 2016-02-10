@@ -18,6 +18,9 @@
 
   padding: 0;
 
+  .user-item,
+  .special-item { @include user-avatar($avatar-dimension, rem-calc(20)); }
+
   .user-item {
     @include clearfix;
     border-bottom: 1px solid $black-20;
@@ -44,12 +47,8 @@
   .user-data { float: left; }
 
   .picture {
-    @include background-size(cover);
-    @include border-radius(100%);
-    background-position: center;
     height: $avatar-dimension;
-    line-height: $avatar-dimension;
-    text-align: center;
+    position: relative;
     width: $avatar-dimension;
   }
 

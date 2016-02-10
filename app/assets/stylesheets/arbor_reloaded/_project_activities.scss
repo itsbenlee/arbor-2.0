@@ -25,32 +25,20 @@
       }
     }//log-line-left
 
-    .avatar-circle,
-    .log-details {
-      float: left;
-    }
+    .avatar,
+    .log-details { float: left; }
 
     .log-details { width: calc(100% - ( #{$avatar-dimension} + #{$avatar-margin})); }
 
-    .avatar-circle {
-      @include background-size(cover);
-      @include border-radius(100%);
-      @include inline-block;
-      background-color: $black-30;
-      background-position: center;
-      color: $black-10;
-      font-size: rem-calc(24);
+    .avatar {
+      @include user-avatar($avatar-dimension, rem-calc(20));
       height: $avatar-dimension;
-      line-height: $avatar-dimension;
       margin-right: $avatar-margin;
-      text-align: center;
       width: $avatar-dimension;
     }
 
     .log-line-left,
-    .log-details {
-      margin-top: ($avatar-dimension / 5);
-    }
+    .log-details { margin-top: ($avatar-dimension / 5); }
 
     .log-line-right,
     .log-line-left {

@@ -28,7 +28,13 @@
               %span.icn-notifications
       %ul.profile
         %li.user-dropdown.has-dropdown.not-click
-          .avatar{ style: "background-image: url(#{ current_user.avatar_url });" }
+          .avatar
+            - if current_user.avatar?
+              .avatar-img{ style: "background-image: url(#{ current_user.avatar_url });" }
+            - else
+              = image_tag(current_user.gravatar_url, class: 'avatar-img', onerror: "this.src=''")
+              .avatar-circle#avatar-circle= user_initial(current_user)
+
           = link_to '#', id: 'welcome' do
             = t('reloaded.navigation.welcome')
             %span

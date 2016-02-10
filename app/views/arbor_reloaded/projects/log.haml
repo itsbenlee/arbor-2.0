@@ -11,9 +11,15 @@
         .log-line-left
           %span.created-at= activity.created_at.strftime("%b %e at %l:%M%P")
         .log-line-right
-          - if !activity.owner_id.blank?
-            .avatar-circle#avatar-circle{ style: "background-image: url(#{ @users.find(activity.owner_id).avatar_url }); color: transparent;" }
-          - else
-            .avatar-circle#avatar-circle.no-avatar
+          .avatar
+            - if activity.owner_id.present?
+              - if activity.owner.avatar?
+                .avatar-img{ style: "background-image: url(#{ @users.find(activity.owner_id).avatar_url });" }
+              - else
+                = image_tag @users.find(activity.owner).gravatar_url, class: 'avatar-img', onerror: "this.src=''"
+                .avatar-circle#avatar-circle= user_initial(@users.find(activity.owner))
+            - else
+              .avatar-circle#avatar-circle= user_initial(@project.owner)
+
           .log-details
             = render_activity activity, locals: {version: 'reloaded', project_name: @project.name}

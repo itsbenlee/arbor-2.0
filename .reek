@@ -140,6 +140,7 @@ UtilityFunction:
     UserStoriesHelper#format_story_points,
     ApplicationHelper#meta_title,
     ApplicationHelper#meta_description,
+    ApplicationHelper#user_initial,
     ThumbnailUploader#default_link_url,
     ThumbnailUploader#default_file_url,
     UserStory#reorder_criterions,
