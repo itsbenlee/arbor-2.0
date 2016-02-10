@@ -233,6 +233,7 @@ GEM
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
     netrc (0.11.0)
+    newrelic_rpm (3.14.3.313)
     nilify_blanks (1.2.1)
       activerecord (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -474,6 +475,7 @@ DEPENDENCIES
   migration_data
   mini_magick
   mustache-js-rails
+  newrelic_rpm
   nilify_blanks (= 1.2.1)
   parallel_tests
   passenger (= 5.0.15)

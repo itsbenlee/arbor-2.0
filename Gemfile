@@ -45,6 +45,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'wkhtmltopdf-binary-edge', '~> 0.12.2.1'
+  gem 'newrelic_rpm'
 end
 
 group :test do
