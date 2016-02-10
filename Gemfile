@@ -45,6 +45,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'wkhtmltopdf-binary-edge', '~> 0.12.2.1'
+  gem 'newrelic_rpm'
 end
 
 group :test do
@@ -65,6 +66,7 @@ group :production do
   gem 'passenger', '5.0.15'
   gem 'mini_magick'
   gem 'wkhtmltopdf-heroku'
+  gem 'newrelic_rpm'
 end
 
 gem 'devise'
