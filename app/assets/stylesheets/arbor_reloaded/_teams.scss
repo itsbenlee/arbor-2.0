@@ -4,6 +4,12 @@
 .section-people {
   .button.add-team { float: right; }
 
+  #teams-list {
+    float: left;
+    margin-top: rem-calc(30);
+    width: 100%;
+  }
+
   .teams-list {
     .block-wrapper {
       min-height: $block-min-height;
@@ -29,8 +35,10 @@
 }//section people
 ////// Team modal
 
-#team-modal {
-  .team-name {
+#team-modal,
+#team-members-modal {
+  .team-name,
+  .team-member-email {
     font-size: rem-calc(14);
     margin: rem-calc(35) auto rem-calc(10);
     text-align: center;
@@ -38,9 +46,12 @@
     @include input-placeholder { font-size: rem-calc(14); }
 
     &.errors { border-color: $alert-color; }
+
+    &.team-member-email { margin: initial; }
   }//project name input
 
-  .new-team-errors {
+  .new-team-errors,
+  .team-member-errors {
     color: $alert-color;
     font-size: rem-calc(14);
     margin-bottom: rem-calc(30);

@@ -30,11 +30,10 @@
           %span#action= @user_story.action
           %span.grey-prefix= t('reloaded.backlog.result')
           %span#result= @user_story.result
-    %p.created-data
+    %p.created-data.hide
       %span.date Nov 19 at 5:45 PM
-      .hide
-        by
-        %span.author Napoleon Martinez
+      by
+      %span.author Napoleon Martinez
   .delete-confirmation-overlay
     %p.title= t('reloaded.story_modal.delete.confirmation_text')
     = link_to t('reloaded.project_dashboard.delete_project'), arbor_reloaded_user_story_path(@user_story), method: :delete, class: 'button radius alert tiny'

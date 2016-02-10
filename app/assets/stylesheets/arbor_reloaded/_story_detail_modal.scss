@@ -162,6 +162,12 @@
 
       &:hover { @include opacity(.8); }
     } // icn delete
+
+    .comments {
+      border-top: 1px solid $black-20;
+      margin-top: $story-section-margin / 2;
+      padding-top: $story-section-margin / 2;
+    }
   }//modal wrapper
 
   // Story Modal sections
