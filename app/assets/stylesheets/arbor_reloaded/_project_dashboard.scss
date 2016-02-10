@@ -96,7 +96,7 @@ $search-width: rem-calc(300);
   @include translateY(-50%);
   font-size: rem-calc(15);
   left: 0;
-  position: absolute;
+  position: fixed;
   text-align: center;
   top: 50%;
   width: 100%;
