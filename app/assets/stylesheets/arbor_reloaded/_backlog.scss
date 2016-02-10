@@ -62,6 +62,17 @@ $circle-dimension: $story-points-dimension;
   padding: $story-padding-top $story-padding-sides;
   position: relative;
 
+  &.white-block .actions.actions { background-color: $transparent; }
+
+  .actions,
+  .deleter,
+  .right {
+    @include translateY(-50%);
+    position: absolute;
+    right: $block-padding;
+    top: 50%;
+  }
+
   &:first-child { margin-top: rem-calc(30); }
 
   &:hover {
@@ -72,10 +83,10 @@ $circle-dimension: $story-points-dimension;
   }//backlog user story hover
 
   .icn-comments {
+    bottom: 0;
     font-size: rem-calc(13);
-    right: $story-padding-sides;
-    top: $story-padding-top;
-    vertical-align: top;
+    margin-right: $story-padding-top / 2;
+    right: $story-padding-top;
 
     &:hover { @include opacity(.8); }
   } // comment icon

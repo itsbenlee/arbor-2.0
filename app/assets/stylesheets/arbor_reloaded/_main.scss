@@ -123,8 +123,6 @@ $block-animation-delay: .40s;
     .right {
       line-height: $action-circle-dimension;
       position: absolute;
-      right: $block-padding + $block-grid-default-spacing / 2;
-      top: $block-padding;
       z-index: 2;
 
       [class^="icn-"] {
@@ -146,6 +144,8 @@ $block-animation-delay: .40s;
         }//other
       }//other and favorite
 
+      .delete-story,
+      .copy-story,
       .delete-project,
       .copy-project,
       [class^="icn-favorite"] {
@@ -168,7 +168,8 @@ $block-animation-delay: .40s;
       .icn-favorite-empty:hover,
       .is-favorite .icn-favorite-empty { &::before { content: '\e906'; } }//icon
 
-      .delete-project { margin-right: 0; }
+      .delete-project,
+      .delete-story { margin-right: 0; }
     }//all three floating sections on the right
 
     .actions,
