@@ -1,15 +1,40 @@
 %section.backlog
-  %div.section-title
-    .section-icon=render 'shareable/svg/backlog_icon'
-    %h2.title-text Backlog
   .user-stories-list-container
     .user-stories
+      - if @estimation == 'true'
+        .title-breaker
+          %h5
+            = t('reloaded.estimation.separator_title')
+        %ul.estimation-board
+          %li
+            .total_points.estimation-item
+              %h4.title= t('reloaded.estimation.total_points')
+              .value
+                %p.total_points= UserStory.total_points(@project.user_stories)
+          %li
+            .total_cost.estimation-item
+              %h4.title= t('reloaded.estimation.total_cost')
+              .cost
+                %p.total_cost
+                  $
+                  = number_helper(total_cost(@project))
+          %li
+            .weeks.estimation-item
+              %h4.title= t('reloaded.estimation.total_weeks')
+              .value
+                %p.total_weeks= total_weeks(@project)
+      .title-breaker
+        %h5
+          = t('reloaded.pdf.user_stories')
       - @project.user_stories.each do |user_story|
         %ul.user-story-list
           %li.user-story
             - if @estimation == 'true'
               %span.points
+                = t('reloaded.estimation.separator_title')
+                (
                 = format_story_points(user_story)
+                )
             .story-text
               %span.grey-prefix= t('backlog.user_stories.role')
               %span=user_story.role
@@ -29,13 +54,3 @@
                 - user_story.constraints.each do |constraint|
                   .description
                     = constraint.description
-      - if @estimation == 'true'
-        .total_points
-          = 'total points: '
-          = UserStory.total_points(@project.user_stories)
-        .total_cost
-          = 'total cost: '
-          = total_cost(@project)
-        .weeks
-          = 'total weeks: '
-          = total_weeks(@project)

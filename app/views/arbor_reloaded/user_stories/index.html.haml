@@ -1,6 +1,3 @@
-.export_backlog
-  = link_to 'Export without estimation', arbor_reloaded_project_export_backlog_path(@project, format: :pdf, estimation: false), class: 'hidden-element'
-  = link_to 'Export with estimation', arbor_reloaded_project_export_backlog_path(@project, format: :pdf, estimation: true), class: 'hidden-element'
 .new-backlog-story.row
   = render 'arbor_reloaded/user_stories/form', user_story: UserStory.new, project: @project
 .estimation.row{class: @project.user_stories.count > 0 ? 'visible' : 'hide'}
