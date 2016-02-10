@@ -65,6 +65,7 @@ group :production do
   gem 'passenger', '5.0.15'
   gem 'mini_magick'
   gem 'wkhtmltopdf-heroku'
+  gem 'newrelic_rpm'
 end
 
 gem 'devise'
