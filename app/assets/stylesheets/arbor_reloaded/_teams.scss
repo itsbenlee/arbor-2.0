@@ -26,6 +26,12 @@
       width: 100%;
     }//title
 
+    .right,
+    .actions {
+      right: $block-padding + $block-grid-default-spacing / 2;
+      top: $block-padding;
+    }
+
     .members-amount {
       color: $black-30;
       font-size: rem-calc(14);
