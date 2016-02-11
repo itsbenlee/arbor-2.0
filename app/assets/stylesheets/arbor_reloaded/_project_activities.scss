@@ -9,10 +9,6 @@
   .log-entry {
     @include clearfix;
     border-bottom: $gainsboro 1px solid;
-  }
-
-  .log-entry,
-  .title {
     color: $black-30;
     display: block;
     padding: rem-calc(10 15);

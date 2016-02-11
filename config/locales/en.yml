@@ -83,6 +83,9 @@ en:
     project_members: "Project members"
     add_members: "Add Member"
   project:
+    default:
+      velocity: '10'
+      cost_per_week: '2500'
     delete_project: 'Delete project'
     copy_project: 'Duplicate project'
     delete_confirmation: |
@@ -244,6 +247,8 @@ en:
       activity: 'Activity'
       assets: 'Assets'
       help: 'Help'
+      export_with_estimation: 'Export as PDF'
+      export_without_estimation: 'Export as PDF (no Estimation)'
     project_members:
       owner: 'Owner'
       user_invited: 'Invited'
@@ -323,3 +328,5 @@ en:
       add_members: 'Add/Remove people'
       estimation_velocity: 'This is an estimate of how many points your team can complete each week. You can use it to get a sense for how long development will take.'
       estimation_cost: 'This is the cost of a sprint. Different development teams charge differently, but the average cost of a week of work is a good benchmark.'
+    pdf:
+      user_stories: 'User Stories'

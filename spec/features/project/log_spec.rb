@@ -5,6 +5,7 @@ feature 'Log activity' do
 
   background do
     sign_in user
+    visit projects_path
   end
 
   context 'for creating projects' do

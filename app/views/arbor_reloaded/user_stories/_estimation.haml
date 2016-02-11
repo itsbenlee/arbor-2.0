@@ -19,7 +19,7 @@
         .cost
           %p.total_cost
             $
-            = total_cost(project)
+            = number_helper(total_cost(project))
     %li
       .estimation-item
         %h4.title= t('reloaded.estimation.total_weeks')

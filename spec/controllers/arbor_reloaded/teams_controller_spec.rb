@@ -40,4 +40,26 @@ RSpec.describe ArborReloaded::TeamsController do
       expect(team.users.last).to eq(another_user)
     end
   end
+
+  describe 'Remove member' do
+    let(:team2) { create :team }
+
+    before :each do
+      team2.users << another_user
+      team2.reload
+    end
+
+    it 'should remove a member' do
+      put(
+        :remove_member,
+        team_id: team2.id,
+        format: :js,
+        member: another_user.id,
+      )
+
+      team2.reload
+      expect{ team2.users.count }.to become_eq 1
+      expect(team2.users.include? another_user).to eq(false)
+    end
+  end
 end

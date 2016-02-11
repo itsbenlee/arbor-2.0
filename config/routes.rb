@@ -1,7 +1,7 @@
 Railsroot::Application.routes.draw do
   devise_scope :user do
     authenticated :user do
-      root to: 'projects#index', as: :authenticated_root
+      root to: 'arbor_reloaded/projects#index', as: :authenticated_root
     end
 
     unauthenticated :user do
@@ -159,6 +159,7 @@ Railsroot::Application.routes.draw do
     resources :users, only: [:update, :show]
     resources :teams, only: [:index, :create] do
       put 'add_member', controller: :teams, action: :add_member
+      delete 'remove_member', controller: :teams, action: :remove_member
     end
 
     get 'team_members', controller: :teams, action: :members

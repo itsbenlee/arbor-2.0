@@ -1,0 +1,131 @@
+// --------------------------------------------------------
+// BACKLOG SECTION
+// --------------------------------------------------------
+body { background-color: $white; }
+
+.header-layout {
+  height: 100%;
+  padding-top: rem-calc(300);
+  text-align: center;
+
+  h2 {
+    color: $black-30;
+
+    &.pdf-title { font-size: rem-calc(30); }
+
+    &.backlog-title {
+      font-size: rem-calc(24);
+      font-weight: $font-weight-normal;
+    }
+  }
+}
+
+.uppercase-subtitle {
+  font-size: rem-calc(12);
+  padding-bottom: rem-calc(10);
+  text-transform: uppercase;
+}
+
+.user-stories-list-container {
+  max-height: 100%;
+  padding: 0;
+}
+
+.backlog {
+  height: 100%;
+  margin: 0;
+  max-width: 100%;
+
+  .estimation-item {
+    @include border-radius($global-radius);
+    border: 1px solid $border-color;
+    float: left;
+    margin-right: rem-calc(23);
+    padding: 0;
+    text-align: center;
+    text-transform: uppercase;
+    width: 30%;
+
+    p { margin-bottom: 0; }
+
+    .title {
+      border-bottom: 1px solid $border-color;
+      color: $black-80;
+      font-size: rem-calc(12);
+      padding: rem-calc(15 0);
+    }
+
+    .cost,
+    .value { height: rem-calc(140); }
+
+    .value p { font-size: rem-calc(88); }
+
+    .cost p {
+      @include translateY(50%);
+      font-size: rem-calc(40);
+    }
+  } // item box
+
+  .user-stories-list-container {
+    max-height: 100%;
+    padding: 0;
+  }
+
+  .user-stories {
+    min-height: 100%;
+
+    .acceptance-criterions .description { color: $black-30; }
+
+    ul {
+      font-size: rem-calc(14);
+      list-style: none;
+      overflow: hidden;
+      padding-bottom: rem-calc(25);
+
+      .description::before { content: '\2022'; }
+    }
+
+    .title-breaker {
+      background-color: $body-bg;
+      margin: rem-calc(35) 0;
+      position: relative;
+      text-align: center;
+      text-transform: uppercase;
+
+      h5 {
+        @include inline-block;
+        color: $light-blue;
+        font-size: rem-calc(14);
+        line-height: 2;
+        margin: 0;
+        padding: rem-calc(0 15);
+      }
+    }//section separator
+
+    .user-story {
+      font-size: rem-calc(16);
+      margin-bottom: rem-calc(10);
+      padding-left: 0;
+
+      .uppercase-subtitle {
+        color: $black-60;
+        font-size: rem-calc(12);
+        padding: rem-calc(15 0);
+        text-transform: uppercase;
+      }
+
+      .points {
+        color: $black-50;
+        font-size: rem-calc(14);
+        margin-bottom: rem-calc(10);
+      }
+    }
+
+    .story-text {
+      display: block;
+      padding-bottom: rem-calc(5);
+    }
+
+    .grey-prefix { color: $black-30; }
+  } // user stories
+} // backlog

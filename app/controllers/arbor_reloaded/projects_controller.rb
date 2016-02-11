@@ -137,11 +137,12 @@ module ArborReloaded
       project_name = @project.name
       cover_html =
         render_to_string(partial: 'arbor_reloaded/projects/pdf_cover.html.haml',
+                         layout: 'pdf_cover_reloaded.pdf.haml',
                          locals: { project_name: project_name })
 
       send(:render_to_string,
            pdf: project_name,
-           layout: 'application.pdf.haml',
+           layout: 'application_reloaded.pdf.haml',
            template: 'arbor_reloaded/projects/index.pdf.haml',
            cover: cover_html,
            margin: { top: 30, bottom: 30 })

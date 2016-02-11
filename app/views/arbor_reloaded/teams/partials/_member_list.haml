@@ -1,0 +1,20 @@
+.user-item.special-item
+  .picture{ style: "background-image: url(#{ image_path('test-user.png') });" }
+  .user-data
+    %p.user-name
+      %span.user-type-tag= t("reloaded.project_members.owner")
+      = team.owner_name
+    %p.user-mail
+      = team.owner_email
+%ul.show-project-data.custom-scroll
+  - team.users.each do |member|
+    - if member != team.owner
+      %li.user-item
+        .picture{ style: "background-image: url(#{ image_path('test-user.png') });" }
+        .user-data
+          %p.user-name
+            = member.full_name
+          %p.user-mail
+            = member.email
+          - if current_user == team.owner
+            %input.circle-checkbox{ class:'remove-member-check', type: 'checkbox', data:{ url: arbor_reloaded_team_remove_member_path(team, member: member.id) } }
