@@ -1,11 +1,11 @@
 %nav.secondary-nav
   %ul.left
     %li.not-ready
-      = link_to t('reloaded.navigation.canvas'), arbor_reloaded_project_canvases_path(current_project), class: 'link'
+      = link_to t('reloaded.navigation.canvas'), arbor_reloaded_project_canvases_path(current_project), class: "link"
     %li
-      = link_to t('reloaded.navigation.backlog'), arbor_reloaded_project_user_stories_path(current_project), class: 'link'
+      = active_link_to t('reloaded.navigation.backlog'), arbor_reloaded_project_user_stories_path(current_project), class: "link"
     %li
-      = link_to t('reloaded.navigation.activity'), log_arbor_reloaded_project_path(current_project), class: 'link'
+      = active_link_to t('reloaded.navigation.activity'), log_arbor_reloaded_project_path(current_project), class: "link"
     %li.not-ready
       = link_to t('reloaded.navigation.assets'), arbor_reloaded_project_attachments_path(current_project), class: 'link'
     %li

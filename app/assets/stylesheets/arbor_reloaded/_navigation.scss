@@ -4,6 +4,8 @@
 $topbar-margin: rem-calc(15);
 $avatar-dimension: rem-calc(40);
 
+.link.active { @include fake-border(4px, false, false, false, false, 0); } // current page state
+
 .top-bar {
   .logo {
     left: $topbar-margin;
