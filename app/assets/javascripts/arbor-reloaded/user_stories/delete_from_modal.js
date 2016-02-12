@@ -17,6 +17,7 @@ function bindModalClose() {
 }
 
 function loadStories() {
+  $fullStories = [];
   $storiesToDelete = $('.backlog-user-story input:checked');
   if ($storiesToDelete.length) {
     $storiesToDelete.each(function() {
@@ -31,7 +32,7 @@ function displayStoriesOnModal() {
   storiesList.remove('li');
   $.each($fullStories, function(index, currentStory){
     opt = $('<li></li>');
-    opt.append(currentStory.children());
+    opt.append(currentStory.children('.story-text'));
     storiesList.append(opt);
   });
 }
