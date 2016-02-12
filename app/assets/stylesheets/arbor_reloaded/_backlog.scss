@@ -14,20 +14,22 @@
   }
 
   input {
-    background-color: $dashboard-hover-color;
-    border: 0;
-    display: inline-block;
-    font-size: rem-calc(22);
-    margin-bottom: 0;
-    min-width: rem-calc(90);
-    text-align: center;
-    @include input-placeholder { color: $black-80; };
+    &[type="text"] {
+      background-color: $dashboard-hover-color;
+      border: 0;
+      display: inline-block;
+      font-size: rem-calc(22);
+      margin-bottom: 0;
+      min-width: rem-calc(90);
+      text-align: center;
+      @include input-placeholder { color: $black-80; };
 
-    &:focus { background-color: $dashboard-hover-color; }
+      &:focus { background-color: $dashboard-hover-color; }
+    }
   } // input
 
   #save-user-story { float: right; }
-}
+}//new backlog story
 
 //  USER STORY LIST
 // - - - - - - - - - - - - - - - - - - - - - - - - -
