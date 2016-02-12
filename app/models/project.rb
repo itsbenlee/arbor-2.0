@@ -6,6 +6,7 @@ class Project < ActiveRecord::Base
                           scope: :owner,
                           message: 'Project name already exists'
   validates_uniqueness_of :slack_channel_id, allow_nil: true
+  validates_uniqueness_of :slack_iw_url, allow_nil: true
   validates_uniqueness_of :is_template,
     if: proc { |project| project.is_template }
 

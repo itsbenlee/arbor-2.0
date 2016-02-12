@@ -4,7 +4,8 @@ var SlackButton = React.createClass({
   render: function() {
     return (
       <div className="slack-button">
-        <a onClick={this._showSlackModal} className="configure-slack hidden-element">Configure Slack
+        <a onClick={this._showSlackModal} className="configure-slack">
+          Configure Slack
           <span className="icn-slack"></span>
         </a>
       </div>

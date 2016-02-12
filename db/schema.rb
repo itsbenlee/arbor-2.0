@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160219024519) do
+ActiveRecord::Schema.define(version: 20160302192522) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "pg_stat_statements"
 
   create_table "acceptance_criterions", force: :cascade do |t|
     t.text     "description"
@@ -167,6 +166,7 @@ ActiveRecord::Schema.define(version: 20160219024519) do
     t.integer  "cost_per_week"
     t.boolean  "is_template",                   default: false
     t.integer  "team_id"
+    t.string   "slack_iw_url"
   end
 
   add_index "projects", ["name"], name: "index_projects_on_name", using: :btree
@@ -246,6 +246,7 @@ ActiveRecord::Schema.define(version: 20160219024519) do
     t.string   "slack_id"
     t.string   "avatar"
     t.string   "trello_token"
+    t.string   "slack_auth_token"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
