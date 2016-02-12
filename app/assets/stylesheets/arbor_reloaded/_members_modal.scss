@@ -70,10 +70,7 @@
       right: 0;
       top: 30%;
 
-      &::after {
-        content: '+';
-        right: rem-calc(7);
-      }
+      &::after { left: rem-calc(5); }
     } // custom checkbox
 
     .user-mail {
