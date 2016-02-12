@@ -1,4 +1,5 @@
 module ArborReloaded
+  include HTTParty
   class SlackIntegrationService
     ROLE = I18n.translate('reloaded.backlog.role')
     ACTION = I18n.translate('reloaded.backlog.action')
@@ -12,6 +13,7 @@ module ArborReloaded
     def initialize(project)
       @common_response = CommonResponse.new(true, [])
       @project = project
+      @auth_url = 'https://slack.com/oauth/authorize'
     end
 
     def build_user_story(story_text, current_user)
@@ -25,6 +27,37 @@ module ArborReloaded
         @common_response.success = false
       end
       @common_response
+    end
+
+    def authorize(redirect_uri)
+      options = {
+        scope: 'commands incoming-webhook',
+        client_id: ENV['SLACK_CLIENT_ID'],
+        redirect_uri: redirect_uri
+      }
+      @uri.query = URI.encode_www_form(options)
+      @uri.to_s
+    end
+
+    def req_slack_access(code, redirect_url)
+      url = 'https://slack.com/api/oauth.access'
+      options = {
+        client_id: ENV['SLACK_CLIENT_ID'],
+        client_secret: ENV['SLACK_CLIENT_SECRET'],
+        code: code,
+        redirect_uri: redirect_url
+      }
+      response = HTTParty.get(url, query: options)
+      response
+    end
+
+    def req_slack_data(token)
+      url = 'https://slack.com/api/auth.test'
+      options = {
+        token: token
+      }
+      response = HTTParty.get(url, query: options)
+      response
     end
 
     private

@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   validates_presence_of :email
   validates_uniqueness_of :email
   validates_uniqueness_of :slack_id, allow_nil: true
+  validates_uniqueness_of :slack_auth_token, allow_nil: true
 
   has_many :members_projects,
            foreign_key: :member_id,

@@ -4,21 +4,32 @@ var SlackModal = React.createClass({
 
   propTypes: {
    url: React.PropTypes.string,
-   slackToken: React.PropTypes.string,
-   slackChannelId: React.PropTypes.string
-  },
-  defaultProps: {
-   slackToken: '',
-   slackChannelId: ''
   },
 
   getInitialState: function () {
+    var urlParams,
+        match,
+        pl = /\+/g,  // Regex for replacing addition symbol with a space
+        search = /([^&=]+)=?([^&]*)/g,
+        decode = function (s) {
+          return decodeURIComponent(s.replace(pl, ' '));
+        },
+        query = window.location.search.substring(1);
+
+      urlParams = {};
+      while (match = search.exec(query)) {
+        urlParams[decode(match[1])] = decode(match[2]);
+      }
+
     return {
       url: this.props.url,
       show: false,
-      slackToken: this.props.slackToken,
-      slackChannelId: this.props.slackChannelId,
-      channelsList: []
+      slack: {
+        status: urlParams.slack_status || '',
+        token: urlParams.access_token || '',
+        channelId: '',
+        channelsList: []
+      }
     };
   },
 
@@ -26,58 +37,76 @@ var SlackModal = React.createClass({
     SlackModalStore.listen(this._toggleModal);
   },
 
+  componentDidMount: function () {
+    if (this.state.slack.status === 'success') {
+      $.ajax({
+        url: '/api_slack/channels',
+        dataType: 'JSON',
+        method: 'GET',
+        data: { token: this.state.slack.token },
+        success: function (response) {
+          if (response.data.working_channels) {
+            var workingChannels = JSON.parse(response.data.working_channels);
+            $.each(workingChannels, function(i, v){
+              var channel = v;
+              this.state.show = true;
+              this.state.slack.channelsList.push(channel);
+            });
+            this.forceUpdate();
+          }
+        }.bind(this)
+      });
+    }
+  },
+
   componentWillUnmount: function () {
     SlackModalStore.unlisten(this._toggleModal);
   },
 
-  _handleChannelIdChange: function(event) {
-    this.setState({slackChannelId: event.target.value});
-  },
-
-  _handleSlackTokenChange: function(event) {
-    this.setState({slackToken: event.target.value});
-    $.ajax({
-      url: '/api_slack/channels',
-      dataType: 'JSON',
-      method: 'GET',
-      data: { token:  event.target.value},
-      success: function (response) {
-        var workingChannels = JSON.parse(response.data.working_channels);
-        for (var i = 0; i < workingChannels.length; i++) {
-            var channel = workingChannels[i];
-            this.state.channelsList.push(channel);
-        }
-        this.forceUpdate();
-      }.bind(this)
-    });
-  },
-
-  handleSaveClick: function() {
-    $.ajax({
-      data: {
-        project: {
-          slack_token: this.state.slackToken,
-          slack_channel_id: this.state.slackChannelId
-        }
-      },
-      dataType: 'json',
-      url: this.props.url,
-      type: 'put',
-      context: this,
-
-      success: function(){
-        alert('Project Slack settings saved correctly');
-        this._closeModal();
-      }.bind(this),
-
-      error: function(xhr, status, err){
-        alert('Error saving Slack settings for this project');
-      }.bind(this)
-    });
-  },
-
   render: function() {
     if (this.state.show) {
+
+      var slackSettings,
+          slackIntegration,
+          slack_href = 'https://arbor-slack-integration.herokuapp.com/authorize?redirect_url=' +
+          location.protocol + '//' + location.host + location.pathname;
+
+      slackIntegration = (
+        <div>
+          <h6>Slack Integration</h6>
+          <p>Creates a new Arbor User Story from Slack.</p>
+          <a href={slack_href}>
+            <img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcSet="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" />
+          </a>
+        </div>
+      );
+
+      if (this.state.slack.status === 'success') {
+        slackIntegration = null;
+        slackSettings = (
+          <div>
+            <h6>Settings</h6>
+            <p>Save settings for this project.</p>
+            <select id='channel-id' name='slackChannelId' onChange = {this._handleChannelIdChange}>
+              {
+                this.state.slack.channelsList.map(function(channel, index) {
+                  return <option key={index} value={channel.id}> {channel.name} </option>
+                })
+              }
+            </select>
+            <a type='submit' className='save-settings' onClick={this.handleSaveClick}>
+              Save
+            </a>
+          </div>
+        );
+      } else if (this.state.slack.status === 'error') {
+        slackSettings = (
+          <div>
+            <p>Error saving Slack settings for this project</p>
+          </div>
+        );
+      }
+
       return (
         <div className="slack-modal modal">
           <div className="modal-container">
@@ -85,25 +114,8 @@ var SlackModal = React.createClass({
             <h5>Configure Slack</h5>
             <div className="modal-content">
               <div className="legend">
-                <h6>Slack Integration</h6>
-                <p>Creates a new Arbor User Story from Slack.</p>
-                  <a href="https://slack.com/oauth/authorize?scope=commands channels:read&client_id=6569426066.18297623252">
-                    <img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcSet="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" />
-                  </a>
-                <hr/>
-                <h6>Settings</h6>
-                <p>Save settings for this project.</p>
-                <input id='slack-token' name='slackToken' type='text' placeholder='Slack token' onChange = {this._handleSlackTokenChange} value={this.state.slackToken}></input>
-                <select id='channel-id' name='slackChannelId' onChange = {this._handleChannelIdChange}>
-                  {
-                    this.state.channelsList.map(function(channel, index) {
-                      return <option key={index} value={channel.id}> {channel.name} </option>
-                    })
-                  }
-                </select>
-                  <a type='submit' className='save-settings' onClick={this.handleSaveClick}>
-                    Save
-                  </a>
+                {slackIntegration}
+                {slackSettings}
               </div>
             </div>
           </div>

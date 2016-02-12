@@ -38,7 +38,9 @@ RemoveUnusedMethodsInControllersCheck: {
     ProjectsController#copy,
     ProjectsController#list_projects,
     AttachmentsController#set_link_flash_message,
-    AttachmentsController#set_file_flash_message
+    AttachmentsController#set_file_flash_message,
+    SlackController#authorize,
+    SlackController#send_authorize_data
   ]
 }
 RemoveUnusedMethodsInHelpersCheck: { except_methods: [] }
