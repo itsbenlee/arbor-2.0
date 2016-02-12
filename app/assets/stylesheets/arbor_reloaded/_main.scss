@@ -29,12 +29,18 @@ input { outline: 0; }
   &::after {
     @include opacity(0);
     @include transform(rotate(45deg) translate(-50%, -50%));
+    border: solid $black-80;
+    border-width: rem-calc(0 2 2 0); // creates the inverted "L" shape
     content: '';
+    display: block;
     font-size: rem-calc(14);
     font-weight: $font-weight-bold;
+    height: rem-calc(10);
     line-height: normal;
+    margin-top: -1px;
     position: absolute;
     top: 50%;
+    width: rem-calc(5); // the short bar of the mark is half as long as the long bar
   }
 
   &:hover::after { @include opacity(1); }
