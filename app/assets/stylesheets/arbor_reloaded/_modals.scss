@@ -48,6 +48,7 @@ $modal-close-offset: rem-calc(20);
     max-width: rem-calc(600);
 
     .close-reveal-modal {
+      @include opacity(.4);
       color: $white;
       right: - $modal-close-offset;
       top: - $modal-close-offset;
