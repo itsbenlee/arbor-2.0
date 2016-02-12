@@ -66,6 +66,14 @@ function customScroll() {
   }
 }//custom scroll
 
+function customScrollDestroy() {
+  var $target = $('.custom-scroll');
+
+  if ($target.length) {
+    $target.mCustomScrollbar("destroy");
+  }
+}//custom scroll destroy
+
 // this functions needs a HashTable as param and deals with the disabled prop, Ale
 /**
  * @param {HashTable} elements The HashTable of elements to deal with
