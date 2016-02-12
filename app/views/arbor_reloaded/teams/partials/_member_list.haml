@@ -26,4 +26,5 @@
             = member.full_name
           %p.user-mail
             = member.email
-          %input.circle-checkbox{ id:'remove-member-check', type: 'checkbox', class: 'hidden-element'  }
+          - if current_user == team.owner
+            %input.circle-checkbox{ class:'remove-member-check', type: 'checkbox', data:{ url: arbor_reloaded_team_remove_member_path(team, member: member.id) } }
