@@ -27,7 +27,8 @@
             = link_to log_arbor_reloaded_project_path(current_project) do
               %span.icn-notifications
       %ul.profile
-        %li.user-dropdown.has-dropdown.not-click
+        %li.user-dropdown.has-dropdown
+          -# .not-click
           .avatar
             - if current_user.avatar?
               .avatar-img{ style: "background-image: url(#{ current_user.avatar_url });" }
@@ -43,11 +44,11 @@
           %ul.dropdown
             %li
               = link_to arbor_reloaded_user_path(current_user) do
-                = t('reloaded.navigation.profile')
                 %span.icn-user
+                = t('reloaded.navigation.profile')
             %li
               = link_to destroy_user_session_path, method: :delete do
-                = t('backlog.logout')
                 %span.icn-signout
+                = t('backlog.logout')
 - if current_project
   = render 'arbor_reloaded/navigation/secondary_nav', current_project: current_project
