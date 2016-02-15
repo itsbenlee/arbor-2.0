@@ -42,8 +42,7 @@ module ArborReloaded
     end
 
     def destroy
-      TeamUser.find_by(team: @team).destroy
-      unless @team.delete
+      unless @team.destroy
         flash[:alert] = I18n.t('reloaded.team.can_not_delete_team')
       end
       redirect_to :back
