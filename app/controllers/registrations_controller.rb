@@ -5,8 +5,8 @@ class RegistrationsController < Devise::RegistrationsController
 
   def after_sign_up_path_for(resource)
     create_template_project
-    if ENV['ENABLE_RELOADED'] == 'true'
-      arbor_reloaded_root_path
+    if ENV['ENABLE_RELOADED'] == 'false'
+      projects_path
     else
       super
     end

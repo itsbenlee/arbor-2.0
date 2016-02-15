@@ -3,8 +3,6 @@
     = render 'arbor_reloaded/navigation/user_nav'
   .change-password.row
     .small-12.medium-6.small-centered.columns.text-center
-      .title-breaker
-        %h5= t('reloaded.user_sessions.change_password')
       = form_for(resource, as: resource_name, url: registration_path(resource_name),
       html: { method: :put }) do |f|
         = devise_error_messages!

@@ -2,12 +2,19 @@ function bindFavoriteIcon() {
   $('.favorite-link').click(function() {
     var project = {
           project: { favorite: !($(this).data('favorite')) }
-        };
-        url = $(this).data('url');
+        },
+        url = $(this).data('url'),
         type = 'put';
-
     projectAjaxCall(url, type, project);
     return false;
+  });
+}
+
+function setFavoriteState() {
+  $('.favorite-link').each(function(index, el) {
+    if ($(el).data('favorite')) {
+      $(this).addClass('is-favorite');
+    }
   });
 }
 

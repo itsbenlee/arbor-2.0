@@ -123,8 +123,6 @@ $block-animation-delay: .40s;
     .right {
       line-height: $action-circle-dimension;
       position: absolute;
-      right: $block-padding + $block-grid-default-spacing / 2;
-      top: $block-padding;
       z-index: 2;
 
       [class^="icn-"] {
@@ -146,6 +144,8 @@ $block-animation-delay: .40s;
         }//other
       }//other and favorite
 
+      .delete-story,
+      .copy-story,
       .delete-project,
       .copy-project,
       [class^="icn-favorite"] {
@@ -165,11 +165,11 @@ $block-animation-delay: .40s;
         padding-bottom: rem-calc(1);
       }
 
-      .icn-favorite-empty:hover {
-        &::before { content: '\e906'; }
-      }//icon
+      .icn-favorite-empty:hover,
+      .is-favorite .icn-favorite-empty { &::before { content: '\e906'; } }//icon
 
-      .delete-project { margin-right: 0; }
+      .delete-project,
+      .delete-story { margin-right: 0; }
     }//all three floating sections on the right
 
     .actions,
@@ -321,7 +321,6 @@ $block-animation-delay: .40s;
     background-color: transparent;
     border: 0;
     border-bottom: 1px dashed $black-20;
-    padding-bottom: $form-spacing;
     text-align: center;
 
     &:focus {
@@ -330,3 +329,10 @@ $block-animation-delay: .40s;
     }
   }
 }//dashed input
+
+.tiny-btn {
+  background-color: $white;
+  border: 1px solid $black-10;
+  color: $black-90;
+  text-transform: uppercase;
+} // create button

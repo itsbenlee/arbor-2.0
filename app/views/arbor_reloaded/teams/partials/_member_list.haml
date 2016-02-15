@@ -1,0 +1,30 @@
+.user-item.special-item
+  .picture
+    - if team.owner.avatar?
+      .avatar-img{ style: "background-image: url(#{ team.owner.avatar_url });" }
+    - else
+      = image_tag(team.owner.gravatar_url, class: 'avatar-img', onerror: "this.src=''")
+      .avatar-circle#avatar-circle= user_initial(team.owner)
+  .user-data
+    %p.user-name
+      %span.user-type-tag= t("reloaded.project_members.owner")
+      = team.owner_name
+    %p.user-mail
+      = team.owner_email
+%ul.show-project-data.custom-scroll
+  - team.users.each do |member|
+    - if member.id != team.owner.id
+      %li.user-item
+        .picture
+          - if member.avatar?
+            .avatar-img{ style: "background-image: url(#{ member.avatar_url });" }
+          - else
+            = image_tag(member.gravatar_url, class: 'avatar-img', onerror: "this.src=''")
+            .avatar-circle#avatar-circle= user_initial(member)
+        .user-data
+          %p.user-name
+            = member.full_name
+          %p.user-mail
+            = member.email
+          - if current_user == team.owner
+            %input.circle-checkbox{ class:'remove-member-check', type: 'checkbox', data:{ url: arbor_reloaded_team_remove_member_path(team, member: member.id) } }

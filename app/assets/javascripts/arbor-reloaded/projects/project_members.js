@@ -11,7 +11,6 @@ $('#project-members-modal').on('opened.fndtn.reveal', function() {
       footerButtonInitialText = $(footerButtonId).text();
 
   bindActionsOnRemovalCheckboxes();
-  modalDisplayInitialWhenNoAvatar();
   customScroll();
 
   $(newMemberMailTextId).keyup(function(e) {
@@ -31,13 +30,6 @@ $('#project-members-modal').on('opened.fndtn.reveal', function() {
     }
   });
 });
-
-function modalDisplayInitialWhenNoAvatar() {
-  $('#project-members-modal .user-item.invited').has('.avatar-circle').each(function(index, currentValue) {
-    var initial = $(currentValue).children('.user-data').children('.user-mail').text().trim().substring(0,1);
-    $(currentValue).children('.avatar-circle').text(initial.toUpperCase());
-  });
-}
 
 //checkbox events on checked, Ale
 function bindActionsOnRemovalCheckboxes() {

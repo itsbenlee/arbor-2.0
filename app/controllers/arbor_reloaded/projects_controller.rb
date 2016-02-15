@@ -135,13 +135,17 @@ module ArborReloaded
 
     def export_content
       project_name = @project.name
+      project_team = @project.team
+      team_name = project_team.name if project_team
       cover_html =
         render_to_string(partial: 'arbor_reloaded/projects/pdf_cover.html.haml',
-                         locals: { project_name: project_name })
+                         layout: 'pdf_cover_reloaded.pdf.haml',
+                         locals: { project_name: project_name,
+                                   team_name: team_name })
 
       send(:render_to_string,
            pdf: project_name,
-           layout: 'application.pdf.haml',
+           layout: 'application_reloaded.pdf.haml',
            template: 'arbor_reloaded/projects/index.pdf.haml',
            cover: cover_html,
            margin: { top: 30, bottom: 30 })

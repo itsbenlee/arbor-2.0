@@ -21,9 +21,9 @@ GIT
 
 GIT
   remote: git://github.com/mileszs/wicked_pdf.git
-  revision: 803f8d55aba7a80a68899bba1c9cfb31313df336
+  revision: faa3c0d5f21be4e54293fecde930244288c69802
   specs:
-    wicked_pdf (0.11.0)
+    wicked_pdf (1.0.4)
 
 GEM
   remote: https://rubygems.org/
@@ -48,6 +48,8 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    active_link_to (1.0.3)
+      actionpack
     activejob (4.2.3)
       activesupport (= 4.2.3)
       globalid (>= 0.3.0)
@@ -448,6 +450,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_link_to
   acts_as_commentable
   better_errors
   binding_of_caller

@@ -17,4 +17,8 @@ module ProjectHelper
 
     total_points / velocity
   end
+
+  def number_helper(number)
+    number_with_delimiter(number, delimiter: ',')
+  end
 end

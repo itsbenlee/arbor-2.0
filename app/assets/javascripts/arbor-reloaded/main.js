@@ -38,7 +38,12 @@ function generalBinds() {
     displayActions();
     displayHideDelete();
     bindFavoriteIcon();
+    setFavoriteState();
     bindProjectsFilter();
+  }
+  if ($('.backlog-story-list').length) {
+    displayActions();
+    displayHideDelete();
   }
 }
 
@@ -60,6 +65,14 @@ function customScroll() {
     });
   }
 }//custom scroll
+
+function customScrollDestroy() {
+  var $target = $('.custom-scroll');
+
+  if ($target.length) {
+    $target.mCustomScrollbar("destroy");
+  }
+}//custom scroll destroy
 
 // this functions needs a HashTable as param and deals with the disabled prop, Ale
 /**

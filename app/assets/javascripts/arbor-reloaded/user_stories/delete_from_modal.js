@@ -7,6 +7,7 @@ $deleteModal.on('opened.fndtn.reveal', function() {
   displayStoriesOnModal();
   bindDelete();
   bindModalClose();
+  customScrollDestroy();
   customScroll();
 });
 
@@ -17,6 +18,8 @@ function bindModalClose() {
 }
 
 function loadStories() {
+  $fullStories = [];
+  $selectedStories = [];
   $storiesToDelete = $('.backlog-user-story input:checked');
   if ($storiesToDelete.length) {
     $storiesToDelete.each(function() {
@@ -28,10 +31,12 @@ function loadStories() {
 
 function displayStoriesOnModal() {
   var storiesList = $('#stories-list');
-  storiesList.remove('li');
+  // storiesList.empty();
+  storiesList.find('li').remove();
   $.each($fullStories, function(index, currentStory){
+    console.log($fullStories[0]);
     opt = $('<li></li>');
-    opt.append(currentStory.children());
+    opt.append(currentStory.children('.story-text'));
     storiesList.append(opt);
   });
 }

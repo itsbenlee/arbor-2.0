@@ -1,4 +1,4 @@
-%li.backlog-user-story{ data: { id: user_story.id } }
+%li.backlog-user-story.white-block{ data: { id: user_story.id } }
   %input.circle-checkbox{ id:"select-stories#{user_story.id}", type: 'checkbox', value: user_story.id }
   = link_to arbor_reloaded_user_story_path(user_story), class: 'story-detail-link', data: { reveal_id: 'story-detail-modal', reveal_ajax: 'true'} do
     %span.story-points
@@ -10,5 +10,20 @@
       %span= user_story.action
       %span.grey-prefix= t('reloaded.backlog.result')
       %span= user_story.result
+  .right
     = link_to '#', class: 'icn-comments hide' do
       %span.notification-badge
+    = link_to '#', class: 'others' do
+      &#149&#149&#149
+  .actions
+    %a.delete-story.has-tip{aria: {haspopup: true}, data: {tooltip: ''}, title: t('reloaded.tooltips.delete_project')}
+      %span.icn-delete
+    = link_to '#', class: 'copy-story hidden-element has-tip', aria: { haspopup: true }, title: t('reloaded.tooltips.copy_project'), data: { tooltip: '' } do
+      %span.icn-copy
+  .deleter
+    %p
+      = t('reloaded.user_stories.actions.are_you_sure')
+      = link_to t('reloaded.user_stories.actions.confirm'), arbor_reloaded_user_story_path(user_story), method: :delete, class: 'button radius alert tiny'
+    %a.cancel= t('reloaded.user_stories.actions.cancel')
+    %a.delete-project
+      %span.icn-delete

@@ -96,7 +96,7 @@ $search-width: rem-calc(300);
   @include translateY(-50%);
   font-size: rem-calc(15);
   left: 0;
-  position: absolute;
+  position: fixed;
   text-align: center;
   top: 50%;
   width: 100%;
@@ -180,7 +180,8 @@ $search-width: rem-calc(300);
   }//project link
 
   //projects not set as favorite
-  .common-projects-list {
+  .common-projects-list,
+  .team-projects-list {
     .actions,
     .deleter,
     .right {
@@ -190,6 +191,13 @@ $search-width: rem-calc(300);
       top: 50%;
     }
   }// regular project list
+
+  .actions,
+  .deleter,
+  .right {
+    right: $block-padding + $block-grid-default-spacing / 2;
+    top: $block-padding;
+  }
 
   // Favorite projects
   // - - - - - - - - - - - - - - - - -

@@ -25,6 +25,7 @@ gem 'mustache-js-rails'
 gem 'acts_as_commentable'
 gem 'indefinite_article'
 gem 'react-rails', '~> 1.5.0'
+gem 'active_link_to'
 
 group :doc do
   gem 'sdoc', require: false

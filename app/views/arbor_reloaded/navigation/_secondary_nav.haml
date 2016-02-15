@@ -1,16 +1,24 @@
 %nav.secondary-nav
   %ul.left
     %li.not-ready
-      = link_to t('reloaded.navigation.canvas'), arbor_reloaded_project_canvases_path(current_project), class: 'link'
+      = link_to t('reloaded.navigation.canvas'), arbor_reloaded_project_canvases_path(current_project), class: "link"
     %li
-      = link_to t('reloaded.navigation.backlog'), arbor_reloaded_project_user_stories_path(current_project), class: 'link'
+      = active_link_to t('reloaded.navigation.backlog'), arbor_reloaded_project_user_stories_path(current_project), class: "link"
     %li
-      = link_to t('reloaded.navigation.activity'), log_arbor_reloaded_project_path(current_project), class: 'link'
+      = active_link_to t('reloaded.navigation.activity'), log_arbor_reloaded_project_path(current_project), class: "link"
     %li.not-ready
       = link_to t('reloaded.navigation.assets'), arbor_reloaded_project_attachments_path(current_project), class: 'link'
     %li
       = link_to '...', '#', aria: { controls: 'project-actions', expanded: false }, data: {dropdown: 'project-actions' }
       %ul#project-actions.f-dropdown{ data: { dropdown: { content: '' } } }
+        %li
+          = link_to arbor_reloaded_project_export_backlog_path(current_project, format: :pdf, estimation: true) do
+            = t('reloaded.navigation.export_with_estimation')
+            %span.icn-export
+        %li
+          = link_to arbor_reloaded_project_export_backlog_path(current_project, format: :pdf, estimation: false) do
+            = t('reloaded.navigation.export_without_estimation')
+            %span.icn-export
         %li
           = link_to arbor_reloaded_project_copy_path(current_project), method: :post, class: 'copy-project' do
             = t('project.copy_project')
@@ -28,18 +36,14 @@
       arbor_reloaded_project_members_path(current_project), |
       { class: 'add-member has-tip', data: { reveal_id: 'project-members-modal', reveal_ajax: true, tooltip: '' }, aria: { haspopup: true }, title: t('reloaded.tooltips.add_members') }
     - current_project.members.each_with_index do |member, index|
-      - if index == 0
+      - if index < 3
         %li
-          = link_to arbor_reloaded_project_members_path(current_project), { data: { reveal_id: 'project-members-modal', reveal_ajax: true }, style: "background-image: url(#{ member.avatar_url });"} do
-            = image_tag ('icons/po_avatar.svg'), class: 'hide'
-      - if index == 1
-        %li
-          = link_to arbor_reloaded_project_members_path(current_project), { data: { reveal_id: 'project-members-modal', reveal_ajax: true }, style: "background-image: url(#{ member.avatar_url });"} do
-            = image_tag ('icons/user-icon.svg'), class: 'hide'
-      - if index == 2
-        %li
-          = link_to arbor_reloaded_project_members_path(current_project), { data: { reveal_id: 'project-members-modal', reveal_ajax: true }, style: "background-image: url(#{ member.avatar_url});"} do
-            = image_tag ('icons/user-icon.svg'), class: 'hide'
+          = link_to arbor_reloaded_project_members_path(current_project), { data: { reveal_id: 'project-members-modal', reveal_ajax: true }} do
+            -  if member.avatar?
+              .avatar-img{ style: "background-image: url(#{member.avatar_url})" }
+            - else
+              = image_tag(member.gravatar_url, class: 'avatar-img', onerror: "this.src=''")
+              .avatar-circle#avatar-circle= user_initial(member)
     - if current_project.members.count > 3
       %li
         = link_to arbor_reloaded_project_members_path(current_project),{ data: { reveal_id: 'project-members-modal', reveal_ajax: true }}, class: 'other-members' do

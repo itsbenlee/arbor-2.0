@@ -52,6 +52,17 @@ function UserStory() {
   toggleEditCriterion();
   displayEditionForm();
   NavigateUserStories();
+  displaySaveButton();
+
+  function displaySaveButton() {
+    $('.show-criterion').on("click", function() {
+      $(this).next().find('#save-acceptance-criterion').removeClass('hidden-element');
+    });
+
+    $('.save-ac-button').on( "click", function() {
+      $(this).addClass('hidden-element');
+    });
+  }
 
   function displayEditionForm() {
     var $editUserStory       = $('.edit_user_story'),
@@ -116,7 +127,7 @@ function UserStory() {
 
       $(this).find('.edit-criterion').addClass('active');
       $('#acceptance-list .delete-criterion[data-id='+ $(this).data('id') +']').addClass('active');
-      return false;
+      event.stopPropagation();
     });
 
     $('html').click(function() {
