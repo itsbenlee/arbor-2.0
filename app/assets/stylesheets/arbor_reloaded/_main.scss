@@ -298,9 +298,9 @@ $block-animation-delay: .40s;
 }//blocks container
 
 // ALERTS
-.alert-box .alert,
-.alert-box .warning,
-.alert-box .error {
+.alert-box.alert,
+.alert-box.warning,
+.alert-box.error {
   border: 0;
   left: 20%;
   margin: rem-calc(10) auto;
