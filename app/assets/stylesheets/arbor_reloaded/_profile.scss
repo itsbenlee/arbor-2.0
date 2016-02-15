@@ -39,6 +39,8 @@ $profile-margin: $user-header-padding;
       width: $icon-dimension;
       z-index: 10;
 
+      &[type="file"] { @include opacity(0); }
+
       &:focus,
       &:active { outline: none; }
     } // edit
