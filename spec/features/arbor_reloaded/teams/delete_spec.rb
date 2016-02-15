@@ -2,10 +2,12 @@ require 'spec_helper'
 
 feature 'Delete team', js: true do
   let!(:user) { create :user }
-  let!(:team) { create :team, users: [user], name: 'Awesome team', owner: user}
+  let!(:user2) { create :user }
+  let!(:team) { create :team, name: 'Awesome team', owner: user}
 
   background do
     sign_in user
+    team.users << user2
     visit arbor_reloaded_teams_path
   end
 
