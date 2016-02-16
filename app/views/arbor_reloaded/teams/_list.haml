@@ -6,7 +6,7 @@
         = render 'arbor_reloaded/teams/team', team: team
 - else
   .no-teams
-    %p.title= t('reloaded.team.no_teams_title')
+    %h2= t('reloaded.team.no_teams_title')
     %p= t('reloaded.team.no_teams')
     = link_to t('reloaded.team.create'), '#', id: 'new-team-button', class: 'button radius small add-team', data: { reveal_id: 'team-modal' }
 #team-members-modal.reveal-modal{ data: { reveal: '' } }

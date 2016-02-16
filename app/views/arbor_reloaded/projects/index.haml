@@ -9,7 +9,7 @@
   - else
     .small-12.columns
       .no-projects
-        %p.title= t('reloaded.project_dashboard.no_projects')
+        %h2= t('reloaded.project_dashboard.no_projects')
         %p= t('reloaded.project_dashboard.get_started')
         = link_to t('reloaded.project_dashboard.create_button'), '#', id: 'create-project-button',
         class: 'button radius small', data: { reveal_id: 'project-modal' }

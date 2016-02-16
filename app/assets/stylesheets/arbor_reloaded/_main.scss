@@ -356,16 +356,14 @@ $block-animation-delay: .40s;
   top: 50%;
   width: 100%;
 
-  .title {
+  h2 {
     color: $primary-nav-color;
     font-size: rem-calc(19);
-    font-weight: $font-weight-bold;
     margin-bottom: rem-calc(5);
   }
 
   p {
     color: $black-30;
-    font-size: rem-calc(15);
     margin-bottom: rem-calc(30);
   }
 
