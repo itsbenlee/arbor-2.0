@@ -46,7 +46,7 @@
           - else
             %li.white-block.not-member
               .right
-                = link_to t('reloaded.project_dashboard.join_project'), arbor_reloaded_project_add_member_path(project), method: :put, class: 'button radius success tiny join-btn'
+                = link_to t('reloaded.project_dashboard.join_project'), arbor_reloaded_project_join_path(project), method: :put, class: 'button radius success tiny join-btn'
               .project.block-wrapper
                 .left
                   %p.title= project.name

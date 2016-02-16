@@ -26,7 +26,7 @@ $('#project-members-modal').on('opened.fndtn.reveal', function() {
       closeMembersModal();
     }
     if ($(this).text() == 'Invite') {
-      $('#submit-modal-form').click();
+      $('.submit-modal-form').click();
     }
   });
 });
