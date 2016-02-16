@@ -15,6 +15,10 @@ class Team < ActiveRecord::Base
     owner.email
   end
 
+  def not_member(user)
+    !users.include?(user)
+  end
+
   def members_string
     users_count = users.count
     users_count == 1 ? "#{users_count} member" : "#{users_count} members"

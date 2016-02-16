@@ -26,7 +26,6 @@ class Project < ActiveRecord::Base
 
   scope :recent, -> { order(updated_at: :desc) }
   scope :by_name, -> { order('LOWER(name)') }
-  scope :no_team, -> { where(team: nil) }
 
   def total_points
     user_stories.map(&:estimated_points).compact.sum
