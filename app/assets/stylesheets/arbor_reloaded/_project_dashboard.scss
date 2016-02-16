@@ -90,34 +90,6 @@ $search-width: rem-calc(300);
   } // project list result
 } // project searchbar
 
-// Dashboard empty
-// - - - - - - - - - - -
-.no-projects {
-  @include translateY(-50%);
-  font-size: rem-calc(15);
-  left: 0;
-  position: fixed;
-  text-align: center;
-  top: 50%;
-  width: 100%;
-
-  .title {
-    color: $primary-nav-color;
-    font-size: rem-calc(19);
-    font-weight: $font-weight-bold;
-    margin-bottom: rem-calc(5);
-  }
-
-  p {
-    color: $black-30;
-    font-size: rem-calc(15);
-    margin-bottom: rem-calc(30);
-  }
-
-  .button { display: inline; }
-}// no projects block
-
-
 // Dashboard with stories
 // - - - - - - - - - - - - - - -
 .project-list {
