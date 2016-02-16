@@ -342,3 +342,30 @@ $block-animation-delay: .40s;
   color: $black-90;
   text-transform: uppercase;
 } // create button
+
+// Empty Dashboard & Teams state
+// - - - - - - - - - - -
+
+.no-projects,
+.no-teams {
+  @include translateY(-50%);
+  font-size: rem-calc(15);
+  left: 0;
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  width: 100%;
+
+  h2 {
+    color: $primary-nav-color;
+    font-size: rem-calc(19);
+    margin-bottom: rem-calc(5);
+  }
+
+  p {
+    color: $black-30;
+    margin-bottom: rem-calc(30);
+  }
+
+  .button { display: inline; }
+}// empty teams, empty dashboard

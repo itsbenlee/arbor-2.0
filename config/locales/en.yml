@@ -223,7 +223,8 @@ en:
       can_not_delete_team: 'An error occurred while deleting sorry.'
       no_email: 'Please type an email on the field to submit'
       no_user: 'Email is not registered on Arbor.'
-      no_teams: "You don't have any teams yet. Create one by clicking on the plus sign."
+      no_teams_title: 'No Teams yet'
+      no_teams: 'Get started by creating a new Team'
       create: 'Create a Team'
       name: 'Enter new team name here...'
       save: 'Create Team'
