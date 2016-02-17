@@ -1,12 +1,68 @@
 require 'spec_helper'
 
 RSpec.describe ArborReloaded::ProjectsController do
-  let!(:user)    { create :user }
-  let(:project)  { create :project, owner: user, favorite: false }
-  let(:team)     { create :team, users: [user] }
+  let!(:user)   { create :user }
+  let(:project) { create :project, owner: user, favorite: false }
+  let(:team)    { create :team, users: [user] }
 
   before :each do
     sign_in user
+  end
+
+  describe 'PUT add member' do
+    let!(:user2) { create :user }
+    let!(:user3) { create :user }
+
+    before :each do
+      project.add_member(user2)
+    end
+
+    it 'should be able to add members' do
+      request.env["HTTP_REFERER"] = project_user_stories_path project
+      put :add_member, project_id: project.id, member: user3.email
+
+      project.reload
+      expect(project.members).to include(user)
+      expect(project.members).to include(user2)
+      expect(project.members).to include(user3)
+    end
+  end
+
+  describe 'PUT join project with current user team member' do
+    let!(:team)    { create :team }
+    let!(:project) { create :project, team: team }
+
+    before :each do
+      team.users << user
+    end
+
+    it 'should not be member of team project by default' do
+      expect(user.projects).not_to include(project)
+    end
+
+    it 'should allow team members to join' do
+      put :join_project, project_id: project.id
+
+      user.reload
+      expect(user.projects).to include(project)
+    end
+  end
+
+  describe 'PUT join project with current user outsider' do
+    let!(:team)    { create :team }
+    let!(:project) { create :project, team: team }
+    let!(:user2)   { create :user }
+
+    before :each do
+      sign_in user2
+    end
+
+    it 'should not allow outsiders to join' do
+      put :join_project, project_id: project.id
+
+      user2.reload
+      expect(user2.projects).not_to include(project)
+    end
   end
 
   describe 'PUT update order' do
