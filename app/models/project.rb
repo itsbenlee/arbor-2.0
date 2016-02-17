@@ -53,6 +53,7 @@ class Project < ActiveRecord::Base
   end
 
   def add_member(user)
+    return if members.include?(user)
     create_activity :add_member,
       parameters: { element: user.log_description }
     members << user

@@ -133,6 +133,7 @@ Railsroot::Application.routes.draw do
       end
 
       put 'add_member', controller: :projects, action: :add_member
+      put 'join', controller: :projects, action: :join_project
 
       get 'tags/filter', controller: :tags, action: :filter
       get 'tags/index', controller: :tags, action: :index
