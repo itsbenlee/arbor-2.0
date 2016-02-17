@@ -137,7 +137,7 @@ $circle-dimension: $story-points-dimension;
   @include border-radius($global-radius);
   background-color: $black-10;
   display: none;
-  height: ($story-points-dimension * 3) + ($icons-margin-bottom * 4);
+  height: ($story-points-dimension * 2) + ($icons-margin-bottom * 3);
   padding: $icons-margin-bottom;
   position: fixed;
   right: 5%;
