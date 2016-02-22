@@ -2,7 +2,6 @@
   = t('page_title.teams')
 .section-people.row
   .columns.small-12
-    = link_to t('reloaded.team.create'), '#', id: 'new-team-button', class: 'button radius small add-team', data: { reveal_id: 'team-modal' }
     #teams-list
       = render 'arbor_reloaded/teams/list', teams: @teams
 #team-modal.reveal-modal{'aria-hidden' => 'true', 'aria-labelledby' => 'team-modal', 'data-reveal' => '', 'data-auto-reveal' => @new_team.errors.present?, :role => 'dialog' }

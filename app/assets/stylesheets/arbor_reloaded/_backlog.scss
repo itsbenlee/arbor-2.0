@@ -122,15 +122,7 @@ $circle-dimension: $story-points-dimension;
     top: $story-padding-top;
     width: $story-points-dimension;
 
-    &::after {
-      border: solid $black-80;
-      border-width: rem-calc(0 2 2 0); // creates the inverted "L" shape
-      display: block;
-      height: rem-calc(10);
-      left: rem-calc(9);
-      margin-top: -1px;
-      width: rem-calc(5); // the short bar of the mark is half as long as the long bar
-    }
+    &::after { left: rem-calc(9); }
 
     &:checked { @include opacity(1); }
   } // circle checkbox
@@ -145,7 +137,7 @@ $circle-dimension: $story-points-dimension;
   @include border-radius($global-radius);
   background-color: $black-10;
   display: none;
-  height: ($story-points-dimension * 3) + ($icons-margin-bottom * 4);
+  height: ($story-points-dimension * 2) + ($icons-margin-bottom * 3);
   padding: $icons-margin-bottom;
   position: fixed;
   right: 5%;

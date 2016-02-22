@@ -29,12 +29,18 @@ input { outline: 0; }
   &::after {
     @include opacity(0);
     @include transform(rotate(45deg) translate(-50%, -50%));
+    border: solid $black-80;
+    border-width: rem-calc(0 2 2 0); // creates the inverted "L" shape
     content: '';
+    display: block;
     font-size: rem-calc(14);
     font-weight: $font-weight-bold;
+    height: rem-calc(10);
     line-height: normal;
+    margin-top: -1px;
     position: absolute;
     top: 50%;
+    width: rem-calc(5); // the short bar of the mark is half as long as the long bar
   }
 
   &:hover::after { @include opacity(1); }
@@ -292,9 +298,9 @@ $block-animation-delay: .40s;
 }//blocks container
 
 // ALERTS
-.alert-box .alert,
-.alert-box .warning,
-.alert-box .error {
+.alert-box.alert,
+.alert-box.warning,
+.alert-box.error {
   border: 0;
   left: 20%;
   margin: rem-calc(10) auto;
@@ -336,3 +342,30 @@ $block-animation-delay: .40s;
   color: $black-90;
   text-transform: uppercase;
 } // create button
+
+// Empty Dashboard & Teams state
+// - - - - - - - - - - -
+
+.no-projects,
+.no-teams {
+  @include translateY(-50%);
+  font-size: rem-calc(15);
+  left: 0;
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  width: 100%;
+
+  h2 {
+    color: $primary-nav-color;
+    font-size: rem-calc(19);
+    margin-bottom: rem-calc(5);
+  }
+
+  p {
+    color: $black-30;
+    margin-bottom: rem-calc(30);
+  }
+
+  .button { display: inline; }
+}// empty teams, empty dashboard
