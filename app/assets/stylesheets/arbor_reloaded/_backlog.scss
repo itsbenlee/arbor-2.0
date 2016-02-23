@@ -114,6 +114,8 @@ $circle-dimension: $story-points-dimension;
     padding: 0 ($story-points-dimension + $story-padding-sides);
   } // text
 
+  .shorten-story { width: 75%; }
+
   .circle-checkbox {
     @include opacity(0);
     background-color: $black-10;

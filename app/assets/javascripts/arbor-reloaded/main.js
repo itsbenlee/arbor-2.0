@@ -44,6 +44,7 @@ function generalBinds() {
   if ($('.backlog-story-list').length) {
     displayActions();
     displayHideDelete();
+    storiesWidth();
   }
 }
 
