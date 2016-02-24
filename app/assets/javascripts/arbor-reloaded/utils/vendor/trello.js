@@ -1,51 +1,20 @@
-var $export_trello          = $('#trello_export_link'),
-    $export_trello_board    = $('#trello_export_existing_board_link');
+var $export_trello = $('#trello_export_link');
 
-authorizeTrello();
-authorizedTrelloExport();
-authorizedTrelloExportBoard();
-
-function authorizeTrello() {
-  $('#authorize-arbor-on-trello').click(function() {
-    var url = $(this).data('url');
-    Trello.authorize({
-      name: "Arbor",
-      type: "popup",
-      interactive: true,
-      expiration: "never",
-      persist: false,
-      success: function () {
-        var token = Trello.token();
-        authorizeAjaxCall(token, url);
-      },
-      scope: { write: true, read: true },
-    });
-  });
-}
-
-function authorizeAjaxCall(token, url) {
-  $.ajax({
-    url: url,
-    method: 'GET',
-    data:{ token: token },
-    success: function(response) {
-      $('.authorized-trello-links').html(response);
-      authorizedTrelloExport();
-      authorizedTrelloExportBoard();
-    }
-  });
-}
-
-function authorizedTrelloExport() {
-  $('#trello_export_authorized').click(function() {
-    var token = $(this).data('token'),
+$('#trello-export-submit').click(function() {
+  $('.trello-export-success').html('');
+  if ($('#board_id').length > 0) {
+    $('#select-board-form').submit();
+  }
+  else {
+    var export_type = document.getElementById('export_type').value,
+        token = $(this).data('token'),
         url = $(this).data('url');
-    ajaxCallNewBoard(token, url);
-  });
-}
 
-$export_trello.click(function() {
-  var url = $(this).data('url');
+    token == null ? authorizeTrello(export_type, url) : exportToTrello(token, export_type, url);
+  }
+});
+
+function authorizeTrello(export_type, url) {
   Trello.authorize({
     name: "Arbor",
     type: "popup",
@@ -54,11 +23,20 @@ $export_trello.click(function() {
     persist: false,
     success: function () {
       var token = Trello.token();
-      ajaxCallNewBoard(token, url);
+      exportToTrello(token, export_type, url);
     },
     scope: { write: true, read: true },
   });
-});
+}
+
+function exportToTrello(token, export_type, url) {
+  if (export_type === 'new_board') {
+    ajaxCallNewBoard(token, url);
+  }
+  else if (export_type === 'existing_board') {
+    ajaxCallBoards(token, url);
+  }
+}
 
 function ajaxCallNewBoard(token, url) {
   $.ajax({
@@ -66,44 +44,31 @@ function ajaxCallNewBoard(token, url) {
     method: 'POST',
     data:{ token: token },
     success: function(response) {
-      $('.trello-export-result').html(response.data.message);
+      if (response.success) {
+        $('.trello-export-success').html(response.data.message);
+      }
     },
     error: function(response) {
-      var authorizeLinks = $('.trello-authorize-link');
       if($.parseJSON(response.responseText).data.token_error) {
-        authorizeLinks.removeClass('hide');
-        authorizeTrello();
+        var export_type = document.getElementById('export_type').value;
+        authorizeTrello(export_type, url);
       }
       else {
-        $('.trello-export-result').html('There was an error exporting your project to Trello. Please try again later');
+        $('.trello-export-error').html('There was an error exporting your project to Trello. Please try again later');
       }
     }
   });
 }
 
-function authorizedTrelloExportBoard() {
-  $('#trello_export_board_authorized').click(function() {
-    var token = $(this).data('token'),
-        url = $(this).data('url');
-    ajaxCallBoards(token, url)
+hideSuccessMessage();
+
+function hideSuccessMessage() {
+  var $trelloModal = $('#trello-modal');
+
+  $trelloModal.on('close.fndtn.reveal', function() {
+    $('.trello-export-success').html('');
   });
 }
-
-$export_trello_board.click(function() {
-  var url = $(this).data('url');
-  Trello.authorize({
-    name: "Arbor",
-    type: "popup",
-    interactive: true,
-    expiration: "never",
-    persist: false,
-    success: function () {
-      var token = Trello.token();
-      ajaxCallBoards(token, url);
-    },
-    scope: { write: true, read: true },
-  });
-});
 
 function ajaxCallBoards(token, url) {
   $.ajax({
@@ -113,7 +78,6 @@ function ajaxCallBoards(token, url) {
     success: function(response) {
       $('.select-board-list').html(response);
       $('.select-board-list').removeClass('hide');
-      authorizeTrello();
     }
   });
 }

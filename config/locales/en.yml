@@ -183,12 +183,15 @@ en:
     export: "Export as JSON"
   trello:
     authorize: 'Authorize'
-    reauthorize: 'Reauthorize Arbor on Trello and try again'
-    new_board: 'Export to a new Trello board'
-    existing_board: 'Export to an existing Trello board'
-    success: 'Project exported to Trello succesfully'
+    export: 'Export'
+    new_board: 'Export to New Board'
+    existing_board: 'Export to Existing Board'
+    success: 'Project exported to Trello succesfully!'
     default_list: 'Arbor Backlog Export'
     error: 'There was an error exporting your project to Trello. Please try again later'
+    modal_title: 'Export Stories to Trello'
+    text1: 'Be patient, exportation may take a few minutes.'
+    text2: 'You can keep working on Arbor as your stories are being exported.'
   pdf:
     export: 'Export as PDF'
   mailer:
@@ -260,6 +263,7 @@ en:
       help: 'Help'
       export_with_estimation: 'Export as PDF'
       export_without_estimation: 'Export as PDF (no Estimation)'
+      export_trello: 'Export to Trello'
     project_members:
       owner: 'Owner'
       user_invited: 'Invited'
