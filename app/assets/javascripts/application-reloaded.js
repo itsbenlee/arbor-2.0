@@ -21,6 +21,7 @@
 //= require arbor-reloaded/utils/vendor/jquery.auto-grow-input.min
 //= require arbor-reloaded/utils/vendor/jquery.mousewheel.min
 //= require arbor-reloaded/utils/vendor/jquery.mCustomScrollbar.concat.min
+//= require arbor-reloaded/utils/vendor/trello
 //= require arbor-reloaded/projects/project_actions
 //= require arbor-reloaded/projects/project_dashboard
 //= require arbor-reloaded/projects/project_members

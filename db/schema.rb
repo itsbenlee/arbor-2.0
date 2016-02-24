@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160128140951) do
+ActiveRecord::Schema.define(version: 20160219024519) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "pg_stat_statements"
 
   create_table "acceptance_criterions", force: :cascade do |t|
     t.text     "description"
@@ -243,6 +244,9 @@ ActiveRecord::Schema.define(version: 20160128140951) do
     t.string   "full_name"
     t.boolean  "admin",                  default: false
     t.string   "slack_id"
+    t.string   "avatar"
+    t.string   "slack_auth_token"
+    t.string   "trello_token"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

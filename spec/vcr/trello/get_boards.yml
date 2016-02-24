@@ -1,0 +1,228 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.trello.com/1/members/me?key=VALID_TRELLO_DEVELOPER_KEY&token=TRELLO_AUTH_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15768000
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Trello-Version:
+      - 1.582.0
+      X-Trello-Environment:
+      - Production
+      Set-Cookie:
+      - dsc=00ce9338570d2989c278152fcbd17601a87e52207fd5591dab58ea3dd07735bc; Path=/;
+        Expires=Fri, 26 Feb 2016 19:41:54 GMT; Secure
+      - incap_ses_298_168562=F2smDSaykQfsGTqs6bUiBAG2zFYAAAAAdA+ZxuZjYugb8XJYazRFKA==;
+        path=/; Domain=.trello.com
+      - visid_incap_168562=P+iX3LLoT+2AB7E/6+S6DMK1zFYAAAAAQUIPAAAAAACC0D77ZrCgIVa+3/M7QmcI;
+        expires=Wed, 22 Feb 2017 08:55:38 GMT; path=/; Domain=.trello.com
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE
+      X-Server-Time:
+      - '1456256514390'
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00
+      X-Trello-Index-Last-Update:
+      - '6'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"42gE5zZ653FLJrfKF9XkvQ=="
+      Vary:
+      - Accept-Encoding
+      Content-Encoding:
+      - gzip
+      Date:
+      - Tue, 23 Feb 2016 19:41:54 GMT
+      Transfer-Encoding:
+      - chunked
+      X-Iinfo:
+      - 6-134901183-134843205 PNNN RT(1456256513184 119) q(0 1 1 106) r(2 2) U2
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3WVy27dNhCG30Vro+bwTu9iGEU3TQMk6KboYjicsQXoYkg6
+        KdIg796Rz5HgoujKBr9/rqT+873rW/fQhejA1BgIiknUknXGemLu7jr8ihsu
+        v+D60j1Ml2G462o/a0j39s+TwuOc5kn6ZWRNuC0XvutEjz/iyKr+2pMG9O3T
+        wuNvy/P6oY391D388aceTv3W47Cq6nfVjDxWXr58e93DpnkZcdDT12VuF9rW
+        a8i64XbZA1q/atWJadOqd91lGfTwZdte14f7+23hYZh/onm81/Lg3a5YeZnO
+        lq5n1wk/z5eFrjWnfW4esR+O0Z6X92voghhvk0coYEuRSk5CswYEXYzV57dR
+        H2dc2t7w/2xXjMreEDsjCJLA1WJDLpTriQKYZKNnKdlZTN6VE+WQrDVGJHgb
+        RCKGA0lqEqI1qXgCax1lPlHTKllpQ2OjcWjkhsCY2CyIpeR8SN7EfCQEqhLZ
+        x5AqZOAQQNyB2NUg1UFwNkNk29JtLmsxZJMzeGNCcbZE8HSi5ME5icRApjVp
+        9Ywiw75QKbYGFNASR/OKbDWM0qjqDjnr3sOJOEQfuAF69k2bRHugRpigWMle
+        c4tIS+5AqhKXQwZdsfPWFdMOJMWIgWa45uJc2S/2ilysrJUYCX3EGNhWCyfS
+        STRLYf2D1ZE71usimxAJgbM0h66RVD5R5uBqjS14djkmA0fCZErWDzFVhFQE
+        s2rTgfQ1xSJB9Hq1HStS8UA2SYYS9V68ON9agXAg7V6FsTkdgGIzEs6EydZ/
+        I/EnCkQ6jWU2GDC6aE6UIWn3BrxFjZXG5naVLpMJSS9eH1TOzIQuH6hAbqxF
+        yDURG2x25vawHVJJIXhMlFtMiD5HOpFEcVAzCYHoM+Ycryg3X7Vf/ai4cEap
+        0Xp7ImpYM1d9wrpG4UC3B5AZUo6ZvH5GKMwQLdwQVR0FAlBG34Bt0DxXRFQ1
+        QdUVSSHL4JGztd3uZE2tDaf+b9z6ebp51TA/99NuZ+thJuovX/qRf+V1xWde
+        n/p17Nd1t81d/7qwqPR7t/LUPl/GEZd+j71aqrrmZeP1kbe/mKd3GN4xmRd+
+        YmxDr5Xmj/PWyzdVeG92kx7m5VGJlhN1Xd47JBx259M8P+66bZlfX95y7u1c
+        XocZG7cP//kZ0EbH/jL+zOrFyyE/bO9Tr67crtIf/wDtmBFUZQYAAA==
+    http_version: 
+  recorded_at: Tue, 23 Feb 2016 19:44:30 GMT
+- request:
+    method: get
+    uri: https://api.trello.com/1/members/vic143/boards?key=VALID_TRELLO_DEVELOPER_KEY&token=TRELLO_AUTH_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15768000
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Trello-Version:
+      - 1.582.0
+      X-Trello-Environment:
+      - Production
+      Set-Cookie:
+      - dsc=58bb01a570c29642a1116cf1e8de0757ce51775faf00f06d1b6d9360e32370ab; Path=/;
+        Expires=Fri, 26 Feb 2016 19:41:54 GMT; Secure
+      - incap_ses_298_168562=qyojfostz2b9zTqs6bUiBAK2zFYAAAAA3TLP1WKNZmFNwG9mVm0EGQ==;
+        path=/; Domain=.trello.com
+      - visid_incap_168562=sfTCiR5TTe6btWJm55jCHgK2zFYAAAAAQUIPAAAAAADx/W3zBEkMrXardA68+zAB;
+        expires=Wed, 22 Feb 2017 08:55:40 GMT; path=/; Domain=.trello.com
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE
+      X-Server-Time:
+      - '1456256514966'
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"VKIa8dX4oWUJD5898eiMdA=="
+      Vary:
+      - Accept-Encoding
+      Content-Encoding:
+      - gzip
+      Date:
+      - Tue, 23 Feb 2016 19:41:54 GMT
+      Transfer-Encoding:
+      - chunked
+      X-Iinfo:
+      - 0-54018264-54003112 PNNN RT(1456256513795 125) q(0 0 0 -1) r(2 2) U2
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA+2d23KbyBaGXyWlfRvjPnfDXZw43sk4PswoM0mm5qLpg4wt
+        IQXJdpypvPtuJEFsCdlIpMKm0lWusowwLJr//1h0L5q//+2lcmR6Ue/dWF2d
+        ZeNLo2a95z1tpsotXH56JWeyF6XXw+HznhqOp0b3IiuHU/O8l+jTbCDT5Kuc
+        JeO0WGmSpGm+0uKvJL1JZvPvp8Wi6cU4mx0n6ZXbyeT9p8P03Ny5nU3GtyZ7
+        P3Gr/f2P27WcmWM5nb1Qs8Rt4c6tiwBkewDtIdyHYURARFmAOfvUyyPpy8Hy
+        PxO37x5lSsVU4VgqZUOFDCTSCIR6y4juHcV0JrPs3t/X2dBt4GI2m0yj/f1Z
+        ZobDcaDGo/14v4h2f+QabFI22CQz1u38397EZKNkOnUHe2xuTL6ZSZbcuCNx
+        K92MZ0k6cIt0MpXx0O3Qted4NDLpzP1vb2RGscmmvZUWu7d8aob27Thx7TzL
+        rl2cSmb65fgm//LekheDxV4yM7geyizfiRyaVMvstTH6MF3sujhW1zxXg2x8
+        neZtFg+v80C/L3szkgNTnLWVxX/km9XrX/aToanY/EGWDC5mqZnmx+SCuXqw
+        o5fj4ThzX/wHAB4evJ4HnR6Ys+t4mKjvR+cWOcE9+Pts2b7fl72Zn97Fgm/P
+        i/a7SObC+vdRdbC5kt7N/2O+FoYgZlTBEHClOcIAEWXyNlpstX83yd0j9cid
+        FSecVI1Tm2Sjew2sjcwFLL8L7puT6PQ6nqosie+tOJSxGZ44O86FNMiMSRce
+        vMv1d7v4PM5kmp+R/PNcsvmHyXU2GS4Xzk/h/NP06m7xYZiMlosmC8vNV3NN
+        n3/89t1ofybmttJkIiBobrK5b98/7Q631ZIs/Vxv2fiZNs/ixKQ3Jk20/MmM
+        Oefy9cEbNK7JGLoHwR4SfcgjiiLMg5DyDYyp0ocFzRhTRLs/WzTdnjZ7D5ru
+        /4c2nitrXKlUBHnIFWKY5FZqQHUoYoBiCYAgVK1yJR1nIzmsD5bnj0dBf0W6
+        PcWskg33mWWms2fbpEMLjfwAUmWDz+nHo/O325AKgz6kEQkjTAMRbiQVDqHQ
+        RimmsLYWUSQwCJuRqoh2f+YabM+nQ13GVpU89K8IjPV0qHQZjwiNQBhwwuuk
+        Q6WZ76ElvTbudIx/LlX+sH+pT2f0dFuqYHewEYaBgOFGqrDY6hiHIDTul4yx
+        wsA2o0oR7f73tvJA6SBQ1pUBsQfKisEgiwgJBA7rAKX0cdtA+fCWTK/U7GQH
+        oIiIhgGA6BGgGEKNO6uSMMmoQTGCzYBSROuB0nWgrCnjl7yleQooFAQY0zpA
+        KX28I1B+XBcNGZlB/9Ndvz5R4B5gfUjyGx8qAizAJqKoWFsNKVRCEg0Nolho
+        3IwoRbSeKJ0mSpUyuCfKisHo/J5HMFiHKKWP7xFlPMt+cn7C/xAXb+BBthVN
+        cN+xE6N5fzcjm2giDOSCCUUQANIaAxmCDWlSRLu/bCiPku6hpEoWHiWro0mY
+        5cMpS3c9hZLSxK2i5NNf8Ldw9g5vj5L8hwYYbUaJJkrLWJiYGSIht4aqhigp
+        ovUo6TBKKmThUVKBEkoCimtlJaWJd0HJj7vJORrPPnx8ffOxBkuW26umRgys
+        VRaY0AhpY4ZIw6qWIi5PjU5TY00Wvpzl4TWZuuwjQjQAuNb4TWnXVhOQU9M/
+        xJfXW/SMFF1BGEYYBxDjjX2tHITCKYDH7jITWikwM7wZSopoPUq6i5IqWcQe
+        JavuwhGhzl21KuNKE7fbLcImGpqQbI8SBCIMAsrF5mEbIwzFccw0JQYLxgFs
+        OGxTROtR0mGUVMjCj9lUXKghC0JYKyspTdwqSrLb66NJeDLbHiVQzLtFHisp
+        MYAyJaERVmOJtbKxaYaSIlqPkk6jZFUWCnmUrF+oEQ4ErNXDWpq4VZToQ31y
+        hE4vt0cJQRFGAYCbngBymSziVsCQ2RgTi4nW4eLysztKimg9SjqMkgpZhB4l
+        K+6iIgLOXYuc/ymUlCZuFSVfj/lg+GHCtkEJCvNBbuR+gDtYuAklCClgSKjC
+        EMVUWuj0IRpmJUW0HiXdRUmFLEKflay6y93gUB4IVKsorTRxqyh5OcquPn8x
+        59tnJRhHgAfskb4S7pTAQkstVoIag6yNZTOUFNF6lHQXJVWyMB4lqzm/u8ER
+        AYegDkpKE7eKkvcHx0fn/O7dDlmJiCgKBN14g+MuP4YyQo2GkhiiBTSy4WBw
+        Ea1HSXdRUiULPxhckZVAGKB6D/OVJm4VJWenb29fXSZbZSXLg0X5cwE03DgY
+        jJBW0l2CkBXEJbXWWs0bVqMV0XqUdBkl67Lw1Whr7qIR5AEEtfpKShO3ipKj
+        1/jD8eH7ZHuUQJ6nYJQ90lciOYEYW6YMVEBrq+OGk6IU0XqUdBkl67IgHiXr
+        WQmggahZolaYuFWUXBx+fXXXD7d6HLhECUABD+kjKKECCAEJAC55QSGDRDVD
+        SRGtR0mnUbIqCwo8SlZRAubdrrzWYHBp4lZR0j+/Orr5+F7t0FfCIuRQQjY+
+        B+xuilEMjLRaxU4NRsQKNxwMLqL1KOkyStZl4QeDK1CCWVEA+hRKShO3ipLj
+        PiNns5O6M8s+vJvL+5g3F84jZCSyWFABESOYIBwuJsvaHSVFtB4lXUbJmiwW
+        RdAeJffdFeZTHiFYazC4NHGrKPm9n56evzrYBSX5FLoBII+M4NgQWAA1MLEI
+        MQ4xY3EzlBTRepR0GSXrsrAeJRWTHbHA3QLWQUlp4lZRcjv8Xd0eTcw2KFnW
+        4/EIkABsnpoEc45iG0umsTutimlgFzMP746SIlqPku6ipEoWwqPkgbtIBGA+
+        gkNxrbqS0sStouRVX45PTn473gElNB8M5mzzZNGcxeahZmjDJ4OLaD1KuoyS
+        dVnEHiXrF2qXlXBQ68ng0sStouTt55vxzfjjVt2uS26CebXr5hEcd/mhSmGF
+        kTFAUskwAw2zkiJaj5Iuo2RdFj4rqXAXgkEoak0PXZq43cFg9d/zLzQEO6Bk
+        Xo8XPjZfiYDcuBwNEiTdRchqAxrWlRTRepR0GSXrsvB1JRUviEEsAAjXGgwu
+        TNwqSg65enFzfbg1Smg+GAxggMDmvhKhAOUYhYpjIYxREouGKCmi9SjpMEoq
+        ZOFRUvEWHEQDwWqhpDTxPZRMjP75ky/ezC4/n4oP28Jk8dIfHDC0sbIESxVy
+        SonkSmjGpSSCNSxSK6LdL5rK06SDNFnXBfdVamv24hHEgeCoVsFr4eKdaPLD
+        MpMX/bPRxW9su4kGRB+KCLC84nU5+l39RlEjKEcIAGspQdRaJhuWqRXReph0
+        GCZVuvB1alXP9PEA0lojwqWL24VJMrlE2eH5lx1gQvKqvHDzQ31ONBhYCS2H
+        OA4RFaESDatLimg9TLoNkzVd+PKSqqkKhYNJrd7X0sXtwmRKPn2+Gw63e0J4
+        ARMaQRCQzY/1OdFQCDhixNhQ4PxpLtzwDcJFtB4m3YbJmi78q4PXJi5hESYB
+        B7UKTEoXtwuTg/7Xl4Ori5vtYQLnA1eAb6wwgcBybSlDTqZEQYSwajqfWhGt
+        h0mnYbKmCz+hWtVtDsLFtfopmJQubrnPZHj09eMo+7wDTGD+2jCIH+kzsdol
+        ssLpRkuAGMCy6VvIi2g9TLoNk1Vd+HeQV2UmFAeoZp9J4eJ2YfI6vkj04Zet
+        RnOWMEERCgMqNmcmEACmEbRIcUwoJ4CJhh2wRbQeJl2GSYUufAdsBUwID3hY
+        KzMpXdwuTAZfT88uzi4n28IkzEdzCA4A3dxnAlVsmSGM8hgKaCiFtuGsakW0
+        Hiadhsm6Lvy0alUwgYGo946t0sXtwuQluRp/GcB0e5jkr+9AARAbnxWG0OCY
+        2hhDipGAzCDNGxatFdF6mHQaJuu68FVra4/lMHe5DkJcazSndHG7MNFXl2en
+        l39uBZNlVc0iD9s8HRKWyjKLYSyUVdC6m2QjWDOYFNF6mHQYJlW6kB4mFa8f
+        pwGvV7RWuvjbP/8Dt0FoFHOfAAA=
+    http_version: 
+  recorded_at: Tue, 23 Feb 2016 19:44:31 GMT
+recorded_with: VCR 2.9.3
