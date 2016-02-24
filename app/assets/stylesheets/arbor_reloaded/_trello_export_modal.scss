@@ -1,0 +1,29 @@
+$modal-margin: rem-calc(20);
+
+#trello-modal {
+  h2,
+  select { margin-bottom: $modal-margin; }
+
+  .trello-export-success { color: $success-color; }
+  .trello-export-error { color: $error-color; }
+
+  .authorize-btn {
+    display: block;
+    margin: 0 auto ($modal-margin / 2);
+    text-align: center;
+    width: 18%;
+  }
+
+  #trello-export-submit { margin-bottom: $modal-margin / 2; }
+  .select-board-list select { @include border-radius($global-radius); }
+
+  .export-text {
+    color: $black-30;
+    margin: $modal-margin;
+
+    p {
+      font-size: rem-calc(14);
+      margin: 0;
+    }
+  } // disclaimer text
+} // modal

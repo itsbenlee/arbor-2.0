@@ -1,9 +1,3 @@
-.select-board-list
-.trello-export-result
-.trello-authorize-link.hide
-  = t('trello.reauthorize')
-  = link_to '#', { id: 'authorize-arbor-on-trello', class: 'copy-project', data: { url: arbor_reloaded_project_authorize_path(@project) } } do
-    = t('trello.authorize')
 .new-backlog-story.row
   = render 'arbor_reloaded/user_stories/form', user_story: UserStory.new, project: @project
 .estimation.row{class: @project.user_stories.count > 0 ? 'visible' : 'hide'}

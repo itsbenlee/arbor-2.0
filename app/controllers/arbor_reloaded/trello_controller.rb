@@ -27,11 +27,6 @@ module ArborReloaded
       @response.data[:message] = t('trello.success') if @response.success
     end
 
-    def authorize
-      render partial: 'arbor_reloaded/trello/authorized_links',
-             locals: { project: @project, token: @token }
-    end
-
     private
 
     def load_token
