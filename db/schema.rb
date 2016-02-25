@@ -245,7 +245,6 @@ ActiveRecord::Schema.define(version: 20160219024519) do
     t.boolean  "admin",                  default: false
     t.string   "slack_id"
     t.string   "avatar"
-    t.string   "slack_auth_token"
     t.string   "trello_token"
   end
 

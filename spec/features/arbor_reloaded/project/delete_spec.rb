@@ -12,7 +12,7 @@ feature 'delete project' do
     end
 
     scenario 'should show me the delete link' do
-      expect(page).to have_css('.delete-project')
+      expect(page).to have_css('.icn-delete')
     end
   end
 

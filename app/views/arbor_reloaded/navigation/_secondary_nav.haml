@@ -42,7 +42,7 @@
           = react_component('SlackButton', {}, {prerender: false})
         - if current_user == current_project.owner
           %li
-            = link_to current_project, method: :delete, data: { confirm: t('project.delete_confirmation') }, class: 'delete-project' do
+            = link_to arbor_reloaded_project_path(current_project), method: :delete, data: { confirm: t('project.delete_confirmation') } do
               = t('project.delete_project')
               %span.icn-delete
   %ul.right.members

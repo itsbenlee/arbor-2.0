@@ -50,7 +50,7 @@ module ArborReloaded
 
     def destroy
       @project.destroy
-      redirect_to :back
+      redirect_to arbor_reloaded_projects_path
     end
 
     def join_project
