@@ -17,7 +17,6 @@ class TrelloServices
     @board.lists.each(&:close!)
     new_list = Trello::List.create(
       name: I18n.t('trello.default_list'), board_id: @board.id)
-
     export_stories(new_list)
   end
 

@@ -1,11 +1,14 @@
+%script{src: "http://code.jquery.com/jquery-1.7.1.min.js"}
+%script{src: "//api.trello.com/1/client.js?key=#{ENV['TRELLO_DEVELOPER_PUBLIC_KEY']}"}
+
 %nav.secondary-nav
   %ul.left
     %li.not-ready
-      = link_to t('reloaded.navigation.canvas'), arbor_reloaded_project_canvases_path(current_project), class: "link"
+      = link_to t('reloaded.navigation.canvas'), arbor_reloaded_project_canvases_path(current_project), class: 'link'
     %li
-      = active_link_to t('reloaded.navigation.backlog'), arbor_reloaded_project_user_stories_path(current_project), class: "link"
+      = active_link_to t('reloaded.navigation.backlog'), arbor_reloaded_project_user_stories_path(current_project), class: 'link'
     %li
-      = active_link_to t('reloaded.navigation.activity'), log_arbor_reloaded_project_path(current_project), class: "link"
+      = active_link_to t('reloaded.navigation.activity'), log_arbor_reloaded_project_path(current_project), class: 'link'
     %li.not-ready
       = link_to t('reloaded.navigation.assets'), arbor_reloaded_project_attachments_path(current_project), class: 'link'
     %li
@@ -23,11 +26,23 @@
           = link_to arbor_reloaded_project_copy_path(current_project), method: :post, class: 'copy-project' do
             = t('project.copy_project')
             %span.icn-copy
+        - if current_user.trello_token
+          .authorized-trello-links
+            = render 'arbor_reloaded/trello/authorized_links', project: current_project
+        - else
+          %li
+            = link_to '#', { id: 'trello_export_link', class: 'copy-project', data: { url: arbor_reloaded_project_trello_index_path(current_project) } } do
+              = t('trello.new_board')
+              %span.icn-copy
+          %li
+            = link_to '#', { id: 'trello_export_existing_board_link', class: 'copy-project', data: { url: arbor_reloaded_project_trello_index_path(current_project) } } do
+              = t('trello.existing_board')
+              %span.icn-copy
         %li
           = react_component('SlackButton', {}, {prerender: false})
         - if current_user == current_project.owner
           %li
-            = link_to current_project, method: :delete, data: { confirm: t('project.delete_confirmation') }, class: 'delete-project' do
+            = link_to arbor_reloaded_project_path(current_project), method: :delete, data: { confirm: t('project.delete_confirmation') } do
               = t('project.delete_project')
               %span.icn-delete
   %ul.right.members

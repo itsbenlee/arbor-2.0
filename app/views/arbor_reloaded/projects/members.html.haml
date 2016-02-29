@@ -29,7 +29,7 @@
               = member.full_name
             %p.user-mail
               = member.email
-            %input.circle-checkbox{ id:'remove-member-check', type: 'checkbox', data:{ url: arbor_reloaded_project_remove_member_from_project_path(project, member: member.id)} }
+            %input.remove-member-check.circle-checkbox{ type: 'checkbox', data:{ url: arbor_reloaded_project_remove_member_from_project_path(project, member: member.id)} }
     - unless invites.empty?
       - invites.each do |invite|
         %li.user-item.invited

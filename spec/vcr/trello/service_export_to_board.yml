@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.trello.com/1/lists?key=VALID_TRELLO_DEVELOPER_KEY&token=TRELLO_TOKEN
+    body:
+      encoding: US-ASCII
+      string: name=Arbor%20Backlog%20Export&closed=false&idBoard=VALID_BOARD_ID&pos=
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '80'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15768000
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Trello-Version:
+      - 1.582.0
+      X-Trello-Environment:
+      - Production
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE
+      X-Server-Time:
+      - '1456323908424'
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '126'
+      Etag:
+      - W/"7e-1ae0b00b"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Wed, 24 Feb 2016 14:25:08 GMT
+      Set-Cookie:
+      - incap_ses_298_168562=AroSUiAqaXgMt3eu6bUiBEO9zVYAAAAAdQc1Bg+YMzNWuP9Eo44N3w==;
+        path=/; Domain=.trello.com
+      - visid_incap_168562=o6eLtp7XRRaTXmgIjYHudkO9zVYAAAAAQUIPAAAAAAA24/PRqizN4ISSLlNVycK1;
+        expires=Thu, 23 Feb 2017 08:55:39 GMT; path=/; Domain=.trello.com
+      X-Iinfo:
+      - 4-123029258-123009439 PNNN RT(1456323906879 532) q(0 0 0 -1) r(2 2) U6
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: UTF-8
+      string: '{"id":"56cdbd449e0d88fa0952f1cf","name":"Arbor Backlog Export","closed":false,"idBoard":"VALID_BOARD_ID","pos":2048}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 14:27:46 GMT
+recorded_with: VCR 2.9.3

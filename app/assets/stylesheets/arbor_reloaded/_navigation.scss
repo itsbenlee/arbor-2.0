@@ -67,9 +67,6 @@ $avatar-dimension: rem-calc(40);
 }//top-bar
 
 .top-bar-section .profile {
-
-  .user-dropdown { height: $topbar-height; }
-
   .avatar {
     @include user-avatar($avatar-dimension, rem-calc(20));
 

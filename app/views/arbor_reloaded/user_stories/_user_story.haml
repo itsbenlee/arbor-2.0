@@ -16,14 +16,14 @@
     = link_to '#', class: 'others' do
       &#149&#149&#149
   .actions
-    %a.delete-story.has-tip{aria: {haspopup: true}, data: {tooltip: ''}, title: t('reloaded.tooltips.delete_project')}
+    %a.delete-story.has-tip{aria: {haspopup: true}, data: {id: user_story.id, tooltip: ''}, title: t('reloaded.tooltips.delete_project')}
       %span.icn-delete
     = link_to '#', class: 'copy-story hidden-element has-tip', aria: { haspopup: true }, title: t('reloaded.tooltips.copy_project'), data: { tooltip: '' } do
       %span.icn-copy
-  .deleter
+  .deleter{ id: "deleter-#{user_story.id}"}
     %p
       = t('reloaded.user_stories.actions.are_you_sure')
       = link_to t('reloaded.user_stories.actions.confirm'), arbor_reloaded_user_story_path(user_story), method: :delete, class: 'button radius alert tiny'
-    %a.cancel= t('reloaded.user_stories.actions.cancel')
+    %a.cancel{ data: { id: user_story.id } }= t('reloaded.user_stories.actions.cancel')
     %a.delete-project
       %span.icn-delete

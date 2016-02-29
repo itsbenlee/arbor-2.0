@@ -102,6 +102,13 @@ Railsroot::Application.routes.draw do
     get 'projects/list', controller: :projects, action: :list_projects
 
     resources :projects, except: [:new, :edit], shallow: true do
+      resources :trello, only: [:new, :create, :index, :update]
+      get 'export_to_board',
+        controller: :trello,
+        action: :export_to_board
+      get 'authorize',
+        controller: :trello,
+        action: :authorize
       get 'export_backlog',
         controller: :projects,
         action: :export_backlog

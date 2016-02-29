@@ -11,6 +11,7 @@ Spork.prefork do
   ENV['INTERCOM_APP_ID'] = 'q2wxbu8q'
   ENV['MOUSEFLOW_SRC'] = '//cdn.mouseflow.com/projects/51a89e86-f3d8-469d-80d2-4971f0cdb36b.js'
   ENV['ENABLE_RELOADED'] = 'false'
+  ENV['TRELLO_DEVELOPER_PUBLIC_KEY'] = 'VALID_TRELLO_DEVELOPER_KEY'
 
   require File.expand_path('../../config/environment', __FILE__)
   require 'rspec/rails'
