@@ -62,7 +62,7 @@
               .avatar-circle#avatar-circle= user_initial(member)
     - if current_project.members.count > 3
       %li
-        = link_to arbor_reloaded_project_members_path(current_project),{ data: { reveal_id: 'project-members-modal', reveal_ajax: true }}, class: 'other-members' do
+        = link_to arbor_reloaded_project_members_path(current_project), { class: 'other-members', data: { reveal_id: 'project-members-modal', reveal_ajax: true }} do
           +
           = current_project.members.count - 3
     -# TODO this link should only appear if the user is not a member of this project, and should't see the plus and members items, MOJO {remove .hidden-element for enable it}
