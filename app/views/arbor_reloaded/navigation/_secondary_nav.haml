@@ -26,18 +26,19 @@
           = link_to arbor_reloaded_project_copy_path(current_project), method: :post, class: 'copy-project' do
             = t('project.copy_project')
             %span.icn-copy
-        - if current_user.trello_token
-          .authorized-trello-links
-            = render 'arbor_reloaded/trello/authorized_links', project: current_project
-        - else
-          %li
-            = link_to '#', { id: 'trello_export_link', class: 'copy-project', data: { url: arbor_reloaded_project_trello_index_path(current_project) } } do
-              = t('trello.new_board')
-              %span.icn-copy
-          %li
-            = link_to '#', { id: 'trello_export_existing_board_link', class: 'copy-project', data: { url: arbor_reloaded_project_trello_index_path(current_project) } } do
-              = t('trello.existing_board')
-              %span.icn-copy
+        .hidden-element
+          - if current_user.trello_token
+            .authorized-trello-links
+              = render 'arbor_reloaded/trello/authorized_links', project: current_project
+          - else
+            %li
+              = link_to '#', { id: 'trello_export_link', class: 'copy-project', data: { url: arbor_reloaded_project_trello_index_path(current_project) } } do
+                = t('trello.new_board')
+                %span.icn-copy
+            %li
+              = link_to '#', { id: 'trello_export_existing_board_link', class: 'copy-project', data: { url: arbor_reloaded_project_trello_index_path(current_project) } } do
+                = t('trello.existing_board')
+                %span.icn-copy
         %li
           = react_component('SlackButton', {}, {prerender: false})
         - if current_user == current_project.owner
