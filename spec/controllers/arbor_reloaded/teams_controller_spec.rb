@@ -2,7 +2,7 @@ require 'spec_helper'
 
 RSpec.describe ArborReloaded::TeamsController do
   let(:user)         { create :user }
-  let(:team)         { create :team }
+  let(:team)         { create :team, owner: user }
   let(:another_user) { create :user }
 
   before :each do
@@ -23,6 +23,19 @@ RSpec.describe ArborReloaded::TeamsController do
       expect(created_team.users).to eq([user])
       expect(created_team.owner).to eq(user)
       expect(created_team.name).to eq('Team name')
+    end
+  end
+
+  describe 'DELETE destroy' do
+    let!(:project) { create :project, team: team, owner: user }
+
+    it 'should destroy a team and not the projects' do
+      request.env['HTTP_REFERER'] = arbor_reloaded_teams_path
+
+      post(:destroy, id: team.id)
+
+      expect{ Team.find(team.id) }.to raise_error(ActiveRecord::RecordNotFound)
+      expect(project.owner).to eq(user)
     end
   end
 
