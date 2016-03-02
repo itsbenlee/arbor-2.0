@@ -18,14 +18,6 @@ function CustomTextArea() {
     }
   });
 
-  $('.resizable-text-area').focus(function(){
-    $('#save-canvas').show();
-  });
-
-  $('.resizable-text-area').blur(function(){
-    $('#save-canvas').hide();
-  });
-
   window.onresize = function() {
     $('.ui-sortable-handle .backlog-placeholder.resizable-text-area').each(function(index, currentValue) {
       var offset = currentValue.offsetHeight - currentValue.clientHeight;
