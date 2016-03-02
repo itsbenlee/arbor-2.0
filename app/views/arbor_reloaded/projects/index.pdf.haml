@@ -10,19 +10,19 @@
             .total_points.estimation-item
               %h4.title= t('reloaded.estimation.total_points')
               .value
-                %p.total_points= UserStory.total_points(@project.user_stories)
+                %p.total_points= @project.total_points
           %li
             .total_cost.estimation-item
               %h4.title= t('reloaded.estimation.total_cost')
               .cost
                 %p.total_cost
                   $
-                  = number_helper(total_cost(@project))
+                  = number_with_delimiter(@project.total_cost)
           %li
             .weeks.estimation-item
               %h4.title= t('reloaded.estimation.total_weeks')
               .value
-                %p.total_weeks= total_weeks(@project)
+                %p.total_weeks= @project.total_weeks
       .title-breaker
         %h5
           = t('reloaded.pdf.user_stories')
