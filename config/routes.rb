@@ -106,9 +106,6 @@ Railsroot::Application.routes.draw do
       get 'export_to_board',
         controller: :trello,
         action: :export_to_board
-      get 'authorize',
-        controller: :trello,
-        action: :authorize
       get 'export_backlog',
         controller: :projects,
         action: :export_backlog

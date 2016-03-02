@@ -26,18 +26,10 @@
           = link_to arbor_reloaded_project_copy_path(current_project), method: :post, class: 'copy-project' do
             = t('project.copy_project')
             %span.icn-copy
-        - if current_user.trello_token
-          .authorized-trello-links
-            = render 'arbor_reloaded/trello/authorized_links', project: current_project
-        - else
-          %li
-            = link_to '#', { id: 'trello_export_link', class: 'copy-project', data: { url: arbor_reloaded_project_trello_index_path(current_project) } } do
-              = t('trello.new_board')
-              %span.icn-copy
-          %li
-            = link_to '#', { id: 'trello_export_existing_board_link', class: 'copy-project', data: { url: arbor_reloaded_project_trello_index_path(current_project) } } do
-              = t('trello.existing_board')
-              %span.icn-copy
+        %li
+          = link_to '#', data: { reveal_id: 'trello-modal' } do
+            = t('reloaded.navigation.export_trello')
+            %span.icn-export
         %li
           = react_component('SlackButton', {}, {prerender: false})
         - if current_user == current_project.owner
@@ -69,3 +61,5 @@
 #project-members-modal.reveal-modal{ data: { reveal: '' } }
 %div
   = react_component('SlackModal', { url: arbor_reloaded_project_path(current_project), slackToken: current_project.slack_token, slackChannelId: current_project.slack_channel_id }, {prerender: false})
+
+= render 'arbor_reloaded/trello/trello_modal', current_project: current_project
