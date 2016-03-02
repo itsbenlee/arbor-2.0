@@ -1,16 +1,15 @@
 module ArborReloaded
   class UserStoriesController < ApplicationController
     layout 'application_reload'
-    before_action :load_user_story, only: [:edit, :update, :destroy]
-    before_action :check_edit_permission, only: [:create, :index]
     before_action :copied_user_stories, only: :copy
-    before_action :set_project, only: :destroy_stories
     before_action :next_and_prev_story, only: :show
+    before_action :load_user_story, only: %i(edit update destroy)
+    before_action :check_edit_permission, only: %i(create index)
+    before_action :set_project, only: %i(destroy_stories update)
 
     def index
       @user_story = UserStory.new
-      @total_points =
-        UserStory.total_points(@project.user_stories)
+      @total_points = @project.total_points
     end
 
     def show

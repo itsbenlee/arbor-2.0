@@ -27,6 +27,20 @@ class Project < ActiveRecord::Base
   scope :by_name, -> { order('LOWER(name)') }
   scope :no_team, -> { where(team: nil) }
 
+  def total_points
+    user_stories.map(&:estimated_points).compact.sum
+  end
+
+  def total_cost
+    return 0 unless velocity && cost_per_week
+    cost_per_week * (total_points / velocity.to_f).ceil
+  end
+
+  def total_weeks
+    return 0 unless velocity
+    (total_points / velocity.to_f).ceil
+  end
+
   def as_json
     super(only: [:name])
   end

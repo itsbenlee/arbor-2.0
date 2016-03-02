@@ -8,6 +8,10 @@ function UserStory() {
       $story        = $storyList.find('.story-detail-link'),
       $storyOpened  = $('.story-detail-link.opened');
 
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
   $points.change(function(event) {
     var story_id = $(this).data('id'),
         $estimationPoints = $('.story-points[data-id="' + story_id + '"]');
@@ -19,16 +23,24 @@ function UserStory() {
       data: { user_story: { estimated_points: this.value } },
       success: function (response) {
         if(response.success) {
-          if (response.data.estimated_points !== null)
-            $('.backlog-user-story[data-id='+ response.data.id +']')
-            .find('.story-points').text(response.data.estimated_points);
-          else {
-            $('.backlog-user-story[data-id='+ response.data.id +']').find('.story-points').text('?');
-          }
+          $('.total_points').text(response.data.total_points);
+          $('.total_cost').text(numberWithCommas(response.data.total_cost));
+          $('.total_weeks').text(response.data.total_weeks);
+          displayEstimation(response.data);
         }
       }
     });
   });
+
+  function displayEstimation(data) {
+    if (data.estimated_points) {
+      $('.backlog-user-story[data-id='+ data.id +']')
+      .find('.story-points').text(data.estimated_points);
+    }
+    else {
+      $('.backlog-user-story[data-id='+ data.id +']').find('.story-points').text('?');
+    }
+  }
 
   function NavigateUserStories() {
     $(document).unbind('keydown');
