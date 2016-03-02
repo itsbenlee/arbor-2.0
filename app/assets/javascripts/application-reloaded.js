@@ -22,6 +22,8 @@
 //= require arbor-reloaded/utils/vendor/jquery.mousewheel.min
 //= require arbor-reloaded/utils/vendor/jquery.mCustomScrollbar.concat.min
 //= require arbor-reloaded/utils/vendor/trello
+//= require arbor-reloaded/projects/canvas/canvas
+//= require arbor-reloaded/projects/canvas/form
 //= require arbor-reloaded/projects/project_actions
 //= require arbor-reloaded/projects/project_dashboard
 //= require arbor-reloaded/projects/project_members
@@ -35,8 +37,6 @@
 //= require arbor-reloaded/user_profile/user_profile
 //= require arbor-reloaded/projects/actions/SlackModalActions
 //= require arbor-reloaded/projects/stores/SlackModalStore
-//= require arbor-reloaded/utils/canvases/canvases
-//= require arbor-reloaded/utils/canvases/form
 //= require arbor-reloaded/utils/userStories/a_an_grammar
 //= require arbor-reloaded/utils/userStories/archive
 //= require arbor-reloaded/utils/userStories/copyModal
