@@ -63,7 +63,7 @@ $circle-dimension: $story-points-dimension;
 
 .backlog-user-story {
   border-top: 1px solid $black-10;
-  padding: $story-padding-top $story-padding-sides;
+  padding: $story-padding-top $story-padding-sides $story-padding-top 0;
   position: relative;
 
   &.white-block .actions.actions { background-color: $transparent; }
@@ -83,7 +83,8 @@ $circle-dimension: $story-points-dimension;
     background: $dashboard-hover-color;
     cursor: pointer;
 
-    .circle-checkbox { @include opacity(1); }
+    .square-checkbox { @include opacity(1); }
+    .story-detail-link { margin-left: $story-padding-top * 2; }
   }//backlog user story hover
 
   .icn-comments {
@@ -117,19 +118,6 @@ $circle-dimension: $story-points-dimension;
   } // text
 
   .shorten-story { width: 75%; }
-
-  .circle-checkbox {
-    @include opacity(0);
-    background-color: $black-10;
-    height: $story-points-dimension;
-    left: -(($story-padding-sides * 2) + ($story-points-dimension / 2));
-    top: $story-padding-top;
-    width: $story-points-dimension;
-
-    &::after { left: rem-calc(9); }
-
-    &:checked { @include opacity(1); }
-  } // circle checkbox
 } //  user story
 
 //  STICKY SELECT MENU
