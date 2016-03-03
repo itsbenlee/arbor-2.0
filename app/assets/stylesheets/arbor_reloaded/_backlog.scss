@@ -3,10 +3,10 @@
 
 .new-backlog-story {
   @include border-radius($global-radius);
-  background-color: $dashboard-hover-color;
+  border-bottom: 2px dashed $black-20;
   color: $black-40;
   font-size: rem-calc(22);
-  padding: rem-calc(15 25);
+  padding: rem-calc(15 25 0 15);
 
   .backlog-story-input {
     float: left;
@@ -15,20 +15,22 @@
 
   input {
     &[type="text"] {
-      background-color: $dashboard-hover-color;
+      @include inline-block();
+      background-color: $body-bg;
       border: 0;
-      display: inline-block;
       font-size: rem-calc(22);
       margin-bottom: 0;
       min-width: rem-calc(90);
-      text-align: center;
       @include input-placeholder { color: $black-80; };
-
-      &:focus { background-color: $dashboard-hover-color; }
     }
   } // input
 
-  #save-user-story { float: right; }
+  .create-btn {
+    background-color: $black-20;
+    float: right;
+  }
+
+  .success-button { background-color: $success-color; }
 }//new backlog story
 
 //  USER STORY LIST
