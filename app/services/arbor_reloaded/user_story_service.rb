@@ -21,7 +21,11 @@ module ArborReloaded
     def update_user_story(user_story)
       if user_story.save
         @common_response.data =
-          { estimated_points: user_story.estimated_points, id: user_story.id }
+          { estimated_points: user_story.estimated_points,
+            total_points: @project.reload.total_points,
+            total_cost: "$#{@project.total_cost}",
+            total_weeks: @project.total_weeks,
+            id: user_story.id }
       else
         @common_response.success = false
         @common_response.errors += user_story.errors.full_messages

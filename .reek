@@ -135,8 +135,6 @@ UnusedParameters:
 UtilityFunction:
   enabled: true
   exclude: [
-    ProjectHelper#total_weeks,
-    ProjectHelper#total_cost,
     UserStoriesHelper#format_story_points,
     ApplicationHelper#meta_title,
     ApplicationHelper#meta_description,
