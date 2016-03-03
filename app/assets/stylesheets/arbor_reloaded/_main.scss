@@ -55,6 +55,45 @@ input { outline: 0; }
   } // checked
 } // circle
 
+// SQUARE CHECKBOX
+
+$story-padding-top: rem-calc(20);
+
+.square-checkbox {
+  @include appearance-none;
+  @include opacity(0);
+  background: $black-10;
+  cursor: pointer;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: rem-calc(25);
+
+  &::after {
+    @include transform(rotate(45deg) translate(-50%, -50%));
+    border: solid $white;
+    border-width: rem-calc(0 2 2 0); // creates the inverted "L" shape
+    content: '';
+    display: block;
+    font-size: rem-calc(14);
+    font-weight: $font-weight-bold;
+    height: rem-calc(10);
+    left: rem-calc(8);
+    line-height: normal;
+    position: absolute;
+    top: 50%;
+    width: rem-calc(5); // the short bar of the mark is half as long as the long bar
+  }
+
+  &:checked {
+    @include opacity(1);
+    background-color: $success-color;
+
+    + .story-detail-link { margin-left: $story-padding-top * 2; }
+    &::after { border-color: $black-90; }
+  } // checked
+} // square checkbox
+
 .ui-helper-hidden-accessible { display: none; } // hide default search result text coming from the jquery widget
 
 .grey-prefix { color: $black-40; }
