@@ -369,3 +369,25 @@ $block-animation-delay: .40s;
 
   .button { display: inline; }
 }// empty teams, empty dashboard
+
+$circle-add-btn-dimension: rem-calc(55);
+
+.circle-add-btn {
+  @include border-radius(100%);
+  @include box-shadow($shadow-depth-1);
+  background-color: $success-color;
+  color: $white;
+  display: block;
+  font-size: rem-calc(25);
+  height: $circle-add-btn-dimension;
+  line-height: $circle-add-btn-dimension;
+  text-align: center;
+  vertical-align: middle;
+  width: $circle-add-btn-dimension;
+
+  &:hover,
+  &:focus {
+    @include opacity(.9);
+    color: $white;
+  }
+}

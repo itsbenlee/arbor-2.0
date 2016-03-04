@@ -24,7 +24,6 @@ $search-width: rem-calc(300);
     input {
       background-color: $transparent;
       border: 0;
-      border-bottom: 1px solid $black-10;
       margin-bottom: 0;
       max-width: $search-width;
       padding-left: rem-calc(40);

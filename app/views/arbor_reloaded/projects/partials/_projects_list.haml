@@ -2,7 +2,7 @@
   - if projects.favorite.count > 0
     .title-breaker
       %h5= t('reloaded.project_dashboard.favorite', count: projects.favorite.count)
-    %ul.favorites.small-block-grid-1.medium-block-grid-3.large-block-grid-4
+    %ul.favorites.small-block-grid-1.medium-block-grid-3.large-block-grid-3
       - projects.favorite.each do |project|
         %li.favorite-project.white-block
           .right
