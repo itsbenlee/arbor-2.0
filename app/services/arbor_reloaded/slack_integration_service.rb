@@ -1,5 +1,7 @@
 module ArborReloaded
+  include HTTParty
   class SlackIntegrationService
+    before_filter :set_urls
     ROLE = I18n.translate('reloaded.backlog.role')
     ACTION = I18n.translate('reloaded.backlog.action')
     RESULT = I18n.translate('reloaded.backlog.result')
@@ -25,6 +27,35 @@ module ArborReloaded
         @common_response.success = false
       end
       @common_response
+    end
+
+    def authorize(redirect_uri)
+      options = {
+        scope: 'commands incoming-webhook',
+        client_id: ENV['SLACK_CLIENT_ID'],
+        redirect_uri: redirect_uri
+      }
+      @auth_url.query = URI.encode_www_form(options)
+      @auth_url.to_s
+    end
+
+    def req_slack_access(code, redirect_url)
+      options = {
+        client_id: ENV['SLACK_CLIENT_ID'],
+        client_secret: ENV['SLACK_CLIENT_SECRET'],
+        code: code,
+        redirect_uri: redirect_url
+      }
+      response = HTTParty.get(@auth_access_url, options)
+      response
+    end
+
+    def req_slack_data(token)
+      options = {
+        token: token
+      }
+      response = HTTParty.get(@data_url, options)
+      response
     end
 
     private
@@ -58,6 +89,12 @@ module ArborReloaded
         estimated_points: '',
         priority: 'should'
       }
+    end
+
+    def set_urls
+      @auth_url = 'https://slack.com/oauth/authorize'
+      @auth_access_url = 'https://slack.com/api/oauth.access'
+      @data_url = 'https://slack.com/api/auth.test'
     end
   end
 end

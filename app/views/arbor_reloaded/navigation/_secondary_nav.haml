@@ -60,6 +60,12 @@
     %li= link_to t('reloaded.project_dashboard.join_project'), '#', class: 'button radius success tiny join-btn hidden-element'
 #project-members-modal.reveal-modal{ data: { reveal: '' } }
 %div
-  = react_component('SlackModal', { url: arbor_reloaded_project_path(current_project), slackToken: current_project.slack_token, slackChannelId: current_project.slack_channel_id }, {prerender: false})
+
+= react_component('SlackModal', {
+  url: arbor_reloaded_project_path(current_project),
+  slackToken: current_project.slack_token,
+  slackChannelId: current_project.slack_channel_id,
+  projectId: current_project.id
+}, {prerender: false})
 
 = render 'arbor_reloaded/trello/trello_modal', current_project: current_project
