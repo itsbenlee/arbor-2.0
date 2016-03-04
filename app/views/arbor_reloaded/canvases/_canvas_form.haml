@@ -1,5 +1,5 @@
 = hidden_field_tag 'require_canvas', id: 'require_canvas'
-= form_tag project_canvases_path(project), method: :post do
+= form_tag arbor_reloaded_project_canvases_path(project), method: :post do
   = hidden_field_tag 'current-question', current_question
   .problems-field.canvas-fields
     = label_tag :problems, t('problems_title')
@@ -39,4 +39,4 @@
     %p.enter press &#8629; to finish
   = submit_tag :save, class: 'button radius small secondary-btn', id: 'save-canvas'
 - content_for :custom_js do
-  = javascript_include_tag 'canvases/form'
+  = javascript_include_tag 'arbor-reloaded/projects/canvas/form'

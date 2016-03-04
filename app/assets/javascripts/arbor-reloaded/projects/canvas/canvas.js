@@ -1,4 +1,4 @@
-function Canvases() {
+function Canvas() {
   var $canvasLinks       = $('li.canvas-item'),
       $canvasFields      = $('.canvas-fields'),
       $canvasTextarea    = $('.canvas-fields textarea'),

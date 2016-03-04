@@ -10,10 +10,6 @@ module ArborReloaded
 
     def create
       @canvas.update_attributes(canvas_params)
-      if env['HTTP_REFERER'].include? 'lab'
-        redirect_to :back
-        return
-      end
       render :index
     end
 
