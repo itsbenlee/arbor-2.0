@@ -2,9 +2,9 @@
   .search-bar.small-12.medium-6.large-8.column
     %span.icn-search
     %input{ type: 'text', placeholder: t('reloaded.project_dashboard.search_input'), id: 'projects-filter', data: { url: arbor_reloaded_projects_list_path } }
-  .right-search-content.small-12.medium-6.large-4.column
+  .right-search-content.small-12.medium-6.large-3.column
     .recent-link
       = select_tag 'project_order', options_for_select({ t('reloaded.project_dashboard.sort_by_name')=>'by_name',
         t('reloaded.project_dashboard.sort_by_recent')=>'recent'}, 'recent'), data: { remote: true, url: arbor_reloaded_projects_path }
     .create-project
-      =link_to t('reloaded.project_dashboard.create_button'), '#', class: 'button radius small', id: 'create-project-btn', data: { reveal_id: 'project-modal' }
+      =link_to '+', '#', class: 'circle-add-btn', id: 'create-project-btn', data: { reveal_id: 'project-modal' }
