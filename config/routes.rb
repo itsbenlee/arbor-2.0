@@ -179,4 +179,8 @@ Railsroot::Application.routes.draw do
 
     resources :channels, only: [:index]
   end
+
+  get ENV['LETS_ENCRYPT_ROUTE'],
+    controller: :well_known,
+    action: :index
 end
