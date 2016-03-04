@@ -35,8 +35,8 @@ module ArborReloaded
         client_id: ENV['SLACK_CLIENT_ID'],
         redirect_uri: redirect_uri
       }
-      @uri.query = URI.encode_www_form(options)
-      @uri.to_s
+      @auth_url.query = URI.encode_www_form(options)
+      @auth_url.to_s
     end
 
     def req_slack_access(code, redirect_url)
@@ -47,7 +47,7 @@ module ArborReloaded
         code: code,
         redirect_uri: redirect_url
       }
-      response = HTTParty.get(url, query: options)
+      response = HTTParty.get(url, options)
       response
     end
 
@@ -56,7 +56,7 @@ module ArborReloaded
       options = {
         token: token
       }
-      response = HTTParty.get(url, query: options)
+      response = HTTParty.get(url, options)
       response
     end
 

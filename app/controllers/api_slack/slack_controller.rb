@@ -3,7 +3,8 @@ module ApiSlack
     def authorize
       @project = find_project
       redirect_to ArborReloaded::SlackIntegrationService.new(@project)
-        .authorize(api_slack_send_authorize_data_url(project_id: @project.id))
+        .authorize(send_authorize_data_api_slack_slack_index_url(project_id:
+          @project.id))
     end
 
     def send_authorize_data
@@ -24,7 +25,8 @@ module ApiSlack
       @project = find_project
       slack_data = ArborReloaded::SlackIntegrationService.new(@project)
                    .req_slack_access(params['code'],
-                   api_slack_send_authorize_data_url(project_id: @project.id))
+                   send_authorize_data_api_slack_slack_index_url(project_id:
+                    @project.id))
       assign_slack_user
       return unless slack_data['ok']
       assign_slack_token(slack_data['access_token'])

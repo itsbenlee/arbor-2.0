@@ -176,7 +176,11 @@ Railsroot::Application.routes.draw do
 
   namespace :api_slack do
     resources :user_stories, only: [:create]
-    get 'authorize', controller: :slack, action: :authorize
-    get 'send_authorize_data', controller: :slack, action: :send_authorize_data
+    resources :slack, only: [:authorize, :send_authorize_data] do
+      collection do
+        get :authorize
+        get :send_authorize_data
+      end
+    end
   end
 end

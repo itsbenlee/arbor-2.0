@@ -68,8 +68,8 @@ var SlackModal = React.createClass({
 
       var slackSettings,
           slackIntegration,
-          slack_href = 'https://arbor-slack-integration.herokuapp.com/authorize?redirect_url=' +
-          location.protocol + '//' + location.host + location.pathname;
+          slackHref = location.protocol + '//' + location.host +
+          '/api_slack/slack/authorize?project_id=' + this.props.projectId;
 
       slackIntegration = (
         <div>

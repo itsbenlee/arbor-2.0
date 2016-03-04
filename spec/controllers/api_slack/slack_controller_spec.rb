@@ -1,14 +1,8 @@
 require 'spec_helper'
-require 'vcr'
 
 RSpec.describe ApiSlack::SlackController do
   let!(:user) { create :user }
   let!(:project) { create :project, owner: user }
-
-
-  VCR.configure do |c|
-    c.filter_sensitive_data("<client_id>", :idono) { '4750359453.21034945302' }
-  end
 
   before :each do
     sign_in user
