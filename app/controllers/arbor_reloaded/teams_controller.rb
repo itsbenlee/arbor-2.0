@@ -2,8 +2,7 @@ module ArborReloaded
   class TeamsController < ApplicationController
     layout 'application_reload'
     before_action :authenticate_user!
-    before_action :load_team,
-      only: [:members, :add_member, :remove_member, :destroy]
+    before_action :load_team, only: %i(members add_member remove_member)
 
     def index
       @new_team = Team.new
@@ -30,9 +29,7 @@ module ArborReloaded
 
     def remove_member
       member = User.find(member_params[:member])
-      @team.projects.each do |project|
-        project.members.delete(member)
-      end
+      @team.projects.each { |project| project.members.delete(member) }
       @team.users.delete(member)
       @team.save
     end
@@ -42,7 +39,10 @@ module ArborReloaded
     end
 
     def destroy
-      unless @team.destroy
+      team = current_user.teams.find(params[:id])
+      team.projects.each { |project| project.update_attributes(team: nil) }
+
+      unless team.destroy
         flash[:alert] = I18n.t('reloaded.team.can_not_delete_team')
       end
       redirect_to :back

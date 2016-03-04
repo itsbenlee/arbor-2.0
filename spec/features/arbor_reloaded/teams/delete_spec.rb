@@ -1,9 +1,10 @@
 require 'spec_helper'
 
 feature 'Delete team', js: true do
-  let!(:user) { create :user }
-  let!(:user2) { create :user }
-  let!(:team) { create :team, name: 'Awesome team', owner: user}
+  let!(:user)     { create :user }
+  let!(:user2)    { create :user }
+  let!(:team)     { create :team, name: 'Awesome team', owner: user }
+  let!(:project)  { create :project, team: team }
 
   background do
     sign_in user
@@ -24,5 +25,6 @@ feature 'Delete team', js: true do
 
     visit arbor_reloaded_teams_path
     expect(page).to_not have_content('Awesome team')
+    expect{ Team.find(team.id) }.to raise_error(ActiveRecord::RecordNotFound)
   end
 end

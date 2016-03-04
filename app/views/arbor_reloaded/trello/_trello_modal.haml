@@ -1,0 +1,14 @@
+#trello-modal.reveal-modal{'aria-hidden' => 'true', 'aria-labelledby' => 'project-modal', 'data-reveal' => '', :role => 'dialog' }
+  = link_to '×', '#', class: 'close-reveal-modal'
+  %h2= t('trello.modal_title')
+  = select_tag 'export_type', options_for_select({ t('trello.new_board')=>'new_board',
+    t('trello.existing_board')=>'existing_board'}, 'new_board'), class: 'radius'
+  .select-board-list
+  = button_tag t('trello.export'), class: 'button radius small', id: 'trello-export-submit',
+    data: { url: arbor_reloaded_project_trello_index_path(current_project),
+            token: current_user.trello_token }
+  .trello-export-error
+  .trello-export-success
+  .export-text
+    %p.disclaimer= t('trello.text1')
+    %p.disclaimer= t('trello.text2')

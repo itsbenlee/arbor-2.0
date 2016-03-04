@@ -44,7 +44,7 @@ function setStoriesOrder() {
 
 function showBulkMenu() {
   var $storyModal     = $('#story-detail-modal'),
-      $storyBulkInput = $backlogStoryList.find('.circle-checkbox'),
+      $storyBulkInput = $backlogStoryList.find('.square-checkbox'),
       $bulkMenu       = $backlogStoryList.find('.sticky-menu');
 
   $storyBulkInput.click(function() {

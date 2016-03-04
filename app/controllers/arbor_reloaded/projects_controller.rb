@@ -124,11 +124,9 @@ module ArborReloaded
 
       render partial: 'user_stories/backlog_list',
              locals:
-             {
-               user_stories: user_stories,
+             { user_stories: user_stories,
                project: project,
-               total_points: UserStory.total_points(user_stories)
-             }
+               total_points: @project.total_points }
     end
 
     def copy

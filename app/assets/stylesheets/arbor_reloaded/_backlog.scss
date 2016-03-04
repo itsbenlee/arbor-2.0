@@ -3,10 +3,10 @@
 
 .new-backlog-story {
   @include border-radius($global-radius);
-  background-color: $dashboard-hover-color;
+  border-bottom: 2px dashed $black-20;
   color: $black-40;
   font-size: rem-calc(22);
-  padding: rem-calc(15 25);
+  padding: rem-calc(15 25 0 15);
 
   .backlog-story-input {
     float: left;
@@ -15,20 +15,22 @@
 
   input {
     &[type="text"] {
-      background-color: $dashboard-hover-color;
+      @include inline-block();
+      background-color: $body-bg;
       border: 0;
-      display: inline-block;
       font-size: rem-calc(22);
       margin-bottom: 0;
       min-width: rem-calc(90);
-      text-align: center;
       @include input-placeholder { color: $black-80; };
-
-      &:focus { background-color: $dashboard-hover-color; }
     }
   } // input
 
-  #save-user-story { float: right; }
+  .create-btn {
+    background-color: $black-20;
+    float: right;
+  }
+
+  .success-button { background-color: $success-color; }
 }//new backlog story
 
 //  USER STORY LIST
@@ -61,7 +63,7 @@ $circle-dimension: $story-points-dimension;
 
 .backlog-user-story {
   border-top: 1px solid $black-10;
-  padding: $story-padding-top $story-padding-sides;
+  padding: $story-padding-top $story-padding-sides $story-padding-top 0;
   position: relative;
 
   &.white-block .actions.actions { background-color: $transparent; }
@@ -81,7 +83,8 @@ $circle-dimension: $story-points-dimension;
     background: $dashboard-hover-color;
     cursor: pointer;
 
-    .circle-checkbox { @include opacity(1); }
+    .square-checkbox { @include opacity(1); }
+    .story-detail-link { margin-left: $story-padding-top * 2; }
   }//backlog user story hover
 
   .icn-comments {
@@ -115,19 +118,6 @@ $circle-dimension: $story-points-dimension;
   } // text
 
   .shorten-story { width: 75%; }
-
-  .circle-checkbox {
-    @include opacity(0);
-    background-color: $black-10;
-    height: $story-points-dimension;
-    left: -(($story-padding-sides * 2) + ($story-points-dimension / 2));
-    top: $story-padding-top;
-    width: $story-points-dimension;
-
-    &::after { left: rem-calc(9); }
-
-    &:checked { @include opacity(1); }
-  } // circle checkbox
 } //  user story
 
 //  STICKY SELECT MENU

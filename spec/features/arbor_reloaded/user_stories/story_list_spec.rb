@@ -36,7 +36,7 @@ feature 'Story list' do
   end
 
   scenario 'should let me introduce the velocity and', js: true do
-    total_points = UserStory.total_points(project.user_stories)
+    total_points = project.total_points
 
     find('a.icn-settings').trigger('click')
     fill_in 'project_velocity', with: '1'

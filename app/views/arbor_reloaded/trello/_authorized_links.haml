@@ -1,8 +1,0 @@
-%li
-  = link_to '#', { id: 'trello_export_authorized', class: 'copy-project', data: { url: arbor_reloaded_project_trello_index_path(project), token: current_user.trello_token } } do
-    = t('trello.new_board')
-    %span.icn-copy
-%li
-  = link_to '#', { id: 'trello_export_board_authorized', class: 'copy-project', data: { url: arbor_reloaded_project_trello_index_path(project), token: current_user.trello_token } } do
-    = t('trello.existing_board')
-    %span.icn-copy

@@ -9,7 +9,8 @@ $modal-close-offset: rem-calc(20);
 
 #copy-stories-modal,
 #project-modal,
-#team-modal {
+#team-modal,
+#trello-modal {
   @extend .text-center;
 
   padding: $modal-padding;

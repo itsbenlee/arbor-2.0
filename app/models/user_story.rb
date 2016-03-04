@@ -27,10 +27,6 @@ class UserStory < ActiveRecord::Base
   scope :archived, -> { where(archived: true) }
   scope :backlog_ordered, -> { order(backlog_order: :desc) }
 
-  def self.total_points(user_stories)
-    user_stories.map(&:estimated_points).compact.sum
-  end
-
   def self.estimation_series
     fib = ->(arg) { arg < 2 ? arg : fib[arg - 1] + fib[arg - 2] }
     (2..8).map { |index| fib[index] }.unshift([nil]).flatten

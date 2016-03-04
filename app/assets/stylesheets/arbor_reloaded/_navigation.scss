@@ -197,7 +197,6 @@ ul .dropdown {
         font-size: rem-calc(14);
         height: $user-edit-dimension;
         line-height: rem-calc(19);
-        margin-top: ($sub-nav-height - $user-edit-dimension) / 2;
         text-align: center;
         vertical-align: middle;
         width: $user-edit-dimension;
@@ -205,6 +204,7 @@ ul .dropdown {
         &.add-member {
           @include border-radius(100%);
           margin-right: 0;
+          margin-top: ($sub-nav-height - $user-edit-dimension) / 2;
         }
 
         &:hover { background-color: $black-20; }
@@ -216,6 +216,7 @@ ul .dropdown {
       }//add-member, other-members
 
       &.other-members {
+        @include border-radius(100%);
         background-color: transparent;
         border: 1px solid $black-30;
         color: $black-20;
