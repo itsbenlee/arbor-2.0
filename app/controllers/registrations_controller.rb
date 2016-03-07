@@ -5,6 +5,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   def after_sign_up_path_for(resource)
     create_template_project
+    ArborReloaded::IntercomServices.new(current_user).user_create_event
     if ENV['ENABLE_RELOADED'] == 'false'
       projects_path
     else
