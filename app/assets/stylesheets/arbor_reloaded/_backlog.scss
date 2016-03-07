@@ -80,11 +80,12 @@ $circle-dimension: $story-points-dimension;
   &:first-child { margin-top: rem-calc(30); }
 
   &:hover {
+    @include box-shadow($shadow-depth-hover);
     background: $dashboard-hover-color;
     cursor: pointer;
 
     .square-checkbox { @include opacity(1); }
-    .story-detail-link { margin-left: $story-padding-top * 2; }
+    .story-detail-link { margin-left: $story-padding-top; }
   }//backlog user story hover
 
   .icn-comments {
