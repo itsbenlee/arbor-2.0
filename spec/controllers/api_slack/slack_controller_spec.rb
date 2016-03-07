@@ -11,7 +11,7 @@ RSpec.describe ApiSlack::SlackController do
   describe 'authorize' do
     it 'should redirect to the slack auth' do
       get :authorize, project_id: project.id
-      expected_url = "https://slack.com/oauth/authorize?scope=commands+incoming-webhook&client_id&redirect_uri=http%3A%2F%2Ftest.host%2Fapi_slack%2Fsend_authorize_data%3Fproject_id%3D#{project.id}"
+      expected_url = "https://slack.com/oauth/authorize?scope=commands+incoming-webhook&client_id&redirect_uri=http%3A%2F%2Ftest.host%2Fapi_slack%2Fslack%2Fsend_authorize_data%3Fproject_id%3D#{project.id}"
       expect(response).to redirect_to(expected_url)
     end
   end

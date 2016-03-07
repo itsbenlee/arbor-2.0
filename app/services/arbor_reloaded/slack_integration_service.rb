@@ -93,9 +93,9 @@ module ArborReloaded
     end
 
     def set_urls
-      @auth_url = 'https://slack.com/oauth/authorize'
-      @auth_access_url = 'https://slack.com/api/oauth.access'
-      @data_url = 'https://slack.com/api/auth.test'
+      @auth_url = ENV['SLACK_AUTH_URL']
+      @auth_access_url = ENV['SLACK_ACCESS_URL']
+      @data_url = ENV['SLACK_DATA_URL']
     end
   end
 end
