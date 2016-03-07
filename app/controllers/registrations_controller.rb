@@ -4,7 +4,7 @@ class RegistrationsController < Devise::RegistrationsController
   after_action :add_member_to_projects, only: :create
 
   def after_sign_up_path_for(resource)
-    create_template_project
+    create_user_resources
     if ENV['ENABLE_RELOADED'] == 'false'
       projects_path
     else
@@ -46,7 +46,8 @@ class RegistrationsController < Devise::RegistrationsController
     :user
   end
 
-  def create_template_project
+  def create_user_resources
+    ArborReloaded::IntercomServices.new(current_user).user_create_event
     project = Project.find_by(is_template: true)
     ArborReloaded::ProjectServices.new(project).replicate_template(current_user)
   end

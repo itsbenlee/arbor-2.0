@@ -1,0 +1,94 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://VALID_INTERCOM_APP_ID:VALID_INTERCOM_API_KEY@api.intercom.io/users
+    body:
+      encoding: UTF-8
+      string: '{"email":"sam_kemmer@gutmann.info","name":"Newton Rice","signed_up_at":1457379767,"custom_attributes":{}}'
+    headers:
+      Accept-Encoding:
+      - gzip, deflate
+      Accept:
+      - application/vnd.intercom.3+json
+      User-Agent:
+      - Intercom-Ruby/3.4.0
+      Content-Type:
+      - application/json
+      Acceptencoding:
+      - gzip, deflate
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy-Report-Only:
+      - 'default-src ''self''; connect-src ''self'' api-iam.intercom.io api-ping.intercom.io
+        nexus-websocket-a.intercom.io nexus-websocket-b.intercom.io nexus-long-poller-a.intercom.io
+        nexus-long-poller-b.intercom.io wss://nexus-websocket-a.intercom.io wss://nexus-websocket-b.intercom.io
+        uploads.intercomcdn.com api.amplitude.com js.logentries.com wss://ws.pusherapp.com
+        *.pusher.com *.tiles.mapbox.com; font-src ''self'' data: https:; frame-src
+        ''self'' fast.wistia.net www.youtube.com player.vimeo.com js.stripe.com staticxx.facebook.com
+        www.facebook.com app.datadoghq.com; img-src ''self'' data: blob: https:; media-src
+        ''self'' data: blob: https:; script-src ''self'' js.intercomcdn.com static.intercomassets.com
+        widget.intercom.io api.tiles.mapbox.com bam.nr-data.net connect.facebook.net
+        js-agent.newrelic.com js.stripe.com netdna.bootstrapcdn.com www.googleadservices.com
+        www.google-analytics.com platform.twitter.com *.adroll.com *.cloudfront.net
+        *.pusher.com; style-src ''self'' ''unsafe-inline'' static.intercomassets.com
+        static.intercomcdn.com api.tiles.mapbox.com maxcdn.bootstrapcdn.com netdna.bootstrapcdn.com
+        fonts.googleapis.com; report-uri https://app.getsentry.com/api/66205/csp-report/?sentry_version=5&sentry_key=2b8577b0df7747488e37ae35375a6772'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 07 Mar 2016 19:39:56 GMT
+      Etag:
+      - '"bf1057dd000827206650094f21253118"'
+      Server:
+      - nginx
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Intercom-Version:
+      - 514aebf8d58522f5d6b11347b89c373341358c99
+      X-Ratelimit-Limit:
+      - '500'
+      X-Ratelimit-Remaining:
+      - '500'
+      X-Ratelimit-Reset:
+      - '1457379600'
+      X-Request-Id:
+      - ccee7ca8-949b-474d-b124-70d944ae3508
+      X-Runtime:
+      - '0.130660'
+      X-Xss-Protection:
+      - 1; mode=block
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAzZ3VYAA2xSy07kMBD8FeRzhLJDMiFz4gv2sFeErI7diSz8GrcNjND8
+        O52EDMzCKU51uaq62+8inyKKgyiESVTCaD63e611X6uma4fdvYK+ret6qIHr
+        M03OJF+srQT44E8uFBKHESxhJdCBsaxB4OQzOofpYSrZgfe3xo+BJTy42fAv
+        vubgb/4ZhQxGwqJnrYvyC2RI4vC+BfwEOKKDCWVJdqWemRvjkkkcd69vQ7k/
+        MksFF8EbpG8SK3a6tYbyNeXxiWVsUJBN8FKzE1+bIaAsEx4L8hfyFm6BCdFL
+        EzdMJYSMemH9adruruvbfl+JhC5klL+Uu31XCTKTZ7jEH5US9a+ChERzShWK
+        51LNSFAGrIwpjMZedXxd2Rr/wV/aL57KQCqZgU3HFJxcdvm12mX3PHufPye0
+        Np5h+m7Jv5vPWlnECSfHF6+yrdAl1IXx+D/l61327b4ZVaPvdru+w2F+l3Xd
+        iPNsoQplDg05cwslL3M4nz8AAAD//wMAMbCApOECAAA=
+    http_version:
+  recorded_at: Mon, 07 Mar 2016 19:42:48 GMT
+recorded_with: VCR 2.9.3
