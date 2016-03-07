@@ -345,3 +345,10 @@ en:
       estimation_cost: 'This is the cost of a sprint. Different development teams charge differently, but the average cost of a week of work is a good benchmark.'
     pdf:
       user_stories: 'User Stories'
+  slack:
+    notifications:
+      story_created: 'New user story created'
+      story_created_text: "User story %{user_story_id} created with success. You can edit it in %{title_link}"
+      story_error: 'Error creating US'
+      story_error_title: 'Error'
+      story_error_text: 'An internal error occurred.'

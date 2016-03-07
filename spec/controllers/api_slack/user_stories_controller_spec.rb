@@ -14,7 +14,7 @@ RSpec.describe ApiSlack::UserStoriesController do
         channel_id: '23456'
 
       hash_response = JSON.parse(response.body)
-      expect(hash_response['success']).to be true
+      expect(hash_response['text']).to eq 'New user story created'
       expect(Project.find(project.id).user_stories.last.role).to eq('Admin')
       expect(Project.find(project.id).user_stories.last.action).to eq('to have privileges to all the database')
       expect(Project.find(project.id).user_stories.last.result).to eq('so that I can check the tables.')
@@ -29,8 +29,7 @@ RSpec.describe ApiSlack::UserStoriesController do
         channel_id: '23456'
 
       hash_response = JSON.parse(response.body)
-      expect(hash_response['success']).to be false
-      expect(hash_response['errors']).to have_content('Missing Role')
+      expect(hash_response['text']).to eq 'Error creating US'
     end
 
     it 'should fail when channel id is missing and send a failure response' do
@@ -42,8 +41,7 @@ RSpec.describe ApiSlack::UserStoriesController do
 
 
       hash_response = JSON.parse(response.body)
-      expect(hash_response['success']).to be false
-      expect(hash_response['errors']).to have_content('channel_id is missing')
+      expect(hash_response['text']).to eq 'Error creating US'
     end
 
     it 'should fail when user id is missing and send a failure response' do
@@ -54,8 +52,7 @@ RSpec.describe ApiSlack::UserStoriesController do
         channel_id: '23456'
 
       hash_response = JSON.parse(response.body)
-      expect(hash_response['success']).to be false
-      expect(hash_response['errors']).to have_content('user_id is missing')
+      expect(hash_response['text']).to eq 'Error creating US'
     end
 
     it 'should fail when user id is not related to the project and send a failure response' do
@@ -68,8 +65,7 @@ RSpec.describe ApiSlack::UserStoriesController do
         channel_id: '23456'
 
       hash_response = JSON.parse(response.body)
-      expect(hash_response['success']).to be false
-      expect(hash_response['errors']).to have_content("User doesn't have permissions on project")
+      expect(hash_response['text']).to eq 'Error creating US'
     end
   end
 end
