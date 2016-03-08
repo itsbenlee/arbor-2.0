@@ -11,5 +11,12 @@ module ArborReloaded
                              name: @user.full_name,
                              signed_up_at: Time.now.to_i)
     end
+
+    def project_create_event
+      @intercom.events.create(
+        event_name: 'created-project', created_at: Time.now.to_i,
+        email: @user.email
+      )
+    end
   end
 end

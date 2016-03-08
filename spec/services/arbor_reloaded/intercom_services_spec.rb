@@ -9,11 +9,16 @@ module ArborReloaded
     end
 
     scenario 'should create a user on Intercom' do
-      VCR.use_cassette('intercom/create_user') do
-        intercom_user = intercom_service.user_create_event
-        expect(intercom_user.class).to eq(Intercom::User)
-        expect(intercom_user.email).to eq(user.email)
-      end
+    #VCR.use_cassette('intercom/create_user') do
+      intercom_user = intercom_service.user_create_event
+      expect(intercom_user.class).to eq(Intercom::User)
+      expect(intercom_user.email).to eq(user.email)
+    #end
+    end
+
+    scenario 'should log create project event on Intercom' do
+      intercom_user = intercom_service.project_create_event
+      debugger
     end
   end
 end

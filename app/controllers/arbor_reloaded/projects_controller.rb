@@ -189,6 +189,7 @@ module ArborReloaded
       @new_project.members << current_user
 
       if @new_project.save
+        ArborReloaded::IntercomServices.new(current_user).user_create_event
         @new_project.create_activity :create_project
         redirect_to arbor_reloaded_project_user_stories_path(@new_project)
       else
