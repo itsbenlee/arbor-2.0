@@ -51,11 +51,10 @@ var SlackModal = React.createClass({
 
       slackIntegration = (
         <div>
-          <h6>Slack Integration</h6>
-          <p>Creates a new Arbor User Story from Slack.</p>
-          <a href={slackHref}>
-            <img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcSet="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" />
-          </a>
+          <h3>Slack Configuration</h3>
+          <p>Connect your slack account with Arbor to send activity updates for
+          this project to a selected Slack Channel.</p>
+          <a href={slackHref}>Connect to Slack</a>
         </div>
       );
 
@@ -63,10 +62,13 @@ var SlackModal = React.createClass({
         slackIntegration = null;
         slackSettings = (
           <div>
-            <h6>Slack Integration</h6>
-            <p>Slack integrated into project successfully.</p>
+            <h3>Slack Configuration</h3>
+            <div>
+              <span>Send project activity to Slack</span>
+              
+            </div>
             <a type='submit' className='save-settings' onClick={this.handleSaveClick} style={{position: 'relative', float: 'right', marginTop: 10, marginBottom: 30, right: 0}}>
-              Ok
+              Done
             </a>
           </div>
         );

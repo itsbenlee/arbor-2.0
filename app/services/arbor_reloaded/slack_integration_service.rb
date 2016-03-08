@@ -47,7 +47,7 @@ module ArborReloaded
         code: code,
         redirect_uri: redirect_url
       }
-      response = HTTParty.get(@auth_access_url, options)
+      response = HTTParty.get(@auth_access_url, query: options)
       response
     end
 
@@ -55,11 +55,12 @@ module ArborReloaded
       options = {
         token: token
       }
-      response = HTTParty.get(@data_url, options)
+      response = HTTParty.get(@data_url, query: options)
       response
     end
 
     def acceptance_criterion_notify(params, user_story)
+      return unless @project.slack_enabled
       user_story_id = user_story.id
       HTTParty.post(@project.slack_iw_url, body: {
         text: "New acceptance criteria at US##{user_story_id}",
@@ -74,6 +75,7 @@ module ArborReloaded
     end
 
     def user_story_notify(user_story)
+      return unless @project.slack_enabled
       @user_story = user_story
       HTTParty.post(@project.slack_iw_url, body: {
         text: 'New user story created',
