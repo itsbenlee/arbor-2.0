@@ -52,9 +52,9 @@ var SlackModal = React.createClass({
       slackIntegration = (
         <div>
           <h3>Slack Configuration</h3>
-          <p>Connect your slack account with Arbor to send activity updates for
+          <p style={{margin: '2rem 0'}}>Connect your slack account with Arbor to send activity updates for
           this project to a selected Slack Channel.</p>
-          <a href={slackHref}>Connect to Slack</a>
+          <a href={slackHref} style={{position: 'relative', right: 0, textAlign: 'center', padding: '8px 100px'}}>Connect to Slack</a>
         </div>
       );
 
@@ -63,11 +63,11 @@ var SlackModal = React.createClass({
         slackSettings = (
           <div>
             <h3>Slack Configuration</h3>
-            <div>
+            <div style={{margin: '2rem 0'}}>
               <span>Send project activity to Slack</span>
-              
+
             </div>
-            <a type='submit' className='save-settings' onClick={this.handleSaveClick} style={{position: 'relative', float: 'right', marginTop: 10, marginBottom: 30, right: 0}}>
+            <a type='submit' className='save-settings' onClick={this.handleSaveClick} style={{position: 'relative', right: 0, textAlign: 'center', padding: '8px 100px'}}>
               Done
             </a>
           </div>
@@ -84,7 +84,6 @@ var SlackModal = React.createClass({
         <div className="slack-modal modal">
           <div className="modal-container">
             <a className="modal-close-btn" href="#" onClick={this._closeModal}>×</a>
-            <h5>Configure Slack</h5>
             <div className="modal-content">
               <div className="legend">
                 {slackIntegration}
