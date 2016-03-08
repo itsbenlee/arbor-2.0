@@ -59,6 +59,35 @@ module ArborReloaded
       response
     end
 
+    def acceptance_criterion_notify(params, user_story)
+      user_story_id = user_story.id
+      HTTParty.post(@project.slack_iw_url, body: {
+        text: "New acceptance criteria at US##{user_story_id}",
+        attachments: [
+          {
+            title: "New acceptance criteria at US##{user_story_id}",
+            text: params['description'],
+            color: '#2FA44F'
+          }
+        ]
+      }.to_json, headers: { 'Content-Type' => 'application/json' })
+    end
+
+    def user_story_notify(user_story)
+      @user_story = user_story
+      HTTParty.post(@project.slack_iw_url, body: {
+        text: 'New user story created',
+        attachments: [
+          {
+            title: "US##{@user_story.id}",
+            text: "As a #{@user_story.role} I want #{@user_story.action}"\
+              " so that #{@user_story.result}",
+            color: '#28D7E5'
+          }
+        ]
+      }.to_json, headers: { 'Content-Type' => 'application/json' })
+    end
+
     private
 
     def valid_message?(story_text)
