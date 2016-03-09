@@ -7,10 +7,6 @@ module ArborReloaded
       ac_service = CriterionServices.new(@user_story)
       @criterion =
         ac_service.new_acceptance_criterion(acceptance_criterion_params)
-      @project = Project.find(@user_story.project_id)
-      return unless @project.slack_iw_url
-      ArborReloaded::SlackIntegrationService.new(@project)
-        .acceptance_criterion_notify(acceptance_criterion_params, @user_story)
     end
 
     def update
