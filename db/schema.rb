@@ -168,6 +168,7 @@ ActiveRecord::Schema.define(version: 20160308130718) do
     t.integer  "team_id"
     t.string   "slack_iw_url"
     t.boolean  "slack_enabled"
+    t.boolean  "slack_first_use"
   end
 
   add_index "projects", ["name"], name: "index_projects_on_name", using: :btree
