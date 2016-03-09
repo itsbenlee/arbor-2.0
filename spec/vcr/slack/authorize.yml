@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://slack.com/api/oauth.access?client_id=4750359453.21034945302&client_secret=665b9889ce05d45840de858055446fc8&code=4750359453.21149128567.ac3a1c9bb8
+    uri: https://slack.com/api/oauth.access?client_id=VALID_SLACK_CLIENT_ID&client_secret=CLIENT_SECRET&code=VALID_CODE
     body:
       encoding: US-ASCII
       string: ''
@@ -50,6 +50,6 @@ http_interactions:
       encoding: UTF-8
       string: '{"ok":true,"access_token":"xoxp-4750359453-4751795247-21146106389-a644feea9e","scope":"identify,commands,channels:read","team_name":"Neon
         Roots","team_id":"T04N2AKDB"}'
-    http_version: 
+    http_version:
   recorded_at: Fri, 12 Feb 2016 15:01:10 GMT
 recorded_with: VCR 2.9.3

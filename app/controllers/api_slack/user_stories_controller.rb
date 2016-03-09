@@ -60,13 +60,13 @@ module ApiSlack
       title_link = edit_user_story_url(user_story_id)
       {
         response_type: 'in_channel',
-        text: 'New user story created',
+        text: t('slack.notifications.story_created'),
         attachments: [
           {
             title: "US#: #{user_story_id}",
             title_link: title_link,
-            text: "User story #{user_story_id} created with success.\n" \
-              "You can edit it in #{title_link}",
+            text: t('slack.notifications.story_created_text',
+              user_story_id: user_story_id, title_link: title_link),
             color: '#28D7E5'
           }
         ]
@@ -76,11 +76,11 @@ module ApiSlack
     def error_response
       {
         response_type: 'in_channel',
-        text: 'Error creating US',
+        text: t('slack.notifications.story_error'),
         attachments: [
           {
-            title: 'Error',
-            text: 'An internal error occurred.',
+            title: t('slack.notifications.story_error_title'),
+            text: t('slack.notifications.story_error_text'),
             color: '#D50200'
           }
         ]

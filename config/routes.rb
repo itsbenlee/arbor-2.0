@@ -189,4 +189,8 @@ Railsroot::Application.routes.draw do
       end
     end
   end
+
+  get ENV['LETS_ENCRYPT_ROUTE'],
+    controller: :well_known,
+    action: :index
 end

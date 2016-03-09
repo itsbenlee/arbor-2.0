@@ -7,6 +7,8 @@ feature 'Sign up to Arbor' do
 
   context 'when ENABLE_RELOADED is true' do
     background do
+      allow_any_instance_of(ArborReloaded::IntercomServices)
+        .to receive(:user_create_event).and_return(true)
       ENV['ENABLE_RELOADED'] = 'true'
     end
 
@@ -65,6 +67,8 @@ feature 'Sign up to Arbor' do
 
   context 'when ENABLE_RELOADED is false' do
     background do
+      allow_any_instance_of(ArborReloaded::IntercomServices)
+        .to receive(:user_create_event).and_return(true)
       ENV['ENABLE_RELOADED'] = 'false'
       visit new_user_registration_path
     end
