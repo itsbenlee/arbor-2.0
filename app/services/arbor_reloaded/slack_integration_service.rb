@@ -59,26 +59,11 @@ module ArborReloaded
       response
     end
 
-    def acceptance_criterion_notify(params, user_story)
-      return unless @project.slack_enabled
-      user_story_id = user_story.id
-      HTTParty.post(@project.slack_iw_url, body: {
-        text: "New acceptance criteria at US##{user_story_id}",
-        attachments: [
-          {
-            title: "New acceptance criteria at US##{user_story_id}",
-            text: params['description'],
-            color: '#2FA44F'
-          }
-        ]
-      }.to_json, headers: { 'Content-Type' => 'application/json' })
-    end
-
     def user_story_notify(user_story)
       return unless @project.slack_enabled
       @user_story = user_story
       HTTParty.post(@project.slack_iw_url, body: {
-        text: 'New user story created',
+        text: I18n.translate('slack.notifications.story_created'),
         attachments: [
           {
             title: "US##{@user_story.id}",
