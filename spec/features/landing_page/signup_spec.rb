@@ -5,6 +5,8 @@ feature 'Sign up to Arbor' do
   let!(:template_project) { create :project, is_template: true }
 
   background do
+    allow_any_instance_of(ArborReloaded::IntercomServices)
+      .to receive(:user_create_event).and_return(true)
     visit new_user_registration_path
     ENV['ENABLE_RELOADED'] = 'true'
   end

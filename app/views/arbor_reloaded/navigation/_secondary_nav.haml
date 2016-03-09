@@ -1,5 +1,5 @@
-%script{src: "http://code.jquery.com/jquery-1.7.1.min.js"}
-%script{src: "//api.trello.com/1/client.js?key=#{ENV['TRELLO_DEVELOPER_PUBLIC_KEY']}"}
+%script{ src: "http://code.jquery.com/jquery-1.7.1.min.js" }
+%script{ src: "https://api.trello.com/1/client.js?key=#{ENV['TRELLO_DEVELOPER_PUBLIC_KEY']}" }
 
 %nav.secondary-nav
   %ul.left
@@ -60,7 +60,6 @@
     %li= link_to t('reloaded.project_dashboard.join_project'), '#', class: 'button radius success tiny join-btn hidden-element'
 #project-members-modal.reveal-modal{ data: { reveal: '' } }
 %div
-
   = react_component('SlackModal',
     { url: arbor_reloaded_project_path(current_project),
       slackToken: current_project.slack_token,
