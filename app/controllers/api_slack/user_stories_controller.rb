@@ -9,12 +9,12 @@ module ApiSlack
 
     def create
       preprocess_post
-      response =
-        ArborReloaded::SlackIntegrationService.new(@project)
-        .build_user_story(slack_params[:text], @user)
-      render json: response, status: (response.success ? 201 : 422)
-    rescue StandardError => error
-      render json: CommonResponse.new(false, [error.message]), status: false
+      response = ArborReloaded::SlackIntegrationService.new(@project)
+                 .build_user_story(slack_params[:text], @user)
+      render json: success_response(response),
+             status: (response.success ? 201 : 422)
+    rescue StandardError
+      render json: error_response, status: false
     end
 
     private
@@ -22,7 +22,7 @@ module ApiSlack
     def preprocess_post
       check_slack_params
       set_project_using_slack_id
-      set_user_using_slack_id
+      set_user
       check_project_member_relationship
     end
 
@@ -51,9 +51,40 @@ module ApiSlack
       ) unless @project
     end
 
-    def set_user_using_slack_id
-      @user = User.find_by(slack_id: slack_params[:user_id])
-      fail("Can't find user with the given user id") unless @user
+    def set_user
+      @user = @project.owner
+    end
+
+    def success_response(response)
+      user_story_id = response.data[:user_story_id]
+      title_link = edit_user_story_url(user_story_id)
+      {
+        response_type: 'in_channel',
+        text: t('slack.notifications.story_created'),
+        attachments: [
+          {
+            title: "US#: #{user_story_id}",
+            title_link: title_link,
+            text: t('slack.notifications.story_created_text',
+              user_story_id: user_story_id, title_link: title_link),
+            color: '#28D7E5'
+          }
+        ]
+      }
+    end
+
+    def error_response
+      {
+        response_type: 'in_channel',
+        text: t('slack.notifications.story_error'),
+        attachments: [
+          {
+            title: t('slack.notifications.story_error_title'),
+            text: t('slack.notifications.story_error_text'),
+            color: '#D50200'
+          }
+        ]
+      }
     end
   end
 end
