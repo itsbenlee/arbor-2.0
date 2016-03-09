@@ -6,6 +6,7 @@ module ArborReloaded
       @comment =
         Comment.new(comment: comment_params[:comment], user: current_user)
       @user_story.comments << @comment
+      ArborReloaded::IntercomServices.new(current_user).comment_create_event
       @user_story.project.create_activity :add_comment,
       owner: current_user,
       parameters:

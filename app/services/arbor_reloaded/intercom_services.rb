@@ -18,5 +18,26 @@ module ArborReloaded
         email: @user.email
       )
     end
+
+    def user_story_create_event
+      @intercom.events.create(
+        event_name: 'created-user-story', created_at: Time.now.to_i,
+        email: @user.email
+      )
+    end
+
+    def criterion_create_event
+      @intercom.events.create(
+        event_name: 'created-acceptance-criteria', created_at: Time.now.to_i,
+        email: @user.email
+      )
+    end
+
+    def comment_create_event
+      @intercom.events.create(
+        event_name: 'created-comment', created_at: Time.now.to_i,
+        email: @user.email
+      )
+    end
   end
 end

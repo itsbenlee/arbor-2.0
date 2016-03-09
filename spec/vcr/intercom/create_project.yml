@@ -1,0 +1,85 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://VALID_INTERCOM_APP_ID:VALID_INTERCOM_API_KEY@api.intercom.io/events
+    body:
+      encoding: UTF-8
+      string: '{"event_name":"created-project","created_at":1457464100,"email":"sam_kemmer@gutmann.info"}'
+    headers:
+      Accept-Encoding:
+      - gzip, deflate
+      Accept:
+      - application/vnd.intercom.3+json
+      User-Agent:
+      - Intercom-Ruby/3.4.0
+      Content-Type:
+      - application/json
+      Acceptencoding:
+      - gzip, deflate
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy-Report-Only:
+      - 'default-src ''self''; connect-src ''self'' api-iam.intercom.io api-ping.intercom.io
+        nexus-websocket-a.intercom.io nexus-websocket-b.intercom.io nexus-long-poller-a.intercom.io
+        nexus-long-poller-b.intercom.io wss://nexus-websocket-a.intercom.io wss://nexus-websocket-b.intercom.io
+        uploads.intercomcdn.com api.amplitude.com js.logentries.com wss://ws.pusherapp.com
+        *.pusher.com *.tiles.mapbox.com app.getsentry.com; font-src ''self'' data:
+        https:; frame-src ''self'' fast.wistia.net www.youtube.com player.vimeo.com
+        js.stripe.com staticxx.facebook.com www.facebook.com app.datadoghq.com; img-src
+        ''self'' data: blob: https:; media-src ''self'' data: blob: https:; script-src
+        ''self'' js.intercomcdn.com static.intercomassets.com store.intercom.io widget.intercom.io
+        api.tiles.mapbox.com bam.nr-data.net connect.facebook.net js-agent.newrelic.com
+        js.stripe.com netdna.bootstrapcdn.com www.googleadservices.com www.google-analytics.com
+        platform.twitter.com *.adroll.com *.cloudfront.net *.pusher.com; style-src
+        ''self'' ''unsafe-inline'' static.intercomassets.com static.intercomcdn.com
+        api.tiles.mapbox.com maxcdn.bootstrapcdn.com netdna.bootstrapcdn.com fonts.googleapis.com;
+        report-uri https://app.getsentry.com/api/66205/csp-report/?sentry_version=5&sentry_key=2b8577b0df7747488e37ae35375a6772'
+      Date:
+      - Tue, 08 Mar 2016 19:05:28 GMT
+      Server:
+      - nginx
+      Status:
+      - 202 Accepted
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Intercom-Version:
+      - aec52a4ecad4455af426e6d71276c76414b82dbd
+      X-Intercomrade:
+      - Like APIs? Check out https://www.intercom.io/careers!
+      X-Ratelimit-Limit:
+      - '500'
+      X-Ratelimit-Remaining:
+      - '500'
+      X-Ratelimit-Reset:
+      - '1457463960'
+      X-Request-Id:
+      - 4ed6ea82-e081-4c7c-9d0d-5da531d8a6e6
+      X-Runtime:
+      - '0.096988'
+      X-Xss-Protection:
+      - 1; mode=block
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAHgi31YAA1IAAAAA//8DAEXPbOkBAAAA
+    http_version:
+  recorded_at: Tue, 08 Mar 2016 19:08:21 GMT
+recorded_with: VCR 2.9.3
