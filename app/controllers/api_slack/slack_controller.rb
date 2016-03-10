@@ -19,6 +19,19 @@ module ApiSlack
       end
     end
 
+    def toggle_notifications
+      @project = find_project
+      @project.update_attribute(:slack_enabled, !@project.slack_enabled)
+      render json: { success: true }, status: 200
+    end
+
+    def test_auth
+      @project = find_project
+      slack_data = ArborReloaded::SlackIntegrationService.new(@project)
+                   .req_slack_data(current_user.slack_auth_token)
+      render json: { authorized: slack_data['ok'] }, status: 200
+    end
+
     private
 
     def assign_slack_data
@@ -35,6 +48,7 @@ module ApiSlack
 
     def assign_slack_token(token)
       current_user.update_attribute(:slack_auth_token, token)
+      puts token
     end
 
     def assign_slack_channel(incoming_webhook)
@@ -42,6 +56,7 @@ module ApiSlack
       @project.update_attribute(:slack_iw_url, incoming_webhook['url'])
       @project
         .update_attribute(:slack_channel_id, incoming_webhook['channel_id'])
+      @project.update_attribute(:slack_enabled, true)
     end
 
     def assign_slack_user

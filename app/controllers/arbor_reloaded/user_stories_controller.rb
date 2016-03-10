@@ -1,3 +1,5 @@
+require 'net/http'
+
 module ArborReloaded
   class UserStoriesController < ApplicationController
     layout 'application_reload'
@@ -28,6 +30,9 @@ module ArborReloaded
       story_services = ReloadedStoryService.new(@project)
       @user_story =
         story_services.new_user_story(user_story_params, current_user)
+      return unless @project.slack_iw_url
+      ArborReloaded::SlackIntegrationService.new(@project)
+        .user_story_notify(@user_story)
     end
 
     def update
