@@ -9,7 +9,8 @@ describe Project do
 
   it { should validate_presence_of :name }
   it { should validate_uniqueness_of(:name).scoped_to(:owner_id).with_message('Project name already exists') }
-  it { should validate_uniqueness_of(:slack_channel_id) }
+  it { should validate_uniqueness_of(:slack_channel_id).allow_nil }
+  it { should validate_uniqueness_of(:slack_iw_url).allow_nil }
   it { should have_many :invites }
   it { should have_many :members }
   it { should have_many :hypotheses }
