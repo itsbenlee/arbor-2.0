@@ -127,7 +127,6 @@ $search-width: rem-calc(300);
 
   // Project link
   .project {
-    border-bottom: $white-border;
     border-top: $white-border;
     display: block;
     padding: $block-padding;
@@ -172,11 +171,43 @@ $search-width: rem-calc(300);
 
   // Favorite projects
   // - - - - - - - - - - - - - - - - -
-  .favorites { margin-top: rem-calc(25); }//favorites list
+  .favorites { margin-top: rem-calc(25); }
 
   .favorite-project {
+    $favorite-projects-limit: 20;
+
+    @include favorite-colors($success-color);
+
     border: 0;
     height: $block-min-height + $block-padding * 2;
+
+    @for $n from 1 through $favorite-projects-limit {
+      $random-colors: random(length($favorite-colors-list));
+      $nth: nth($favorite-colors-list, $random-colors);
+
+      &:nth-child(#{$n}) { @include favorite-colors($nth); }
+    }
+
+    .project {
+      &::after {
+        @include border-radius(0 0 $global-radius $global-radius);
+        @include transition(height .25s ease-in);
+        bottom: 0;
+        content: '';
+        height: rem-calc(7);
+        left: 0;
+        margin-top: rem-calc(10);
+        position: absolute;
+        width: 100.5%;
+      } // project after
+
+      .left { @include transition(margin-bottom .25s ease-in); }
+    } // project
+
+    &:hover {
+      .project::after { height: rem-calc(30); }
+      .left { margin-bottom: rem-calc(40); }
+    } // fav project hover
 
     .project,
     .deleter {
