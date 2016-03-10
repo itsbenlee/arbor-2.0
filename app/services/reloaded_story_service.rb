@@ -6,7 +6,7 @@ class ReloadedStoryService
   def new_user_story(user_story_params, current_user)
     user_story = UserStory.new(user_story_params)
     user_story.project = @project
-    ArborReloaded::IntercomServices.new(user).user_story_create_event
+    ArborReloaded::IntercomServices.new(current_user).user_story_create_event
     create_activity(user_story, current_user) if user_story.save
     user_story
   end

@@ -64,6 +64,10 @@ module ArborReloaded
     private
 
     def json_update
+      if story_update_params[:estimated_points]
+        ArborReloaded::IntercomServices.new(current_user).estimate_story_event
+      end
+
       response =
         ArborReloaded::UserStoryService
         .new(@project).update_user_story(@user_story)

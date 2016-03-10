@@ -20,6 +20,9 @@ feature 'Comment spec', js: true do
   end
 
   scenario 'should create a new comment' do
+    allow_any_instance_of(ArborReloaded::IntercomServices)
+      .to receive(:comment_create_event).and_return(true)
+
     within 'form.new_comment' do
       fill_in(:comment_comment, with: comment.comment)
       find('input#save-comment', visible: false).trigger('click')

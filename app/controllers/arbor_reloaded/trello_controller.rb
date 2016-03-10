@@ -16,7 +16,10 @@ module ArborReloaded
     def create
       response = ArborReloaded::TrelloServices.new(@project, @token).export
       positive_response = response.success
-      response.data[:message] = t('trello.success') if positive_response
+      if positive_response
+        response.data[:message] = t('trello.success')
+        ArborReloaded::IntercomServices.new(current_user).export_to_trello_event
+      end
       render json: response, status: (positive_response ? 201 : 422)
     end
 
@@ -24,7 +27,9 @@ module ArborReloaded
       board_id = params.require(:board_id)
       @response = ArborReloaded::TrelloServices.new(@project, @token)
                   .export_to_existing_board(board_id)
-      @response.data[:message] = t('trello.success') if @response.success
+      return unless @response.success
+      @response.data[:message] = t('trello.success')
+      ArborReloaded::IntercomServices.new(current_user).export_to_trello_event
     end
 
     private

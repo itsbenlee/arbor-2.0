@@ -5,13 +5,13 @@ class AcceptanceCriterionServices
     @route_helper = Rails.application.routes.url_helpers
   end
 
-  def new_acceptance_criterion(acceptance_criterion_params, current_user)
+  def new_acceptance_criterion(acceptance_criterion_params)
     acceptance_criterion = AcceptanceCriterion.new(acceptance_criterion_params)
     acceptance_criterion.user_story = @user_story
     acceptance_criterion.order = get_order(@user_story)
 
     if acceptance_criterion.save
-      assign_common_response(acceptance_criterion, current_user)
+      assign_common_response(acceptance_criterion)
     else
       @common_response.success = false
       @common_response.errors += acceptance_criterion.errors.full_messages
@@ -49,8 +49,7 @@ class AcceptanceCriterionServices
 
   private
 
-  def assign_common_response(acceptance_criterion, current_user)
-    ArborReloaded::IntercomServices.new(current_user).criterion_create_event
+  def assign_common_response(acceptance_criterion)
     @user_story.acceptance_criterions << acceptance_criterion
     @common_response.data[:edit_url] =
       @route_helper.edit_user_story_path(@user_story)

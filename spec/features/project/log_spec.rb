@@ -10,6 +10,9 @@ feature 'Log activity' do
 
   context 'for creating projects' do
     scenario 'should log project creation' do
+      allow_any_instance_of(ArborReloaded::IntercomServices)
+        .to receive(:project_create_event).and_return(true)
+
       PublicActivity.with_tracking do
         within '.content-general' do
           click_link 'Create new project'

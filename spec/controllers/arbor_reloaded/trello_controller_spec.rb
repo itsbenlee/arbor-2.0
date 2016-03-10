@@ -10,6 +10,9 @@ RSpec.describe ArborReloaded::TrelloController do
 
   describe 'POST create' do
     it 'should export the project to trello' do
+      allow_any_instance_of(ArborReloaded::IntercomServices)
+        .to receive(:export_to_trello_event).and_return(true)
+
       VCR.use_cassette('trello/export') do
         post(
           :create,

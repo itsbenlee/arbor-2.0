@@ -12,6 +12,9 @@ RSpec.describe ArborReloaded::CommentsController do
   describe 'POST create' do
     context 'for a new comment' do
       it 'should create comment' do
+        allow_any_instance_of(ArborReloaded::IntercomServices)
+          .to receive(:comment_create_event).and_return(true)
+
         post(
           :create,
           format: :js,

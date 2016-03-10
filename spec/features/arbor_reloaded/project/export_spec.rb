@@ -14,6 +14,9 @@ feature 'Export backlog' do
   end
 
   scenario 'should download PDF' do
+    allow_any_instance_of(ArborReloaded::IntercomServices)
+      .to receive(:export_to_pdf_event).and_return(true)
+
     visit arbor_reloaded_project_export_backlog_path(project, format: :pdf, estimation: false)
     response_headers = page.response_headers
     expect(response_headers['Content-Disposition']).to have_text(
