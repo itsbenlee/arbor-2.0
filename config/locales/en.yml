@@ -352,3 +352,4 @@ en:
       story_error: 'Error creating US'
       story_error_title: 'Error'
       story_error_text: 'An internal error occurred.'
+      user_story: "As a %{role} I want %{action} so that %{benefit}"

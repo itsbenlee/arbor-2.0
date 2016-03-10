@@ -59,6 +59,22 @@ module ArborReloaded
       response
     end
 
+    def user_story_notify(user_story)
+      @user_story = user_story
+      HTTParty.post(@project.slack_iw_url, body: {
+        text: I18n.translate('slack.notifications.story_created'),
+        attachments: [
+          {
+            title: "US##{@user_story.id}",
+            text: I18n.translate('slack.notifications.user_story',
+              role: @user_story.role, action: @user_story.action,
+              benefit: @user_story.result),
+            color: '#28D7E5'
+          }
+        ]
+      }.to_json, headers: { 'Content-Type' => 'application/json' })
+    end
+
     private
 
     def valid_message?(story_text)
