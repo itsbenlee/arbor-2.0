@@ -13,7 +13,7 @@ RSpec.describe ArborReloaded::AcceptanceCriterionsController do
   describe 'POST create' do
     it 'should create a criterion' do
       allow_any_instance_of(ArborReloaded::IntercomServices)
-        .to receive(:criterion_create_event).and_return(true)
+        .to receive(:create_event).and_return(true)
 
       expect {
         post(

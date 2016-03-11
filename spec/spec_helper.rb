@@ -8,14 +8,14 @@ Spork.prefork do
   ENV['FROM_EMAIL_ADDRESS'] = 'no-reply@getarbor.io'
   ENV['MAXIMUM_MEMBER_COUNT'] = '16'
   ENV['SIDEBAR_VERSION'] = '1.0'
-  ENV['INTERCOM_APP_ID'] = 'q2wxbu8q'
   ENV['MOUSEFLOW_SRC'] = '//cdn.mouseflow.com/projects/51a89e86-f3d8-469d-80d2-4971f0cdb36b.js'
   ENV['ENABLE_RELOADED'] = 'false'
   ENV['TRELLO_DEVELOPER_PUBLIC_KEY'] = 'VALID_TRELLO_DEVELOPER_KEY'
-  ENV['SLACK_CLIENT_ID']= 'VALID_SLACK_CLIENT_ID'
-  ENV['SLACK_CLIENT_SECRET'] = 'CLIENT_SECRET'
   ENV['INTERCOM_APP_ID'] = 'VALID_INTERCOM_APP_ID'
   ENV['INTERCOM_API_KEY'] = 'VALID_INTERCOM_API_KEY'
+  ENV['ENABLE_INTERCOM'] = 'true'
+  ENV['SLACK_CLIENT_ID']= 'VALID_SLACK_CLIENT_ID'
+  ENV['SLACK_CLIENT_SECRET'] = 'CLIENT_SECRET'
 
   require File.expand_path('../../config/environment', __FILE__)
   require 'rspec/rails'

@@ -18,7 +18,8 @@ module ArborReloaded
       positive_response = response.success
       if positive_response
         response.data[:message] = t('trello.success')
-        ArborReloaded::IntercomServices.new(current_user).export_to_trello_event
+        ArborReloaded::IntercomServices.new(current_user)
+          .create_event(t('intercom_keys.trello_export'))
       end
       render json: response, status: (positive_response ? 201 : 422)
     end
@@ -29,7 +30,8 @@ module ArborReloaded
                   .export_to_existing_board(board_id)
       return unless @response.success
       @response.data[:message] = t('trello.success')
-      ArborReloaded::IntercomServices.new(current_user).export_to_trello_event
+      ArborReloaded::IntercomServices.new(current_user)
+        .create_event(t('intercom_keys.trello_export'))
     end
 
     private

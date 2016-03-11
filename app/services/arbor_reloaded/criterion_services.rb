@@ -8,7 +8,8 @@ module ArborReloaded
       acceptance_criterion =
         AcceptanceCriterion.new(acceptance_criterion_params)
       acceptance_criterion.assign_story(@user_story)
-      ArborReloaded::IntercomServices.new(current_user).criterion_create_event
+      ArborReloaded::IntercomServices.new(current_user)
+        .create_event(I18n.t('intercom_keys.create_criterion'))
       acceptance_criterion
     end
   end

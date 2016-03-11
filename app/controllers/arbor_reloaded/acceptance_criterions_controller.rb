@@ -5,8 +5,9 @@ module ArborReloaded
 
     def create
       ac_service = CriterionServices.new(@user_story)
-      @criterion = ac_service.new_acceptance_criterion(
-        acceptance_criterion_params, current_user)
+      @criterion =
+        ac_service.new_acceptance_criterion(acceptance_criterion_params,
+                                            current_user)
     end
 
     def update

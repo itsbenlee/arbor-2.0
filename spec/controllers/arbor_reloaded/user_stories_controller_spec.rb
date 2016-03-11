@@ -13,7 +13,7 @@ RSpec.describe ArborReloaded::UserStoriesController do
   describe 'POST create' do
     it 'creates a user story' do
       allow_any_instance_of(ArborReloaded::IntercomServices)
-        .to receive(:user_story_create_event).and_return(true)
+        .to receive(:create_event).and_return(true)
 
       post :create, format: :js, project_id: project.id, user_story: {
           role: 'user',
@@ -40,7 +40,7 @@ RSpec.describe ArborReloaded::UserStoriesController do
 
     it 'updates a user story' do
       allow_any_instance_of(ArborReloaded::IntercomServices)
-        .to receive(:estimate_story_event).and_return(true)
+        .to receive(:create_event).and_return(true)
 
       put :update, format: :json, id: user_story.id, user_story: {
           estimated_points: '3' }

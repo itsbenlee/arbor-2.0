@@ -23,7 +23,8 @@ module ArborReloaded
       parameters:
         { user_story: @user_story.log_description,
           comment: comment.comment }
-      ArborReloaded::IntercomServices.new(current_user).comment_create_event
+      ArborReloaded::IntercomServices
+        .new(current_user).create_event(t('intercom_keys.create_comment'))
     end
 
     def comment_params

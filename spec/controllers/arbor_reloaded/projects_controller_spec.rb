@@ -103,7 +103,7 @@ RSpec.describe ArborReloaded::ProjectsController do
   describe 'PUT create' do
     it 'should create a new project with a team' do
       allow_any_instance_of(ArborReloaded::IntercomServices)
-        .to receive(:project_create_event).and_return(true)
+        .to receive(:create_event).and_return(true)
 
       post :create, format: :html, project: { name: 'My project',
           favorite: true, team: team.name }
@@ -118,7 +118,7 @@ RSpec.describe ArborReloaded::ProjectsController do
 
     it 'should create a new project without a team' do
       allow_any_instance_of(ArborReloaded::IntercomServices)
-        .to receive(:project_create_event).and_return(true)
+        .to receive(:create_event).and_return(true)
 
       post :create, format: :html, project: { name: 'My project',
           favorite: true }

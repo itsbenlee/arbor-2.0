@@ -12,7 +12,7 @@ feature 'Estimation totals', js:true do
 
   scenario 'live updates when estimating a story' do
     allow_any_instance_of(ArborReloaded::IntercomServices)
-      .to receive(:estimate_story_event).and_return(true)
+      .to receive(:create_event).and_return(true)
 
     find('.story-detail-link').click
     find('#fibonacci-dropdown').find('option[value="21"]').select_option
