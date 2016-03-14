@@ -1,4 +1,4 @@
-%script{ src: "http://code.jquery.com/jquery-1.7.1.min.js" }
+%script{ src: "/assets/jquery.js?body=1" }
 %script{ src: "https://api.trello.com/1/client.js?key=#{ENV['TRELLO_DEVELOPER_PUBLIC_KEY']}" }
 
 %nav.secondary-nav
@@ -30,8 +30,9 @@
           = link_to '#', data: { reveal_id: 'trello-modal' } do
             = t('reloaded.navigation.export_trello')
             %span.icn-export
-        %li
-          = react_component('SlackButton', {}, {prerender: false})
+        .hidden-element
+          %li
+            = react_component('SlackButton', {}, {prerender: false})
         - if current_user == current_project.owner
           %li
             = link_to arbor_reloaded_project_path(current_project), method: :delete, data: { confirm: t('project.delete_confirmation') } do
