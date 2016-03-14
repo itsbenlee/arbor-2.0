@@ -98,6 +98,8 @@ module ArborReloaded
       send_data(export_content,
                 filename: "#{@project.name} Backlog.pdf",
                 type:     'application/pdf')
+      ArborReloaded::IntercomServices.new(current_user)
+        .create_event(t('intercom_keys.pdf_export'))
     end
 
     def order_stories
@@ -182,6 +184,10 @@ module ArborReloaded
 
     def json_update
       response = ArborReloaded::ProjectServices.new(@project).update_project
+      if project_params[:favorite] == 'true'
+        ArborReloaded::IntercomServices.new(current_user)
+          .create_event(t('intercom_keys.favorite_project'))
+      end
       render json: response, status: (response.success ? 201 : 422)
     end
 
@@ -189,6 +195,8 @@ module ArborReloaded
       @new_project.members << current_user
 
       if @new_project.save
+        ArborReloaded::IntercomServices
+          .new(current_user).create_event(t('intercom_keys.create_project'))
         @new_project.create_activity :create_project
         redirect_to arbor_reloaded_project_user_stories_path(@new_project)
       else

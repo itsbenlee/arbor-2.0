@@ -29,6 +29,12 @@ module ApiSlack
                     @project.id))
       assign_slack_user
       return unless slack_data['ok']
+      assign_data(slack_data)
+    end
+
+    def assign_data
+      ArborReloaded::IntercomServices.new(current_user)
+        .create_event(t('intercom_keys.slack_connect'))
       assign_slack_token(slack_data['access_token'])
       assign_slack_channel(slack_data['incoming_webhook'])
     end

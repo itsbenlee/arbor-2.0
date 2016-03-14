@@ -212,6 +212,16 @@ en:
   activity:
     project:
       update: 'Project was updated'
+  intercom_keys:
+    create_project: 'created project'
+    create_story: 'created user story'
+    create_criterion: 'created acceptance criteria'
+    create_comment: 'created comment'
+    estimate_story: 'estimated story'
+    favorite_project: 'favorited project'
+    slack_connect: 'connected to slack'
+    trello_export: 'exported to trello'
+    pdf_export: 'exported to pdf'
   reloaded:
     backlog:
       role: 'As a'
