@@ -1,0 +1,85 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://VALID_INTERCOM_APP_ID:VALID_INTERCOM_API_KEY@api.intercom.io/events
+    body:
+      encoding: UTF-8
+      string: '{"event_name":"connected to slack","created_at":1457555491,"email":"sam_kemmer@gutmann.info"}'
+    headers:
+      Accept-Encoding:
+      - gzip, deflate
+      Accept:
+      - application/vnd.intercom.3+json
+      User-Agent:
+      - Intercom-Ruby/3.4.0
+      Content-Type:
+      - application/json
+      Acceptencoding:
+      - gzip, deflate
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy-Report-Only:
+      - 'default-src ''self''; connect-src ''self'' api-iam.intercom.io api-ping.intercom.io
+        nexus-websocket-a.intercom.io nexus-websocket-b.intercom.io nexus-long-poller-a.intercom.io
+        nexus-long-poller-b.intercom.io wss://nexus-websocket-a.intercom.io wss://nexus-websocket-b.intercom.io
+        uploads.intercomcdn.com api.amplitude.com js.logentries.com wss://ws.pusherapp.com
+        *.pusher.com *.tiles.mapbox.com app.getsentry.com; font-src ''self'' data:
+        https:; frame-src ''self'' fast.wistia.net www.youtube.com player.vimeo.com
+        js.stripe.com staticxx.facebook.com www.facebook.com app.datadoghq.com; img-src
+        ''self'' data: blob: https:; media-src ''self'' data: blob: https:; object-src
+        ''self'' static.intercomassets.com; script-src ''self'' js.intercomcdn.com
+        static.intercomassets.com store.intercom.io widget.intercom.io api.tiles.mapbox.com
+        bam.nr-data.net connect.facebook.net js-agent.newrelic.com js.stripe.com netdna.bootstrapcdn.com
+        www.googleadservices.com www.google-analytics.com platform.twitter.com *.adroll.com
+        *.cloudfront.net *.pusher.com; style-src ''self'' ''unsafe-inline'' static.intercomassets.com
+        static.intercomcdn.com api.tiles.mapbox.com maxcdn.bootstrapcdn.com netdna.bootstrapcdn.com
+        fonts.googleapis.com; report-uri https://app.getsentry.com/api/66205/csp-report/?sentry_version=5&sentry_key=2b8577b0df7747488e37ae35375a6772'
+      Date:
+      - Wed, 09 Mar 2016 20:28:35 GMT
+      Server:
+      - nginx
+      Status:
+      - 202 Accepted
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Intercom-Version:
+      - c7a9e2f589b14c31fd812fb7ea022b8d476daf15
+      X-Intercomrade:
+      - Like APIs? Check out https://www.intercom.io/careers!
+      X-Ratelimit-Limit:
+      - '500'
+      X-Ratelimit-Remaining:
+      - '499'
+      X-Ratelimit-Reset:
+      - '1457555340'
+      X-Request-Id:
+      - 29654e58-0888-4603-b2e8-9f16baa16254
+      X-Runtime:
+      - '0.117381'
+      X-Xss-Protection:
+      - 1; mode=block
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAHOH4FYAA1IAAAAA//8DAEXPbOkBAAAA
+    http_version:
+  recorded_at: Wed, 09 Mar 2016 20:31:32 GMT
+recorded_with: VCR 2.9.3

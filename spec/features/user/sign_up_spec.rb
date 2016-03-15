@@ -7,6 +7,11 @@ feature 'Sign up' do
     let!(:project)  { create :project }
     let!(:invite)   { create :invite, email: 'testing@test.com', project: project }
 
+    before :each do
+      allow_any_instance_of(ArborReloaded::IntercomServices)
+        .to receive(:user_create_event).and_return(true)
+    end
+
     def create_user
       visit new_user_registration_path
       within '#signup' do

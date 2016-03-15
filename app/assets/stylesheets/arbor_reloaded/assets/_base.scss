@@ -18,11 +18,11 @@ $transparent: transparent;
 $primary-color: #282c37;
 $secondary-color: #393939;
 $success-color: #2ecc71;
-$canvas-color: #e62940; // red
+$canvas-color: #e62940;
 $error-color: $canvas-color;
 $warning-color: #fbab1f;
-$lab-color: #4ba4f6;  // cyan
-$backlog-color: $success-color; //green
+$lab-color: #4ba4f6;
+$backlog-color: $success-color;
 $icon-color: #53565f;
 $light-bg: #fbfbfb;
 $font-color-2: #626262;
@@ -31,6 +31,20 @@ $border-color: #cecece;
 $modal-bg-color: #ececec;
 $light-blue: #a6b6bd;
 $light-blue-2: #eceff1;
+
+// Favorite project random colors
+
+$favorite-colors-list: (
+  #5856d6,
+  #34b9e6,
+  #75d2c7,
+  #95d357,
+  #a27eeb,
+  #fe4565,
+  #ff5335,
+  #ffa600,
+  #ffd14d
+);
 
 // Grayscale
 $black-10:  darken($white, 10%) !default;
@@ -50,6 +64,20 @@ $shadow-depth-1: rgba($black-50, .3) 1px 1px 2px;
 $shadow-depth-hover: rgba($black-50, .2) 3px 8px 25px;
 
 // -------  MIXINS ------ //
+@mixin favorite-colors($color) {
+  &:hover {
+    .right [class^="icn-favorite"] {
+      background-color: $color;
+
+      &:before { color: white; }
+    }
+
+    .last-update,
+    .others.others { color: $color; }
+  }
+
+  .project:after { background-color: $color; }
+}
 
 @mixin input-placeholder {
   &.placeholder { @content; }

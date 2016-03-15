@@ -6,11 +6,7 @@ module ArborReloaded
       @comment =
         Comment.new(comment: comment_params[:comment], user: current_user)
       @user_story.comments << @comment
-      @user_story.project.create_activity :add_comment,
-      owner: current_user,
-      parameters:
-        { user_story: @user_story.log_description,
-          comment: @comment.comment } if @comment.save
+      create_resources(@comment) if @comment.save
     end
 
     def destroy
@@ -20,6 +16,16 @@ module ArborReloaded
     end
 
     private
+
+    def create_resources(comment)
+      @user_story.project.create_activity :add_comment,
+      owner: current_user,
+      parameters:
+        { user_story: @user_story.log_description,
+          comment: comment.comment }
+      ArborReloaded::IntercomServices
+        .new(current_user).create_event(t('intercom_keys.create_comment'))
+    end
 
     def comment_params
       params.require(:comment).permit(:comment, :user_story_id)

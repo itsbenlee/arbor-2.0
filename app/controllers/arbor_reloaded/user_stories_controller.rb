@@ -28,6 +28,9 @@ module ArborReloaded
       story_services = ReloadedStoryService.new(@project)
       @user_story =
         story_services.new_user_story(user_story_params, current_user)
+      return unless @project.slack_iw_url
+      ArborReloaded::SlackIntegrationService.new(@project)
+        .user_story_notify(@user_story)
     end
 
     def update
@@ -64,6 +67,11 @@ module ArborReloaded
     private
 
     def json_update
+      if story_update_params[:estimated_points]
+        ArborReloaded::IntercomServices.new(current_user)
+          .create_event(t('intercom_keys.estimate_story'))
+      end
+
       response =
         ArborReloaded::UserStoryService
         .new(@project).update_user_story(@user_story)

@@ -47,7 +47,7 @@ module ArborReloaded
         code: code,
         redirect_uri: redirect_url
       }
-      response = HTTParty.get(@auth_access_url, options)
+      response = HTTParty.get(@auth_access_url, query: options)
       response
     end
 
@@ -55,8 +55,24 @@ module ArborReloaded
       options = {
         token: token
       }
-      response = HTTParty.get(@data_url, options)
+      response = HTTParty.get(@data_url, query: options)
       response
+    end
+
+    def user_story_notify(user_story)
+      @user_story = user_story
+      HTTParty.post(@project.slack_iw_url, body: {
+        text: I18n.translate('slack.notifications.story_created'),
+        attachments: [
+          {
+            title: "US##{@user_story.id}",
+            text: I18n.translate('slack.notifications.user_story',
+              role: @user_story.role, action: @user_story.action,
+              benefit: @user_story.result),
+            color: '#28D7E5'
+          }
+        ]
+      }.to_json, headers: { 'Content-Type' => 'application/json' })
     end
 
     private

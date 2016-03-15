@@ -212,6 +212,16 @@ en:
   activity:
     project:
       update: 'Project was updated'
+  intercom_keys:
+    create_project: 'created project'
+    create_story: 'created user story'
+    create_criterion: 'created acceptance criteria'
+    create_comment: 'created comment'
+    estimate_story: 'estimated story'
+    favorite_project: 'favorited project'
+    slack_connect: 'connected to slack'
+    trello_export: 'exported to trello'
+    pdf_export: 'exported to pdf'
   reloaded:
     backlog:
       role: 'As a'
@@ -345,3 +355,11 @@ en:
       estimation_cost: 'This is the cost of a sprint. Different development teams charge differently, but the average cost of a week of work is a good benchmark.'
     pdf:
       user_stories: 'User Stories'
+  slack:
+    notifications:
+      story_created: 'New user story created'
+      story_created_text: "User story %{user_story_id} created with success. You can edit it in %{title_link}"
+      story_error: 'Error creating US'
+      story_error_title: 'Error'
+      story_error_text: 'An internal error occurred.'
+      user_story: "As a %{role} I want %{action} so that %{benefit}"

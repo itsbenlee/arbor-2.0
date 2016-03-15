@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://VALID_INTERCOM_APP_ID:VALID_INTERCOM_API_KEY@api.intercom.io/events
+    body:
+      encoding: UTF-8
+      string: '{"event_name":"favorited project","created_at":1457725766,"email":"sam_kemmer@gutmann.info"}'
+    headers:
+      Accept-Encoding:
+      - gzip, deflate
+      Accept:
+      - application/vnd.intercom.3+json
+      User-Agent:
+      - Intercom-Ruby/3.4.0
+      Content-Type:
+      - application/json
+      Acceptencoding:
+      - gzip, deflate
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Encoding:
+      - gzip
+      Date:
+      - Fri, 11 Mar 2016 19:46:28 GMT
+      Server:
+      - nginx
+      Status:
+      - 202 Accepted
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Intercom-Version:
+      - 53c346a324f9028477e67091207cbac98f49ba27
+      X-Intercomrade:
+      - Like APIs? Check out https://www.intercom.io/careers!
+      X-Ratelimit-Limit:
+      - '500'
+      X-Ratelimit-Remaining:
+      - '499'
+      X-Ratelimit-Reset:
+      - '1457725620'
+      X-Request-Id:
+      - 810a2425-09d2-49b0-8351-46b212391118
+      X-Runtime:
+      - '0.137540'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '27'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAJQg41YAA1IAAAAA//8DAEXPbOkBAAAA
+    http_version:
+  recorded_at: Fri, 11 Mar 2016 19:49:26 GMT
+recorded_with: VCR 2.9.3
