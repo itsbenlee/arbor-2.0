@@ -116,6 +116,18 @@ RSpec.describe ArborReloaded::ProjectsController do
       expect(project.owner).to eq(team.owner)
     end
 
+    it 'should add the team owner as member' do
+      allow_any_instance_of(ArborReloaded::IntercomServices)
+        .to receive(:create_event).and_return(true)
+
+      post :create, format: :html, project: { name: 'My project',
+          favorite: true, team: team.name }
+
+      project = Project.last
+      expect(project.owner).to eq(team.owner)
+      expect(project.members).to include(team.owner)
+    end
+
     it 'should create a new project without a team' do
       allow_any_instance_of(ArborReloaded::IntercomServices)
         .to receive(:create_event).and_return(true)
