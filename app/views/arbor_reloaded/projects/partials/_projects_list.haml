@@ -33,8 +33,9 @@
   .title-breaker
     %h5= t('reloaded.project_dashboard.my_projects', count: projects.non_favorite.count)
   %ul.common-projects-list.white-blocks-list
-    - projects.no_team.each do |project|
-      = render 'arbor_reloaded/projects/partials/project_line_element', project: project
+    - projects.each do |project|
+      - if project.team.blank? || project.team.not_member(current_user)
+        = render 'arbor_reloaded/projects/partials/project_line_element', project: project
   - current_user.teams.each do |team|
     - if team.projects.count > 0
       .title-breaker

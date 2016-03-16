@@ -35,4 +35,20 @@ feature 'Index projects' do
       expect(project.members.include? user).to be(true)
     end
   end
+
+  context 'when the project has a team the user is not member of' do
+    let(:team)     { create :team }
+    let!(:project) { create :project, team: team }
+
+    background do
+      project.members << user
+      visit arbor_reloaded_root_path
+    end
+
+    scenario 'it should be listed as a common project' do
+      within '.common-projects-list' do
+        expect(page).to have_text(project.name)
+      end
+    end
+  end
 end
