@@ -16,6 +16,9 @@ module ArborReloaded
       selected_team_name = team_params[:team]
       @new_project = Project.new(project_params)
       @new_project.assign_team(selected_team_name, current_user)
+
+      members = @new_project.members
+      members << current_user unless members.include?(current_user)
       assist_creation
     end
 
@@ -192,8 +195,6 @@ module ArborReloaded
     end
 
     def assist_creation
-      @new_project.members << current_user
-
       if @new_project.save
         ArborReloaded::IntercomServices
           .new(current_user).create_event(t('intercom_keys.create_project'))

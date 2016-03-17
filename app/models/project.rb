@@ -70,7 +70,7 @@ class Project < ActiveRecord::Base
   def assign_team_owner(team)
     team_owner = team.owner
     self.owner = team_owner
-    add_member(team_owner)
+    members << team_owner
   end
 
   def add_member(user)
