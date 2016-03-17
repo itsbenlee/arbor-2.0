@@ -3,7 +3,7 @@ module ArborReloaded
     layout false, only: :members
     before_action :load_project,
       only: [:members, :show, :edit, :update, :destroy, :log, :add_member,
-             :join_project, :export_backlog]
+             :join_project, :export_backlog, :remove_member_from_project]
 
     def index
       scope = params[:project_order] || 'recent'
@@ -76,15 +76,11 @@ module ArborReloaded
     end
 
     def remove_member_from_project
-      project_id = params['project_id']
       member_to_destroy = MembersProject.find_by(member_id: params['member'],
-                                                 project_id: project_id)
-      if member_to_destroy.destroy
-        render json: { errors: [] }, status: 200
-      else
-        @errors = member_to_destroy.errors.full_messages
-        render json: { errors: @errors }, status: 422
-      end
+                                                 project_id: @project.id)
+      member_to_destroy.destroy
+      render partial: 'arbor_reloaded/navigation/right_members',
+             locals: { project: @project.reload }
     end
 
     def update

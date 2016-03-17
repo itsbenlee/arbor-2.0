@@ -56,10 +56,13 @@ $('#project-members-modal').on('opened.fndtn.reveal', function() {
 
   function removeMembers(members) {
     $(members).each(function(index, el) {
-      var url = $(el).data('url'),
-          type = 'DELETE',
-          currentObject = {};
-      ajaxCall(url,type,currentObject);
+      $.ajax({
+        type: 'DELETE',
+        url: $(el).data('url'),
+        success: function (response) {
+          $('.members-avatars').html(response)
+        },
+      });
     });
     closeMembersModal();
   }
