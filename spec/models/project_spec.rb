@@ -2,6 +2,9 @@ require 'spec_helper'
 
 describe Project do
   let(:project) { create :project, is_template: false }
+  let(:user)    { create :user }
+  let(:team)    { create :team, users: [user] }
+
   subject       { project }
 
   it { should validate_presence_of :name }
@@ -28,5 +31,27 @@ describe Project do
   it_behaves_like 'a logged entity' do
     let(:entity)      { build :project, name: 'Test project' }
     let(:description) { nil }
+  end
+
+  describe 'add member' do
+    it 'adds a member and creates an activity' do
+      PublicActivity.with_tracking do
+        project.add_member(user)
+        expect(project.members).to include(user)
+        expect(PublicActivity::Activity.last.key).to eq('project.add_member')
+      end
+    end
+  end
+
+  describe 'assign_team' do
+    it 'assigns team and owner without logging activity' do
+      PublicActivity.with_tracking do
+        project.assign_team(team.name, user)
+        expect(project.members).to include(team.owner)
+        expect(project.team).to eq(team)
+        expect(project.owner).to eq(team.owner)
+        expect(PublicActivity::Activity.last).to eq(nil)
+      end
+    end
   end
 end
