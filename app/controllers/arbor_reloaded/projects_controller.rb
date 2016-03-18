@@ -2,8 +2,8 @@ module ArborReloaded
   class ProjectsController < ApplicationController
     layout false, only: :members
     before_action :load_project,
-      only: [:members, :show, :edit, :update, :destroy, :log, :add_member,
-             :join_project, :export_backlog, :remove_member_from_project]
+      only: %i(members show edit update destroy log add_member join_project
+               export_backlog remove_member_from_project)
 
     def index
       scope = params[:project_order] || 'recent'

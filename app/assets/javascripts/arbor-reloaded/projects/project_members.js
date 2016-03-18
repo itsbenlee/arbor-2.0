@@ -1,15 +1,14 @@
 function ProjectMembers() {
-  // functions needed on the modal view, Ale
-  var footerButtonInitialText = '';
-  var showEditProject   = $('#show_edit_project'),
-      projectDataModal  = $('.project-members'),
-      editProjectForm   = $('.modal-edit-project-form'),
-      footerButtonId = $('#people-modal-footer-btn');
-      newMemberMailTextId = $('.new-member-mail'),
-      removeMemberCheck = $('.remove-member-check'),
+  var footerButtonInitialText     = '',
+      showEditProject             = $('#show_edit_project'),
+      projectDataModal            = $('.project-members'),
+      editProjectForm             = $('.modal-edit-project-form'),
+      footerButtonId              = $('#people-modal-footer-btn'),
+      newMemberMailTextId         = $('.new-member-mail'),
+      removeMemberCheck           = $('.remove-member-check'),
       removeMemberFromProjectLink = $('.remove-member-link a'),
-      footerButtonInitialText = $(footerButtonId).text(),
-      membersToRemoveArray = [];
+      footerButtonInitialText     = $(footerButtonId).text(),
+      membersToRemoveArray        = [];
 
   bindAddMemberToRemove();
   customScroll();
