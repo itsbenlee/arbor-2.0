@@ -36,12 +36,7 @@
                 = format_story_points(user_story)
                 )
             .story-text
-              %span.grey-prefix= t('backlog.user_stories.role')
-              %span=user_story.role
-              %span.grey-prefix= t('backlog.user_stories.action', priority: user_story.priority)
-              %span=user_story.action
-              %span.grey-prefix= t('backlog.user_stories.result')
-              %span=user_story.result
+              %span=user_story.log_description
             - if user_story.acceptance_criterions.any?
               %li.acceptance-criterions
                 .uppercase-subtitle= t('backlog.acceptance_criterions')

@@ -67,6 +67,7 @@ $(document).ready(function() {
 });
 
 function backlogGeneralBinds() {
+  fixArticlesForRolesOnBacklog();
   showBulkMenu();
   bindReorderStories();
   autogrowInputs();

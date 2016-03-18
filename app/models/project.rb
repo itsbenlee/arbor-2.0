@@ -26,7 +26,6 @@ class Project < ActiveRecord::Base
 
   scope :recent, -> { order(updated_at: :desc) }
   scope :by_name, -> { order('LOWER(name)') }
-  scope :no_team, -> { where(team: nil) }
 
   def total_points
     user_stories.map(&:estimated_points).compact.sum
@@ -62,9 +61,16 @@ class Project < ActiveRecord::Base
     if selected_team_name.blank?
       self.owner = current_user
     else
-      self.team = current_user.teams.find_by(name: selected_team_name)
-      self.owner = team.owner
+      team = current_user.teams.find_by(name: selected_team_name)
+      self.team = team
+      assign_team_owner(team)
     end
+  end
+
+  def assign_team_owner(team)
+    team_owner = team.owner
+    self.owner = team_owner
+    members << team_owner
   end
 
   def add_member(user)

@@ -43,7 +43,7 @@ RSpec.describe TagsController, type: :controller do
 
   describe 'GET filter' do
     let!(:tag)           { create :tag, project: project }
-    let!(:another_story) { create :user_story, role: 'user', project: project }
+    let!(:another_story) { create :user_story, role: 'admin', project: project }
     render_views
 
     before :each do
@@ -52,8 +52,10 @@ RSpec.describe TagsController, type: :controller do
 
     it 'should render the filtered stories', js: true do
       get(:filter, project_id: project.id, tag_names: [tag.name] )
-      expect(response.body).to have_content(another_story.log_description)
-      expect(response.body).not_to have_content(user_story.log_description)
+      expect(response.body).to have_content("As a #{another_story.role} I should"\
+      " be able to #{another_story.action} so that #{another_story.result}")
+      expect(response.body).not_to have_content("As a #{user_story.role} I should"\
+      " be able to #{user_story.action} so that #{user_story.result}")
     end
   end
 end

@@ -42,9 +42,9 @@ RSpec.describe UserStory do
 
   it_behaves_like 'a logged entity' do
     let(:entity) do
-      build :user_story, role: 'User', action: 'work', result: 'test'
+      build :user_story, role: 'User', action: 'to work', result: 'test'
     end
-    let(:description) { 'As a User I should be able to work so that test' }
+    let(:description) { 'As a User I want to work so that test' }
   end
 
   describe 'story_number' do
@@ -66,6 +66,13 @@ RSpec.describe UserStory do
       numbers = UserStory.estimation_series
       expect(numbers.count).to eq 8
       expect(numbers).to eq [nil, 1, 2, 3, 5, 8, 13, 21]
+    end
+  end
+
+  describe 'log description' do
+    let(:story) { create :user_story }
+    it 'should use the new description with I want' do
+      expect(story.log_description).to eq("As a #{story.role} I want #{story.action} so that #{story.result}")
     end
   end
 end

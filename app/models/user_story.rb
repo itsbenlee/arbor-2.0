@@ -33,11 +33,10 @@ class UserStory < ActiveRecord::Base
   end
 
   def log_description
-    "As #{role.indefinite_article} "\
-    "#{role} "\
-    "#{I18n.t('backlog.user_stories.action', priority: priority)} "\
+    "As #{role.with_indefinite_article} "\
+    "#{I18n.t('reloaded.backlog.action')} "\
     "#{action} "\
-    "#{I18n.t('backlog.user_stories.result')} "\
+    "#{I18n.t('reloaded.backlog.result')} "\
     "#{result}"
   end
 
