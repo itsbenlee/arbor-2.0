@@ -23,5 +23,13 @@ feature 'delete members on modal', js: true do
         expect(page).to have_css('#people-modal-footer-btn', visible: false)
       end
     end
+
+    scenario 'should remove a member' do
+      within '.project-members' do
+        find('.remove-member-check').trigger('click')
+      end
+
+      find('#people-modal-footer-btn').trigger('click')
+    end
   end
 end

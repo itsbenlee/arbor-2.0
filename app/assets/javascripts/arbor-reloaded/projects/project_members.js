@@ -1,6 +1,6 @@
-// functions needed on the modal view, Ale
-var footerButtonInitialText = '';
-$('#project-members-modal').on('opened.fndtn.reveal', function() {
+function ProjectMembers() {
+  // functions needed on the modal view, Ale
+  var footerButtonInitialText = '';
   var showEditProject   = $('#show_edit_project'),
       projectDataModal  = $('.project-members'),
       editProjectForm   = $('.modal-edit-project-form'),
@@ -60,13 +60,13 @@ $('#project-members-modal').on('opened.fndtn.reveal', function() {
         type: 'DELETE',
         url: $(el).data('url'),
         success: function (response) {
-          $('.members-avatars').html(response)
+          $('.members-avatars').html(response);
         },
       });
     });
     closeMembersModal();
   }
-});
+}
 
 function closeMembersModal() {
   $('#project-members-modal').foundation('reveal', 'close');
