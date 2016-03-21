@@ -6,11 +6,9 @@ module ArborReloaded
     let(:slack_integration_service) { ArborReloaded::SlackIntegrationService.new(project) }
 
     scenario 'should create a user story using text' do
-      params = {
-        text: 'As an Admin I want to have privileges to all the database so that I can check the tables.',
-        channel_id: '23456'
-      }
-      response = slack_integration_service.build_user_story(params[:text], user)
+      text = 'As an Admin I want to have privileges to all the database so that I can check the tables.'
+      
+      response = slack_integration_service.build_user_story(text, user)
 
       user_story_created = UserStory.find(response.data[:user_story_id])
       expect(user_story_created.role).to eq('Admin')
@@ -19,30 +17,37 @@ module ArborReloaded
     end
 
     scenario 'should fail with descriptive error if Role is missing' do
-      params = {
-        text: 'Admin I want to have privileges to all the database so that I can check the tables.',
-        channel_id: '23456'
-      }
-      response = slack_integration_service.build_user_story(params[:text], user)
+      text = 'Admin I want to have privileges to all the database so that I can check the tables.'
+        
+      response = slack_integration_service.build_user_story(text, user)
       expect(response.errors).to have_content('Missing Role')
     end
 
     scenario 'should fail with descriptive error if Action is missing' do
-      params = {
-        text: 'As an Admin have privileges to all the database so that I can check the tables.',
-        channel_id: '23456'
-      }
-      response = slack_integration_service.build_user_story(params[:text], user)
+      text = 'As an Admin have privileges to all the database so that I can check the tables.'
+        
+      response = slack_integration_service.build_user_story(text, user)
       expect(response.errors).to have_content('Missing Action')
     end
 
     scenario 'should fail with descriptive error if Result is missing' do
-      params = {
-        text: 'As an Admin I want to have privileges to all the database.',
-        channel_id: '23456'
-      }
-      response = slack_integration_service.build_user_story(params[:text], user)
+      text = 'As an Admin I want to have privileges to all the database.'
+        
+      response = slack_integration_service.build_user_story(text, user)
       expect(response.errors).to have_content('Missing Result')
+    end
+
+    scenario 'should do send notify with slack_iw_url defined' do
+      project.update_attribute(:slack_iw_url, 'https://hooks.slack.com/services/VALID_CODE')
+
+      text = 'As an Admin I want to have privileges to all the database so that I can check the tables.'
+
+      usResponse = slack_integration_service.build_user_story(text, user)
+
+      VCR.use_cassette('slack/notifications') do
+        response = slack_integration_service.comment_notify(usResponse.data[:user_story_id], 'comment')
+        expect(response.parsed_response).to eq("ok")
+      end
     end
   end
 end

@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://hooks.slack.com/services/VALID_CODE
+    body:
+      encoding: UTF-8
+      string: '{"text":"New comment on US#1379","attachments":[{"title":"New comment
+        on US#1379","text":"comment","color":"#2FA44F"}]}'
+    headers:
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/html
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - referrer no-referrer;
+      Date:
+      - Mon, 04 Apr 2016 17:06:52 GMT
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Vary:
+      - Accept-Encoding
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 1915b8b49d2fbff532431a79650103eb.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - Ob86-b_flUD7W5Gp2IDY5zAp2r9Ij3hXZ6JUt5hVTEcCzBJGlTGi3g==
+    body:
+      encoding: UTF-8
+      string: ok
+    http_version:
+  recorded_at: Mon, 04 Apr 2016 17:03:15 GMT
+recorded_with: VCR 2.9.3
