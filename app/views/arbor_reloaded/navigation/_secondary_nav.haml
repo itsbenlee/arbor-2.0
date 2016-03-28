@@ -38,26 +38,8 @@
             = link_to arbor_reloaded_project_path(current_project), method: :delete, data: { confirm: t('project.delete_confirmation') } do
               = t('project.delete_project')
               %span.icn-delete
-  %ul.right.members
-    %li
-      = link_to '+', |
-      arbor_reloaded_project_members_path(current_project), |
-      { class: 'add-member has-tip', data: { reveal_id: 'project-members-modal', reveal_ajax: true, tooltip: '' }, aria: { haspopup: true }, title: t('reloaded.tooltips.add_members') }
-    - current_project.members.each_with_index do |member, index|
-      - if index < 3
-        %li
-          = link_to arbor_reloaded_project_members_path(current_project), { data: { reveal_id: 'project-members-modal', reveal_ajax: true }} do
-            - if member.avatar?
-              .avatar-img{ style: "background-image: url(#{member.avatar_url})" }
-            - else
-              = image_tag(member.gravatar_url, class: 'avatar-img', onerror: "this.src=''")
-              .avatar-circle#avatar-circle= user_initial(member)
-    - if current_project.members.count > 3
-      %li
-        = link_to arbor_reloaded_project_members_path(current_project), { class: 'other-members', data: { reveal_id: 'project-members-modal', reveal_ajax: true }} do
-          +
-          = current_project.members.count - 3
-#project-members-modal.reveal-modal{ data: { reveal: '' } }
+  %ul.right.members.members-avatars
+    = render 'arbor_reloaded/navigation/right_members', project: current_project
 %div
   = react_component('SlackModal',
     { url: arbor_reloaded_project_path(current_project),
