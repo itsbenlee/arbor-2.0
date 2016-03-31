@@ -230,6 +230,7 @@ en:
       create: 'Create'
       save: 'Save'
       cancel: 'Cancel'
+      description: 'Description'
     user_stories:
       write_title: 'Write some User Stories'
       write_subtitle: 'On the field above, enter a user story to start filling up your project'
@@ -364,3 +365,20 @@ en:
       story_error_text: 'An internal error occurred.'
       user_story: "As a %{role} I want %{action} so that %{benefit}"
       comment_created: 'New comment on US#%{user_story_id}'
+      default_error: 'An internal error occurred.'
+      user_story: "%{user_story}. You can edit it here %{link}"
+      no_configured_error: 'Please go to %{link} and add your project to this channel.'
+      empty_error: 'You cannot create empty User stories.'
+    user_story:
+      role:
+        - 'As a'
+        - 'As an'
+        - 'As'
+      action:
+        - 'I want'
+        - 'I should'
+        - 'I must'
+        - 'I could'
+      result:
+        - 'so that'
+        - 'so'

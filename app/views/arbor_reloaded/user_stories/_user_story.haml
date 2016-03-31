@@ -4,12 +4,15 @@
     %span.story-points
       = user_story.estimated_points ||= '?'
     .story-text{ id: "story-text-#{user_story.id}" }
-      %span.grey-prefix= t('reloaded.backlog.role')
-      %span= user_story.role
-      %span.grey-prefix= t('reloaded.backlog.action')
-      %span= user_story.action
-      %span.grey-prefix= t('reloaded.backlog.result')
-      %span= user_story.result
+      - if user_story.role
+        %span= t('reloaded.backlog.role')
+        %span= user_story.role
+        %span= t('reloaded.backlog.action')
+        %span= user_story.action
+        %span= t('reloaded.backlog.result')
+        %span= user_story.result
+      - else
+        %span.description= user_story.description
   .right
     = link_to '#', class: 'icn-comments hide' do
       %span.notification-badge

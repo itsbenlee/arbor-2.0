@@ -1,17 +1,15 @@
-// Bind key events to user roles being typed live, Ale
 $('#role-input.role').on('keydown keyup', function(e) {
   prependGramaticallyCorrectArticle(this);
 });
 
-// On document ready
 $(document).ready(function() {
   fixArticlesForRolesOnBacklog();
 });
 
 function fixArticlesForRolesOnBacklog() {
-  // for backlog, look for articles and fix them accordingly, Ale
   $('.story-text').each(function(index, currentValue) {
-    if (currentValue.children.length &&
+    if ($(currentValue).find('.description').length === 0 &&
+        currentValue.children.length &&
         currentValue.children[1].tagName == 'SPAN') {
       prependGramaticallyCorrectArticle(currentValue.children[1]);
     }

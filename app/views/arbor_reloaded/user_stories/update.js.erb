@@ -1,6 +1,4 @@
-$('span#role').html('<%= j @user_story.role%>');
-$('span#action').html('<%= j @user_story.action%>');
-$('span#result').html('<%= j @user_story.result%>');
+$('.story-text').html('<%= j @user_story.description%>');
 $('.user-stories-container').html('');
 $('.user-stories-container').html("<%= j render 'arbor_reloaded/user_stories/user_stories_list', project: @user_story.project.reload %>");
 backlogGeneralBinds();
