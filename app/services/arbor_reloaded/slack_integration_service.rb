@@ -59,6 +59,21 @@ module ArborReloaded
       response
     end
 
+    def comment_notify(user_story_id, comment)
+      comment_text = I18n.translate('slack.notifications.comment_created',
+        user_story_id: user_story_id)
+      HTTParty.post(@project.slack_iw_url, body: {
+        text: comment_text,
+        attachments: [
+          {
+            title: comment_text,
+            text: comment,
+            color: '#2FA44F'
+          }
+        ]
+      }.to_json, headers: { 'Content-Type' => 'application/json' })
+    end
+
     def user_story_notify(user_story)
       @user_story = user_story
       HTTParty.post(@project.slack_iw_url, body: {

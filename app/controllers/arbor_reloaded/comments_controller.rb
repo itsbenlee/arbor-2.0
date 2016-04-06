@@ -7,6 +7,7 @@ module ArborReloaded
         Comment.new(comment: comment_params[:comment], user: current_user)
       @user_story.comments << @comment
       create_resources(@comment) if @comment.save
+      slack_notification
     end
 
     def destroy
@@ -35,6 +36,13 @@ module ArborReloaded
       @user_story =
         @comment.try(:user_story) ||
         UserStory.find(params[:user_story_id])
+    end
+
+    def slack_notification
+      project = @user_story.project
+      return unless project.slack_iw_url
+      ArborReloaded::SlackIntegrationService.new(project)
+        .comment_notify(@user_story.id, @comment.comment)
     end
   end
 end
