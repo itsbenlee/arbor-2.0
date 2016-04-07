@@ -47,16 +47,6 @@ feature 'Create a new user story' do
       end
     end
 
-    scenario 'should show an error with empty fields' do
-      within 'form.new_user_story' do
-        fill_in :user_story_role, with: user_story.role
-        fill_in :user_story_action, with: '  '
-        fill_in :user_story_result, with: user_story.result
-        click_button 'Save'
-      end
-      expect(page).to have_content("Action can't be blank")
-    end
-
     scenario 'should create a new user story without duplicate' do
       create :hypothesis, { project: project }
       visit project_hypotheses_path project

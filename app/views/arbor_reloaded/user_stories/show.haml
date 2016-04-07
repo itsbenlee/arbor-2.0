@@ -24,12 +24,7 @@
 
       .sentence
         .story-text
-          %span.grey-prefix= t('reloaded.backlog.role')
-          %span#role= @user_story.role
-          %span.grey-prefix= t('reloaded.backlog.action')
-          %span#action= @user_story.action
-          %span.grey-prefix= t('reloaded.backlog.result')
-          %span#result= @user_story.result
+          = @user_story.log_description
     %p.created-data.hide
       %span.date Nov 19 at 5:45 PM
       by

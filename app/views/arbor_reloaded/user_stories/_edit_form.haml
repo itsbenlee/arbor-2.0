@@ -1,38 +1,12 @@
 = form_for(user_story, remote: true, url: arbor_reloaded_user_story_path(user_story)) do |form|
-  %h4
-    .backlog-story-input.role
-      %span.grey-prefix= t('reloaded.backlog.role')
-      = form.text_field(                                   |
-        :role,                                             |
-        placeholder: t('backlog.user_stories.enter_role'), |
-        required:    true,                                 |
-        maxlength:   100,                                  |
-        class:      'role-input',                                |
-        id:         'role-input',                          |
-        autofocus:  'true',                                |
-      )                                                    |
-
-    .backlog-story-input.action
-      %span.grey-prefix= t('reloaded.backlog.action')
-      = form.text_field(                                     |
-        :action,                                             |
-        placeholder: t('backlog.user_stories.enter_action'), |
-        required:    true,                                   |
-        maxlength:   255,                                    |
-        class:      'action-input',                                |
-        id:         'action-input',                          |
-      )                                                      |
-
-    .backlog-story-input.result
-      %span.grey-prefix= t('reloaded.backlog.result')
-      = form.text_field(                                     |
-        :result,                                             |
-        placeholder: t('backlog.user_stories.enter_result'), |
-        required:    true,                                   |
-        maxlength:   255,                                    |
-        class:      'result-input',                                |
-        id:         'result-input',                          |
-      )                                                      |
-    .actions
-      = link_to t('reloaded.backlog.cancel'), '#', class: 'close-edition button tiny'
-      = form.submit t('reloaded.backlog.save'), id: 'save-user-story', class: 'close-edition button tiny tiny-btn'
+  = form.text_field(                      |
+    :description,                         |
+    class:     'description-input',       |
+    required:  true,                      |
+    maxlength: 500,                       |
+    autofocus: 'true',                    |
+    value:     user_story.log_description |
+  )                                       |
+  .actions
+    = link_to t('reloaded.backlog.cancel'), '#', class: 'close-edition button tiny'
+    = form.submit t('reloaded.backlog.save'), id: 'save-user-story', class: 'close-edition button tiny tiny-btn'
