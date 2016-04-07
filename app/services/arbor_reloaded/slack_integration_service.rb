@@ -54,6 +54,7 @@ module ArborReloaded
     end
 
     def comment_notify(user_story_id, comment)
+      return unless @project.slack_enabled?
       comment_text = I18n.translate('slack.notifications.comment_created',
         user_story_id: user_story_id)
       HTTParty.post(@project.slack_iw_url, body: {
@@ -69,6 +70,7 @@ module ArborReloaded
     end
 
     def user_story_notify(user_story)
+      return unless @project.slack_enabled?
       @user_story = user_story
       HTTParty.post(@project.slack_iw_url, body: {
         attachments: [

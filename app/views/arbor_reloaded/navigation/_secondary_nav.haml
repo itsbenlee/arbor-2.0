@@ -41,10 +41,11 @@
   %ul.right.members.members-avatars
     = render 'arbor_reloaded/navigation/right_members', project: current_project
 %div
+
   = react_component('SlackModal',
     { url: arbor_reloaded_project_path(current_project),
-      slackToken: current_project.slack_token,
-      slackChannelId: current_project.slack_channel_id,
-      projectId: current_project.id }, {prerender: false})
+      slackConnected: current_project.slack_channel_id ? true : false,
+      projectId: current_project.id,
+      slackEnabled: current_project.slack_enabled }, { prerender: false })
 
 = render 'arbor_reloaded/trello/trello_modal', current_project: current_project
