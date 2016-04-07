@@ -30,7 +30,7 @@
           = link_to '#', data: { reveal_id: 'trello-modal' } do
             = t('reloaded.navigation.export_trello')
             %span.icn-export
-        .hidden-element
+        - if ENV['ENABLE_SLACK'] == 'true'
           %li
             = react_component('SlackButton', {}, {prerender: false})
         - if current_user == current_project.owner
