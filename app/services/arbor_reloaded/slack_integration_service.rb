@@ -1,15 +1,7 @@
 module ArborReloaded
+  include Rails.application.routes.url_helpers
   include HTTParty
   class SlackIntegrationService
-    ROLE = I18n.translate('reloaded.backlog.role')
-    ACTION = I18n.translate('reloaded.backlog.action')
-    RESULT = I18n.translate('reloaded.backlog.result')
-    REGEXP_HASH = {
-      role_regexp: /#{ROLE}[n]? (.*?)#{ACTION}/,
-      action_regexp: /#{ACTION} (.*?)#{RESULT}/,
-      result_regexp: /#{RESULT} (.*?)(.*)/
-    }
-
     def initialize(project)
       @common_response = CommonResponse.new(true, [])
       @project = project
@@ -17,14 +9,16 @@ module ArborReloaded
     end
 
     def build_user_story(story_text, current_user)
+      normalized_us_text = story_text.downcase.squish
       user_story_service = ArborReloaded::UserStoryService.new(@project)
-      if valid_message?(story_text)
+      if normalized_us_text.strip.length > 0
         @common_response = user_story_service.new_user_story(
-          parse_new_user_story(story_text),
+          parse_new_user_story(normalized_us_text),
           current_user
         )
       else
         @common_response.success = false
+        fail('EMPTY')
       end
       @common_response
     end
@@ -77,13 +71,14 @@ module ArborReloaded
     def user_story_notify(user_story)
       @user_story = user_story
       HTTParty.post(@project.slack_iw_url, body: {
-        text: I18n.translate('slack.notifications.story_created'),
         attachments: [
           {
-            title: "US##{@user_story.id}",
+            title: I18n.translate('slack.notifications.story_created'),
             text: I18n.translate('slack.notifications.user_story',
-              role: @user_story.role, action: @user_story.action,
-              benefit: @user_story.result),
+              user_story: @user_story.log_description,
+              link: Rails.application.routes.url_helpers
+                .arbor_reloaded_project_user_stories_url(@project,
+                host: 'getarbor.io')),
             color: '#28D7E5'
           }
         ]
@@ -92,34 +87,21 @@ module ArborReloaded
 
     private
 
-    def valid_message?(story_text)
-      errors = @common_response.errors
-      errors.push(role_defined?(story_text))
-      errors.push(action_defined?(story_text))
-      errors.push(result_defined?(story_text))
-
-      errors.compact.length == 0
-    end
-
-    def role_defined?(story_text)
-      (story_text.downcase.exclude? ROLE.downcase) ? 'Missing Role' : nil
-    end
-
-    def action_defined?(story_text)
-      (story_text.downcase.exclude? ACTION.downcase) ? 'Missing Action' : nil
-    end
-
-    def result_defined?(story_text)
-      (story_text.downcase.exclude? RESULT.downcase) ? 'Missing Result' : nil
-    end
-
     def parse_new_user_story(story_text)
+      user_story_statics = { priority: 'should' }
+      if story_text.match(regex_hash[:role_regexp])
+        user_story = base_user_story(story_text, regex_hash)
+      else
+        user_story = { description: story_text }
+      end
+      user_story_statics.merge(user_story)
+    end
+
+    def base_user_story(story_text, regex)
       {
-        role: story_text.match(REGEXP_HASH[:role_regexp])[1].to_s.strip,
-        action: story_text.match(REGEXP_HASH[:action_regexp])[1].to_s.strip,
-        result: story_text.match(REGEXP_HASH[:result_regexp])[0].to_s.strip,
-        estimated_points: '',
-        priority: 'should'
+        role: story_text.match(regex[:role_regexp])[2].to_s.strip,
+        action: story_text.match(regex[:action_regexp])[2].to_s.strip,
+        result: story_text.match(regex[:result_regexp])[2].to_s.strip
       }
     end
 
@@ -127,6 +109,17 @@ module ArborReloaded
       @auth_url = ENV['SLACK_AUTH_URL']
       @auth_access_url = ENV['SLACK_ACCESS_URL']
       @data_url = ENV['SLACK_DATA_URL']
+    end
+
+    def regex_hash
+      roles = I18n.translate('slack.user_story.role').join('|')
+      actions = I18n.translate('slack.user_story.action').join('|')
+      results = I18n.translate('slack.user_story.result').join('|')
+      {
+        role_regexp: /(#{roles})[n]? (.*?)(#{actions})/i,
+        action_regexp: /(#{actions}) (.*?)(#{results})/i,
+        result_regexp: /(#{results})\s+(.*)/i
+      }
     end
   end
 end

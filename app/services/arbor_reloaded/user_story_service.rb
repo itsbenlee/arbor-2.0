@@ -8,7 +8,6 @@ module ArborReloaded
     def new_user_story(user_story_params, current_user)
       user_story = UserStory.new(user_story_params)
       update_associations(user_story)
-
       if user_story.save
         assign_response_and_activity(user_story, current_user)
       else
@@ -49,11 +48,9 @@ module ArborReloaded
 
     def assign_response_and_activity(user_story, current_user)
       route_helper = Rails.application.routes.url_helpers
-
       @project.create_activity :add_user_story,
         owner: current_user,
         parameters: { user_story: user_story.log_description }
-
       common_response_data = @common_response.data
       common_response_data[:user_story_id] = user_story.id
       common_response_data[:edit_url] =

@@ -54,6 +54,10 @@
       &.open { display: none; }
     }
 
+    .description {
+      margin: 1rem 0;
+    }
+
     .sentence,
     .created-data {
       padding: 0 ($story-body-offset-sides / 2);
