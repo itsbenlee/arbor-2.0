@@ -30,7 +30,8 @@ module ArborReloaded
         story_services.new_user_story(user_story_params, current_user)
       return unless @project.slack_iw_url
       ArborReloaded::SlackIntegrationService.new(@project)
-        .user_story_notify(@user_story)
+        .user_story_notify(@user_story,
+          arbor_reloaded_project_user_stories_url(@project))
     end
 
     def update
