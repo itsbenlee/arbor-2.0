@@ -85,7 +85,8 @@ module ApiSlack
     def error_text(error)
       error = error.to_s
       if error == 'PROJECT_NOT_FOUND'
-        text = t('slack.notifications.no_configured_error', link: 'getarbor.io')
+        text = t('slack.notifications.no_configured_error',
+          link: ENV['SLACK_CONNECT_URL_NOTIFICATION'])
       elsif error == 'EMPTY'
         text = t('slack.notifications.empty_error')
       else
