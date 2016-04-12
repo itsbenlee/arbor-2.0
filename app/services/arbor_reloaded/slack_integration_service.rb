@@ -1,5 +1,4 @@
 module ArborReloaded
-  include Rails.application.routes.url_helpers
   include HTTParty
   class SlackIntegrationService
     def initialize(project)
@@ -69,7 +68,7 @@ module ArborReloaded
       }.to_json, headers: { 'Content-Type' => 'application/json' })
     end
 
-    def user_story_notify(user_story)
+    def user_story_notify(user_story, link)
       return unless @project.slack_enabled?
       @user_story = user_story
       HTTParty.post(@project.slack_iw_url, body: {
@@ -78,9 +77,7 @@ module ArborReloaded
             title: I18n.translate('slack.notifications.story_created'),
             text: I18n.translate('slack.notifications.user_story',
               user_story: @user_story.log_description,
-              link: Rails.application.routes.url_helpers
-                .arbor_reloaded_project_user_stories_url(@project,
-                host: 'getarbor.io')),
+              link: link),
             color: '#28D7E5'
           }
         ]
@@ -91,7 +88,7 @@ module ArborReloaded
 
     def parse_new_user_story(story_text)
       user_story_statics = { priority: 'should' }
-      if story_text.match(regex_hash[:role_regexp])
+      if normal_us?(story_text, regex_hash)
         user_story = base_user_story(story_text, regex_hash)
       else
         user_story = { description: story_text }
@@ -122,6 +119,13 @@ module ArborReloaded
         action_regexp: /(#{actions}) (.*?)(#{results})/i,
         result_regexp: /(#{results})\s+(.*)/i
       }
+    end
+
+    def normal_us?(story_text, regex)
+      role = story_text.match(regex[:role_regexp]) || []
+      action = story_text.match(regex[:action_regexp]) || []
+      result = story_text.match(regex[:result_regexp]) || []
+      role[2].present? && action[2].present? && result[2].present?
     end
   end
 end
