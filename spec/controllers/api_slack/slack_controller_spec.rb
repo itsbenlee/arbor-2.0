@@ -23,4 +23,18 @@ RSpec.describe ApiSlack::SlackController do
         project, slack_status: 'success'))
     end
   end
+
+  describe 'toggle_notifications' do
+    it 'should enable slack notifications' do
+      notifications = project.slack_enabled
+      get :toggle_notifications, project_id: project.id, format: :json
+      expect(Project.find(project.id).slack_enabled).to eq(!notifications)
+    end
+
+    it 'should disable slack notifications' do
+      project.update_attribute(:slack_enabled, true)
+      expect{ get :toggle_notifications, project_id: project.id, format: :json }
+          .to change{Project.find(project.id).slack_enabled}.from(true).to(false)
+    end
+  end
 end

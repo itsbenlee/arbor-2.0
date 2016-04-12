@@ -30,7 +30,8 @@ module ArborReloaded
         story_services.new_user_story(user_story_params, current_user)
       return unless @project.slack_iw_url
       ArborReloaded::SlackIntegrationService.new(@project)
-        .user_story_notify(@user_story)
+        .user_story_notify(@user_story,
+          arbor_reloaded_project_user_stories_url(@project))
     end
 
     def update
@@ -40,7 +41,7 @@ module ArborReloaded
           json_update
         end
         format.js do
-          @user_story
+          js_update
         end
       end
     end
@@ -65,6 +66,11 @@ module ArborReloaded
     end
 
     private
+
+    def js_update
+      return @user_story unless story_update_params['description']
+      @user_story.update_attributes(role: nil, action: nil, result: nil)
+    end
 
     def json_update
       if story_update_params[:estimated_points]
@@ -112,7 +118,7 @@ module ArborReloaded
     def user_story_params
       params.require(:user_story).permit(
         :role, :action, :result, :estimated_points,
-        :priority, tag_ids: []
+        :priority, :description, tag_ids: []
       )
     end
 

@@ -58,7 +58,7 @@
     }
 
     .modal-content {
-      padding: rem-calc(40);
+      padding: rem-calc(50);
       position: relative;
       text-align: center;
 
@@ -72,6 +72,15 @@
         p {
           color: $modal-content-paragraph;
           margin: 0;
+        }
+
+        .details {
+          color: $black;
+          font-size: 14px;
+          line-height: 2.5;
+          margin: 3rem 0;
+          padding: 0 2rem;
+          text-align: center;
         }
 
       }
@@ -91,20 +100,74 @@
         right: rem-calc(40);
       }
 
+      .toggle-button {
+        border: 1px solid;
+        border-radius: 15px;
+        cursor: pointer;
+        float: right;
+        height: 20px;
+        margin-top: 2px;
+        transition: background .3s, border .3s;
+        user-select: none;
+        width: 36px;
+      }
+
+      .in-toggle-button {
+        background-color: $white;
+        border: 1px solid;
+        border-radius: 50%;
+        height: 20px;
+        margin-top: -1px;
+        transition: margin .3s, border .3s;
+        width: 20px;
+      }
+
       .save-settings {
         @include border-radius($reveal-radius);
-        background-color: $white;
-        border: 1px solid $modal-container-border;
-        color: $modal-container-border;
+        background-color: $success-color;
+        color: $white;
         font-weight: $font-weight-bold;
         height: 35px;
         margin-top: rem-calc(55);
-        padding-top: 5px;
+        padding: 10px 60px;
+        position: relative;
+        right: 0;
+        text-align: center;
         width: 136px;
+      }
+    }
 
-        &:hover {
-          background-color: $modal-container-border;
-          color: $white;
+    .slack-success {
+      border: 1px solid;
+      border-radius: 5px;
+      margin: 3rem 4rem;
+      padding: 10px;
+      text-align: left;
+
+      &.enabled {
+        border-color: $success-color;
+
+        .toggle-button {
+          background-color: $success-color;
+          border-color: $success-color;
+        }
+
+        .in-toggle-button {
+          border-color: $success-color;
+          margin-left: 15px;
+        }
+      }
+
+      &.disabled {
+        border-color: $border-color;
+
+        .toggle-button {
+          background-color: $light-grey;
+          border-color: $light-grey;
+        }
+
+        .in-toggle-button {
+          border-color: $border-color;
         }
       }
     }

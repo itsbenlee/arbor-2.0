@@ -1,4 +1,5 @@
 require 'spec_helper'
+extend RSpec::Matchers
 module ArborReloaded
   feature 'update project' do
     let(:project)         { create :project }

@@ -32,12 +32,17 @@ feature 'Story detail modal', js:true do
   scenario 'should be able to edit a story' do
     within '#story-detail-modal' do
       find('.sentence').click
-      fill_in 'role-input', with: 'developer'
+      fill_in 'user_story_description', with: 'This is the new user story'
       find('#save-user-story').click
     end
+
     wait_for_ajax
     user_story.reload
-    expect(user_story.role).to eq('developer')
+    expect(user_story.role).to eq(nil)
+    expect(user_story.action).to eq(nil)
+    expect(user_story.result).to eq(nil)
+
+    expect(user_story.description).to eq('This is the new user story')
   end
 
   scenario 'should be able to see other actions' do

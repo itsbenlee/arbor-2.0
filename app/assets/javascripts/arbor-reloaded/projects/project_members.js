@@ -1,15 +1,14 @@
-// functions needed on the modal view, Ale
-var footerButtonInitialText = '';
-$('#project-members-modal').on('opened.fndtn.reveal', function() {
-  var showEditProject   = $('#show_edit_project'),
-      projectDataModal  = $('.project-members'),
-      editProjectForm   = $('.modal-edit-project-form'),
-      footerButtonId = $('#people-modal-footer-btn');
-      newMemberMailTextId = $('.new-member-mail'),
-      removeMemberCheck = $('.remove-member-check'),
+function ProjectMembers() {
+  var footerButtonInitialText     = '',
+      showEditProject             = $('#show_edit_project'),
+      projectDataModal            = $('.project-members'),
+      editProjectForm             = $('.modal-edit-project-form'),
+      footerButtonId              = $('#people-modal-footer-btn'),
+      newMemberMailTextId         = $('.new-member-mail'),
+      removeMemberCheck           = $('.remove-member-check'),
       removeMemberFromProjectLink = $('.remove-member-link a'),
-      footerButtonInitialText = $(footerButtonId).text(),
-      membersToRemoveArray = [];
+      footerButtonInitialText     = $(footerButtonId).text(),
+      membersToRemoveArray        = [];
 
   bindAddMemberToRemove();
   customScroll();
@@ -56,14 +55,17 @@ $('#project-members-modal').on('opened.fndtn.reveal', function() {
 
   function removeMembers(members) {
     $(members).each(function(index, el) {
-      var url = $(el).data('url'),
-          type = 'DELETE',
-          currentObject = {};
-      ajaxCall(url,type,currentObject);
+      $.ajax({
+        type: 'DELETE',
+        url: $(el).data('url'),
+        success: function (response) {
+          $('.members-avatars').html(response);
+        },
+      });
     });
     closeMembersModal();
   }
-});
+}
 
 function closeMembersModal() {
   $('#project-members-modal').foundation('reveal', 'close');

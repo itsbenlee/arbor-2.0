@@ -4,7 +4,6 @@ class UserStory < ActiveRecord::Base
   PRIORITIES = %w(must should could would)
   acts_as_commentable
 
-  validates_presence_of :role, :action, :result
   validates_uniqueness_of :order, scope: :hypothesis_id, allow_nil: true
   validates_uniqueness_of :backlog_order, scope: :project_id, allow_nil: true
   validates_uniqueness_of :story_number, scope: :project_id
@@ -17,8 +16,7 @@ class UserStory < ActiveRecord::Base
   has_many :acceptance_criterions,
     -> { order(order: :asc) }, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_many :constraints,
-    -> { order(order: :asc) }, dependent: :destroy
+  has_many :constraints, -> { order(order: :asc) }, dependent: :destroy
   belongs_to :hypothesis
   belongs_to :project
 
@@ -33,6 +31,7 @@ class UserStory < ActiveRecord::Base
   end
 
   def log_description
+    return description unless role
     "As #{role.with_indefinite_article} "\
     "#{I18n.t('reloaded.backlog.action')} "\
     "#{action} "\
@@ -126,5 +125,17 @@ class UserStory < ActiveRecord::Base
 
   def assign_hypothesis
     self.hypothesis_id ||= project.undefined_hypothesis.id
+  end
+
+  with_options unless: :role_action_or_result_missing? do |user_story|
+    user_story.validates :role, :action, :result, presence: true
+  end
+
+  with_options if: :role_action_or_result_missing? do |user_story|
+    user_story.validates :description, presence: true
+  end
+
+  def role_action_or_result_missing?
+    role.blank? || action.blank? || result.blank?
   end
 end

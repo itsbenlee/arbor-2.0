@@ -13,8 +13,8 @@ module ApiSlack
                  .build_user_story(slack_params[:text], @user)
       render json: success_response(response),
              status: (response.success ? 201 : 422)
-    rescue StandardError
-      render json: error_response, status: false
+    rescue StandardError => error
+      render json: error_response(error), status: false
     end
 
     private
@@ -46,9 +46,7 @@ module ApiSlack
 
     def set_project_using_slack_id
       @project = Project.find_by(slack_channel_id: slack_params[:channel_id])
-      fail(
-        "Can't find project related to the given slack channel id"
-      ) unless @project
+      fail('PROJECT_NOT_FOUND') unless @project
     end
 
     def set_user
@@ -56,35 +54,45 @@ module ApiSlack
     end
 
     def success_response(response)
-      user_story_id = response.data[:user_story_id]
-      title_link = edit_user_story_url(user_story_id)
+      user_story = UserStory.find(response.data[:user_story_id])
       {
         response_type: 'in_channel',
-        text: t('slack.notifications.story_created'),
         attachments: [
           {
-            title: "US#: #{user_story_id}",
-            title_link: title_link,
-            text: t('slack.notifications.story_created_text',
-              user_story_id: user_story_id, title_link: title_link),
+            title: t('slack.notifications.story_created'),
+            text: t('slack.notifications.user_story',
+              user_story: user_story.log_description,
+              link: arbor_reloaded_project_user_stories_url(@project)),
             color: '#28D7E5'
           }
         ]
       }
     end
 
-    def error_response
+    def error_response(error)
       {
         response_type: 'in_channel',
-        text: t('slack.notifications.story_error'),
         attachments: [
           {
             title: t('slack.notifications.story_error_title'),
-            text: t('slack.notifications.story_error_text'),
+            text: error_text(error),
             color: '#D50200'
           }
         ]
       }
+    end
+
+    def error_text(error)
+      error = error.to_s
+      if error == 'PROJECT_NOT_FOUND'
+        text = t('slack.notifications.no_configured_error',
+          link: ENV['SLACK_CONNECT_URL_NOTIFICATION'])
+      elsif error == 'EMPTY'
+        text = t('slack.notifications.empty_error')
+      else
+        text = t('slack.notifications.default_error')
+      end
+      text
     end
   end
 end

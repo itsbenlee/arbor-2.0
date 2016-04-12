@@ -30,7 +30,7 @@
           = link_to '#', data: { reveal_id: 'trello-modal' } do
             = t('reloaded.navigation.export_trello')
             %span.icn-export
-        .hidden-element
+        - if ENV['ENABLE_SLACK'] == 'true'
           %li
             = react_component('SlackButton', {}, {prerender: false})
         - if current_user == current_project.owner
@@ -38,31 +38,14 @@
             = link_to arbor_reloaded_project_path(current_project), method: :delete, data: { confirm: t('project.delete_confirmation') } do
               = t('project.delete_project')
               %span.icn-delete
-  %ul.right.members
-    %li
-      = link_to '+', |
-      arbor_reloaded_project_members_path(current_project), |
-      { class: 'add-member has-tip', data: { reveal_id: 'project-members-modal', reveal_ajax: true, tooltip: '' }, aria: { haspopup: true }, title: t('reloaded.tooltips.add_members') }
-    - current_project.members.each_with_index do |member, index|
-      - if index < 3
-        %li
-          = link_to arbor_reloaded_project_members_path(current_project), { data: { reveal_id: 'project-members-modal', reveal_ajax: true }} do
-            - if member.avatar?
-              .avatar-img{ style: "background-image: url(#{member.avatar_url})" }
-            - else
-              = image_tag(member.gravatar_url, class: 'avatar-img', onerror: "this.src=''")
-              .avatar-circle#avatar-circle= user_initial(member)
-    - if current_project.members.count > 3
-      %li
-        = link_to arbor_reloaded_project_members_path(current_project), { class: 'other-members', data: { reveal_id: 'project-members-modal', reveal_ajax: true }} do
-          +
-          = current_project.members.count - 3
-#project-members-modal.reveal-modal{ data: { reveal: '' } }
+  %ul.right.members.members-avatars
+    = render 'arbor_reloaded/navigation/right_members', project: current_project
 %div
+
   = react_component('SlackModal',
     { url: arbor_reloaded_project_path(current_project),
-      slackToken: current_project.slack_token,
-      slackChannelId: current_project.slack_channel_id,
-      projectId: current_project.id }, {prerender: false})
+      slackConnected: current_project.slack_channel_id ? true : false,
+      projectId: current_project.id,
+      slackEnabled: current_project.slack_enabled }, { prerender: false })
 
 = render 'arbor_reloaded/trello/trello_modal', current_project: current_project
