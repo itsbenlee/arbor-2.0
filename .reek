@@ -147,6 +147,7 @@ UtilityFunction:
     UserStory#reorder_constraints,
     ConstraintServices#get_order,
     SlackIntegrationService,
-    UserAvatarImageUploader#default_url
+    UserAvatarImageUploader#default_url,
+    'ApplicationController#ssl_configured?'
   ]
   max_helper_calls: 1
