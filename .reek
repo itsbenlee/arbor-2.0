@@ -135,7 +135,6 @@ UnusedParameters:
 UtilityFunction:
   enabled: true
   exclude: [
-    ApplicationController#ssl_configured?,
     UserStoriesHelper#format_story_points,
     ApplicationHelper#meta_title,
     ApplicationHelper#meta_description,
