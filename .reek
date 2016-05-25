@@ -105,7 +105,7 @@ UncommunicativeMethodName:
   accept: []
 UncommunicativeModuleName:
   enabled: true
-  exclude: []
+  exclude: ['V1']
   reject:
   - !ruby/regexp /^.$/
   - !ruby/regexp /[0-9]$/

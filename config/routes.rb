@@ -172,6 +172,12 @@ Railsroot::Application.routes.draw do
     put 'users/ajax_update',
       controller: :users,
       action: :ajax_update
+
+    namespace :api, defaults: { format: :json } do
+      namespace :v1 do
+        resources :projects, only: :create
+      end
+    end
   end
 
   namespace :api_slack do
