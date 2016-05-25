@@ -41,10 +41,6 @@ class Project < ActiveRecord::Base
     (total_points / velocity.to_f).ceil
   end
 
-  def as_json
-    super(only: [:name])
-  end
-
   def name_url_hash
     {
       label: name,
@@ -118,5 +114,9 @@ class Project < ActiveRecord::Base
   def undefined_hypothesis
     hypotheses
       .find_or_create_by(description: I18n.t('labs.undefined_hypothesis'))
+  end
+
+  def as_json
+    { id: id, name: name, errors: errors.full_messages }
   end
 end
