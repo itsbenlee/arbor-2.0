@@ -175,7 +175,9 @@ Railsroot::Application.routes.draw do
 
     namespace :api, defaults: { format: :json } do
       namespace :v1 do
-        resources :projects, only: :create
+        resources :projects, only: :create do
+          resources :user_stories, only: :create
+        end
       end
     end
   end

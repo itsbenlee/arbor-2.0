@@ -10,6 +10,10 @@ module ArborReloaded
 
         protected
 
+        def current_user
+          @api_key.try(:user)
+        end
+
         def restrict_access
           authenticate_or_request_with_http_token do |token|
             @api_key = ApiKey.find_by_access_token(token)
