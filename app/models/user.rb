@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   has_many :team_users
   has_many :teams, through: :team_users
   has_one :api_key, dependent: :destroy
-  after_save :generate_api_key
+  after_commit :generate_api_key, on: %i(create update)
 
   mount_uploader :avatar, UserAvatarImageUploader
   delegate :access_token, to: :api_key, prefix: false
