@@ -80,7 +80,8 @@ class UserStory < ActiveRecord::Base
       role: role,
       action: action,
       result: result,
-      estimated_points: estimated_points }.compact
+      estimated_points: estimated_points,
+      acceptance_criterions: acceptance_criterions.map(&:as_json) }.compact
   end
 
   private
