@@ -117,6 +117,9 @@ class Project < ActiveRecord::Base
   end
 
   def as_json
-    { id: id, name: name, errors: errors.full_messages }
+    { id: id,
+      name: name,
+      user_stories: user_stories.map(&:as_json),
+      errors: errors.full_messages }
   end
 end

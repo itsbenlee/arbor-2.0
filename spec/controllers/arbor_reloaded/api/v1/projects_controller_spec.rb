@@ -2,7 +2,7 @@ require 'spec_helper'
 
 RSpec.describe ArborReloaded::Api::V1::ProjectsController do
   describe 'without user' do
-    describe '#index' do
+    describe '#create' do
       before do
         request.env['HTTP_AUTHORIZATION'] =
           ActionController::HttpAuthentication::Token.encode_credentials('fake credentials')
@@ -18,7 +18,7 @@ RSpec.describe ArborReloaded::Api::V1::ProjectsController do
   describe 'for common user' do
     let(:user) { create :user }
 
-    describe '#index' do
+    describe '#create' do
       before do
         request.env['HTTP_AUTHORIZATION'] =
           ActionController::HttpAuthentication::Token.encode_credentials(user.access_token)
