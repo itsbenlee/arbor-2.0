@@ -52,4 +52,12 @@ feature 'User profile', js:true do
       expect(page.evaluate_script("$('#avatar-circle').text()")).to eq('J')
     end
   end
+
+  scenario 'I should have my api key' do
+    expect(page.evaluate_script("$('#arbor-token-field').text()")).to eq(user.access_token)
+  end
+
+  scenario 'I should see the copy token button' do
+    expect(page).to have_content('Copy access token')
+  end
 end

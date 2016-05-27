@@ -22,6 +22,10 @@
     .field-title
       %h5.mail-title= t('reloaded.users.mail')
       = f.email_field :email, class: 'user-mail dashed-input'
+    .arbor-token
+      %span#arbor-token-field.hide= current_user.access_token
+      = link_to t('reloaded.users.copy_token'),'#', class:  'button radius tiny copy-token', id: 'copy-token'
+      %span.info{ aria: { haspopup: true }, title: t('reloaded.tooltips.copy_token'), tooltip: '' } ?
     = link_to t('reloaded.users.edit'),'#', class:  'button radius tiny', id: 'edit-user-profile-btn'
     = f.submit t('reloaded.users.save'), class: 'button radius tiny ', id: 'save-user-profile'
     = link_to t('reloaded.users.cancel_btn'), '#', class: 'button radius secondary tiny', id: 'cancel-btn'
