@@ -27,6 +27,8 @@ class Project < ActiveRecord::Base
   scope :recent, -> { order(updated_at: :desc) }
   scope :by_name, -> { order('LOWER(name)') }
 
+  after_commit :owner_as_member
+
   def total_points
     user_stories.map(&:estimated_points).compact.sum
   end
@@ -121,5 +123,10 @@ class Project < ActiveRecord::Base
       name: name,
       user_stories: user_stories.map(&:as_json),
       errors: errors.full_messages }
+  end
+
+  def owner_as_member
+    return if members.include? owner
+    members << owner
   end
 end
