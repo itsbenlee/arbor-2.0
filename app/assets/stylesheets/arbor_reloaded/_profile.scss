@@ -91,7 +91,19 @@ $profile-margin: $user-header-padding;
     margin-top: $profile-margin / 2;
   }
 
-  .button { margin-top: $profile-margin * 2; }
+  .button {
+    margin-top: $profile-margin * 1.5;
+
+    &.copy-token { margin: rem-calc(20 10 0); }
+  }
+
+  .arbor-token {
+    .info {
+      color: $black-50;
+      cursor: pointer;
+      font-size: rem-calc(20);
+    }
+  }
 } // profile section
 
 .section-profile,

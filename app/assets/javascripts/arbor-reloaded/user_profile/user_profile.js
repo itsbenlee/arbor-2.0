@@ -17,6 +17,7 @@ $(document).ready(function(){
     setVisibleState(interactiveButtons, false);
 
     bindUpdateOnImageSelect();
+    copyArborToken();
   }
 });
 
@@ -24,6 +25,13 @@ $(document).ready(function(){
 function bindUpdateOnImageSelect() {
   $("#edit-user-avatar-link").change(function(){
     $('#save-user-profile').click();
+  });
+}
+
+function copyArborToken() {
+  $('#copy-token').click(function(){
+    clipboard.copy($('#arbor-token-field').text());
+    return false;
   });
 }
 

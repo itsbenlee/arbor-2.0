@@ -1,6 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui/sortable
+//= require vendor/clipboard.min.js
 //= require react
 //= require react_ujs
 //= require components
