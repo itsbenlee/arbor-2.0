@@ -34,7 +34,7 @@
     = link_to t('reloaded.project_dashboard.delete_project'), arbor_reloaded_user_story_path(@user_story), method: :delete, class: 'button radius alert tiny'
     = link_to t('reloaded.project_dashboard.cancel'), '#', class: 'cancel'
     %p.disclaimer= t('reloaded.story_modal.delete.disclaimer')
-  .edition-form
+  .edition-form#edit-mode
     = render 'arbor_reloaded/user_stories/edit_form', user_story: @user_story
 .modal-wrapper
   %section.acceptance-criteria.story-modal-section

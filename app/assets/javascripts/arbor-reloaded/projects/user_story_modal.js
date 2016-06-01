@@ -44,17 +44,21 @@ function UserStory() {
 
   function NavigateUserStories() {
     $(document).unbind('keydown');
-    $(document).bind('keydown', function(e){
-      var $nextStory = $storyModal.find('.icn-arrow-right'),
-          $prevStory = $storyModal.find('.icn-arrow-left');
+    $(document).bind('keydown', function(e) {
+      var $inEditMode = $('#edit-mode').hasClass('active');
 
-      switch (e.which) {
-        case 37:
-          $prevStory.trigger('click');
-          break;
-        case 39:
-          $nextStory.trigger('click');
-          break;
+      if (!$inEditMode) {
+        var $nextStory = $storyModal.find('.icn-arrow-right'),
+            $prevStory = $storyModal.find('.icn-arrow-left');
+
+        switch (e.which) {
+          case 37:
+            $prevStory.trigger('click');
+            break;
+          case 39:
+            $nextStory.trigger('click');
+            break;
+        }
       }
     });
   }//navigate user stories
