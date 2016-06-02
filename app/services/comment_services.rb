@@ -26,6 +26,6 @@ class CommentServices
       parameters:
         { user_story: @user_story.log_description, comment: params[:comment] }
     @common_response.data[:edit_url] =
-      @route_helper.edit_user_story_path(@user_story)
+      @route_helper.arbor_reloaded_project_user_stories_path(@user_story)
   end
 end

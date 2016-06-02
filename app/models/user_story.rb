@@ -54,24 +54,6 @@ class UserStory < ActiveRecord::Base
     copy_associations(replica.id)
   end
 
-  def reorder_criterions(criterions_hash)
-    acceptance_criterions.update_all order: nil
-    criterions_hash.values.each do |criterion|
-      acceptance_criterions
-        .find(criterion['id'].to_i)
-        .update_attributes!(order: criterion['criterion_order'].to_i)
-    end
-  end
-
-  def reorder_constraints(constraints_hash)
-    constraints.update_all order: nil
-    constraints_hash.values.each do |constraint|
-      constraints
-        .find(constraint['id'].to_i)
-        .update_attributes!(order: constraint['constraint_order'].to_i)
-    end
-  end
-
   def as_json
     { id: id,
       description: description,
