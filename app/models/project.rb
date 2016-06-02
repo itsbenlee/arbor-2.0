@@ -102,12 +102,6 @@ class Project < ActiveRecord::Base
     canvas.copy_in_project(replica.id)
   end
 
-  def copy_hypothesis(replica)
-    hypotheses.each do |hypothesis|
-      hypothesis.copy_in_project(replica.id)
-    end
-  end
-
   def clean_log
     activities.delete_all
     create_activity :create_project
