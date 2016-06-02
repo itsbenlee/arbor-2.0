@@ -27,6 +27,8 @@ class Project < ActiveRecord::Base
   scope :recent, -> { order(updated_at: :desc) }
   scope :by_name, -> { order('LOWER(name)') }
 
+  after_commit :owner_as_member
+
   def total_points
     user_stories.map(&:estimated_points).compact.sum
   end
@@ -39,10 +41,6 @@ class Project < ActiveRecord::Base
   def total_weeks
     return 0 unless velocity
     (total_points / velocity.to_f).ceil
-  end
-
-  def as_json
-    super(only: [:name])
   end
 
   def name_url_hash
@@ -118,5 +116,17 @@ class Project < ActiveRecord::Base
   def undefined_hypothesis
     hypotheses
       .find_or_create_by(description: I18n.t('labs.undefined_hypothesis'))
+  end
+
+  def as_json
+    { id: id,
+      name: name,
+      user_stories: user_stories.map(&:as_json),
+      errors: errors.full_messages }
+  end
+
+  def owner_as_member
+    return if members.include? owner
+    members << owner
   end
 end

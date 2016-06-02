@@ -74,6 +74,16 @@ class UserStory < ActiveRecord::Base
     end
   end
 
+  def as_json
+    { id: id,
+      description: description,
+      role: role,
+      action: action,
+      result: result,
+      estimated_points: estimated_points,
+      acceptance_criterions: acceptance_criterions.map(&:as_json) }.compact
+  end
+
   private
 
   def order_in_hypotheses

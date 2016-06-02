@@ -44,29 +44,6 @@ feature 'Show project details' do
     expect(page).to have_css('form#edit_project')
   end
 
-  context 'when clicking on edit', js: true do
-    background do
-      find_link('Edit').click
-      click_button 'New Member'
-    end
-
-    scenario 'should add new members' do
-      fill_in 'member_2', with: member.email
-
-      click_button 'Update Project'
-      expect(page).to have_content user.email
-      expect(page).to have_content member.email
-    end
-
-    scenario 'should create an invite for non-existing users' do
-      fill_in 'member_2', with: 'non-existing@test.com'
-      click_button 'Update Project'
-
-      expect(Invite.first.email).to eq('non-existing@test.com')
-      expect(Invite.first.project.name).to eq(project.name)
-    end
-  end
-
   context 'the user is the project owner' do
     background do
       project.update_attributes(owner: user)

@@ -13,6 +13,10 @@ class AcceptanceCriterion < ActiveRecord::Base
     save
   end
 
+  def as_json
+    { id: id, description: description }
+  end
+
   private
 
   def assign_order

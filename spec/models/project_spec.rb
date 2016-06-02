@@ -55,4 +55,10 @@ describe Project do
       end
     end
   end
+
+  describe 'owner_as_member' do
+    it 'should assign owner as member' do
+      expect(project.members).to include(project.owner)
+    end
+  end
 end

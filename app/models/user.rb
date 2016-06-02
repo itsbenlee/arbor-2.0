@@ -21,8 +21,12 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :team_users
   has_many :teams, through: :team_users
+  has_many :user_stories, through: :projects
+  has_one :api_key, dependent: :destroy
+  after_commit :generate_api_key, on: %i(create update)
 
   mount_uploader :avatar, UserAvatarImageUploader
+  delegate :access_token, to: :api_key, prefix: false
 
   def can_delete?(project)
     self == project.owner
@@ -30,5 +34,12 @@ class User < ActiveRecord::Base
 
   def log_description
     full_name
+  end
+
+  private
+
+  def generate_api_key
+    return if api_key
+    create_api_key!
   end
 end
