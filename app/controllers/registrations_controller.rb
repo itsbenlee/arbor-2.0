@@ -5,11 +5,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   def after_sign_up_path_for(resource)
     create_user_resources
-    if ENV['ENABLE_RELOADED'] == 'false'
-      projects_path
-    else
-      super
-    end
+    super
   end
 
   def create # rubocop:disable all
