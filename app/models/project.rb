@@ -121,7 +121,7 @@ class Project < ActiveRecord::Base
   def as_json
     { id: id,
       name: name,
-      user_stories: user_stories.map(&:as_json),
+      user_stories: user_stories.backlog_ordered.map(&:as_json),
       errors: errors.full_messages }
   end
 

@@ -63,24 +63,23 @@ feature 'Log activity'do
       let(:user_story)  { build :user_story }
 
       background do
-        visit project_user_stories_path project
+        visit arbor_reloaded_project_user_stories_path(project)
       end
 
       scenario 'should log adding user stories' do
-        visit current_path
+        allow_any_instance_of(ArborReloaded::IntercomServices)
+          .to receive(:create_event).and_return(true)
 
-        within 'form.new_user_story' do
-          fill_in :user_story_role, with: user_story.role
-          fill_in :user_story_action, with: user_story.action
-          fill_in :user_story_result, with: user_story.result
-
-          PublicActivity.with_tracking do
-            click_button 'Save'
+        PublicActivity.with_tracking do
+          within 'form.new_user_story' do
+            find('#role-input').set(user_story.role)
+            find('#action-input').set(user_story.action)
+            find('#result-input').set(user_story.result)
           end
+          find('input#save-user-story').click
         end
 
-        activity_keys = PublicActivity::Activity.pluck(:key)
-        expect(activity_keys).to include 'project.add_user_story'
+        expect(project.activities.first.key).to eq('project.add_user_story')
       end
     end
   end
