@@ -18,7 +18,7 @@ RSpec.describe ArborReloaded::ProjectsController do
     end
 
     it 'should be able to add members' do
-      request.env["HTTP_REFERER"] = project_user_stories_path project
+      request.env["HTTP_REFERER"] = arbor_reloaded_project_user_stories_path project
       put :add_member, project_id: project.id, member: user3.email
 
       project.reload

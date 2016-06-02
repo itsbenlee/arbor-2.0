@@ -54,7 +54,7 @@ module ArborReloaded
       common_response_data = @common_response.data
       common_response_data[:user_story_id] = user_story.id
       common_response_data[:edit_url] =
-        route_helper.edit_user_story_path(user_story)
+        route_helper.arbor_reloaded_project_user_stories_path(user_story)
     end
 
     def update_associations(user_story)
