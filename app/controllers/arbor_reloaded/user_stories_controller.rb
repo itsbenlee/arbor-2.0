@@ -25,7 +25,7 @@ module ArborReloaded
     end
 
     def create
-      story_services = ReloadedStoryService.new(@project)
+      story_services = ArborReloaded::UserStoryService.new(@project)
       @user_story =
         story_services.new_user_story(user_story_params, current_user)
       return unless @project.slack_iw_url

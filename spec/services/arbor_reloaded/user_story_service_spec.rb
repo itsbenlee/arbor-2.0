@@ -27,14 +27,19 @@ module ArborReloaded
       }
     }
 
+    before :each do
+      allow_any_instance_of(ArborReloaded::IntercomServices)
+        .to receive(:create_event).and_return(true)
+    end
+
     scenario 'for Arbor Reloaded, should create and return it' do
-      story = story_service.new_user_story(user_story_params, user)
+      story = story_service.slack_user_story(user_story_params, user)
       expect(story.success).to be(true)
       expect(story.data[:user_story_id]).to eq(UserStory.last.id)
     end
 
     scenario 'should create a User Story and assign the project' do
-      response = story_service.new_user_story(user_story_params, user)
+      response = story_service.slack_user_story(user_story_params, user)
       expect(response.success).to be(true)
       story = UserStory.find(response.data[:user_story_id])
       expect(story).to be_a(UserStory)
@@ -47,7 +52,7 @@ module ArborReloaded
     end
 
     scenario 'should create a User Story' do
-      response = story_service.new_user_story(user_story_params, user)
+      response = story_service.slack_user_story(user_story_params, user)
       expect(response.success).to eq(true)
       story = UserStory.find(response.data[:user_story_id])
       expect(story).to be_a(UserStory)

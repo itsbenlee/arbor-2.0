@@ -5,6 +5,11 @@ module ArborReloaded
     let(:project)         { create :project, slack_channel_id: 23456 }
     let(:slack_integration_service) { ArborReloaded::SlackIntegrationService.new(project) }
 
+    before :each do
+      allow_any_instance_of(ArborReloaded::IntercomServices)
+        .to receive(:create_event).and_return(true)
+    end
+
     scenario 'should create a user story using text' do
       text = 'As an Admin I want to have privileges to all the database so that I can check the tables.'
       response = slack_integration_service.build_user_story(text, user)

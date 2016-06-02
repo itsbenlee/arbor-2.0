@@ -5,6 +5,11 @@ RSpec.describe ApiSlack::UserStoriesController do
     let!(:user)        { create :user, slack_id: 'slackUser12345' }
     let!(:project)     { create :project, owner: user, slack_channel_id: 23456  }
 
+    before :each do
+      allow_any_instance_of(ArborReloaded::IntercomServices)
+        .to receive(:create_event).and_return(true)
+    end
+
     it 'should create the story and send a success response when role, action and result are defined' do
       post :create,
         format: :json,

@@ -11,7 +11,7 @@ module ArborReloaded
       normalized_us_text = story_text.downcase.squish
       user_story_service = ArborReloaded::UserStoryService.new(@project)
       if normalized_us_text.strip.length > 0
-        @common_response = user_story_service.new_user_story(
+        @common_response = user_story_service.slack_user_story(
           parse_new_user_story(normalized_us_text),
           current_user
         )
