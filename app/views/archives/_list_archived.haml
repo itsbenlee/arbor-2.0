@@ -1,9 +1,0 @@
-.archived-user-stories
-  %h2= t('archive.title')
-  - if user_stories.count > 0
-    - user_stories.each do |user_story|
-      %li.user-story
-        %span= user_story.log_description
-        = link_to t('archive.restore'), '#', class: 'restore-link', url: user_story_path(user_story)
-  - else
-    %p= t('archive.empty_archive')

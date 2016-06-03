@@ -1,51 +1,15 @@
-- if ENV['ENABLE_RELOADED'] == 'true'
-  - content_for :user_nav do
-    = render 'arbor_reloaded/navigation/user_nav'
-  .change-password.row
-    .small-12.medium-6.small-centered.columns.text-center
-      = form_for(resource, as: resource_name, url: registration_path(resource_name),
-      html: { method: :put }) do |f|
-        = devise_error_messages!
-        .edit-inputs
-          .field
-            = f.password_field :password, autocomplete: 'off', required: true, placeholder: t('reloaded.users.enter_password'), class: 'dashed-input'
-          .field
-            = f.password_field :password_confirmation, autocomplete: 'off', required: true, placeholder: :password_confirmation, class: 'dashed-input'
-          .field
-            = f.password_field :current_password, autocomplete: 'off', required: true, placeholder: :current_password, class: 'dashed-input'
-        = f.submit t('user_sessions.change_password'), class: 'button small radius'
-- else
-  %h2
-    Edit #{resource_name.to_s.humanize}
-  = form_for(resource, as: resource_name, url: registration_path(resource_name),
-  html: { method: :put }) do |f|
-    = devise_error_messages!
-    .field
-      = f.label :email
-      %br/
-      = f.email_field :email, autofocus: true, required: true
-    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-      %div
-        Currently waiting confirmation for: #{resource.unconfirmed_email}
-    .field
-      = f.label :password
-      %i (leave blank if you don't want to change it)
-      %br/
-      = f.password_field :password, autocomplete: 'off', required: true
-    .field
-      = f.label :password_confirmation
-      %br/
-      = f.password_field :password_confirmation, autocomplete: 'off',
-      required: true
-    .field
-      = f.label :current_password
-      %i (we need your current password to confirm your changes)
-      %br/
-      = f.password_field :current_password, autocomplete: 'off', required: true
-    .actions
-      = f.submit 'Update'
-  %h3 Cancel my account
-  -# %p
-  -#   Unhappy? #{button_to 'Cancel my account', registration_path(resource_name),
-  -#   data: { confirm: 'Are you sure?' }, method: :delete}
-  = link_to 'Back', :back
+- content_for :user_nav do
+  = render 'arbor_reloaded/navigation/user_nav'
+.change-password.row
+  .small-12.medium-6.small-centered.columns.text-center
+    = form_for(resource, as: resource_name, url: registration_path(resource_name),
+    html: { method: :put }) do |f|
+      = devise_error_messages!
+      .edit-inputs
+        .field
+          = f.password_field :password, autocomplete: 'off', required: true, placeholder: t('reloaded.users.enter_password'), class: 'dashed-input'
+        .field
+          = f.password_field :password_confirmation, autocomplete: 'off', required: true, placeholder: :password_confirmation, class: 'dashed-input'
+        .field
+          = f.password_field :current_password, autocomplete: 'off', required: true, placeholder: :current_password, class: 'dashed-input'
+      = f.submit t('user_sessions.change_password'), class: 'button small radius'

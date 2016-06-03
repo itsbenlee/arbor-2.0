@@ -4,7 +4,6 @@ feature 'Log activity'do
   let!(:user) { create :user }
 
   background do
-    ENV['ENABLE_RELOADED'] = 'true'
     sign_in user
   end
 

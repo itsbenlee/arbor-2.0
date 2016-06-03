@@ -8,7 +8,6 @@ feature 'Sign up to Arbor' do
     allow_any_instance_of(ArborReloaded::IntercomServices)
       .to receive(:user_create_event).and_return(true)
     visit new_user_registration_path
-    ENV['ENABLE_RELOADED'] = 'true'
   end
 
   scenario 'should show me the minimum password length when I enter' do

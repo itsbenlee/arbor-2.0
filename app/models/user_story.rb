@@ -20,7 +20,6 @@ class UserStory < ActiveRecord::Base
   belongs_to :hypothesis
   belongs_to :project
 
-  scope :not_archived, -> { where(archived: false) }
   scope :backlog_ordered, -> { order(backlog_order: :desc) }
 
   def self.estimation_series
