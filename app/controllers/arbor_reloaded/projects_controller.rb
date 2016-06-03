@@ -114,22 +114,6 @@ module ArborReloaded
       render layout: 'application_reload'
     end
 
-    def backlog
-      project = Project.includes(
-        user_stories: [:acceptance_criterions, :constraints],
-        members: {},
-        hypotheses: {})
-                .order('user_stories.backlog_order')
-                .find(params[:project_id])
-      user_stories = project.user_stories
-
-      render partial: 'user_stories/backlog_list',
-             locals:
-             { user_stories: user_stories,
-               project: project,
-               total_points: @project.total_points }
-    end
-
     def copy
       project =
         Project
