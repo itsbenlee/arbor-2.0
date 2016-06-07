@@ -1,0 +1,410 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.trello.com/1/boards?key=VALID_TRELLO_DEVELOPER_KEY&token=VALID_TRELLO_AUTH_TOKEN
+    body:
+      encoding: US-ASCII
+      string: name=ab(1)
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '10'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15768000
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Trello-Version:
+      - 1.582.0
+      X-Trello-Environment:
+      - Production
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE
+      X-Server-Time:
+      - '1456250106133'
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '745'
+      Etag:
+      - W/"2e9-edb81312"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 23 Feb 2016 17:55:06 GMT
+      Set-Cookie:
+      - incap_ses_298_168562=mCtSLXJRqzYOTvOr6bUiBPmczFYAAAAA5YkOHv3DDIyqrlo/1sxI6Q==;
+        path=/; Domain=.trello.com
+      - visid_incap_168562=7/t5rZtUQ0W6APUuH9HSiPmczFYAAAAAQUIPAAAAAACFXd6GmjptZNkSqw60KfI8;
+        expires=Wed, 22 Feb 2017 08:55:38 GMT; path=/; Domain=.trello.com
+      X-Iinfo:
+      - 9-215839845-215792267 PNNN RT(1456250104964 123) q(0 0 0 -1) r(3 3) U6
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: UTF-8
+      string: '{"id":"56cc9cfa154982bc371588f3","name":"ab(1)","desc":"","descData":null,"closed":false,"idOrganization":null,"pinned":false,"url":"https://trello.com/b/pnqpxo3f/ab-1","shortUrl":"https://trello.com/b/pnqpxo3f","prefs":{"permissionLevel":"private","voting":"disabled","comments":"members","invitations":"members","selfJoin":true,"cardCovers":true,"cardAging":"regular","calendarFeedEnabled":false,"background":"blue","backgroundImage":null,"backgroundImageScaled":null,"backgroundTile":false,"backgroundBrightness":"dark","backgroundColor":"#0079BF","canBePublic":true,"canBeOrg":true,"canBePrivate":true,"canInvite":true},"labelNames":{"green":"","yellow":"","orange":"","red":"","purple":"","blue":"","sky":"","lime":"","pink":"","black":""}}'
+    http_version:
+  recorded_at: Tue, 23 Feb 2016 17:57:42 GMT
+- request:
+    method: get
+    uri: https://api.trello.com/1/boards/56cc9cfa154982bc371588f3/lists?filter=open&key=VALID_TRELLO_DEVELOPER_KEY&token=VALID_TRELLO_AUTH_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15768000
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Trello-Version:
+      - 1.582.0
+      X-Trello-Environment:
+      - Production
+      Set-Cookie:
+      - dsc=acb63c4956e3fc00dc5e5685c02d6339fc2ab1739af45a22340ce249b699bdc6; Path=/;
+        Expires=Fri, 26 Feb 2016 17:55:07 GMT; Secure
+      - incap_ses_298_168562=uehXZGvikRrMUvOr6bUiBPqczFYAAAAA5lhqsoTyjL+bF4hCYZYg7w==;
+        path=/; Domain=.trello.com
+      - visid_incap_168562=Dr9ZFnbOR/KIgBktp+LhGvqczFYAAAAAQUIPAAAAAAAQco1vH5u2hp2nvIGYiG9D;
+        expires=Wed, 22 Feb 2017 08:55:38 GMT; path=/; Domain=.trello.com
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE
+      X-Server-Time:
+      - '1456250107635'
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '396'
+      Etag:
+      - W/"18c-b7934317"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 23 Feb 2016 17:55:07 GMT
+      X-Iinfo:
+      - 9-215840448-215792267 PNNN RT(1456250106508 131) q(0 0 0 -1) r(2 2) U2
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: UTF-8
+      string: '[{"id":"56cc9cfa154982bc371588f4","name":"To Do","closed":false,"idBoard":"56cc9cfa154982bc371588f3","pos":16384,"subscribed":false},{"id":"56cc9cfa154982bc371588f5","name":"Doing","closed":false,"idBoard":"56cc9cfa154982bc371588f3","pos":32768,"subscribed":false},{"id":"56cc9cfa154982bc371588f6","name":"Done","closed":false,"idBoard":"56cc9cfa154982bc371588f3","pos":49152,"subscribed":false}]'
+    http_version:
+  recorded_at: Tue, 23 Feb 2016 17:57:43 GMT
+- request:
+    method: put
+    uri: https://api.trello.com/1/lists/56cc9cfa154982bc371588f4?key=VALID_TRELLO_DEVELOPER_KEY&token=VALID_TRELLO_AUTH_TOKEN
+    body:
+      encoding: US-ASCII
+      string: name=To%20Do&closed=true&pos=16384
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '34'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15768000
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Trello-Version:
+      - 1.582.0
+      X-Trello-Environment:
+      - Production
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE
+      X-Server-Time:
+      - '1456250108171'
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '111'
+      Etag:
+      - W/"6f-da1bf46d"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 23 Feb 2016 17:55:08 GMT
+      Set-Cookie:
+      - incap_ses_298_168562=+G8YDIVLOVXGVPOr6bUiBPuczFYAAAAAguDAxwYO1uB0LPR2IjoLvw==;
+        path=/; Domain=.trello.com
+      - visid_incap_168562=Bo9WpsghRImd3X8O1cIuOPuczFYAAAAAQUIPAAAAAAANAGzeq7iOR5m2Zwp2ANAl;
+        expires=Wed, 22 Feb 2017 08:55:40 GMT; path=/; Domain=.trello.com
+      X-Iinfo:
+      - 3-88004671-87868732 PNNN RT(1456250106998 154) q(0 0 0 -1) r(3 3) U6
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: UTF-8
+      string: '{"id":"56cc9cfa154982bc371588f4","name":"To Do","closed":true,"idBoard":"56cc9cfa154982bc371588f3","pos":16384}'
+    http_version:
+  recorded_at: Tue, 23 Feb 2016 17:57:44 GMT
+- request:
+    method: put
+    uri: https://api.trello.com/1/lists/56cc9cfa154982bc371588f5?key=VALID_TRELLO_DEVELOPER_KEY&token=VALID_TRELLO_AUTH_TOKEN
+    body:
+      encoding: US-ASCII
+      string: name=Doing&closed=true&pos=32768
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '32'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15768000
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Trello-Version:
+      - 1.582.0
+      X-Trello-Environment:
+      - Production
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE
+      X-Server-Time:
+      - '1456250109187'
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '111'
+      Etag:
+      - W/"6f-92be3002"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 23 Feb 2016 17:55:09 GMT
+      Set-Cookie:
+      - incap_ses_298_168562=gkkqWOTLLBibV/Or6bUiBPyczFYAAAAAFkxPVlXfVm1XeGxvgruLqw==;
+        path=/; Domain=.trello.com
+      - visid_incap_168562=8mkny1iyRjOY07tAMYMvOvyczFYAAAAAQUIPAAAAAAA0Wr//pQfhj5obE0FjlI7J;
+        expires=Wed, 22 Feb 2017 08:55:40 GMT; path=/; Domain=.trello.com
+      X-Iinfo:
+      - 5-141119897-141119947 NNNN CT(142 145 0) RT(1456250107748 137) q(0 0 3 -1)
+        r(5 5) U6
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: UTF-8
+      string: '{"id":"56cc9cfa154982bc371588f5","name":"Doing","closed":true,"idBoard":"56cc9cfa154982bc371588f3","pos":32768}'
+    http_version:
+  recorded_at: Tue, 23 Feb 2016 17:57:45 GMT
+- request:
+    method: put
+    uri: https://api.trello.com/1/lists/56cc9cfa154982bc371588f6?key=VALID_TRELLO_DEVELOPER_KEY&token=VALID_TRELLO_AUTH_TOKEN
+    body:
+      encoding: US-ASCII
+      string: name=Done&closed=true&pos=49152
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '31'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15768000
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Trello-Version:
+      - 1.582.0
+      X-Trello-Environment:
+      - Production
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE
+      X-Server-Time:
+      - '1456250110741'
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '110'
+      Etag:
+      - W/"6e-aa505efd"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 23 Feb 2016 17:55:10 GMT
+      Set-Cookie:
+      - incap_ses_298_168562=3p2TMFqyZVOcXPOr6bUiBP2czFYAAAAA1xWbBfP9qSKELFsSRbmSug==;
+        path=/; Domain=.trello.com
+      - visid_incap_168562=MaV32EFcQbuFLLkn9eyrKf2czFYAAAAAQUIPAAAAAACBgZ50ixDlEpm9VdJ0DFTG;
+        expires=Wed, 22 Feb 2017 08:55:38 GMT; path=/; Domain=.trello.com
+      X-Iinfo:
+      - 9-215841624-215833165 PNNN RT(1456250109572 137) q(0 0 0 -1) r(2 2) U6
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: UTF-8
+      string: '{"id":"56cc9cfa154982bc371588f6","name":"Done","closed":true,"idBoard":"56cc9cfa154982bc371588f3","pos":49152}'
+    http_version:
+  recorded_at: Tue, 23 Feb 2016 17:57:46 GMT
+- request:
+    method: post
+    uri: https://api.trello.com/1/lists?key=VALID_TRELLO_DEVELOPER_KEY&token=VALID_TRELLO_AUTH_TOKEN
+    body:
+      encoding: US-ASCII
+      string: name=Arbor%20Backlog%20Export&closed=false&idBoard=56cc9cfa154982bc371588f3&pos=
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '80'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15768000
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Trello-Version:
+      - 1.582.0
+      X-Trello-Environment:
+      - Production
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE
+      X-Server-Time:
+      - '1456250111392'
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '126'
+      Etag:
+      - W/"7e-56a7cca1"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 23 Feb 2016 17:55:11 GMT
+      Set-Cookie:
+      - incap_ses_298_168562=PkcIFZhg5XfWXvOr6bUiBP6czFYAAAAAmJC1Wg7mbETW/m00LGvnlw==;
+        path=/; Domain=.trello.com
+      - visid_incap_168562=MwIfbf07RNCK3OXoOgh0Hf6czFYAAAAAQUIPAAAAAADdUqknzivu1B9HfE4r7q6J;
+        expires=Wed, 22 Feb 2017 08:55:40 GMT; path=/; Domain=.trello.com
+      X-Iinfo:
+      - 2-69823948-69730245 PNNN RT(1456250110126 240) q(0 0 0 -1) r(2 2) U6
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: UTF-8
+      string: '{"id":"56cc9cff27006f64a2f68e86","name":"Arbor Backlog Export","closed":false,"idBoard":"56cc9cfa154982bc371588f3","pos":8192}'
+    http_version:
+  recorded_at: Tue, 23 Feb 2016 17:57:47 GMT
+recorded_with: VCR 2.9.3

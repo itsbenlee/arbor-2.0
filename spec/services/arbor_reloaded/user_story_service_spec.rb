@@ -27,14 +27,19 @@ module ArborReloaded
       }
     }
 
+    before :each do
+      allow_any_instance_of(ArborReloaded::IntercomServices)
+        .to receive(:create_event).and_return(true)
+    end
+
     scenario 'for Arbor Reloaded, should create and return it' do
-      story = story_service.new_user_story(user_story_params, user)
+      story = story_service.slack_user_story(user_story_params, user)
       expect(story.success).to be(true)
       expect(story.data[:user_story_id]).to eq(UserStory.last.id)
     end
 
     scenario 'should create a User Story and assign the project' do
-      response = story_service.new_user_story(user_story_params, user)
+      response = story_service.slack_user_story(user_story_params, user)
       expect(response.success).to be(true)
       story = UserStory.find(response.data[:user_story_id])
       expect(story).to be_a(UserStory)
@@ -47,7 +52,7 @@ module ArborReloaded
     end
 
     scenario 'should create a User Story' do
-      response = story_service.new_user_story(user_story_params, user)
+      response = story_service.slack_user_story(user_story_params, user)
       expect(response.success).to eq(true)
       story = UserStory.find(response.data[:user_story_id])
       expect(story).to be_a(UserStory)
@@ -85,6 +90,17 @@ module ArborReloaded
         expect(another_project.user_stories[index].priority).to eq(user_story.priority)
         expect(another_project.user_stories[index].estimated_points).to eq(user_story.estimated_points)
       end
+    end
+  end
+
+  feature 'destroy user story' do
+    let(:project)       { create :project }
+    let(:story_service) { ArborReloaded::UserStoryService.new(project) }
+    let(:user_story)    { create :user_story }
+
+    scenario 'should load the response' do
+      response = story_service.destroy_stories(user_story)
+      expect(response.success).to eq(true)
     end
   end
 end

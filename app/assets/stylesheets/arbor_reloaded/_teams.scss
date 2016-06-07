@@ -1,0 +1,69 @@
+//   TEAMS VIEW
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.section-people {
+  .button.add-team { float: right; }
+
+  #teams-list {
+    float: left;
+    margin-top: rem-calc(30);
+    width: 100%;
+  }
+
+  .teams-list {
+    .block-wrapper {
+      min-height: $block-min-height;
+    }
+
+    .block-wrapper:hover {
+      &::after { height: $bottom-square-height + $block-padding / 2; }
+    }//hover on team thumbnails
+
+    .title {
+      font-size: rem-calc(18);
+      line-height: 1;
+      margin-bottom: rem-calc(5);
+      width: 100%;
+    }//title
+
+    .right,
+    .actions {
+      right: $block-padding + $block-grid-default-spacing / 2;
+      top: $block-padding;
+    }
+
+    .members-amount {
+      color: $black-30;
+      font-size: rem-calc(14);
+      margin: 0;
+    }//members amount
+  }//teams list
+}//section people
+////// Team modal
+
+#team-modal,
+#team-members-modal {
+  .team-name,
+  .team-member-email {
+    font-size: rem-calc(14);
+    margin: rem-calc(35) auto rem-calc(10);
+    text-align: center;
+
+    @include input-placeholder { font-size: rem-calc(14); }
+
+    &.errors { border-color: $alert-color; }
+
+    &.team-member-email { margin: initial; }
+  }//project name input
+
+  .new-team-errors,
+  .team-member-errors {
+    color: $alert-color;
+    font-size: rem-calc(14);
+    margin-bottom: rem-calc(30);
+  }
+}//project modal
+
+// No teams view
+
+.no-teams #new-team-button { float: none; }

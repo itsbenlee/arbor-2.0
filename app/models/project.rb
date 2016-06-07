@@ -2,9 +2,16 @@ class Project < ActiveRecord::Base
   include PublicActivity::Common
 
   validates_presence_of :name
-  validates_uniqueness_of :name, scope: :owner
+  validates_uniqueness_of :name,
+                          scope: :owner,
+                          message: 'Project name already exists'
+  validates_uniqueness_of :slack_channel_id, allow_nil: true
+  validates_uniqueness_of :slack_iw_url, allow_nil: true
+  validates_uniqueness_of :is_template,
+    if: proc { |project| project.is_template }
 
   belongs_to :owner, class_name: User
+  belongs_to :team
   has_one :canvas, dependent: :destroy
   has_many :hypotheses, dependent: :destroy
   has_many :invites, dependent: :destroy
@@ -20,8 +27,20 @@ class Project < ActiveRecord::Base
   scope :recent, -> { order(updated_at: :desc) }
   scope :by_name, -> { order('LOWER(name)') }
 
-  def as_json
-    super(only: [:name])
+  after_commit :owner_as_member
+
+  def total_points
+    user_stories.map(&:estimated_points).compact.sum
+  end
+
+  def total_cost
+    return 0 unless velocity && cost_per_week
+    cost_per_week * (total_points / velocity.to_f).ceil
+  end
+
+  def total_weeks
+    return 0 unless velocity
+    (total_points / velocity.to_f).ceil
   end
 
   def name_url_hash
@@ -36,7 +55,24 @@ class Project < ActiveRecord::Base
     invites.any? { |invite| invite.email == email }
   end
 
+  def assign_team(selected_team_name, current_user)
+    if selected_team_name.blank?
+      self.owner = current_user
+    else
+      team = current_user.teams.find_by(name: selected_team_name)
+      self.team = team
+      assign_team_owner(team)
+    end
+  end
+
+  def assign_team_owner(team)
+    team_owner = team.owner
+    self.owner = team_owner
+    members << team_owner
+  end
+
   def add_member(user)
+    return if members.include?(user)
     create_activity :add_member,
       parameters: { element: user.log_description }
     members << user
@@ -66,12 +102,6 @@ class Project < ActiveRecord::Base
     canvas.copy_in_project(replica.id)
   end
 
-  def copy_hypothesis(replica)
-    hypotheses.each do |hypothesis|
-      hypothesis.copy_in_project(replica.id)
-    end
-  end
-
   def clean_log
     activities.delete_all
     create_activity :create_project
@@ -80,5 +110,17 @@ class Project < ActiveRecord::Base
   def undefined_hypothesis
     hypotheses
       .find_or_create_by(description: I18n.t('labs.undefined_hypothesis'))
+  end
+
+  def as_json
+    { id: id,
+      name: name,
+      user_stories: user_stories.backlog_ordered.map(&:as_json),
+      errors: errors.full_messages }
+  end
+
+  def owner_as_member
+    return if members.include? owner
+    members << owner
   end
 end

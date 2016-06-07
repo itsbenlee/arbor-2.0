@@ -1,0 +1,38 @@
+#user-session {
+  .arbor-logo {
+    margin: rem-calc(60) auto rem-calc(45);
+    width: rem-calc(150);
+
+    @media #{$small-only} { margin: rem-calc(35) auto; }
+  } // logo
+
+  .actions { text-align: center; }
+
+  .shared-links,
+  .user-session-footer {
+    text-align: center;
+
+    span,
+    a { color: $black-40; }
+
+    a { text-decoration: underline; }
+
+    .login-question { margin-top: rem-calc(15); }
+  }
+
+  .password-information {
+    color: $black-30;
+    font-size: rem-calc(13);
+    line-height: 1;
+    margin-bottom: rem-calc(15);
+  }
+
+  // scss-lint:disable SelectorFormat
+  #error_explanation {
+    background-color: $white;
+    margin-bottom: rem-calc(20);
+    padding: rem-calc(20);
+  }
+} // usser session wrapper
+
+.change-password.row .button { margin-top: rem-calc(20); }

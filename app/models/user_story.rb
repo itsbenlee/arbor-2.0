@@ -4,7 +4,6 @@ class UserStory < ActiveRecord::Base
   PRIORITIES = %w(must should could would)
   acts_as_commentable
 
-  validates_presence_of :role, :action, :result
   validates_uniqueness_of :order, scope: :hypothesis_id, allow_nil: true
   validates_uniqueness_of :backlog_order, scope: :project_id, allow_nil: true
   validates_uniqueness_of :story_number, scope: :project_id
@@ -17,18 +16,11 @@ class UserStory < ActiveRecord::Base
   has_many :acceptance_criterions,
     -> { order(order: :asc) }, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_many :constraints,
-    -> { order(order: :asc) }, dependent: :destroy
+  has_many :constraints, -> { order(order: :asc) }, dependent: :destroy
   belongs_to :hypothesis
   belongs_to :project
 
-  scope :ordered, -> { order(order: :asc) }
-  scope :not_archived, -> { where(archived: false) }
-  scope :archived, -> { where(archived: true) }
-
-  def self.total_points(user_stories)
-    user_stories.map(&:estimated_points).compact.sum
-  end
+  scope :backlog_ordered, -> { order(backlog_order: :desc) }
 
   def self.estimation_series
     fib = ->(arg) { arg < 2 ? arg : fib[arg - 1] + fib[arg - 2] }
@@ -36,11 +28,11 @@ class UserStory < ActiveRecord::Base
   end
 
   def log_description
-    "As #{role.indefinite_article} "\
-    "#{role} "\
-    "#{I18n.t('backlog.user_stories.action', priority: priority)} "\
+    return description unless role
+    "As #{role.with_indefinite_article} "\
+    "#{I18n.t('reloaded.backlog.action')} "\
     "#{action} "\
-    "#{I18n.t('backlog.user_stories.result')} "\
+    "#{I18n.t('reloaded.backlog.result')} "\
     "#{result}"
   end
 
@@ -61,22 +53,14 @@ class UserStory < ActiveRecord::Base
     copy_associations(replica.id)
   end
 
-  def reorder_criterions(criterions_hash)
-    acceptance_criterions.update_all order: nil
-    criterions_hash.values.each do |criterion|
-      acceptance_criterions
-        .find(criterion['id'].to_i)
-        .update_attributes!(order: criterion['criterion_order'].to_i)
-    end
-  end
-
-  def reorder_constraints(constraints_hash)
-    constraints.update_all order: nil
-    constraints_hash.values.each do |constraint|
-      constraints
-        .find(constraint['id'].to_i)
-        .update_attributes!(order: constraint['constraint_order'].to_i)
-    end
+  def as_json
+    { id: id,
+      description: description,
+      role: role,
+      action: action,
+      result: result,
+      estimated_points: estimated_points,
+      acceptance_criterions: acceptance_criterions.map(&:as_json) }.compact
   end
 
   private
@@ -101,6 +85,13 @@ class UserStory < ActiveRecord::Base
   def copy_associations(replica_id)
     copy_criterions(replica_id)
     copy_constraints(replica_id)
+    copy_comments(replica_id)
+  end
+
+  def copy_comments(replica_id)
+    comments.each do |comment|
+      comment.copy_comment(replica_id)
+    end
   end
 
   def copy_criterions(replica_id)
@@ -123,5 +114,17 @@ class UserStory < ActiveRecord::Base
 
   def assign_hypothesis
     self.hypothesis_id ||= project.undefined_hypothesis.id
+  end
+
+  with_options unless: :role_action_or_result_missing? do |user_story|
+    user_story.validates :role, :action, :result, presence: true
+  end
+
+  with_options if: :role_action_or_result_missing? do |user_story|
+    user_story.validates :description, presence: true
+  end
+
+  def role_action_or_result_missing?
+    role.blank? || action.blank? || result.blank?
   end
 end

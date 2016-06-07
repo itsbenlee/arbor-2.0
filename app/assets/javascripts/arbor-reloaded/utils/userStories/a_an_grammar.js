@@ -1,36 +1,19 @@
-// Bind key events to user roles being typed live, Ale
-$('#user_story_role.role').on('keydown keyup', function(e) {
+$('#role-input.role').on('keydown keyup', function(e) {
   prependGramaticallyCorrectArticle(this);
 });
 
-// On document ready
 $(document).ready(function() {
-  fixArticlesForRolesOnLab();
   fixArticlesForRolesOnBacklog();
 });
 
-function fixArticlesForRolesOnLab(){
-  // for lab, look for articles and fix them accordingly, Ale
-  if ($('.hypothesis').length > 0) {
-    $('.role').each(function(index, currentValue) {
-      if (currentValue.children.length > 0 &&
-          currentValue.children[1].tagName == 'INPUT') {
-        prependGramaticallyCorrectArticle(currentValue.children[1]);
-      }
-    });
-  }
-};
-
-function fixArticlesForRolesOnBacklog(){
-  // for backlog, look for articles and fix them accordingly, Ale
-  if ($('.user-stories').length > 0) {
-    $('.story-text').each(function(index, currentValue) {
-      if (currentValue.children.length &&
-          currentValue.children[1].tagName == 'SPAN') {
-        prependGramaticallyCorrectArticle(currentValue.children[1]);
-      }
-    });
-  }
+function fixArticlesForRolesOnBacklog() {
+  $('.story-text').each(function(index, currentValue) {
+    if ($(currentValue).find('.description').length === 0 &&
+        currentValue.children.length &&
+        currentValue.children[1].tagName == 'SPAN') {
+      prependGramaticallyCorrectArticle(currentValue.children[1]);
+    }
+  });
 };
 
 function prependGramaticallyCorrectArticle(element){

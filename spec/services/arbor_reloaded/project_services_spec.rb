@@ -1,4 +1,5 @@
 require 'spec_helper'
+extend RSpec::Matchers
 module ArborReloaded
   feature 'update project' do
     let(:project)         { create :project }
@@ -39,6 +40,22 @@ module ArborReloaded
     end
   end
 
+  feature 'Create template' do
+    let!(:user)             { create :user }
+    let!(:project)          { create :project }
+    let!(:project_services) { ArborReloaded::ProjectServices.new(project) }
+
+    scenario 'creates a template project' do
+      expect { project_services.replicate_template(user) }.to change { Project.count }.by 1
+      last_project = Project.last
+      expect(last_project.id).to_not eq(project.id)
+      expect(last_project.user_stories).to eq(project.user_stories)
+      expect(last_project.canvas).to eq(project.canvas)
+      expect(last_project.name).to eq(project.name)
+      expect(last_project.owner).to eq(user)
+    end
+  end
+
   feature 'Copy project' do
     let!(:user)             { create :user }
     let!(:project)          { create :project, owner: user }
@@ -49,14 +66,14 @@ module ArborReloaded
     end
 
     scenario 'should update number of copies' do
-      user_story = create :user_story, project: project, hypothesis: nil
+      user_story = create :user_story, project: project
       project_services.replicate(user)
       project.reload
       expect(project.copies).to eq(1)
     end
 
     scenario 'should copy all the stories' do
-      create_list :user_story, 3, project: project, hypothesis: nil
+      create_list :user_story, 3, project: project
       response = project_services.replicate(user)
 
       expect(response.data[:project].user_stories.count).to eq(3)

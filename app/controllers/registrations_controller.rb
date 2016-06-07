@@ -3,8 +3,9 @@ class RegistrationsController < Devise::RegistrationsController
   skip_before_action :authenticate_user!
   after_action :add_member_to_projects, only: :create
 
-  def new
-    redirect_to new_user_session_path
+  def after_sign_up_path_for(resource)
+    create_user_resources
+    super
   end
 
   def create # rubocop:disable all
@@ -39,6 +40,12 @@ class RegistrationsController < Devise::RegistrationsController
 
   def resource_name
     :user
+  end
+
+  def create_user_resources
+    ArborReloaded::IntercomServices.new(current_user).user_create_event
+    project = Project.find_by(is_template: true)
+    ArborReloaded::ProjectServices.new(project).replicate_template(current_user)
   end
 
   def add_member_to_projects

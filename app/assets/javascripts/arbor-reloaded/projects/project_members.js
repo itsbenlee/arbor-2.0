@@ -1,62 +1,70 @@
-// functions needed on the modal view, Ale
-var footerButtonInitialText = '';
-$('#project-members-modal').on('opened.fndtn.reveal', function() {
-  var showEditProject   = $('#show_edit_project'),
-      projectDataModal  = $('.project-members'),
-      editProjectForm   = $('.modal-edit-project-form'),
-      footerButtonId = $('#people-modal-footer-btn');
-      newMemberMailTextId = $('.new-member-mail'),
-      removeMemberFromProjectCheck = $('#remove-member-check'),
+function ProjectMembers() {
+  var footerButtonInitialText     = '',
+      showEditProject             = $('#show_edit_project'),
+      projectDataModal            = $('.project-members'),
+      editProjectForm             = $('.modal-edit-project-form'),
+      footerButtonId              = $('#people-modal-footer-btn'),
+      newMemberMailTextId         = $('.new-member-mail'),
+      removeMemberCheck           = $('.remove-member-check'),
       removeMemberFromProjectLink = $('.remove-member-link a'),
-      footerButtonInitialText = $(footerButtonId).text();
+      footerButtonInitialText     = $(footerButtonId).text(),
+      membersToRemoveArray        = [];
 
-  bindActionsToButton();
-  bindActionsOnRemovalCheckboxes();
-  displayInitialWhenNoAvatar();
+  bindAddMemberToRemove();
+  customScroll();
 
   $(newMemberMailTextId).keyup(function(e) {
-   if($(this).val() === '') {
-     $(footerButtonId).text(footerButtonInitialText);
-   } else {
-     $(footerButtonId).text('Invite');
-   }
- });
-});
-
-//button function depending on what it says, Ale
-function bindActionsToButton() {
-  $('#people-modal-footer-btn').click(function(){
-    if ($(this).text() == 'Close') {
-      closeMembersModal();
-    }
-    if ($(this).text() == 'Invite') {
-      $('#submit-modal-form').click();
+    if($(this).val() === '') {
+      $(footerButtonId).text(footerButtonInitialText);
+      checkForSelectedMembers();
+    } else {
+      $(footerButtonId).text('Invite');
     }
   });
-}
 
-function displayInitialWhenNoAvatar() {
-  $('#project-members-modal .user-item.invited').has('.avatar-circle').each(function(index, currentValue) {
-    var initial = $(currentValue).children('.user-data').children('.user-mail').text().trim().substring(0,1);
-    $(currentValue).children('.avatar-circle').text(initial.toUpperCase());
-  });
-}
-
-//checkbox events on checked, Ale
-function bindActionsOnRemovalCheckboxes() {
-  removeMemberFromProjectCheck.click(function() {
-    if ($(this).is(':checked')) {
-      if ( confirm('Are you sure you want to remove the member?') ){
-        var url = $(this).data('url'),
-            type = 'DELETE',
-            currentObject = {};
-        ajaxCall(url,type,currentObject);
+  $('#people-modal-footer-btn').click(function() {
+    switch ($(this).text()) {
+      case 'Close':
         closeMembersModal();
-        alert('Member has been removed from project');
-      }
-      return false;
+        break;
+      case 'Invite':
+        $('.submit-modal-form').click();
+        break;
+      case 'Remove':
+        removeMembers(membersToRemoveArray);
+        break;
     }
   });
+
+  function checkForSelectedMembers() {
+    if (removeMemberCheck.is(':checked')) {
+      $(footerButtonId).text('Remove');
+    } else {
+      $(footerButtonId).text('Close');
+    }
+  }
+
+  function bindAddMemberToRemove() {
+    removeMemberCheck.click(function() {
+      if ($(this).is(':checked')) {
+        membersToRemoveArray.push(this);
+      }
+      checkForSelectedMembers();
+    });
+  }
+
+  function removeMembers(members) {
+    $(members).each(function(index, el) {
+      $.ajax({
+        type: 'DELETE',
+        url: $(el).data('url'),
+        success: function (response) {
+          $('.members-avatars').html(response);
+        },
+      });
+    });
+    closeMembersModal();
+  }
 }
 
 function closeMembersModal() {

@@ -1,4 +1,0 @@
-%div#log
-  - @activities_by_pages.each_with_index do |activity_page|
-    %div.log-page{ id: 'log_page', class: 'active' }
-      = render 'log_page', page_activities: activity_page

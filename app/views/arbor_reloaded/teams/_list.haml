@@ -1,0 +1,12 @@
+- if teams.count > 0
+  = link_to t('reloaded.team.create'), '#', id: 'new-team-button', class: 'button radius small add-team', data: { reveal_id: 'team-modal' }
+  %ul.teams-list.white-blocks-list.small-block-grid-1.medium-block-grid-3.large-block-grid-3
+    - teams.each do |team|
+      %li.team.white-block{ data: { id: team.id } }
+        = render 'arbor_reloaded/teams/team', team: team
+- else
+  .no-teams
+    %h2= t('reloaded.team.no_teams_title')
+    %p= t('reloaded.team.no_teams')
+    = link_to t('reloaded.team.create'), '#', id: 'new-team-button', class: 'button radius small add-team', data: { reveal_id: 'team-modal' }
+#team-members-modal.reveal-modal{ data: { reveal: '' } }

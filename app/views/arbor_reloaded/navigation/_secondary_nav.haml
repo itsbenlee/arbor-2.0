@@ -1,45 +1,51 @@
+%script{ src: "/assets/jquery.js?body=1" }
+%script{ src: "https://api.trello.com/1/client.js?key=#{ENV['TRELLO_DEVELOPER_PUBLIC_KEY']}" }
+
 %nav.secondary-nav
   %ul.left
     %li.not-ready
       = link_to t('reloaded.navigation.canvas'), arbor_reloaded_project_canvases_path(current_project), class: 'link'
     %li
-      = link_to t('reloaded.navigation.backlog'), arbor_reloaded_project_user_stories_path(current_project), class: 'link'
+      = active_link_to t('reloaded.navigation.backlog'), arbor_reloaded_project_user_stories_path(current_project), class: 'link'
     %li
-      = link_to t('reloaded.navigation.activity'), log_arbor_reloaded_project_path(current_project), class: 'link'
+      = active_link_to t('reloaded.navigation.activity'), log_arbor_reloaded_project_path(current_project), class: 'link'
     %li.not-ready
       = link_to t('reloaded.navigation.assets'), arbor_reloaded_project_attachments_path(current_project), class: 'link'
     %li
       = link_to '...', '#', aria: { controls: 'project-actions', expanded: false }, data: {dropdown: 'project-actions' }
       %ul#project-actions.f-dropdown{ data: { dropdown: { content: '' } } }
         %li
+          = link_to arbor_reloaded_project_export_backlog_path(current_project, format: :pdf, estimation: true) do
+            = t('reloaded.navigation.export_with_estimation')
+            %span.icn-export
+        %li
+          = link_to arbor_reloaded_project_export_backlog_path(current_project, format: :pdf, estimation: false) do
+            = t('reloaded.navigation.export_without_estimation')
+            %span.icn-export
+        %li
           = link_to arbor_reloaded_project_copy_path(current_project), method: :post, class: 'copy-project' do
             = t('project.copy_project')
             %span.icn-copy
         %li
-          = link_to current_project, method: :delete, data: { confirm: t('project.delete_confirmation') }, class: 'delete-project' do
-            = t('project.delete_project')
-            %span.icn-delete
-  %ul.right.members
-    - current_project.members.each_with_index do |member, index|
-      - if index == 0
-        %li
-          = link_to arbor_reloaded_project_members_path(current_project), { data: { reveal_id: 'project-members-modal', reveal_ajax: true }, style: "background-image: url(#{ image_path('icons/po_avatar.svg') });"} do
-            = image_tag ('icons/po_avatar.svg'), class: 'hide'
-      - if index == 1
-        %li
-          = link_to arbor_reloaded_project_members_path(current_project), { data: { reveal_id: 'project-members-modal', reveal_ajax: true }, style: "background-image: url(#{ image_path('icons/user-icon.svg') });"} do
-            = image_tag ('icons/user-icon.svg'), class: 'hide'
-      - if index == 2
-        %li
-          = link_to arbor_reloaded_project_members_path(current_project), { data: { reveal_id: 'project-members-modal', reveal_ajax: true }, style: "background-image: url(#{ image_path('icons/user-icon.svg') });"} do
-            = image_tag ('icons/user-icon.svg'), class: 'hide'
-    - if current_project.members.count > 3
-      %li
-        = link_to arbor_reloaded_project_members_path(current_project),{ data: { reveal_id: 'project-members-modal', reveal_ajax: true }}, class: 'other-members' do
-          +
-          = current_project.members.count - 3
-    %li
-      = link_to '+', |
-      arbor_reloaded_project_members_path(current_project), |
-      { class: 'add-member', data: { reveal_id: 'project-members-modal', reveal_ajax: true } }
-#project-members-modal.reveal-modal{ data: { reveal: '' } }
+          = link_to '#', data: { reveal_id: 'trello-modal' } do
+            = t('reloaded.navigation.export_trello')
+            %span.icn-export
+        - if ENV['ENABLE_SLACK'] == 'true'
+          %li
+            = react_component('SlackButton', {}, {prerender: false})
+        - if current_user == current_project.owner
+          %li
+            = link_to arbor_reloaded_project_path(current_project), method: :delete, data: { confirm: t('project.delete_confirmation') } do
+              = t('project.delete_project')
+              %span.icn-delete
+  %ul.right.members.members-avatars
+    = render 'arbor_reloaded/navigation/right_members', project: current_project
+%div
+
+  = react_component('SlackModal',
+    { url: arbor_reloaded_project_path(current_project),
+      slackConnected: current_project.slack_channel_id ? true : false,
+      projectId: current_project.id,
+      slackEnabled: current_project.slack_enabled }, { prerender: false })
+
+= render 'arbor_reloaded/trello/trello_modal', current_project: current_project

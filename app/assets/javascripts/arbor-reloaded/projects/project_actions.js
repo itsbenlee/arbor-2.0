@@ -4,9 +4,11 @@ function displayActions() {
 
   $actionCaller.on( "click", function( event ) {
     $('.actions').removeClass('visible');
+    $('.icn-comments').addClass('hidden-element');
     $actionContainer = $(this).closest('li');
     $actionContainer.find($('.actions')).addClass('visible');
-    return false;
+    event.stopPropagation();
+    event.preventDefault();
   });
 
   $('html').click(function() {
@@ -17,17 +19,21 @@ function displayActions() {
     if ($('.deleter').hasClass('visible')) {
       $('.deleter').removeClass('visible');
     }
+
+    if ($('.icn-comments').hasClass('hidden-element')) {
+      $('.icn-comments').removeClass('hidden-element');
+    }
   });
 }
 
 function displayHideDelete() {
-  var $deleteCaller = $('.delete-project'),
+  var $deleteCaller = $('.delete-project, .delete-story'),
       $cancel       = $('.cancel');
   $deleteCaller.on( "click", function( event ) {
     $deleteContainer = $(this).closest('li');
     $deleteContainer.find($('.deleter')).addClass('visible');
     $(this).parent().removeClass('visible');
-    return false;
+    event.stopPropagation();
   });
 
   $cancel.on('click', function( e ) {
@@ -37,4 +43,6 @@ function displayHideDelete() {
 
 $( document ).ready(function() {
   generalBinds();
+  bindAutoReveal();
+  hideShowEstimation();
 });

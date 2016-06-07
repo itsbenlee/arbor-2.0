@@ -8,7 +8,9 @@ $modal-padding: $modal-padding-top $modal-sides-padding;
 $modal-close-offset: rem-calc(20);
 
 #copy-stories-modal,
-#project-modal {
+#project-modal,
+#team-modal,
+#trello-modal {
   @extend .text-center;
 
   padding: $modal-padding;
@@ -19,6 +21,7 @@ $modal-close-offset: rem-calc(20);
 .reveal-modal-bg { position: fixed; }
 
 .reveal-modal {
+  margin-bottom: $modal-sides-padding;
   min-height: inherit;
   outline: 0;
 
@@ -46,6 +49,7 @@ $modal-close-offset: rem-calc(20);
     max-width: rem-calc(600);
 
     .close-reveal-modal {
+      @include opacity(.4);
       color: $white;
       right: - $modal-close-offset;
       top: - $modal-close-offset;
@@ -64,7 +68,6 @@ $modal-close-offset: rem-calc(20);
     background-color: $black-10;
     max-height: rem-calc(242);
     overflow: hidden;
-    overflow-y: scroll;
   }
 
   .modal-footer {
@@ -72,10 +75,4 @@ $modal-close-offset: rem-calc(20);
     padding: $modal-close-offset $modal-sides-padding 0;
     text-align: center;
   }
-
-  .secondary {
-    background-color: $black-10;
-    color: $black-80;
-    margin-left: $button-margin-bottom;
-  } // secondary btn
 }//reveal modal

@@ -1,0 +1,8 @@
+$('.select-board-list').hide();
+<% if @response.success %>
+  $('.trello-export-success').html('*<%= @response.data[:message] %>');
+<% elsif @response.data[:token_error] %>
+  authorizeTrello('existing_board', "#{arbor_reloaded_project_trello_index_path(project)}");
+<% else %>
+  $('.trello-export-error').html('*<%= @response.errors %>');
+<% end %>

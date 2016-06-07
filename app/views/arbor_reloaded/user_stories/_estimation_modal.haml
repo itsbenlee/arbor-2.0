@@ -1,0 +1,18 @@
+#edit-estimation-modal.reveal-modal{ aria: { hidden: true, labelledby: 'project-modal' }, data: { reveal: ''}, role: 'dialog' }
+  = link_to '×', '#', class: 'close-reveal-modal'
+  %header
+    %h5= t('reloaded.estimation.modal_title')
+  = form_for project, url: arbor_reloaded_project_path(project), html: { id: 'edit-project' }  do |f|
+    .edit-wrapper.row
+      .estimation-item.small-12.large-6.column
+        %h4.title= t('reloaded.estimation.modal_velocity')
+        = link_to '?', '#', class: 'has-tip estimation-info', aria: {haspopup: true}, data: {tooltip: ''}, title: t('reloaded.tooltips.estimation_velocity')
+        = f.label :velocity, class: 'hide'
+        = f.number_field :velocity, placeholder: t('project.default.velocity')
+      .estimation-item.small-12.large-6.column
+        %h4.title= t('reloaded.estimation.modal_cost')
+        = link_to '?', '#', class: 'has-tip estimation-info', aria: {haspopup: true}, data: {tooltip: ''}, title: t('reloaded.tooltips.estimation_cost')
+        = f.label :cost_per_week, class: 'hide'
+        = f.number_field :cost_per_week, placeholder: t('project.default.cost_per_week')
+    .modal-footer
+      = f.submit t('reloaded.estimation.save_button'), id: 'submit-edit-project-form', class: 'button radius tiny'

@@ -1,28 +1,23 @@
 //Activities
 .section-log {
   $avatar-dimension: rem-calc(50);
+  $avatar-margin: rem-calc(25);
   $log-line-created-width: rem-calc(135);
   $log-line-left-margin: rem-calc(30);
-
-  margin-top: rem-calc(30);
+  $log-line-total-with: $log-line-created-width + $log-line-left-margin;
 
   .log-entry {
     @include clearfix;
     border-bottom: $gainsboro 1px solid;
-  }
-
-  .log-entry,
-  .title {
     color: $black-30;
     display: block;
     padding: rem-calc(10 15);
     position: relative;
 
     .log-line-left {
-      @include clearfix;
       @include inline-block;
-      margin-right: $log-line-left-margin;
-      width: $log-line-created-width + $log-line-left-margin;
+      margin-right: 0;
+      width: $log-line-total-with;
 
       .created-at {
         margin-top: $avatar-dimension / 3;
@@ -30,34 +25,31 @@
       }
     }//log-line-left
 
-    .avatar-circle,
-    .log-details {
-      float: left;
-    }
+    .avatar,
+    .log-details { float: left; }
 
-    .avatar-circle {
-      @include border-radius(100%);
-      @include inline-block;
-      background: $black-30;
-      color: $black-10;
-      font-size: rem-calc(24);
+    .log-details { width: calc(100% - ( #{$avatar-dimension} + #{$avatar-margin})); }
+
+    .avatar {
+      @include user-avatar($avatar-dimension, rem-calc(20));
       height: $avatar-dimension;
-      line-height: $avatar-dimension;
-      margin-right: rem-calc(25);
-      text-align: center;
+      margin-right: $avatar-margin;
       width: $avatar-dimension;
     }
 
     .log-line-left,
-    .log-details {
-      margin-top: ($avatar-dimension / 5);
-    }
+    .log-details { margin-top: ($avatar-dimension / 5); }
 
     .log-line-right,
     .log-line-left {
       float: left;
 
       .log-entity { font-size: 12px; }
+    }
+
+    .log-line-right {
+      @include clearfix;
+      width: calc(100% - (#{$log-line-total-with} + #{$log-line-left-margin}));
     }
 
     h2 {

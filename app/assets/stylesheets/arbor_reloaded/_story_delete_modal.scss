@@ -19,21 +19,29 @@
     } // h2
   } // header
 
-  .story-item {
-    @include clearfix;
-    border-bottom: 1px solid $black-20;
-    font-size: rem-calc(12);
-    margin: $story-item-margin;
-    padding: $story-item-padding-top $story-item-margin-sides $story-item-padding-top ($story-item-margin-sides + $story-item-margin-sides / 3);
+  li {
     position: relative;
 
-    &:last-child { border-bottom: 0; }
+    .story-text {
+      @include clearfix;
+      border-bottom: 1px solid $black-20;
+      font-size: rem-calc(12);
+      margin: $story-item-margin;
+      padding: $story-item-padding-top $story-item-margin-sides $story-item-padding-top ($story-item-margin-sides + $story-item-margin-sides / 3);
+      position: relative;
+    } // story item
 
-    .story-points {
-      background-color: $white;
-      left: 0;
-    } // points
-  } // story item
+    &:last-of-type .story-text { border: 0; }
+  }//li
+
+  .story-points {
+    @include inline-block;
+    @include translateY(-56%);
+    background-color: $white;
+    left: 0;
+    margin-left: rem-calc(25);
+    top: 50%;
+  } // points
 
   .modal-footer {
     .disclaimer {

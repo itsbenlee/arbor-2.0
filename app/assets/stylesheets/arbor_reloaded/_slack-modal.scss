@@ -1,0 +1,175 @@
+.slack-modal {
+  $modal-container-bg: #fbfbfb;
+  $modal-container-border: #666;
+  $modal-container-title-bg: whitesmoke;
+  $modal-container-title-border: #ccc;
+  $modal-content-paragraph: #777;
+
+  &.modal {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1004;
+  }
+
+  .modal-bg {
+    background: rgba($black, .2);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1005;
+  }
+
+  .modal-container {
+    @include border-radius($reveal-radius);
+    background-color: $modal-container-bg;
+    border: solid 0 $modal-container-border;
+    box-sizing: border-box;
+    height: auto;
+    left: 50%;
+    margin-left: rem-calc(-300);
+    position: absolute;
+    top: 15%;
+    width: rem-calc(600);
+    z-index: 1006;
+
+    h5 {
+      @include border-top-left-radius($reveal-radius);
+      @include border-top-right-radius($reveal-radius);
+      background-color: $modal-container-title-bg;
+      border-bottom: rem-calc(1) solid $modal-container-title-border;
+      margin: 0;
+      padding: $modal-padding;
+    }
+
+    .modal-close-btn {
+      color: $white;
+      cursor: pointer;
+      font-size: rem-calc(20);
+      font-weight: 700;
+      line-height: 1;
+      position: absolute;
+      right: - $modal-close-offset;
+      top: - $modal-close-offset;
+    }
+
+    .modal-content {
+      padding: rem-calc(50);
+      position: relative;
+      text-align: center;
+
+      .legend {
+
+        h6,
+        p {
+          text-align: left;
+        }
+
+        p {
+          color: $modal-content-paragraph;
+          margin: 0;
+        }
+
+        .details {
+          color: $black;
+          font-size: 14px;
+          line-height: 2.5;
+          margin: 3rem 0;
+          padding: 0 2rem;
+          text-align: center;
+        }
+
+      }
+
+      hr {
+        border: 0;
+        border-top: 1px solid $modal-container-border;
+        display: block;
+        height: 1px;
+        margin-top: rem-calc(50);
+      }
+
+      a {
+        height: rem-calc(40);
+        margin-top: rem-calc(-40);
+        position: absolute;
+        right: rem-calc(40);
+      }
+
+      .toggle-button {
+        border: 1px solid;
+        border-radius: 15px;
+        cursor: pointer;
+        float: right;
+        height: 20px;
+        margin-top: 2px;
+        transition: background .3s, border .3s;
+        user-select: none;
+        width: 36px;
+      }
+
+      .in-toggle-button {
+        background-color: $white;
+        border: 1px solid;
+        border-radius: 50%;
+        height: 20px;
+        margin-top: -1px;
+        transition: margin .3s, border .3s;
+        width: 20px;
+      }
+
+      .save-settings {
+        @include border-radius($reveal-radius);
+        background-color: $success-color;
+        color: $white;
+        font-weight: $font-weight-bold;
+        height: 35px;
+        margin-top: rem-calc(55);
+        padding: 10px 60px;
+        position: relative;
+        right: 0;
+        text-align: center;
+        width: 136px;
+      }
+    }
+
+    .slack-success {
+      border: 1px solid;
+      border-radius: 5px;
+      margin: 3rem 4rem;
+      padding: 10px;
+      text-align: left;
+
+      &.enabled {
+        border-color: $success-color;
+
+        .toggle-button {
+          background-color: $success-color;
+          border-color: $success-color;
+        }
+
+        .in-toggle-button {
+          border-color: $success-color;
+          margin-left: 15px;
+        }
+      }
+
+      &.disabled {
+        border-color: $border-color;
+
+        .toggle-button {
+          background-color: $light-grey;
+          border-color: $light-grey;
+        }
+
+        .in-toggle-button {
+          border-color: $border-color;
+        }
+      }
+    }
+  }
+}

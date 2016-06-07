@@ -3,11 +3,10 @@
 
 .new-backlog-story {
   @include border-radius($global-radius);
-  background-color: $dashboard-hover-color;
+  border-bottom: 2px dashed $black-20;
   color: $black-40;
   font-size: rem-calc(22);
-  margin: rem-calc(50) auto 0;
-  padding: rem-calc(15 25);
+  padding: rem-calc(15 25 0 15);
 
   .backlog-story-input {
     float: left;
@@ -15,26 +14,24 @@
   }
 
   input {
-    background-color: $dashboard-hover-color;
-    border: 0;
-    display: inline-block;
-    font-size: rem-calc(22);
-    margin-bottom: 0;
-    min-width: rem-calc(90);
-    text-align: center;
-    @include input-placeholder { color: $black-80; };
-
-    &:focus { background-color: $dashboard-hover-color; }
+    &[type="text"] {
+      @include inline-block();
+      background-color: $body-bg;
+      border: 0;
+      font-size: rem-calc(22);
+      margin-bottom: 0;
+      min-width: rem-calc(90);
+      @include input-placeholder { color: $black-80; };
+    }
   } // input
 
-  #save-user-story {
-    background-color: $white;
-    border: 1px solid $black-10;
-    color: $black-90;
+  .create-btn {
+    background-color: $black-20;
     float: right;
-    text-transform: uppercase;
-  } // create button
-}
+  }
+
+  .success-button { background-color: $success-color; }
+}//new backlog story
 
 //  USER STORY LIST
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -66,23 +63,36 @@ $circle-dimension: $story-points-dimension;
 
 .backlog-user-story {
   border-top: 1px solid $black-10;
-  padding: $story-padding-top $story-padding-sides;
+  padding: $story-padding-top $story-padding-sides $story-padding-top 0;
   position: relative;
+
+  &.white-block .actions.actions { background-color: $transparent; }
+
+  .actions,
+  .deleter,
+  .right {
+    @include translateY(-50%);
+    position: absolute;
+    right: $block-padding;
+    top: 50%;
+  }
 
   &:first-child { margin-top: rem-calc(30); }
 
   &:hover {
+    @include box-shadow($shadow-depth-hover);
     background: $dashboard-hover-color;
     cursor: pointer;
 
-    .circle-checkbox { @include opacity(1); }
+    .square-checkbox { @include opacity(1); }
+    .story-detail-link { margin-left: $story-padding-top; }
   }//backlog user story hover
 
   .icn-comments {
+    bottom: 0;
     font-size: rem-calc(13);
-    right: $story-padding-sides;
-    top: $story-padding-top;
-    vertical-align: top;
+    margin-right: $story-padding-top / 2;
+    right: $story-padding-top;
 
     &:hover { @include opacity(.8); }
   } // comment icon
@@ -108,25 +118,7 @@ $circle-dimension: $story-points-dimension;
     padding: 0 ($story-points-dimension + $story-padding-sides);
   } // text
 
-  .circle-checkbox {
-    @include opacity(0);
-    height: $story-points-dimension;
-    left: -(($story-padding-sides * 2) + ($story-points-dimension / 2));
-    top: $story-padding-top;
-    width: $story-points-dimension;
-
-    &::after {
-      border: solid $black-80;
-      border-width: rem-calc(0 2 2 0); // creates the inverted "L" shape
-      display: block;
-      height: rem-calc(10);
-      left: rem-calc(9);
-      margin-top: -1px;
-      width: rem-calc(5); // the short bar of the mark is half as long as the long bar
-    }
-
-    &:checked { @include opacity(1); }
-  } // circle checkbox
+  .shorten-story { width: 75%; }
 } //  user story
 
 //  STICKY SELECT MENU
@@ -138,7 +130,7 @@ $circle-dimension: $story-points-dimension;
   @include border-radius($global-radius);
   background-color: $black-10;
   display: none;
-  height: ($story-points-dimension * 3) + ($icons-margin-bottom * 4);
+  height: ($story-points-dimension * 2) + ($icons-margin-bottom * 3);
   padding: $icons-margin-bottom;
   position: fixed;
   right: 5%;
@@ -171,6 +163,6 @@ $circle-dimension: $story-points-dimension;
 
   h5 {
     font-size: rem-calc(20);
-    margin-top: rem-calc(90);
+    margin-top: 16%;
   } // h5
 } // empty user story list

@@ -1,5 +1,0 @@
-= form_for constraint do |form|
-  = form.text_area :description, class: 'constraint-input backlog-placeholder resizable-text-area', maxlength: 254, placeholder: t('backlog.user_stories.enter_constraint')
-  = form.submit t('save'), id: 'save-constraint', class: 'hide'
-:javascript
-  new CustomTextArea();

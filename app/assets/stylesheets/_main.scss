@@ -31,7 +31,6 @@ select { outline: 0; }
 .reset-form {
   border: 1px solid $black-20;
   border-radius: $global-radius;
-  margin-top: rem-calc(15);
   padding: rem-calc(30);
 } //user session style
 
@@ -106,9 +105,9 @@ input[type="password"] {
 
 .section-margin-top { margin-top: rem-calc(150); }
 
-.alert,
-.warning,
-.error {
+.alert-box .alert,
+.alert-box .warning,
+.alert-box .error {
   border: 0;
   left: 20%;
   margin: rem-calc(10) auto;
@@ -121,9 +120,7 @@ input[type="password"] {
 }
 
 .alert-box.error,
-.alert-box.alert {
-  background-color: $canvas-color;
-}
+.alert-box.alert { background-color: $alert-color; }
 
 .alert-box.warning { background-color: $success-color; }
 

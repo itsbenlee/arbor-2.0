@@ -28,6 +28,9 @@
   vertical-align: middle;
 }
 
+.icn-arrow-left::before { content: '\e90f'; }
+.icn-arrow-right::before { content: '\e910'; }
+.icn-user::before { content: '\e90d'; }
 .icn-favorite-empty::before { content: '\e904'; }
 .icn-favorite::before { content: '\e906'; }
 .icn-delete::before { content: '\e907'; }
@@ -41,3 +44,5 @@
 .icn-search::before { content: '\e90a'; }
 .icn-settings::before { content: '\e90b'; }
 .icn-signout::before { content: '\e90c'; }
+.icn-edit::before { content: '\e90e'; }
+.icn-export::before { content: '\e911'; }

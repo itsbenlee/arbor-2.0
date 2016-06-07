@@ -23,16 +23,6 @@ class Hypothesis < ActiveRecord::Base
     hypothesis.save
   end
 
-  def self.to_csv(hypotheses, options = { col_sep: '|' })
-    CSV.generate(options) do |csv|
-      hypotheses.each do |hypothesis|
-        hypothesis_csv(csv, hypothesis)
-        goals_csv(csv, hypothesis.goals)
-        user_story_csv(csv, hypothesis.user_stories)
-      end
-    end
-  end
-
   def as_json
     super(only: [:order, :description], methods: [:type])
   end
@@ -66,25 +56,6 @@ class Hypothesis < ActiveRecord::Base
 
   def order_in_project
     self.order = project.hypotheses.maximum(:order).to_i + 1
-  end
-
-  def self.goals_csv(csv, goals)
-    csv << %w(goals)
-    goals.each do |goal|
-      csv << [goal.title]
-    end
-  end
-
-  def self.user_story_csv(csv, user_stories)
-    csv << %w(user_stories)
-    user_stories.each do |user_story|
-      csv << [user_story.log_description]
-    end
-  end
-
-  def self.hypothesis_csv(csv, hypothesis)
-    csv << %w(hypothesis)
-    csv << [hypothesis.description]
   end
 
   def copy_associations(hypothesis_replica)

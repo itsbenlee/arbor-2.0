@@ -8,7 +8,7 @@ feature 'Sign in' do
     end
 
     scenario 'there is an alert message for urls other than landing page' do
-      visit projects_path
+      visit arbor_reloaded_projects_path
       expect(page).to have_content('You need to sign in or sign up before continuing.')
     end
   end
@@ -17,7 +17,7 @@ feature 'Sign in' do
     background do
       sign_in create :user
     end
-    
+
     scenario 'should not show a success message' do
       expect(page).not_to have_content('Signed in successfully.')
     end

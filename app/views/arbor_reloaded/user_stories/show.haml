@@ -1,31 +1,31 @@
+- if @next_story
+  = link_to '', arbor_reloaded_user_story_path(@next_story.id), class: 'icn-arrow-right', data: { reveal_id: 'story-detail-modal', reveal_ajax: 'true'}
+- if @prev_story
+  = link_to '', arbor_reloaded_user_story_path(@prev_story.id), class: 'icn-arrow-left', data: { reveal_id: 'story-detail-modal', reveal_ajax: 'true'}
 = link_to '×', '#', class: 'close-reveal-modal'
 %header
   .header-wrapper
     .story-actions
       = link_to '···', '#', class: 'story-actions-link'
-      = link_to '', '#', class: 'icn-delete'
-      = link_to '', '#', method: :post, class: 'icn-archive'
+      = link_to '', '#', class: 'icn-delete has-tip tip-left', aria: { haspopup: true }, data: { tooltip: '' }, title: t('reloaded.tooltips.delete_story')
+      = link_to '', '#', method: :post, class: 'icn-archive hidden-element has-tip tip-left', aria: { haspopup: true }, data: { tooltip: '' }, title: t('reloaded.tooltips.archive_story')
+      = link_to '', '#', method: :post, class: 'icn-copy hidden-element has-tip tip-left', aria: { haspopup: true }, data: { tooltip: '' }, title: t('reloaded.tooltips.duplicate_story')
     %h4
       %span.story-points{ data: { id: @user_story.id } }= @user_story.estimated_points ||= '?'
-      %select.fibonacci-select{ id: 'fibonacci-dropdown',
-      data: { id: @user_story.id, url: arbor_reloaded_user_story_path(@user_story) } }
+      %select.fibonacci-select{ id: 'fibonacci-dropdown', class: 'has-tip', aria: { haspopup: true }, title: t('reloaded.tooltips.estimate'), data: { id: @user_story.id, url: arbor_reloaded_user_story_path(@user_story), tooltip: '' } }
         %option{ value: '?' } ?
-        %option{ value: '1', selected: (@user_story.estimated_points == 1)} 1
+        %option{ value: '1', selected: (@user_story.estimated_points == 1) } 1
         %option{ value: '2', selected: (@user_story.estimated_points == 2) } 2
+        %option{ value: '3', selected: (@user_story.estimated_points == 3) } 3
         %option{ value: '5', selected: (@user_story.estimated_points == 5) } 5
-        %option{ value: '8', selected: (@user_story.estimated_points == 8)} 8
+        %option{ value: '8', selected: (@user_story.estimated_points == 8) } 8
         %option{ value: '13', selected: (@user_story.estimated_points == 13) } 13
         %option{ value: '21', selected: (@user_story.estimated_points == 21) } 21
 
       .sentence
         .story-text
-          %span.grey-prefix= t('reloaded.backlog.role')
-          %span#role= @user_story.role
-          %span.grey-prefix= t('reloaded.backlog.action')
-          %span#action= @user_story.action
-          %span.grey-prefix= t('reloaded.backlog.result')
-          %span#result= @user_story.result
-    %p.created-data
+          = @user_story.log_description
+    %p.created-data.hide
       %span.date Nov 19 at 5:45 PM
       by
       %span.author Napoleon Martinez
@@ -34,7 +34,7 @@
     = link_to t('reloaded.project_dashboard.delete_project'), arbor_reloaded_user_story_path(@user_story), method: :delete, class: 'button radius alert tiny'
     = link_to t('reloaded.project_dashboard.cancel'), '#', class: 'cancel'
     %p.disclaimer= t('reloaded.story_modal.delete.disclaimer')
-  .edition-form
+  .edition-form#edit-mode
     = render 'arbor_reloaded/user_stories/edit_form', user_story: @user_story
 .modal-wrapper
   %section.acceptance-criteria.story-modal-section
@@ -43,12 +43,11 @@
     criterion: [:arbor_reloaded, @user_story, AcceptanceCriterion.new]
     .criterions-container
       = render 'arbor_reloaded/acceptance_criterions/index', user_story: @user_story
-  %section.comments.story-modal-section.hide
-    %h6.story-section-title= t('reloaded.story_modal.comments.title')
-    = render 'arbor_reloaded/comments/form', comment: [:arbor_reloaded, @user_story, Comment.new]
-    %ul#comment-list
-      - @user_story.comments.each do |comment|
-        = render 'arbor_reloaded/comments/comment', comment: comment
-.modal-footer
+  - if ENV['ENABLE_COMMENTS'] == 'true'
+    %section.comments.story-modal-section
+      %h6.story-section-title= t('reloaded.story_modal.comments.title')
+      = render 'arbor_reloaded/comments/form', comment: [:arbor_reloaded, @user_story, Comment.new]
+      .comments-container
+        = render 'arbor_reloaded/comments/index', user_story: @user_story
 :javascript
   new UserStory();

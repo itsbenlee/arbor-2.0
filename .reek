@@ -24,7 +24,6 @@ DuplicateMethodCall:
 FeatureEnvy:
   enabled: true
   exclude: [
-    HypothesisServices#reorder_stories,
     RegistrationsController#add_member_to_projects,
     Project#reorder_user_stories,
     TrelloServices#config,
@@ -60,6 +59,7 @@ NestedIterators:
     UserStoriesController#update,
     UserStoriesController#export,
     SpreadsheetExporterService#self.export,
+    UserStoryService#destroy_stories
   ]
   max_allowed_nesting: 1
   ignore_iterators: []
@@ -104,7 +104,7 @@ UncommunicativeMethodName:
   accept: []
 UncommunicativeModuleName:
   enabled: true
-  exclude: []
+  exclude: ['V1']
   reject:
   - !ruby/regexp /^.$/
   - !ruby/regexp /[0-9]$/
@@ -137,12 +137,15 @@ UtilityFunction:
     UserStoriesHelper#format_story_points,
     ApplicationHelper#meta_title,
     ApplicationHelper#meta_description,
+    ApplicationHelper#user_initial,
     ThumbnailUploader#default_link_url,
     ThumbnailUploader#default_file_url,
     UserStory#reorder_criterions,
     AcceptanceCriterionServices#get_order,
     UserStory#reorder_constraints,
     ConstraintServices#get_order,
-    SlackIntegrationService
+    SlackIntegrationService,
+    UserAvatarImageUploader#default_url,
+    'ApplicationController#ssl_configured?'
   ]
   max_helper_calls: 1

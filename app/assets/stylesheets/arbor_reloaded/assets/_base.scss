@@ -12,9 +12,72 @@ $dashboard-hover-color: #f8f8f8;
 $white: #fff;
 $black: #000;
 
-$headers-font-color: #393939;
+// We use these as default colors throughout
+
+$transparent: transparent;
+$primary-color: #282c37;
+$secondary-color: #393939;
+$success-color: #2ecc71;
+$canvas-color: #e62940;
+$error-color: $canvas-color;
+$warning-color: #fbab1f;
+$lab-color: #4ba4f6;
+$backlog-color: $success-color;
+$icon-color: #53565f;
+$light-bg: #fbfbfb;
+$font-color-2: #626262;
+$font-color-3: #b3b3b3;
+$border-color: #cecece;
+$modal-bg-color: #ececec;
+$light-blue: #a6b6bd;
+$light-blue-2: #eceff1;
+
+// Favorite project random colors
+
+$favorite-colors-list: (
+  #5856d6,
+  #34b9e6,
+  #75d2c7,
+  #95d357,
+  #a27eeb,
+  #fe4565,
+  #ff5335,
+  #ffa600,
+  #ffd14d
+);
+
+// Grayscale
+$black-10:  darken($white, 10%) !default;
+$black-20:  darken($white, 20%) !default;
+$black-30:  darken($white, 30%) !default;
+$black-35:  darken($white, 34%) !default;
+$black-40:  darken($white, 40%) !default;
+$black-50:  darken($white, 50%) !default;
+$black-60:  darken($white, 60%) !default;
+$black-70:  darken($white, 70%) !default;
+$black-80:  darken($white, 80%) !default;
+$black-90:  darken($white, 90%) !default;
+$light-grey: #eff0ef;
+
+// ------- SHADOWS' DEPTH ------ //
+$shadow-depth-1: rgba($black-50, .3) 1px 1px 2px;
+$shadow-depth-hover: rgba($black-50, .2) 3px 8px 25px;
 
 // -------  MIXINS ------ //
+@mixin favorite-colors($color) {
+  &:hover {
+    .right [class^="icn-favorite"] {
+      background-color: $color;
+
+      &:before { color: white; }
+    }
+
+    .last-update,
+    .others.others { color: $color; }
+  }
+
+  .project:after { background-color: $color; }
+}
 
 @mixin input-placeholder {
   &.placeholder { @content; }
@@ -81,6 +144,28 @@ $headers-font-color: #393939;
   }
 }
 
+// -------  ROUNDED BUTTON ------ //
+
+@mixin circle-btn($bg-color: $primary-color, $dimension: 48, $font-size: 24) {
+  @include single-transition(box-shadow, .25s, ease-in);
+  @include border-radius(100%);
+  @include box-shadow($shadow-depth-1);
+  background-color: $bg-color;
+  color: $white;
+  cursor: pointer;
+  display: block;
+  height: rem-calc($dimension);
+  font-size: rem-calc($font-size);
+  line-height: rem-calc($dimension);
+  text-align: center;
+  width: rem-calc($dimension);
+
+  &:hover {
+    @include opacity(.8);
+    @include box-shadow($shadow-depth-hover);
+  }
+}//circle btn
+
 // -------  UTILITY CLASSES ------ //
 
 .truncate {
@@ -88,5 +173,33 @@ $headers-font-color: #393939;
   overflow: hidden;
   white-space: nowrap;
 }
+.hidden-element { display: none !important; }
 
-.hidden-input-element { display: none !important; }
+
+//User avatar
+@mixin user-avatar($dimensions, $avatar-font-size : rem-calc(50)) {
+  position: relative;
+
+  .avatar-img,
+  .avatar-circle {
+    @include background-size(cover);
+    @include border-radius(100%);
+    background-position: center;
+    height: $dimensions;
+    line-height: $dimensions;
+    position: relative;
+    text-align: center;
+    width: $dimensions;
+    z-index: 2;
+  }
+
+  .avatar-circle {
+    background-color: $black-20;
+    color: $white;
+    font-size: $avatar-font-size;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    z-index: 1;
+  }
+}

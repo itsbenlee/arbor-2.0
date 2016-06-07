@@ -24,6 +24,9 @@ gem 'wicked_pdf', github: 'mileszs/wicked_pdf'
 gem 'mustache-js-rails'
 gem 'acts_as_commentable'
 gem 'indefinite_article'
+gem 'react-rails', '~> 1.5.0'
+gem 'active_link_to'
+gem 'intercom', "~> 3.4.0"
 
 group :doc do
   gem 'sdoc', require: false
@@ -44,6 +47,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'wkhtmltopdf-binary-edge', '~> 0.12.2.1'
+  gem 'newrelic_rpm'
 end
 
 group :test do
@@ -64,6 +68,7 @@ group :production do
   gem 'passenger', '5.0.15'
   gem 'mini_magick'
   gem 'wkhtmltopdf-heroku'
+  gem 'newrelic_rpm'
 end
 
 gem 'devise'
@@ -72,3 +77,13 @@ gem 'migration_data'
 
 # CircleCi better tests metadata
 gem 'rspec_junit_formatter', '0.2.2'
+
+# Gravatar integration
+gem 'gravtastic'
+
+# HTTP Party
+gem 'httparty'
+
+# Piet image optimization Gems
+gem 'piet'
+gem 'piet-binary'

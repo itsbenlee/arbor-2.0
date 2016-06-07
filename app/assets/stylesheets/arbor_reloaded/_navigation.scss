@@ -4,6 +4,8 @@
 $topbar-margin: rem-calc(15);
 $avatar-dimension: rem-calc(40);
 
+.link.active { @include fake-border(4px, false, false, false, false, 0); } // current page state
+
 .top-bar {
   .logo {
     left: $topbar-margin;
@@ -12,6 +14,8 @@ $avatar-dimension: rem-calc(40);
   }//logo
 
   .name {
+    color: $white;
+    line-height: $topbar-height;
     margin-left: $topbar-height;
 
     .current-project {
@@ -64,11 +68,7 @@ $avatar-dimension: rem-calc(40);
 
 .top-bar-section .profile {
   .avatar {
-    @include border-radius(100%);
-    background-size: cover;
-    display: none;
-    height: $avatar-dimension;
-    width: $avatar-dimension;
+    @include user-avatar($avatar-dimension, rem-calc(20));
 
     @media #{ $medium-only } { margin: rem-calc(10 15 0 0); }
     @media #{ $medium-up } { @include inline-block; }
@@ -179,15 +179,13 @@ ul .dropdown {
   }//left container
 
   .members {
+    @include user-avatar($member-avatar-dimension, rem-calc(15));
     margin-right: $topbar-margin;
 
-    a {
-      @include border-radius(100%);
+    a:not(.button) {
       @include inline-block;
-      background-size: cover;
-      height: $member-avatar-dimension;
-      margin: (($sub-nav-height - $member-avatar-dimension) / 2) rem-calc(8) 0 0;
-      width: $member-avatar-dimension;
+      line-height: 1;
+      margin: (($sub-nav-height - $member-avatar-dimension) / 2) 0 0 rem-calc(8);
 
       @media #{ $small-only } { display: none; }
 
@@ -199,12 +197,16 @@ ul .dropdown {
         font-size: rem-calc(14);
         height: $user-edit-dimension;
         line-height: rem-calc(19);
-        margin-top: ($sub-nav-height - $user-edit-dimension) / 2;
         text-align: center;
         vertical-align: middle;
         width: $user-edit-dimension;
 
-        &.add-member { margin-right: 0; }
+        &.add-member {
+          @include border-radius(100%);
+          margin-right: 0;
+          margin-top: ($sub-nav-height - $user-edit-dimension) / 2;
+        }
+
         &:hover { background-color: $black-20; }
 
         @media #{$small-only} {
@@ -214,6 +216,7 @@ ul .dropdown {
       }//add-member, other-members
 
       &.other-members {
+        @include border-radius(100%);
         background-color: transparent;
         border: 1px solid $black-30;
         color: $black-20;
@@ -225,7 +228,12 @@ ul .dropdown {
         width: rem-calc(30);
 
         @media #{$small-only} { display: none; }
-      }
-    }
-  }
+      }//other members
+    }//a
+
+    .button {
+      display: inline;
+      margin: 0;
+    }//button
+  }//members
 }//secondary nav

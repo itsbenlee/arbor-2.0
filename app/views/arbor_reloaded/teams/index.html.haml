@@ -1,0 +1,14 @@
+- content_for :page_title do
+  = t('page_title.teams')
+.section-people.row
+  .columns.small-12
+    #teams-list
+      = render 'arbor_reloaded/teams/list', teams: @teams
+#team-modal.reveal-modal{'aria-hidden' => 'true', 'aria-labelledby' => 'team-modal', 'data-reveal' => '', 'data-auto-reveal' => @new_team.errors.present?, :role => 'dialog' }
+  = link_to '×', '#', class: 'close-reveal-modal'
+  = form_for @new_team, url: '/arbor_reloaded/teams', html: { id: 'new_team' }, remote: true do |f|
+    %h2= t('reloaded.team.create')
+    = f.text_field :name, placeholder: t('reloaded.team.name'), class: 'team-name radius login'
+    .new-team-errors
+    .action
+      = f.submit t('reloaded.team.save'), class: 'button radius tiny create_team', id: 'save-team'

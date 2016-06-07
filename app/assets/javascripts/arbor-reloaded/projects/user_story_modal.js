@@ -3,7 +3,14 @@ function UserStory() {
       $sentence     = $('.sentence'),
       $criterion    = $('.show-criterion'),
       $storyModal   = $('#story-detail-modal'),
-      $storyActions = $storyModal.find('.story-actions');
+      $storyActions = $storyModal.find('.story-actions'),
+      $storyList    = $('.user-stories-container'),
+      $story        = $storyList.find('.story-detail-link'),
+      $storyOpened  = $('.story-detail-link.opened');
+
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
 
   $points.change(function(event) {
     var story_id = $(this).data('id'),
@@ -16,21 +23,62 @@ function UserStory() {
       data: { user_story: { estimated_points: this.value } },
       success: function (response) {
         if(response.success) {
-          if (response.data.estimated_points !== null)
-            $('.backlog-user-story[data-id='+ response.data.id +']')
-            .find('.story-points').text(response.data.estimated_points);
-          else {
-            $('.backlog-user-story[data-id='+ response.data.id +']').find('.story-points').text('?')
-          }
+          $('.total_points').text(response.data.total_points);
+          $('.total_cost').text(numberWithCommas(response.data.total_cost));
+          $('.total_weeks').text(response.data.total_weeks);
+          displayEstimation(response.data);
         }
       }
     });
   });
 
+  function displayEstimation(data) {
+    if (data.estimated_points) {
+      $('.backlog-user-story[data-id='+ data.id +']')
+      .find('.story-points').text(data.estimated_points);
+    }
+    else {
+      $('.backlog-user-story[data-id='+ data.id +']').find('.story-points').text('?');
+    }
+  }
+
+  function NavigateUserStories() {
+    $(document).unbind('keydown');
+    $(document).bind('keydown', function(e) {
+      var $inEditMode = $('#edit-mode').hasClass('active');
+
+      if (!$inEditMode) {
+        var $nextStory = $storyModal.find('.icn-arrow-right'),
+            $prevStory = $storyModal.find('.icn-arrow-left');
+
+        switch (e.which) {
+          case 37:
+            $prevStory.trigger('click');
+            break;
+          case 39:
+            $nextStory.trigger('click');
+            break;
+        }
+      }
+    });
+  }//navigate user stories
+
   toggleDeleteConfirmation();
   toggleModalStoryDropdown();
   toggleEditCriterion();
   displayEditionForm();
+  NavigateUserStories();
+  displaySaveButton();
+
+  function displaySaveButton() {
+    $('.show-criterion').on("click", function() {
+      $(this).next().find('#save-acceptance-criterion').removeClass('hidden-element');
+    });
+
+    $('.save-ac-button').on( "click", function() {
+      $(this).addClass('hidden-element');
+    });
+  }
 
   function displayEditionForm() {
     var $editUserStory       = $('.edit_user_story'),
@@ -95,7 +143,7 @@ function UserStory() {
 
       $(this).find('.edit-criterion').addClass('active');
       $('#acceptance-list .delete-criterion[data-id='+ $(this).data('id') +']').addClass('active');
-      return false;
+      event.stopPropagation();
     });
 
     $('html').click(function() {
@@ -106,4 +154,8 @@ function UserStory() {
       }
     });
   }
+
+  $storyModal.on('close.fndtn.reveal', function() {
+    $(document).unbind('keydown');
+  });
 }

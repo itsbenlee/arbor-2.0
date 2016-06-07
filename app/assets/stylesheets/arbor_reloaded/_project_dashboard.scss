@@ -7,7 +7,6 @@ $search-width: rem-calc(300);
 
 .dashboard-header {
   @include clearfix;
-  padding-top: rem-calc(50);
 
   input,
   li,
@@ -23,15 +22,12 @@ $search-width: rem-calc(300);
     }
 
     input {
-      background-color: $white;
+      background-color: $transparent;
       border: 0;
-      border-bottom: 1px solid $black-10;
       margin-bottom: 0;
       max-width: $search-width;
       padding-left: rem-calc(40);
       @include input-placeholder { color: $black-60; }
-
-      &:focus { background-color: $white; }
 
       @media #{$small-only} { max-width: 100%; }
     } // search input
@@ -48,7 +44,7 @@ $search-width: rem-calc(300);
       @include inline-block;
 
       select {
-        background: $white rem-calc(97 12) url('icons/arrow-dropdown.png')  no-repeat;
+        background: transparent right bottom rem-calc(15) image-url('icons/arrow-dropdown.png')  no-repeat;
         border: 0;
         color: $black-50;
         cursor: pointer;
@@ -93,93 +89,47 @@ $search-width: rem-calc(300);
   } // project list result
 } // project searchbar
 
-// Dashboard empty
-// - - - - - - - - - - -
-.no-projects {
-  @include translateY(-50%);
-  font-size: rem-calc(15);
-  left: 0;
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  width: 100%;
-
-  .title {
-    color: $primary-nav-color;
-    font-size: rem-calc(19);
-    font-weight: $font-weight-bold;
-    margin-bottom: rem-calc(5);
-  }
-
-  p {
-    color: $black-30;
-    font-size: rem-calc(15);
-    margin-bottom: rem-calc(30);
-  }
-
-  .button { display: inline; }
-}// no projects block
-
-
 // Dashboard with stories
 // - - - - - - - - - - - - - - -
 .project-list {
-  $action-circle-dimension: rem-calc(25);
   $white-border: 1px solid $white;
-  $project-padding-top: rem-calc(10);
-  $project-padding-sides: rem-calc(15);
-  $project-padding: rem-calc(10 15);
-  $project-border: rem-calc(2);
 
   margin: rem-calc(40 0);
-
-  [class^="icn-"] {
-    font-size: rem-calc(13);
-    line-height: $action-circle-dimension;
-    vertical-align: top;
-
-    &[class^="icn-favorite"] { font-size: rem-calc(18); }
-  }
 
   .project,
   li { @include clearfix; }
 
   li {
     border-bottom: 1px solid $black-10;
-    overflow: hidden;
     position: relative;
 
-    &:not(.favorite-project) {
+    .join-btn {
+      display: none;
+      margin: 0;
+    }
+
+    &:not(.favorite-project):not(.not-member) {
       .project,
       .actions,
       .deleter { background-color: $white; }
 
       &:hover {
-        .project,
-        .actions,
-        .deleter { background-color: $dashboard-hover-color; }
-
-        .title,
-        .others,
-        .last-update { color: $black; }
-
         .favorite .icn-favorite-empty { @include inline-block; }
       }
     }//not favorite project entry
 
-    [class^="icn-"] {
-      @include opacity(1);
-
-      &:hover { @include opacity(.7); }
-    }
+    &.not-member {
+      &:hover {
+        .join-btn { @include inline-block; }
+      }
+    }//project user is no member
   }//project li
 
   // Project link
   .project {
-    border-bottom: $white-border;
     border-top: $white-border;
     display: block;
-    padding: $project-padding;
+    padding: $block-padding;
     position: relative;
 
     .title {
@@ -188,200 +138,87 @@ $search-width: rem-calc(300);
     }
 
     .last-update {
+      color: $black-40;
       font-size: rem-calc(12);
       margin: 0;
     }
 
     .title,
-    .last-update {
-      color: $black-40;
-      line-height: 1;
-    }
+    .last-update { line-height: 1; }
+
+    &:hover .last-update { color: $light-blue; }
   }//project link
 
-  .actions,
-  .deleter,
-  .right {
-    position: absolute;
-    right: $project-padding-sides;
-    top: $project-padding-top + $project-border;
-
-    .icn-favorite-empty:hover {
-      &::before { content: '\e906'; }
-    }//icon
-
-    .delete-project { margin-right: 0; }
-  }//all three floating sections on the right
-
   //projects not set as favorite
-  .common-projects-list {
+  .common-projects-list,
+  .team-projects-list {
     .actions,
     .deleter,
     .right {
       @include translateY(-50%);
       position: absolute;
-      right: $project-padding-sides;
+      right: $block-padding;
       top: 50%;
     }
   }// regular project list
 
-  // Right section with ... and favorite btn
-  .right {
-    line-height: $action-circle-dimension;
-    z-index: 2;
-
-    .favorite,
-    .others {
-      @include inline-block;
-      color: $black-70;
-      font-size: rem-calc(18);
-      z-index: 3;
-    }
-
-    [class^="icn-favorite"] {
-      color: $black;
-      display: none;
-      margin-right: rem-calc(5);
-    }//icon
-  }//right section
-
   .actions,
-  .deleter {
-    @include clearfix;
-    color: $black;
-    display: none;
-    min-width: rem-calc(100);
-    z-index: 3;
-
-    &.visible { display: block; }
-
-    &.actions { .icn-favorite-empty { @include inline-block; }}
-  }//actions and deleter
-
-  // Delete user story overlay
-  .deleter {
-    z-index: 4;
-
-    p,
-    a:not(.button) {
-      @include inline-block;
-      color: $black-50;
-      font-size: rem-calc(10);
-      margin: 0;
-
-      &.cancel { margin-right: $project-padding-sides; }
-    }
-
-    .button { margin: 0 $project-padding-sides; }
-    .delete-project { float: none; }
-  }// deleter
-
-  .delete-project,
-  .copy-project,
-  [class^="icn-favorite"] {
-    @include inline-block;
-    @include border-radius(100%);
-    background-color: $black-10;
-    float: right;
-    font-size: rem-calc(13);
-    height: $action-circle-dimension;
-    line-height: $action-circle-dimension;
-    margin-right: $project-padding-top;
-    text-align: center;
-    width: $action-circle-dimension;
-  }// circled buttons
-
-  .favorite-link { padding-bottom: rem-calc(1); }
-
-  .breaker {
-    margin-top: rem-calc(50);
-    position: relative;
-    text-align: center;
-    text-transform: uppercase;
-
-    &::after {
-      border-bottom: 1px solid $black-30;
-      content: '';
-      height: 1px;
-      left: 0;
-      position: absolute;
-      top: calc(50% - 1px);
-      width: 100%;
-      z-index: -1;
-    }//border
-
-    h5 {
-      @include inline-block;
-      background-color: $white;
-      color: $black-30;
-      font-size: rem-calc(14);
-      font-weight: $font-weight-medium;
-      line-height: 1;
-      margin: 0;
-      padding: rem-calc(0 15);
-    }
-  }//section separator
+  .deleter,
+  .right {
+    right: $block-padding + $block-grid-default-spacing / 2;
+    top: $block-padding;
+  }
 
   // Favorite projects
   // - - - - - - - - - - - - - - - - -
-  .favorites {
-    margin-left: 0;
-    margin-top: rem-calc(25);
-    max-width: 100%;
-  }//favorites list
+  .favorites { margin-top: rem-calc(25); }
 
   .favorite-project {
+    $favorite-projects-limit: 20;
+
+    @include favorite-colors($success-color);
+
     border: 0;
-    height: rem-calc(130) + $project-padding-top * 2;
+    height: $block-min-height + $block-padding * 2;
+
+    @for $n from 1 through $favorite-projects-limit {
+      $random-colors: random(length($favorite-colors-list));
+      $nth: nth($favorite-colors-list, $random-colors);
+
+      &:nth-child(#{$n}) { @include favorite-colors($nth); }
+    }
+
+    .project {
+      &::after {
+        @include border-radius(0 0 $global-radius $global-radius);
+        @include transition(height .25s ease-in);
+        bottom: 0;
+        content: '';
+        height: rem-calc(7);
+        left: 0;
+        margin-top: rem-calc(10);
+        position: absolute;
+        width: 100.5%;
+      } // project after
+
+      .left { @include transition(margin-bottom .25s ease-in); }
+    } // project
+
+    &:hover {
+      .project::after { height: rem-calc(30); }
+      .left { margin-bottom: rem-calc(40); }
+    } // fav project hover
 
     .project,
     .deleter {
-      @include border-radius($global-radius);
-      background-color: $light-grey;
-      border: 0;
-      height: 100%;
-
-      .title {
-        color: $white;
-        font-size: rem-calc(18);
-        margin-bottom: rem-calc(5);
-        width: 100%;
-      }//title
-
       .left {
-        bottom: $project-padding-sides;
-        position: absolute;
-        width: calc(100% - #{$project-padding-sides} * 2);
+        @extend %data;
 
         .title { color: $header-font-color; }
       }//card info
+
+      &.project { height: 100%; }
     }//project
-
-    .actions,
-    .deleter,
-    .right {
-      background-color: $light-grey;
-      right: $project-padding-sides + $block-grid-default-spacing / 2;
-
-      .delete-project,
-      .copy-project,
-      [class^="icn-favorite"] { background-color: $white; }
-
-      &.deleter {
-        background-color: darken($light-grey, 60%);
-        height: calc(100% - #{$project-padding-top} * 2);
-        padding: $project-padding;
-        right: $block-grid-default-spacing / 2;
-        text-align: center;
-        top: 0;
-        width: calc(100% - #{$block-grid-default-spacing});
-
-        p,
-        [class^="icn-"] { color: $white; }
-
-        .title { margin-bottom: rem-calc(10); }
-      }//deleter
-    }
 
     .right { [class^="icn-favorite"] { display: block; }}
   }//favorite-project

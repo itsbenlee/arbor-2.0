@@ -32,9 +32,10 @@ function bindReorderStories() {
 function setStoriesOrder() {
   var newStoriesOrder = { stories: [] },
       $updatedStoriesOnList = $('li.backlog-user-story');
+      length = $updatedStoriesOnList.length + 1;
 
   $.each($updatedStoriesOnList, function(index) {
-    var story = { id: $(this).data('id'), backlog_order: index + 1 };
+    var story = { id: $(this).data('id'), backlog_order: length - index };
     newStoriesOrder.stories.push(story);
   });
 
@@ -43,7 +44,7 @@ function setStoriesOrder() {
 
 function showBulkMenu() {
   var $storyModal     = $('#story-detail-modal'),
-      $storyBulkInput = $backlogStoryList.find('.circle-checkbox'),
+      $storyBulkInput = $backlogStoryList.find('.square-checkbox'),
       $bulkMenu       = $backlogStoryList.find('.sticky-menu');
 
   $storyBulkInput.click(function() {
@@ -66,7 +67,9 @@ $(document).ready(function() {
 });
 
 function backlogGeneralBinds() {
+  fixArticlesForRolesOnBacklog();
   showBulkMenu();
   bindReorderStories();
   autogrowInputs();
+  checkEstimation();
 }

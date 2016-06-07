@@ -5,6 +5,13 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!, :current_user_projects
   before_action :configure_permitted_parameters, if: :devise_controller?
   layout :layout_by_resource
+  force_ssl if: :ssl_configured?
+
+  private
+
+  def ssl_configured?
+    Rails.env.production? && ENV['FORCE_SSL'] == 'true'
+  end
 
   protected
 

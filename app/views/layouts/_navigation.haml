@@ -4,10 +4,11 @@
       = render 'shareable/svg/logo'
     %li.name
       - if current_project && !current_project.new_record?
-        - if current_user.id == current_project.owner_id
+        - if current_user == current_project.owner
           =render 'arbor_reloaded/projects/partials/edit_project_name', project: current_project
         - else
           = link_to current_project.name, '#', class: 'current-project'
+      = yield :page_title
     / Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
     %li.toggle-topbar.menu-icon
       %a{:href => "#"}
@@ -16,10 +17,9 @@
     / Right Nav Section
     %ul.right
       %ul
-        %li
-          = link_to t('reloaded.navigation.projects'), arbor_reloaded_root_path
-        %li
-          %a{:href => 'mailto:feedback@getarbor.io', :target => '_top'}= t('reloaded.navigation.help')
+        %li= link_to t('reloaded.navigation.projects'), arbor_reloaded_root_path
+        %li= link_to t('reloaded.navigation.help'), 'mailto:feedback@getarbor.io', target: '_top', class: 'hidden-element'
+        %li= link_to t('reloaded.navigation.people'), arbor_reloaded_teams_path
         %li.hide
           %a{:href => "#"} FAQ
         - if current_project
@@ -27,8 +27,15 @@
             = link_to log_arbor_reloaded_project_path(current_project) do
               %span.icn-notifications
       %ul.profile
-        %li.user-dropdown.has-dropdown.not-click
-          .avatar{ style: "background-image: url(#{ image_path('test-user.png') });" }
+        %li.user-dropdown.has-dropdown.clearfix
+          -# .not-click
+          .avatar
+            - if current_user.avatar?
+              .avatar-img{ style: "background-image: url(#{ current_user.avatar_url });" }
+            - else
+              = image_tag(current_user.gravatar_url, class: 'avatar-img', onerror: "this.src=''")
+              .avatar-circle#avatar-circle= user_initial(current_user)
+
           = link_to '#', id: 'welcome' do
             = t('reloaded.navigation.welcome')
             %span
@@ -36,12 +43,12 @@
               !
           %ul.dropdown
             %li
-              = link_to '#' do
-                = t('reloaded.navigation.settings')
-                %span.icn-settings
+              = link_to arbor_reloaded_user_path(current_user) do
+                %span.icn-user
+                = t('reloaded.navigation.profile')
             %li
               = link_to destroy_user_session_path, method: :delete do
-                = t('backlog.logout')
                 %span.icn-signout
+                = t('backlog.logout')
 - if current_project
   = render 'arbor_reloaded/navigation/secondary_nav', current_project: current_project

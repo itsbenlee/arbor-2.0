@@ -8,10 +8,23 @@
   $story-section-padding: rem-calc(25);
   $story-section-margin: rem-calc(20);
   $author-margin: rem-calc(7);
+  $arrows-offset: rem-calc(40);
 
   padding: 0;
 
   .author { color: $body-font-color; }
+
+  //navigation arrows
+  [class^="icn-arrow-"] {
+    @include opacity(.2);
+    font-size: rem-calc(30);
+    position: absolute;
+    top: 50%;
+
+    &.icn-arrow-left { left: - $arrows-offset; }
+    &.icn-arrow-right { right: - $arrows-offset; }
+    &:hover { @include opacity(.7); }
+  }//navigation arrows
 
   header {
     .header-wrapper {
@@ -39,6 +52,10 @@
       line-height: $story-points-dimension - rem-calc(2);
 
       &.open { display: none; }
+    }
+
+    .description {
+      margin: 1rem 0;
     }
 
     .sentence,
@@ -91,6 +108,7 @@
         width: auto;
       }
 
+      .description-input,
       .role-input,
       .action-input,
       .result-input {
@@ -137,20 +155,43 @@
     }//small only
   }//header
 
+  .save-ac-button {
+    @extend .tiny-btn;
+    margin-bottom: 0;
+    padding: rem-calc(5 8);
+  }
+
+  .edit-criterion .backlog-placeholder { margin-bottom: rem-calc(10); }
+  .edit-criterion form { @include clearfix; }
+
   .modal-wrapper {
     background-color: $modal-bg-color;
     border-top: 1px solid $black-20;
-    max-height: rem-calc(420);
     overflow: hidden;
-    overflow-y: scroll;
+
+    .icn-delete {
+      font-size: rem-calc(14);
+      margin-right: rem-calc(10);
+
+      &:hover { @include opacity(.8); }
+    } // icn delete
+
+    .comments {
+      border-top: 1px solid $black-20;
+      margin-top: $story-section-margin / 2;
+      padding-top: $story-section-margin / 2;
+    }
   }//modal wrapper
 
+  .delete-criterion {
+    a {
+      bottom: rem-calc(30);
+      float: right;
+      position: relative;
+      right: 0;
+    }
+  }
   // Story Modal sections
-  .story-modal-section {
-    border-bottom: 1px solid $black-20;
-    margin-bottom: $story-section-margin;
-    padding-bottom: $story-section-padding;
-  }//story modal section
 
   .story-section-title {
     font-size: rem-calc(12);
@@ -170,14 +211,19 @@
   }//acceptance list
 
   .show-criterion {
+    clear: both;
+
     &.inactive { display: none; }
   }
+
+  .criterions-container { position: relative; }
 
   .edit-criterion,
   .delete-criterion {
     display: none;
 
     &.active { display: block; }
+    &.edit-criterion { position: relative; }
   }
 
   // Comments Section (.comments)
@@ -194,24 +240,15 @@
       margin-right: $author-margin;
     } // author
 
+    .icn-delete { display: none; }
+
     .date { font-size: rem-calc(10); }
 
     .comment {
       cursor: default;
       display: block;
     } // comment
-
-    .icn-delete {
-      display: none;
-      float: right;
-      font-size: rem-calc(14);
-      margin-right: rem-calc(10);
-
-      &:hover { @include opacity(.8); }
-    } // icn delete
   } // comment list
-
-  .modal-footer { height: rem-calc(40); }
 
   .delete-confirmation-overlay {
     @include clearfix;

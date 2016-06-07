@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151214192944) do
+ActiveRecord::Schema.define(version: 20160530180808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "pg_stat_statements"
 
   create_table "acceptance_criterions", force: :cascade do |t|
     t.text     "description"
@@ -44,6 +43,15 @@ ActiveRecord::Schema.define(version: 20151214192944) do
   add_index "activities", ["owner_id", "owner_type"], name: "index_activities_on_owner_id_and_owner_type", using: :btree
   add_index "activities", ["recipient_id", "recipient_type"], name: "index_activities_on_recipient_id_and_recipient_type", using: :btree
   add_index "activities", ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type", using: :btree
+
+  create_table "api_keys", force: :cascade do |t|
+    t.string   "access_token"
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "api_keys", ["user_id"], name: "index_api_keys_on_user_id", using: :btree
 
   create_table "attachments", force: :cascade do |t|
     t.string   "content",                      null: false
@@ -161,10 +169,19 @@ ActiveRecord::Schema.define(version: 20151214192944) do
     t.integer  "next_story_number",             default: 1,     null: false
     t.integer  "copies",                        default: 0
     t.boolean  "favorite",                      default: false
+    t.string   "slack_channel_id"
+    t.string   "slack_token"
+    t.integer  "velocity"
+    t.integer  "cost_per_week"
+    t.boolean  "is_template",                   default: false
+    t.integer  "team_id"
+    t.string   "slack_iw_url"
+    t.boolean  "slack_enabled",                 default: false
   end
 
   add_index "projects", ["name"], name: "index_projects_on_name", using: :btree
   add_index "projects", ["owner_id"], name: "index_projects_on_owner_id", using: :btree
+  add_index "projects", ["team_id"], name: "index_projects_on_team_id", using: :btree
 
   create_table "tags", force: :cascade do |t|
     t.string   "name"
@@ -183,10 +200,28 @@ ActiveRecord::Schema.define(version: 20151214192944) do
   add_index "tags_user_stories", ["tag_id"], name: "index_tags_user_stories_on_tag_id", using: :btree
   add_index "tags_user_stories", ["user_story_id"], name: "index_tags_user_stories_on_user_story_id", using: :btree
 
+  create_table "team_users", force: :cascade do |t|
+    t.integer "team_id", null: false
+    t.integer "user_id", null: false
+  end
+
+  add_index "team_users", ["team_id"], name: "index_team_users_on_team_id", using: :btree
+  add_index "team_users", ["user_id"], name: "index_team_users_on_user_id", using: :btree
+
+  create_table "teams", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "owner_id",   null: false
+  end
+
+  add_index "teams", ["id"], name: "index_teams_on_id", using: :btree
+  add_index "teams", ["owner_id"], name: "index_teams_on_owner_id", using: :btree
+
   create_table "user_stories", force: :cascade do |t|
-    t.string   "role",             limit: 100,                    null: false
-    t.string   "action",           limit: 255,                    null: false
-    t.string   "result",           limit: 255,                    null: false
+    t.string   "role",             limit: 100
+    t.string   "action"
+    t.string   "result"
     t.integer  "estimated_points", limit: 2
     t.string   "priority",                     default: "should"
     t.integer  "project_id"
@@ -197,6 +232,7 @@ ActiveRecord::Schema.define(version: 20151214192944) do
     t.integer  "story_number"
     t.integer  "backlog_order"
     t.boolean  "archived",                     default: false
+    t.text     "description"
   end
 
   add_index "user_stories", ["hypothesis_id"], name: "index_user_stories_on_hypothesis_id", using: :btree
@@ -218,14 +254,22 @@ ActiveRecord::Schema.define(version: 20151214192944) do
     t.datetime "updated_at",                             null: false
     t.string   "full_name"
     t.boolean  "admin",                  default: false
+    t.string   "slack_id"
+    t.string   "avatar"
+    t.string   "slack_auth_token"
+    t.string   "trello_token"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "acceptance_criterions", "user_stories"
+  add_foreign_key "api_keys", "users"
   add_foreign_key "attachments", "projects"
   add_foreign_key "comments", "user_stories"
   add_foreign_key "invites", "projects"
+  add_foreign_key "projects", "teams"
   add_foreign_key "tags", "projects"
+  add_foreign_key "team_users", "teams"
+  add_foreign_key "team_users", "users"
 end

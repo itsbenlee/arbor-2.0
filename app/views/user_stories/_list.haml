@@ -1,9 +1,0 @@
-.user-story-list{ data: { hypothesis_id: hypothesis.id , url: project_user_stories_order_path(hypothesis.project) }, class: user_stories.any? ? '' : 'user-story-list-empty' }
-  - user_stories.each do |user_story|
-    %a{id:"user_story#{user_story.id}"}
-    .user-story.new-user-story.row{ data: { hypothesis_id: hypothesis.id, id: user_story.id, order: user_story.order } }
-      = link_to user_story_path(user_story), class: 'delete-user-story', title: 'Delete User Story', method: :delete do
-        %span.icon-trash
-      = render 'user_stories/lab_form', project: hypothesis.project,
-      user_story: user_story, hypothesis: hypothesis,
-      form_url: user_story_path(user_story)

@@ -1,11 +1,14 @@
 .new-backlog-story.row
   = render 'arbor_reloaded/user_stories/form', user_story: UserStory.new, project: @project
-.backlog-story-list.row
+.estimation.row{class: @project.user_stories.count > 0 ? 'visible' : 'hide'}
+  .small-12.columns
+    = render 'arbor_reloaded/user_stories/estimation', project: @project, total_points: @total_points
+.backlog-story-list.white-blocks-list.row
   .sticky-menu
-    = link_to '', '#', class: 'icn-copy', data: { reveal_id: 'copy-stories-modal'}
-    = link_to '', '#', class: 'icn-archive'
-    = link_to '', '#', class: 'icn-delete story-delete-link', data: { reveal_id: 'story-delete-modal'}
+    = link_to '', '#', class: 'icn-copy has-tip tip-left', data: { reveal_id: 'copy-stories-modal', tooltip: '' }, aria: { haspopup: true }, title: t('reloaded.tooltips.copy_stories')
+    = link_to '', '#', class: 'icn-archive has-tip tip-left hidden-element', aria: { haspopup: true }, data: { tooltip: '' }, title: t('reloaded.tooltips.archive_stories')
+    = link_to'', '#', class: 'icn-delete story-delete-link has-tip tip-left', data: { reveal_id: 'story-delete-modal', tooltip: '' }, aria: { haspopup: true }, title: t('reloaded.tooltips.delete_stories')
   .user-stories-container
     = render 'arbor_reloaded/user_stories/user_stories_list', project: @project
-= render 'arbor_reloaded/user_stories/story_delete_modal'
+= render 'arbor_reloaded/user_stories/story_delete_modal', project: @project
 = render 'arbor_reloaded/user_stories/copy_stories_modal', projects: @projects

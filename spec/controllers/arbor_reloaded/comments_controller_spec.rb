@@ -12,6 +12,9 @@ RSpec.describe ArborReloaded::CommentsController do
   describe 'POST create' do
     context 'for a new comment' do
       it 'should create comment' do
+        allow_any_instance_of(ArborReloaded::IntercomServices)
+          .to receive(:create_event).and_return(true)
+
         post(
           :create,
           format: :js,
@@ -23,6 +26,15 @@ RSpec.describe ArborReloaded::CommentsController do
         expect(Comment.last.comment).to eq('My new comment')
         expect(Comment.last.user).to eq(user)
       end
+    end
+  end
+
+  describe 'DELETE destroy' do
+    let!(:comment) { create :comment, user_story: user_story, user: user }
+
+    it 'deletes the comment' do
+      delete :destroy, format: :js, id: comment.id
+      expect(Comment.exists? comment.id).to be false
     end
   end
 end

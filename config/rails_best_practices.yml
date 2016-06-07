@@ -30,12 +30,17 @@ RemoveTrailingWhitespaceCheck: { }
 RemoveUnusedMethodsInControllersCheck: {
   except_methods: [
     RegistrationsController#new,
+    RegistrationsController#after_sign_in_path_for,
+    SessionsController#new,
+    SessionsController#after_sign_in_path_for,
     ProjectsController#order_stories,
     HypothesesController#list_stories,
     ProjectsController#copy,
     ProjectsController#list_projects,
     AttachmentsController#set_link_flash_message,
-    AttachmentsController#set_file_flash_message
+    AttachmentsController#set_file_flash_message,
+    SlackController#authorize,
+    SlackController#send_authorize_data
   ]
 }
 RemoveUnusedMethodsInHelpersCheck: { except_methods: [] }

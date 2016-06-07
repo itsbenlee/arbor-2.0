@@ -1,9 +1,3 @@
-= form_for project, url:  arbor_reloaded_project_path(project), html: { id: 'edit_project' }  do |f|
-  = f.text_field :name, class: 'hidden-input-element'
-  %input{ id: "member_#{project.members.count}", |
-    class: 'new-member-mail radius', |
-    name: "project[member_#{project.members.count}]", |
-    type: "email", |
-    required: true, |
-    placeholder: t('reloaded.project_members.mail_invite')}
-  = f.submit id: 'submit-modal-form', class: 'hidden-input-element'
+= form_tag arbor_reloaded_project_add_member_path(project), method: :put, class: 'edit_project' do
+  = text_field_tag :member, nil, type: :email, placeholder: t('reloaded.project_members.mail_invite'), class: 'new-member-mail radius'
+  = submit_tag :submit, class: 'submit-modal-form hidden-element'

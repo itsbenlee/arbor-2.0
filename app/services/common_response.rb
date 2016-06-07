@@ -6,4 +6,12 @@ class CommonResponse
     @errors = errors
     @data = data
   end
+
+  def work
+    yield
+    self
+  rescue StandardError => error
+    @errors.push(error.message)
+    self
+  end
 end

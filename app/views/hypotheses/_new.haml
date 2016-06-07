@@ -1,8 +1,0 @@
-= form_for [project, hypothesis] do |form|
-  %span.bullet
-  = form.text_field :description, placeholder: I18n.translate('labs.hypotheses.enter_description'), class: 'custom',
-    required: true, maxlength: 250, class: 'description' + (hypothesis.errors.any? ? '-error' : '')
-  .small-12.columns{ data: { id: hypothesis.id } }
-    = form.select(:hypothesis_type_id,
-    hypothesis_types.all.collect { |ht|[ht.description, ht.id] }, { include_blank: t('labs.hypotheses.select_metric') }, { class: 'type' })
-  = form.submit I18n.translate('save'), class: 'hide'

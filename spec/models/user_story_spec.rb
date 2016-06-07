@@ -6,9 +6,6 @@ RSpec.describe UserStory do
   let(:user_story)  { create :user_story, hypothesis: hypothesis }
   subject           { user_story }
 
-  it { should validate_presence_of :role }
-  it { should validate_presence_of :action }
-  it { should validate_presence_of :result }
   it { should validate_inclusion_of(:priority).in_array UserStory::PRIORITIES }
   it { should have_many :acceptance_criterions }
   it { should have_many :constraints }
@@ -42,9 +39,9 @@ RSpec.describe UserStory do
 
   it_behaves_like 'a logged entity' do
     let(:entity) do
-      build :user_story, role: 'User', action: 'work', result: 'test'
+      build :user_story, role: 'User', action: 'to work', result: 'test'
     end
-    let(:description) { 'As a User I should be able to work so that test' }
+    let(:description) { 'As a User I want to work so that test' }
   end
 
   describe 'story_number' do
@@ -66,6 +63,85 @@ RSpec.describe UserStory do
       numbers = UserStory.estimation_series
       expect(numbers.count).to eq 8
       expect(numbers).to eq [nil, 1, 2, 3, 5, 8, 13, 21]
+    end
+  end
+
+  describe 'log description' do
+    let(:story) { create :user_story }
+    it 'should use the new description with I want' do
+      expect(story.log_description).to eq("As a #{story.role} I want #{story.action} so that #{story.result}")
+    end
+  end
+
+  describe 'if attributes are missing' do
+    let(:story)                { build :user_story }
+    let(:no_role)              { build :user_story, :no_role }
+    let(:no_action)            { build :user_story, :no_action }
+    let(:no_result)            { build :user_story, :no_result }
+    let(:no_role_and_action)   { build :user_story, :no_role_and_action }
+    let(:no_role_and_result)   { build :user_story, :no_role_and_result }
+    let(:no_action_and_result) { build :user_story, :no_action_and_result }
+
+    describe 'when description is nil' do
+      it 'should save if role, action and result are present' do
+        expect(story.save).to eq(true)
+      end
+
+      it 'should not save without role' do
+        expect(no_role.save).to eq(false)
+      end
+
+      it 'should not save without action' do
+        expect(no_action.save).to eq(false)
+      end
+
+      it 'should not save without result' do
+        expect(no_result.save).to eq(false)
+      end
+
+      it 'should not save without role and action' do
+        expect(no_role_and_action.save).to eq(false)
+      end
+
+      it 'should not save without role and result' do
+        expect(no_role_and_result.save).to eq(false)
+      end
+
+      it 'should not save without action and result' do
+        expect(no_action_and_result.save).to eq(false)
+      end
+    end
+
+    describe 'when description is present' do
+      it 'should save without role' do
+        no_role.update_attribute(:description, 'This is the story')
+        expect(no_role.save).to eq(true)
+      end
+
+      it 'should save without action' do
+        no_action.update_attribute(:description, 'This is the story')
+        expect(no_action.save).to eq(true)
+      end
+
+      it 'should save without result' do
+        no_result.update_attribute(:description, 'This is the story')
+        expect(no_result.save).to eq(true)
+      end
+
+      it 'should save without result and role' do
+        no_role_and_result.update_attribute(:description, 'This is the story')
+        expect(no_role_and_result.save).to eq(true)
+      end
+
+      it 'should save without result and action' do
+        no_action_and_result.update_attribute(:description, 'This is the story')
+        expect(no_action_and_result.save).to eq(true)
+      end
+
+      it 'should save without role and action' do
+        no_role_and_action.update_attribute(:description, 'This is the story')
+        expect(no_role_and_action.save).to eq(true)
+      end
     end
   end
 end

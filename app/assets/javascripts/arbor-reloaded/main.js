@@ -38,6 +38,77 @@ function generalBinds() {
     displayActions();
     displayHideDelete();
     bindFavoriteIcon();
+    setFavoriteState();
     bindProjectsFilter();
   }
+  if ($('.backlog-story-list').length) {
+    displayActions();
+    displayHideDelete();
+    storiesWidth();
+  }
+}
+
+function bindAutoReveal() {
+  $('div[data-auto-reveal]').foundation('reveal', 'open');
+  $('div[data-auto-reveal]').addClass('with-errors');
+  $('#create-project-btn').click(function() {
+    $('#project-modal').foundation('reveal', 'open');
+  });
+}
+
+function customScroll() {
+  var $target = $('.custom-scroll');
+
+  if ($target.length) {
+    $target.mCustomScrollbar({
+      theme: 'dark',
+      autoHideScrollbar: 'true'
+    });
+  }
+}//custom scroll
+
+function customScrollDestroy() {
+  var $target = $('.custom-scroll');
+
+  if ($target.length) {
+    $target.mCustomScrollbar("destroy");
+  }
+}//custom scroll destroy
+
+// this functions needs a HashTable as param and deals with the disabled prop, Ale
+/**
+ * @param {HashTable} elements The HashTable of elements to deal with
+ * @param {boolean} elements The HashTable of elements to deal with
+ */
+function setDisabledState(elements, reversed) {
+  $.each(elements.keys(), function( index, value ) {
+    if (reversed) {
+      $(value).prop('disabled', !elements.getItem(value));
+    } else {
+      $(value).prop('disabled', elements.getItem(value));
+    }
+  });
+}
+
+// this functions needs a HashTable as param and deals with the visible prop, Ale
+/**
+ * @param {HashTable} elements The HashTable of elements to deal with
+ * @param {boolean} elements The HashTable of elements to deal with
+ */
+function setVisibleState(elements, reversed){
+  $.each(elements.keys(), function( index, value ) {
+    if (reversed) {
+      if (elements.getItem(value)) {
+        $(value).hide();
+      } else {
+        $(value).show();
+      }
+    } else {
+      if (elements.getItem(value)) {
+        $(value).show();
+      } else {
+        $(value).hide();
+      }
+    }
+  });
 }

@@ -1,14 +1,15 @@
 module ArborReloaded
   class UserStoriesController < ApplicationController
     layout 'application_reload'
-    before_action :load_user_story, only: [:edit, :show, :update, :destroy]
-    before_action :check_edit_permission, only: [:create, :index]
     before_action :copied_user_stories, only: :copy
+    before_action :next_and_prev_story, only: :show
+    before_action :load_user_story, only: %i(edit update destroy)
+    before_action :check_edit_permission, only: %i(create index)
+    before_action :set_project, only: %i(destroy_stories update)
 
     def index
       @user_story = UserStory.new
-      @total_points =
-        UserStory.total_points(@project.user_stories)
+      @total_points = @project.total_points
     end
 
     def show
@@ -24,9 +25,13 @@ module ArborReloaded
     end
 
     def create
-      story_services = ReloadedStoryService.new(@project)
+      story_services = ArborReloaded::UserStoryService.new(@project)
       @user_story =
         story_services.new_user_story(user_story_params, current_user)
+      return unless @project.slack_iw_url
+      ArborReloaded::SlackIntegrationService.new(@project)
+        .user_story_notify(@user_story,
+          arbor_reloaded_project_user_stories_url(@project))
     end
 
     def update
@@ -36,7 +41,7 @@ module ArborReloaded
           json_update
         end
         format.js do
-          @user_story
+          js_update
         end
       end
     end
@@ -53,9 +58,26 @@ module ArborReloaded
       redirect_to :back
     end
 
+    def destroy_stories
+      response =
+        ArborReloaded::UserStoryService
+        .new(@project).destroy_stories(destroy_stories_params[:user_stories])
+      render json: response, status: (response.success ? 201 : 422)
+    end
+
     private
 
+    def js_update
+      return @user_story unless story_update_params['description']
+      @user_story.update_attributes(role: nil, action: nil, result: nil)
+    end
+
     def json_update
+      if story_update_params[:estimated_points]
+        ArborReloaded::IntercomServices.new(current_user)
+          .create_event(t('intercom_keys.estimate_story'))
+      end
+
       response =
         ArborReloaded::UserStoryService
         .new(@project).update_user_story(@user_story)
@@ -96,11 +118,16 @@ module ArborReloaded
     def user_story_params
       params.require(:user_story).permit(
         :role, :action, :result, :estimated_points,
-        :priority, tag_ids: []
+        :priority, :description, tag_ids: []
       )
     end
 
     def copy_stories_params
+      params.permit(:project_id, user_stories: [])
+    end
+
+    def destroy_stories_params
+      params.require(:project_id)
       params.permit(:project_id, user_stories: [])
     end
 
@@ -111,6 +138,16 @@ module ArborReloaded
       copy_stories_params[:user_stories].each do |story_id|
         @copied_stories.push(UserStory.find(story_id))
       end
+    end
+
+    def next_and_prev_story
+      load_user_story
+      user_stories = @user_story.project.user_stories
+      story_order = @user_story.backlog_order
+      @prev_story =
+        user_stories.find_by(backlog_order: story_order + 1)
+      @next_story =
+        user_stories.find_by(backlog_order: story_order - 1)
     end
   end
 end

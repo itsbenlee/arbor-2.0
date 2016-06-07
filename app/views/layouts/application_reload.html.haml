@@ -21,17 +21,22 @@
     %meta{ content: 'icons/favicons/arbor-144.png', name: 'msapplication-TileImage' }
     = stylesheet_link_tag 'application_reload'
     = javascript_include_tag 'vendor/modernizr'
+    = javascript_include_tag 'vendor/clipboard.min.js'
     = csrf_meta_tags
     = javascript_include_tag '//use.typekit.net/iac3ber.js'
     :javascript
       try{Typekit.load();}catch(e){}
   %body{'data-action' => action_name, 'data-controller' => controller_name }
     = render 'layouts/navigation', projects: @projects, current_project: @project
-    // Intercom plugin
-    = render 'arbor_reloaded/intercom/intercom_plugin'
-    // Mouseflow plugin
-    = render 'arbor_reloaded/mouseflow/mouseflow'
-    = yield
+    = yield :user_nav
+    - if Rails.env.production?
+      // Intercom plugin
+      = render 'arbor_reloaded/intercom/intercom_plugin'
+      // Mouseflow plugin
+      = render 'arbor_reloaded/mouseflow/mouseflow'
+    = render 'layouts/reloaded_notices', alert: alert, notice: notice
+    .page-wrapper
+      = yield
     = javascript_include_tag 'application-reloaded'
     = content_for :custom_js
     - if ENV['USE_GOOGLE_ANALYTICS'] == 'true'

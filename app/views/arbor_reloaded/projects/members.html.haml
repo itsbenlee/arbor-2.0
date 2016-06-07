@@ -2,28 +2,39 @@
 %h5= t("project_members.title")
 .project-members
   .user-item.special-item
-    .picture{ style: "background-image: url(#{ image_path('test-user.png') });" }
+    .picture
+      - if owner.avatar?
+        .avatar-img{ style: "background-image: url(#{ owner.avatar_url });" }
+      - else
+        = image_tag(owner.gravatar_url, class: 'avatar-img', onerror: "this.src=''")
+        .avatar-circle#avatar-circle= user_initial(owner)
     .user-data
       %p.user-name
         %span.user-type-tag= t("reloaded.project_members.owner")
         = owner.full_name
       %p.user-mail
         = owner.email
-  %ul.show-project-data
+  %ul.show-project-data.custom-scroll
     - members.each_with_index do |member, index|
       - if index >= 0 && member.id != owner.id
         %li.user-item
-          .picture{ style: "background-image: url(#{ image_path('test-user.png') });" }
+          .picture
+            - if member.avatar?
+              .avatar-img{ style: "background-image: url(#{ member.avatar_url });" }
+            - else
+              = image_tag(member.gravatar_url, class: 'avatar-img', onerror: "this.src=''")
+              .avatar-circle#avatar-circle= user_initial(member)
           .user-data
             %p.user-name
               = member.full_name
             %p.user-mail
               = member.email
-            %input.circle-checkbox{ id:'remove-member-check', type: 'checkbox', data:{ url: arbor_reloaded_project_remove_member_from_project_path(project, member: member.id)} }
+            %input.remove-member-check.circle-checkbox{ type: 'checkbox', data:{ url: arbor_reloaded_project_remove_member_from_project_path(project, member: member.id)} }
     - unless invites.empty?
       - invites.each do |invite|
         %li.user-item.invited
-          .picture.avatar-circle
+          .picture
+            .avatar-circle#avatar-circle= user_initial(invite)
           .user-data
             %p
               %span.user-type-tag
@@ -33,3 +44,5 @@
 .modal-footer
   = render 'arbor_reloaded/projects/partials/invite_member', project: project
   = link_to t("reloaded.project_members.close"),'#', class: 'button radius small', id: 'people-modal-footer-btn'
+:javascript
+  new ProjectMembers();

@@ -12,6 +12,9 @@ RSpec.describe ArborReloaded::UserStoriesController do
 
   describe 'POST create' do
     it 'creates a user story' do
+      allow_any_instance_of(ArborReloaded::IntercomServices)
+        .to receive(:create_event).and_return(true)
+
       post :create, format: :js, project_id: project.id, user_story: {
           role: 'user',
           action: 'sign up',
@@ -36,6 +39,9 @@ RSpec.describe ArborReloaded::UserStoriesController do
     let(:user_story) { create :user_story, estimated_points: 5 }
 
     it 'updates a user story' do
+      allow_any_instance_of(ArborReloaded::IntercomServices)
+        .to receive(:create_event).and_return(true)
+
       put :update, format: :json, id: user_story.id, user_story: {
           estimated_points: '3' }
 
@@ -45,6 +51,17 @@ RSpec.describe ArborReloaded::UserStoriesController do
       expect(hash_response['success']).to eq(true)
       expect(hash_response['data']['id']).to eq(user_story.id)
       expect(hash_response['data']['estimated_points']).to eq(user_story.estimated_points)
+    end
+  end
+
+  describe 'DELETE :destroy_stories' do
+
+    it 'destroy the story' do
+      delete :destroy_stories, format: :json, project_id: project.id,
+        user_stories: [user_story.id]
+
+      hash_response = JSON.parse(response.body)
+      expect(hash_response['success']).to eq(true)
     end
   end
 end

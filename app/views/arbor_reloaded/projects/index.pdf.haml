@@ -1,0 +1,51 @@
+%section.backlog
+  .user-stories-list-container
+    .user-stories
+      - if @estimation == 'true'
+        .title-breaker
+          %h5
+            = t('reloaded.estimation.separator_title')
+        %ul.estimation-board
+          %li
+            .total_points.estimation-item
+              %h4.title= t('reloaded.estimation.total_points')
+              .value
+                %p.total_points= @project.total_points
+          %li
+            .total_cost.estimation-item
+              %h4.title= t('reloaded.estimation.total_cost')
+              .cost
+                %p.total_cost
+                  $
+                  = number_with_delimiter(@project.total_cost)
+          %li
+            .weeks.estimation-item
+              %h4.title= t('reloaded.estimation.total_weeks')
+              .value
+                %p.total_weeks= @project.total_weeks
+      .title-breaker
+        %h5
+          = t('reloaded.pdf.user_stories')
+      - @project.user_stories.each do |user_story|
+        %ul.user-story-list
+          %li.user-story
+            - if @estimation == 'true'
+              %span.points
+                = t('reloaded.estimation.separator_title')
+                (
+                = format_story_points(user_story)
+                )
+            .story-text
+              %span=user_story.log_description
+            - if user_story.acceptance_criterions.any?
+              %li.acceptance-criterions
+                .uppercase-subtitle= t('backlog.acceptance_criterions')
+                - user_story.acceptance_criterions.each do |ac|
+                  .description
+                    = ac.description
+            - if user_story.constraints.any?
+              %li.constraints
+                .uppercase-subtitle= t('backlog.constraints')
+                - user_story.constraints.each do |constraint|
+                  .description
+                    = constraint.description
