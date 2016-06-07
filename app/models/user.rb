@@ -17,7 +17,6 @@ class User < ActiveRecord::Base
   has_many :projects, through: :members_projects
   has_many :owned_projects, foreign_key: :owner_id, class_name: Project
   has_many :owned_teams, foreign_key: :owner_id, class_name: Team
-  has_many :attachments
   has_many :comments
   has_many :team_users
   has_many :teams, through: :team_users

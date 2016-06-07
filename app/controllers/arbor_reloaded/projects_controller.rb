@@ -3,7 +3,7 @@ module ArborReloaded
     layout false, only: :members
     before_action :load_project,
       only: %i(members show edit update destroy log add_member join_project
-               export_backlog remove_member_from_project)
+               export_backlog remove_member_from_project export_to_spreadhseet)
 
     def index
       scope = params[:project_order] || 'recent'
@@ -117,13 +117,18 @@ module ArborReloaded
     def copy
       project =
         Project
-        .includes(user_stories: [:acceptance_criterions, :constraints])
+        .includes(user_stories: [:acceptance_criterions])
         .find(params[:project_id])
 
       project_services = ArborReloaded::ProjectServices.new(project)
       project_services.replicate(current_user)
 
       redirect_to :back
+    end
+
+    def export_to_spreadhseet
+      send_data(SpreadsheetExporterService.export(@project),
+                                                  disposition: 'inline')
     end
 
     private

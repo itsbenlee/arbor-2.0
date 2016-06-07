@@ -43,7 +43,7 @@ module ArborReloaded
     end
 
     def copy_stories(user_stories)
-      user_stories.each { |story| story.copy_in_project(@project.id, nil) }
+      user_stories.each { |story| story.copy_in_project(@project.id) }
     end
 
     def destroy_stories(user_stories)

@@ -13,12 +13,10 @@ class Project < ActiveRecord::Base
   belongs_to :owner, class_name: User
   belongs_to :team
   has_one :canvas, dependent: :destroy
-  has_many :hypotheses, dependent: :destroy
   has_many :invites, dependent: :destroy
   has_many :user_stories, dependent: :destroy
   has_many :members_projects, class_name: MembersProject
   has_many :members, class_name: User, through: :members_projects
-  has_many :tags, dependent: :destroy
 
   has_many :attachments, dependent: :destroy
   scope :favorite, -> { where(favorite: true) }
@@ -88,16 +86,6 @@ class Project < ActiveRecord::Base
     end
   end
 
-  def log_description
-  end
-
-  def copy_stories(replica, old_hypothesis_id, hypothesis_replica_id)
-    stories = user_stories.where(hypothesis_id: old_hypothesis_id)
-    stories.each do |story|
-      story.copy_in_project(replica.id, hypothesis_replica_id)
-    end
-  end
-
   def copy_canvas(replica)
     canvas.copy_in_project(replica.id)
   end
@@ -105,11 +93,6 @@ class Project < ActiveRecord::Base
   def clean_log
     activities.delete_all
     create_activity :create_project
-  end
-
-  def undefined_hypothesis
-    hypotheses
-      .find_or_create_by(description: I18n.t('labs.undefined_hypothesis'))
   end
 
   def as_json

@@ -23,7 +23,7 @@ module ArborReloaded
     end
 
     scenario 'should reorder user stories' do
-      first_story, second_story, third_story = set_user_stories_on_project(project)
+      first_story, second_story, third_story = create_list :user_story, 3, project: project
       stories = { '0' => {'id' => first_story.id, 'backlog_order' => 2},
                   '1' => {'id' => second_story.id, 'backlog_order' => 3},
                   '2' => {'id' => third_story.id, 'backlog_order' => 1} }
@@ -32,7 +32,7 @@ module ArborReloaded
       project_services.reorder_stories(stories)
 
       first_story_updated, second_story_updated, third_story_updated =
-      get_reordered(first_story, second_story, third_story)
+      UserStory.find(first_story.id, second_story.id, third_story.id)
 
       expect(first_story_updated.backlog_order).to eq 2
       expect(second_story_updated.backlog_order).to eq 3
@@ -112,24 +112,6 @@ module ArborReloaded
       response = project_services.replicate(user)
 
       expect(response.data[:project].user_stories[0].acceptance_criterions.count).to eq(3)
-    end
-
-    scenario 'should copy all the constraints' do
-      user_story = create :user_story, project: project
-      constraint = create :constraint, user_story: user_story
-      response = project_services.replicate(user)
-
-      copied_constraint =
-        response.data[:project].user_stories[0].constraints[0]
-      expect(constraint.description).to eq(copied_constraint.description)
-    end
-
-    scenario 'should copy all the constraints' do
-      user_story = create :user_story, project: project
-      create_list :constraint, 3, user_story: user_story
-      response = project_services.replicate(user)
-
-      expect(response.data[:project].user_stories[0].constraints.count).to eq(3)
     end
 
     scenario 'should copy canvas on a replica' do

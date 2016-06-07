@@ -27,6 +27,7 @@ FeatureEnvy:
     RegistrationsController#add_member_to_projects,
     Project#reorder_user_stories,
     TrelloServices#config,
+    TrelloServices#export_stories,
     LinkAttachmentServices#fetch_http_content_type,
     FileUploader#extract_type,
     UserStoriesController#story_update_params,
@@ -52,8 +53,6 @@ ModuleInitialize:
 NestedIterators:
   enabled: true
   exclude: [
-    HypothesesController#export,
-    Hypothesis#self.to_csv,
     ProjectsController#update,
     ProjectsController#list_projects,
     UserStoriesController#update,
@@ -72,9 +71,7 @@ PrimaDonnaMethod:
 RepeatedConditional:
   enabled: true
   exclude: [
-    'AcceptanceCriterionsController',
-    'ConstraintsController',
-    'TagsController'
+    'AcceptanceCriterionsController'
   ]
   max_ifs: 2
 TooManyInstanceVariables:
@@ -90,7 +87,6 @@ TooManyStatements:
   exclude: [
     RegistrationsController#create,
     AcceptanceCriterionServices#new_acceptance_criterion,
-    ConstraintServices#new_constraint,
     SlackIntegrationService#validate_message_for_story_creation
   ]
   max_statements: 6
@@ -140,10 +136,9 @@ UtilityFunction:
     ApplicationHelper#user_initial,
     ThumbnailUploader#default_link_url,
     ThumbnailUploader#default_file_url,
+    TrelloServices#create_criterions_checklist,
     UserStory#reorder_criterions,
     AcceptanceCriterionServices#get_order,
-    UserStory#reorder_constraints,
-    ConstraintServices#get_order,
     SlackIntegrationService,
     UserAvatarImageUploader#default_url,
     'ApplicationController#ssl_configured?'

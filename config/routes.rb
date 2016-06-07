@@ -9,8 +9,6 @@ Railsroot::Application.routes.draw do
     end
   end
 
-  get 'export/:id/spreadhseet', to: 'projects#export_to_spreadhseet'
-
   devise_for :users,
     controllers: { registrations: 'registrations' }
 
@@ -31,10 +29,6 @@ Railsroot::Application.routes.draw do
       get 'members',
           controller: :projects,
           action: :members
-      resources :lab,
-        only: [:index, :create, :update],
-        as: :hypotheses,
-        controller: :hypotheses
       resources :canvas,
         only: [:index, :create],
         as: :canvases,
@@ -49,17 +43,11 @@ Railsroot::Application.routes.draw do
           as: :user_stories,
           controller: :user_stories do
         resources :acceptance_criterions, only: [:create, :update, :destroy]
-        resources :constraints, only: [:create, :update]
-        resources :tags, only: [:create, :index]
         resources :comments, only: [:create, :destroy]
       end
 
       put 'add_member', controller: :projects, action: :add_member
       put 'join', controller: :projects, action: :join_project
-
-      get 'tags/filter', controller: :tags, action: :filter
-      get 'tags/index', controller: :tags, action: :index
-      get 'tag/delete', controller: :tags, action: :delete
 
       get '/list_backlog', controller: :projects, action: :backlog
       resources :attachments, only: [:index, :create, :destroy]
@@ -72,6 +60,8 @@ Railsroot::Application.routes.draw do
 
       get 'members', controller: :projects, action: :members
     end
+
+    get 'export/:id/spreadhseet', to: 'projects#export_to_spreadhseet'
 
     post 'user_stories/copy', controller: :user_stories, action: :copy
 

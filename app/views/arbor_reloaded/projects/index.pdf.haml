@@ -43,9 +43,3 @@
                 - user_story.acceptance_criterions.each do |ac|
                   .description
                     = ac.description
-            - if user_story.constraints.any?
-              %li.constraints
-                .uppercase-subtitle= t('backlog.constraints')
-                - user_story.constraints.each do |constraint|
-                  .description
-                    = constraint.description

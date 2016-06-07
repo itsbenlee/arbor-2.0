@@ -67,21 +67,18 @@ module ArborReloaded
           "(#{user_story.points_for_trello}) #{user_story.log_description}"
         new_card = Trello::Card.create(name: new_card_name, list_id: list.id)
 
-        create_acceptance_criterions_checklist(user_story, new_card)
-        create_constraints_checklist(user_story, new_card)
+        create_criterions_checklist(user_story, new_card)
       end
     end
 
-    %w(acceptance_criterions constraints).each do |type|
-      define_method("create_#{type}_checklist") do |user_story, new_card|
-        checklist = Trello::Checklist.create(
-          name: I18n.t("backlog.#{type}"),
-          board_id: new_card.board.id,
-          card_id: new_card.id)
+    def create_criterions_checklist(user_story, new_card)
+      checklist = Trello::Checklist.create(
+        name: I18n.t('backlog.acceptance_criterions'),
+        board_id: new_card.board.id,
+        card_id: new_card.id)
 
-        user_story.send(type.to_sym).each do |element|
-          checklist.add_item(element.description)
-        end
+      user_story.send(:acceptance_criterions).each do |criterion|
+        checklist.add_item(criterion.description)
       end
     end
 
