@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   private
 
   def ssl_configured?
-    Rails.env.production?
+    Rails.env.production? && ENV['FORCE_SSL'] == 'true'
   end
 
   protected
