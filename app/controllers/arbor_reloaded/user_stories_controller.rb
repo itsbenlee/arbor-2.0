@@ -20,7 +20,6 @@ module ArborReloaded
       render partial: 'user_stories/form',
              locals: { project: @project,
                        user_story: @user_story,
-                       hypothesis: @user_story.hypothesis,
                        form_url: user_story_path(@user_story) }
     end
 
@@ -87,14 +86,13 @@ module ArborReloaded
     def story_update_params
       params = user_story_params
       params[:estimated_points] = nil if params[:estimated_points] == '?'
-      params[:tag_ids] ||= []
       params
     end
 
     def load_user_story
       @user_story =
         UserStory
-        .includes(project: [:user_stories, :members, :hypotheses])
+        .includes(project: [:user_stories, :members])
         .find(params[:id])
     end
 
@@ -116,10 +114,8 @@ module ArborReloaded
     end
 
     def user_story_params
-      params.require(:user_story).permit(
-        :role, :action, :result, :estimated_points,
-        :priority, :description, tag_ids: []
-      )
+      params.require(:user_story).permit(:role, :action, :result,
+        :estimated_points, :priority, :description)
     end
 
     def copy_stories_params

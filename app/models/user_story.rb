@@ -1,23 +1,16 @@
 class UserStory < ActiveRecord::Base
   include PublicActivity::Common
 
-  PRIORITIES = %w(must should could would)
   acts_as_commentable
 
-  validates_uniqueness_of :order, scope: :hypothesis_id, allow_nil: true
   validates_uniqueness_of :backlog_order, scope: :project_id, allow_nil: true
   validates_uniqueness_of :story_number, scope: :project_id
-  validates_inclusion_of :priority, in: PRIORITIES
-  before_create :order_in_hypotheses, :order_in_backlog, :assign_story_number
-  before_save :assign_hypothesis
+  before_create :order_in_backlog, :assign_story_number
   after_create :update_next_story_number
 
-  has_and_belongs_to_many :tags
   has_many :acceptance_criterions,
     -> { order(order: :asc) }, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_many :constraints, -> { order(order: :asc) }, dependent: :destroy
-  belongs_to :hypothesis
   belongs_to :project
 
   scope :backlog_ordered, -> { order(backlog_order: :desc) }
@@ -40,16 +33,14 @@ class UserStory < ActiveRecord::Base
     estimated_points.present? ? estimated_points : '*'
   end
 
-  def copy_in_project(new_id, new_hypothesis_id = nil)
-    replica =
-      UserStory.new(role: role,
-                    action: action,
-                    result: result,
-                    project_id: new_id,
-                    hypothesis_id: new_hypothesis_id,
-                    estimated_points: estimated_points,
-                    priority: priority)
-    replica.save
+  def copy_in_project(new_id)
+    replica = UserStory.create(role: role,
+                               action: action,
+                               result: result,
+                               project_id: new_id,
+                               estimated_points: estimated_points,
+                               priority: priority)
+
     copy_associations(replica.id)
   end
 
@@ -65,11 +56,6 @@ class UserStory < ActiveRecord::Base
 
   private
 
-  def order_in_hypotheses
-    return unless hypothesis
-    self.order = hypothesis.user_stories.maximum(:order).to_i + 1
-  end
-
   def assign_story_number
     self.story_number = project.next_story_number
   end
@@ -84,7 +70,6 @@ class UserStory < ActiveRecord::Base
 
   def copy_associations(replica_id)
     copy_criterions(replica_id)
-    copy_constraints(replica_id)
     copy_comments(replica_id)
   end
 
@@ -101,19 +86,6 @@ class UserStory < ActiveRecord::Base
                               user_story_id: replica_id)
       criterion_replica.save
     end
-  end
-
-  def copy_constraints(replica_id)
-    constraints.each do |constraint|
-      constraint_replica =
-      Constraint.new(description: constraint.description,
-                     user_story_id: replica_id)
-      constraint_replica.save
-    end
-  end
-
-  def assign_hypothesis
-    self.hypothesis_id ||= project.undefined_hypothesis.id
   end
 
   with_options unless: :role_action_or_result_missing? do |user_story|

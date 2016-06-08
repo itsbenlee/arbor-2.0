@@ -57,8 +57,6 @@ Spork.prefork do
     config.include FactoryGirl::Syntax::Methods
     config.include Devise::TestHelpers, type: :controller
     config.include Capybara::Auth::Helpers, type: :feature
-    config.include UserStoryHelper, type: :controller
-    config.include UserStoryHelper, type: :feature
     config.include WaitingRspecMatchers
 
     config.before :suite do

@@ -5,7 +5,6 @@ FactoryGirl.define do
     result           { 'I can recover my account' }
     estimated_points { 2 }
     project          { create :project }
-    hypothesis       { create :hypothesis }
   end
 
   trait :no_role do

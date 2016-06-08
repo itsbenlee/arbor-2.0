@@ -203,11 +203,3 @@ Project.find_or_initialize_by(is_template: true) do |project|
   project.canvas = Canvas.new(problems: "It's difficult to get a taxi in town")
   project.save
 end
-
-%w(ACQUISITION ACTIVATION RETENTION REVENUE REFERRAL VALUE_PROPOSITION).each {
-  |htype|
-  HypothesisType.find_or_initialize_by(code: htype) do |hypothesis_type|
-    hypothesis_type.description = htype.humanize
-    hypothesis_type.save
-  end
-}

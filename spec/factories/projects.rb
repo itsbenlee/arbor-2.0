@@ -3,7 +3,6 @@ FactoryGirl.define do
     sequence(:name)             { |n| Faker::Lorem.word + "(#{n})" }
     sequence(:slack_channel_id) { |n| Faker::Lorem.word + "(#{n})" }
     owner                       { create :user }
-    hypotheses                  { [] }
     copies                      { 0 }
   end
 

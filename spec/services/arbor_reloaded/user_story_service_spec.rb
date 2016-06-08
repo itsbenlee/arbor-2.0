@@ -66,11 +66,10 @@ module ArborReloaded
   end
 
   feature 'copy user story in other project' do
-    let(:project) { create :project }
-    let(:another_project)     { create :project }
-    let(:user_stories)     { create_list :user_story,
-                                          3,
-                                          project: project }
+    let(:project)         { create :project }
+    let(:another_project) { create :project }
+    let(:user_stories)    { create_list :user_story, 3,
+                                        project: project }
 
     background do
       user_story_services = ArborReloaded::UserStoryService.new(another_project)

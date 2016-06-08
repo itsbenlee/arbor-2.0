@@ -2,25 +2,13 @@ require 'spec_helper'
 
 RSpec.describe UserStory do
   let(:project)     { create :project }
-  let(:hypothesis)  { create :hypothesis, project: project}
-  let(:user_story)  { create :user_story, hypothesis: hypothesis }
+  let(:user_story)  { create :user_story }
   subject           { user_story }
 
-  it { should validate_inclusion_of(:priority).in_array UserStory::PRIORITIES }
   it { should have_many :acceptance_criterions }
-  it { should have_many :constraints }
   it { should belong_to(:project) }
   it { should have_many :acceptance_criterions }
-  it { should have_many :constraints }
-  it { should have_and_belong_to_many(:tags) }
   it { should validate_uniqueness_of(:story_number).scoped_to(:project_id)}
-
-  it 'must increase user stories order' do
-    user_stories = create_list :user_story, 3, hypothesis: hypothesis
-    user_stories.each_with_index do |user_story, index|
-      expect(user_story.order).to be(index + 1)
-    end
-  end
 
   it 'must increment user story number' do
     test_project = create :project

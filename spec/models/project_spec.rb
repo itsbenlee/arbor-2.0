@@ -13,10 +13,8 @@ describe Project do
   it { should validate_uniqueness_of(:slack_iw_url).allow_nil }
   it { should have_many :invites }
   it { should have_many :members }
-  it { should have_many :hypotheses }
   it { should have_many :user_stories }
   it { should have_many :attachments }
-  it { should have_many :tags }
   it { should belong_to :owner }
   it { should belong_to :team }
   it { should_not validate_uniqueness_of(:is_template) }
@@ -27,11 +25,6 @@ describe Project do
     end
 
     it { should validate_uniqueness_of(:is_template) }
-  end
-
-  it_behaves_like 'a logged entity' do
-    let(:entity)      { build :project, name: 'Test project' }
-    let(:description) { nil }
   end
 
   describe 'add member' do
