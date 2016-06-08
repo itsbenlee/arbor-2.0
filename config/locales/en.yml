@@ -27,61 +27,14 @@ en:
     confirm_password: 'Confirm new password'
     submit: 'Change my password'
     forgot: 'Forgot your password?'
-    email: 'Your email address'
   reset_password: 'Send me reset password instructions'
   email_address: 'Email address'
   project_members:
     title: "Project members"
-    name: "Name"
-    edit: "Edit"
-    already_invited: "Members already invited"
-  top_nav:
-    search: "Search"
-    export: "Export"
   links:
     forgot_password: "Forgot your password?"
     dont_have_account: "Don't have an account yet?"
     already_have_account: "Already have an account?"
-  sidebar:
-    my_projects: "My projects"
-    powered_by: "Powered by"
-    workspace: "Workspace"
-    extras: "Extras"
-    archive: "Archive"
-    canvas: "Canvas"
-    lab: "Lab"
-    backlog: "Backlog"
-    files: "Files"
-    members: "Project Members"
-    activity: "Activity"
-    version: "Version "
-    logo_title: "Arbor Logo"
-    collapse: "Collapse/Uncollapse sidebar"
-  labs:
-    undefined_hypothesis: 'Undefined hypotheses'
-    hypotheses:
-      edit: "- edit success metric"
-      edit_title: "Edit Hypothesis Title"
-      enter_description: "Write a new hypothesis"
-      export: "Export"
-      select_metric: 'Select a success metric'
-      delete_with_stories: 'You are not allowed to delete hypotheses with assigned user stories'
-    goals:
-      title: "Title"
-      enter_title: "Enter Title"
-      enter_goal: "Write a new goal that helps to measure your hypothesis"
-      export: "Export"
-      delete: "Delete Goal"
-    log: "Latest changes"
-  create_project:
-    title: "Start creating your project"
-    project_button: "Create new project"
-    project_name: "Project name"
-    section_title: "Project info"
-    save_button: "Create Project"
-    member_mail: "Member mail"
-    project_members: "Project members"
-    add_members: "Add Member"
   project:
     default:
       velocity: '10'
@@ -92,54 +45,16 @@ en:
       This project will be deleted permanently.
       Are you sure you want to continue?
   backlog:
-    filter: 'Type to filter by tags'
-    total_points: 'Total Points'
     user_stories:
       enter_role: "<type of user>"
       enter_action: "<some function>"
       enter_result: "<some benefit>"
-      role: "As a"
-      action_prefix: "I"
-      action_suffix: "be able to"
-      action: "I %{priority} be able to"
-      result: "so that"
-      delete: "Delete User Story"
-      rearrange: "Rearrange User Story"
-      edit_title: "Edit User Story"
-      new: "New user story"
       enter_criterion: 'Write a new acceptance criteria here...'
-      enter_constraint: "Write a new constraint here..."
-      edit_role: "Edit type of user"
-      edit_action: "Edit function"
-      edit_result: "Edit result"
-      select_to_copy: "Select stories to copy"
-      copy_stories: "Copy stories"
-      no_stories: "There are not stories selected to be copied."
-      stories_copied: "The stories are copied successfully."
-      new_tag: 'Create a new tag here'
       new_comment: "Write a new comment here..."
-      comment_user: "%{user}"
-      destination_project: "Select destination project"
-    story_span: "Story"
     logout: "Sign out"
     acceptance_criterions: "Acceptance Criteria"
-    constraints: "Constraints"
-    tags: "Tags"
-    comments: "Comments"
   canvas:
     textarea_placeholder: "Click here to enter text"
-  attachment:
-    link:
-      enter_url: "Paste link here"
-      name_info: "added by"
-      success: "The link was successfully saved"
-      error: "is invalid"
-    file:
-      select_file: "Select file here"
-      success: "%{filename} was successfully uploaded"
-    selector_file: "Upload File"
-    selector_link: "Paste Link"
-    or: "or"
   log:
     add_member_no_info: 'A new collaborator was added to the project'
     project:
@@ -148,17 +63,14 @@ en:
       add_user_story: ' wrote a new user story.'
       add_comment: ' commented on a story.'
       reloaded_add_comment: ' commented on '
-  archive:
-    link: "Archive"
-    title: "Archived user stories"
-    empty_archive: "There are no archived stories"
-    restore: "Restore"
-  deleted_user: "Deleted User"
+  attachment:
+    link:
+      success: "The link was successfully saved"
+      error: "is invalid"
+    file:
+      success: "%{filename} was successfully uploaded"
   save: "Save"
-  edit: "Edit"
-  can_not_view: "You can not view this project."
   can_not_edit: "You can not edit this project."
-  add_hypothesis: "Add New Hypothesis"
   problems: "Problems"
   problems_title: "What are the top three problems that you are trying to solve?"
   solutions: "Solutions"
@@ -177,12 +89,7 @@ en:
   revenue_streams_title: "What is your revenue model, gross margin, and proposed path to revenue?"
   cost_structure: "Cost Structure"
   cost_structure_title: "What are your customer acquisition costs, distribution costs, people, hosting, integration partners, etc?"
-  csv:
-    export: "Export as CSV"
-  json:
-    export: "Export as JSON"
   trello:
-    authorize: 'Authorize'
     export: 'Export'
     new_board: 'Export to New Board'
     existing_board: 'Export to Existing Board'
@@ -192,8 +99,6 @@ en:
     modal_title: 'Export Stories to Trello'
     text1: 'Be patient, exportation may take a few minutes.'
     text2: 'You can keep working on Arbor as your stories are being exported.'
-  pdf:
-    export: 'Export as PDF'
   mailer:
     invite:
       subject: 'Invitation instructions'
@@ -209,9 +114,6 @@ en:
     attributes:
       link_attachment:
         content: 'URL'
-  activity:
-    project:
-      update: 'Project was updated'
   intercom_keys:
     create_project: 'created project'
     create_story: 'created user story'
@@ -230,7 +132,6 @@ en:
       create: 'Create'
       save: 'Save'
       cancel: 'Cancel'
-      description: 'Description'
     user_stories:
       write_title: 'Write some User Stories'
       write_subtitle: 'On the field above, enter a user story to start filling up your project'
@@ -247,8 +148,6 @@ en:
       create: 'Create a Team'
       name: 'Enter new team name here...'
       save: 'Create Team'
-      modal:
-        mail_invite: 'Invite members by email address'
       name_uniqueness: 'You are member of a team with that name, choose a different one.'
     estimation:
       separator_title: 'Estimation'
@@ -268,7 +167,6 @@ en:
       profile: 'Account Profile'
       canvas: 'Canvas'
       backlog: 'Backlog'
-      estimation: 'Estimation'
       activity: 'Activity'
       assets: 'Assets'
       help: 'Help'
@@ -298,15 +196,11 @@ en:
     create_project:
       title: 'Create a Project'
       project_name: 'Enter new project name here...'
-      select_placeholder: 'Created by'
       save_button: 'Create'
       team_title: 'Team'
-    activities:
-      title: "%{project_name} Activities"
     story_modal:
       acceptance_criteria:
         title: 'Acceptance Criteria'
-        placeholder: 'Write your acceptance criteria here...'
       comments:
         title: 'Comments'
       delete:
@@ -329,15 +223,9 @@ en:
       edit: 'Edit'
       save: 'Save'
       cancel_btn: 'Cancel'
-      cancel: 'Cancel my account'
       save_btn: 'Save'
-      cancel_btn: 'Cancel'
       enter_password: 'Enter new password'
-      confirm_password: 'Confirm password'
-      current_password: 'Current password'
       copy_token: 'Copy access token'
-      errors:
-        edit: 'An error ocurred editing your user profile'
     tooltips:
       favorite_project: 'Favorite'
       unfavorite_project: 'Unfavorite'
@@ -361,10 +249,7 @@ en:
   slack:
     notifications:
       story_created: 'New user story created'
-      story_created_text: "User story %{user_story_id} created with success. You can edit it in %{title_link}"
-      story_error: 'Error creating US'
       story_error_title: 'Error'
-      story_error_text: 'An internal error occurred.'
       user_story: "As a %{role} I want %{action} so that %{benefit}"
       comment_created: 'New comment on US#%{user_story_id}'
       default_error: 'An internal error occurred.'
