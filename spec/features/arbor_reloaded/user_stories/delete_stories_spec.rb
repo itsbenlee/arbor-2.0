@@ -26,4 +26,16 @@ feature 'Delete stories', js: true do
     expect(page).to_not have_text user_story.action
     expect(page).to_not have_text user_story.result
   end
+
+  scenario 'Should be able to delete a user story from delete-story icon' do
+    find('.delete-story', visible: false).trigger(:click)
+
+    within '.deleter' do
+      find('.button.radius.alert.tiny').click
+    end
+
+    within '.backlog-story-list' do
+      expect(page).to have_text('Write some User Stories')
+    end
+  end
 end

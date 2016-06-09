@@ -95,6 +95,7 @@ $circle-dimension: $story-points-dimension;
 
     .square-checkbox { @include opacity(1); }
     .story-detail-link { margin-left: $story-padding-top; }
+    .actions { display: block; }
   }//backlog user story hover
 
   .icn-comments {
