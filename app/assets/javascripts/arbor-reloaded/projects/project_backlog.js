@@ -8,7 +8,14 @@ $('#new_user_story').submit(function() {
 });
 
 function autogrowInputs() {
-  $('#role-input, #action-input, #result-input').trigger('autogrow');
+  var newStoryWidth = $('.new-backlog-story').width(),
+      inputMaxWidth = newStoryWidth - 90;
+
+  $('#role-input, #action-input, #result-input').autoGrowInput({
+    minWidth: 1,
+    maxWidth: inputMaxWidth,
+    comfortZone: 1
+  });
 }
 
 function bindReorderStories() {
@@ -53,18 +60,15 @@ function showBulkMenu() {
 }
 
 $(document).ready(function() {
-  if ($('.new-backlog-story').length > 0) {
-    $('#role-input').autoGrowInput(commonGrowInputOptions);
-    $('#action-input').autoGrowInput(commonGrowInputOptions);
-    $('#result-input').autoGrowInput(commonGrowInputOptions);
-    autogrowInputs();
-  }
+  if ($('.new-backlog-story').length > 0) { autogrowInputs(); }
 
   if ($backlogStoryList.length) {
     showBulkMenu();
     bindReorderStories();
   }
 });
+
+$( window ).resize(function() { autogrowInputs(); });
 
 function backlogGeneralBinds() {
   fixArticlesForRolesOnBacklog();

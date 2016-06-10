@@ -6,28 +6,37 @@
   border-bottom: 2px dashed $black-20;
   color: $black-40;
   font-size: rem-calc(22);
-  padding: rem-calc(15 25 0 15);
+  padding: rem-calc(15 25);
+  position: relative;
 
   .backlog-story-input {
     float: left;
+    max-width: 100%;
     width: auto;
   }
 
   input {
     &[type="text"] {
       @include inline-block();
+      @include ellipsis;
       background-color: $body-bg;
       border: 0;
       font-size: rem-calc(22);
-      margin-bottom: 0;
-      min-width: rem-calc(90);
+      margin: 0;
+      vertical-align: inherit;
       @include input-placeholder { color: $black-80; };
     }
   } // input
 
   .create-btn {
+    $btn-width: rem-calc(73);
+    $btn-height: rem-calc(40);
+
     background-color: $black-20;
-    float: right;
+    bottom: - $btn-height / 2;
+    margin: 0;
+    position: absolute;
+    right: 0;
   }
 
   .success-button { background-color: $success-color; }
