@@ -31,28 +31,6 @@ UTIL = {
   }
 };
 
-var $sideBar        = $('#sidebar'),
-    $currentProject = $('.current-project'),
-    $rightContent   = $('.right-app-content'),
-     projectsBar    = $sideBar.find('.sidebar-project-list'),
-     toolBar        = $sideBar.find('.toolbar'),
-     toggleIcon     = $sideBar.find('.icon-arrow'),
-     toggleBar      = $sideBar.find('.icon-arrow, .current-project, .my-projects'),
-     projectName    = $sideBar.find('.current-project').html(),
-     projectsList   = projectsBar.find('li').not(':first'),
-     collapsedBar   = $sideBar.find('.collapse'),
-     projectItem    = $currentProject.parent('li'),
-     activeState    = 'active',
-     collapsedState = 'collapsed',
-     fullState      = 'full';
-
-// Add selected styles to page anchor
-$sideBar.find('.toolbar a').each(function() {
-  if ($(this).attr('href')  ===  window.location.pathname) {
-    $(this).parent().addClass('selected')
-  }
-});
-
 $(document).ready(function() {
   UTIL.init();
 

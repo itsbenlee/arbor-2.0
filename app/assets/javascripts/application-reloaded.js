@@ -13,7 +13,6 @@
 //= require i18n
 //= require i18n/translations
 //= require init
-//= require lab/lab
 //= require vendor/jquery.scrollTo.min
 //= require vendor/jquery.timeago
 //= require vendor/alt
@@ -39,11 +38,7 @@
 //= require arbor-reloaded/projects/actions/SlackModalActions
 //= require arbor-reloaded/projects/stores/SlackModalStore
 //= require arbor-reloaded/utils/userStories/a_an_grammar
-//= require arbor-reloaded/utils/userStories/archive
-//= require arbor-reloaded/utils/userStories/copyModal
 //= require arbor-reloaded/utils/userStories/disableArea
-//= require arbor-reloaded/utils/userStories/index
-//= require arbor-reloaded/utils/userStories/userStories
 //= require arbor-reloaded/utils/customTextArea
 //= require arbor-reloaded/main
 //= require arbor-reloaded/teams
