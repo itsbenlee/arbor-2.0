@@ -52,6 +52,7 @@ $icon-dimension: rem-calc(15);
       background-color: $white;
       border: 1px solid $border-color;
       padding: 0;
+      position: relative;
       text-align: center;
       text-transform: uppercase;
 
@@ -73,6 +74,16 @@ $icon-dimension: rem-calc(15);
         @include translateY(50%);
         font-size: rem-calc(40);
       }
+
+      .icn-settings {
+        background-color: transparent;
+        bottom: rem-calc(5);
+        display: none;
+        position: absolute;
+        right: rem-calc(5);
+      }//.icn-settings
+
+      &:hover { .icn-settings { display: block; } }
     } // item box
   }
 } // estimation
