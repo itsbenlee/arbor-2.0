@@ -1,6 +1,5 @@
 .title-breaker
-  %h5
-    = t('reloaded.estimation.separator_title')
+  %h5= t('reloaded.estimation.separator_title')
   = link_to '', '#', class: 'has-tip toggle-estimation active', data: { tooltip: '' }, aria: { haspopup: true }, title: t('reloaded.tooltips.hide')
   = link_to '', '#', class: 'icn-settings has-tip', data: { reveal_id: 'edit-estimation-modal', tooltip: '' }, aria: { haspopup: true }, title: t('reloaded.tooltips.update_estimation')
 .estimation-wrapper
