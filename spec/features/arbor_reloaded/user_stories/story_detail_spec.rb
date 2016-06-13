@@ -31,7 +31,7 @@ feature 'Story detail modal', js:true do
 
   scenario 'should be able to edit a story' do
     within '#story-detail-modal' do
-      find('.sentence').click
+      find('.sentence .story-text').click
       fill_in 'user_story_description', with: 'This is the new user story'
       find('#save-user-story').click
     end
