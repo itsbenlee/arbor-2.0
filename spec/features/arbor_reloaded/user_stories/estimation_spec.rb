@@ -48,4 +48,12 @@ feature 'Estimation totals', js:true do
       expect(find('.total_weeks')).to have_content('2')
     end
   end
+
+  scenario 'I sould access to extimation settings from extimation boxes' do
+    within '.total-points' do
+      find('.icn-settings', visible: false).trigger('click')
+    end
+
+    expect(page).to have_content('Estimation Settings')
+  end
 end
