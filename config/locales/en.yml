@@ -100,6 +100,8 @@ en:
     text1: 'Be patient, exportation may take a few minutes.'
     text2: 'You can keep working on Arbor as your stories are being exported.'
   mailer:
+    team_invite:
+      someone_invited_you: 'You are invited to be member on %{team_name} in Arbor.'
     invite:
       subject: 'Invitation instructions'
       title: 'BE A BETTER PRODUCT OWNER'
@@ -111,6 +113,12 @@ en:
       thanks: 'Thanks!'
       arbor: '- Arbor Team'
   activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              too_short: Password is too short
     attributes:
       link_attachment:
         content: 'URL'

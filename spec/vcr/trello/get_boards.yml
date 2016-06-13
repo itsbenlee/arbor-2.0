@@ -225,4 +225,49 @@ http_interactions:
         pwGvV7RWuvjbP/8Dt0FoFHOfAAA=
     http_version: 
   recorded_at: Tue, 23 Feb 2016 19:44:31 GMT
+- request:
+    method: get
+    uri: https://slack.com/api/auth.test?token=4jnqdc1kips6nn0yorsfjpobkfinak66k2r5pmw6ubqxplmhafvt6aw0a5t4z6m9znc1n1vtm8pq4cpgmmp0w1ler5iph3ae7ehze6w54zk7htva6f7pv7gud8rn2rc5tf80j5zl2679tkahbtgobdazlvb03cnsomi24rxjocs60na0lj21pjzi9lvt2u3x4ckhsd5nshras40ktd4zkeaiiwkzjjxyc5hfq5eg3jm8tm20zw5e9jt5730fg5r(258)
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - referrer no-referrer;
+      Date:
+      - Fri, 10 Jun 2016 14:30:04 GMT
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - '0'
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 4251da4481948b0ac3a8deec1d24db31.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - oWeS8z7u6CDbw6vVDLlP9j9QtmNFj-5nBzf7MMfwUwAASq-LjTGdVg==
+    body:
+      encoding: UTF-8
+      string: '{"ok":false,"error":"invalid_auth"}'
+    http_version: 
+  recorded_at: Fri, 10 Jun 2016 14:30:04 GMT
 recorded_with: VCR 2.9.3

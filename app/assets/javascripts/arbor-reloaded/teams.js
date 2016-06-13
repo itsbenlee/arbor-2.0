@@ -30,7 +30,8 @@ function bindActionsToButton() {
     if ($(this).text() == 'Close') {
       $('#team-members-modal').foundation('reveal', 'close');
     }
-    if ($(this).text() == 'Invite') {
+
+    if ($(this).text() == 'Invite' && $('.new-member')[0].checkValidity()) {
       $('.new-member').submit();
     }
   });

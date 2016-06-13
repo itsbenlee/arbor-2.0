@@ -54,6 +54,7 @@ feature 'Sign up to Arbor' do
 
   scenario 'should show me an error when I enter too short passwords' do
     visit new_user_registration_path
+
     within '#signup' do
       fill_in :user_full_name, with: user.full_name
       fill_in :user_email, with: user.email

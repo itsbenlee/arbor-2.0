@@ -58,7 +58,8 @@ NestedIterators:
     UserStoriesController#update,
     UserStoriesController#export,
     SpreadsheetExporterService#self.export,
-    UserStoryService#destroy_stories
+    UserStoryService#destroy_stories,
+    RegistrationsController#create
   ]
   max_allowed_nesting: 1
   ignore_iterators: []

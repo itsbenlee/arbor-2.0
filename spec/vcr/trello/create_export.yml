@@ -66,7 +66,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"id":"56cc9cfa154982bc371588f3","name":"ab(1)","desc":"","descData":null,"closed":false,"idOrganization":null,"pinned":false,"url":"https://trello.com/b/pnqpxo3f/ab-1","shortUrl":"https://trello.com/b/pnqpxo3f","prefs":{"permissionLevel":"private","voting":"disabled","comments":"members","invitations":"members","selfJoin":true,"cardCovers":true,"cardAging":"regular","calendarFeedEnabled":false,"background":"blue","backgroundImage":null,"backgroundImageScaled":null,"backgroundTile":false,"backgroundBrightness":"dark","backgroundColor":"#0079BF","canBePublic":true,"canBeOrg":true,"canBePrivate":true,"canInvite":true},"labelNames":{"green":"","yellow":"","orange":"","red":"","purple":"","blue":"","sky":"","lime":"","pink":"","black":""}}'
-    http_version:
+    http_version: 
   recorded_at: Tue, 23 Feb 2016 17:57:42 GMT
 - request:
     method: get
@@ -132,7 +132,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '[{"id":"56cc9cfa154982bc371588f4","name":"To Do","closed":false,"idBoard":"56cc9cfa154982bc371588f3","pos":16384,"subscribed":false},{"id":"56cc9cfa154982bc371588f5","name":"Doing","closed":false,"idBoard":"56cc9cfa154982bc371588f3","pos":32768,"subscribed":false},{"id":"56cc9cfa154982bc371588f6","name":"Done","closed":false,"idBoard":"56cc9cfa154982bc371588f3","pos":49152,"subscribed":false}]'
-    http_version:
+    http_version: 
   recorded_at: Tue, 23 Feb 2016 17:57:43 GMT
 - request:
     method: put
@@ -200,7 +200,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"id":"56cc9cfa154982bc371588f4","name":"To Do","closed":true,"idBoard":"56cc9cfa154982bc371588f3","pos":16384}'
-    http_version:
+    http_version: 
   recorded_at: Tue, 23 Feb 2016 17:57:44 GMT
 - request:
     method: put
@@ -269,7 +269,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"id":"56cc9cfa154982bc371588f5","name":"Doing","closed":true,"idBoard":"56cc9cfa154982bc371588f3","pos":32768}'
-    http_version:
+    http_version: 
   recorded_at: Tue, 23 Feb 2016 17:57:45 GMT
 - request:
     method: put
@@ -337,7 +337,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"id":"56cc9cfa154982bc371588f6","name":"Done","closed":true,"idBoard":"56cc9cfa154982bc371588f3","pos":49152}'
-    http_version:
+    http_version: 
   recorded_at: Tue, 23 Feb 2016 17:57:46 GMT
 - request:
     method: post
@@ -405,6 +405,51 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"id":"56cc9cff27006f64a2f68e86","name":"Arbor Backlog Export","closed":false,"idBoard":"56cc9cfa154982bc371588f3","pos":8192}'
-    http_version:
+    http_version: 
   recorded_at: Tue, 23 Feb 2016 17:57:47 GMT
+- request:
+    method: get
+    uri: https://slack.com/api/auth.test?token=ny3ayehylvt5iom5xduksnt4mqz88uhpgl3gwy5xuvquz5ykxc6ne8d6yswoeuewfo4tvdehsbbqcharws4fni4so1gtncthfjxg4c2si54je68hm7uc3au31oqytfhrrpz8qycxl67gsqw1ckupjvze587f5k2urm7vyfvgff9r8ltpu8t6x5v9g1fef5u7m5k51ayyuv3bsgitgawpoqd7vy7cv3c62iaopp7xxjjdeoqntmcarn3smjm7bez(80)
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - referrer no-referrer;
+      Date:
+      - Thu, 09 Jun 2016 15:14:01 GMT
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - '0'
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 0e474e831b8c5bd531796738f69632e8.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - Fyhd_3w9kycU9Xp9V2v1YOE-UR7aIa9QLMwFgB6jgEDVt3EAypzHZw==
+    body:
+      encoding: UTF-8
+      string: '{"ok":false,"error":"invalid_auth"}'
+    http_version: 
+  recorded_at: Thu, 09 Jun 2016 15:14:02 GMT
 recorded_with: VCR 2.9.3
