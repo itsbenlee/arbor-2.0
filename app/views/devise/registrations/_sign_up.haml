@@ -15,7 +15,7 @@
         = f.password_field :password_confirmation, autocomplete: 'off', placeholder: t('sign_up.password_confirmation') , class: 'with-icon radius',
         required: true
       .actions
-        = f.submit t('sign_up.button_signup'), class: 'button radius success small'
+        = f.submit t('sign_up.button_signup'), class: 'button radius success small', id: 'sign-up-button'
     .user-session-footer
       %span.login-question= t('links.already_have_account')
       = link_to t('user_sessions.login'), new_user_session_path, class: 'link forgot-password text-center'

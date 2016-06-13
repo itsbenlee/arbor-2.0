@@ -47,9 +47,8 @@ RSpec.describe ArborReloaded::TeamsController do
         format: :js,
         member: another_user.email,
       )
-
       team.reload
-      expect{ team.users.count }.to become_eq 2
+      expect{ team.users.reload.count }.to become_eq 2
       expect(team.users.last).to eq(another_user)
     end
   end

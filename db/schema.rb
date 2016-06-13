@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160530180808) do
+ActiveRecord::Schema.define(version: 20160609164141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -149,9 +149,11 @@ ActiveRecord::Schema.define(version: 20160530180808) do
     t.integer  "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "team_id"
   end
 
   add_index "invites", ["project_id"], name: "index_invites_on_project_id", using: :btree
+  add_index "invites", ["team_id"], name: "index_invites_on_team_id", using: :btree
 
   create_table "members_projects", force: :cascade do |t|
     t.integer "member_id",  null: false
@@ -268,6 +270,7 @@ ActiveRecord::Schema.define(version: 20160530180808) do
   add_foreign_key "attachments", "projects"
   add_foreign_key "comments", "user_stories"
   add_foreign_key "invites", "projects"
+  add_foreign_key "invites", "teams"
   add_foreign_key "projects", "teams"
   add_foreign_key "tags", "projects"
   add_foreign_key "team_users", "teams"

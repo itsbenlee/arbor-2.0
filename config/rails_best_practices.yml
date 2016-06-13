@@ -33,6 +33,7 @@ RemoveUnusedMethodsInControllersCheck: {
     AttachmentsController#set_file_flash_message,
     RegistrationsController#new,
     RegistrationsController#after_sign_in_path_for,
+    RegistrationsController#after_sign_up_path_for,
     ProjectsController#order_stories,
     ProjectsController#copy,
     ProjectsController#list_projects,

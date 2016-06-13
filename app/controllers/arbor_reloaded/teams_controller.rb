@@ -3,6 +3,7 @@ module ArborReloaded
     layout 'application_reload'
     before_action :authenticate_user!
     before_action :load_team, only: %i(members add_member remove_member)
+    before_action :find_member, only: :add_member
 
     def index
       @new_team = Team.new
@@ -18,17 +19,17 @@ module ArborReloaded
     end
 
     def add_member
-      @errors = []
-      add_new_member(member_params[:member])
-      if @team.save
-        @teams = current_user.teams
+      if @member
+        @team.users << @member
       else
-        @errors = @team.errors.full_messages
+        Invite.create(email: member_params, team: @team)
       end
+
+      @teams = current_user.teams
     end
 
     def remove_member
-      member = User.find(member_params[:member])
+      member = User.find(member_params)
       @team.projects.each { |project| project.members.delete(member) }
       @team.users.delete(member)
       @team.save
@@ -60,35 +61,21 @@ module ArborReloaded
       end
     end
 
-    def add_new_member(email)
-      user = User.find_by(email: email)
-      if user
-        team_users = @team.users
-        team_users << user unless team_users.include? user
-      else
-        return_error(email)
-      end
-    end
-
-    def return_error(email)
-      if email.empty?
-        @errors << t('reloaded.team.no_email')
-      else
-        @errors << t('reloaded.team.no_user')
-      end
-    end
-
     def load_team
       id = params[:id] || params[:team_id]
       @team = Team.find(id)
     end
 
     def member_params
-      params.permit(:member)
+      params.require(:member)
     end
 
     def team_params
       params.require(:team).permit(:name)
+    end
+
+    def find_member
+      @member = User.find_by_email(member_params)
     end
   end
 end
