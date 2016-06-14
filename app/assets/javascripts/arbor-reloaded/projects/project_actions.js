@@ -23,6 +23,10 @@ function displayActions() {
     if ($('.icn-comments').hasClass('hidden-element')) {
       $('.icn-comments').removeClass('hidden-element');
     }
+
+    if ($('.story-text').hasClass('shorten-story')) {
+      $('.story-text').removeClass('shorten-story');
+    }
   });
 }
 
