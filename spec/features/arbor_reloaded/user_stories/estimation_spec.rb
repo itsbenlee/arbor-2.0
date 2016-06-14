@@ -49,7 +49,7 @@ feature 'Estimation totals', js:true do
     end
   end
 
-  scenario 'I sould access to extimation settings from extimation boxes' do
+  scenario 'I sould access to estimation settings from extimation boxes' do
     within '.total-points' do
       find('.icn-settings', visible: false).trigger('click')
     end
