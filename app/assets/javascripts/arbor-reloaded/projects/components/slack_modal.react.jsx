@@ -87,27 +87,23 @@ var SlackModal = React.createClass({
   },
 
   _toggleModal: function (data) {
-    var context = this;
     this.setState({
-      show: data ? data.toggle : false || false
+      show: data.toggle
     });
   },
 
   _testAuth() {
-    var context = this;
-    var isAuthorized;
     $.ajax({
       url: '/api_slack/slack/test_auth?project_id=' + this.props.projectId
     }).done(function(data) {
-      context.setState({
+      this.setState({
         isAuthorized: data.authorized
       });
-    });
+    }.bind(this));
   },
 
   _closeModal: function () {
-    var context = this;
-    setTimeout(function(){context._toggleModal();},0);
+    this.setState({ show: false });
   },
 
   _toggleSlack: function () {
@@ -156,21 +152,25 @@ function SlackError (props) {
   );
 }
 
-function ModalContent (props) {
+function SlackDisplayModal(props) {
   return (
     <div>
-      {props.state.slack.status === 'error'
-        ? <SlackError action={props.actions.close}/>
-        : null}
       {props.state.isAuthorized && props.props.slackConnected
         ? <SlackSettings
             enabled={props.state.slack.enabled}
             onToggle={props.actions.toggle}
             onSave={props.actions.save}/>
-        : null}
-      {!props.props.slackConnected && props.state.slack.status !== 'error'
-        ? <SlackIntegration action={props.actions.integrate}/>
-        : null}
+        : <SlackIntegration action={props.actions.integrate}/> }
+    </div>
+  )
+}
+
+function ModalContent (props) {
+  return (
+    <div>
+      {props.state.slack.status === 'error'
+        ? <SlackError action={props.actions.close}/>
+        : <SlackDisplayModal props={props.props} state={props.state} actions={props.actions}/> }
     </div>
   );
 }
