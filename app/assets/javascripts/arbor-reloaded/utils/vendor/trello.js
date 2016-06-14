@@ -61,6 +61,7 @@ function ajaxCallNewBoard(token, url) {
 }
 
 hideSuccessMessage();
+buttonDisable();
 
 function hideSuccessMessage() {
   var $trelloModal = $('#trello-modal');
@@ -79,5 +80,14 @@ function ajaxCallBoards(token, url) {
       $('.select-board-list').html(response);
       $('.select-board-list').removeClass('hide');
     }
+  });
+}
+
+function buttonDisable() {
+  $( document ).ajaxStart(function() {
+    $('#trello-export-submit').attr("disabled", true);
+  });
+  $(document).ajaxComplete(function () {
+    $('#trello-export-submit').attr("disabled", false);
   });
 }
