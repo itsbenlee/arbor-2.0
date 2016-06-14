@@ -1,5 +1,6 @@
 function UserStory() {
   var $storySelectBox = $('.fibonacci-select, .fibonacci-common-select, .groups-common-select'),
+      $points         = $('.fibonacci-select, .fibonacci-common-select'),
       $groups         = $('.groups-common-select'),
       $sentence       = $('.sentence'),
       $criterion      = $('.show-criterion'),
@@ -24,6 +25,8 @@ function UserStory() {
 
     if($(this).hasClass('groups-common-select')) {
       estimated_points = $estimationPoints.text();
+    } else {
+      $points.val(this.value);
     }
 
     $estimationPoints.html(estimated_points);
