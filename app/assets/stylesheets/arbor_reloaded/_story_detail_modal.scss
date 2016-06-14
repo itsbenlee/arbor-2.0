@@ -47,6 +47,19 @@
       width: $story-points-dimension;
     }//fibonacci dropdown
 
+    .estimation-block {
+      border-top: 1px solid $black-10;
+      margin-top: rem-calc(20);
+      padding-top: rem-calc(20);
+
+      label { @include inline-block; }
+
+      .fibonacci-common-select {
+        margin: 0;
+        width: 20%;
+      }
+    }//estimation block
+
     .story-actions-link {
       font-size: rem-calc(25);
       line-height: $story-points-dimension - rem-calc(2);

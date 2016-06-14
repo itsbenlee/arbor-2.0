@@ -1,5 +1,5 @@
 function UserStory() {
-  var $points       = $('.fibonacci-select'),
+  var $points       = $('.fibonacci-select, .fibonacci-common-select'),
       $sentence     = $('.sentence'),
       $criterion    = $('.show-criterion'),
       $storyModal   = $('#story-detail-modal'),
