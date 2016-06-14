@@ -16,6 +16,7 @@ function UserStory() {
     var story_id = $(this).data('id'),
         $estimationPoints = $('.story-points[data-id="' + story_id + '"]');
     $estimationPoints.html(this.value);
+    $points.val(this.value);
     $.ajax({
       url: $(this).data('url'),
       dataType: 'json',
