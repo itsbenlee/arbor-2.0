@@ -9,6 +9,6 @@
     = link_to '', '#', class: 'icn-archive has-tip tip-left hidden-element', aria: { haspopup: true }, data: { tooltip: '' }, title: t('reloaded.tooltips.archive_stories')
     = link_to'', '#', class: 'icn-delete story-delete-link has-tip tip-left', data: { reveal_id: 'story-delete-modal', tooltip: '' }, aria: { haspopup: true }, title: t('reloaded.tooltips.delete_stories')
   .user-stories-container
-    = render 'arbor_reloaded/user_stories/user_stories_list', project: @project
+    = render 'arbor_reloaded/user_stories/user_stories_list', project: @project, groups: @groups, new_group: @new_group
 = render 'arbor_reloaded/user_stories/story_delete_modal', project: @project
 = render 'arbor_reloaded/user_stories/copy_stories_modal', projects: @projects

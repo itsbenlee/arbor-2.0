@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160615195613) do
+ActiveRecord::Schema.define(version: 20160615202822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -125,6 +125,13 @@ ActiveRecord::Schema.define(version: 20160615195613) do
 
   add_index "goals", ["hypothesis_id"], name: "index_goals_on_hypothesis_id", using: :btree
 
+  create_table "groups", force: :cascade do |t|
+    t.string  "name"
+    t.integer "project_id"
+  end
+
+  add_index "groups", ["project_id"], name: "index_groups_on_project_id", using: :btree
+
   create_table "hypotheses", force: :cascade do |t|
     t.string   "description"
     t.integer  "project_id"
@@ -235,8 +242,10 @@ ActiveRecord::Schema.define(version: 20160615195613) do
     t.integer  "backlog_order"
     t.boolean  "archived",                     default: false
     t.text     "description"
+    t.integer  "group_id"
   end
 
+  add_index "user_stories", ["group_id"], name: "index_user_stories_on_group_id", using: :btree
   add_index "user_stories", ["hypothesis_id"], name: "index_user_stories_on_hypothesis_id", using: :btree
   add_index "user_stories", ["project_id"], name: "index_user_stories_on_project_id", using: :btree
   add_index "user_stories", ["story_number"], name: "index_user_stories_on_story_number", using: :btree

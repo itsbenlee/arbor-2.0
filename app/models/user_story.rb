@@ -12,6 +12,7 @@ class UserStory < ActiveRecord::Base
     -> { order(order: :asc) }, dependent: :destroy
   has_many :comments, dependent: :destroy
   belongs_to :project
+  belongs_to :group
 
   scope :backlog_ordered, -> { order(backlog_order: :desc) }
 

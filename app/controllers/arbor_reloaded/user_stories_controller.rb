@@ -4,12 +4,14 @@ module ArborReloaded
     before_action :copied_user_stories, only: :copy
     before_action :next_and_prev_story, only: :show
     before_action :load_user_story, only: %i(edit update destroy)
-    before_action :check_edit_permission, only: %i(create index)
+    before_action :check_edit_permission, only: :create
     before_action :set_project, only: %i(destroy_stories update)
+    before_action :set_project_and_groups, only: :index
 
     def index
       @user_story = UserStory.new
       @total_points = @project.total_points
+      @new_group = Group.new
     end
 
     def show
@@ -144,6 +146,11 @@ module ArborReloaded
         user_stories.find_by(backlog_order: story_order + 1)
       @next_story =
         user_stories.find_by(backlog_order: story_order - 1)
+    end
+
+    def set_project_and_groups
+      check_edit_permission
+      @groups = @project.groups
     end
   end
 end
