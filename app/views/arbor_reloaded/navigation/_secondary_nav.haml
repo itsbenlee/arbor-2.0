@@ -41,7 +41,6 @@
   %ul.right.members.members-avatars
     = render 'arbor_reloaded/navigation/right_members', project: current_project
 %div
-
   = react_component('SlackModal',
     { url: arbor_reloaded_project_path(current_project),
       slackConnected: current_project.slack_channel_id ? true : false,
