@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160609164141) do
+ActiveRecord::Schema.define(version: 20160615195613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -174,7 +174,7 @@ ActiveRecord::Schema.define(version: 20160609164141) do
     t.string   "slack_channel_id"
     t.string   "slack_token"
     t.integer  "velocity"
-    t.integer  "cost_per_week"
+    t.decimal  "cost_per_week"
     t.boolean  "is_template",                   default: false
     t.integer  "team_id"
     t.string   "slack_iw_url"
