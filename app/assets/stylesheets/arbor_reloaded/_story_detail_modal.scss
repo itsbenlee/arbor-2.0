@@ -212,6 +212,21 @@
     text-transform: uppercase;
   }//story section title
 
+  .acceptance-criteria {
+    .info-trigger {
+      $trigger-dimension: rem-calc(20);
+
+      @include border-radius(100%);
+      @include inline-block;
+      background-color: $white;
+      height: $trigger-dimension;
+      line-height: $trigger-dimension;
+      margin-left: rem-calc(8);
+      text-align: center;
+      width: $trigger-dimension;
+    }
+  }
+
   // Acceptance Criteria Section (.acceptance-criteria)
   #acceptance-list li { list-style: disc inside; }
 

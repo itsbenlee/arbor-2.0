@@ -253,6 +253,7 @@ en:
       estimation_velocity: 'This is an estimate of how many points your team can complete each week. You can use it to get a sense for how long development will take.'
       estimation_cost: 'This is the cost of a sprint. Different development teams charge differently, but the average cost of a week of work is a good benchmark.'
       copy_token: 'This is your token to connect Arbor with other apps'
+      acceptance_criteria: 'This is a set of sentences, written in a positive way that add boundaries to the feature itself, evacuating possible roadblocks or doubts.'
     pdf:
       user_stories: 'User Stories'
   slack:
