@@ -1,7 +1,6 @@
 // Hashtables, formed by [element_id, default_disabled_state/default_visible_state], Ale
 var interactiveTextFields = new HashTable({
-      '.user-name#user_full_name': true,
-      '.user-mail#user_email': true
+      '.interactive-field': true
   }),
     interactiveButtons = new HashTable({
       '#edit-user-profile-btn': true,

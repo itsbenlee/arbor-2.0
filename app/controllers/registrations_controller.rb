@@ -14,6 +14,12 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def update
+    super do
+      resource.errors.full_messages.each { |message| flash[:alert] = message }
+    end
+  end
+
   private
 
   def resource_name

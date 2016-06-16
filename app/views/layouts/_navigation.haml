@@ -43,7 +43,7 @@
               !
           %ul.dropdown
             %li
-              = link_to arbor_reloaded_user_path(current_user) do
+              = link_to arbor_reloaded_user_path(current_user), id: 'user-profile-link' do
                 %span.icn-user
                 = t('reloaded.navigation.profile')
             %li

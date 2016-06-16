@@ -2,7 +2,7 @@
   = render 'arbor_reloaded/navigation/user_nav'
 - content_for :page_title do
   = t('page_title.profile', name: current_user.full_name)
-= form_for current_user, url: arbor_reloaded_user_path(current_user) do |f|
+= form_for(current_user, url: registration_path(current_user), html: { method: :put }) do |f|
   .user-header
     .user-avatar
       %span.icn-edit
@@ -13,19 +13,25 @@
         = image_tag(current_user.gravatar_url, class: 'avatar-img', onerror: "this.src=''")
         .avatar-circle#avatar-circle= user_initial(current_user)
 
-    .field-title
+    .field
       %h5.mail-title= t('reloaded.users.name')
-      = f.text_field :full_name, class: 'user-name dashed-input'
+      = f.text_field :full_name, class: 'user-name dashed-input interactive-field'
   .section-profile.row
     %p.user-description.hide
       This is a paragraph. Paragraphs are preset with a font size, line height and spacing to match the overall vertical rhythm. To show what a paragraph looks like this needs a little more content -- so, did you know thads.
-    .field-title
+    .field
       %h5.mail-title= t('reloaded.users.mail')
-      = f.email_field :email, class: 'user-mail dashed-input'
+      = f.email_field :email, class: 'user-mail dashed-input interactive-field'
+    .field
+      = f.password_field :password, autocomplete: 'off', required: false, placeholder: t('reloaded.users.enter_password'), class: 'dashed-input interactive-field'
+    .field
+      = f.password_field :password_confirmation, autocomplete: 'off', required: false, placeholder: :password_confirmation, class: 'dashed-input interactive-field'
+    .field
+      = f.password_field :current_password, autocomplete: 'off', required: true, placeholder: :current_password, class: 'dashed-input interactive-field'
+    = link_to t('reloaded.users.edit'),'#', class:  'button radius small success', id: 'edit-user-profile-btn'
+    = f.submit t('reloaded.users.save'), class: 'button radius tiny ', id: 'save-user-profile'
+    = link_to t('reloaded.users.cancel_btn'), '#', class: 'button radius secondary tiny', id: 'cancel-btn'
     .arbor-token
       %span#arbor-token-field.hide= current_user.access_token
       = link_to t('reloaded.users.copy_token'),'#', class:  'button radius tiny copy-token', id: 'copy-token'
       %span.info{ aria: { haspopup: true }, title: t('reloaded.tooltips.copy_token'), tooltip: '' } ?
-    = link_to t('reloaded.users.edit'),'#', class:  'button radius tiny', id: 'edit-user-profile-btn'
-    = f.submit t('reloaded.users.save'), class: 'button radius tiny ', id: 'save-user-profile'
-    = link_to t('reloaded.users.cancel_btn'), '#', class: 'button radius secondary tiny', id: 'cancel-btn'
