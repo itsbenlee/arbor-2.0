@@ -49,7 +49,9 @@
     = render 'arbor_reloaded/user_stories/edit_form', user_story: @user_story
 .modal-wrapper
   %section.acceptance-criteria.story-modal-section
-    %h6.story-section-title= t('reloaded.story_modal.acceptance_criteria.title')
+    %h6.story-section-title
+      = t('reloaded.story_modal.acceptance_criteria.title')
+      = link_to '?', '#', class: 'info-trigger has-tip tip-left', aria: { haspopup: true }, data: { tooltip: '' }, title: t('reloaded.tooltips.acceptance_criteria')
     = render 'arbor_reloaded/acceptance_criterions/form',
     criterion: [:arbor_reloaded, @user_story, AcceptanceCriterion.new]
     .criterions-container
