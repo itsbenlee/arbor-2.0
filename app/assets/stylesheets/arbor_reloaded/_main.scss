@@ -116,7 +116,8 @@ input:focus {
 
 // -------  SECTION'S SEPARATOR ------ //
 
-.title-breaker {
+.title-breaker,
+.group-divider {
   margin: rem-calc(35) 0;
   position: relative;
   text-align: center;
@@ -142,6 +143,20 @@ input:focus {
     line-height: 1;
     margin: 0;
     padding: rem-calc(0 15);
+  }
+
+  &.group-divider {
+    &::before {
+      border-bottom: 1px solid $light-blue-2;
+      bottom: 0;
+      content: '';
+      height: 1px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      z-index: -1;
+    }//border
+    &::after { top: 0; }
   }
 }//section separator
 

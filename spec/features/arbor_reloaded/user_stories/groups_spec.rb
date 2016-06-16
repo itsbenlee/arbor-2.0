@@ -42,7 +42,7 @@ feature 'Groups', js: true do
         click_button 'Create'
       end
       wait_for_ajax
-      expect(page).to have_content('Test group')
+      expect(page).to have_content(/Test group/i)
     end
 
     scenario 'I should see the error message wen name is taken' do
@@ -69,7 +69,7 @@ feature 'Groups', js: true do
     end
 
     scenario 'I should see existing groups' do
-      expect(page).to have_content(group.name)
+      expect(page).to have_content(group.name.upcase)
     end
   end
 end

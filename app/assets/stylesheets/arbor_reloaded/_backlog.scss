@@ -161,6 +161,10 @@ $circle-dimension: $story-points-dimension;
   } // icons on menu
 } // sticky menu
 
+.create-group {
+  left: calc(50% - 51px);
+  margin: rem-calc(20 0 0);
+}
 
 //  STORIES EMPTY
 // - - - - - - - - - - - - - - - - - - - - - - - - -
