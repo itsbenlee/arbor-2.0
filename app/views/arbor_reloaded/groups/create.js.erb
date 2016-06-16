@@ -1,0 +1,8 @@
+<% unless @errors.any? %>
+  $('.group-name').val('');
+  $('#groups-list').empty().html("<%= j render 'arbor_reloaded/groups/list', groups: @groups %>");
+  $('#group-modal').foundation('reveal', 'close');
+<% else %>
+  $('.group-name').addClass('errors')
+  $('.new-group-errors').html('*<%= @errors[0] %>');
+<% end %>

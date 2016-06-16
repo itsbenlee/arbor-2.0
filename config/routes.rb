@@ -59,6 +59,8 @@ Railsroot::Application.routes.draw do
         action: :remove_member_from_project
 
       get 'members', controller: :projects, action: :members
+
+      resources :groups, only: :create
     end
 
     get 'export/:id/spreadhseet', to: 'projects#export_to_spreadhseet'
