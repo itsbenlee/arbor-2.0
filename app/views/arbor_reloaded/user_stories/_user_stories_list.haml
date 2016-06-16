@@ -1,5 +1,5 @@
 =link_to '+', '#', class: 'circle-add-btn', id: 'create-group', data: { reveal_id: 'group-modal' }
-=render 'arbor_reloaded/groups/list', groups: groups
+=render 'arbor_reloaded/groups/list', groups: project.groups
 - if project.user_stories.count > 0
   .reorder-user-stories{ data: { url: arbor_reloaded_project_reorder_backlog_path(project), project: project.id  } }
     - project.user_stories.backlog_ordered.each do |user_story|
