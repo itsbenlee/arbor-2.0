@@ -26,7 +26,7 @@
         .story-text
           = @user_story.log_description
         .estimation-block
-          %label= t('reloaded.story_modal.complexity_points')
+          %label= "#{t('reloaded.story_modal.complexity_points')} :"
           %select.fibonacci-common-select{ id: 'fibonacci-common-dropdown', aria: { haspopup: true }, data: { id: @user_story.id, url: arbor_reloaded_user_story_path(@user_story)} }
             %option{ value: '?' } ?
             %option{ value: '1', selected: (@user_story.estimated_points == 1) } 1
@@ -36,6 +36,13 @@
             %option{ value: '8', selected: (@user_story.estimated_points == 8) } 8
             %option{ value: '13', selected: (@user_story.estimated_points == 13) } 13
             %option{ value: '21', selected: (@user_story.estimated_points == 21) } 21
+        .group-block
+          %label= "#{t('reloaded.story_modal.group')} :"
+          %select.groups-common-select{id: "groups-common-select-#{@user_story.id}" ,data: { id: @user_story.id ,url: arbor_reloaded_user_story_path(@user_story)} }
+            - @groups.each do |group|
+              %option{ value: '?' } ?
+              %option{ value: group.id, selected: (@user_story.group_id === group.id)}
+                = group.name
     %p.created-data.hide
       %span.date Nov 19 at 5:45 PM
       by
