@@ -256,6 +256,8 @@ en:
       acceptance_criteria: 'This is a set of sentences, written in a positive way that add boundaries to the feature itself, evacuating possible roadblocks or doubts.'
     pdf:
       user_stories: 'User Stories'
+    groups:
+      create: 'Create group'
   slack:
     notifications:
       story_created: 'New user story created'
