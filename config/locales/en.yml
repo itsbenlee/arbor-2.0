@@ -215,6 +215,7 @@ en:
         confirmation_text: 'Are you sure you want to delete this user story?'
         disclaimer: 'This change cannot be undone'
       complexity_points: Complexity Points
+      group: Group
     delete_story_modal:
       confirm_delete_title_first: 'Are you sure you want to delete'
       confirm_delete_title_second: 'the following user stories?'

@@ -1,26 +1,36 @@
 function UserStory() {
-  var $points       = $('.fibonacci-select, .fibonacci-common-select'),
-      $sentence     = $('.sentence'),
-      $criterion    = $('.show-criterion'),
-      $storyModal   = $('#story-detail-modal'),
-      $storyActions = $storyModal.find('.story-actions'),
-      $storyList    = $('.user-stories-container'),
-      $story        = $storyList.find('.story-detail-link'),
-      $storyOpened  = $('.story-detail-link.opened');
+  var $storySelectBox = $('.fibonacci-select, .fibonacci-common-select, .groups-common-select'),
+      $groups         = $('.groups-common-select'),
+      $sentence       = $('.sentence'),
+      $criterion      = $('.show-criterion'),
+      $storyModal     = $('#story-detail-modal'),
+      $storyActions   = $storyModal.find('.story-actions'),
+      $storyList      = $('.user-stories-container'),
+      $story          = $storyList.find('.story-detail-link'),
+      $storyOpened    = $('.story-detail-link.opened');
 
   function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 
-  $points.change(function(event) {
-    var story_id = $(this).data('id'),
-        $estimationPoints = $('.story-points[data-id="' + story_id + '"]');
-    $estimationPoints.html(this.value);
+  $storySelectBox.change(function(event) {
+    var story_id          = $(this).data('id'),
+        $estimationPoints = $('.story-points[data-id="' + story_id + '"]'),
+        $groupSelect      = $('#groups-common-select-' + story_id)[0],
+        group_id          = $groupSelect.value,
+        estimated_points  = this.value;
+
+    if($(this).hasClass('groups-common-select')) {
+      estimated_points = $estimationPoints.text();
+    }
+
+    $estimationPoints.html(estimated_points);
+
     $.ajax({
       url: $(this).data('url'),
       dataType: 'json',
       method: 'PUT',
-      data: { user_story: { estimated_points: this.value } },
+      data: { user_story: { estimated_points: estimated_points, group_id: group_id } },
       success: function (response) {
         if(response.success) {
           $('.total_points').text(response.data.total_points);

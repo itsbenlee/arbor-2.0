@@ -6,7 +6,7 @@ module ArborReloaded
     before_action :load_user_story, only: %i(edit update destroy)
     before_action :check_edit_permission, only: :create
     before_action :set_project, only: %i(destroy_stories update)
-    before_action :set_project_and_groups, only: :index
+    before_action :set_project_and_groups, only: %i(index show)
 
     def index
       @user_story = UserStory.new
@@ -88,6 +88,7 @@ module ArborReloaded
     def story_update_params
       params = user_story_params
       params[:estimated_points] = nil if params[:estimated_points] == '?'
+      params[:group_id] = nil if params[:group_id] == '?'
       params
     end
 
@@ -117,7 +118,7 @@ module ArborReloaded
 
     def user_story_params
       params.require(:user_story).permit(:role, :action, :result,
-        :estimated_points, :priority, :description)
+        :estimated_points, :priority, :description, :group_id)
     end
 
     def copy_stories_params
