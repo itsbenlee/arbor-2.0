@@ -6,6 +6,7 @@ feature 'Create user story', js: true do
   let(:role)     { Faker::Lorem.word }
   let(:action)   { Faker::Lorem.word }
   let(:result)   { Faker::Lorem.word }
+  let!(:group)   { create :group, project: project }
 
   background do
     sign_in user
@@ -50,5 +51,24 @@ feature 'Create user story', js: true do
     wait_for_ajax
 
     expect(UserStory.last.result).to eq(result)
+  end
+
+  scenario 'I should be able to see the group select' do
+    within '.new_user_story' do
+      expect(page).to have_css('#user_story_group_id')
+    end
+  end
+
+  scenario 'I should be able to assign group top the new user storie' do
+    within 'form#new_user_story' do
+      find('#role-input').set(role)
+      find('#action-input').set(action)
+      find('#result-input').set(result)
+      find('#user_story_group_id').find("option[value='#{group.id}']").select_option
+      find('#save-user-story').click
+    end
+    wait_for_ajax
+
+    expect(UserStory.last.group).to eq(group)
   end
 end

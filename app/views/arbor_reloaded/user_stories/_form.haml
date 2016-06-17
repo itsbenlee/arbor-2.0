@@ -32,4 +32,7 @@
       class:      'result',                                |
       id:         'result-input',                          |
     )                                                      |
+
+  .select-group
+    = form.select(:group_id, project.groups.map{ |group| [group.name, group.id] }, { include_blank: '?' })
   = form.submit t('reloaded.backlog.create'), id: 'save-user-story', class: 'create-btn button radius tiny'

@@ -1,6 +1,6 @@
 <% unless @errors.any? %>
   $('.group-name').val('');
-  $('#groups-list').empty().html("<%= j render 'arbor_reloaded/groups/list', groups: @groups %>");
+  $('#groups-list').empty().html("<%= j render 'arbor_reloaded/groups/list', groups: @groups, project: @project %>");
   $('#group-modal').foundation('reveal', 'close');
 <% else %>
   $('.group-name').addClass('errors')

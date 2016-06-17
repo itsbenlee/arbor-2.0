@@ -39,8 +39,8 @@
         .group-block
           %label= "#{t('reloaded.story_modal.group')} :"
           %select.groups-common-select{id: "groups-common-select-#{@user_story.id}" ,data: { id: @user_story.id ,url: arbor_reloaded_user_story_path(@user_story)} }
+            %option{ value: '?' } ?
             - @groups.each do |group|
-              %option{ value: '?' } ?
               %option{ value: group.id, selected: (@user_story.group_id === group.id)}
                 = group.name
     %p.created-data.hide
