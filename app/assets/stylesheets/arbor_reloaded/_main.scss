@@ -146,6 +146,15 @@ input:focus {
   }
 
   &.group-divider {
+    text-align: left;
+    text-transform: none;
+
+    h5 {
+      text-align: center;
+      text-transform: uppercase;
+      width: 100%;
+    }
+
     &::before {
       border-bottom: 1px solid $light-blue-2;
       bottom: 0;
