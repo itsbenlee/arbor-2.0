@@ -167,6 +167,10 @@ input:focus {
     }//border
     &::after { top: 0; }
   }
+
+  .reorder-user-stories {
+    min-height: rem-calc(40);
+  }
 }//section separator
 
 // -------  BLOCK ELEMENT AND ACTIONS' BUTTONS ------ //

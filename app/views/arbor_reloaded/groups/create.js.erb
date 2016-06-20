@@ -2,6 +2,7 @@
   $('.group-name').val('');
   $('#groups-list').empty().html("<%= j render 'arbor_reloaded/groups/list', groups: @groups, project: @project %>");
   $('#group-modal').foundation('reveal', 'close');
+  bindReorderStories();
 <% else %>
   $('.group-name').addClass('errors')
   $('.new-group-errors').html('*<%= @errors[0] %>');
