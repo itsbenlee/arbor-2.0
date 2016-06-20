@@ -2,7 +2,7 @@
   - groups.each do |group|
     .group-divider{ id: "group-#{group.id}" }
       %h5= group.name
-      .reorder-user-stories{ data: { url: arbor_reloaded_project_reorder_backlog_path(project), project: project.id  } }
+      .reorder-user-stories{ data: { url: arbor_reloaded_project_reorder_backlog_path(project), project: project.id, group_id: group.id  } }
         - group.user_stories.backlog_ordered.each do |user_story|
           = render 'arbor_reloaded/user_stories/user_story', user_story: user_story
           = render 'arbor_reloaded/user_stories/story_detail_modal', user_story: user_story

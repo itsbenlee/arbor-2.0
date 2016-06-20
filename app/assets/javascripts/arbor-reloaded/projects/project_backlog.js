@@ -42,7 +42,9 @@ function setStoriesOrder() {
       length = $updatedStoriesOnList.length + 1;
 
   $.each($updatedStoriesOnList, function(index) {
-    var story = { id: $(this).data('id'), backlog_order: length - index };
+    var group_id = this.parentElement.dataset.groupId,
+        story    = { id: $(this).data('id'), backlog_order: length - index, group_id: group_id };
+
     newStoriesOrder.stories.push(story);
   });
 

@@ -81,9 +81,12 @@ class Project < ActiveRecord::Base
     user_stories.update_all backlog_order: nil
 
     user_stories_hash.values.each do |story|
+      story_group = story['group_id']
+      group_from_hash = story_group ? story_group.to_i : nil
       UserStory
         .find(story['id'].to_i)
-        .update_attributes!(backlog_order: story['backlog_order'].to_i)
+        .update_attributes!(backlog_order: story['backlog_order'].to_i,
+                            group_id: group_from_hash)
     end
   end
 
