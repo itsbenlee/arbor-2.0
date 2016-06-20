@@ -37,6 +37,6 @@
     = label_tag :cost_structure, t('cost_structure_title')
     = text_area_tag :cost_structure, canvas.cost_structure, data: { question: 'cost-structure' }, class: 'resizable-text-area', placeholder: t('canvas.textarea_placeholder')
     %p.enter press &#8629; to finish
-  = submit_tag :save, class: 'button radius small secondary-btn', id: 'save-canvas'
+  = submit_tag :save, class: 'button radius tiny secondary-btn', id: 'save-canvas'
 - content_for :custom_js do
   = javascript_include_tag 'arbor-reloaded/projects/canvas/form'
