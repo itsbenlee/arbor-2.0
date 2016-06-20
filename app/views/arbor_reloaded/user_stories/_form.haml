@@ -33,6 +33,5 @@
       id:         'result-input',                          |
     )                                                      |
 
-  .select-group
-    = form.select(:group_id, project.groups.map{ |group| [group.name, group.id] }, { include_blank: '?' })
+  = form.select(:group_id, project.groups.map{ |group| [group.name, group.id] }, { include_blank: t('reloaded.user_stories.create.group_select_default') }, class: 'select-group-dropdown')
   = form.submit t('reloaded.backlog.create'), id: 'save-user-story', class: 'create-btn button radius tiny'
