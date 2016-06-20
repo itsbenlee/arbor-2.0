@@ -12,7 +12,11 @@
       = link_to '', '#', method: :post, class: 'icn-copy hidden-element has-tip tip-left', aria: { haspopup: true }, data: { tooltip: '' }, title: t('reloaded.tooltips.duplicate_story')
     %h4
       %span.story-points{ data: { id: @user_story.id } }= @user_story.estimated_points ||= '?'
-      %select.fibonacci-select{ id: 'fibonacci-dropdown', class: 'has-tip', aria: { haspopup: true }, title: t('reloaded.tooltips.estimate'), data: { id: @user_story.id, url: arbor_reloaded_user_story_path(@user_story), tooltip: '' } }
+      %select.fibonacci-select{ id: 'fibonacci-dropdown', class: 'has-tip',
+      aria: { haspopup: true }, title: t('reloaded.tooltips.estimate'),
+      data: { id: @user_story.id, url: arbor_reloaded_user_story_path(@user_story),
+      tooltip: '', groups_url: arbor_reloaded_project_groups_path(@project)},
+      ungrouped_url: ungrouped_arbor_reloaded_project_user_stories_path(@project) }
         %option{ value: '?' } ?
         %option{ value: '1', selected: (@user_story.estimated_points == 1) } 1
         %option{ value: '2', selected: (@user_story.estimated_points == 2) } 2
@@ -27,7 +31,10 @@
           = @user_story.log_description
         .estimation-block
           %label= "#{t('reloaded.story_modal.complexity_points')} :"
-          %select.fibonacci-common-select{ id: 'fibonacci-common-dropdown', aria: { haspopup: true }, data: { id: @user_story.id, url: arbor_reloaded_user_story_path(@user_story)} }
+          %select.fibonacci-common-select{ id: 'fibonacci-common-dropdown',
+          aria: { haspopup: true }, data: { id: @user_story.id, url: arbor_reloaded_user_story_path(@user_story),
+          groups_url: arbor_reloaded_project_groups_path(@project),
+          ungrouped_url: ungrouped_arbor_reloaded_project_user_stories_path(@project) } }
             %option{ value: '?' } ?
             %option{ value: '1', selected: (@user_story.estimated_points == 1) } 1
             %option{ value: '2', selected: (@user_story.estimated_points == 2) } 2
@@ -38,7 +45,10 @@
             %option{ value: '21', selected: (@user_story.estimated_points == 21) } 21
         .group-block
           %label= "#{t('reloaded.story_modal.group')} :"
-          %select.groups-common-select{id: "groups-common-select-#{@user_story.id}" ,data: { id: @user_story.id ,url: arbor_reloaded_user_story_path(@user_story)} }
+          %select.groups-common-select{ id: "groups-common-select-#{@user_story.id}",
+          data: { id: @user_story.id ,url: arbor_reloaded_user_story_path(@user_story),
+          groups_url: arbor_reloaded_project_groups_path(@project),
+          ungrouped_url: ungrouped_arbor_reloaded_project_user_stories_path(@project) } }
             %option{ value: '?' } ?
             - @groups.each do |group|
               %option{ value: group.id, selected: (@user_story.group_id === group.id)}

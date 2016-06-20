@@ -2,6 +2,11 @@ module ArborReloaded
   class GroupsController < ApplicationController
     before_action :set_project_and_groups
 
+    def index
+      render partial: 'arbor_reloaded/groups/list',
+             locals: { groups: @groups, project: @project }
+    end
+
     def create
       @groups.create(group_params)
       @errors = @groups.try(:last).try(:errors).try(:full_messages)
