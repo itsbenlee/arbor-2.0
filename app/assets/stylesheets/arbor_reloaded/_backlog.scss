@@ -28,15 +28,32 @@
     }
   } // input
 
-  .create-btn {
+  .create-btn,
+  .select-group-dropdown {
     $btn-width: rem-calc(73);
     $btn-height: rem-calc(40);
+    $select-width: rem-calc(180);
+    $select-height: rem-calc(34);
 
-    background-color: $black-20;
     bottom: - $btn-height / 2;
     margin: 0;
     position: absolute;
-    right: 0;
+    right: $btn-width + rem-calc(20);
+    z-index: 4;
+
+    &.select-group-dropdown {
+      height: $select-height;
+      line-height: $select-height;
+      padding: 0 rem-calc(10);
+      width: $select-width;
+    }//select group dd
+
+    &.create-btn {
+      background-color: $black-20;
+      right: 0;
+
+      @media #{ $small-only } { right: rem-calc(10); }
+    }//create btn
   }
 
   .success-button { background-color: $success-color; }
