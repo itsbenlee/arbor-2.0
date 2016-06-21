@@ -1,8 +1,15 @@
 <% unless @errors.any? %>
+  var $stories_container = $('#user-story-form-container')[0],
+      new_story_url      = $stories_container.dataset.newStoryUrl;
+
   $('.group-name').val('');
   $('#groups-list').empty().html("<%= j render 'arbor_reloaded/groups/list', groups: @groups, project: @project %>");
   $('#group-modal').foundation('reveal', 'close');
   bindReorderStories();
+
+  $.get(new_story_url, function(data) {
+    $('#user-story-form-container').empty().html(data);
+  });
 <% else %>
   $('.group-name').addClass('errors')
   $('.new-group-errors').html('*<%= @errors[0] %>');

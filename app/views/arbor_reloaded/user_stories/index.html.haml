@@ -1,5 +1,6 @@
 .new-backlog-story.row
-  = render 'arbor_reloaded/user_stories/form', user_story: UserStory.new, project: @project
+  #user-story-form-container{ data: { new_story_url: new_arbor_reloaded_project_user_story_path(@project) } }
+    = render 'arbor_reloaded/user_stories/form', user_story: UserStory.new, project: @project
 .estimation.row{class: @project.user_stories.count > 0 ? 'visible' : 'hide'}
   .small-12.columns
     = render 'arbor_reloaded/user_stories/estimation', project: @project, total_points: @total_points
