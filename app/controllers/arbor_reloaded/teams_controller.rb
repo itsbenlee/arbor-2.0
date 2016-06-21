@@ -22,7 +22,7 @@ module ArborReloaded
       if @member
         @team.users << @member
       else
-        Invite.create(email: member_params, team: @team)
+        Invite.create(email: member_params.try(:squish), team: @team)
       end
 
       @teams = current_user.teams
