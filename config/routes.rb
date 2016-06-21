@@ -44,6 +44,9 @@ Railsroot::Application.routes.draw do
           controller: :user_stories do
         resources :acceptance_criterions, only: [:create, :update, :destroy]
         resources :comments, only: [:create, :destroy]
+        collection do
+          get :ungrouped
+        end
       end
 
       put 'add_member', controller: :projects, action: :add_member
@@ -60,7 +63,7 @@ Railsroot::Application.routes.draw do
 
       get 'members', controller: :projects, action: :members
 
-      resources :groups, only: :create
+      resources :groups, only: %i(index create)
     end
 
     get 'export/:id/spreadhseet', to: 'projects#export_to_spreadhseet'

@@ -18,7 +18,9 @@ function UserStory() {
         $estimationPoints = $('.story-points[data-id="' + story_id + '"]'),
         $groupSelect      = $('#groups-common-select-' + story_id)[0],
         group_id          = $groupSelect.value,
-        estimated_points  = this.value;
+        estimated_points  = this.value,
+        groups_url        = this.dataset.groupsUrl,
+        ungrouped_url     = this.dataset.ungroupedUrl;
 
     if($(this).hasClass('groups-common-select')) {
       estimated_points = $estimationPoints.text();
@@ -37,6 +39,13 @@ function UserStory() {
           $('.total_cost').text(numberWithCommas(response.data.total_cost));
           $('.total_weeks').text(response.data.total_weeks);
           displayEstimation(response.data);
+
+          $.when($.get(groups_url), $.get(ungrouped_url)).done(function(groupsData, ungroupedData) {
+            $('#groups-list-container').empty().html(groupsData[0]);
+            $('#ungrouped-list-container').empty().html(ungroupedData[0]);
+            bindReorderStories();
+          });
+
         }
       }
     });

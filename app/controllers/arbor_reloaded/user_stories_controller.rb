@@ -5,7 +5,7 @@ module ArborReloaded
     before_action :next_and_prev_story, only: :show
     before_action :load_user_story, only: %i(edit update destroy)
     before_action :check_edit_permission, only: :create
-    before_action :set_project, only: %i(destroy_stories update)
+    before_action :set_project, only: %i(destroy_stories update ungrouped)
     before_action :set_project_and_groups, only: %i(index show)
 
     def index
@@ -64,6 +64,11 @@ module ArborReloaded
         ArborReloaded::UserStoryService
         .new(@project).destroy_stories(destroy_stories_params[:user_stories])
       render json: response, status: (response.success ? 201 : 422)
+    end
+
+    def ungrouped
+      render partial: 'arbor_reloaded/user_stories/ungrouped_list',
+             locals: { project: @project }
     end
 
     private
