@@ -9,6 +9,7 @@
 
   $.get(new_story_url, function(data) {
     $('#user-story-form-container').empty().html(data);
+    autogrowInputs();
   });
 <% else %>
   $('.group-name').addClass('errors')
