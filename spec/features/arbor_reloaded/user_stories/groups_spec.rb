@@ -45,6 +45,21 @@ feature 'Groups', js: true do
       expect(page).to have_content(/Test group/i)
     end
 
+    scenario 'I should see the group on select box after creating it' do
+      within '.backlog-story-list' do
+        find('#create-group').click
+      end
+
+      within 'form#new_group' do
+        fill_in 'group_name', with: 'Test group'
+        click_button 'Create'
+      end
+      wait_for_ajax
+      sleep 0.5
+
+      expect(find('#user_story_group_id').find(:xpath, 'option[3]').text).to eq('Test group')
+    end
+
     scenario 'I should see the error message wen name is taken' do
       within '.backlog-story-list' do
         find('#create-group').click

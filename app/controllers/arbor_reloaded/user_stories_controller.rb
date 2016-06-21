@@ -5,8 +5,16 @@ module ArborReloaded
     before_action :next_and_prev_story, only: :show
     before_action :load_user_story, only: %i(edit update destroy)
     before_action :check_edit_permission, only: :create
-    before_action :set_project, only: %i(destroy_stories update ungrouped)
+    before_action :set_project, only: %i(destroy_stories update ungrouped new)
     before_action :set_project_and_groups, only: %i(index show)
+
+    def new
+      user_story = UserStory.new
+
+      render partial: 'arbor_reloaded/user_stories/form',
+             locals: { project: @project,
+                       user_story: user_story }
+    end
 
     def index
       @user_story = UserStory.new
