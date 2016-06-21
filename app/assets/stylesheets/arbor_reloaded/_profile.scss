@@ -57,12 +57,6 @@ $profile-margin: $user-header-padding;
 
 .mail-title { margin-left: $user-header-padding; }
 
-.field-title {
-  margin: $user-header-padding auto;
-  text-align: left;
-  width: 40%;
-}
-
 //   PROFILE VIEW
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -92,9 +86,7 @@ $profile-margin: $user-header-padding;
   }
 
   .button {
-    margin-top: $profile-margin * 1.5;
-
-    &.copy-token { margin: rem-calc(20 10 0); }
+    &.copy-token { margin: rem-calc(0 10 0); }
   }
 
   .arbor-token {
@@ -108,8 +100,15 @@ $profile-margin: $user-header-padding;
 
 .section-profile,
 .user-header {
+  .field {
+    margin: $user-header-padding auto;
+    text-align: left;
+    width: 40%;
+  }
+
   input {
     &[type="email"],
+    &[type="password"],
     &[type="text"] {
       background-color: transparent;
 
