@@ -51,6 +51,7 @@ en:
       enter_result: "<some benefit>"
       enter_criterion: 'Write a new acceptance criteria here...'
       new_comment: "Write a new comment here..."
+      ungrouped: No group
     logout: "Sign out"
     acceptance_criterions: "Acceptance Criteria"
   canvas:
