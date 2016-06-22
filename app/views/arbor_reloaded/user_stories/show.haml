@@ -43,6 +43,7 @@
             %option{ value: '8', selected: (@user_story.estimated_points == 8) } 8
             %option{ value: '13', selected: (@user_story.estimated_points == 13) } 13
             %option{ value: '21', selected: (@user_story.estimated_points == 21) } 21
+          = image_tag 'icons/done-icon.png', class: 'estimation-edited', id: "estimation-edited-#{@user_story.id}"
         .group-block
           %label= "#{t('reloaded.story_modal.group')} :"
           %select.groups-common-select{ id: "groups-common-select-#{@user_story.id}",
@@ -53,6 +54,7 @@
             - @groups.each do |group|
               %option{ value: group.id, selected: (@user_story.group_id === group.id)}
                 = group.name
+          = image_tag 'icons/done-icon.png', class: 'group-edited', id: "group-edited-#{@user_story.id}"
     %p.created-data.hide
       %span.date Nov 19 at 5:45 PM
       by

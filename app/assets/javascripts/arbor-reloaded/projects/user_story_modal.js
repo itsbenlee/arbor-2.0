@@ -21,15 +21,19 @@ function UserStory() {
         group_id          = $groupSelect.value,
         estimated_points  = this.value,
         groups_url        = this.dataset.groupsUrl,
-        ungrouped_url     = this.dataset.ungroupedUrl;
+        ungrouped_url     = this.dataset.ungroupedUrl,
+        group_edition     = $(this).hasClass('groups-common-select');
 
-    if($(this).hasClass('groups-common-select')) {
+    if(group_edition) {
       estimated_points = $estimationPoints.text();
     } else {
       $points.val(this.value);
     }
 
     $estimationPoints.html(estimated_points);
+
+    $('#estimation-edited-' + story_id).hide();
+    $('#group-edited-' + story_id).hide();
 
     $.ajax({
       url: $(this).data('url'),
@@ -47,6 +51,7 @@ function UserStory() {
             $('#groups-list-container').empty().html(groupsData[0]);
             $('#ungrouped-list-container').empty().html(ungroupedData[0]);
             bindReorderStories();
+            group_edition ? $('#group-edited-' + story_id).show() : $('#estimation-edited-' + story_id).show();
           });
 
         }
