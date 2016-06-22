@@ -20,6 +20,12 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  protected
+
+  def respond_with(*_args)
+    redirect_to :back
+  end
+
   private
 
   def resource_name
