@@ -85,7 +85,17 @@ $circle-dimension: $story-points-dimension;
   } // span
 }//styles for backlog user story and modal
 
-.reorder-user-stories { &:last-child { border-bottom: 1px solid $black-10; } }
+.reorder-user-stories {
+  min-height: rem-calc(10);
+
+  .sortable-placeholder {
+    background-color: rgba($success-color, .3);
+    border: 2px dashed $success-color;
+    height: rem-calc(50);
+  }
+
+  &.active { min-height: rem-calc(50);}
+}
 
 .backlog-user-story {
   border-top: 1px solid $black-10;

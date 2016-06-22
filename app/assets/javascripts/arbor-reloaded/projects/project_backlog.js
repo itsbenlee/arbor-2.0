@@ -22,6 +22,13 @@ function bindReorderStories() {
   var $reorder_stories = $backlogStoryList.find('.reorder-user-stories');
   $reorder_stories.sortable({
     connectWith: '.reorder-user-stories',
+    placeholder: 'sortable-placeholder',
+    over: function( event, ui ) {
+      $(event.target).addClass('active');
+    },
+    out: function( event, ui ) {
+      $(event.target).removeClass('active');
+    },
     stop: function() {
       var newStoriesOrder = setStoriesOrder(),
           url = $reorder_stories.data('url');
