@@ -49,7 +49,7 @@
           data: { id: @user_story.id ,url: arbor_reloaded_user_story_path(@user_story),
           groups_url: arbor_reloaded_project_groups_path(@project),
           ungrouped_url: ungrouped_arbor_reloaded_project_user_stories_path(@project) } }
-            %option{ value: '?' } ?
+            %option{ value: '?' }= t('backlog.user_stories.ungrouped')
             - @groups.each do |group|
               %option{ value: group.id, selected: (@user_story.group_id === group.id)}
                 = group.name
