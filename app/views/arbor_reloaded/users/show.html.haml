@@ -28,9 +28,7 @@
       = f.password_field :password_confirmation, autocomplete: 'off', required: false, placeholder: :password_confirmation, class: 'dashed-input interactive-field'
     .field
       = f.password_field :current_password, autocomplete: 'off', required: true, placeholder: :current_password, class: 'dashed-input interactive-field'
-    = link_to t('reloaded.users.edit'),'#', class:  'button radius small success', id: 'edit-user-profile-btn'
-    = f.submit t('reloaded.users.save'), class: 'button radius tiny ', id: 'save-user-profile'
-    = link_to t('reloaded.users.cancel_btn'), '#', class: 'button radius secondary tiny', id: 'cancel-btn'
+    = f.submit t('reloaded.users.save_btn'), class: 'button radius small success', id: 'save-user-profile'
     .arbor-token
       %span#arbor-token-field.hide= current_user.access_token
       = link_to t('reloaded.users.copy_token'),'#', class:  'button radius tiny copy-token', id: 'copy-token'

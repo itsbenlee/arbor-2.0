@@ -69,9 +69,6 @@ $profile-margin: $user-header-padding;
     width: 57%;
   } // user bio
 
-  #save-user-profile,
-  #cancel-btn { display: none; }
-
   .user-mail {
     color: $black-50;
     font-size: rem-calc(18);

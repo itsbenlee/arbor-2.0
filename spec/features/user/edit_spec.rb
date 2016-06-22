@@ -9,18 +9,8 @@ feature 'Edit Profile', js: true do
       visit arbor_reloaded_user_path(user.id)
     end
 
-    scenario 'I should be able to edit the information' do
-      within ("form#edit_user_#{user.id}") do
-        find('#edit-user-profile-btn').trigger('click')
-      end
-
-      expect(page).to have_css('#save-user-profile')
-      expect(page).to have_css('#cancel-btn')
-    end
-
     scenario 'I should be able to update my password' do
       within ("form#edit_user_#{user.id}") do
-        find('#edit-user-profile-btn').trigger('click')
         find('#user_password').set('12345678')
         find('#user_password_confirmation').set('12345678')
         find('#user_current_password').set(user.password)
@@ -39,7 +29,6 @@ feature 'Edit Profile', js: true do
 
     scenario 'I should not be able to change password with different passwords' do
       within ("form#edit_user_#{user.id}") do
-        find('#edit-user-profile-btn').trigger('click')
         find('#user_password').set('12345678')
         find('#user_password_confirmation').set('12345678910')
         find('#user_current_password').set(user.password)
@@ -51,7 +40,6 @@ feature 'Edit Profile', js: true do
 
     scenario 'I should not be able to submit profile changes with wrong password' do
       within ("form#edit_user_#{user.id}") do
-        find('#edit-user-profile-btn').trigger('click')
         find('#user_email').set('test@getarbor.io')
         find('#user_current_password').set('wrong_password')
         click_button('Save')

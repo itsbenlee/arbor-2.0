@@ -232,9 +232,6 @@ en:
     users:
       name: 'Name'
       mail: 'Email'
-      edit: 'Edit'
-      save: 'Save'
-      cancel_btn: 'Cancel'
       save_btn: 'Save'
       enter_password: 'Enter new password'
       copy_token: 'Copy access token'
