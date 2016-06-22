@@ -38,7 +38,8 @@ RemoveUnusedMethodsInControllersCheck: {
     ProjectsController#copy,
     ProjectsController#list_projects,
     SlackController#authorize,
-    SlackController#send_authorize_data
+    SlackController#send_authorize_data,
+    RegistrationsController#respond_with
   ]
 }
 RemoveUnusedMethodsInHelpersCheck: { except_methods: [] }
