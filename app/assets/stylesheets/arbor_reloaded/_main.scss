@@ -91,7 +91,7 @@ $story-padding-top: rem-calc(20);
     background-color: $success-color;
 
     + .story-detail-link { margin-left: $story-padding-top * 2; }
-    &::after { border-color: $black-90; }
+    &::after { border-color: $white; }
   } // checked
 } // square checkbox
 
