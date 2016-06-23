@@ -45,6 +45,7 @@ function generalBinds() {
     displayActions();
     displayHideDelete();
     storiesWidth();
+    displayColorTags();
   }
 }
 
