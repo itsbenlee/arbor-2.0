@@ -99,7 +99,7 @@ class Project < ActiveRecord::Base
     create_activity :create_project
   end
 
-  def as_json
+  def as_json(*_args)
     { id: id,
       name: name,
       user_stories: user_stories.backlog_ordered.map(&:as_json),

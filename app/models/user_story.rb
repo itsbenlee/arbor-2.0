@@ -45,7 +45,7 @@ class UserStory < ActiveRecord::Base
     copy_associations(replica.id)
   end
 
-  def as_json
+  def as_json(*_args)
     { id: id,
       description: description,
       role: role,

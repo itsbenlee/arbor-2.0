@@ -1,4 +1,5 @@
 Railsroot::Application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_scope :user do
     authenticated :user do
       root to: 'arbor_reloaded/projects#index', as: :authenticated_root

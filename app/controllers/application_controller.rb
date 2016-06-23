@@ -2,7 +2,8 @@ class ApplicationController < ActionController::Base
   include PublicActivity::StoreController
 
   protect_from_forgery with: :exception
-  before_action :authenticate_user!, :current_user_projects
+  before_action :authenticate_user!, :current_user_projects,
+    unless: :admin_controller?
   before_action :configure_permitted_parameters, if: :devise_controller?
   layout :layout_by_resource
   force_ssl if: :ssl_configured?
@@ -27,5 +28,9 @@ class ApplicationController < ActionController::Base
 
   def layout_by_resource
     devise_controller? ? 'guest' : 'application'
+  end
+
+  def admin_controller?
+    params[:controller].include? 'rails_admin'
   end
 end

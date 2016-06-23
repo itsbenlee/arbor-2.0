@@ -27,6 +27,7 @@ gem 'indefinite_article'
 gem 'react-rails', '~> 1.5.0'
 gem 'active_link_to'
 gem 'intercom', "~> 3.4.0"
+gem 'rails_admin', '~> 0.8.1'
 
 group :doc do
   gem 'sdoc', require: false
