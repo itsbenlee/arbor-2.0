@@ -13,7 +13,7 @@ class AcceptanceCriterion < ActiveRecord::Base
     save
   end
 
-  def as_json
+  def as_json(*_args)
     { id: id, description: description }
   end
 
