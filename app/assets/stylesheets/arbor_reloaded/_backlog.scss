@@ -165,7 +165,7 @@ $circle-dimension: $story-points-dimension;
   $icons-margin-bottom: rem-calc(10);
 
   @include border-radius($global-radius);
-  background-color: $black-10;
+  background-color: $success-color;
   display: none;
   height: ($story-points-dimension * 2) + ($icons-margin-bottom * 3);
   padding: $icons-margin-bottom;
