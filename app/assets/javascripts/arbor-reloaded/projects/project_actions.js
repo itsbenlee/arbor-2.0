@@ -48,5 +48,5 @@ function displayHideDelete() {
 $( document ).ready(function() {
   generalBinds();
   bindAutoReveal();
-  hideShowEstimation();
+  collapsableContent();
 });
