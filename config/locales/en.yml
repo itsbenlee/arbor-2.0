@@ -178,6 +178,7 @@ en:
       canvas: 'Canvas'
       backlog: 'Backlog'
       activity: 'Activity'
+      more: 'More...'
       assets: 'Assets'
       help: 'Help'
       export_with_estimation: 'Export as PDF'
