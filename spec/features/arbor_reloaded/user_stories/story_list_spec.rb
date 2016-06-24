@@ -56,4 +56,13 @@ feature 'Story list' do
       expect(page).to have_content(total_points)
     end
   end
+
+  scenario 'should change the color for user story', js: true do
+    within "#backlog-user-story-#{user_stories.first.id}" do
+      find('.color-tag[data-color="1"]', visible: false).trigger(:click)
+    end
+    wait_for_ajax
+
+    expect(page).to have_css ("#backlog-user-story-#{user_stories.first.id}.story-tag-1")
+  end
 end

@@ -86,6 +86,47 @@ function showBulkMenu() {
   });
 }
 
+function removeColors(userStoryID) {
+  var $backlogStory = $('#backlog-user-story-' + userStoryID);
+  for (var i = 1; i <= 7; i++) { $backlogStory.removeClass('story-tag-' + i); }
+}
+
+function addColor(userStoryID, colorID) {
+  removeColors(userStoryID);
+  if(colorID) {
+    $('#backlog-user-story-' + userStoryID).addClass('story-tag-' + colorID);
+  }
+}
+
+function bindUserStoriesColorLinks() {
+  var $colorLinks = $('.color-tag');
+
+  $colorLinks.click(function(event) {
+    var color    = $(this).data('color'),
+        url      = $(this).data('url'),
+        selected = $(this).data('selected'),
+        storyID  = $(this).data('storyId');
+
+    if(selected) {
+      color = null;
+    }
+
+    $(this).data('selected', !selected);
+
+    $.ajax({
+      url: url,
+      dataType: 'json',
+      method: 'PUT',
+      data: { color: color },
+      success: function(data) {
+        addColor(storyID, color);
+      }
+    });
+
+    return false;
+  });
+}
+
 $(document).ready(function() {
   if ($('.new-backlog-story').length > 0) { autogrowInputs(); }
 
@@ -93,6 +134,7 @@ $(document).ready(function() {
     showBulkMenu();
     bindReorderStories();
     checkForEmptyGroupStories();
+    bindUserStoriesColorLinks();
   }
 });
 
