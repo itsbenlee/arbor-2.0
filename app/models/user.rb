@@ -21,6 +21,7 @@ class User < ActiveRecord::Base
   has_many :team_users
   has_many :teams, through: :team_users
   has_many :user_stories, through: :projects
+  has_many :acceptance_criterions, through: :user_stories
   has_one :api_key, dependent: :destroy
   after_commit :generate_api_key, on: %i(create update)
 
@@ -33,6 +34,15 @@ class User < ActiveRecord::Base
 
   def log_description
     full_name
+  end
+
+  def self.from_hash(hash)
+    filters = { email: hash['email'], full_name: hash['full_name'] }
+
+    User.find_or_initialize_by(filters) do |user|
+      user.password = 'ChangeMePlease'
+      user.save
+    end
   end
 
   private

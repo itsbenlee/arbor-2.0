@@ -99,7 +99,7 @@ class Project < ActiveRecord::Base
     create_activity :create_project
   end
 
-  def as_json
+  def as_json(*_args)
     { id: id,
       name: name,
       user_stories: user_stories.backlog_ordered.map(&:as_json),
@@ -109,5 +109,14 @@ class Project < ActiveRecord::Base
   def owner_as_member
     return if members.include? owner
     members << owner
+  end
+
+  def self.from_hash(hash, owner)
+    owner.owned_projects.find_or_initialize_by(name: hash['name']) do |project|
+      project.update_attributes(favorite: hash['favorite'],
+                                velocity: hash['velocity'],
+                                is_template: hash['is_template'])
+      project.save
+    end
   end
 end

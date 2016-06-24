@@ -1,0 +1,2945 @@
+{
+  "email": "napoleon.martinez@neonroots.com",
+  "full_name": "Napoleon Martinez",
+  "projects": [
+    {
+      "name": "My Test Project",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "another",
+          "action": "another",
+          "result": "another",
+          "acceptance_criterions": [
+            {
+              "description": "ee"
+            },
+            {
+              "description": "ee"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "browse the site",
+          "result": "i can check things out",
+          "estimated_points": 21,
+          "acceptance_criterions": [
+            {
+              "description": "aaa"
+            },
+            {
+              "description": "aa"
+            },
+            {
+              "description": "aa"
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "Favor",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "employee",
+          "action": "message the client",
+          "result": "I can coordinate details",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "employee",
+          "action": "view the project details",
+          "result": "I can accept or decline",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "employee",
+          "action": "be notified when I have a match",
+          "result": "I can accept or decline",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "employee",
+          "action": "set how far I am willing to go (miles)",
+          "result": "so that I can get matched to a project",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "employee",
+          "action": "set my availability for now and later",
+          "result": "I can get matched to a project",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "employee",
+          "action": "select my skills",
+          "result": "I can be matched to a project",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "employee",
+          "action": "create a profile",
+          "result": " I am in the Favor database",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "client",
+          "action": "share my project to FB or my contact list",
+          "result": "to invite my friends to Favor",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "client",
+          "action": "rate the employee",
+          "result": "the app can quality control",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "client",
+          "action": "message my match",
+          "result": "we contact each other if needed",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "client",
+          "action": "notified 15 min before arrival time",
+          "result": "I can prepare for the employee",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "client",
+          "action": "receive confirmation of my match, estimated cost, arrival countdown, cancellation option ",
+          "result": "I can prepare for my employee",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "client",
+          "action": "connect with an employer match instantly",
+          "result": "I can finish the matching experience",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "client",
+          "action": "add additional comments to the project card",
+          "result": "I can add details for the employee",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "client",
+          "action": "select when I need this project completed",
+          "result": "I can finish the project card",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "client",
+          "action": "select the length of the project",
+          "result": "get a suggested price",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "client",
+          "action": "select where my task is needed (garage, fridge, garden)",
+          "result": "define the task more",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "client",
+          "action": "set my task from a predefined list",
+          "result": "i can build a project",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "client",
+          "action": "start a project",
+          "result": "so I can find an employee",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "identify as a client or an employee",
+          "result": "i can find help or get hired",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "learn how it works",
+          "result": "I can understand the app",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "stay log in",
+          "result": "I can use the app instantly",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "mobile signup",
+          "result": "sign up",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "log in to facebook",
+          "result": "I can sign up",
+          "acceptance_criterions": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "TravelMedic",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "patient",
+          "action": "email or message the doctor I selected",
+          "result": "I can communicate with them quickly",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "physician",
+          "action": "message and email with patients assigned to me",
+          "result": "I can communicate quickly with them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "enable push notifications",
+          "result": "I can receive notifications from MyTravelMedic",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "physician",
+          "action": "receive a receipt and summary of the service I provided",
+          "result": "I can keep a record of all care I provide",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "patient",
+          "action": "receive a receipt of the service I got from my doctor",
+          "result": "I can keep a record of it",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "enable location services",
+          "result": "I can benefit from TravelMedic's geolocation-based features",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "physician",
+          "action": "upload a photo of myself",
+          "result": "my patient can identify me",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "patient",
+          "action": "upload a photo of myself",
+          "result": "my doctor can identify me",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "physician",
+          "action": "update my payment information",
+          "result": "I can continue getting paid",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "patient",
+          "action": "update my payment information",
+          "result": "I can keep it current",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "log out of TravelMedic",
+          "result": "I can exit my account",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "physician",
+          "action": "see my patient's rating",
+          "result": "I can know if they're great to care for",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "patient",
+          "action": "see my doctor's rating",
+          "result": "I can know if they'll provide quality service",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "physician",
+          "action": ",once at location, start care for my patient",
+          "result": "I can keep track of my time there",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "patient",
+          "action": "be notified when my doctor arrives",
+          "result": "I can begin my care",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "physician",
+          "action": "set up how to get paid",
+          "result": "I can get paid",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "patient",
+          "action": "set up my payment information",
+          "result": "I can easily pay through the app",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "patient",
+          "action": "see when my care has been completed",
+          "result": "I can know my bill is coming shortly",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "physician",
+          "action": "confirm when care for patient has been completed",
+          "result": "patient can receive a bill",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "physician",
+          "action": "track what services, test, medications, etc I used",
+          "result": "patient can be billed correctly",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "physician",
+          "action": "get directions to my patient's location",
+          "result": "I can get to them quickly",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "physician",
+          "action": "see where my patient is located",
+          "result": "I can go care for them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "physician",
+          "action": "be notified when a patient is requesting my care",
+          "result": "I can go care for them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "physician",
+          "action": "update my physician profile",
+          "result": "it can be kept current",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "physician",
+          "action": ", once vetted, switch to doctor mode on TravelMedic",
+          "result": "I can start caring for patients on TravelMedic",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "physician",
+          "action": "sign up to be vetted as a doctor on TravelMedic",
+          "result": "I can start making revenue off using TravelMedic",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "reset my password",
+          "result": "if I forget my password I can still have a way to regain access to my account",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "be welcomed to MyTravelMedic",
+          "result": "I can get a brief intro of the app",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "sign up for MyTravel Medic",
+          "result": "I can start benefiting from it",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "stay logged in",
+          "result": "I don't have to keep logging in everytime I open MyTravelMedic",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "log in with MyTravelMedic credentials",
+          "result": "can continue enjoying the benefits of using MyTravelMedic",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "download the app",
+          "result": "I can start enjoying the benefits of using TravelMedic",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that app is downloadable from App Store"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "learn about MyTravelMedic",
+          "result": "I have an overview of how it works",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "patient",
+          "action": "video conference with my selected doctor and multiple guests",
+          "result": "I can receive the best care remotely",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "physician",
+          "action": "leave standardized feedback in the system about the patient",
+          "result": "better patients are rewarded",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "patient",
+          "action": "leave standardized feedback about my care",
+          "result": "better physicians are rewarded in the system",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "physicians",
+          "action": "create a physician profile",
+          "result": "patients can see my credentials",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "patient",
+          "action": "review physician profiles and qualifications",
+          "result": "I can select the best physician for my needs",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "physician",
+          "action": "easily see the patient profile of the patient I am serving",
+          "result": "I can provide the correct care",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "physician",
+          "action": "go unavailable, on call, or fully available",
+          "result": "patients can request me for only what I'm available for",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "patient",
+          "action": "search for physicians by different filters and criteria that are based on symptoms",
+          "result": "I can find just who I am looking for what I need",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "patient",
+          "action": "import data from other sources into my patient profile",
+          "result": "I don't need to reproduce everything",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "patient",
+          "action": "update my patient profile",
+          "result": "it can be kept current",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "patient",
+          "action": "create a secure patient profile",
+          "result": "physicians immediately have all the information they need",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "physician",
+          "action": "receive payment easily",
+          "result": "I am encouraged to use the platform",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "patient",
+          "action": "get charged after receiving care",
+          "result": "I don't have to remember about paying",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "patient",
+          "action": "see estimated time of arrival for my doctor to come to me",
+          "result": "I can keep track of them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "patient",
+          "action": "see how far away doctors are located",
+          "result": "I can know how long it might take them to get to me",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "patient",
+          "action": "request a doctor to come to my location",
+          "result": "I can receive care where I am located",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "patient",
+          "action": "video conference with my selected doctor",
+          "result": "I can receive care",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "patient",
+          "action": "search for a doctor that matches my needs",
+          "result": "I can receive care",
+          "acceptance_criterions": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "Test 2",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [],
+      "errors": []
+    },
+    {
+      "name": "Altour Test Project for Brice",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "traveler",
+          "action": "book a flight",
+          "result": "I can travel",
+          "estimated_points": 1,
+          "acceptance_criterions": [
+            {
+              "description": "If I am a user, I can select my destination and departure point"
+            },
+            {
+              "description": "I can select my departure date and return date"
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "Altour",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "agent",
+          "action": "charge my customer's card",
+          "result": "I can process their bookings",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "update my payment information",
+          "result": "I can keep my payment details up to date",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "add my payment information",
+          "result": "I can pay for my booking and altour24 calls",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "call Altour",
+          "result": "I can get helped out",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "receive emails and newsletters relevant to me",
+          "result": "I can get ideas for more bookings",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that email / newsletter provides ideas of great trips"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "receive notifications",
+          "result": "I can know when my customer is reaching out to me",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "receive app notifications",
+          "result": "I can stay up to date on messages from my agent and be reminded of any updates ",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "have my Altour experience personalized with my assigned agent",
+          "result": "I can remember that there's an agent looking out for me",
+          "estimated_points": 13,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agent",
+          "action": "provide my customer their boarding passes",
+          "result": "they can travel with ease",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "see my itinerary history",
+          "result": "I can look back to where I've been",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agent",
+          "action": "manage my customer's itinerary",
+          "result": "I can make sure they have everything they need",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agent",
+          "action": "send flight, hotel, transportation, and tour options to my customer",
+          "result": "they can choose what they want to book",
+          "estimated_points": 21,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agent",
+          "action": "see my message history with my customer",
+          "result": "I can remember everything I talked about with my customer",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "stay logged in",
+          "result": "I don't have to keep logging in everytime I open Altour",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "see my message history with my agent",
+          "result": "I can remember everything I talked about with my agent",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "sign up",
+          "result": "I can start enjoying the benefits of using Altour",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "see my itinerary",
+          "result": "I can know when everything about my trip is happening",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agent",
+          "action": "see my clients' itinerary history",
+          "result": "I can provide a great personalized experience",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "easily see and use my boarding passes",
+          "result": "I can board my flight",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "call Altour late at night",
+          "result": "I can get helped by Altour24 service",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "clearly see extra Altour perks and benefits I receive",
+          "result": "I feel great about using Altour",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "visually see flight, hotel, transportation, and tour options",
+          "result": "I can quickly and easily choose what I want to book",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "log in with my Altour credentials",
+          "result": "can continue enjoying the benefits of using Altour",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agent",
+          "action": "message a customer",
+          "result": "I can serve them",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "message my agent",
+          "result": "they can serve me",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "have an agent assigned to me",
+          "result": "I can be onboarded by them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "have an introduction to Altour",
+          "result": "I know what to do my first time using Altour",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "download the app",
+          "result": "I can start enjoying the benefits of using Altour",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that app is downloadable from App Store"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "learn about Altour",
+          "result": "I have an overview of how it works",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "TopTier test",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [],
+      "errors": []
+    },
+    {
+      "name": "TR - Breakthrough Uni",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "User",
+          "action": "pay to get access to the courses",
+          "result": "I can improve my life.",
+          "estimated_points": 13,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see my daily streak in that app",
+          "result": "I am motivated to come back daily.",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have returned to the app I must be able to see how days in a row I have returned."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "see a promotion for a certified TR life coach",
+          "result": "I can be referred for more coaching services.",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have registered I must be able to see a promotion for a life coach."
+            },
+            {
+              "description": "Given I can see the promotion I must be able to view more information about the life coach on the TR website."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "share my most recent lesson completed via FB",
+          "result": "others can see my progress.",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Given I can see my last lesson completed I must be able to share my milestone via Facebook."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "share my most recent lesson completed via twitter",
+          "result": "others can see my progress.",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Given I can see my last lesson completed I must be able to share my milestone via twitter."
+            }
+          ]
+        },
+        {
+          "role": "Mixpanel admin",
+          "action": "view user activity",
+          "result": "I can understand traction and activity.",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "Given I can access my analytics, I must be able to see registrations started, registrations completed, activities per visit, average views per lesson, time spent in app, average tags count, total visits, total track tags."
+            }
+          ]
+        },
+        {
+          "role": "admin",
+          "action": "view a list of users that have created an account",
+          "result": "I can manage users.",
+          "estimated_points": 13,
+          "acceptance_criterions": [
+            {
+              "description": "Given I can access an admin portal, I must be able to view users by registration date."
+            },
+            {
+              "description": "Given I can access list of users, I must be able to registrations started, registrations completed, registration type, email, verified, create date, last sign in, last lesson, number of journals, tags tracked, quiz and mood answers."
+            }
+          ]
+        },
+        {
+          "role": "admin",
+          "action": "delete another admin",
+          "result": "they don't have access any longer.",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have admin rights and I created another admin,  I must be able to delete an admin."
+            }
+          ]
+        },
+        {
+          "role": "admin",
+          "action": "create a new admin",
+          "result": "I am not the only one with access to view reporting.",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Given I can access the admin portal and have admin rights I must be able to create new admins."
+            }
+          ]
+        },
+        {
+          "role": "admin",
+          "action": "access the admin portal",
+          "result": "I can view reporting and manage admin accounts.",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Given I can access the admin portal and have admin rights I must be able to sign in."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "search my journal for a keyword or phrase",
+          "result": "I can find a relevant entry.",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "Given I can access my journal I must be able to search for a word or phrase to search throughout the entire journal."
+            },
+            {
+              "description": "Given I am searching I must be able to see results that include the journal entries that contain the search word(s)."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "filter my journal by tag",
+          "result": "I can find those entries that are relevant.",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have added a tag to one or more of my journal entries I must be able to see all my tags."
+            },
+            {
+              "description": "Given i can see all my tags I must be able to select one to filter for all entries with that tag."
+            },
+            {
+              "description": "Given I have selected more than one tags to filter I must be able to see the results be inclusive of only those tags."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "view my journal",
+          "result": "I can review what I have written as I have progressed through the course.",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given I can see where to access my journal I must be able to see all my journals for every lesson."
+            },
+            {
+              "description": "Given I can see one of my journals I must be able to see the time, date, lesson and what i wrote and any tags created."
+            },
+            {
+              "description": "Given I can see the journal I must be able to select to go to the actual lesson so that i can playback the lesson again."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "tag each journal entry",
+          "result": "I can use the tags to filter my journal.",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have entered a note into the journal of a lesson I must be able to add custom tags."
+            },
+            {
+              "description": "Given I have added a tag I must be see the tag associated with that journal."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "journal during the audio activity",
+          "result": "I can capture my thoughts and feelings on that lesson.",
+          "estimated_points": 13,
+          "acceptance_criterions": [
+            {
+              "description": "Given I started the playback of a lesson I must be able to see where i can enter notes."
+            },
+            {
+              "description": "Given I can see where to enter a note I must be able to type and save my notes."
+            },
+            {
+              "description": "Given I have entered a note I must be able to edit those notes."
+            },
+            {
+              "description": "Given I have entered a note I must be able to delete my notes."
+            },
+            {
+              "description": "Given I have entered a note I must be able to see the date and time that I entered it."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "receive a push notification when I complete a lesson",
+          "result": "I feel like I am making progress.",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have enabled push notifications and I just completed a lesson I should receive a notification congratulating me on completing a lesson."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "receive a push notification when it is time to do my daily lesson",
+          "result": "I don't forget.",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have enabled push notifications and have not completed all the lessons I should receive a daily notification as a reminder to do my lesson."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "answer 1 to 3 brief questions following a lesson",
+          "result": "my knowledge can be tested.",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have completed a lesson I must be able to view one or many review questions."
+            },
+            {
+              "description": "Given I can view a question I must be able to answer by selecting one of the multiple choice answers."
+            },
+            {
+              "description": "Given I have answered a question I must be able to see if I answered it correctly."
+            },
+            {
+              "description": "Given I have answered one incorrectly, I should see the correct answer."
+            },
+            {
+              "description": "Given I want to skip the the questions I must be able to skip."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "indicate my mood before and after each lesson",
+          "result": "I become more aware of how the lessons are contributing to my EQ.",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given i have completed a lesson I must be able to select my mood from a selection of predefined moods."
+            },
+            {
+              "description": "Given I want to skip I must be able to skip to continue."
+            },
+            {
+              "description": "Given that I am about to start a lesson then I should be able to indicate my mood too."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "manage offline lessons",
+          "result": "I can free up space or make changes to what is available.",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have selected up to three lessons for offline sync I must be able to clear or modify my selections."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "have offline access to up to 3 lessons",
+          "result": "I can make progress when I know I will not have a internet connection.",
+          "estimated_points": 13,
+          "acceptance_criterions": [
+            {
+              "description": "Given I can view all the lessons, I must be able to select up to 3 lessons to be sync to be my device for offline access."
+            },
+            {
+              "description": "Given I can select 3 lessons I must be able to select any previous lessons and up to 2 lessons in advance of my current lesson."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "repeat a lesson",
+          "result": "i can ensure that I have fully understood the message.",
+          "estimated_points": 2,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have already listened to the lesson I must be able to playback the lesson at any time."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "see what the next lesson is",
+          "result": "I can look forward to it and plan ahead.",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Given i am currently viewing at a description of a lesson I must be able to see what the next lesson is."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "play, pause, rwd and replay an audio lesson",
+          "result": "I can learn and complete my lesson for the day.",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have selected a lesson, I must be able to playback the lesson."
+            },
+            {
+              "description": "Given It is playing, I must be able to pause, rewind or forward the playback."
+            },
+            {
+              "description": "Given the lesson has completed, I must be able to replay."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "view a lesson description",
+          "result": " i know what to expect.",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Given I can view all the lessons, I must be able to select one to view."
+            },
+            {
+              "description": "Given I have selected a lesson to view, I must be able to see the lesson title, duration, it's place in the overall course, and a description of what I am going to learn."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "see where I am in the overall course",
+          "result": "I know how much is left of the course.",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have registered I must be able to see which lesson I am on currently."
+            },
+            {
+              "description": "Given I can see what lesson I am on, I must be able to start the lesson where I left off."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "see the overall course structure and time requirements",
+          "result": "I know what to expect.",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have registered I must be able to view a list of all the lessons and the time duration of each."
+            }
+          ]
+        },
+        {
+          "role": "user that registered with email",
+          "action": "reset my password",
+          "result": "I can access the app again.",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Given I registered with email I must be able to reset my password."
+            },
+            {
+              "description": "Given i have elected to reset my password I must be sent a link to a website where i can provide a new password."
+            }
+          ]
+        },
+        {
+          "role": "registered user",
+          "action": "log out",
+          "result": "I am no longer signed in.",
+          "estimated_points": 2,
+          "acceptance_criterions": [
+            {
+              "description": "Given I am a registered user and i am signed in, I must be able to log out of the app."
+            },
+            {
+              "description": "Given i am logged out, I must be able to see where to sign in."
+            }
+          ]
+        },
+        {
+          "role": "registered user",
+          "action": "stay signed in",
+          "result": "I can access the app again.",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given i am a registered user I must be able to remain signed in after I have successfully signed into the app for the first time."
+            },
+            {
+              "description": "Given i am a registered user, I will be limited to login on X # of devices for my account (eg. mobile, web)"
+            }
+          ]
+        },
+        {
+          "role": "registered user ",
+          "action": "sign in ",
+          "result": "I can use the app.",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given I registered with email I must be able to enter my email and password to enter the app."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "enable push notifications",
+          "result": "I can be reminded to do the program and notified of progress.",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have downloaded the app, I must be able to enable push notifications."
+            }
+          ]
+        },
+        {
+          "role": "unregistered user",
+          "action": "register with LinkedIn",
+          "result": "I don't have to remember another password.",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have downloaded the app I must be able to authenticate with LinkedIn."
+            },
+            {
+              "description": "Given I authenticate with LI successfully, I must able to proceed with other registration steps."
+            }
+          ]
+        },
+        {
+          "role": "unregistered user",
+          "action": "register with Facebook",
+          "result": "I don't have to remember another password.",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have downloaded the app I must be able to authenticate with Facebook."
+            },
+            {
+              "description": "Given I authenticate with FB successfully, I must able to proceed with other registration steps."
+            }
+          ]
+        },
+        {
+          "role": "unregistered user",
+          "action": "provide my full name, email address and create a password",
+          "result": "I can create an account.",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have download the app, I must be able to provide my full name."
+            },
+            {
+              "description": "Given i have provided my name, I must be able to provide my email address."
+            },
+            {
+              "description": "Given I have provided a valid email I must be able to define my preferred password."
+            }
+          ]
+        },
+        {
+          "role": "unregistered user",
+          "action": "view 3 to 5 tutorial screens",
+          "result": "I can understand how it works.",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have downloaded the application I must be able to see several screens that explain how the app works."
+            }
+          ]
+        },
+        {
+          "role": "website visitor",
+          "action": "download the iOS application",
+          "result": "I can sign up.",
+          "estimated_points": 1,
+          "acceptance_criterions": [
+            {
+              "description": "Given I can access the TR digital website I must be able to see where to download the app."
+            },
+            {
+              "description": "Given I can see where to download the app, I must be directed to iTunes."
+            },
+            {
+              "description": "Given I can access iTunes and I have iOS 8.x or greater I must be able to download the application."
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "SHY",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "change if SHY notifies me when someone is nearby",
+          "result": "I control how SHY is used",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view the Terms of Service",
+          "result": "I am an informed SHY user",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view the SHY privacy policy",
+          "result": "I am an informed user",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view the FAQ",
+          "result": "I can work through problems",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "get help with SHY",
+          "result": "I can get help with problems",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "set a preference of sorting farthest or nearest first",
+          "result": "I can decide who to like / dislike",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "specify the age of the person to find",
+          "result": "I find people interesting to me",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "set my \"pulse distance\" in feet or miles",
+          "result": "I find people most interesting to me",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "set my gender search preference",
+          "result": "I find people I am interested in",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "set invisibility on or off in preferences",
+          "result": "control my privacy",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "control if pulses are sent manually or automatically",
+          "result": "I find the best way for me to use SHY",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "determine if others can see my location in preferences",
+          "result": "control my privacy",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view my preferences",
+          "result": "can decide how to use SHY",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "disappear from a \"blocked\" SHY user completely",
+          "result": "I control my privacy",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "block a SHY user",
+          "result": "I control my privacy",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "change the kind of push notifications I receive",
+          "result": "I can control my SHY usage",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "receive a push notification when I get a new message from a match",
+          "result": "I can continue the conversation",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "receive a push notification when I get a new \"match\"",
+          "result": "I can have a conversation",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "receive a push notification when a potential SHY match is within 100 feet",
+          "result": "I can talk to them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see when there are no matches to my \"pulse\"",
+          "result": "I can change my search radius",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view a list of my \"SHY friends\" activities",
+          "result": "I can keep in touch with their lives",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "disallow friends from rating matches",
+          "result": "I control my privacy",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "disallow friends from commenting on matching",
+          "result": "I control my privacy",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "disallow others from seeing who I'm matched with",
+          "result": "I control my privacy",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "comment on my SHY friend's matches when I am \"SHY friends\" with both parties",
+          "result": "they know what I think of the match",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "rate your SHY friends matches",
+          "result": "they know my opinion about their SHY matches",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "not see my SHY friends conversations",
+          "result": "I respect their privacy",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view my SHY friends matches",
+          "result": "I keep informed about their lives",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view my list of SHY friends",
+          "result": "can continue getting to know them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see the list of people who have been \"pulsed\"",
+          "result": "I can find people to like / dislike",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "suer",
+          "action": "turn on \"auto pulse\"",
+          "result": "the app is always searching for people who are nearby me that I might want to like / dislike",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "get notified when people find me (\"pulse me\")",
+          "result": "I see who's looking at my profile",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "move through SHY profiles that I might be interested in",
+          "result": "I can like / dislike someone",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "locate people within a given distance of me",
+          "result": "I can like / dislike people",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see the profiles of other people",
+          "result": "I can like / dislike them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "start a conversation with someone who I liked that has also liked me",
+          "result": "we can learn about each other",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view my list of conversations (messages) I have had with other SHY users",
+          "result": "I can create relationships",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see mutual FB interests",
+          "result": "I can decide to link / dislike them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see mutual FB friends",
+          "result": "I can decide to like / dislike them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "not know who has liked me unless I also like them",
+          "result": "matches happen organically",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "add multiple TW accounts",
+          "result": "others can see all my interests",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "search for people based on hashtags",
+          "result": "I can find people with specific descriptions",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "refresh another SHY users profile",
+          "result": "I can see their latest social activity",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see the number of Tumblr followers and follows another SHY user has",
+          "result": "I know if I want to like / dislike them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see the number of TW followers and follows another SHY user has",
+          "result": "I know if I want to like / dislike them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see the number of IG followers and follows another SHY user has",
+          "result": "I know if I want to like / dislike them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view another SHY last 10 Tumblr posts / likes",
+          "result": "I know if I want to like / dislike them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view another SHY users Social streams without seeing their social usernames (IG, Tw, Tumblr)",
+          "result": "I cannot stalk them in a creepy manner",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view another SHY users last 10 Tw posts / likes within the app",
+          "result": "I know if I want to like / dislike them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view a SHY users last 10 IG posts / likes within the app",
+          "result": "I know if I want to like / dislike them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view another SHY users description",
+          "result": "I know if I want to like / dislike them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view a list of pictures in another users SHY profile",
+          "result": "I know if I want to like / dislike them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see another SHY users first name, but not their last name",
+          "result": "I remain safe",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "undo my like or dislike action",
+          "result": "I can correct an error",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "dislike a SHY profile",
+          "result": "I don't see that person in my search results again",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "like a SHY profile",
+          "result": "we might be able to chat",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view the user's profile picture",
+          "result": "I can determine if I want to like or dislike them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view another users profile",
+          "result": "I can learn more about them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "discover users of a specific gender and mile radius of me",
+          "result": "in the future SHY can become a \"national\" social discovery app",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "change my profile description",
+          "result": "others can learn more about me",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "change the gender of people I am looking for",
+          "result": "I see results that are interesting to me",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "change my gender in my profile",
+          "result": "SHY users have an accurate description of me",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "disconnect any of my social accounts except FB",
+          "result": "I control what other SHY users can see",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "connect my Tumblr account",
+          "result": "other SHY users know what blogs or content I enjoy",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "connect my Tw account",
+          "result": "SHY users can learn about what I like or say",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "connect my IG account",
+          "result": "other users can learn more about what pictures I have taken or like",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "select which photo in my SHY profile is my \"default\" photo",
+          "result": "I can look my best",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "add additional photos to my SHY profile from FB",
+          "result": "others can learn more about me",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "write a description made entirely of hashtag words",
+          "result": "others learn about me, and can find me when they search",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "indicate if I want to meet men or women",
+          "result": "SHY shows me people I am interested in meeting",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "first-time user",
+          "action": "decide to leave my profile to the SHY default",
+          "result": "I can start finding new people immediately",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "edit my profile",
+          "result": "can impact how I look to other SHY users",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "become \"invisible\" to other users \"pulses\"",
+          "result": "I control my privacy",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "adjust the range of pulse",
+          "result": "I find more useful results",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "first-time user",
+          "action": "decide to allow push notifications",
+          "result": "I get the most from SHY",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "first-time user",
+          "action": "allow SHY to access necessary FB datsa",
+          "result": "SHY can work properly",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "first-time user",
+          "action": "turn-on location services",
+          "result": "SHY can work properly",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "first-time user",
+          "action": "view my fb picture as my default profile picture",
+          "result": "I don't have to upload a picture before getting started.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "first-time user",
+          "action": "see how my default profile looks",
+          "result": "I can decide if I edit it or start viewing people",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "first-time user",
+          "action": "login with FB",
+          "result": "I don't need to remember another password",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "interested non-user",
+          "action": "sign-up quickly",
+          "result": "I can meet new people",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "interested non-user",
+          "action": "find SHY in the appstore",
+          "result": "I can download it",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "interested non-user",
+          "action": "read the SHY landing page",
+          "result": "can decide if I want to download it",
+          "acceptance_criterions": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "Copy of SoS (2)",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "new user",
+          "action": "sign up with Facebook",
+          "result": "I don't have to create another username and password.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "see 3 to 5 screens of how it works",
+          "result": "I can register.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "website visitor",
+          "action": "download the application",
+          "result": "I can get started.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "vote on a selfie",
+          "result": "others know where I stand.",
+          "acceptance_criterions": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "Copy of SoS (1)",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "new user",
+          "action": "sign up with Facebook",
+          "result": "I don't have to create another username and password.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "see 3 to 5 screens of how it works",
+          "result": "I can register.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "website visitor",
+          "action": "download the application",
+          "result": "I can get started.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "vote on a selfie",
+          "result": "others know where I stand.",
+          "acceptance_criterions": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "TBD",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "an admin",
+          "action": "login to my dashboard",
+          "result": "I can view tickets",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user ",
+          "action": "login",
+          "result": "I can buy something. ",
+          "acceptance_criterions": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "RootyRoot",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [],
+      "errors": []
+    },
+    {
+      "name": "Concord Jackson Enhancement Engagement",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "test",
+          "action": "asdasd",
+          "result": "asdasd",
+          "acceptance_criterions": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "Peek",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "do something",
+          "result": "i can do something else.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "search peek user to see if my friends are on peek",
+          "result": " I connect with them on other networks.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "follow another user on instagram through peek",
+          "result": "I can grow my Ig network.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "follow another user on Twitter through peek",
+          "result": "i can grow my network.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "connect with another user on facebook through peek",
+          "result": "I can grow my network.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view another peek users profile so that I can see what other social networks that have",
+          "result": "I can connect with them.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see which posts from my social network are from current Peek users",
+          "result": "I can view their profile.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "share my peek profile via sms, email, FB, and Tw",
+          "result": "others can connect with me.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "copy my peek profile url",
+          "result": "I can share with others.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "play Tw video in Peek",
+          "result": "I don't have to leave the app.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "play a Soundcloud track in Peek",
+          "result": "I don't have to leave the app.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "play a YT video in Peek",
+          "result": "I don't have to leave the app.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "play FB video in Peek",
+          "result": "I don't have to leave the app.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "like a soundcloud track from peek",
+          "result": "i don't have to find the track in SC.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "like or dislike a Youtube video",
+          "result": " the YT creator knows my opinion.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "heart an instagram post",
+          "result": "my Ig followers know i love it.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "favorite a Tw post from peek",
+          "result": "my Tw followers see that I faved it.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "like a FB post from peek",
+          "result": "my FB friends can see that I liked it.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "comment on a soundcloud song",
+          "result": "I don't have to find it in SC.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "be able to comment on a YT video",
+          "result": "I don't have to find it in YT.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "comment on an Instagram post",
+          "result": "I don't have to find it in Ig.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "reply to Twitter post",
+          "result": "I don't have to find it in twitter.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "comment on a FB post from peek",
+          "result": "i don't have to find the post in FB.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "post to soundcloud from peek",
+          "result": "i don't have to leave the app.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "post to Youtube from peek",
+          "result": "I don't have to leave the app.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "post to Instagram from Peek",
+          "result": "I don't have to leave the app.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "post to Twitter from Peek",
+          "result": "I don't have leave the app.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "should be able to post to FB from peek",
+          "result": "I don't have to go to FB.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "filter the aggregated feed by one or more feeds",
+          "result": "I can only view the ones I want.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view what posts are from what social network",
+          "result": "I know which feed it came from.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view all my social feeds in one feed",
+          "result": "I can view everything easily.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "be able to view my Soundcloud recommendations through peek",
+          "result": "I can stay up to date.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "be able to view my YouTube recommendations through Peek",
+          "result": "I can stay connected.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "able to view my Instagram feed in Peek",
+          "result": "I can stay connected.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view my Twitter feed in Peek",
+          "result": "I can stay connect.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view my Facebook feed in Peek",
+          "result": "I can stay connected.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user ",
+          "action": "disconnect any of my social profiles",
+          "result": "I don't see that networks content or that profile through Peek.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "connect my Soundcloud account",
+          "result": "I can view and contribute to SC through Peek.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "connect my YouTube account",
+          "result": "so that I can view and contribute to YT through Peek.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "I should be able to connect to my Instragram account",
+          "result": "I can view and contribute to my IG feed through Peek.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "connect my Twitter account",
+          "result": "I can view and contribute to my Tw feed through Peek.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "connect my Facebook account",
+          "result": "I can view and contribute to FB through Peek.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "provide a description about myself to my profile",
+          "result": "others can learn more about me.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user that registered with Twitter",
+          "action": "see my profile photo from Twitter",
+          "result": "I don't have to upload another one.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user that registered with Facebook",
+          "action": "see my profile populated with FB photo",
+          "result": "I don't have to upload one.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "define a username",
+          "result": "others can find me by that name.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user that registered with email",
+          "action": "take or upload a photo",
+          "result": "I am recognized by others.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "unregistered user",
+          "action": "sign with Twitter",
+          "result": "I don't have to create another password.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "unregistered user",
+          "action": "sign up with email and create a password",
+          "result": "I can create an account.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "unregistered user",
+          "action": "sign up with Facebook",
+          "result": "I don't have to create an password.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "unregistered user",
+          "action": "view 2 to 3 screens of how it works",
+          "result": "I can understand how to get started quickly.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "visitor",
+          "action": "download the application from google play or iTunes",
+          "result": "I can sign up.",
+          "acceptance_criterions": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "SongChat",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [],
+      "errors": []
+    },
+    {
+      "name": "Dirt Logistics",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [],
+      "errors": []
+    },
+    {
+      "name": "Nir Deals",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [],
+      "errors": []
+    },
+    {
+      "name": "MYKOCA",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [],
+      "errors": []
+    },
+    {
+      "name": "Nishi Test",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [],
+      "errors": []
+    },
+    {
+      "name": "G.O.A.T.",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [],
+      "errors": []
+    },
+    {
+      "name": "RRI Rootstrap Kick-off ",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "login",
+          "result": "I can create an account",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "ResourceMastering",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [],
+      "errors": []
+    },
+    {
+      "name": "Intelligent House ",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "User ",
+          "action": "set curtains and  blinds  ",
+          "result": "close them and open them based in external light or hours",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "set lights inside light section",
+          "result": "i can set on and off lights based on natural light percentage or hours",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "see lights and Shadows section inside of lights section",
+          "result": "i can access to both sections",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "See the lights menu on pannel",
+          "result": "so I can access to lights section",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User ",
+          "action": "see the camera were the alarm shoot",
+          "result": "I can check why was the alarm shoot",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "receive notifications from the alarm in my mobile",
+          "result": "I can be aware of intruders",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User ",
+          "action": "Set alarm section and times",
+          "result": "control the specific areas and times of the alarm",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user ",
+          "action": "Enter the alarm section",
+          "result": "Set the alarm timing and sections",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User ",
+          "action": "Turn of and on a camera",
+          "result": "Hide a section of the house if I wan't",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User ",
+          "action": "See a camera",
+          "result": "See a especific section of the house",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User ",
+          "action": "Enter to the camera section",
+          "result": "See the list of cameras I have installed",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User ",
+          "action": "See the option pannel",
+          "result": "navigate throw the app",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User ",
+          "action": "log in",
+          "result": "I can access the web app",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "Mojo Testing this :P",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "User",
+          "action": "DO something",
+          "result": "I can fix thiss s",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "do this",
+          "result": "i can do that",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "member of the team",
+          "action": "buy icecream for all ",
+          "result": "i can be the star of the moment.",
+          "acceptance_criterions": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "Kinnecting Website v1",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "parent",
+          "action": "click on products",
+          "result": "buy them",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "Kinnecting Blog",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [],
+      "errors": []
+    },
+    {
+      "name": "BFF",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "website visitor",
+          "action": "download the application",
+          "result": "I can get started.",
+          "acceptance_criterions": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "Test Project",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "register",
+          "result": "my user gets created",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "login",
+          "result": "don't know",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "Travel App",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "host",
+          "action": "submit an activity",
+          "result": "travelers can view ",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "host",
+          "action": "sign up",
+          "result": "I can access the application",
+          "acceptance_criterions": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "Project Eric",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user I should be able to login to Plan B",
+          "action": "login with FB to plan B ",
+          "result": "I can create an account",
+          "acceptance_criterions": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "SelfieTime",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "User",
+          "action": "Vote On a Selfie",
+          "result": "I can add Value",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "take a picture",
+          "result": "post to the app",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "see how it works",
+          "result": "i can gain acces",
+          "acceptance_criterions": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "Beautiq",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "sign up with Facebook",
+          "result": "I don't have to create another password.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "sign up with email address",
+          "result": "I can get started.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "provide my zip code instead of enabling LS",
+          "result": "the app generally knows my location.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "enable location services",
+          "result": "the app can detect my location.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "select my preferred time for the service I need",
+          "result": "I can book my service.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see the available schedules for the service I need",
+          "result": "I can view available times.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "select the specific service(s) for a certain service category",
+          "result": "I can get the service I want.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": " user",
+          "action": "see a activity feed",
+          "result": "I can see all my pending, cancelled and confirmed appointments shared before and after.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view all services under the makeup, hair, and maintenance categories",
+          "result": "I can select my service(s).",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "interactively launch the app",
+          "result": "I can get started.",
+          "acceptance_criterions": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "Instagram for Pugs",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [],
+      "errors": []
+    },
+    {
+      "name": "Winning the faceswap contest",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "asd",
+          "action": "asd",
+          "result": "asd",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "sad",
+          "action": "asd",
+          "result": "asd",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "asd",
+          "action": "asd",
+          "result": "asd",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "fdsf",
+          "action": "dsf",
+          "result": "sdf",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "asd",
+          "action": "sdf",
+          "result": "asd",
+          "acceptance_criterions": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "Test",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [],
+      "errors": []
+    },
+    {
+      "name": "Valderramas",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "Testing User",
+          "action": "Open the app in testing mode",
+          "result": "I can quicly access the ticket system",
+          "acceptance_criterions": [
+            {
+              "description": "Given that I open the app, When I Log Iin, If I am a testing user, Then I should be able to see a feedback button next to every screen. And When I click it I should see a form to attach a description and create a tiket. And When I submit, Then That tiket should create a card on trello."
+            }
+          ]
+        },
+        {
+          "role": "Valderrama Player",
+          "action": "strike 5 goals per match",
+          "result": "we can have lots of vitories",
+          "acceptance_criterions": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "JB Caffeine Test",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [],
+      "errors": []
+    },
+    {
+      "name": "Salted",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [],
+      "errors": []
+    },
+    {
+      "name": "Moolah.io",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "connect my Google Analytics account",
+          "result": "I can benefit from its data on my Moolah Dashboard",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that a Google Analytics account can be connected per each company account added"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "connect my Google Adwords account",
+          "result": "I can benefit from its data on my Moolah Dashboard",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that a Google Adwords account can be connected per each company account added"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "connect my Pipedrive account",
+          "result": "I can benefit from its data on my Moolah Dashboard",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that a Pipedrive account can be connected per each company account added"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "connect my Xero account",
+          "result": "I can benefit from its data on my Moolah Dashboard",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that a Xero account can be connected per each company account added"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "set multiple companies",
+          "result": "I can have all my data in one place",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that user can add more then one company account to dashboard"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "have support for multiple currencies",
+          "result": "I can best understand my analytics",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that Dollars are a supported Currency"
+            },
+            {
+              "description": "Verify that Euros are a supported Currency"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "see conversions on proposals sent",
+          "result": "I can know how well I'm performing",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see my accounts payable and accounts receivable",
+          "result": "I can know how well I'm performing",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see my cash balances",
+          "result": "I can know how well I'm performing",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see my top line revenue",
+          "result": "I can know how well I'm performing",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see my burn rate",
+          "result": "I can know how well I'm performing",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see where I'm allocating my resources",
+          "result": "I know how good is my productivity",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see my velocity (Customer Lifecycle)",
+          "result": "I can know how well I'm performing",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see my monthly cost per acquisition",
+          "result": "I can know how much acquisitions are costing me",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "reset my password",
+          "result": "I can access my account",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that user can reset their password"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "sign up with my email address",
+          "result": "I can benefit from Moolah",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that User can sign up with a full name, email and password"
+            }
+          ]
+        },
+        {
+          "role": "user ",
+          "action": "login with my Moolah credentials ",
+          "result": "I can view my dashboard",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that user enters can enter an email and password"
+            },
+            {
+              "description": "Verify that user logs in after correctly entering email and password"
+            },
+            {
+              "description": "Verify that user is notified when entering incorrect email or password"
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "SoS",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "login",
+          "result": "view my account",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "choose topics I'm interested in",
+          "result": "I start seeing poll content that is relevant right away",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "express disinterest early",
+          "result": "I can get to more interesting content.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "administrator",
+          "action": "test the interest level of a particular poll",
+          "result": "I can confirm user interest.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "vote on a selfie",
+          "result": "others know where I stand.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "website visitor",
+          "action": "download the application",
+          "result": "I can get started.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "see 3 to 5 screens of how it works",
+          "result": "I can register.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "sign up with Facebook",
+          "result": "I don't have to create another username and password.",
+          "acceptance_criterions": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "Testing Project",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "Oscar",
+          "action": "make fun of pablo",
+          "result": "I can motivate him",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Pablo",
+          "action": "write a line of code",
+          "result": "I can reach 400 a day",
+          "acceptance_criterions": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "Testing Arbor",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [],
+      "errors": []
+    }
+  ]
+}

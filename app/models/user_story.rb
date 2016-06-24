@@ -45,7 +45,7 @@ class UserStory < ActiveRecord::Base
     copy_associations(replica.id)
   end
 
-  def as_json
+  def as_json(*_args)
     { id: id,
       description: description,
       role: role,
@@ -53,6 +53,14 @@ class UserStory < ActiveRecord::Base
       result: result,
       estimated_points: estimated_points,
       acceptance_criterions: acceptance_criterions.map(&:as_json) }.compact
+  end
+
+  def self.from_hash(hash, project)
+    filters = { role: hash['role'],
+                result: hash['result'],
+                action: hash['action'] }
+
+    project.user_stories.where(filters).first_or_create
   end
 
   private
