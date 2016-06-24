@@ -110,4 +110,13 @@ class Project < ActiveRecord::Base
     return if members.include? owner
     members << owner
   end
+
+  def self.from_hash(hash, owner)
+    owner.owned_projects.find_or_initialize_by(name: hash['name']) do |project|
+      project.update_attributes(favorite: hash['favorite'],
+                                velocity: hash['velocity'],
+                                is_template: hash['is_template'])
+      project.save
+    end
+  end
 end

@@ -51,6 +51,7 @@ en:
       enter_result: "<some benefit>"
       enter_criterion: 'Write a new acceptance criteria here...'
       new_comment: "Write a new comment here..."
+      ungrouped: No group
     logout: "Sign out"
     acceptance_criterions: "Acceptance Criteria"
   canvas:
@@ -233,9 +234,6 @@ en:
     users:
       name: 'Name'
       mail: 'Email'
-      edit: 'Edit'
-      save: 'Save'
-      cancel_btn: 'Cancel'
       save_btn: 'Save'
       enter_password: 'Enter new password'
       copy_token: 'Copy access token'

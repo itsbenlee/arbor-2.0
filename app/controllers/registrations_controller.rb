@@ -20,6 +20,16 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  protected
+
+  def respond_with(*args)
+    if params[:action] == 'update'
+      redirect_to :back
+    else
+      super
+    end
+  end
+
   private
 
   def resource_name

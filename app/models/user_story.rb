@@ -55,6 +55,14 @@ class UserStory < ActiveRecord::Base
       acceptance_criterions: acceptance_criterions.map(&:as_json) }.compact
   end
 
+  def self.from_hash(hash, project)
+    filters = { role: hash['role'],
+                result: hash['result'],
+                action: hash['action'] }
+
+    project.user_stories.where(filters).first_or_create
+  end
+
   private
 
   def assign_story_number

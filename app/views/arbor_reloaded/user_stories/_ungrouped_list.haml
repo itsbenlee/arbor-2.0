@@ -1,4 +1,7 @@
 - if project.user_stories.count > 0
+  .group-divider
+    .title-breaker
+      %h5= t('backlog.user_stories.ungrouped')
   .reorder-user-stories{ data: { url: arbor_reloaded_project_reorder_backlog_path(project), project: project.id  } }
     - project.user_stories.backlog_ordered.each do |user_story|
       - unless user_story.group

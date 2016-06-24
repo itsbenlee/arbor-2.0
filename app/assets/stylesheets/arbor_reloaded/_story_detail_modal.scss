@@ -63,7 +63,14 @@
 
       .groups-common-select {
         display: inline-block;
-        width: 75%;
+        width: 65%;
+      }
+
+      img {
+        &.group-edited,
+        &.estimation-edited {
+          display: none;
+        }
       }
     }//estimation block
 

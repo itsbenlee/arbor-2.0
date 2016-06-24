@@ -110,6 +110,7 @@ ActiveRecord::Schema.define(version: 20160615202822) do
     t.integer  "user_story_id",             null: false
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.integer  "order"
   end
 
   add_index "constraints", ["description"], name: "index_constraints_on_description", using: :btree
@@ -236,6 +237,7 @@ ActiveRecord::Schema.define(version: 20160615202822) do
     t.integer  "hypothesis_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "order"
     t.integer  "story_number"
     t.integer  "backlog_order"
     t.boolean  "archived",                     default: false
