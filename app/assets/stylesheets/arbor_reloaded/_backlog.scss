@@ -85,6 +85,8 @@ $circle-dimension: $story-points-dimension;
   } // span
 }//styles for backlog user story and modal
 
+.group-divider .title-breaker { cursor: pointer; }
+
 .reorder-user-stories {
   min-height: rem-calc(10);
 

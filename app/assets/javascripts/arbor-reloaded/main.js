@@ -112,3 +112,14 @@ function setVisibleState(elements, reversed){
     }
   });
 }
+
+function collapsableContent() {
+  var $trigger = $('.title-breaker .toggle-content-btn');
+
+  $trigger.click(function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $(this).parent().next().fadeToggle(400);
+    $(this).toggleClass('active');
+  });
+}

@@ -23,13 +23,14 @@ function bindReorderStories() {
   $reorder_stories.sortable({
     connectWith: '.reorder-user-stories',
     placeholder: 'sortable-placeholder',
-    over: function( event, ui ) {
+    over: function(event, ui) {
       $(event.target).addClass('active');
     },
-    out: function( event, ui ) {
+    out: function(event, ui) {
       $(event.target).removeClass('active');
     },
-    stop: function() {
+    stop: function(event, ui) {
+      $(ui.item).attr('style', '');
       var newStoriesOrder = setStoriesOrder(),
           url = $reorder_stories.data('url');
           project = $reorder_stories.data('project');
