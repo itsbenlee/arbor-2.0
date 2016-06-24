@@ -36,6 +36,15 @@ class User < ActiveRecord::Base
     full_name
   end
 
+  def self.from_hash(hash)
+    filters = { email: hash['email'], full_name: hash['full_name'] }
+
+    User.find_or_initialize_by(filters) do |user|
+      user.password = 'ChangeMePlease'
+      user.save
+    end
+  end
+
   private
 
   def generate_api_key
