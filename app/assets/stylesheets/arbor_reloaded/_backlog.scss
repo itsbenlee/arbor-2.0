@@ -108,12 +108,28 @@ $circle-dimension: $story-points-dimension;
 
   .actions,
   .deleter,
-  .right {
+  .right,
+  .color-tags {
     @include translateY(-50%);
     position: absolute;
     right: $block-padding;
     top: 50%;
   }
+
+  .color-tags {
+    margin-right: $circle-dimension + ($story-padding-sides * 1.5) * 2;
+
+    .color-tag {
+      @for $n from 1 through $color-tags-amount {
+        $nth: nth($color-tags, $n);
+
+        &:nth-child(#{$n}) { background-color: $nth; }
+      }
+
+      &:first-child { margin-right: 0; }
+      &:hover { @include opacity(.5); }
+    }//color tag
+  }//color tags
 
   &:first-child { margin-top: rem-calc(30); }
 
@@ -124,7 +140,6 @@ $circle-dimension: $story-points-dimension;
 
     .square-checkbox { @include opacity(1); }
     .story-detail-link { margin-left: $story-padding-top; }
-    .actions { display: block; }
   }//backlog user story hover
 
   .icn-comments {
@@ -158,6 +173,13 @@ $circle-dimension: $story-points-dimension;
   } // text
 
   .shorten-story { width: 75%; }
+
+  //define color tags classes
+  @for $n from 1 through $color-tags-amount {
+    $nth: nth($color-tags, $n);
+
+    &.story-tag-#{$n} { .story-points { background: $nth; }}
+  }
 } //  user story
 
 //  STICKY SELECT MENU

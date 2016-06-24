@@ -209,7 +209,8 @@ $block-animation-delay: .40s;
 
     .actions,
     .deleter,
-    .right {
+    .right,
+    .color-tags {
       line-height: $action-circle-dimension;
       position: absolute;
       z-index: 2;
@@ -235,9 +236,11 @@ $block-animation-delay: .40s;
 
       .delete-story,
       .copy-story,
+      .color-story,
       .delete-project,
       .copy-project,
-      [class^="icn-favorite"] {
+      [class^="icn-favorite"],
+      .color-tag {
         @include inline-block;
         @include border-radius(100%);
         background-color: $black-10;
@@ -262,7 +265,8 @@ $block-animation-delay: .40s;
     }//all three floating sections on the right
 
     .actions,
-    .deleter {
+    .deleter,
+    .color-tags {
       @include clearfix;
       color: $secondary-color;
       display: none;

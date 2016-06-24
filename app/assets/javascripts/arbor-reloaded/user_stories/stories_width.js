@@ -1,8 +1,12 @@
 function storiesWidth() {
-  $('a.delete-story').on( "click", function() {
+  $('a.delete-story, a.color-story').click(function(event) {
     var storyId = $(this).data('id'),
         storySelector = '#story-text-'+ storyId;
-    $(storySelector).addClass('shorten-story');
+    if ($(storySelector).hasClass('shorten-story')) {
+      $(storySelector).removeClass('shorten-story');
+    } else {
+      $(storySelector).addClass('shorten-story');
+    }
   });
 
   $('a.cancel').on( "click", function() {

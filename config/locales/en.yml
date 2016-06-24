@@ -246,6 +246,7 @@ en:
       delete_stories: 'Delete stories'
       duplicate_story: 'Duplicate story'
       copy_stories: 'Duplicate stories'
+      color_stories: 'Color Tag'
       archive_stories: 'Archive stories'
       archive_story: 'Archive story'
       update_estimation: 'Settings'
