@@ -18,18 +18,35 @@ function autogrowInputs() {
   });
 }
 
+function checkForEmptyGroupStories() {
+  var $groupDivider = $backlogStoryList.find('.group-divider');
+  $groupDivider.each(function(index, el) {
+      if ($(el).find('.backlog-user-story').length) {
+        $(el).find('.empty-group-text').addClass('hide');
+      } else {
+        $(el).find('.empty-group-text').removeClass('hide');
+      }
+  });
+}
+
 function bindReorderStories() {
   var $reorder_stories = $backlogStoryList.find('.reorder-user-stories');
+
   $reorder_stories.sortable({
     connectWith: '.reorder-user-stories',
     placeholder: 'sortable-placeholder',
     over: function(event, ui) {
+      $(event.target).parent().find('.empty-group-text').addClass('hide');
       $(event.target).addClass('active');
     },
     out: function(event, ui) {
       $(event.target).removeClass('active');
     },
+    start: function(event, ui) {
+      $reorder_stories.parent().find('.empty-group-text').addClass('hide');
+    },
     stop: function(event, ui) {
+      checkForEmptyGroupStories();
       $(ui.item).attr('style', '');
       var newStoriesOrder = setStoriesOrder(),
           url = $reorder_stories.data('url');
@@ -75,6 +92,7 @@ $(document).ready(function() {
   if ($backlogStoryList.length) {
     showBulkMenu();
     bindReorderStories();
+    checkForEmptyGroupStories();
   }
 });
 
@@ -86,4 +104,6 @@ function backlogGeneralBinds() {
   bindReorderStories();
   autogrowInputs();
   checkEstimation();
+  collapsableContent();
+  checkForEmptyGroupStories();
 }
