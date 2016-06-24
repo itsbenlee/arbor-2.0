@@ -1,0 +1,232 @@
+{
+  "email": "napoleon.martinez@neonroots.com",
+  "full_name": "Napoleon Martinez",
+  "projects": [
+    {
+      "name": "BGood",
+      "favorite": false,
+      "velocity": 11,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "to set a monthly donation to a portfolio",
+          "result": "i can collaborate frequently",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin",
+          "action": "to create a new portfolio",
+          "result": "users can donate to",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to sign up with my facebook account",
+          "result": "I don't need to create an account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "NGO",
+          "action": "to upload operational data",
+          "result": "Bgood can share with my donors on a regular basis",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see my history of donations",
+          "result": "I can keep track of my donations",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see highlights about the product",
+          "result": "I can be motivated to sign up",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to sign up with my email",
+          "result": "I can create an account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to make one time donations",
+          "result": "I can make an impact on causes I care about",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "We could split this donations to make look like a regular donation, or we may leave this option to the user"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "to see how much I've donated in total",
+          "result": "I can keep track of my overall social impact",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see an overview of what portfolios I've benefited the most",
+          "result": "I can see where my contributions are having the most impact",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "explore all the different causes I've donated to",
+          "result": "I can see all the causes I've impacted",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to learn more about an NGO",
+          "result": "I can be motivated to continue donating",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to manage my account details",
+          "result": "I can keep them up to date",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to link a paypal account",
+          "result": "I can donate money",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see a history of all my donations",
+          "result": "I can keep track of my contributions to causes",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "log out from my account",
+          "result": "I'm no longer logged in",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to log in with my email",
+          "result": "I can access my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to reset my password",
+          "result": "if I forget my current password, I can regain access to my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "NGO",
+          "action": "to see highlights about the product",
+          "result": "I can be motivated to sign up",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "NGO",
+          "action": "to sign up with my email",
+          "result": "I can create an account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "NGO",
+          "action": "set details about my cause",
+          "result": "users can learn about my cause",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "NGO",
+          "action": "to see the total amount of money we've raised",
+          "result": "we can keep track and be motivated to stay on the platform",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "NGO",
+          "action": "to view my profile",
+          "result": "I can see what users will be seeing",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "NGO",
+          "action": "to manage my profile details",
+          "result": "users can have the most recent details about my cause",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "NGO",
+          "action": "to link a paypal account",
+          "result": "I can get paid",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "NGO",
+          "action": "to manage my account details",
+          "result": "I can keep them up to date",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "NGO",
+          "action": "log out from my account",
+          "result": "I'm no longer logged in",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "NGO",
+          "action": "to log in with my email",
+          "result": "I can access my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "NGO",
+          "action": "to reset my password",
+          "result": "if I forget my current password, I can regain access to my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin",
+          "action": "to be able to view metrics / analytics",
+          "result": "I can know how my app is performing",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Assumes very basic metrics from a service like Google Analytics or Mix Panel"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

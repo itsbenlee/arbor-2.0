@@ -1,0 +1,294 @@
+{
+  "email": "napoleon.martinez@neonroots.com",
+  "full_name": "Napoleon Martinez",
+  "projects": [
+    {
+      "name": "Puptimize",
+      "favorite": false,
+      "velocity": 10,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "system",
+          "action": "to see heat maps about users usage",
+          "result": "I can optimize",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system",
+          "action": "to track analytics about user usage",
+          "result": "I can optimize",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin ",
+          "action": "to create lessons",
+          "result": "they can appear in the app",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to add one or more dog profiles",
+          "result": "I can train each of my dogs and keep track of their individual progress.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin user",
+          "action": "to import products from Amazon and associate to lessons",
+          "result": "it can be shown in the app",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin user",
+          "action": "to login",
+          "result": "I can access my admin site",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to set my dog's gender",
+          "result": "I see the correct pronoun in the copy",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see highlights about Puptimize",
+          "result": "I can be motivated to get started",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to sign up with my email",
+          "result": "I can create an account and get started",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to log in with my Facebook account",
+          "result": "I don't have to create an account with my email",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to log in with my Google account",
+          "result": "I don't have to create an account with my email",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to provide details about my dog, myself, and goals",
+          "result": "my Puptimize experience is enhanced",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to see all lessons I'm working on",
+          "result": "I can see them all at a glance",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see all available lessons on Puptimize",
+          "result": "I can discover new lessons for my dog",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to get started with a lesson",
+          "result": "I can get an introduction on it",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see an introduction, ground rules, and any important details on a lesson",
+          "result": "when I get started I know what to expect",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be shown recommended products which I need to purchase when starting a lesson",
+          "result": "I can purchase them and be ready to start the lesson",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to purchase needed products for a lesson",
+          "result": "I can start on my lesson as soon as possible",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to work through an activity with my dog",
+          "result": "I can begin making progress with training",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to have different checkpoints in a lesson",
+          "result": "I can be asked about how my dog is doing",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be provided with answers to common problems with a lesson",
+          "result": "if my dog isn't doing well, I can get helped",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see my overall score for an activity and lesson",
+          "result": "I can know my dog's progress and be motivated to get a higher score",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to earn milestone badges for each lesson my dog succeeds in",
+          "result": "I can be motivated to keep training my dog",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to share on Facebook about my dog's success",
+          "result": "if my dog is doing well on a lesson, I can brag about it",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see an birdseye view of a lessons activities",
+          "result": "I can see my score on each one",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view my dog's overall performance",
+          "result": "I can see how well they're doing with their training",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see all the milestone badges available and ones my dog has earned",
+          "result": "I can feel proud and motivated to continue training",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to share Puptimize",
+          "result": "my friends and family can benefit from it",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to receive reminder notifications about my lessons",
+          "result": "I build motivation to continue training my dog and complete the lesson",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to snooze a reminder notification",
+          "result": "I can receive a follow up notification later",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to manage my account profile details",
+          "result": "I can keep them up to date",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to manage details about my dog, myself, and goals",
+          "result": "I can keep my details up to date and my Puptimize experience as personalized as possible",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to manage my notification settings",
+          "result": "I can set notifications to my preference",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to change my password",
+          "result": "I can keep my account secured",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to pin important items from a lesson",
+          "result": "I can save them for later",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view all my pinned items",
+          "result": "I can see the important item I saved previously",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to provide Puptimize with feedback",
+          "result": "Puptimize can continue improving the product for me",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to log in with my email",
+          "result": "I can access my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to reset my password",
+          "result": "if I forget my current password, I can regain access to my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to log out from my account",
+          "result": "I can be logged out from my account",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        }
+      ]
+    }
+  ]
+}
