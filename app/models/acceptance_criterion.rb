@@ -17,6 +17,13 @@ class AcceptanceCriterion < ActiveRecord::Base
     { id: id, description: description }
   end
 
+  def self.from_hash(hash, story)
+    story
+      .acceptance_criterions
+      .where(description: hash['description'])
+      .first_or_create
+  end
+
   private
 
   def assign_order
