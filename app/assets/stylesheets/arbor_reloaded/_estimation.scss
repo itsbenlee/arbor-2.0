@@ -1,5 +1,6 @@
 $estimation-margin: rem-calc(40);
 $icon-dimension: rem-calc(15);
+$estimation-box-height: rem-calc(140);
 
 .estimation-wrapper h4,
 .edit-wrapper h4 { font-weight: normal; }
@@ -29,13 +30,13 @@ $icon-dimension: rem-calc(15);
       }
 
       .cost,
-      .value { height: rem-calc(140); }
+      .value { height: $estimation-box-height; }
 
       .value p { font-size: rem-calc(88); }
 
       .cost p {
-        @include translateY(50%);
-        font-size: rem-calc(40);
+        font-size: rem-calc(34);
+        line-height: $estimation-box-height;
       }
 
       .icn-settings {
