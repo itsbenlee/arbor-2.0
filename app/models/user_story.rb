@@ -5,6 +5,12 @@ class UserStory < ActiveRecord::Base
 
   validates_uniqueness_of :backlog_order, scope: :project_id, allow_nil: true
   validates_uniqueness_of :story_number, scope: :project_id
+  validates_numericality_of :color,
+                            only_integer: true,
+                            allow_nil: true,
+                            greater_than_or_equal_to: 1,
+                            less_than_or_equal_to: 7
+
   before_create :order_in_backlog, :assign_story_number
   after_create :update_next_story_number
 
