@@ -1,0 +1,364 @@
+{
+  "email": "napoleon.martinez@neonroots.com",
+  "full_name": "Napoleon Martinez",
+  "projects": [
+    {
+      "name": "AOE",
+      "favorite": false,
+      "velocity": 10,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "admin",
+          "action": "to manage categories, skills, and featured lists",
+          "result": "I can set up everything accordingly",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view the AOE blog",
+          "result": "I can catch up on company updates",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to contact AOE",
+          "result": "I can get help with whatever I need",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "log out from my account",
+          "result": "I'm no longer logged in",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to update my skills on my profile",
+          "result": "I can keep them up to date",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to update my profile details",
+          "result": "I can keep my profile up to date",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to change my password",
+          "result": "I can keep my account secure",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to update my account information",
+          "result": "I can keep it up to date",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see all my notifications",
+          "result": "I can make sure I'm caught up with all most recent activity",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to receive notifications",
+          "result": "I can be alerted of important activity",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to favorite a creator",
+          "result": "they can be added to my favorites list",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to earn badge rankings",
+          "result": "other users can see my expertise level on my profile",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "my availability to be displayed on my profile",
+          "result": "if I'm on a team currently, it shows that I'm not available",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see my own profile",
+          "result": "I can see my publicly available details",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to delete content I posted on a topic",
+          "result": "it no longer is available",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to delete a topic I created",
+          "result": "it no longer is available",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to only see topics related to a tag",
+          "result": "I can only browse topics I'm interested in",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see trending topics on forums",
+          "result": "I can be inspired and motivated to contribute",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see all recent topics on the forum",
+          "result": "I can see all the interesting conversations going on",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see related topics on public forums when viewing a topic",
+          "result": "I can be motivated to contribute in those other topics",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view the content posted by other users on a public forums",
+          "result": "I can enjoy the content and be motivated to contribute even more",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see the content on my private team forum",
+          "result": "I can see the conversation going on within my team",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to post a photo on a topic",
+          "result": "I can add content to a public forum or private forum I'm in",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to post a message on a topic",
+          "result": "I can contribute on a public forum or private team forum I'm in",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to create a topic on the public forum",
+          "result": "I can share and have other users contribute to it",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "accept or decline a project invite",
+          "result": "I'm either added or not into the project",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to manage the developers on my team",
+          "result": "I can maintain my private team forum",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to create a private team forum for my team",
+          "result": "we can contribute ideas and collaborate",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see similar developer recommendations on a user's profile",
+          "result": "I can view their profiles as well",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see what topics a user has contributed to on the public forums",
+          "result": "I can see what they're involved in",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to manually add a developer to my team",
+          "result": "I don't have to wait for them to be recommended to me",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see the details of a skill set",
+          "result": "I can understand what that skill set really means",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see a developer's profile",
+          "result": "I can see every detail available about them",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "request an extra recommendation for my team",
+          "result": "I can have a larger team",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to remove a recommended developer from my team",
+          "result": "I can trim down my team",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to swap a recommendation",
+          "result": "I can get a different developer recommended to me",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see a team of recommended developers",
+          "result": "I can form my team for my project",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to search for developers by filters and criteria",
+          "result": "I can have a team of developers recommended to me",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to search for developers by their name or skill set",
+          "result": "I can find a specific developer",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see featured topics from the public forum",
+          "result": "I can be motivated to contribute to them",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to reset my password",
+          "result": "if I forget my current password, I can regain access to my account",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to log in with Facebook",
+          "result": "I don't have to create an account with my email",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to log in with my email",
+          "result": "I can access my account",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to upload an image of myself to my profile",
+          "result": "it can be displayed on my profile",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to add my likes and interests",
+          "result": "other users can see them on my profile",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to set my skills",
+          "result": "they appear on my profile",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to set up my profile details",
+          "result": "my profile can be populated",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to sign up with my email",
+          "result": "I can create an account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to navigate across the site and it's different pages",
+          "result": "I can enjoy all parts of the site",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "learn about what AOE is about",
+          "result": "I can be motivated to sign up",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        }
+      ]
+    }
+  ]
+}

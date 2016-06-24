@@ -1,0 +1,13 @@
+{
+  "email": "napoleon.martinez@neonroots.com",
+  "full_name": "Napoleon Martinez",
+  "projects": [
+    {
+      "name": "ShootMe",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": []
+    }
+  ]
+}

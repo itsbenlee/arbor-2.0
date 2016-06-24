@@ -1,0 +1,196 @@
+{
+  "email": "napoleon.martinez@neonroots.com",
+  "full_name": "Napoleon Martinez",
+  "projects": [
+    {
+      "name": "The Shade Room",
+      "favorite": false,
+      "velocity": 10,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "to see a feed of articles",
+          "result": "I can discover new interesting stories",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to explore different categories of content",
+          "result": "I can find the exact kind of content I'm looking for",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to search for articles",
+          "result": "I can find exactly what I'm looking for",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view an article",
+          "result": "I can enjoy it's content",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view an article's comments",
+          "result": "I can enjoy the conversation",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to add a comment on an article",
+          "result": "I can join the conversation",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see latest articles",
+          "result": "I can keep reading and finding more content",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to watch video content in the app",
+          "result": "I can enjoy all kinds of content",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view products for sale",
+          "result": "I can purchase them",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to purchase a product",
+          "result": "I can have it",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to set up my payment information",
+          "result": "I can purchase items on the store",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see a feed of TSR's instagram photos",
+          "result": "I can stay up to date on all their content",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to favorite an article",
+          "result": "I can save it",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view my profile and favorited articles",
+          "result": "I can keep track of my saved content",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to upload an image of myself",
+          "result": " it can be added to my profile",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to unfavorite a favorited article",
+          "result": "it's not saved in my favorite's list anymore",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to share an article on social media",
+          "result": "I can have my friends enjoy the great content as well",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to sign up with my email",
+          "result": "I can create an account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to manage my account details",
+          "result": "I can keep them up to date",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to manage my payment information",
+          "result": "I can keep it up to date",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see my purchase history",
+          "result": "I can keep track of my past purchases",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to set my notification preferences",
+          "result": "I can set all notifications from app to my preference",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to reach customer support",
+          "result": "I can get help on anything",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "log out from my account",
+          "result": "I'm no longer logged in",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to log in with my email",
+          "result": "I can access my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to reset my password",
+          "result": "if I forget my current password, I can regain access to my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        }
+      ]
+    }
+  ]
+}

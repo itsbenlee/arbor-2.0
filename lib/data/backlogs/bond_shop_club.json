@@ -1,0 +1,273 @@
+{
+  "email": "napoleon.martinez@neonroots.com",
+  "full_name": "Napoleon Martinez",
+  "projects": [
+    {
+      "name": "Bond Shop Club",
+      "favorite": false,
+      "velocity": 10,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "learn about the benefits of BSC",
+          "result": "I can be motivated to sign up",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view BSC's Terms \\u0026 Conditions",
+          "result": "I can know what I'm signing up for",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to sign up for BSC with my email",
+          "result": "I can create an account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to log in to BSC",
+          "result": "I can access my account",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to reset my password",
+          "result": "if I forget my current password, I can regain access to my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to subscribe to BSC",
+          "result": "I can have access to all the exclusive offers",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to set up my payment information",
+          "result": "I can be charged for my BSC subscription",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to upload an image of myself to my profile",
+          "result": "it can be displayed on my membership card",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see featured offers",
+          "result": "I can immediately see the benefits available from BSC",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to filter through offers by featured, nearest, and about to expire",
+          "result": "I can make sure I find the best offers",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to search offers by brand and location",
+          "result": "I can make sure I find the best offers",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view an offer",
+          "result": "I can see more details on it",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see when an offer is about to expire",
+          "result": "I know I must redeem it soon if I'm interested",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see an offer's code",
+          "result": "I can redeem it at it's assigned in-store location",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see how far the nearest store is from me",
+          "result": "I can go redeem my offer",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to get directions to nearest store",
+          "result": "I can go redeem my offer",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to save an offer",
+          "result": "I can access it later",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view my saved offers",
+          "result": "I can access them",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see when a saved offer has expired",
+          "result": "I can know to remove it from my saved list",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to remove an offer I've saved",
+          "result": "it's no longer in my saved list",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to share offers on social media",
+          "result": "my friends and followers can see the great deals available on BSC",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to scan barcodes",
+          "result": "I can see if there's an offer available that I can redeem",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to share BSC with my friends",
+          "result": "they can receive a special offer for joining BSC",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view my membership card",
+          "result": "I can show it at stores so they know I'm a member",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to receive alerts when I'm nearby an offer",
+          "result": "I can stop by the store near me offering the offer",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be charged monthly",
+          "result": "my BSC membership remains active",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to update my account information",
+          "result": "I can keep it up to date",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to update my payment information",
+          "result": "I can continue paying my membership",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to cancel my subscription",
+          "result": "I won't be charged for BSC anymore",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "log out from my account",
+          "result": "I'm no longer logged in",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin",
+          "action": "to create a store admin user",
+          "result": "they can login",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "store admin",
+          "action": "to login to my administrative site",
+          "result": "I can see and create offers",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "store admin",
+          "action": "to set up an offer",
+          "result": "BSC users can see my offer",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "store admin",
+          "action": "to see my offers",
+          "result": "I can see what users are seeing",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "store admin",
+          "action": "to filter offers by expired/not expired",
+          "result": "I can know what users are seeing",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "store admin",
+          "action": "to delete my offers",
+          "result": "I can control my offers",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "store admin",
+          "action": "to be able to view metrics / analytics on my offers",
+          "result": "I can know how they're performing",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        }
+      ]
+    }
+  ]
+}

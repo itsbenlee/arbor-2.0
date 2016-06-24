@@ -1,0 +1,308 @@
+{
+  "email": "napoleon.martinez@neonroots.com",
+  "full_name": "Napoleon Martinez",
+  "projects": [
+    {
+      "name": "LaZZy",
+      "favorite": false,
+      "velocity": 10,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "learn about LaZZy",
+          "result": "I can be motivated to sign up",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view LaZZy's Terms \\u0026 Conditions",
+          "result": "I know what I am agreeing to",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to sign up for LaZZy with my email",
+          "result": "I can create an account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to select my school",
+          "result": "I can be placed in the correct network",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to verify my account with my school email",
+          "result": "LaZZy can verify that I'm an actual student",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to set up my profile details",
+          "result": "my correct information can be displayed",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to set up my payment information",
+          "result": "I can pay and be paid",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to log in to LaZZy",
+          "result": "I can access my account",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to reset my password",
+          "result": "if I forget my current password, I can regain access to my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be reminded that there's working users available to help me out",
+          "result": "I can be motivated to request help",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "lazy user",
+          "action": "to see which tasks are available for Now or Tomorrow",
+          "result": "I can request help on the right task",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "lazy user",
+          "action": "to select a task",
+          "result": "I can request help from someone",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "lazy user",
+          "action": "to set the details for my task request",
+          "result": "whoever helps me with my task receives all the right information",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "lazy user",
+          "action": "to book my requested task and pay",
+          "result": "it can queued up in the task feed",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be notified when there's a batch of new requests",
+          "result": "I can be motivated to help out as a working user",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "working user",
+          "action": "to view all the requests in the task list",
+          "result": "I can see what lazy users need help with",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "working user",
+          "action": "to see details on a request",
+          "result": "I can decide whether to help with it or not",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "working user",
+          "action": "commit to a request in the task list",
+          "result": "I can work on it and get paid",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "lazy user",
+          "action": "to be notified when a working user has committed to my request",
+          "result": "I can know I will be getting help with my task",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "working user",
+          "action": "to see a list of all the tasks I've committed to",
+          "result": "I can keep track of them and my messages with the lazy users",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "lazy user",
+          "action": "to see a list of all the tasks I've requested help with",
+          "result": "I can keep track of them and the messages with the working users",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "working user",
+          "action": "to be reminded of a tomorrow task",
+          "result": "I can accomplish my commitment",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "working user",
+          "action": "to be able to communicate with a lazy user",
+          "result": "I can communicate with them while helping them out",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "lazy user",
+          "action": "to communicate with a working user",
+          "result": "I can communicate with them while they're helping me out",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to receive a notification when I receive a new message",
+          "result": "I can stay on top of my communication",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "working user",
+          "action": "to mark a task as complete",
+          "result": "engagement is finalized",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "lazy user",
+          "action": "to be notified when my request has been completed",
+          "result": "I can know that I have one less thing to do",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "lazy user",
+          "action": "to rate my experience with my working user",
+          "result": "LaZZy can maintain a network of great users",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "working user",
+          "action": "to rate my experience with my lazy user",
+          "result": "LaZZy can maintain a network of great users",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "working user",
+          "action": "to send out a status update",
+          "result": "I can notify lazy users of my availability and motivate them to request help",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "lazy user",
+          "action": "to receive a notification when a working user posts a status update",
+          "result": "I can be motivated to request a task",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to receive a notification when other users are requesting similar tasks to the task I made myself available for",
+          "result": "I can get a lead on them",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see an activity feed of all my alerts and notifications",
+          "result": "I can keep track of them",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to invite friends to LaZZy",
+          "result": "they can earn credit and I can earn credit too",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to redeem a code",
+          "result": "I can earn credit",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see my profile",
+          "result": "I can manage and update my details",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see my history",
+          "result": "I can keep track of all the tasks I've requested and helped in",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "worker user",
+          "action": "to set my task preferences",
+          "result": "I only see task requests for tasks I'm willing to do",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to set my notification preferences",
+          "result": "I only receive the type of notifications I want",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "log out from my account",
+          "result": "I'm no longer logged in",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin",
+          "action": "to manage school details and task details",
+          "result": "I can keep them up to date",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin",
+          "action": "to track data and view analytics",
+          "result": "I can stay informed about my users",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "email": "napoleon.martinez@neonroots.com",
+  "full_name": "Napoleon Martinez",
+  "projects": [
+    {
+      "name": "Project Kevin",
+      "favorite": false,
+      "velocity": 8,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "admin",
+          "action": "to be able to view metrics / analytics",
+          "result": "I can know how my app is performing",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Assumes very basic metrics from a service like Google Analytics or Mix Panel"
+            }
+          ]
+        },
+        {
+          "role": "admin",
+          "action": "to manage all chats incoming from customers",
+          "result": "I can provide excellent concierge service",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "Assumes integration with external service"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "log out from my account",
+          "result": "I'm no longer logged in",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to provide feedback",
+          "result": "the app is further improved according to my needs",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Assumes integration with external service"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "to set my notification preferences",
+          "result": "I can set all notifications from app to my preference",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to manage my account details",
+          "result": "I can keep them up to date",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to upgrade my membership",
+          "result": "I can receive more perks and benefits",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view my membership details",
+          "result": "I can be clear on my membership benefits and perks",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to remove a linked card",
+          "result": "I can manage my linked cards",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to link a card",
+          "result": "I can earn cash back, redeem cash and pay for membership upgrades",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to manage my vehicle profiles",
+          "result": "I can keep them up to date",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view my vehicle profiles",
+          "result": "I can keep track of my vehicles",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to register my vehicles",
+          "result": "I can gain access to my membership",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to redeem my cash back into my bank account",
+          "result": "I can use it towards my monthly car payment or towards my new car as a down payment",
+          "estimated_points": 13,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view all reward goals available",
+          "result": "I can see which I've unlocked and are able to redeem",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to invite my friends to the app",
+          "result": "they can sign up and we can receive cash back rewards",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to filter all nearby merchants",
+          "result": "I can find merchants based off a category",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to search a specific merchant",
+          "result": "I can easily locate the nearest one",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to easily see the location of a merchant",
+          "result": "I can see their distance away from my location",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to discover nearby merchants",
+          "result": "I can go use my rewards card at that merchant's location",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to call a concierge",
+          "result": "I can receive support",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to message with my concierge",
+          "result": "I can get help and be assisted",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view my total cash back earned",
+          "result": "I can know how much I've earned",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to reset my password",
+          "result": "if I forget my current password, I can regain access to my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to sign up with my email",
+          "result": "I can create an account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to log in with my email",
+          "result": "I can access my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see highlights about the product",
+          "result": "I can be motivated to sign up",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        }
+      ]
+    }
+  ]
+}
