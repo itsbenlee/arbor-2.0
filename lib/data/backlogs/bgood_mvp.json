@@ -1,0 +1,272 @@
+{
+  "email": "napoleon.martinez@neonroots.com",
+  "full_name": "Napoleon Martinez",
+  "projects": [
+    {
+      "name": "BGood (MVP)",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "admin",
+          "action": "to be able to view metrics / analytics",
+          "result": "I can know how my app is performing",
+          "acceptance_criterions": [
+            {
+              "description": "Assumes very basic metrics from a service like Google Analytics or Mix Panel"
+            }
+          ]
+        },
+        {
+          "role": "NGO",
+          "action": "to reset my password",
+          "result": "if I forget my current password, I can regain access to my account",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "NGO",
+          "action": "to log in with my email",
+          "result": "I can access my account",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "NGO",
+          "action": "log out from my account",
+          "result": "I'm no longer logged in",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "NGO",
+          "action": "to be able to get help on the app",
+          "result": "my needs or questions can be answered",
+          "acceptance_criterions": [
+            {
+              "description": "Assumes integration with external service"
+            }
+          ]
+        },
+        {
+          "role": "NGO",
+          "action": "to refer my friends to the app",
+          "result": "they can sign up and benefit from the app",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "NGO",
+          "action": "to set my notification preferences",
+          "result": "I can set all notifications from app to my preference",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "NGO",
+          "action": "to manage my account details",
+          "result": "I can keep them up to date",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "NGO",
+          "action": "to edit and/or remove linked cards",
+          "result": "I can manage my linked cards",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "NGO",
+          "action": "to link a card",
+          "result": "I can get paid",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "NGO",
+          "action": "to manage my profile details",
+          "result": "users can have the most recent details about my cause",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "NGO",
+          "action": "to view my profile",
+          "result": "I can see what users will be seeing",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "NGO",
+          "action": "to see a feed of individual donations from users",
+          "result": "we can be inspired and motivated to continue on the platform",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "NGO",
+          "action": "to see the total amount of money we've raised",
+          "result": "we can keep track and be motivated to stay on the platform",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "NGO",
+          "action": "set details about my cause",
+          "result": "users can learn about my cause",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "NGO",
+          "action": "to sign up with my email",
+          "result": "I can create an account",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "NGO",
+          "action": "to see highlights about the product",
+          "result": "I can be motivated to sign up",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to reset my password",
+          "result": "if I forget my current password, I can regain access to my account",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to log in with my email",
+          "result": "I can access my account",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "log out from my account",
+          "result": "I'm no longer logged in",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to get help on the app",
+          "result": "my needs or questions can be answered",
+          "acceptance_criterions": [
+            {
+              "description": "Assumes integration with external service"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "to refer my friends to the app",
+          "result": "they can sign up and benefit from the app",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to set my notification preferences",
+          "result": "I can set all notifications from app to my preference",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see a history of all my donations",
+          "result": "I can keep track of my contributions to causes",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to edit and/or remove linked cards",
+          "result": "I can manage my linked cards",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to link a card",
+          "result": "I can donate money",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to manage my account details",
+          "result": "I can keep them up to date",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see an overview of what kind of causes I've benefited the most",
+          "result": "I can see where my contributions are having the most impact",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to set a recurring monthly contribution",
+          "result": "BGood can distribute my monthly contribution to causes that match my preferences",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to add a cause I care about out to my dashboard",
+          "result": "I can easily keep track of and have quick access to it to donate",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to share on social media about my recent donation",
+          "result": "I can raise awareness about causes and the app",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to make a direct donation to a cause",
+          "result": "I can make an impact to causes I believe in",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to learn more about a cause",
+          "result": "I can be motivated to donate",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to search for a specific cause",
+          "result": "I can find the cause I care about",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "explore all the different causes on the app",
+          "result": "I can find a cause I care about",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see feature or promoted cause",
+          "result": "I can be aware of them and be motivated to donate to them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see to which causes I've donated to and how much",
+          "result": "I can see how much I've helped each cause",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see how much I've donated in total",
+          "result": "I can keep track of my overall social impact",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "set my preferences as to what causes I care about most and how much I'm comfortable donating monthly",
+          "result": "the app can curate my experience",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to sign up with my email",
+          "result": "I can create an account",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see highlights about the product",
+          "result": "I can be motivated to sign up",
+          "acceptance_criterions": []
+        }
+      ]
+    }
+  ]
+}

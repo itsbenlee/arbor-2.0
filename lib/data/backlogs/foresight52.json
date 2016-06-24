@@ -1,0 +1,195 @@
+{
+  "email": "napoleon.martinez@neonroots.com",
+  "full_name": "Napoleon Martinez",
+  "projects": [
+    {
+      "name": "Foresight52",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "SMB",
+          "action": "to see highlights about the product",
+          "result": "I can be motivated to sign up",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "SMB",
+          "action": "to sign up with my email",
+          "result": "I can create an account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "SMB",
+          "action": "to provide details about my business",
+          "result": "dashboard can be curated to my needs",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "SMB",
+          "action": "to be able to see the health of my business",
+          "result": "I can know where I stand and if I should take any extra preventive actions to improve my business",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "description": "As a SMB I want to see my dashboard/calendar so that I can keep track of important dates, tasks, and reminders required for my business",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "description": "As a SMB I want to see reminders / tasks so that I can keep track of important tasks required for my business",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "SMB",
+          "action": "to assign an employee to a task",
+          "result": "they know to handle it",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "SMB",
+          "action": "to set a personal due date to a task",
+          "result": "I can be reminded before the main deadline",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "SMB",
+          "action": "to receive notifications on calendar items, reminder, and tasks",
+          "result": "I can stay on top of my business",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "SMB",
+          "action": "to get help from a business pal",
+          "result": "when I have complex challenge or issue to deal, I can be assisted",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "SMB",
+          "action": "to chat with a business pal",
+          "result": "they can help me with my challenge or issue",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "SMB",
+          "action": "to view my business profile",
+          "result": "I can have my details at a glance",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "description": "As a SMB I want to manage my business profile details so that I can benefit as much as possible from Foresight52",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "description": "Epic: As a SMB I want to add details to my Company Ledger so that I can keep track of it on my business profile and be reminding on important dates and tasks",
+          "estimated_points": 21,
+          "acceptance_criterions": []
+        },
+        {
+          "description": "Epic: As a SMB I want to add details on my Tax \\u0026 Regulation so that I can see track of my UBI number and other details on my business profile and be reminding on important dates and tasks",
+          "estimated_points": 21,
+          "acceptance_criterions": []
+        },
+        {
+          "description": "Epic: As a SMB I want to add details to my Accounting \\u0026 Banking so that I can keep track of it on my business profile and be reminding on important dates and tasks",
+          "estimated_points": 21,
+          "acceptance_criterions": []
+        },
+        {
+          "description": "Epic: As a SMB I want to add details on my Business product so that I can keep track of it on my business profile",
+          "estimated_points": 21,
+          "acceptance_criterions": []
+        },
+        {
+          "description": "Epic: As a SMB I want to add details on my Insurance so that I can keep track of it on my business profile and be reminding on important dates and tasks",
+          "estimated_points": 21,
+          "acceptance_criterions": []
+        },
+        {
+          "description": "Epic: As a SMB I want to add details on Technology \\u0026 Social Media so that I can keep track of it on my business profile and be reminding on important dates and tasks",
+          "estimated_points": 21,
+          "acceptance_criterions": []
+        },
+        {
+          "description": "Epic: As a SMB I want to add details on Professional Consultants so that I can keep track of it on my business profile and be reminding on important dates and tasks",
+          "estimated_points": 21,
+          "acceptance_criterions": []
+        },
+        {
+          "description": "Epic: As a SMB I want to add details on Employees so that I can keep track of them on my business profile and be reminding on important dates and tasks",
+          "estimated_points": 21,
+          "acceptance_criterions": []
+        },
+        {
+          "description": "Epic: As a SMB I want to add details on my AR \\u0026 Customers so that I can keep track of it on my business profile and be reminding on important dates and tasks",
+          "estimated_points": 21,
+          "acceptance_criterions": []
+        },
+        {
+          "description": "Epic: As a SMB I want I want to add details on my AP \\u0026 Vendors so that I can keep track of it on my business profile and be reminding on important dates and tasks",
+          "estimated_points": 21,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "SMB",
+          "action": "to set my notification preferences",
+          "result": "I can set all notifications to my preference",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "SMB",
+          "action": "to manage my account details",
+          "result": "I can keep them up to date",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "SMB",
+          "action": "to be able to get help on the app",
+          "result": "my needs or questions can be answered",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Assumes integration with external service"
+            }
+          ]
+        },
+        {
+          "role": "SMB",
+          "action": "log out from my account",
+          "result": "I'm no longer logged in",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "SMB",
+          "action": "to log in with my email",
+          "result": "I can access my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "SMB",
+          "action": "to reset my password",
+          "result": "if I forget my current password, I can regain access to my account",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        }
+      ]
+    }
+  ]
+}

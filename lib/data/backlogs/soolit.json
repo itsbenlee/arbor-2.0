@@ -1,0 +1,336 @@
+{
+  "email": "napoleon.martinez@neonroots.com",
+  "full_name": "Napoleon Martinez",
+  "projects": [
+    {
+      "name": "Sooo Lit!",
+      "favorite": false,
+      "velocity": 10,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "influencer",
+          "action": "to see highlights about the product",
+          "result": "I can be motivated to sign up",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "to sign up with my email",
+          "result": "I can create an account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "to create my profile",
+          "result": "I can details about myself that will make it easier for brands to find me",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "to connect my social network accounts",
+          "result": "my social stats can be displayed on my profile",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "to see all my current requests from brands",
+          "result": "I can view new opportunities",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "to chat with a brand",
+          "result": "I can ask question I might have before I approve the request or while I'm working on a request I approved",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "to view a brands profile",
+          "result": "I can see a few details about them",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "I'm assuming that this will include the ui implementation for the brand profile"
+            }
+          ]
+        },
+        {
+          "role": "influencer",
+          "action": "to approve or ignore a request from a brand",
+          "result": "I can either start on a request I want or ignore one I don't want to work on",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "to see a current status on approved request",
+          "result": "I can stay current on all details",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that progress such as, acceptance, in progress, and completed is shown."
+            }
+          ]
+        },
+        {
+          "role": "influencer",
+          "action": "to mark a request as completed",
+          "result": "the brand can be notified that I've completed promoting the their product",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": " influencer",
+          "action": "to view my profile",
+          "result": "I can see what brands are seeing",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "to manage my profile",
+          "result": "I can keep it up to date",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "to see my history of completed requests",
+          "result": "I can keep everything on record",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "to manage my account details",
+          "result": "I can keep them up to date",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "to set my notification preferences",
+          "result": "I can set all notifications from app to my preference",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "to refer my friends to the app",
+          "result": "they can sign up and benefit from the app",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "to be able to get help on the app",
+          "result": "my needs or questions can be answered",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Assumes integration with external service"
+            }
+          ]
+        },
+        {
+          "role": "influencer",
+          "action": "log out from my account",
+          "result": "I'm no longer logged in",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "to log in with my email",
+          "result": "I can access my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "to reset my password",
+          "result": "if I forget my current password, I can regain access to my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to see highlights about the product",
+          "result": "I can be motivated to sign up",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to sign up with my email",
+          "result": "I can create an account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to create my profile",
+          "result": "I can add details about my brand",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "see top performing influencers",
+          "result": "I can browse through them",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to filter through influencers",
+          "result": "I can find the right person for the job",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to view an influencers profile",
+          "result": "I can see more details about them",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "I assume this will include the profile view implementation"
+            }
+          ]
+        },
+        {
+          "role": "brand",
+          "action": "to send an influencer a request",
+          "result": "I can motivate them to promote my product",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to chat with an influencer",
+          "result": "I can answer any questions they might have while considering my request or while they're working on my request",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to see all my current sent requests",
+          "result": "I can keep an overview of all my requests",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to see the status update of my request",
+          "result": "I can stay current with its progress",
+          "estimated_points": 2,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that progress such as, acceptance, in progress, and completed is shown."
+            }
+          ]
+        },
+        {
+          "role": "brand",
+          "action": "to rate my influencer's performance on my request",
+          "result": "other brands can see how well they do",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to favorite influencers",
+          "result": "I can easily have access to all the influencers I prefer",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to view my profile",
+          "result": "I can see what influencers are seeing",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to manage my profile",
+          "result": "I can keep it up to date",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to see my history of requests",
+          "result": "I can keep everything on record",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to manage my account details",
+          "result": "I can keep them up to date",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to set my notification preferences",
+          "result": "I can set all notifications to my preference",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to be able to get help on the app",
+          "result": "my needs or questions can be answered",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Assumes integration with external service"
+            }
+          ]
+        },
+        {
+          "role": "brand",
+          "action": "log out from my account",
+          "result": "I'm no longer logged in",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to log in with my email",
+          "result": "I can access my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to reset my password",
+          "result": "if I forget my current password, I can regain access to my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin",
+          "action": "to be able to view metrics / analytics",
+          "result": "I can know how my app is performing",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Assumes very basic metrics from a service like Google Analytics or Mix Panel"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
