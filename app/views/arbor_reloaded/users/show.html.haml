@@ -2,7 +2,7 @@
   = render 'arbor_reloaded/navigation/user_nav'
 - content_for :page_title do
   = t('page_title.profile', name: current_user.full_name)
-= form_for(current_user, url: registration_path(current_user), html: { method: :put }) do |f|
+= form_for(current_user, url: registration_path(current_user), html: { method: :put, multipart: true }) do |f|
   .user-header
     .user-avatar
       %span.icn-edit
