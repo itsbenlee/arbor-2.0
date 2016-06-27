@@ -58,6 +58,7 @@ class UserStory < ActiveRecord::Base
       action: action,
       result: result,
       estimated_points: estimated_points,
+      color: color,
       acceptance_criterions: acceptance_criterions.map(&:as_json) }.compact
   end
 

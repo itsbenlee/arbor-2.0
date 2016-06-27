@@ -45,8 +45,13 @@ Railsroot::Application.routes.draw do
           controller: :user_stories do
         resources :acceptance_criterions, only: [:create, :update, :destroy]
         resources :comments, only: [:create, :destroy]
+
         collection do
           get :ungrouped
+        end
+
+        member do
+          put :color
         end
       end
 

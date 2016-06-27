@@ -3,7 +3,7 @@ module ArborReloaded
     layout 'application_reload'
     before_action :copied_user_stories, only: :copy
     before_action :next_and_prev_story, only: :show
-    before_action :load_user_story, only: %i(edit update destroy)
+    before_action :load_user_story, only: %i(edit update destroy color)
     before_action :check_edit_permission, only: :create
     before_action :set_project, only: %i(destroy_stories update ungrouped new)
     before_action :set_project_and_groups, only: %i(index show)
@@ -77,6 +77,11 @@ module ArborReloaded
     def ungrouped
       render partial: 'arbor_reloaded/user_stories/ungrouped_list',
              locals: { project: @project }
+    end
+
+    def color
+      @user_story.update_attribute('color', params[:color].try(:to_i))
+      render json: @user_story.as_json
     end
 
     private
