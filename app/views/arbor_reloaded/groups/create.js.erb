@@ -5,7 +5,7 @@
   $('.group-name').val('');
   $('#groups-list').empty().html("<%= j render 'arbor_reloaded/groups/list', groups: @groups, project: @project %>");
   $('#group-modal').foundation('reveal', 'close');
-  bindReorderStories();
+  backlogGeneralBinds();
 
   $.get(new_story_url, function(data) {
     $('#user-story-form-container').empty().html(data);
