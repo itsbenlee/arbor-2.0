@@ -85,7 +85,35 @@ $circle-dimension: $story-points-dimension;
   } // span
 }//styles for backlog user story and modal
 
-.group-divider .title-breaker { cursor: pointer; }
+
+//GROUPS
+.group-divider {
+  position: relative;
+
+  .title-breaker { cursor: pointer; }
+}
+
+.empty-group-text {
+  $empty-text-width: rem-calc(270);
+  $empty-text-height: rem-calc(40);
+
+  background-color: rgba($black-10, .1);
+  border: 2px dashed $black-10;
+  height: $empty-text-height;
+  margin-left: calc(50% - #{$empty-text-width} / 2);
+  position: absolute;
+  text-align: center;
+  top: rem-calc(34);
+  width: $empty-text-width;
+  z-index: -1;
+
+  span {
+    color: $black-20;
+    font-size: rem-calc(14);
+    line-height: $empty-text-height;
+  }
+}
+// - - - - - - - -
 
 .reorder-user-stories {
   min-height: rem-calc(10);

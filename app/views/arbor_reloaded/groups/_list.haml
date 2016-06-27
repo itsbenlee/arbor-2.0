@@ -9,3 +9,5 @@
           - group.user_stories.backlog_ordered.each do |user_story|
             = render 'arbor_reloaded/user_stories/user_story', user_story: user_story
             = render 'arbor_reloaded/user_stories/story_detail_modal', user_story: user_story
+          .empty-group-text
+            %span= t('backlog.user_stories.empty_group_text')

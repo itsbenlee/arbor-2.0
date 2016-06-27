@@ -546,9 +546,3 @@ DEPENDENCIES
   wicked_pdf!
   wkhtmltopdf-binary-edge (~> 0.12.2.1)
   wkhtmltopdf-heroku
-
-RUBY VERSION
-   ruby 2.1.5p273
-
-BUNDLED WITH
-   1.12.4
