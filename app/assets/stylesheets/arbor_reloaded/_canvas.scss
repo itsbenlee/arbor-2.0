@@ -59,7 +59,10 @@ $general-canvas-padding: rem-calc(30);
       margin-bottom: ($general-canvas-padding / 2);
     }
 
-    textarea { @include border-radius($global-radius); }
+    textarea {
+      @include border-radius($global-radius);
+      min-height: rem-calc(200);
+    }
   }
 
   .right-content-wrapper {
