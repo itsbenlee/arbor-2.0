@@ -1,4 +1,4 @@
-#trello-modal.reveal-modal{'aria-hidden' => 'true', 'aria-labelledby' => 'project-modal', 'data-reveal' => '', :role => 'dialog' }
+#trello-modal.reveal-modal{ aria: { hidden: 'true', labelledby: 'project-modal' }, data: { reveal: ''}, role: 'dialog' }
   = link_to '×', '#', class: 'close-reveal-modal'
   %h2= t('trello.modal_title')
   = select_tag 'export_type', options_for_select({ t('trello.new_board')=>'new_board',

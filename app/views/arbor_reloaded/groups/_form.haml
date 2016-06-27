@@ -1,4 +1,4 @@
-#group-modal.group-wrapper.reveal-modal{'aria-hidden' => 'true', 'aria-labelledby' => 'group-modal', 'data-reveal' => '', :role => 'dialog' }
+#group-modal.group-wrapper.reveal-modal{ aria: { hidden: 'true', labelledby: 'group-modal' }, data: { reveal: '' }, role: 'dialog' }
   = link_to '×', '#', class: 'close-reveal-modal'
   = form_for new_group, url: arbor_reloaded_project_groups_path, html: { id: 'new_group' }, remote: true  do |f|
     %h2= t('reloaded.create_group.title')
