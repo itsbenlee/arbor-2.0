@@ -161,6 +161,7 @@ module ArborReloaded
       load_user_story
       user_stories = @user_story.project.user_stories
       story_order = @user_story.backlog_order
+
       @prev_story =
         user_stories.find_by(backlog_order: story_order + 1)
       @next_story =

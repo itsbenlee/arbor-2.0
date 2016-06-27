@@ -63,4 +63,13 @@ feature 'Story detail modal', js:true do
     user_story.reload
     expect(user_story.group).to eq(group)
   end
+
+  scenario 'estimate a story from round select box works' do
+    find('#fibonacci-dropdown').find('option[value="13"]').select_option
+    wait_for_ajax
+
+    within '#ungrouped-list-container' do
+      expect(page).not_to have_css '.top-bar'
+    end
+  end
 end
