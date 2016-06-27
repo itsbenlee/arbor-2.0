@@ -40,6 +40,7 @@ body { background-color: $white; }
 }
 
 .backlog {
+  $estimation-box-height: rem-calc(140);
   height: 100%;
   margin: 0;
   max-width: 100%;
@@ -64,13 +65,13 @@ body { background-color: $white; }
     }
 
     .cost,
-    .value { height: rem-calc(140); }
+    .value { height: $estimation-box-height; }
 
     .value p { font-size: rem-calc(88); }
 
     .cost p {
-      @include translateY(50%);
-      font-size: rem-calc(40);
+      font-size: rem-calc(30);
+      line-height: $estimation-box-height;
     }
   } // item box
 
