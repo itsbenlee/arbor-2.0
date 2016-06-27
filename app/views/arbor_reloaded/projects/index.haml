@@ -14,7 +14,7 @@
         = link_to t('reloaded.project_dashboard.create_button'), '#', id: 'create-project-button',
         class: 'button radius small', data: { reveal_id: 'project-modal' }
 
-#project-modal.reveal-modal{'aria-hidden' => 'true', 'aria-labelledby' => 'project-modal', 'data-reveal' => '', 'data-auto-reveal' => @new_project.errors.present?, :role => 'dialog' }
+#project-modal.reveal-modal{aria: { hidden: 'true', labelledby: 'project-modal' }, data: { reveal: '', auto: { reveal: @new_project.errors.present? }}, role: 'dialog' }
   = link_to '×', '#', class: 'close-reveal-modal'
   = form_for @new_project, url: '/arbor_reloaded/projects', html: { id: 'new_project' }  do |f|
     %h2= t('reloaded.create_project.title')

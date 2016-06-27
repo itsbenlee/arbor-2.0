@@ -4,7 +4,7 @@
   .columns.small-12
     #teams-list
       = render 'arbor_reloaded/teams/list', teams: @teams
-#team-modal.reveal-modal{'aria-hidden' => 'true', 'aria-labelledby' => 'team-modal', 'data-reveal' => '', 'data-auto-reveal' => @new_team.errors.present?, :role => 'dialog' }
+#team-modal.reveal-modal{ aria: { hidden: 'true', labelledby: 'team-modal'}, data: { reveal: '', auto: { reveal: @new_team.errors.present? }}, role: 'dialog' }
   = link_to '×', '#', class: 'close-reveal-modal'
   = form_for @new_team, url: '/arbor_reloaded/teams', html: { id: 'new_team' }, remote: true do |f|
     %h2= t('reloaded.team.create')
