@@ -45,6 +45,7 @@ function generalBinds() {
     displayActions();
     displayHideDelete();
     storiesWidth();
+    displayColorTags();
   }
 }
 
@@ -110,5 +111,15 @@ function setVisibleState(elements, reversed){
         $(value).hide();
       }
     }
+  });
+}
+
+function collapsableContent() {
+  var $trigger = $('.title-breaker .toggle-content-btn');
+  $trigger.on( "click", function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $(this).parent().next().fadeToggle(400);
+    $(this).toggleClass('active');
   });
 }

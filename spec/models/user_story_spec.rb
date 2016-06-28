@@ -9,6 +9,10 @@ RSpec.describe UserStory do
   it { should belong_to(:project) }
   it { should have_many :acceptance_criterions }
   it { should validate_uniqueness_of(:story_number).scoped_to(:project_id)}
+  it { should validate_numericality_of(:color).only_integer }
+  it { should validate_numericality_of(:color).allow_nil }
+  it { should validate_numericality_of(:color).is_greater_than_or_equal_to(1) }
+  it { should validate_numericality_of(:color).is_less_than_or_equal_to(7) }
 
   it 'must increment user story number' do
     test_project = create :project

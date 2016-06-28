@@ -1,4 +1,5 @@
-%li.backlog-user-story.white-block.block-wrapper{ data: { id: user_story.id } }
+%li.backlog-user-story.white-block.block-wrapper{ id: "backlog-user-story-#{user_story.id}",
+data: { id: user_story.id }, class: user_story.color ? "story-tag-#{user_story.color}" : nil }
   %input.square-checkbox{ id:"select-stories#{user_story.id}", type: 'checkbox', value: user_story.id }
   = link_to arbor_reloaded_user_story_path(user_story), class: 'story-detail-link', data: { reveal_id: 'story-detail-modal', reveal_ajax: 'true'} do
     %span.story-points
@@ -13,9 +14,22 @@
         %span= user_story.result
       - else
         %span.description= user_story.description
+  .right
+    = link_to '#', class: 'icn-comments hide' do
+      %span.notification-badge
+    = link_to '#', class: 'others' do
+      &#149&#149&#149
   .actions
     %a.delete-story.has-tip{aria: {haspopup: true}, data: {id: user_story.id, tooltip: ''}, title: t('reloaded.tooltips.delete_project')}
       %span.icn-delete
+    = link_to '#', class: 'color-story has-tip', aria: { haspopup: true }, title: t('reloaded.tooltips.color_stories'), data: { id: user_story.id, tooltip: '' } do
+      %span.icn-water-drop
+    = link_to '#', class: 'copy-story hidden-element has-tip', aria: { haspopup: true }, title: t('reloaded.tooltips.copy_project'), data: { tooltip: '' } do
+      %span.icn-copy
+  .color-tags{ id: "story-tag-#{user_story.id}"}
+    - (1..7).each do |color_number|
+      = link_to '', '#', class: 'color-tag',
+      data: { url: color_arbor_reloaded_user_story_path(user_story.id), color: color_number, selected: (color_number == user_story.color), story_id: user_story.id }
   .deleter{ id: "deleter-#{user_story.id}"}
     %p
       = t('reloaded.user_stories.actions.are_you_sure')

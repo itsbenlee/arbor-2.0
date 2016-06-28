@@ -91,7 +91,7 @@ $story-padding-top: rem-calc(20);
     background-color: $success-color;
 
     + .story-detail-link { margin-left: $story-padding-top * 2; }
-    &::after { border-color: $black-90; }
+    &::after { border-color: $white; }
   } // checked
 } // square checkbox
 
@@ -117,6 +117,8 @@ input:focus {
 // -------  SECTION'S SEPARATOR ------ //
 
 .title-breaker {
+  $icon-dimension: rem-calc(15);
+
   margin: rem-calc(35) 0;
   position: relative;
   text-align: center;
@@ -147,6 +149,43 @@ input:focus {
   .reorder-user-stories {
     min-height: rem-calc(40);
   }
+
+  .toggle-content-btn,
+  .icn-settings {
+    background-color: $body-bg;
+    color: $black-20;
+    float: right;
+
+    &:hover { color: $black-30; }
+  }
+
+  .toggle-content-btn {
+    @include border-radius(rem-calc(2));
+    border: 1px solid $black-20;
+    font-size: rem-calc(12);
+    height: $icon-dimension;
+    line-height: rem-calc(10);
+    margin-top: rem-calc(4);
+    text-align: center;
+    width: $icon-dimension;
+
+    &::before {
+      content: '+';
+      vertical-align: text-bottom;
+    }
+
+    &.active {
+      &::before {
+        content: '-';
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .icn-settings {
+    line-height: rem-calc(24);
+    padding: rem-calc(0 7 0 15);
+  }
 }//section separator
 
 // -------  BLOCK ELEMENT AND ACTIONS' BUTTONS ------ //
@@ -170,7 +209,8 @@ $block-animation-delay: .40s;
 
     .actions,
     .deleter,
-    .right {
+    .right,
+    .color-tags {
       line-height: $action-circle-dimension;
       position: absolute;
       z-index: 2;
@@ -196,9 +236,11 @@ $block-animation-delay: .40s;
 
       .delete-story,
       .copy-story,
+      .color-story,
       .delete-project,
       .copy-project,
-      [class^="icn-favorite"] {
+      [class^="icn-favorite"],
+      .color-tag {
         @include inline-block;
         @include border-radius(100%);
         background-color: $black-10;
@@ -223,7 +265,8 @@ $block-animation-delay: .40s;
     }//all three floating sections on the right
 
     .actions,
-    .deleter {
+    .deleter,
+    .color-tags {
       @include clearfix;
       color: $secondary-color;
       display: none;

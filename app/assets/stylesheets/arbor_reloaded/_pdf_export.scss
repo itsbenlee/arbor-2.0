@@ -40,6 +40,7 @@ body { background-color: $white; }
 }
 
 .backlog {
+  $estimation-box-height: rem-calc(140);
   height: 100%;
   margin: 0;
   max-width: 100%;
@@ -64,13 +65,13 @@ body { background-color: $white; }
     }
 
     .cost,
-    .value { height: rem-calc(140); }
+    .value { height: $estimation-box-height; }
 
     .value p { font-size: rem-calc(88); }
 
     .cost p {
-      @include translateY(50%);
-      font-size: rem-calc(40);
+      font-size: rem-calc(30);
+      line-height: $estimation-box-height;
     }
   } // item box
 
@@ -88,7 +89,6 @@ body { background-color: $white; }
       font-size: rem-calc(14);
       list-style: none;
       overflow: hidden;
-      padding-bottom: rem-calc(25);
 
       .description::before { content: '\2022'; }
     }
@@ -112,7 +112,6 @@ body { background-color: $white; }
 
     .user-story {
       font-size: rem-calc(16);
-      margin-bottom: rem-calc(10);
       padding-left: 0;
 
       .uppercase-subtitle {

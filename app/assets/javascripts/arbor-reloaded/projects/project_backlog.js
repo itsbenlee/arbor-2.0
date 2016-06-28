@@ -18,18 +18,36 @@ function autogrowInputs() {
   });
 }
 
+function checkForEmptyGroupStories() {
+  var $groupDivider = $backlogStoryList.find('.group-divider');
+  $groupDivider.each(function(index, el) {
+      if ($(el).find('.backlog-user-story').length) {
+        $(el).find('.empty-group-text').addClass('hide');
+      } else {
+        $(el).find('.empty-group-text').removeClass('hide');
+      }
+  });
+}
+
 function bindReorderStories() {
   var $reorder_stories = $backlogStoryList.find('.reorder-user-stories');
+
   $reorder_stories.sortable({
     connectWith: '.reorder-user-stories',
     placeholder: 'sortable-placeholder',
-    over: function( event, ui ) {
+    over: function(event, ui) {
+      $(event.target).parent().find('.empty-group-text').addClass('hide');
       $(event.target).addClass('active');
     },
-    out: function( event, ui ) {
+    out: function(event, ui) {
       $(event.target).removeClass('active');
     },
-    stop: function() {
+    start: function(event, ui) {
+      $reorder_stories.parent().find('.empty-group-text').addClass('hide');
+    },
+    stop: function(event, ui) {
+      checkForEmptyGroupStories();
+      $(ui.item).attr('style', '');
       var newStoriesOrder = setStoriesOrder(),
           url = $reorder_stories.data('url');
           project = $reorder_stories.data('project');
@@ -68,12 +86,55 @@ function showBulkMenu() {
   });
 }
 
+function removeColors(userStoryID) {
+  var $backlogStory = $('#backlog-user-story-' + userStoryID);
+  for (var i = 1; i <= 7; i++) { $backlogStory.removeClass('story-tag-' + i); }
+}
+
+function addColor(userStoryID, colorID) {
+  removeColors(userStoryID);
+  if(colorID) {
+    $('#backlog-user-story-' + userStoryID).addClass('story-tag-' + colorID);
+  }
+}
+
+function bindUserStoriesColorLinks() {
+  var $colorLinks = $('.color-tag');
+
+  $colorLinks.click(function(event) {
+    var color    = $(this).data('color'),
+        url      = $(this).data('url'),
+        selected = $(this).data('selected'),
+        storyID  = $(this).data('storyId');
+
+    if(selected) {
+      color = null;
+    }
+
+    $(this).data('selected', !selected);
+
+    $.ajax({
+      url: url,
+      dataType: 'json',
+      method: 'PUT',
+      data: { color: color },
+      success: function(data) {
+        addColor(storyID, color);
+      }
+    });
+
+    return false;
+  });
+}
+
 $(document).ready(function() {
   if ($('.new-backlog-story').length > 0) { autogrowInputs(); }
 
   if ($backlogStoryList.length) {
     showBulkMenu();
     bindReorderStories();
+    checkForEmptyGroupStories();
+    bindUserStoriesColorLinks();
   }
 });
 
@@ -85,4 +146,6 @@ function backlogGeneralBinds() {
   bindReorderStories();
   autogrowInputs();
   checkEstimation();
+  collapsableContent();
+  checkForEmptyGroupStories();
 }

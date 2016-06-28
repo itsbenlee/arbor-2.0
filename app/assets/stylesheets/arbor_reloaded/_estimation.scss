@@ -1,47 +1,11 @@
 $estimation-margin: rem-calc(40);
 $icon-dimension: rem-calc(15);
+$estimation-box-height: rem-calc(140);
 
 .estimation-wrapper h4,
 .edit-wrapper h4 { font-weight: normal; }
 
 .estimation {
-  .toggle-estimation,
-  .icn-settings {
-    background-color: $body-bg;
-    color: $black-20;
-    float: right;
-
-    &:hover { color: $black-30; }
-  }
-
-  .toggle-estimation {
-    @include border-radius(rem-calc(2));
-    border: 1px solid $black-20;
-    font-size: rem-calc(12);
-    height: $icon-dimension;
-    line-height: rem-calc(10);
-    margin-top: rem-calc(4);
-    text-align: center;
-    width: $icon-dimension;
-
-    &::before {
-      content: '+';
-      vertical-align: text-bottom;
-    }
-
-    &.active {
-      &::before {
-        content: '-';
-        vertical-align: middle;
-      }
-    }
-  }
-
-  .icn-settings {
-    line-height: rem-calc(24);
-    padding: rem-calc(0 7 0 15);
-  }
-
   .estimation-wrapper {
     margin: 0 auto;
 
@@ -66,13 +30,13 @@ $icon-dimension: rem-calc(15);
       }
 
       .cost,
-      .value { height: rem-calc(140); }
+      .value { height: $estimation-box-height; }
 
       .value p { font-size: rem-calc(88); }
 
       .cost p {
-        @include translateY(50%);
-        font-size: rem-calc(40);
+        font-size: rem-calc(34);
+        line-height: $estimation-box-height;
       }
 
       .icn-settings {

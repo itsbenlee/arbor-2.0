@@ -35,15 +35,34 @@ $light-blue-2: #eceff1;
 // Favorite project random colors
 
 $favorite-colors-list: (
-  #5856d6,
-  #34b9e6,
-  #75d2c7,
-  #95d357,
-  #a27eeb,
-  #fe4565,
-  #ff5335,
-  #ffa600,
-  #ffd14d
+  #e57373,
+  #f06292,
+  #ba68c8,
+  #9575cd,
+  #7986cb,
+  #64b5f6,
+  #4fc3f7,
+  #4dd0e1,
+  #4db6ac,
+  #81c784,
+  #aed581,
+  #dce775,
+  #ffd54f,
+  #ffb74d,
+  #ff8a65,
+  #a1887f
+);
+
+$color-tags-amount: 7;
+
+$color-tags: (
+  #81c784,
+  #ffd54f,
+  #64b5f6,
+  #9575cd,
+  #ba68c8,
+  #f06292,
+  #e57373
 );
 
 // Grayscale

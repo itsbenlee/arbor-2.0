@@ -20,6 +20,10 @@ function displayActions() {
       $('.deleter').removeClass('visible');
     }
 
+    if ($('.color-tags').hasClass('visible')) {
+      $('.color-tags').removeClass('visible');
+    }
+
     if ($('.icn-comments').hasClass('hidden-element')) {
       $('.icn-comments').removeClass('hidden-element');
     }
@@ -37,6 +41,11 @@ function displayHideDelete() {
     $deleteContainer = $(this).closest('li');
     $deleteContainer.find($('.deleter')).addClass('visible');
     $(this).parent().removeClass('visible');
+
+    if ($('.color-tags.visible')) {
+      $('.color-tags').removeClass('visible');
+    }
+    event.preventDefault();
     event.stopPropagation();
   });
 
@@ -48,5 +57,5 @@ function displayHideDelete() {
 $( document ).ready(function() {
   generalBinds();
   bindAutoReveal();
-  hideShowEstimation();
+  collapsableContent();
 });

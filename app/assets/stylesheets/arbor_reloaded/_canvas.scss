@@ -4,14 +4,23 @@ $general-canvas-padding: rem-calc(30);
   .left-content-wrapper {
     border-right: 1px solid $black-10;
 
-    .canvas-item.done {
-      font-weight: $font-weight-bold;
+    .canvas-item {
+      color: $black-30;
 
-      &::after {
+      +.done {
         color: $success-color;
-        content: '\2713';
+
+        &::after {
+          color: $success-color;
+          content: '\2713';
+        }
       }
     } // items checked
+
+    .canvas-visited {
+      color: $black;
+      font-weight: $font-weight-bold;
+    }
 
     .progress-bar {
       margin: ($general-canvas-padding / 2) 0 0;
@@ -50,7 +59,10 @@ $general-canvas-padding: rem-calc(30);
       margin-bottom: ($general-canvas-padding / 2);
     }
 
-    textarea { @include border-radius($global-radius); }
+    textarea {
+      @include border-radius($global-radius);
+      min-height: rem-calc(200);
+    }
   }
 
   .right-content-wrapper {

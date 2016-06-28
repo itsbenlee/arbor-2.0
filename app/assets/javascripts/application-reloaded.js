@@ -34,6 +34,7 @@
 //= require arbor-reloaded/user_stories/delete_from_modal
 //= require arbor-reloaded/user_stories/estimation
 //= require arbor-reloaded/user_stories/stories_width
+//= require arbor-reloaded/user_stories/actions
 //= require arbor-reloaded/user_profile/user_profile
 //= require arbor-reloaded/projects/actions/SlackModalActions
 //= require arbor-reloaded/projects/stores/SlackModalStore

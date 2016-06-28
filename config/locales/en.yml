@@ -52,6 +52,7 @@ en:
       enter_criterion: 'Write a new acceptance criteria here...'
       new_comment: "Write a new comment here..."
       ungrouped: No group
+      empty_group_text: Place Stories in this Group
     logout: "Sign out"
     acceptance_criterions: "Acceptance Criteria"
   canvas:
@@ -141,6 +142,9 @@ en:
       create: 'Create'
       save: 'Save'
       cancel: 'Cancel'
+    create_group:
+      title: 'Create a group'
+      placeholder: 'Enter group name here'
     user_stories:
       write_title: 'Write some User Stories'
       write_subtitle: 'On the field above, enter a user story to start filling up your project'
@@ -179,6 +183,7 @@ en:
       canvas: 'Canvas'
       backlog: 'Backlog'
       activity: 'Activity'
+      more: 'More...'
       assets: 'Assets'
       help: 'Help'
       export_with_estimation: 'Export as PDF'
@@ -245,6 +250,7 @@ en:
       delete_stories: 'Delete stories'
       duplicate_story: 'Duplicate story'
       copy_stories: 'Duplicate stories'
+      color_stories: 'Color Tag'
       archive_stories: 'Archive stories'
       archive_story: 'Archive story'
       update_estimation: 'Settings'

@@ -15,8 +15,7 @@
       %select.fibonacci-select{ id: 'fibonacci-dropdown', class: 'has-tip',
       aria: { haspopup: true }, title: t('reloaded.tooltips.estimate'),
       data: { id: @user_story.id, url: arbor_reloaded_user_story_path(@user_story),
-      tooltip: '', groups_url: arbor_reloaded_project_groups_path(@project)},
-      ungrouped_url: ungrouped_arbor_reloaded_project_user_stories_path(@project) }
+      tooltip: '', groups_url: arbor_reloaded_project_groups_path(@project), ungrouped_url: ungrouped_arbor_reloaded_project_user_stories_path(@project) } }
         %option{ value: '?' } ?
         %option{ value: '1', selected: (@user_story.estimated_points == 1) } 1
         %option{ value: '2', selected: (@user_story.estimated_points == 2) } 2

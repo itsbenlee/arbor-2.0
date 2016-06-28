@@ -191,6 +191,7 @@ $search-width: rem-calc(300);
     .project {
       &::after {
         @include border-radius(0 0 $global-radius $global-radius);
+        @include inline-block();
         @include transition(height .25s ease-in);
         bottom: 0;
         content: '';
@@ -198,7 +199,7 @@ $search-width: rem-calc(300);
         left: 0;
         margin-top: rem-calc(10);
         position: absolute;
-        width: 100.5%;
+        width: 100%;
       } // project after
 
       .left { @include transition(margin-bottom .25s ease-in); }

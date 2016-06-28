@@ -12,7 +12,7 @@
     %li.not-ready
       = link_to t('reloaded.navigation.assets'), arbor_reloaded_project_attachments_path(current_project), class: 'link'
     %li
-      = link_to '...', '#', aria: { controls: 'project-actions', expanded: false }, data: {dropdown: 'project-actions' }
+      = link_to t('reloaded.navigation.more'), '#', aria: { controls: 'project-actions', expanded: false }, data: {dropdown: 'project-actions' }
       %ul#project-actions.f-dropdown{ data: { dropdown: { content: '' } } }
         %li
           = link_to arbor_reloaded_project_export_backlog_path(current_project, format: :pdf, estimation: true) do
