@@ -148,4 +148,8 @@ function backlogGeneralBinds() {
   checkEstimation();
   collapsableContent();
   checkForEmptyGroupStories();
+  displayActions();
+  displayHideDelete();
+  displayColorTags();
+  bindUserStoriesColorLinks();
 }
