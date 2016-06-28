@@ -52,7 +52,7 @@ en:
       enter_criterion: 'Write a new acceptance criteria here...'
       new_comment: "Write a new comment here..."
       ungrouped: No group
-      empty_group_text: Place Stories in this Group
+      empty_group_text: 'Add Stories in this Group'
     logout: "Sign out"
     acceptance_criterions: "Acceptance Criteria"
   canvas:
