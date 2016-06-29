@@ -46,3 +46,4 @@
 //= require arbor-reloaded/utils/customTextArea
 //= require arbor-reloaded/main
 //= require arbor-reloaded/teams
+//= require arbor-reloaded/team_bindings
