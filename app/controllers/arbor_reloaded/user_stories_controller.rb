@@ -19,7 +19,7 @@ module ArborReloaded
     def index
       @user_story = UserStory.new
       @total_points = @project.total_points
-      @new_group = Group.new
+      @new_group = Group.new(project: @project)
     end
 
     def show

@@ -1,4 +1,4 @@
 $('.story-text').html('<%= j @user_story.description%>');
 $('.user-stories-container').html('');
-$('.user-stories-container').html("<%= j render 'arbor_reloaded/user_stories/user_stories_list', project: @user_story.project.reload %>");
+$('.user-stories-container').html("<%= j render 'arbor_reloaded/user_stories/user_stories_list', project: @user_story.project.reload, new_group: Group.new(project_id: @user_story.project.id)%>");
 backlogGeneralBinds();
