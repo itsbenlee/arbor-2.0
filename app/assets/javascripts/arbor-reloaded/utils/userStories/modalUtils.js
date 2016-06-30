@@ -9,3 +9,7 @@ ModalUtils.displayEstimation = function(data) {
     $('.backlog-user-story[data-id='+ data.id +']').find('.story-points').text('?');
   }
 }
+
+ModalUtils.closeMembersModal = function() {
+  $('#team-members-modal').foundation('reveal', 'close');
+}
