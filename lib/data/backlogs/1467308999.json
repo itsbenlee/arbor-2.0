@@ -1,0 +1,1153 @@
+{
+  "email": "napoleon.martinez@neonroots.com",
+  "full_name": "Napoleon Martinez",
+  "projects": [
+    {
+      "name": "Peek",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "do something",
+          "result": "i can do something else.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "search peek user to see if my friends are on peek",
+          "result": " I connect with them on other networks.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "follow another user on instagram through peek",
+          "result": "I can grow my Ig network.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "follow another user on Twitter through peek",
+          "result": "i can grow my network.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "connect with another user on facebook through peek",
+          "result": "I can grow my network.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view another peek users profile so that I can see what other social networks that have",
+          "result": "I can connect with them.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see which posts from my social network are from current Peek users",
+          "result": "I can view their profile.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "share my peek profile via sms, email, FB, and Tw",
+          "result": "others can connect with me.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "copy my peek profile url",
+          "result": "I can share with others.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "play Tw video in Peek",
+          "result": "I don't have to leave the app.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "play a Soundcloud track in Peek",
+          "result": "I don't have to leave the app.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "play a YT video in Peek",
+          "result": "I don't have to leave the app.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "play FB video in Peek",
+          "result": "I don't have to leave the app.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "like a soundcloud track from peek",
+          "result": "i don't have to find the track in SC.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "like or dislike a Youtube video",
+          "result": " the YT creator knows my opinion.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "heart an instagram post",
+          "result": "my Ig followers know i love it.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "favorite a Tw post from peek",
+          "result": "my Tw followers see that I faved it.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "like a FB post from peek",
+          "result": "my FB friends can see that I liked it.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "comment on a soundcloud song",
+          "result": "I don't have to find it in SC.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "be able to comment on a YT video",
+          "result": "I don't have to find it in YT.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "comment on an Instagram post",
+          "result": "I don't have to find it in Ig.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "reply to Twitter post",
+          "result": "I don't have to find it in twitter.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "comment on a FB post from peek",
+          "result": "i don't have to find the post in FB.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "post to soundcloud from peek",
+          "result": "i don't have to leave the app.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "post to Youtube from peek",
+          "result": "I don't have to leave the app.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "post to Instagram from Peek",
+          "result": "I don't have to leave the app.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "post to Twitter from Peek",
+          "result": "I don't have leave the app.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "should be able to post to FB from peek",
+          "result": "I don't have to go to FB.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "filter the aggregated feed by one or more feeds",
+          "result": "I can only view the ones I want.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view what posts are from what social network",
+          "result": "I know which feed it came from.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view all my social feeds in one feed",
+          "result": "I can view everything easily.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "be able to view my Soundcloud recommendations through peek",
+          "result": "I can stay up to date.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "be able to view my YouTube recommendations through Peek",
+          "result": "I can stay connected.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "able to view my Instagram feed in Peek",
+          "result": "I can stay connected.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view my Twitter feed in Peek",
+          "result": "I can stay connect.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view my Facebook feed in Peek",
+          "result": "I can stay connected.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user ",
+          "action": "disconnect any of my social profiles",
+          "result": "I don't see that networks content or that profile through Peek.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "connect my Soundcloud account",
+          "result": "I can view and contribute to SC through Peek.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "connect my YouTube account",
+          "result": "so that I can view and contribute to YT through Peek.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "I should be able to connect to my Instragram account",
+          "result": "I can view and contribute to my IG feed through Peek.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "connect my Twitter account",
+          "result": "I can view and contribute to my Tw feed through Peek.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "connect my Facebook account",
+          "result": "I can view and contribute to FB through Peek.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "provide a description about myself to my profile",
+          "result": "others can learn more about me.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user that registered with Twitter",
+          "action": "see my profile photo from Twitter",
+          "result": "I don't have to upload another one.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user that registered with Facebook",
+          "action": "see my profile populated with FB photo",
+          "result": "I don't have to upload one.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "define a username",
+          "result": "others can find me by that name.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user that registered with email",
+          "action": "take or upload a photo",
+          "result": "I am recognized by others.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "unregistered user",
+          "action": "sign with Twitter",
+          "result": "I don't have to create another password.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "unregistered user",
+          "action": "sign up with email and create a password",
+          "result": "I can create an account.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "unregistered user",
+          "action": "sign up with Facebook",
+          "result": "I don't have to create an password.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "unregistered user",
+          "action": "view 2 to 3 screens of how it works",
+          "result": "I can understand how to get started quickly.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "visitor",
+          "action": "download the application from google play or iTunes",
+          "result": "I can sign up.",
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "SoS",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "login",
+          "result": "view my account",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "choose topics I'm interested in",
+          "result": "I start seeing poll content that is relevant right away",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "express disinterest early",
+          "result": "I can get to more interesting content.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "administrator",
+          "action": "test the interest level of a particular poll",
+          "result": "I can confirm user interest.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "vote on a selfie",
+          "result": "others know where I stand.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "website visitor",
+          "action": "download the application",
+          "result": "I can get started.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "see 3 to 5 screens of how it works",
+          "result": "I can register.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "sign up with Facebook",
+          "result": "I don't have to create another username and password.",
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Copy of SoS (2)",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "new user",
+          "action": "sign up with Facebook",
+          "result": "I don't have to create another username and password.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "see 3 to 5 screens of how it works",
+          "result": "I can register.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "website visitor",
+          "action": "download the application",
+          "result": "I can get started.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "vote on a selfie",
+          "result": "others know where I stand.",
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "TopTier test",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": []
+    },
+    {
+      "name": "Altour Test Project for Brice",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "traveler",
+          "action": "book a flight",
+          "result": "I can travel",
+          "estimated_points": 1,
+          "acceptance_criterions": [
+            {
+              "description": "If I am a user, I can select my destination and departure point"
+            },
+            {
+              "description": "I can select my departure date and return date"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Test 2",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": []
+    },
+    {
+      "name": "SHY",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "change if SHY notifies me when someone is nearby",
+          "result": "I control how SHY is used",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view the Terms of Service",
+          "result": "I am an informed SHY user",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view the SHY privacy policy",
+          "result": "I am an informed user",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view the FAQ",
+          "result": "I can work through problems",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "get help with SHY",
+          "result": "I can get help with problems",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "set a preference of sorting farthest or nearest first",
+          "result": "I can decide who to like / dislike",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "specify the age of the person to find",
+          "result": "I find people interesting to me",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "set my 'pulse distance' in feet or miles",
+          "result": "I find people most interesting to me",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "set my gender search preference",
+          "result": "I find people I am interested in",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "set invisibility on or off in preferences",
+          "result": "control my privacy",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "control if pulses are sent manually or automatically",
+          "result": "I find the best way for me to use SHY",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "determine if others can see my location in preferences",
+          "result": "control my privacy",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view my preferences",
+          "result": "can decide how to use SHY",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "disappear from a 'blocked' SHY user completely",
+          "result": "I control my privacy",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "block a SHY user",
+          "result": "I control my privacy",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "change the kind of push notifications I receive",
+          "result": "I can control my SHY usage",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "receive a push notification when I get a new message from a match",
+          "result": "I can continue the conversation",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "receive a push notification when I get a new 'match'",
+          "result": "I can have a conversation",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "receive a push notification when a potential SHY match is within 100 feet",
+          "result": "I can talk to them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see when there are no matches to my 'pulse'",
+          "result": "I can change my search radius",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view a list of my 'SHY friends' activities",
+          "result": "I can keep in touch with their lives",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "disallow friends from rating matches",
+          "result": "I control my privacy",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "disallow friends from commenting on matching",
+          "result": "I control my privacy",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "disallow others from seeing who I'm matched with",
+          "result": "I control my privacy",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "comment on my SHY friend's matches when I am 'SHY friends' with both parties",
+          "result": "they know what I think of the match",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "rate your SHY friends matches",
+          "result": "they know my opinion about their SHY matches",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "not see my SHY friends conversations",
+          "result": "I respect their privacy",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view my SHY friends matches",
+          "result": "I keep informed about their lives",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view my list of SHY friends",
+          "result": "can continue getting to know them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see the list of people who have been 'pulsed'",
+          "result": "I can find people to like / dislike",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "suer",
+          "action": "turn on 'auto pulse'",
+          "result": "the app is always searching for people who are nearby me that I might want to like / dislike",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "get notified when people find me ('pulse me')",
+          "result": "I see who's looking at my profile",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "move through SHY profiles that I might be interested in",
+          "result": "I can like / dislike someone",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "locate people within a given distance of me",
+          "result": "I can like / dislike people",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see the profiles of other people",
+          "result": "I can like / dislike them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "start a conversation with someone who I liked that has also liked me",
+          "result": "we can learn about each other",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view my list of conversations (messages) I have had with other SHY users",
+          "result": "I can create relationships",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see mutual FB interests",
+          "result": "I can decide to link / dislike them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see mutual FB friends",
+          "result": "I can decide to like / dislike them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "not know who has liked me unless I also like them",
+          "result": "matches happen organically",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "add multiple TW accounts",
+          "result": "others can see all my interests",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "search for people based on hashtags",
+          "result": "I can find people with specific descriptions",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "refresh another SHY users profile",
+          "result": "I can see their latest social activity",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see the number of Tumblr followers and follows another SHY user has",
+          "result": "I know if I want to like / dislike them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see the number of TW followers and follows another SHY user has",
+          "result": "I know if I want to like / dislike them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see the number of IG followers and follows another SHY user has",
+          "result": "I know if I want to like / dislike them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view another SHY last 10 Tumblr posts / likes",
+          "result": "I know if I want to like / dislike them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view another SHY users Social streams without seeing their social usernames (IG, Tw, Tumblr)",
+          "result": "I cannot stalk them in a creepy manner",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view another SHY users last 10 Tw posts / likes within the app",
+          "result": "I know if I want to like / dislike them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view a SHY users last 10 IG posts / likes within the app",
+          "result": "I know if I want to like / dislike them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view another SHY users description",
+          "result": "I know if I want to like / dislike them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view a list of pictures in another users SHY profile",
+          "result": "I know if I want to like / dislike them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see another SHY users first name, but not their last name",
+          "result": "I remain safe",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "undo my like or dislike action",
+          "result": "I can correct an error",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "dislike a SHY profile",
+          "result": "I don't see that person in my search results again",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "like a SHY profile",
+          "result": "we might be able to chat",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view the user's profile picture",
+          "result": "I can determine if I want to like or dislike them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view another users profile",
+          "result": "I can learn more about them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "discover users of a specific gender and mile radius of me",
+          "result": "in the future SHY can become a 'national' social discovery app",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "change my profile description",
+          "result": "others can learn more about me",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "change the gender of people I am looking for",
+          "result": "I see results that are interesting to me",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "change my gender in my profile",
+          "result": "SHY users have an accurate description of me",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "disconnect any of my social accounts except FB",
+          "result": "I control what other SHY users can see",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "connect my Tumblr account",
+          "result": "other SHY users know what blogs or content I enjoy",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "connect my Tw account",
+          "result": "SHY users can learn about what I like or say",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "connect my IG account",
+          "result": "other users can learn more about what pictures I have taken or like",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "select which photo in my SHY profile is my 'default' photo",
+          "result": "I can look my best",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "add additional photos to my SHY profile from FB",
+          "result": "others can learn more about me",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "write a description made entirely of hashtag words",
+          "result": "others learn about me, and can find me when they search",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "indicate if I want to meet men or women",
+          "result": "SHY shows me people I am interested in meeting",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "first-time user",
+          "action": "decide to leave my profile to the SHY default",
+          "result": "I can start finding new people immediately",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "edit my profile",
+          "result": "can impact how I look to other SHY users",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "become 'invisible' to other users 'pulses'",
+          "result": "I control my privacy",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "adjust the range of pulse",
+          "result": "I find more useful results",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "first-time user",
+          "action": "decide to allow push notifications",
+          "result": "I get the most from SHY",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "first-time user",
+          "action": "allow SHY to access necessary FB datsa",
+          "result": "SHY can work properly",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "first-time user",
+          "action": "turn-on location services",
+          "result": "SHY can work properly",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "first-time user",
+          "action": "view my fb picture as my default profile picture",
+          "result": "I don't have to upload a picture before getting started.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "first-time user",
+          "action": "see how my default profile looks",
+          "result": "I can decide if I edit it or start viewing people",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "first-time user",
+          "action": "login with FB",
+          "result": "I don't need to remember another password",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "interested non-user",
+          "action": "sign-up quickly",
+          "result": "I can meet new people",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "interested non-user",
+          "action": "find SHY in the appstore",
+          "result": "I can download it",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "interested non-user",
+          "action": "read the SHY landing page",
+          "result": "can decide if I want to download it",
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Moolah.io",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "run hypotheticals in my resource",
+          "result": "I can project out how long a resource will be working/on the bench",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "assign resources to a project",
+          "result": "I can see a birds-eye view/snapshot of my bench",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "connect my Google Analytics account",
+          "result": "I can benefit from its data on my Moolah Dashboard",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that a Google Analytics account can be connected per each company account added"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "connect my Google Adwords account",
+          "result": "I can benefit from its data on my Moolah Dashboard",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that a Google Adwords account can be connected per each company account added"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "connect my Pipedrive account",
+          "result": "I can benefit from its data on my Moolah Dashboard",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that a Pipedrive account can be connected per each company account added"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "connect my Xero account",
+          "result": "I can benefit from its data on my Moolah Dashboard",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that a Xero account can be connected per each company account added"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "set multiple companies",
+          "result": "I can have all my data in one place",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that user can add more then one company account to dashboard"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "have support for multiple currencies",
+          "result": "I can best understand my analytics",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that Dollars are a supported Currency"
+            },
+            {
+              "description": "Verify that Euros are a supported Currency"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "see conversions on proposals sent",
+          "result": "I can know how well I'm performing",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see my accounts payable and accounts receivable",
+          "result": "I can know how well I'm performing",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see my cash balances",
+          "result": "I can know how well I'm performing",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see my top line revenue",
+          "result": "I can know how well I'm performing",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see my burn rate",
+          "result": "I can know how well I'm performing",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see where I'm allocating my resources",
+          "result": "I know how good is my productivity",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see my velocity (Customer Lifecycle)",
+          "result": "I can know how well I'm performing",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see my monthly cost per acquisition",
+          "result": "I can know how much acquisitions are costing me",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "reset my password",
+          "result": "I can access my account",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that user can reset their password"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "sign up with my email address",
+          "result": "I can benefit from Moolah",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that User can sign up with a full name, email and password"
+            }
+          ]
+        },
+        {
+          "role": "user ",
+          "action": "login with my Moolah credentials ",
+          "result": "I can view my dashboard",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that user enters can enter an email and password"
+            },
+            {
+              "description": "Verify that user logs in after correctly entering email and password"
+            },
+            {
+              "description": "Verify that user is notified when entering incorrect email or password"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ParkSuite App2",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": []
+    },
+    {
+      "name": "Ex ParkSuite App",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "admin",
+          "action": "see IPs of user",
+          "result": "I know their location",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user ",
+          "action": "login with Facebook",
+          "result": "I can view my ParkSuite account.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        }
+      ]
+    }
+  ]
+}
