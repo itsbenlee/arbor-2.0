@@ -21,6 +21,8 @@ en:
     remember_me: "Remember me"
     button_login: "Log in"
     signup: 'Sign up'
+    new_user: 'New user?'
+    register: 'Register'
   recover_password:
     change: 'Change your password'
     password: 'New password'

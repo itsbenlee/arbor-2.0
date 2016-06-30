@@ -3,3 +3,6 @@
     = image_tag('arbor-logo.svg')
   .login-form.small-12.medium-8.large-5.small-centered.columns
     = render 'devise/sessions/login'
+  .register
+    %p=t('login.new_user')
+    = link_to t('login.register'), new_user_registration_path, class: 'button radius success small'
