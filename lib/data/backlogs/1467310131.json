@@ -1,0 +1,1382 @@
+{
+  "email": "napoleon.martinez@neonroots.com",
+  "full_name": "Napoleon Martinez",
+  "projects": [
+    {
+      "name": "Arbor Enterprise",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "User",
+          "action": "send a feedback ticket",
+          "result": "I can help to improve the experience with the app",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Agency",
+          "action": "contact support",
+          "result": "I can get troubleshooted with any issue I can get",
+          "acceptance_criterions": [
+            {
+              "description": "ASSS"
+            }
+          ]
+        },
+        {
+          "role": "Agency Admin",
+          "action": "see the limitations of my trial version",
+          "result": "I know what features I can use of the arbor app",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "NeonRoots Superadmin",
+          "action": "see when an agency signs up",
+          "result": "I know they have started using the arbor app",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Agency Collaborator",
+          "action": "see a message that says the trial period is over",
+          "result": "I can evaluate my experience with the app and contact the sales agent",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "NeonRoots Superadmin",
+          "action": "Stop the trial period of an agency",
+          "result": "they can not longer use their instance",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Neonroots superadmin",
+          "action": "see the list of all the agencies registered",
+          "result": "I can see how they are doing with their progress",
+          "acceptance_criterions": [
+            {
+              "description": "Given that I am a superadmin, When I want to check the list of subscribed agencies. Then I should be able to access a list of all of them. And I should be able to see how many collaborators they have, and i should be able to see how many project they hav"
+            }
+          ]
+        },
+        {
+          "role": "Agency Collaborator",
+          "action": "Sign up",
+          "result": "I can start using the app under that agency distribution",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Agency",
+          "action": "sign up",
+          "result": "I can have my employee and clients accessing the application and using it",
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Testing Project Loremisp",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "User",
+          "action": "this",
+          "result": "asd",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "do some stuff",
+          "result": "enjoy",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "pay to upload a picture of a cat",
+          "result": "i can share amazing pictures of my cat",
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Copy of Dude (1)",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": []
+    },
+    {
+      "name": "Favor",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "Admin",
+          "action": "freeze an account",
+          "result": "I can manage the database and quality",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "contact a worker",
+          "result": "I can have quality control",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "see all projects",
+          "result": "I can view the activity",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "worker",
+          "action": "share my rating to my contacts list",
+          "result": "I can tell my friends about Favor",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "worker",
+          "action": "share my rating to fb",
+          "result": "I can tell friends about Favor",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "worker",
+          "action": "see my rating",
+          "result": "I can learn about my performance",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "website visitor",
+          "action": "link to the iTunes Store",
+          "result": "I can download the app",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "website visitor",
+          "action": "see how Favor works",
+          "result": "I can learn about the app",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "worker",
+          "action": "message the client",
+          "result": "I can coordinate details",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "worker",
+          "action": "view the project details",
+          "result": "I can accept or decline",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "worker",
+          "action": "be notified when I have a match",
+          "result": "view the project in app",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "worker",
+          "action": "set my availability for now and later",
+          "result": "I can get matched to a project",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "worker",
+          "action": "share my phone number",
+          "result": "client can contact me",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "worker",
+          "action": "set how far I am willing to go (miles)",
+          "result": "so that I can get matched to a project",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "worker",
+          "action": "select my skills",
+          "result": "I can be matched to a project",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "worker",
+          "action": "create a profile",
+          "result": " I am in the Favor database",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "client",
+          "action": "share my project to FB",
+          "result": "to invite my friends to Favor",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "client",
+          "action": "share my project experience to my contacts list",
+          "result": "I can invite people to Favor",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "client",
+          "action": "rate the employee",
+          "result": "the app can quality control",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "client",
+          "action": "call my match",
+          "result": "contact the worker",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "client",
+          "action": "text my match",
+          "result": "we contact each other if needed",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "client",
+          "action": "notified 15 min before arrival time",
+          "result": "I can prepare for the employee",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "client",
+          "action": "cancel the match before the employee arrives",
+          "result": "i can opt out",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "client",
+          "action": "see an arrival countdown",
+          "result": "I know when to expect that employee",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "client",
+          "action": "get an estimated cost",
+          "result": "I know how much to pay (roughly) in person",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "client",
+          "action": "receive confirmation of my match",
+          "result": "I can prepare for my employee",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "client",
+          "action": "connect with an employer match instantly",
+          "result": "I can finish the matching experience",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "client",
+          "action": "share my phone number",
+          "result": "worker can contact me",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "client",
+          "action": "see all my projects I've created",
+          "result": "I can see my usage",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "client",
+          "action": "add additional comments to the project card",
+          "result": "I can add details for the employee",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "client",
+          "action": "select when I need this project completed",
+          "result": "I can finish the project card",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "client",
+          "action": "select the length of the project",
+          "result": "get a suggested price",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "client",
+          "action": "select where my task is needed (garage, fridge, garden)",
+          "result": "define the task more",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "client",
+          "action": "set my task from a predefined list",
+          "result": "I can build a project",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "client",
+          "action": "start a project",
+          "result": "so I can find an employee",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "identify as a client or a worker",
+          "result": "I can find help or get hired",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "learn how it works",
+          "result": "I can understand the app",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "stay log in",
+          "result": "I can use the app instantly",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "log in to facebook",
+          "result": "I can sign up",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "mobile signup",
+          "result": "sign up",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that my credentials are incorrect"
+            },
+            {
+              "description": "Verify that my user credentials are correct"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Curago",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "sync my calendar",
+          "result": "I always remain uptodate.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "login with Facebook",
+          "result": "I can create my account.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Altour (v2)",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "customer",
+          "action": "have my Altour experience personalized with my assigned agent",
+          "result": "I can remember that there's an agent looking out for me",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that assigned agent name appears"
+            },
+            {
+              "description": "Verify that image of assigned agent is displayed"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "see my itinerary",
+          "result": "I can know when everything about my trip is happening",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that items such as flight itinerary, hotel, itinerary, car rental confirmation, and tour pass added are shown"
+            },
+            {
+              "description": "Verify that items can be viewed within 'trip' groups"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "visually see tour options",
+          "result": "I can choose what I want to book",
+          "estimated_points": 13,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that photo of tour, name, brand, description, and total cost are viewable"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "visually see car options",
+          "result": "I can choose what I want to book",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that photo of car, make, model, rental agency name, description and total cost is displayed"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "see my message history with my agent",
+          "result": "I can remember everything I talked about with my agent",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that messages are stored"
+            },
+            {
+              "description": "Verify that historical messages are viewable by customer"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "send flight options to my customer",
+          "result": "they can choose which flight they want to book",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that flight options can be entered"
+            },
+            {
+              "description": "Verify that flight options are sent"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "visually see hotel options",
+          "result": "I can choose what I want to book",
+          "estimated_points": 13,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that photo of hotel, name, description, benefits, location, and total cost are displayed"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "send car options to my customers",
+          "result": "they can choose which car they want to rent",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that car options can be entered"
+            },
+            {
+              "description": "Verify that car options can be sent"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "send hotel options to my customers",
+          "result": "they can choose which hotel they want to book",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that hotel options can be entered"
+            },
+            {
+              "description": "Verify that hotel options can be sent"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "message a customer",
+          "result": "I can serve them",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that a message can be written"
+            },
+            {
+              "description": "Verify that message can be sent"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "learn about Altour",
+          "result": "I have an overview of how it works",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "sign up",
+          "result": "I can start enjoying the benefits of using Altour",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that Full Name, Email, and Password are collected"
+            },
+            {
+              "description": "Verify that details can be submitted"
+            },
+            {
+              "description": "Verify that if details are already being used to communicate error"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "have an agent assigned to me",
+          "result": "I can be onboarded by them",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "update my payment information",
+          "result": "I can keep my payment details up to date",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that payment information can be edited"
+            },
+            {
+              "description": "Verify that changes can be saved and stored"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "add my payment information",
+          "result": "I can pay for my booking and altour24 calls",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that name on card, card number, security code, expiration date, and zip code are collected"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "easily see and use my boarding passes",
+          "result": "I can board my flight",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that QR/Bar Code is available"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "provide my customer their boarding passes",
+          "result": "they can travel with ease",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that QR/Bar code can be added to itineraries, confirmations, and passes if available"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "add my passes to Apple Wallet",
+          "result": "I can keep my Altour passes with all my other passes",
+          "estimated_points": 13,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that option to add to wallet is available for passes"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "receive app notifications",
+          "result": "I can stay up to date on messages from my agent and be reminded of any updates ",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that notifications are sent when message from agent is received, new itinerary item is added, and itinerary item is updated"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "receive notifications",
+          "result": "I can know when my customer is reaching out to me",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that notification is sent to agent when a message from customer is received"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "see my itinerary history",
+          "result": "I can look back to where I've been",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that itinerary history is viewable"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "log in with my Altour credentials",
+          "result": "can continue enjoying the benefits of using Altour",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that Email and Password are authenticated"
+            },
+            {
+              "description": "Verify that email and password can be submitted"
+            },
+            {
+              "description": "Verify that if Email and Password are incorrect, an error is communicated"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "stay logged in",
+          "result": "I don't have to keep logging in everytime I open Altour",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that User remains logged in"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "see my clients' itinerary history",
+          "result": "I can provide a great personalized experience",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that itinerary items are stored"
+            },
+            {
+              "description": "Verify that itinerary history is accessible"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "call Altour late at night",
+          "result": "I can get helped by Altour24 service",
+          "estimated_points": 2,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that $50 charge is communicated to customer"
+            },
+            {
+              "description": "Verify that charge is accepted before processing call"
+            },
+            {
+              "description": "Verify that call reaches an Altour agent"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "visually see flight options",
+          "result": "I can choose what I want to book",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that flight departure time, arrival time, locations, date, flight type, duration, company, and total cost are displayed"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "send tour options to my customers",
+          "result": "they can choose which tour they want to book",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that tour options can be entered"
+            },
+            {
+              "description": "Verify that tour options are sent"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "see my message history with my customer",
+          "result": "I can remember everything I talked about with my customer",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that messages are stored"
+            },
+            {
+              "description": "Verify that historical messages are viewable by agent"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "manage my customer's itinerary",
+          "result": "I can make sure they have everything they need",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that items can be added or removed"
+            },
+            {
+              "description": "Verify that items can be grouped into a 'trip'"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "message my agent",
+          "result": "they can serve me",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that a message can be written"
+            },
+            {
+              "description": "Verify that message is sent"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "call Altour",
+          "result": "I can get helped out",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that call reaches an Altour agent"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "have an introduction to Altour",
+          "result": "I know what to do my first time using Altour",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Dude",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": []
+    },
+    {
+      "name": "MoneyHunch",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": []
+    },
+    {
+      "name": "TR - Breakthrough Uni",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "indicate my mood before and after each lesson",
+          "result": "I become more aware of how the lessons are contributing to my EQ.",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given i have completed a lesson I must be able to select my mood from a selection of predefined moods."
+            },
+            {
+              "description": "Given I want to skip I must be able to skip to continue."
+            },
+            {
+              "description": "Given that I am about to start a lesson then I should be able to indicate my mood too."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "manage offline lessons",
+          "result": "I can free up space or make changes to what is available.",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have selected up to three lessons for offline sync I must be able to clear or modify my selections."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "see what the next lesson is",
+          "result": "I can look forward to it and plan ahead.",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Given i am currently viewing at a description of a lesson I must be able to see what the next lesson is."
+            },
+            {
+              "description": "Given I selected a lesson to view the lesson description I cannot run the playback until I have completed my current lesson."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "see where I am in the overall course",
+          "result": "I know how much is left of the course.",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have registered I must be able to see which lesson I am on currently."
+            },
+            {
+              "description": "Given I can see what lesson I am on, I must be able to start the lesson where I left off."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "see the overall course structure and time requirements",
+          "result": "I know what to expect.",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have registered I must be able to view a list of all the lessons and the time duration of each."
+            }
+          ]
+        },
+        {
+          "role": "unregistered user",
+          "action": "register with LinkedIn",
+          "result": "I don't have to remember another password.",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have downloaded the app I must be able to authenticate with LinkedIn."
+            },
+            {
+              "description": "Given I authenticate with LI successfully, I must able to proceed with other registration steps."
+            }
+          ]
+        },
+        {
+          "role": "unregistered user",
+          "action": "register with Facebook",
+          "result": "I don't have to remember another password.",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have downloaded the app I must be able to authenticate with Facebook."
+            },
+            {
+              "description": "Given I authenticate with FB successfully, I must able to proceed with other registration steps."
+            }
+          ]
+        },
+        {
+          "role": "unregistered user",
+          "action": "view 3 to 5 tutorial screens",
+          "result": "I can understand how it works.",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have downloaded the application I must be able to see several screens that explain how the app works."
+            }
+          ]
+        },
+        {
+          "role": "website visitor",
+          "action": "download the iOS application",
+          "result": "I can sign up.",
+          "estimated_points": 1,
+          "acceptance_criterions": [
+            {
+              "description": "Given I can access the TR digital website I must be able to see where to download the app."
+            },
+            {
+              "description": "Given I can see where to download the app, I must be directed to iTunes."
+            },
+            {
+              "description": "Given I can access iTunes and I have iOS 8.x or greater I must be able to download the application."
+            }
+          ]
+        },
+        {
+          "role": "registered user",
+          "action": "stay signed in",
+          "result": "I can access the app again.",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given i am a registered user I must be able to remain signed in after I have successfully signed into the app for the first time."
+            },
+            {
+              "description": "Given i am a registered user, I will be limited to login on X # of devices for my account (eg. mobile, web)"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "see a promotion for a certified TR life coach",
+          "result": "I can be referred for more coaching services.",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have registered I must be able to see a promotion for a life coach."
+            },
+            {
+              "description": "Given I can see the promotion I must be able to view more information about the life coach on the TR website."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "share my most recent lesson completed via FB",
+          "result": "others can see my progress.",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Given I can see my last lesson completed I must be able to share my milestone via Facebook."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "share my most recent lesson completed via twitter",
+          "result": "others can see my progress.",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Given I can see my last lesson completed I must be able to share my milestone via twitter."
+            }
+          ]
+        },
+        {
+          "role": "admin",
+          "action": "create a new admin",
+          "result": "I am not the only one with access to view reporting.",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Given I can access the admin portal and have admin rights I must be able to create new admins."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "have offline access to up to 3 lessons",
+          "result": "I can make progress when I know I will not have a internet connection.",
+          "estimated_points": 13,
+          "acceptance_criterions": [
+            {
+              "description": "Given I can view all the lessons, I must be able to select up to 3 lessons to be sync to be my device for offline access."
+            },
+            {
+              "description": "Given I can select 3 lessons I must be able to select any previous lessons and up to 2 lessons in advance of my current lesson."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "search my journal for a keyword or phrase",
+          "result": "I can find a relevant entry.",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "Given I can access my journal I must be able to search for a word or phrase to search throughout the entire journal."
+            },
+            {
+              "description": "Given I am searching I must be able to see results that include the journal entries that contain the search word(s)."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "view a lesson description",
+          "result": " i know what to expect.",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Given I can view all the lessons, I must be able to select one to view."
+            },
+            {
+              "description": "Given I have selected a lesson to view, I must be able to see the lesson title, duration, it's place in the overall course, and a description of what I am going to learn."
+            },
+            {
+              "description": "Given that the lesson is ahead of the my current progress I must not be able to playback."
+            }
+          ]
+        },
+        {
+          "role": "unregistered user",
+          "action": "provide my full name, email address and create a password",
+          "result": "I can create an account.",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have download the app, I must be able to provide my full name."
+            },
+            {
+              "description": "Given i have provided my name, I must be able to provide my email address."
+            },
+            {
+              "description": "Given I have provided a valid email I must be able to define my preferred password."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "view my journal",
+          "result": "I can review what I have written as I have progressed through the course.",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given I can see where to access my journal I must be able to see all my journals for every lesson."
+            },
+            {
+              "description": "Given I can see one of my journals I must be able to see the time, date, lesson and what i wrote and any tags created."
+            },
+            {
+              "description": "Given I can see the journal I must be able to select to go to the actual lesson so that i can playback the lesson again."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "play, pause, rwd and replay an audio lesson",
+          "result": "I can learn and complete my lesson for the day.",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have selected a lesson, I must be able to playback the lesson."
+            },
+            {
+              "description": "Given It is playing, I must be able to pause, rewind or forward the playback."
+            },
+            {
+              "description": "Given the lesson has completed, I must be able to replay."
+            }
+          ]
+        },
+        {
+          "role": "registered user",
+          "action": "log out",
+          "result": "I am no longer signed in.",
+          "estimated_points": 2,
+          "acceptance_criterions": [
+            {
+              "description": "Given I am a registered user and i am signed in, I must be able to log out of the app."
+            },
+            {
+              "description": "Given i am logged out, I must be able to see where to sign in."
+            }
+          ]
+        },
+        {
+          "role": "registered user ",
+          "action": "sign in ",
+          "result": "I can use the app.",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given I registered with email I must be able to enter my email and password to enter the app."
+            },
+            {
+              "description": "Given I am a registered user I must be notified when my password does not match my email address"
+            }
+          ]
+        },
+        {
+          "role": "User",
+          "action": "use a secure connection via https",
+          "result": "I can securely authenticate.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see my daily streak in that app",
+          "result": "I am motivated to come back daily.",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have returned to the app I must be able to see how days in a row I have returned."
+            }
+          ]
+        },
+        {
+          "role": "User",
+          "action": "pay to get access to the courses",
+          "result": "I can watch the course videos.",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "Given that I am viewing the course list then I should be able to select a course which I want to buy."
+            },
+            {
+              "description": "Given that I bought a course via in app purchase then I should be charged and the content should be connected to my iTunes account."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "enable push notifications",
+          "result": "I can be reminded to do the program and notified of progress.",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have downloaded the app, I must be able to enable push notifications."
+            }
+          ]
+        },
+        {
+          "role": "user that registered with email",
+          "action": "reset my password",
+          "result": "I can access the app again.",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Given I registered with email I must be able to reset my password."
+            },
+            {
+              "description": "Given i have elected to reset my password I must be sent a link to a website where i can provide a new password."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "answer 1 to 3 brief questions following a lesson",
+          "result": "my knowledge can be tested.",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have completed a lesson I must be able to view one or many review questions."
+            },
+            {
+              "description": "Given I can view a question I must be able to answer by selecting one of the multiple choice answers."
+            },
+            {
+              "description": "Given I have answered a question I must be able to see if I answered it correctly."
+            },
+            {
+              "description": "Given I have answered one incorrectly, I should see the correct answer."
+            },
+            {
+              "description": "Given I want to skip the the questions I must be able to skip."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "receive a push notification when I complete a lesson",
+          "result": "I feel like I am making progress.",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have enabled push notifications and I just completed a lesson I should receive a notification congratulating me on completing a lesson."
+            }
+          ]
+        },
+        {
+          "role": "admin",
+          "action": "view a list of users that have created an account",
+          "result": "I can manage users.",
+          "estimated_points": 13,
+          "acceptance_criterions": [
+            {
+              "description": "Given I can access an admin portal, I must be able to view users by registration date."
+            },
+            {
+              "description": "Given I can access list of users, I must be able to registrations started, registrations completed, registration type, email, verified, create date, last sign in, last lesson, number of journals, tags tracked, quiz and mood answers."
+            }
+          ]
+        },
+        {
+          "role": "Mixpanel admin",
+          "action": "view user activity",
+          "result": "I can understand traction and activity.",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "Given I can access my analytics, I must be able to see registrations started, registrations completed, activities per visit, average views per lesson, time spent in app, average tags count, total visits, total track tags."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "filter my journal by tag",
+          "result": "I can find those entries that are relevant.",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have added a tag to one or more of my journal entries I must be able to see all my tags."
+            },
+            {
+              "description": "Given i can see all my tags I must be able to select one to filter for all entries with that tag."
+            },
+            {
+              "description": "Given I have selected more than one tags to filter I must be able to see the results be inclusive of only those tags."
+            }
+          ]
+        },
+        {
+          "role": "admin",
+          "action": "delete another admin",
+          "result": "they don't have access any longer.",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have admin rights and I created another admin,  I must be able to delete an admin."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "receive a push notification when it is time to do my daily lesson",
+          "result": "I don't forget.",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have enabled push notifications and have not completed all the lessons I should receive a daily notification as a reminder to do my lesson."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "tag each journal entry",
+          "result": "I can use the tags to filter my journal.",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have entered a note into the journal of a lesson I must be able to add custom tags."
+            },
+            {
+              "description": "Given I have added a tag I must be see the tag associated with that journal."
+            }
+          ]
+        },
+        {
+          "role": "admin",
+          "action": "access the admin portal",
+          "result": "I can view reporting and manage admin accounts.",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Given I can access the admin portal and have admin rights I must be able to sign in."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "repeat a lesson",
+          "result": "i can ensure that I have fully understood the message.",
+          "estimated_points": 2,
+          "acceptance_criterions": [
+            {
+              "description": "Given I have already listened to the lesson I must be able to playback the lesson at any time."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "journal during the audio activity",
+          "result": "I can capture my thoughts and feelings on that lesson.",
+          "estimated_points": 13,
+          "acceptance_criterions": [
+            {
+              "description": "Given I started the playback of a lesson I must be able to see where i can enter notes."
+            },
+            {
+              "description": "Given I can see where to enter a note I must be able to type and save my notes."
+            },
+            {
+              "description": "Given I have entered a note I must be able to edit those notes."
+            },
+            {
+              "description": "Given I have entered a note I must be able to delete my notes."
+            },
+            {
+              "description": "Given I have entered a note I must be able to see the date and time that I entered it."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "dasdas",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": []
+    }
+  ]
+}
