@@ -59,7 +59,8 @@ class UserStory < ActiveRecord::Base
       result: result,
       estimated_points: estimated_points,
       color: color,
-      acceptance_criterions: acceptance_criterions.map(&:as_json) }.compact
+      acceptance_criterions: acceptance_criterions.map(&:as_json),
+      group: group }.compact
   end
 
   def self.from_hash(hash, project)

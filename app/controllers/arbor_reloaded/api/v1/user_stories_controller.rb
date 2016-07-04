@@ -6,7 +6,10 @@ module ArborReloaded
 
         def create
           params[:user_stories].each do |story|
-            story_params = story.permit(:description, :estimated_points)
+            story_params = story.permit(:description,
+                                        :estimated_points,
+                                        :group_id)
+
             @project.user_stories.create(story_params)
           end
 
