@@ -5,7 +5,7 @@ module ArborReloaded
         before_action :set_project
 
         def create
-          render json: @project.groups.create(group_params).as_json
+          render json: @project.groups.find_or_create_by(group_params).as_json
         end
 
         private
