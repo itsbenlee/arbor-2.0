@@ -200,7 +200,8 @@ $shadow-depth-hover: rgba($black-50, .2) 3px 8px 25px;
   position: relative;
 
   .avatar-img,
-  .avatar-circle {
+  .avatar-circle,
+  .preview {
     @include background-size(cover);
     @include border-radius(100%);
     background-position: center;
@@ -210,6 +211,11 @@ $shadow-depth-hover: rgba($black-50, .2) 3px 8px 25px;
     text-align: center;
     width: $dimensions;
     z-index: 2;
+
+    &.preview {
+      position: absolute;
+      top: 0;
+    }
   }
 
   .avatar-circle {
