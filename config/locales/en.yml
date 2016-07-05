@@ -263,10 +263,12 @@ en:
       estimation_cost: 'This is the cost of a sprint. Different development teams charge differently, but the average cost of a week of work is a good benchmark.'
       copy_token: 'This is your token to connect Arbor with other apps'
       acceptance_criteria: 'Acceptance Criteria are statements that serve as conditions of satisfaction. They define the boundaries of a User Story and determine if a story is completed and working as intended.'
+      delete_group: 'Delete group'
     pdf:
       user_stories: 'User Stories'
     groups:
       create: 'Create group'
+      delete_group_confirm: 'Are you sure you want to delete this group?'
   slack:
     notifications:
       story_created: 'New user story created'

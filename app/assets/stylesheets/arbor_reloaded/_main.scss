@@ -151,12 +151,15 @@ input:focus {
   }
 
   .toggle-content-btn,
-  .icn-settings {
+  .icn-settings,
+  .delete-group {
     background-color: $body-bg;
     color: $black-20;
     float: right;
 
     &:hover { color: $black-30; }
+
+    &.delete-group { line-height: rem-calc(23); }
   }
 
   .toggle-content-btn {
