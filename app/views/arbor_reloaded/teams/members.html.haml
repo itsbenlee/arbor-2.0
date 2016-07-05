@@ -4,4 +4,4 @@
   = render 'arbor_reloaded/teams/partials/member_list', team: @team
 .modal-footer
   = render 'arbor_reloaded/teams/partials/invite_members', team: @team
-  = link_to t("reloaded.project_members.close"), '#', class: 'team-members-button button radius small'
+  = link_to t("reloaded.project_members.close"), '#', class: 'team-members-button button radius small', id: 'team-members-button'

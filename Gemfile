@@ -28,6 +28,7 @@ gem 'react-rails', '~> 1.5.0'
 gem 'active_link_to'
 gem 'intercom', "~> 3.4.0"
 gem 'rails_admin', '~> 0.8.1'
+gem 'newrelic_rpm'
 
 group :doc do
   gem 'sdoc', require: false
@@ -48,7 +49,6 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'wkhtmltopdf-binary-edge', '~> 0.12.2.1'
-  gem 'newrelic_rpm'
 end
 
 group :test do
@@ -69,7 +69,6 @@ group :production do
   gem 'passenger', '5.0.15'
   gem 'mini_magick'
   gem 'wkhtmltopdf-heroku'
-  gem 'newrelic_rpm'
 end
 
 gem 'devise'

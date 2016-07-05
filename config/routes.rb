@@ -69,7 +69,7 @@ Railsroot::Application.routes.draw do
 
       get 'members', controller: :projects, action: :members
 
-      resources :groups, only: %i(index create)
+      resources :groups, only: %i(index create destroy)
     end
 
     get 'export/:id/spreadhseet', to: 'projects#export_to_spreadhseet'
@@ -95,6 +95,7 @@ Railsroot::Application.routes.draw do
     namespace :api, defaults: { format: :json } do
       namespace :v1 do
         resources :projects, only: :create, shallow: true do
+          resources :groups, only: :create
           resources :user_stories, only: :create, shallow: true do
             resources :acceptance_criterions, only: :create
           end

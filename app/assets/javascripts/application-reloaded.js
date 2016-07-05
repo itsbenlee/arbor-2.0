@@ -18,10 +18,12 @@
 //= require vendor/alt
 //= require initialize
 //= require arbor-reloaded/utils/hashTable
+//= require arbor-reloaded/utils/utility_functions
 //= require arbor-reloaded/utils/vendor/jquery.auto-grow-input.min
 //= require arbor-reloaded/utils/vendor/jquery.mousewheel.min
 //= require arbor-reloaded/utils/vendor/jquery.mCustomScrollbar.concat.min
 //= require arbor-reloaded/utils/vendor/trello
+//= require arbor-reloaded/utils/userStories/modalUtils
 //= require arbor-reloaded/projects/canvas/canvas
 //= require arbor-reloaded/projects/canvas/form
 //= require arbor-reloaded/projects/project_actions
@@ -29,6 +31,7 @@
 //= require arbor-reloaded/projects/project_members
 //= require arbor-reloaded/projects/project_backlog
 //= require arbor-reloaded/projects/user_story_modal
+//= require arbor-reloaded/projects/user_story_modal_binds
 //= require arbor-reloaded/projects/copy_user_story_modal
 //= require arbor-reloaded/user_stories/check_if_filled
 //= require arbor-reloaded/user_stories/delete_from_modal
@@ -43,3 +46,4 @@
 //= require arbor-reloaded/utils/customTextArea
 //= require arbor-reloaded/main
 //= require arbor-reloaded/teams
+//= require arbor-reloaded/team_bindings

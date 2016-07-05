@@ -2,7 +2,6 @@
   $('.team-name').val('');
   $('#teams-list').empty().html("<%= j render 'arbor_reloaded/teams/list', teams: @teams %>");
   $('#team-modal').foundation('reveal', 'close');
-  teamBinds();
 <% else %>
   $('.team-name').addClass('errors')
   $('.new-team-errors').html('*<%= @errors[0] %>');

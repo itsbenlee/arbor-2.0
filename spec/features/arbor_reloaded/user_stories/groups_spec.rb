@@ -87,4 +87,20 @@ feature 'Groups', js: true do
       expect(page).to have_content(group.name.upcase)
     end
   end
+
+  context 'For deleting grups' do
+    let!(:group)      { create :group, project: project }
+    let!(:user_story) { create :user_story, project: project, group: group }
+
+    background do
+      sign_in user
+      visit arbor_reloaded_project_user_stories_path(project)
+    end
+
+    scenario 'I should see the delete group button' do
+      within "#group-#{group.id}" do
+        expect(page).to have_css('.delete-group')
+      end
+    end
+  end
 end

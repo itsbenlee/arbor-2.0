@@ -1,54 +1,28 @@
-function teamBinds() {
-  if ($('.teams-list').length) {
-    displayActions();
-    displayHideDelete();
-    teamMembersBind();
+function TeamMembers() {}
+
+TeamMembers.checkForSelectedMembers = function() {
+  var footerButtonId = $('#team-members-button');
+
+  if ($('.remove-member-check').is(':checked')) {
+    $(footerButtonId).text('Remove');
+  } else {
+    $(footerButtonId).text('Close');
   }
 }
 
-function teamMembersBind() {
-  $('#team-members-modal').on('opened.fndtn.reveal', function() {
-    footerButtonId  = $('.team-members-button'),
-    teamMemberEmail = $('.team-member-email');
-
-    teamMemberEmail.keyup(function(e) {
-      if($(this).val() === '') {
-        footerButtonId.text('Close');
-      } else {
-        footerButtonId.text('Invite');
+TeamMembers.removeMembers= function(members) {
+  $(members).each(function(index, el) {
+    $.ajax({
+      type: 'DELETE',
+      url: $(el).data('url'),
+      success: function (response) {
+        $('.members-avatars').html(response);
       }
     });
-
-    customScroll();
-    bindActionsToButton();
-    removeMembers();
-  });
-}
-
-function bindActionsToButton() {
-  $('.team-members-button').click(function() {
-    if ($(this).text() == 'Close') {
-      $('#team-members-modal').foundation('reveal', 'close');
-    }
-
-    if ($(this).text() == 'Invite' && $('.new-member')[0].checkValidity()) {
-      $('.new-member').submit();
-    }
-  });
-}
-
-function removeMembers() {
-  $('.remove-member-check').click(function() {
-    if ($(this).is(':checked') && confirm('Are you sure you want to remove the member?')) {
-      var url = $(this).data('url'),
-          type = 'DELETE',
-          currentObject = {};
-      ajaxCall(url, type, currentObject);
-      return false;
-    }
+    $('#team-members-button').text('Close')
   });
 }
 
 $(document).ready(function() {
-  teamBinds();
+  customScroll();
 });
