@@ -1,0 +1,547 @@
+{
+  "email": "napoleon.martinez@neonroots.com",
+  "full_name": "Napoleon Martinez",
+  "projects": [
+    {
+      "name": "Pronto",
+      "favorite": true,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": []
+    },
+    {
+      "name": "RapLibs",
+      "favorite": false,
+      "velocity": 8,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "to learn about an artist on the profile",
+          "result": "I can understand the artist",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see a picture and artist's name",
+          "result": "I know who the artist is",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able share a link to download the",
+          "result": "my friends can use RL",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be message a RL",
+          "result": "I use the app",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "description": "As a user I want to see an artist's profile page so that I can see their library of rap libs",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "description": "As a user I want to be able to purchase a Raplib so that I can get exclusive content.",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to preview a RapLib",
+          "result": "I can choose to send it",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to see the number of RL a certain artist has",
+          "result": "I can choose to select them",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to browse by artists",
+          "result": "I can see which artists are on the app",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see categories of rap libs",
+          "result": "I can quickly find one I want",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to search for an artist, song, or keyword",
+          "result": "I can find the raplib I want",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "description": "As a user I want to see a splash page (gif) so that I understand the brand and app",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Instagram for Pugs",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": []
+    },
+    {
+      "name": "Project Eric",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user I should be able to login to Plan B",
+          "action": "login with FB to plan B ",
+          "result": "I can create an account",
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Travel App",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "host",
+          "action": "submit an activity",
+          "result": "travelers can view ",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "host",
+          "action": "sign up",
+          "result": "I can access the application",
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "BFF",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "website visitor",
+          "action": "download the application",
+          "result": "I can get started.",
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Kinnecting Blog",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": []
+    },
+    {
+      "name": "Intelligent House ",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "User ",
+          "action": "set curtains and  blinds  ",
+          "result": "close them and open them based in external light or hours",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "set lights inside light section",
+          "result": "i can set on and off lights based on natural light percentage or hours",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "see lights and Shadows section inside of lights section",
+          "result": "i can access to both sections",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "See the lights menu on pannel",
+          "result": "so I can access to lights section",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User ",
+          "action": "see the camera were the alarm shoot",
+          "result": "I can check why was the alarm shoot",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "receive notifications from the alarm in my mobile",
+          "result": "I can be aware of intruders",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User ",
+          "action": "Set alarm section and times",
+          "result": "control the specific areas and times of the alarm",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user ",
+          "action": "Enter the alarm section",
+          "result": "Set the alarm timing and sections",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User ",
+          "action": "Turn of and on a camera",
+          "result": "Hide a section of the house if I wan't",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User ",
+          "action": "See a camera",
+          "result": "See a especific section of the house",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User ",
+          "action": "Enter to the camera section",
+          "result": "See the list of cameras I have installed",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User ",
+          "action": "See the option pannel",
+          "result": "navigate throw the app",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User ",
+          "action": "log in",
+          "result": "I can access the web app",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "RootyRoot",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": []
+    },
+    {
+      "name": "SelfieTime",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "User",
+          "action": "Vote On a Selfie",
+          "result": "I can add Value",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "take a picture",
+          "result": "post to the app",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "see how it works",
+          "result": "i can gain acces",
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "G.O.A.T.",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": []
+    },
+    {
+      "name": "RRI Rootstrap Kick-off ",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "login",
+          "result": "I can create an account",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Valderramas",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "Testing User",
+          "action": "Open the app in testing mode",
+          "result": "I can quicly access the ticket system",
+          "acceptance_criterions": [
+            {
+              "description": "Given that I open the app, When I Log Iin, If I am a testing user, Then I should be able to see a feedback button next to every screen. And When I click it I should see a form to attach a description and create a tiket. And When I submit, Then That tiket should create a card on trello."
+            }
+          ]
+        },
+        {
+          "role": "Valderrama Player",
+          "action": "strike 5 goals per match",
+          "result": "we can have lots of vitories",
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Kinnecting Website v1",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "parent",
+          "action": "click on products",
+          "result": "buy them",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "TBD",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "an admin",
+          "action": "login to my dashboard",
+          "result": "I can view tickets",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user ",
+          "action": "login",
+          "result": "I can buy something. ",
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Beautiq",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "sign up with Facebook",
+          "result": "I don't have to create another password.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "sign up with email address",
+          "result": "I can get started.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "provide my zip code instead of enabling LS",
+          "result": "the app generally knows my location.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "enable location services",
+          "result": "the app can detect my location.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "select my preferred time for the service I need",
+          "result": "I can book my service.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see the available schedules for the service I need",
+          "result": "I can view available times.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "select the specific service(s) for a certain service category",
+          "result": "I can get the service I want.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": " user",
+          "action": "see a activity feed",
+          "result": "I can see all my pending, cancelled and confirmed appointments shared before and after.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view all services under the makeup, hair, and maintenance categories",
+          "result": "I can select my service(s).",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "interactively launch the app",
+          "result": "I can get started.",
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Nir Deals",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": []
+    },
+    {
+      "name": "Dirt Logistics",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": []
+    },
+    {
+      "name": "SongChat",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": []
+    },
+    {
+      "name": "Concord Jackson Enhancement Engagement",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "test",
+          "action": "asdasd",
+          "result": "asdasd",
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Winning the faceswap contest",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "asd",
+          "action": "asd",
+          "result": "asd",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "sad",
+          "action": "asd",
+          "result": "asd",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "asd",
+          "action": "asd",
+          "result": "asd",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "fdsf",
+          "action": "dsf",
+          "result": "sdf",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "asd",
+          "action": "sdf",
+          "result": "asd",
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Copy of SoS (1)",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "new user",
+          "action": "sign up with Facebook",
+          "result": "I don't have to create another username and password.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "see 3 to 5 screens of how it works",
+          "result": "I can register.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "website visitor",
+          "action": "download the application",
+          "result": "I can get started.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "vote on a selfie",
+          "result": "others know where I stand.",
+          "acceptance_criterions": []
+        }
+      ]
+    }
+  ]
+}

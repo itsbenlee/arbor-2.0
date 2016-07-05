@@ -1,0 +1,2123 @@
+{
+  "email": "napoleon.martinez@neonroots.com",
+  "full_name": "Napoleon Martinez",
+  "projects": [
+    {
+      "name": "ParkSuite App",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "admin",
+          "action": "see IPs of users",
+          "result": "I know their location",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "as an admin, i would like to track logins of the app with my admin console to track IP locations of users."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "login with facebook",
+          "result": "I can view my ParkSuite account.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Nutrilife",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": []
+    },
+    {
+      "name": "GoodUI Test",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": []
+    },
+    {
+      "name": "HomeHero Android",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "User",
+          "action": "see the location of the Job on my map app",
+          "result": "I can get directions there",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "recover my forgotten password",
+          "result": "I can use the app again",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "sign in",
+          "result": "can start using the app",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "sign out",
+          "result": "can keep the app closed",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "see a list of in progress and compleated shifts",
+          "result": "I can track my work",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "send an audio summary to the person that hires me",
+          "result": "they can know what is going on",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "stop a shift",
+          "result": "I can submit my work time",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "see when a shift is in progress",
+          "result": "I know Im working",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "start a shift",
+          "result": "I can track when I start my working hours",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "Given that I have an accepted appointment. When I want to start a shift. Then I can see the list of my appointments, and I can see the details of one of those, and start the shift"
+            }
+          ]
+        },
+        {
+          "role": "User",
+          "action": "see a list of all my appointments",
+          "result": "I know where to go next",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "be notified when someone accepts my job request",
+          "result": "I can see it on my appointments",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "reply to a Job",
+          "result": "I can contact the person who submitted the offer",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given that I Am checking the details of a Job. When I choose to reply to it. Then I should be able to answer my level of excitement."
+            },
+            {
+              "description": "Given that I am replying to a job. When I choose an excitement level below 60%. Then I can see the different concerns options. And I can toggle to choose the ones that Concerns me. And I can enter a brief text explaining my concerns."
+            }
+          ]
+        },
+        {
+          "role": "User ",
+          "action": "see the details of a job",
+          "result": "I can learn more about the schedule, rates and location of the job",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given that I check the details of a job.  Then i can see the point on the map, the distance, the status, the rate, info and a list of needs."
+            }
+          ]
+        },
+        {
+          "role": "User",
+          "action": "see the list of available jobs offers",
+          "result": "I can reply to those offers",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "MYKOCA",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": []
+    },
+    {
+      "name": "WordUp",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "sign up with my email",
+          "result": "I can start using WordUp",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "log in with my email",
+          "result": "I can start using WordUp",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see WordUp's Terms of Service",
+          "result": "I can learn about it before I sign up",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see WordUp's Privacy Policy",
+          "result": "I can learn about it before I sign up",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "stay signed in",
+          "result": "I don't have to sign in every time I open the app",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "learn about WordUp",
+          "result": "I know what the game is about and how it works",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "create my profile",
+          "result": "I can personalize my account",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see gameplay rules",
+          "result": "I can understand what Wordup is about and how it works",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "edit my profile",
+          "result": "I can keep it current",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "invite other users to play with me",
+          "result": "I can start my multi player game",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "select the language of my game",
+          "result": "I can play in my language",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "search other users by user name or email",
+          "result": "I can add them to my multi player game",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see the game board",
+          "result": "I can see where I can place my word",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "quit the game",
+          "result": "I can leave it",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see the games scoreboard",
+          "result": "I can see who's leading the game",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "reset my password",
+          "result": "if I forgot my password I can get a new password",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "sign up / sign in with facebook",
+          "result": "I can start using WordUp",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "sign out of Wordup",
+          "result": "I won't be signed in",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "get words of encouragement when I submit my word",
+          "result": "I can know how good my word was",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "earn bonus points for adding larger words",
+          "result": "I can be challenged and awarded",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see an Admob every time WordUp is pressed by any player",
+          "result": "I can see an ad if I haven't paid for the no-ads upgrade",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "get a set of 9 letters every round of the game",
+          "result": "I can create my word",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "provide feedback to wordup",
+          "result": "I can report issues or give my opinion on the game",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "upgrade to the ads free version of WordUp",
+          "result": "I don't have to see ads when I play",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "access my settings",
+          "result": "I can modify any specific details",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "edit my sign in details",
+          "result": "I can keep it current",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "start a single player game",
+          "result": "I can play and enjoy WordUp",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "start a multi player game with a random user, friend, or top ranking user",
+          "result": "I can play and enjoy Wordup with friends",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see who accepted or declined my game invite",
+          "result": "I can know who will be part of the game",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "share my score",
+          "result": "I can motivate others to challenge me",
+          "estimated_points": 2,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that I can share my score on Facebook, Twitter, and Instagram (Native iOS Sharing Functionality)"
+            },
+            {
+              "description": "Verify that High-Score Achivements can be shared"
+            },
+            {
+              "description": "Verify that End of Game score can be shared"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "notified if another user invites me to a game",
+          "result": "I can either accept or deny the invite",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "be notified when someones accepts or denies my invitation",
+          "result": "I can know who will play with me",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "be notified when the timer has started",
+          "result": "I know someone has submitted the first word and I can hurry and add my own",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin",
+          "action": "add, edit, and remove words from the game",
+          "result": "I can keep the game current",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "invite friends to WordUp",
+          "result": "they can join and play",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "be notified when a round has finished",
+          "result": "I know that I lost the round",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "be notified when a game is over",
+          "result": "I know I missed out",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see a wall of fame of multi players",
+          "result": "I can see the top 50 players of WordUp",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see my letter rack",
+          "result": "I can see what letters I have to make a word",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "press word up to submit my word",
+          "result": "I can then place the word on the game board",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "arrange my word on the game board horizontally or vertically",
+          "result": "I can place it in the location I want",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see a timer",
+          "result": "I can see how much time I have left to submit my word",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see an animated loading screen when I open the app",
+          "result": "I can know I'm opening WordUp",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see a scoreboard for single player",
+          "result": "I can see who has the highest score in single player",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see facebook friends who are on WordUp",
+          "result": "I can add them to my multi player game",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "pay to add more then one player for multi player mode",
+          "result": "I can add up to 8 users to my game",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "chat with other user in the multi player game",
+          "result": "I can chat on the game",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see every player's word for a moment and then see the winner's word only on the board",
+          "result": "I can know everyone's words and who won the round",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "be awarded points for winning the round",
+          "result": "I can keep leading the game",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see a countdown of the last 5 seconds",
+          "result": "I can know that the round is about to end",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "know when the game is over",
+          "result": "I can know I've either won or lost",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "choose if I want to start a rematch",
+          "result": "a new game can start",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "have my word rejected if it's not real",
+          "result": "the game can stay fair",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Admission",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "Promoter",
+          "action": "provide a link to an existing youtube video",
+          "result": "I can share a published reel",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Promoter",
+          "action": "provide a link to an existing vimeo video",
+          "result": "I can share published a reel",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Promoter",
+          "action": "do a mobile sign up",
+          "result": "create an account",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Promoter",
+          "action": "sign in using Facebook",
+          "result": "I can create an account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Promoter",
+          "action": "provide a unique Username and password",
+          "result": "I can create an account",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Promoter",
+          "action": "stay logged in",
+          "result": "sign in only once",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "New User",
+          "action": "see 3-5 tutorial screens",
+          "result": " to learn how it works",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": " Promoter",
+          "action": "create an event",
+          "result": "I can contribute to the app",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": " Website vistor",
+          "action": "learn how it works",
+          "result": "I choose to download it",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Promoter",
+          "action": "define the event location",
+          "result": "I can create an event",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Promoter",
+          "action": "define the event time",
+          "result": "I can create an event",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Promoter",
+          "action": " define additional information",
+          "result": "I can create an event",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Promoter",
+          "action": "tag other Users (bands) in the event",
+          "result": "I can create an event",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Promoter",
+          "action": "take a photo of the event",
+          "result": "so that I can create an event",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Promoter",
+          "action": "define the event cost",
+          "result": "I can create an event",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Promoter",
+          "action": "share and post an event to Facebook",
+          "result": "I can reach my other social networks",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "CG",
+          "action": "see a map view of events near me",
+          "result": "I can see what's going on",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Promoter",
+          "action": "add web link to the cost ",
+          "result": "I can sell tickets",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "CG",
+          "action": "share the event to FB",
+          "result": "others can see I like it",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "CG",
+          "action": "share the event to my mobile contacts",
+          "result": "my contacts can see it",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Promoter",
+          "action": "allow access to my mobile contacts",
+          "result": "I can share events to my contacts",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "CG",
+          "action": "report an event that does not seem real or inappropriate",
+          "result": "help quality control",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "CG",
+          "action": "follow the promoter",
+          "result": "my feed gets smarter",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "create a profile",
+          "result": "I can fully use the app",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "add a profile image",
+          "result": "I complete my profile",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "add and edit my name",
+          "result": "I complete my profile",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "create a short description",
+          "result": "I can share more about my self",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "view events I've created",
+          "result": "I can showcase my work",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "view events I've liked",
+          "result": "I can see things I have/might attend",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": " Promoter",
+          "action": "take a video of the event",
+          "result": "I can create an event",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "view who I follow",
+          "result": "I can see their events",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "view who is following me",
+          "result": "I can see my popularity",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": " User",
+          "action": "manage my notifications",
+          "result": "I can set my needs",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "be notified when my event is liked",
+          "result": "I can learn about my event",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "CG",
+          "action": "comment on the event",
+          "result": "I can learn more",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "be notified when I have a new follower",
+          "result": "I can learn about my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Registered User",
+          "action": "change my information",
+          "result": "I can edit my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "sign out",
+          "result": "I can leave the app",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "delete my account",
+          "result": "I can leave permantely",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "be notified of any updates and fixes",
+          "result": "I can learn about changes",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Promoter",
+          "action": "edit the event",
+          "result": "I can make changes",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "Repost an event",
+          "result": "I can popularize an event",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Promoter",
+          "action": "publish an event",
+          "result": "I can complete event creation",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "CG",
+          "action": "search for events",
+          "result": "I can find an event",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Promoter",
+          "action": "add videos to the event",
+          "result": "the event feels alive",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "CG",
+          "action": " search within a given date",
+          "result": "I can find an event  ",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Concert Goer",
+          "action": "view all the details of an event",
+          "result": "I can learn more about it",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "CG",
+          "action": "search within a given distance",
+          "result": "I can find an event",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Promoter",
+          "action": "add photos to the event",
+          "result": "the event feels alive",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Concert Goer",
+          "action": "like a published event",
+          "result": "I can show my approval",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "CG",
+          "action": "set advanced search preferences",
+          "result": "I can find an event",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "CG",
+          "action": "search within a given cost",
+          "result": " I can find an event",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Promoter",
+          "action": "boost images from Instagram",
+          "result": "the event feels alive",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "CG",
+          "action": "search within a given time",
+          "result": "I can find an event",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Concert Goer",
+          "action": "view events near me",
+          "result": "I can see whats going on",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "store user info",
+          "result": "I can archive users",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "manage accounts",
+          "result": "I can quality control",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "visitor",
+          "action": "view a link to the app store",
+          "result": "I can download the app",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "CG",
+          "action": "search for a user",
+          "result": "I can find an event",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "CG",
+          "action": "view event details at a glance",
+          "result": "I can decide to go",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "CG",
+          "action": "like events",
+          "result": "I can save them to my likes",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "CG",
+          "action": "view pictures and events of the event",
+          "result": "I can see what the event is like",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "view details of an event",
+          "result": "I can manage it",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Promoter",
+          "action": "link published my video on youtube",
+          "result": "I can share something I've already made",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Salted",
+      "favorite": true,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": []
+    },
+    {
+      "name": "You Challenge",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": []
+    },
+    {
+      "name": "TravelMedic",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "physician",
+          "action": "note how much I charge for my service",
+          "result": "patients can see how much it would cost",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "patient",
+          "action": "see my favorited physicians",
+          "result": "I can easily request their service",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "patient",
+          "action": "favorite physicians",
+          "result": "I can save them for future reference",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "patient",
+          "action": "invite my doctor to MyTravelMedic",
+          "result": "I can benefit from both my doctor and MyTravelMedic",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "physician",
+          "action": "offer a patient a house call from a video call",
+          "result": "I can extend my care to their location if needed.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "patient",
+          "action": "switch from a video call to a house call",
+          "result": "if determined by my physician that I need more care, I can get care at my location.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "patient",
+          "action": "buy virtual currency",
+          "result": "I can pay for messaging a physician",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "physician",
+          "action": "message with patients assigned to me",
+          "result": "I can communicate quickly with them",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "patient",
+          "action": "message the doctor I selected",
+          "result": "I can communicate with them quickly",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "physician",
+          "action": "receive a receipt and summary of the service I provided",
+          "result": "I can keep a record of all care I provide",
+          "estimated_points": 2,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that doctor receives receipt via email"
+            }
+          ]
+        },
+        {
+          "role": "physician",
+          "action": "receive payment easily",
+          "result": "I am encouraged to use the platform",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that doctor receives submitted payment"
+            }
+          ]
+        },
+        {
+          "role": "physician",
+          "action": "update my payment information",
+          "result": "I can continue getting paid",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that payment information can be updated"
+            }
+          ]
+        },
+        {
+          "role": "physician",
+          "action": "set up how to get paid",
+          "result": "I can get paid",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that name, card number, security code, expiration date, and zip code are collected"
+            }
+          ]
+        },
+        {
+          "role": "patient",
+          "action": "receive a receipt of the service I got from my doctor",
+          "result": "I can keep a record of it",
+          "estimated_points": 2,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that receipt is sent to patient via email"
+            }
+          ]
+        },
+        {
+          "role": "patient",
+          "action": "get charged after receiving care",
+          "result": "I don't have to remember about paying",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that payment card is charged after service"
+            }
+          ]
+        },
+        {
+          "role": "patient",
+          "action": "update my payment information",
+          "result": "I can keep it current",
+          "estimated_points": 2,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that payment information can be updated"
+            }
+          ]
+        },
+        {
+          "role": "patient",
+          "action": "set up my payment information",
+          "result": "I can easily pay through the app",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that name, card number, security code, expiration date, and zip code are collected"
+            }
+          ]
+        },
+        {
+          "role": "patient",
+          "action": "video conference with my selected doctor and multiple guests",
+          "result": "I can receive the best care remotely",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that patient is charged for having multiple guests"
+            }
+          ]
+        },
+        {
+          "role": "patient",
+          "action": "video conference with my selected doctor",
+          "result": "I can receive care",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that video conference can be started and ended"
+            }
+          ]
+        },
+        {
+          "role": "physician",
+          "action": "communicate with my patient",
+          "result": "they know I'm on my way or any other details",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that patient number is available"
+            },
+            {
+              "description": "Verify that doctor can be taken to phone or messaging app to communicate with patient"
+            }
+          ]
+        },
+        {
+          "role": "physician",
+          "action": "rate my patient",
+          "result": "better patients are rewarded",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that doctor can rate patient"
+            }
+          ]
+        },
+        {
+          "role": "physician",
+          "action": "confirm when care for patient has been completed",
+          "result": "patient can receive a bill",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that doctor can confirm when care ends"
+            }
+          ]
+        },
+        {
+          "role": "physician",
+          "action": "track what services, test, medications, etc I used",
+          "result": "patient can be billed correctly",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that doctor can check resources used"
+            },
+            {
+              "description": "Or Verify that a general fee is charged for resources typically used in issue selected"
+            }
+          ]
+        },
+        {
+          "role": "physician",
+          "action": ",once at location, start care for my patient",
+          "result": "I can keep track of my time there",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that doctor can start session"
+            }
+          ]
+        },
+        {
+          "role": "physician",
+          "action": "get directions to my patient's location",
+          "result": "I can get to them quickly",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that doctor can be taken to maps app for directions"
+            }
+          ]
+        },
+        {
+          "role": "physician",
+          "action": "see where my patient is located",
+          "result": "I can go care for them",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that location is displayed"
+            }
+          ]
+        },
+        {
+          "role": "physician",
+          "action": "see my patient's rating",
+          "result": "I can know if they're great to care for",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that rating is displayed"
+            }
+          ]
+        },
+        {
+          "role": "physician",
+          "action": "easily see the patient profile of the patient I am serving",
+          "result": "I can provide the correct care",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that name of patient, main issue, short description, rating, and location are displayed"
+            }
+          ]
+        },
+        {
+          "role": "physician",
+          "action": "be notified when a patient is requesting my care",
+          "result": "I can go care for them",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that doctor is notified when they receive a request"
+            }
+          ]
+        },
+        {
+          "role": "physician",
+          "action": "go unavailable, on call, or fully available",
+          "result": "patients can request me for only what I'm available for",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that availability can be changed to Available, On Call, or Unavailable"
+            },
+            {
+              "description": "Verify that no requests are pushed if unavailable"
+            },
+            {
+              "description": "Verify that only calls are received if On-Call"
+            },
+            {
+              "description": "Verify that all requests and calls are pushed when on available"
+            }
+          ]
+        },
+        {
+          "role": "physician",
+          "action": "update my physician profile",
+          "result": "it can be kept current",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that profile is editable"
+            }
+          ]
+        },
+        {
+          "role": "physician",
+          "action": "upload a photo of myself",
+          "result": "my patient can identify me",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that a photo can be uploaded"
+            },
+            {
+              "description": "Verify that photo is displayed in menu and profile"
+            }
+          ]
+        },
+        {
+          "role": "physicians",
+          "action": "create a physician profile",
+          "result": "patients can see my credentials",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that doctor can provide their full name, skill set, and other details (TBD)"
+            }
+          ]
+        },
+        {
+          "role": "patient",
+          "action": "rate my physician",
+          "result": "better physicians are rewarded",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that patient can review doctor with a rating"
+            }
+          ]
+        },
+        {
+          "role": "patient",
+          "action": "see when my care has been completed",
+          "result": "I can know my bill is coming shortly",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that completion of care is communicated to patient"
+            },
+            {
+              "description": "Verify that cost of service is displayed"
+            }
+          ]
+        },
+        {
+          "role": "patient",
+          "action": "be notified when my doctor arrives",
+          "result": "I can begin my care",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that notification is sent to user once doctor has arrived to their requested location"
+            }
+          ]
+        },
+        {
+          "role": "patient",
+          "action": "see estimated time of arrival for my doctor to come to me",
+          "result": "I can keep track of them",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that estimated time of arrival (hours, minutes, seconds) is displayed"
+            }
+          ]
+        },
+        {
+          "role": "patient",
+          "action": "request a doctor to come to my location",
+          "result": "I can receive care from a doctor, based off my needs, where I am located",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that if doctor cancels, patient is taken back to doctor results"
+            },
+            {
+              "description": "Verify that doctor can be requested"
+            }
+          ]
+        },
+        {
+          "role": "patient",
+          "action": "see how far away doctors are located",
+          "result": "I can know how long it might take them to get to me",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that distance in miles, of doctor's location, is shown"
+            }
+          ]
+        },
+        {
+          "role": "patient",
+          "action": "see my doctor's rating",
+          "result": "I can know if they'll provide quality service",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that rating is displayed"
+            }
+          ]
+        },
+        {
+          "role": "patient",
+          "action": "review physician profiles and qualifications",
+          "result": "I can select the best physician for my needs",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that short bio and skill details are displayed"
+            },
+            {
+              "description": "Verify that photo of physician is displayed"
+            }
+          ]
+        },
+        {
+          "role": "patient",
+          "action": "provide more information on my request",
+          "result": "physician can provide the best help possible",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that text form is available to enter more information"
+            },
+            {
+              "description": "Verify that text can be submitted"
+            }
+          ]
+        },
+        {
+          "role": "patient",
+          "action": "set my location",
+          "result": "I can see doctors in my area and they can see where I am ",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that location can be searched"
+            },
+            {
+              "description": "Verify that location can be set"
+            },
+            {
+              "description": "Verify that current location can be set"
+            }
+          ]
+        },
+        {
+          "role": "patient",
+          "action": "search for a physician that matches my needs",
+          "result": "I can receive care if I am sick and traveling",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that doctors that fall under criteria are displayed"
+            }
+          ]
+        },
+        {
+          "role": "patient",
+          "action": "update my patient profile",
+          "result": "it can be kept current",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that profile is editable"
+            }
+          ]
+        },
+        {
+          "role": "patient",
+          "action": "upload a photo of myself",
+          "result": "my doctor can identify me",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that photo can be uploaded"
+            },
+            {
+              "description": "Verify that photo is displayed in menu and profile"
+            }
+          ]
+        },
+        {
+          "role": "patient",
+          "action": "import data from other sources (Apple Healthbook) into my patient profile",
+          "result": "I don't need to reproduce everything",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that data is collected once user reaches 'create profile function', if available"
+            },
+            {
+              "description": "Verify that permission is requested to access healthbook"
+            }
+          ]
+        },
+        {
+          "role": "patient",
+          "action": "create a patient profile",
+          "result": "physicians can have all the information they need",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that medications and over-the-counter medicine used by patient is listable"
+            },
+            {
+              "description": "Verify that chronic conditions are listable by patient"
+            }
+          ]
+        },
+        {
+          "role": "patient",
+          "action": "see a warning that I should call 911 if an emergency",
+          "result": "I don't use MyTravelMedic for serious emergencies",
+          "estimated_points": 1,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that warning is provided"
+            }
+          ]
+        },
+        {
+          "role": "physician",
+          "action": ", once vetted, switch to doctor mode on TravelMedic",
+          "result": "I can start caring for patients on TravelMedic",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that once approved, user can access doctor mode"
+            }
+          ]
+        },
+        {
+          "role": "physician",
+          "action": "sign up to be vetted as a doctor on TravelMedic",
+          "result": "I can start making revenue off using TravelMedic",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that new doctor can submit their name and email"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "reset my password",
+          "result": "if I forget my password I can still have a way to regain access to my account",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that password can be reset"
+            },
+            {
+              "description": "Verify that a new password is collected"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "log out of TravelMedic",
+          "result": "I can exit my account",
+          "estimated_points": 2,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that option to Log Out is available"
+            },
+            {
+              "description": "Verify that account is logged out when option is chosen"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "stay logged in",
+          "result": "I don't have to keep logging in everytime I open MyTravelMedic",
+          "estimated_points": 2,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that account remains logged in after user has logged in"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "log in using my Facebook account",
+          "result": "I can access my MyTravelMedic account",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that Facebook Login is authenticated"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "log in with MyTravelMedic credentials",
+          "result": "can continue enjoying the benefits of using MyTravelMedic",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that Email and Password are authenticated"
+            },
+            {
+              "description": "Verify that Email and Password are correct, if not provide error"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "enable push notifications",
+          "result": "I can receive notifications from MyTravelMedic",
+          "estimated_points": 1,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that option to enable Notifications is available"
+            },
+            {
+              "description": "Verify that if option enabled, that Notifications are enabled"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "enable location services",
+          "result": "I can benefit from TravelMedic's geolocation-based features",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that option to enable Location Services is available"
+            },
+            {
+              "description": "Verify that if option enabled, that Location Services are enabled"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "sign up using my Facebook account",
+          "result": "I don't have to sign up with my email",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that Facebook authentication is completed"
+            },
+            {
+              "description": "Verify that Facebook account is associated to new MyTravelMedic Account"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "sign up for MyTravel Medic",
+          "result": "I can start benefiting from it",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that option to sign up is available"
+            },
+            {
+              "description": "Verify that Full Name, Email, and Password are collected"
+            },
+            {
+              "description": "Verify that if Email is taken, error is provided"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "be welcomed to MyTravelMedic",
+          "result": "I can get a brief intro of the app",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "dude",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "admin",
+          "action": "be able view my account",
+          "result": "I can review",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "login",
+          "result": "I can view my account",
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "StyleMd",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "new client",
+          "action": "able to edit my profile, including my body type/dimensions, photo and name.",
+          "result": "I can complete my profile",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "website visitor",
+          "action": "see how the service works for both the stylist and client",
+          "result": "I can decide to download the app.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "StyleMD ",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": []
+    },
+    {
+      "name": "new project - sat",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "login",
+          "result": "view stuff",
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Taxi Hailing App",
+      "favorite": true,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "to be able to request the luxury tier",
+          "result": "I can ride in comfort and style",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that luxury tier is available anywhere when I need it"
+            }
+          ]
+        },
+        {
+          "role": "user,",
+          "action": "to add a different credit card than the one I added during registration",
+          "result": "I can use a different method if I need to do so.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see my past history of rides I have taken",
+          "result": "I can track expenses and remember what I prefer.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select a location for home",
+          "result": "I can select it quickly when requesting a ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to confirm my request for a vehicle",
+          "result": "Uber will send my car.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to cancel the reqest for a car",
+          "result": "I can change my mind if necessary.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to add my mobile phone number",
+          "result": "my driver can contact me about my ride.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to user my phone's camera to take a picture of my credit card",
+          "result": "I don't have to type in the information.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my account",
+          "result": "I can change my information.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my email",
+          "result": "I can update it if it has changed.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to put in the location I wish to travel to ",
+          "result": "I can request a vehicle.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see where the car is in relation to me",
+          "result": "I have an idea of how far it is from me.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to update my picture",
+          "result": "a picture shows on my profile.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my mobile number",
+          "result": "drivers can call the correct number to reach me.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to add my credit card",
+          "result": "I can pay for my ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to sign up for an account using my email",
+          "result": "I can request a ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to locate the user through geolocation",
+          "result": "I can show them if there are any available cars in their area.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to send a verification code to a newly registered user",
+          "result": "I can make sure they are not a spammer/scammer.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to give feedback to my driver",
+          "result": "they are aware of my experience with the driver.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to view the receipt when the ride is completed",
+          "result": "I know how much is being charged to my payment method.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to send promotion codes to other users",
+          "result": "I can get a free ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": " to see how many cars are available near me",
+          "result": "I can plan my trip.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to calculate the price of a route based on mileage and pricing",
+          "result": "the passenger can see the estimates for their route.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to enter rates based on system demand",
+          "result": "I can properly estimate the price for a trip.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select text messages to receive information about my ride",
+          "result": "I can receive information quickly.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to calculate the ideal route between the start and end of a trip",
+          "result": "I can calculate mileage.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to input the verification code sent to me",
+          "result": "I can use the service.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to click on a specific ride",
+          "result": "I can view the receipt from it.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to download the application",
+          "result": "I can request a car.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see how much time it will take for the car to reach me",
+          "result": "I am ready to go when it arrives.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see who my driver will be",
+          "result": "I can view their information and feedback.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to send the user an email to verify their email address when it is added or updated in the system",
+          "result": "I can be sure they are a real person.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to enter promotion codes I have received",
+          "result": "I can get a free ride.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see the route that will be taken between my pickup and my destination",
+          "result": "I can see what the cost is based on.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to access my settings ",
+          "result": "I can change or update information.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see the full list of notifications that I have received within the app",
+          "result": "I do not miss anything that has been sent to me.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select whether to allow push notifications",
+          "result": "I can receive information quickly.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to use an image of a credit card to acquire the needed credit card information for payment",
+          "result": "the payment can go through when a user requests a ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to enter my password to verify access to my settings ",
+          "result": "I can update my information.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to cancel out of editing my profile",
+          "result": "I do not make any changes I don't want or need to.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my name",
+          "result": "I can change it to whatever I need it to be.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to retrieve my password",
+          "result": "I can verify my account information.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select a location for work",
+          "result": "I can select it quickly when requesting a ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to get help",
+          "result": "I can resolve any issues I might have.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2222 @@
+{
+  "email": "napoleon.martinez@neonroots.com",
+  "full_name": "Napoleon Martinez",
+  "projects": [
+    {
+      "name": "Bond Shop Club",
+      "favorite": false,
+      "velocity": 10,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "learn about the benefits of BSC",
+          "result": "I can be motivated to sign up",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view BSC's Terms & Conditions",
+          "result": "I can know what I'm signing up for",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to sign up for BSC with my email",
+          "result": "I can create an account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to log in to BSC",
+          "result": "I can access my account",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to reset my password",
+          "result": "if I forget my current password, I can regain access to my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to subscribe to BSC",
+          "result": "I can have access to all the exclusive offers",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to set up my payment information",
+          "result": "I can be charged for my BSC subscription",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to upload an image of myself to my profile",
+          "result": "it can be displayed on my membership card",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see featured offers",
+          "result": "I can immediately see the benefits available from BSC",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to filter through offers by featured, nearest, and about to expire",
+          "result": "I can make sure I find the best offers",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to search offers by brand and location",
+          "result": "I can make sure I find the best offers",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view an offer",
+          "result": "I can see more details on it",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see when an offer is about to expire",
+          "result": "I know I must redeem it soon if I'm interested",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see an offer's code",
+          "result": "I can redeem it at it's assigned in-store location",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see how far the nearest store is from me",
+          "result": "I can go redeem my offer",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to get directions to nearest store",
+          "result": "I can go redeem my offer",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to save an offer",
+          "result": "I can access it later",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view my saved offers",
+          "result": "I can access them",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see when a saved offer has expired",
+          "result": "I can know to remove it from my saved list",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to remove an offer I've saved",
+          "result": "it's no longer in my saved list",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to share offers on social media",
+          "result": "my friends and followers can see the great deals available on BSC",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to scan barcodes",
+          "result": "I can see if there's an offer available that I can redeem",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to share BSC with my friends",
+          "result": "they can receive a special offer for joining BSC",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view my membership card",
+          "result": "I can show it at stores so they know I'm a member",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to receive alerts when I'm nearby an offer",
+          "result": "I can stop by the store near me offering the offer",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be charged monthly",
+          "result": "my BSC membership remains active",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to update my account information",
+          "result": "I can keep it up to date",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to update my payment information",
+          "result": "I can continue paying my membership",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to cancel my subscription",
+          "result": "I won't be charged for BSC anymore",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "log out from my account",
+          "result": "I'm no longer logged in",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin",
+          "action": "to create a store admin user",
+          "result": "they can login",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "store admin",
+          "action": "to login to my administrative site",
+          "result": "I can see and create offers",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "store admin",
+          "action": "to set up an offer",
+          "result": "BSC users can see my offer",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "store admin",
+          "action": "to see my offers",
+          "result": "I can see what users are seeing",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "store admin",
+          "action": "to filter offers by expired/not expired",
+          "result": "I can know what users are seeing",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "store admin",
+          "action": "to delete my offers",
+          "result": "I can control my offers",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "store admin",
+          "action": "to be able to view metrics / analytics on my offers",
+          "result": "I can know how they're performing",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "LC (ALTOUR)",
+      "favorite": false,
+      "velocity": 10,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "customer",
+          "action": "request an invite",
+          "result": "I can start enjoying the benefits of using the app",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that Full Name, Email, and Password are collected"
+            },
+            {
+              "description": "Verify that details can be submitted"
+            },
+            {
+              "description": "Verify that if details are already being used to communicate error"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "see a list of all my customer's message threads",
+          "result": "I can easily manage them",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agent",
+          "action": "sign up to my agency team account",
+          "result": "I can start serving customers",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that name and password are collected"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "manage my account profile",
+          "result": "I can keep my profile up to date",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that name, email, and password can be updated"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "see my trips in my itinerary",
+          "result": "I can browse through all my trips easily",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that name of trip is displayed"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "see my tour pass",
+          "result": "I can get into my tour easily",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agency admin",
+          "action": "manage the team account",
+          "result": "I can keep everything up to date",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agent",
+          "action": "log in to my agency team account",
+          "result": "I can serve my customers",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that email and password are authenticated"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "have my log in remembered",
+          "result": "I don't have to log in every time I go to the web app",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agency admin",
+          "action": "manage agents on the team account",
+          "result": "I can keep the team up to date",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that team members can be added or removed"
+            }
+          ]
+        },
+        {
+          "role": "agency admin",
+          "action": "invite a team member",
+          "result": "I can keep the team up to date",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "visually see tour options",
+          "result": "I can choose what I want to book",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that tour name, brand, description, and total cost are viewable"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "message my agent",
+          "result": "they can serve me",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that a message can be written"
+            },
+            {
+              "description": "Verify that message is sent"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "see my trip history",
+          "result": "I can look back to where I've been",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agent",
+          "action": "send hotel options to my customers",
+          "result": "they can choose which hotel they want to book",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agent",
+          "action": "sort my customer's message threads by trip date or most recent",
+          "result": "I can easily manage them",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that sorting type can be changed"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "call my agency",
+          "result": "I can get helped out",
+          "estimated_points": 2,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that call reaches an agent"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "easily see and use my flight passes",
+          "result": "I can board my flight",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that QR/Bar Code is available"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "provide my customer their flight passes",
+          "result": "they can travel with ease",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that QR/Bar code can be added to itineraries, confirmations, and passes if available"
+            }
+          ]
+        },
+        {
+          "role": "customer ",
+          "action": "see my most up to date flight's stats",
+          "result": "I can be aware of any changes",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "visually see hotel options",
+          "result": "I can choose what I want to book",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that photo of hotel, name, description, benefits, location, and total cost are displayed"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "send flight options to my customer",
+          "result": "they can choose which flight they want to book",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agent",
+          "action": "send tour options to my customers",
+          "result": "they can choose which tour they want to book",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agent",
+          "action": "receive notifications",
+          "result": "I can know when my customer is reaching out to me",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that notification is sent to agent when a message from customer is received"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "manage my account profile",
+          "result": "I can keep my profile up to date",
+          "estimated_points": 2,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that name and password can be changed"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "update my payment information",
+          "result": "I can keep my payment details up to date",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that payment information can be edited"
+            },
+            {
+              "description": "Verify that changes can be saved and stored"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "send my customer's trip itinerary via email",
+          "result": "they can also have an email copy of it",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "share my itinerary with others",
+          "result": "they can know my travel plans",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that customer can share their itinerary with a guest"
+            },
+            {
+              "description": "Verify that guest can access shared itinerary"
+            }
+          ]
+        },
+        {
+          "role": "agency admin",
+          "action": "assign a customer to an agent",
+          "result": "the customer can be taken care of.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agency admin",
+          "action": "receive an invite request from a customer",
+          "result": "I can review and send the customer an invite",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agency admin",
+          "action": "send a customer an invite",
+          "result": "the customer can start enjoying the benefits of the app",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agent",
+          "action": "provide my customer their hotel passes",
+          "result": "they can travel with ease",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agent",
+          "action": "message a customer",
+          "result": "I can serve them",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that a message can be written"
+            },
+            {
+              "description": "Verify that message can be sent"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "provide my customer their car pass",
+          "result": "they can travel with ease",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agent",
+          "action": "manage my customer's trips",
+          "result": "I can make sure they have everything they need",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that items can be added or removed"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "see my message history with my agent",
+          "result": "I can remember everything I talked about with my agent",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that messages are stored"
+            },
+            {
+              "description": "Verify that historical messages are viewable by customer"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "see my message history with my customer",
+          "result": "I can remember everything I talked about with my customer",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that messages are stored"
+            },
+            {
+              "description": "Verify that historical messages are viewable by agent"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "receive app notifications",
+          "result": "I can stay up to date on messages from my agent and be reminded of any updates ",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that notifications are sent when message from agent is received, new itinerary item is added, and itinerary item is updated"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "visually see car options",
+          "result": "I can choose what I want to book",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that make, model, rental agency name, description and total cost is displayed"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "see my hotel pass",
+          "result": "I can check in to my hotel",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "see my car pass",
+          "result": "I can get my rental car easily",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "have an introduction to the app",
+          "result": "I know what to do my first time",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "check in to my flight",
+          "result": "I do all my trip management on one app",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "have my app experience personalized with my assigned agent",
+          "result": "I can remember that there's an agent looking out for me",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that assigned agent name appears"
+            },
+            {
+              "description": "Verify that image of assigned agent is displayed"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "add my passes to Apple Wallet",
+          "result": "I can keep my LC passes with all my other passes",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that option to add to wallet is available for passes"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "add my payment information",
+          "result": "I can pay for my bookings",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that name on card, card number, security code, expiration date, and zip code are collected"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "edit my trip's title name",
+          "result": "I can personalize my itinerary",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agent",
+          "action": "create a trip within the itinerary",
+          "result": "my customer can easily browse through their itinerary",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "see the weather forecast for my trip",
+          "result": "I can know what to pack and wear",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "log in with my credentials",
+          "result": "can continue enjoying the benefits of using the app",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that Email and Password are authenticated"
+            },
+            {
+              "description": "Verify that email and password can be submitted"
+            },
+            {
+              "description": "Verify that if Email and Password are incorrect, an error is communicated"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "stay logged in",
+          "result": "I don't have to keep logging in every time I open the app",
+          "estimated_points": 2,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that User remains logged in"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "visually see flight options",
+          "result": "I can choose what I want to book",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that flight departure time, arrival time, locations, date, flight type, duration, company, and total cost are displayed"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "send car options to my customers",
+          "result": "they can choose which car they want to rent",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agent",
+          "action": "see my customers profile",
+          "result": "I can see their details and payment information",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agency admin",
+          "action": "sign up for LC",
+          "result": "I can create a team account and start providing a better service to my customers",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that team name, email, password, and agent name is collected"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "see my clients' trip history",
+          "result": "I can provide a great personalized experience",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that itinerary items are stored"
+            },
+            {
+              "description": "Verify that itinerary history is accessible"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "s",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": []
+    },
+    {
+      "name": "Copy of Project Kevin (1)",
+      "favorite": false,
+      "velocity": 10,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "to register my vehicles",
+          "result": "I can gain access to my membership",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Given that I Downloaded the app, When I first log in, Then I should be prompted to register my car. And I can enter all my car information manually."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "to link a card",
+          "result": "I can earn cash back, see redeemed cash",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given that I registered in the app. When I want to associate a credit card. Then I should be able to enter all my card information. And when I submit the info, I should be able to see my card associated. And an option to add another card."
+            },
+            {
+              "description": "CONSTRAINT >> This assumes the Network API we associate with provides such capability"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "log out from my account",
+          "result": "I'm no longer logged in",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to reset my password",
+          "result": "if I forget my current password, I can regain access to my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin",
+          "action": "to be able to view metrics / analytics",
+          "result": "I can know how my app is performing",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Assumes very basic metrics from a service like Google Analytics or Mix Panel"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "to see highlights about the product",
+          "result": "I can be motivated to sign up",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to manage my vehicle profiles",
+          "result": "I can keep them up to date",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to log in with my email",
+          "result": "I can access my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view my total cash back earned",
+          "result": "I can know how much I've earned",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to discover nearby merchants",
+          "result": "I can go use my rewards card at that merchant's location",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to search a specific merchant",
+          "result": "I can easily locate the nearest one",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to filter all nearby merchants",
+          "result": "I can find merchants based off a category",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to easily see the location of a merchant",
+          "result": "I can see their distance away from my location",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to call a concierge",
+          "result": "I can receive support",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view my vehicle profiles",
+          "result": "I can keep track of my vehicles",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to remove a linked card",
+          "result": "I can manage my linked cards",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view my membership details",
+          "result": "I can be clear on my membership benefits and perks",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to manage my account details",
+          "result": "I can keep them up to date",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to provide feedback",
+          "result": "the app is further improved according to my needs",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Assumes integration with external service"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "to sign up with my email",
+          "result": "I can create an account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "SeeTickets",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "User",
+          "action": "to be able to scan the user credit card",
+          "result": "I don't have to manually input the data",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "to be able to allow the user to pay with cash",
+          "result": "their ticket is confirmed",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "to select the type of payment the customer wants to use",
+          "result": "I can confirm the order",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "to be able see the total cost of the purchase",
+          "result": "I can let the customer know how much will be charged on their credit card or cash",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "to be able to select section location for the tickets",
+          "result": "the customer can select from where to see the event",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "to be able to see how much time left an order has",
+          "result": "I can confirm the place and ticket they want to buy",
+          "estimated_points": 2,
+          "acceptance_criterions": [
+            {
+              "description": "CONSTRAINT> This check will happen on the frontend. And will not verify as time pass by against the server API"
+            }
+          ]
+        },
+        {
+          "role": "User",
+          "action": "start an order for a customer",
+          "result": "I can help them get their ticket",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given that I am selling a ticket to a customer. When I select from one of the pricing categories. Then I should place an order and I should get the time that order started."
+            }
+          ]
+        },
+        {
+          "role": "User",
+          "action": "to be able to select tickets to buy from the available Pricing Groups for that event",
+          "result": "I can select from the different available prices and locations",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Given that the selected event has several tickets prices. When I want to choose from one of those prices. Then I should see how much does each ticket costs, and the name of the pricing category."
+            }
+          ]
+        },
+        {
+          "role": "User",
+          "action": "to be able to see the Event Sales for an event",
+          "result": "I can start buying tickets for customers",
+          "estimated_points": 2,
+          "acceptance_criterions": [
+            {
+              "description": "Given that I log in. When I select an event from the List. Then I can see a detail view for that event, and I can see the options to start selling tickets to customers."
+            }
+          ]
+        },
+        {
+          "role": "User",
+          "action": "to be able to select from the list of current events",
+          "result": "I can help people on a specific concert",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Given that I log In, When there are events coming soon, Then I should be able to see a list of all of them, and I should be able to see where when and who is playing"
+            }
+          ]
+        },
+        {
+          "role": "User",
+          "action": "to be able to login into the app",
+          "result": "I can start helping customers",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "The user will use a username and password provided by the administrator. And he/she will not be able to modify it."
+            }
+          ]
+        },
+        {
+          "role": "Admin",
+          "action": "to be able to create users",
+          "result": "they can sell tickets at the concert and use the app",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "CONSTRAINT. This assumes an admin role in charge of assigning user to the selling stuff members. This does not seem to be provided by the current API, So we suggest building a small backend for this web only."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Jiggy Bank",
+      "favorite": false,
+      "velocity": 10,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user,",
+          "action": "to sign up for Jiggy Bank with my email",
+          "result": "I can create an account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view Jiggy Bank's Terms & Conditions",
+          "result": "I can know what I'm signing up for",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to log in to Jiggy Bank",
+          "result": "I can access my account",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to reset my password",
+          "result": "if I forget my current password, I can regain access to my account",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to log in with my Facebook account",
+          "result": "I don't have to sign up with my email",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to confirm my account with a code",
+          "result": "I can verify that I chose to create an account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to have confirmation code resent to me",
+          "result": "if I didn't receive it, I can get it resent to me",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to link my bank account",
+          "result": "I can deposit money into my Jiggy Bank savings",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to set the percentage of my \"Savings Tax\"",
+          "result": "Jiggy Bank only takes away the percentage I'm comfortable with",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to start a cash goal",
+          "result": "I can start saving towards an amount",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to navigate through the Jiggy Bank app",
+          "result": "I can access different tabs of it",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view my cash goal",
+          "result": "I can see my progress",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "my set \"savings tax\" withdrawn from each purchase I do on my account automatically",
+          "result": "I can grow my Jiggy Bank savings",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to have overdraft protection",
+          "result": "Jiggy Bank doesn't withdraw from my account when I don't have enough funds",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to manually deposit cash into my savings goal",
+          "result": "I can achieve my goal faster",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to transfer the money I saved over to my account when I complete my cash goal",
+          "result": "I can redeem my money",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "pause a goal",
+          "result": "I can continue it later",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to withdraw money from a goal",
+          "result": "I can access money I've saved when I need it",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to cancel a goal",
+          "result": "I can withdraw my money back",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be penalized for canceling a goal or withdrawing money from one",
+          "result": "I can learn to save and not easily give up on a goal",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see which goals are trending on Jiggy Bank",
+          "result": "I can what goals are popular",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see what goals my friends have created or are collaborating on",
+          "result": "I can like or comment on the goals",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to like a goal",
+          "result": "I can show a friend I support them on their goal",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to comment on a goal",
+          "result": "I can socialize with my friends on their savings",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to contribute to another user's goal",
+          "result": "I can support them on their goal",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to invite friends to help fund my cash or item goal",
+          "result": "I can raise money quicker or for something together",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to share a goal via Facebook",
+          "result": "I can spread awareness on a goal",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to share a goal via Twitter",
+          "result": "I can spread awareness on a goal",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to shake my device",
+          "result": "I can listen to a preview of how full my Jiggy Bank is",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to update my account information",
+          "result": "I can keep it up to date",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to change my \"savings tax\"",
+          "result": "I can adjust it accordingly to my budget",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "unlink a bank account",
+          "result": "it no longer is associated to my Jiggy Bank account",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "log out from my account",
+          "result": "I'm no longer logged in",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to start an item goal",
+          "result": "I can start saving towards an item",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to search by brand",
+          "result": "I can find the item I want to save towards for",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to browse by categories",
+          "result": "I can find the item I want to save towards for",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view products",
+          "result": "I can view an item",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view my item goal",
+          "result": "I can see my progress",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to redeem an item from the money I saved when I complete my cash goal",
+          "result": "I can benefit from the money I saved",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to ship my item to a location when I complete my item goal",
+          "result": "I can receive it or send it to someone",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see featured items",
+          "result": "I can see if I might be interested in starting a goal towards an item or redeem one for cash",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to browse through the market of products without having to create an item goal",
+          "result": "I can see what great products I can redeem for or start a goal for",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to request a brand",
+          "result": "the brand can be added to Jiggy Bank market",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Jiggy Bank MVP",
+      "favorite": false,
+      "velocity": 10,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user,",
+          "action": "to sign up for Jiggy Bank with my email",
+          "result": "I can create an account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view Jiggy Bank's Terms & Conditions",
+          "result": "I can know what I'm signing up for",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to log in to Jiggy Bank",
+          "result": "I can access my account",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to reset my password",
+          "result": "if I forget my current password, I can regain access to my account",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to log in with my Facebook account",
+          "result": "I don't have to sign up with my email",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to confirm my account with a code",
+          "result": "I can verify that I chose to create an account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to have confirmation code resent to me",
+          "result": "if I didn't receive it, I can get it resent to me",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to link my bank account",
+          "result": "I can deposit money into my Jiggy Bank savings",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to set the percentage of my \"Savings Tax\"",
+          "result": "Jiggy Bank only takes away the percentage I'm comfortable with",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to start a cash goal",
+          "result": "I can start saving towards an amount",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to navigate through the Jiggy Bank app",
+          "result": "I can access different tabs of it",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view my cash goal",
+          "result": "I can see my progress",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "my set \"savings tax\" withdrawn from each purchase I do on my account automatically",
+          "result": "I can grow my Jiggy Bank savings",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to have overdraft protection",
+          "result": "Jiggy Bank doesn't withdraw from my account when I don't have enough funds",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to manually deposit cash into my savings goal",
+          "result": "I can achieve my goal faster",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to transfer the money I saved over to my account when I complete my cash goal",
+          "result": "I can redeem my money",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "pause a goal",
+          "result": "I can continue it later",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to withdraw money from a goal",
+          "result": "I can access money I've saved when I need it",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to cancel a goal",
+          "result": "I can withdraw my money back",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be penalized for canceling a goal or withdrawing money from one",
+          "result": "I can learn to save and not easily give up on a goal",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see which goals are trending on Jiggy Bank",
+          "result": "I can what goals are popular",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see what goals my friends have created or are collaborating on",
+          "result": "I can like or comment on the goals",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to like a goal",
+          "result": "I can show a friend I support them on their goal",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to comment on a goal",
+          "result": "I can socialize with my friends on their savings",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to contribute to another user's goal",
+          "result": "I can support them on their goal",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to invite friends to help fund my cash or item goal",
+          "result": "I can raise money quicker or for something together",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to share a goal via Facebook",
+          "result": "I can spread awareness on a goal",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to share a goal via Twitter",
+          "result": "I can spread awareness on a goal",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to shake my device",
+          "result": "I can listen to a preview of how full my Jiggy Bank is",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to update my account information",
+          "result": "I can keep it up to date",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to change my \"savings tax\"",
+          "result": "I can adjust it accordingly to my budget",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "unlink a bank account",
+          "result": "it no longer is associated to my Jiggy Bank account",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "log out from my account",
+          "result": "I'm no longer logged in",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Taxi Hailing App",
+      "favorite": true,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "to be able to request the luxury tier",
+          "result": "I can ride in comfort and style",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that luxury tier is available anywhere when I need it"
+            }
+          ]
+        },
+        {
+          "role": "user,",
+          "action": "to add a different credit card than the one I added during registration",
+          "result": "I can use a different method if I need to do so.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see my past history of rides I have taken",
+          "result": "I can track expenses and remember what I prefer.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select a location for home",
+          "result": "I can select it quickly when requesting a ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to confirm my request for a vehicle",
+          "result": "Uber will send my car.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to cancel the reqest for a car",
+          "result": "I can change my mind if necessary.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to add my mobile phone number",
+          "result": "my driver can contact me about my ride.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to user my phone's camera to take a picture of my credit card",
+          "result": "I don't have to type in the information.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my account",
+          "result": "I can change my information.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my email",
+          "result": "I can update it if it has changed.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to put in the location I wish to travel to ",
+          "result": "I can request a vehicle.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see where the car is in relation to me",
+          "result": "I have an idea of how far it is from me.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to update my picture",
+          "result": "a picture shows on my profile.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my mobile number",
+          "result": "drivers can call the correct number to reach me.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to add my credit card",
+          "result": "I can pay for my ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to sign up for an account using my email",
+          "result": "I can request a ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to locate the user through geolocation",
+          "result": "I can show them if there are any available cars in their area.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to send a verification code to a newly registered user",
+          "result": "I can make sure they are not a spammer/scammer.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to give feedback to my driver",
+          "result": "they are aware of my experience with the driver.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to view the receipt when the ride is completed",
+          "result": "I know how much is being charged to my payment method.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to send promotion codes to other users",
+          "result": "I can get a free ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": " to see how many cars are available near me",
+          "result": "I can plan my trip.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to calculate the price of a route based on mileage and pricing",
+          "result": "the passenger can see the estimates for their route.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to enter rates based on system demand",
+          "result": "I can properly estimate the price for a trip.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select text messages to receive information about my ride",
+          "result": "I can receive information quickly.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to calculate the ideal route between the start and end of a trip",
+          "result": "I can calculate mileage.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to input the verification code sent to me",
+          "result": "I can use the service.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to click on a specific ride",
+          "result": "I can view the receipt from it.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to download the application",
+          "result": "I can request a car.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see how much time it will take for the car to reach me",
+          "result": "I am ready to go when it arrives.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see who my driver will be",
+          "result": "I can view their information and feedback.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to send the user an email to verify their email address when it is added or updated in the system",
+          "result": "I can be sure they are a real person.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to enter promotion codes I have received",
+          "result": "I can get a free ride.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see the route that will be taken between my pickup and my destination",
+          "result": "I can see what the cost is based on.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to access my settings ",
+          "result": "I can change or update information.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see the full list of notifications that I have received within the app",
+          "result": "I do not miss anything that has been sent to me.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select whether to allow push notifications",
+          "result": "I can receive information quickly.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to use an image of a credit card to acquire the needed credit card information for payment",
+          "result": "the payment can go through when a user requests a ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to enter my password to verify access to my settings ",
+          "result": "I can update my information.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to cancel out of editing my profile",
+          "result": "I do not make any changes I don't want or need to.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my name",
+          "result": "I can change it to whatever I need it to be.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to retrieve my password",
+          "result": "I can verify my account information.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select a location for work",
+          "result": "I can select it quickly when requesting a ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to get help",
+          "result": "I can resolve any issues I might have.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Copy of Project Kevin (2)",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "User",
+          "action": "see a map with venues where I can get cash back",
+          "result": "I can go there and use my credit card to earn cash back",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "CONSTRAINT> RN API has to provide geolocation for venues"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "to register my vehicles",
+          "result": "I can gain access to my membership",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given that I registered. When I first log in. Then I should be able to enter my car information. And I should be able to submit specific information about my leasing. "
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "to link a card",
+          "result": "I can earn cash back, redeem cash and pay for membership upgrades",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "CONSTRAINT> Reward networks must provide an API endpoint for the register of the credit card"
+            },
+            {
+              "description": "Given that I just registered. When I first log in. Then I should be able to associate my credit card. And I can enter the number and expiration date. And I can add as many cards as I want."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "log out from my account",
+          "result": "I'm no longer logged in",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to reset my password",
+          "result": "if I forget my current password, I can regain access to my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin",
+          "action": "to be able to view metrics / analytics",
+          "result": "I can know how my app is performing",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Assumes very basic metrics from a service like Google Analytics or Mix Panel"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "to see highlights about the product",
+          "result": "I can be motivated to sign up",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to invite my friends to the app",
+          "result": "they can sign up and we can receive cash back rewards",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "CONSTRAINTS Assuming this is just invite friends. Not handling extra cash rewards."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "to manage my vehicle profiles",
+          "result": "I can keep them up to date",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Given that I register when I first log in. I can enter my car information. And information specific to my leasing."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "to log in with my email",
+          "result": "I can access my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view my total cash back earned",
+          "result": "I can know how much I've earned",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "CONSTRAINT> This information is provided by the API"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "to discover nearby merchants",
+          "result": "I can go use my rewards card at that merchant's location",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to search a specific merchant",
+          "result": "I can easily locate the nearest one",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to filter all nearby merchants",
+          "result": "I can find merchants based off a category",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to easily see the location of a merchant",
+          "result": "I can see their distance away from my location",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view my vehicle profiles",
+          "result": "I can keep track of my vehicles",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to remove a linked card",
+          "result": "I can manage my linked cards",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view my membership details",
+          "result": "I can be clear on my membership benefits and perks",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to manage my account details",
+          "result": "I can keep them up to date",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to upgrade my membership",
+          "result": "I can receive more perks and benefits",
+          "acceptance_criterions": [
+            {
+              "description": "Constraint the Network must provide a membership program."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "to be able to provide feedback",
+          "result": "the app is further improved according to my needs",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Assumes integration with external service"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "to redeem my cash back into my bank account",
+          "result": "I can use it towards my monthly car payment or towards my new car as a down payment",
+          "acceptance_criterions": [
+            {
+              "description": "This is handled by the reward network itself and is transferred to the credit card after each purchase."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "to view all reward goals available",
+          "result": "I can see which I've unlocked and are able to redeem",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "CONSTRAINT > Assuming the API for the reward network provides the list of venues"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "to sign up with my email",
+          "result": "I can create an account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to set my notification preferences",
+          "result": "I can set all notifications from app to my preference",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5293 @@
+{
+  "email": "napoleon.martinez@neonroots.com",
+  "full_name": "Napoleon Martinez",
+  "projects": [
+    {
+      "name": "Altour",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "customer",
+          "action": "update my payment information",
+          "result": "I can keep my payment details up to date",
+          "estimated_points": 2,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that payment information can be edited"
+            },
+            {
+              "description": "Verify that changes can be saved and stored"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "add my payment information",
+          "result": "I can pay for my booking and altour24 calls",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that name on card, card number, security code, expiration date, and zip code are collected"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "receive app notifications",
+          "result": "I can stay up to date on messages from my agent and be reminded of any updates ",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that notifications are sent when message from agent is received, new itinerary item is added, and itinerary item is updated"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "receive notifications",
+          "result": "I can know when my customer is reaching out to me",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that notification is sent to agent when a message from customer is received"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "have my Altour experience personalized with my assigned agent",
+          "result": "I can remember that there's an agent looking out for me",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that assigned agent name appears"
+            },
+            {
+              "description": "Verify that image of assigned agent is displayed"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "see my itinerary history",
+          "result": "I can look back to where I've been",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that itinerary history is viewable"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "see my clients' itinerary history",
+          "result": "I can provide a great personalized experience",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that itinerary items are stored"
+            },
+            {
+              "description": "Verify that itinerary history is accessible"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "add my passes to Apple Wallet",
+          "result": "I can keep my Altour passes with all my other passes",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that option to add to wallet is available for passes"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "easily see and use my boarding passes",
+          "result": "I can board my flight",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that QR/Bar Code is available"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "provide my customer their boarding passes",
+          "result": "they can travel with ease",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that QR/Bar code can be added to itineraries, confirmations, and passes if available"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "see my itinerary",
+          "result": "I can know when everything about my trip is happening",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that items such as flight itinerary, hotel, itinerary, car rental confirmation, and tour pass added are shown"
+            },
+            {
+              "description": "Verify that items can be viewed within 'trip' groups"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "manage my customer's itinerary",
+          "result": "I can make sure they have everything they need",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that items can be added or removed"
+            },
+            {
+              "description": "Verify that items can be grouped into a 'trip'"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "call Altour late at night",
+          "result": "I can get helped by Altour24 service",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that $50 charge is communicated to customer"
+            },
+            {
+              "description": "Verify that charge is accepted before processing call"
+            },
+            {
+              "description": "Verify that call reaches an Altour agent"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "call Altour",
+          "result": "I can get helped out",
+          "estimated_points": 2,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that call reaches an Altour agent"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "visually see tour options",
+          "result": "I can choose what I want to book",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that photo of tour, name, brand, description, and total cost are viewable"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "send tour options to my customers",
+          "result": "they can choose which tour they want to book",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that tour options can be entered"
+            },
+            {
+              "description": "Verify that tour options are sent"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "visually see car options",
+          "result": "I can choose what I want to book",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that photo of car, make, model, rental agency name, description and total cost is displayed"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "send car options to my customers",
+          "result": "they can choose which car they want to rent",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that car options can be entered"
+            },
+            {
+              "description": "Verify that car options can be sent"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "visually see hotel options",
+          "result": "I can choose what I want to book",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that photo of hotel, name, description, benefits, location, and total cost are displayed"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "send hotel options to my customers",
+          "result": "they can choose which hotel they want to book",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that hotel options can be entered"
+            },
+            {
+              "description": "Verify that hotel options can be sent"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "visually see flight options",
+          "result": "I can choose what I want to book",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that flight departure time, arrival time, locations, date, flight type, duration, company, and total cost are displayed"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "send flight options to my customer",
+          "result": "they can choose which flight they want to book",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that flight options can be entered"
+            },
+            {
+              "description": "Verify that flight options are sent"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "see my message history with my agent",
+          "result": "I can remember everything I talked about with my agent",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that messages are stored"
+            },
+            {
+              "description": "Verify that historical messages are viewable by customer"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "see my message history with my customer",
+          "result": "I can remember everything I talked about with my customer",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that messages are stored"
+            },
+            {
+              "description": "Verify that historical messages are viewable by agent"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "message my agent",
+          "result": "they can serve me",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that a message can be written"
+            },
+            {
+              "description": "Verify that message is sent"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "message a customer",
+          "result": "I can serve them",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that a message can be written"
+            },
+            {
+              "description": "Verify that message can be sent"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "have an introduction to Altour",
+          "result": "I know what to do my first time using Altour",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "have an agent assigned to me",
+          "result": "I can be onboarded by them",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "stay logged in",
+          "result": "I don't have to keep logging in everytime I open Altour",
+          "estimated_points": 2,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that User remains logged in"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "log in with my Altour credentials",
+          "result": "can continue enjoying the benefits of using Altour",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that Email and Password are authenticated"
+            },
+            {
+              "description": "Verify that email and password can be submitted"
+            },
+            {
+              "description": "Verify that if Email and Password are incorrect, an error is communicated"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "sign up",
+          "result": "I can start enjoying the benefits of using Altour",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that Full Name, Email, and Password are collected"
+            },
+            {
+              "description": "Verify that details can be submitted"
+            },
+            {
+              "description": "Verify that if details are already being used to communicate error"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "learn about Altour",
+          "result": "I have an overview of how it works",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Copy of Altour (2)",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "customer",
+          "action": "add my passes to Apple Wallet",
+          "result": "I can keep my Altour passes with all my other passes",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that option to add to wallet is available for passes"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "receive app notifications",
+          "result": "I can stay up to date on messages from my agent and be reminded of any updates ",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that notifications are sent when message from agent is received, new itinerary item is added, and itinerary item is updated"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "receive notifications",
+          "result": "I can know when my customer is reaching out to me",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that notification is sent to agent when a message from customer is received"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "see my itinerary history",
+          "result": "I can look back to where I've been",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that itinerary history is viewable"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "easily see and use my boarding passes",
+          "result": "I can board my flight",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that QR/Bar Code is available"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "provide my customer their boarding passes",
+          "result": "they can travel with ease",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that QR/Bar code can be added to itineraries, confirmations, and passes if available"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "have my Altour experience personalized with my assigned agent",
+          "result": "I can remember that there's an agent looking out for me",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that assigned agent name appears"
+            },
+            {
+              "description": "Verify that image of assigned agent is displayed"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "see my itinerary",
+          "result": "I can know when everything about my trip is happening",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that items such as flight itinerary, hotel, itinerary, car rental confirmation, and tour pass added are shown"
+            },
+            {
+              "description": "Verify that items can be viewed within 'trip' groups"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "see my clients' itinerary history",
+          "result": "I can provide a great personalized experience",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that itinerary items are stored"
+            },
+            {
+              "description": "Verify that itinerary history is accessible"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "manage my customer's itinerary",
+          "result": "I can make sure they have everything they need",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that items can be added or removed"
+            },
+            {
+              "description": "Verify that items can be grouped into a 'trip'"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "call Altour late at night",
+          "result": "I can get helped by Altour24 service",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that $50 charge is communicated to customer"
+            },
+            {
+              "description": "Verify that charge is accepted before processing call"
+            },
+            {
+              "description": "Verify that call reaches an Altour agent"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "visually see tour options",
+          "result": "I can choose what I want to book",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that photo of tour, name, brand, description, and total cost are viewable"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "see my message history with my agent",
+          "result": "I can remember everything I talked about with my agent",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that messages are stored"
+            },
+            {
+              "description": "Verify that historical messages are viewable by customer"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "see my message history with my customer",
+          "result": "I can remember everything I talked about with my customer",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that messages are stored"
+            },
+            {
+              "description": "Verify that historical messages are viewable by agent"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "message my agent",
+          "result": "they can serve me",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that a message can be written"
+            },
+            {
+              "description": "Verify that message is sent"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "send tour options to my customers",
+          "result": "they can choose which tour they want to book",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that tour options can be entered"
+            },
+            {
+              "description": "Verify that tour options are sent"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "send flight options to my customer",
+          "result": "they can choose which flight they want to book",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that flight options can be entered"
+            },
+            {
+              "description": "Verify that flight options are sent"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "visually see car options",
+          "result": "I can choose what I want to book",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that photo of car, make, model, rental agency name, description and total cost is displayed"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "visually see hotel options",
+          "result": "I can choose what I want to book",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that photo of hotel, name, description, benefits, location, and total cost are displayed"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "send car options to my customers",
+          "result": "they can choose which car they want to rent",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that car options can be entered"
+            },
+            {
+              "description": "Verify that car options can be sent"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "send hotel options to my customers",
+          "result": "they can choose which hotel they want to book",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that hotel options can be entered"
+            },
+            {
+              "description": "Verify that hotel options can be sent"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "call Altour",
+          "result": "I can get helped out",
+          "estimated_points": 2,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that call reaches an Altour agent"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "visually see flight options",
+          "result": "I can choose what I want to book",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that flight departure time, arrival time, locations, date, flight type, duration, company, and total cost are displayed"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "message a customer",
+          "result": "I can serve them",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that a message can be written"
+            },
+            {
+              "description": "Verify that message can be sent"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "stay logged in",
+          "result": "I don't have to keep logging in everytime I open Altour",
+          "estimated_points": 2,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that User remains logged in"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "log in with my Altour credentials",
+          "result": "can continue enjoying the benefits of using Altour",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that Email and Password are authenticated"
+            },
+            {
+              "description": "Verify that email and password can be submitted"
+            },
+            {
+              "description": "Verify that if Email and Password are incorrect, an error is communicated"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "have an introduction to Altour",
+          "result": "I know what to do my first time using Altour",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "learn about Altour",
+          "result": "I have an overview of how it works",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "sign up",
+          "result": "I can start enjoying the benefits of using Altour",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that Full Name, Email, and Password are collected"
+            },
+            {
+              "description": "Verify that details can be submitted"
+            },
+            {
+              "description": "Verify that if details are already being used to communicate error"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "have an agent assigned to me",
+          "result": "I can be onboarded by them",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "update my payment information",
+          "result": "I can keep my payment details up to date",
+          "estimated_points": 2,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that payment information can be edited"
+            },
+            {
+              "description": "Verify that changes can be saved and stored"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "add my payment information",
+          "result": "I can pay for my booking and altour24 calls",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that name on card, card number, security code, expiration date, and zip code are collected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Epic_Estimation",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "visitor",
+          "action": "learn about the product",
+          "result": "I can see how it works",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "visitor",
+          "action": "sign up for Epic",
+          "result": "I can get started",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "provide my name",
+          "result": "sign up",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "provide my email",
+          "result": "sign up",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "provide a password",
+          "result": "sign up",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "annotate text on a blank screen",
+          "result": "I can add detail to a flow",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "view a list of all user's and their info",
+          "result": "I can track growth",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "recieve custom user requests",
+          "result": "I can contact the user",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "link a screen to an estimation",
+          "result": "I can create a detailed library",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "link a screen to backlog",
+          "result": "I can create the library",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "reopen a project",
+          "result": "I can add to it and export it again",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "request custom work on any project",
+          "result": "I can get in contact with NR",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view my account info",
+          "result": "I can keep my info up to date",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view all of my projects",
+          "result": "I can store all of my different ideas",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view a downloaded pdf of project",
+          "result": "I can present my idea",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "create a new project",
+          "result": "I can continue to use the service",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "provide payment information",
+          "result": "I can export my project",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "export my project",
+          "result": "I can view my presentation as a PDF",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "export my project",
+          "result": "I can view it's estimation quote",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "export my project",
+          "result": "I can view it's backlog",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "request special screens",
+          "result": "Epic can add to it's catalog",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "preview my project flow",
+          "result": "I can view it in click through order",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "reorder and remove screens in my project",
+          "result": "I can refine my project",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "add notes to a screen in my project",
+          "result": "I can capture all my ideas",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view screen's name ad description",
+          "result": "I can choose to add it to my project",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view my project",
+          "result": "I can see the screens I've collected",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "drag and drop a screen to my project",
+          "result": "I can build my project",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to learn about a category",
+          "result": "I can understand it's screens",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "choose from a list of categories",
+          "result": "I can find screens I need",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view the catalog",
+          "result": "I can start a project",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "store my payment info",
+          "result": "I only have to put it once",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "look at FAQ",
+          "result": "I can get quick help",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "request NR design help (add imagery, color, etc)",
+          "result": "I can get next level design work",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "change the title of a screen in my project",
+          "result": "I can name each part of the flow",
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Talkative",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "influencer",
+          "action": "see my stats by week or month",
+          "result": "I can get a clear understanding of my stats",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "see a history of past payday amounts",
+          "result": "I can keep record of how much I've made in detail",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "see when my next payday is",
+          "result": "I can know when I'm going to get paid",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "see my total earnings",
+          "result": "I can see how much I've made from the app",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "see how many messages I've replied to",
+          "result": "I can see how much I've used the app",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "see how much money I have earned in my queue",
+          "result": "I can know how much I will earn in my next payday",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "fan",
+          "action": "able to sign up",
+          "result": "I can start using Talkative",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "fan",
+          "action": "log in",
+          "result": "I can access my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "fan",
+          "action": "stay logged in",
+          "result": "I don't have to log in ever time I open the app",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "fan",
+          "action": "be notified when I receive a new message from my influencer",
+          "result": "I can stay up to date with the conversation",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "fan",
+          "action": "see messages sent from my influencers",
+          "result": "I can read them",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "see my message threads ordered by paid-priority",
+          "result": "I can reply to my special fans",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "post a voice status",
+          "result": "my fans know when I'm on and when I'm not on",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "upload a photo of myself",
+          "result": "my fans can see me",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "fan",
+          "action": "be notified / motivated to purchase 'Boost Message to Top' power-up",
+          "result": "my influencer can see my message",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "fan",
+          "action": "see which message threads have new messages",
+          "result": "I can stay up to date on conversations",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "fan",
+          "action": "play audio message I receive from my influencers",
+          "result": "I can listen to their voices",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "fan",
+          "action": "listen to an influencer's voice status",
+          "result": "I can know it's really them",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "fan",
+          "action": "purchase 'Voice Reply' power-up",
+          "result": "I can verify that influencer is real",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "fan",
+          "action": "purchase 'Boost Message to Top' power-up",
+          "result": "I can verify that influencer will reply to my message quickly",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "fan",
+          "action": "see my total points balance",
+          "result": "I can know how many power-ups I can purchase",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "fan",
+          "action": "upload a photo of myself",
+          "result": "my influencers can see how I look",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "fan",
+          "action": "log out from Talkative",
+          "result": "no one can access my account and spend my points",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "fan",
+          "action": "purchase a message I can send to an influencer",
+          "result": "I can talk to them",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "be notified when I multiple messages pending from fans",
+          "result": "I can stay up to date with my conversations",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that money value pending from messages is displayed in notification"
+            }
+          ]
+        },
+        {
+          "role": "influencer",
+          "action": "log out from Talkative",
+          "result": "no one can access my account",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "manage my account profile",
+          "result": "I can keep my information up to date",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "add my payment information",
+          "result": "I can get paid",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "update my payment information",
+          "result": "I can keep it up to date",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "fan",
+          "action": "start a new conversation with an influencer",
+          "result": "I can either group or direct message them",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "fan",
+          "action": "see an influencers profile",
+          "result": "I can verify that it's them",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "fan",
+          "action": "manage my account profile",
+          "result": "I can keep my information up to date",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "fan",
+          "action": "direct message an influencer",
+          "result": "I can directly talk to them",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "fan",
+          "action": "group message with an influencer",
+          "result": "I can get a chance to talk to them",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "fan",
+          "action": "see all the message threads I'm in",
+          "result": "I can keep up with my conversations",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "fan",
+          "action": "search for an influencer on Talkative",
+          "result": "I can talk to them",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "fan",
+          "action": "purchase more point packages",
+          "result": "I can keep enjoying my conversations with my influencers",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "fan",
+          "action": "discover featured influencers",
+          "result": "I can find new influencers to talk to",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "fan",
+          "action": "connect my instagram if I didn't sign up with Instagram",
+          "result": "I can find all my favorite influencers on Talkative",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "fan",
+          "action": "follow influencers I follow from Instagram that are on Talkative",
+          "result": "I can talk to them",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "fan",
+          "action": "request an invite to Talkative",
+          "result": "I can be able to sign up",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "fan",
+          "action": "see the ToS and PP",
+          "result": "I know what I'm agreeing to by signing up for Talkative",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "send an audio message",
+          "result": "my fans can hear my voice",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "see group messages from fans sent to me",
+          "result": "I can read all of them",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "see which message threads have new messages",
+          "result": "I can stay up to date on conversations",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "see all my message threads I'm in",
+          "result": "I can keep up with my conversations",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "direct message fans",
+          "result": "I can talk directly to them",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "group message with my fans",
+          "result": "I can talk to them all as a group",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "see the ToS and PP",
+          "result": "I know what I'm agreeing to by signing up for Talkative",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "stay logged in",
+          "result": "I don't have to log in every time I open the app",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "see direct messages sent to me",
+          "result": "I can read them all",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "sign up / log in with Instagram to Talkative",
+          "result": "I can start monetizing talking to my fan base",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "fan",
+          "action": "sign up / log in with Instagram",
+          "result": "I don't have to manage a password for Talkative",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "PromptChal_Est",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "view a preview instructional video from the creator of a current challenge",
+          "result": "I can see how to play",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see the details of a current challenge",
+          "result": "I can learn about the challenge",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see all of the current submissions in the challenge",
+          "result": "I can see what others have done",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "like a user's submission",
+          "result": "I can vote for it",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see all members of the challenge and their submissions",
+          "result": "I can see all participant activity",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see what members are active",
+          "result": "I can see who remains to win the challenge",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see who has accepted the challenge",
+          "result": "I can see who will contribute",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "registered user",
+          "action": "be able to use fingers scanner",
+          "result": "I can protect my account",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "accept the App using my location",
+          "result": " it can be used in challenges",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "recieve an e-mail with a link which must be activated",
+          "result": "I can verify my email and complete the sign up.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "click on a link to the website",
+          "result": "I can learn more",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "invite my friends through facebook",
+          "result": "I can add members to the challenge",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "be able to upload ads with redirection links",
+          "result": "I can promote other companies/Apps",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "set the rounds",
+          "result": "I can set the structure of the challenge",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "set the challenge type",
+          "result": "I can set the structure of the challenge",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "create an instructional preview video",
+          "result": "I can explain the challenge",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "be notified when I have been invited to a new challenge",
+          "result": "I can be informed of it",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "be notified when people have liked my submission to a challenge",
+          "result": "I can learn of my progress",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "create a challenge",
+          "result": "I can contribute to the app",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "be notified when people have joined my challenge",
+          "result": "I can learn of it's progress",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view all of my current challenges",
+          "result": "I can see what I'm participating in",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "submit the first submission",
+          "result": "I can start a challenge",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": " upon finishing a challenge, be able to delete it",
+          "result": "I can focus on what's current and 'live'",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "not be able like my own submissions",
+          "result": "I cannot vote for myself",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "like one submission in each trial",
+          "result": "my vote only is counted once for each trial",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "vote for a re-challenge",
+          "result": "I can get revenge",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "message members of the challenge",
+          "result": "we can all communicate",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "submit voice over recordings over the visual content",
+          "result": "I can compete in a challenge",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": " share my own video/picture content on social medias",
+          "result": "I can share my experiences",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": " click on notifications so",
+          "result": "I can return to the app",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "submit to a current challenge",
+          "result": "I can win a challenge",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "viewer",
+          "action": "can only view my username ",
+          "result": "I can have privacy ",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see what members are inactive",
+          "result": "I can see who no longer is able to win the challenge",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "submit photos",
+          "result": "I can compete in a challenge",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "decline a pending challenge",
+          "result": "I can remove it",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "accept a pending challenge",
+          "result": "I join it",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view the active members of a pending challenge",
+          "result": "I can choose to participate",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "registered user",
+          "action": "stay logged in",
+          "result": "I don't have to sign-in with every use.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "sign up using email",
+          "result": "I can register in the app",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "log in using facebook",
+          "result": "I can register in the app",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "I should be able to see the details of a pending challenge",
+          "result": "I can choose to participate",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view the invited members of a pending challenge",
+          "result": "I can choose to participate",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view a preview instructional video from the creator of a pending challenge",
+          "result": "I can choose to participate",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view all of my pending challenges",
+          "result": "I can choose to participate",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "be notified when I've won a challenge",
+          "result": "I can informed of it",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "be able to manage my notification preferences",
+          "result": "I can have the app meet my needs",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "the contests I've created",
+          "result": "I can view my activity",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "accept Terms and Conditions of the app",
+          "result": "I know where I am liable",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "provide a password",
+          "result": "I can create an account",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "create a profile",
+          "result": "I can have a digital presence in the app",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "sign out",
+          "result": "I can change users",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view my fb friends who use this app",
+          "result": "I can see my community",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "store account info",
+          "result": "I can archive user data",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "vistior",
+          "action": "click to the iTunes store",
+          "result": "I can choose to download it",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "add a profile picture",
+          "result": "I have a digital page",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "visitor",
+          "action": "learn about the app",
+          "result": "I can choose to download it",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "caption a submission",
+          "result": "I can compete in a challenge",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "delete my account",
+          "result": "I can opt out",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "manage accounts",
+          "result": "I can quality control",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "see 3-5 tutorial screens",
+          "result": "I can learn how it works",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "change my info",
+          "result": "I can update my account",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see who has declined and pending",
+          "result": "I can see who is not or has not yet accepted",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "provide my username",
+          "result": "I can create an account",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "view general analytics",
+          "result": "I understand usage of the app",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "a landing page the communicates the app",
+          "result": "I understand the brand and service",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "submit videos",
+          "result": "I can compete in a challenge",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "create and edit video/picture content of a challenge (to my Prompchal profile or other social medias)",
+          "result": "can share my experiences",
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "my new project",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "Like",
+          "action": "how ",
+          "result": "wors",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "this ",
+          "action": "works",
+          "result": "just fine",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "test",
+          "result": "adasda",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User ",
+          "action": "test",
+          "result": "i know it works",
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Test D",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": []
+    },
+    {
+      "name": "Epic for Estimation",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "visitor",
+          "action": "learn about the product",
+          "result": "I can see how it works",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "visitor",
+          "action": "sign up for Epic",
+          "result": "I can get started",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "provide my name",
+          "result": "sign up",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "provide my email",
+          "result": "sign up",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "provide a password",
+          "result": "sign up",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "annotate text on a blank screen",
+          "result": "I can add detail to a flow",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "view a list of all user's and their info",
+          "result": "I can track growth",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "recieve custom user requests",
+          "result": "I can contact the user",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "link a screen to an estimation",
+          "result": "I can create a detailed library",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "link a screen to backlog",
+          "result": "I can create the library",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "reopen a project",
+          "result": "I can add to it and export it again",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "request custom work on any project",
+          "result": "I can get in contact with NR",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view my account info",
+          "result": "I can keep my info up to date",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view all of my projects",
+          "result": "I can store all of my different ideas",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view a downloaded pdf of project",
+          "result": "I can present my idea",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "create a new project",
+          "result": "I can continue to use the service",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "provide payment information",
+          "result": "I can export my project",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "export my project",
+          "result": "I can view my presentation as a PDF",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "export my project",
+          "result": "I can view it's estimation quote",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "export my project",
+          "result": "I can view it's backlog",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "request special screens",
+          "result": "Epic can add to it's catalog",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "preview my project flow",
+          "result": "I can view it in click through order",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "reorder and remove screens in my project",
+          "result": "I can refine my project",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "add notes to a screen in my project",
+          "result": "I can capture all my ideas",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view screen's name ad description",
+          "result": "I can choose to add it to my project",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view my project",
+          "result": "I can see the screens I've collected",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "drag and drop a screen to my project",
+          "result": "I can build my project",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to learn about a category",
+          "result": "I can understand it's screens",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "choose from a list of categories",
+          "result": "I can find screens I need",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view the catalog",
+          "result": "I can start a project",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "store my payment info",
+          "result": "I only have to put it once",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "look at FAQ",
+          "result": "I can get quick help",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "request NR design help (add imagery, color, etc)",
+          "result": "I can get next level design work",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "change the title of a screen in my project",
+          "result": "I can name each part of the flow",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "visitor",
+          "action": "learn about the product",
+          "result": "I can see how it works",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "visitor",
+          "action": "sign up for Epic",
+          "result": "I can get started",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "provide my name",
+          "result": "sign up",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "provide my email",
+          "result": "sign up",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "provide a password",
+          "result": "sign up",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "annotate text on a blank screen",
+          "result": "I can add detail to a flow",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "view a list of all user's and their info",
+          "result": "I can track growth",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "recieve custom user requests",
+          "result": "I can contact the user",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "link a screen to an estimation",
+          "result": "I can create a detailed library",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "link a screen to backlog",
+          "result": "I can create the library",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "reopen a project",
+          "result": "I can add to it and export it again",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "request custom work on any project",
+          "result": "I can get in contact with NR",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view my account info",
+          "result": "I can keep my info up to date",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view all of my projects",
+          "result": "I can store all of my different ideas",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view a downloaded pdf of project",
+          "result": "I can present my idea",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "create a new project",
+          "result": "I can continue to use the service",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "provide payment information",
+          "result": "I can export my project",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "export my project",
+          "result": "I can view my presentation as a PDF",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "export my project",
+          "result": "I can view it's estimation quote",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "export my project",
+          "result": "I can view it's backlog",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "request special screens",
+          "result": "Epic can add to it's catalog",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "preview my project flow",
+          "result": "I can view it in click through order",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "reorder and remove screens in my project",
+          "result": "I can refine my project",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "add notes to a screen in my project",
+          "result": "I can capture all my ideas",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view screen's name ad description",
+          "result": "I can choose to add it to my project",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view my project",
+          "result": "I can see the screens I've collected",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "drag and drop a screen to my project",
+          "result": "I can build my project",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to learn about a category",
+          "result": "I can understand it's screens",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "choose from a list of categories",
+          "result": "I can find screens I need",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view the catalog",
+          "result": "I can start a project",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "store my payment info",
+          "result": "I only have to put it once",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "look at FAQ",
+          "result": "I can get quick help",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "request NR design help (add imagery, color, etc)",
+          "result": "I can get next level design work",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "change the title of a screen in my project",
+          "result": "I can name each part of the flow",
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Uber",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "driver",
+          "action": "see the destination address the customer input",
+          "result": "I can accurately take them to their destination.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "driver",
+          "action": "see the customer's information in the notification that they need a ride",
+          "result": "I can decide whether to accept or ignore the notification.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "driver",
+          "action": "receive a notification when a customer needs a ride in my area",
+          "result": "I can choose to accept the customer.",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "driver",
+          "action": "accept the notification that a customer needs a ride",
+          "result": "the customer knows who is coming and so that no other drivers can accept the same ride.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "type my destination address",
+          "result": "the driver knows where to drop me off.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "select the type of uber I want",
+          "result": "I have a choice in price and value.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "type my address",
+          "result": "I have an alternative accurate way to set my location.",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "drop a pin at a location",
+          "result": "I can visually set my location.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Uber",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "admin,",
+          "action": "send the user an email to verify their email address when it is added or updated in the system",
+          "result": "I can be sure they are a real person.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "locate the user through geolocation",
+          "result": "I can show them if there are any available cars in their area.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "send a verification code to a newly registered user",
+          "result": "I can make sure they are not a spammer/scammer.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "give feedback to my driver",
+          "result": "Uber is aware of my experience with the driver.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "view the receipt when the ride is completed",
+          "result": "I know how much is being charged to my payment method.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "cancel the reqest for a car",
+          "result": "I can change my mind if necessary.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "see who my driver will be",
+          "result": "I can view their information and feedback.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "see how much time it will take for the car to reach me",
+          "result": "I am ready to go when it arrives.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "confirm my request for a vehicle",
+          "result": "Uber will send my car.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "see the rate that uber will charge me when I select my pickup location and SUV",
+          "result": "I can choose the best option for me.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "see the rate that uber will charge me when I select my pickup location and Black Car",
+          "result": "I can choose the best option for me.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "see the rate that uber will charge me when I select my pickup location and uberXL",
+          "result": "I can choose the best option for me.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": " see how many cars are available near me when I select Black Car ",
+          "result": "I can plan my trip.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": " see how many cars are available near me when I select uberXL ",
+          "result": "I can plan my trip.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "update my picture",
+          "result": "a picture shows on my profile.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "edit my mobile number",
+          "result": "drivers can call the correct number to reach me.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "add my credit card",
+          "result": "I can pay for my ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "add my mobile phone number",
+          "result": "Uber can contact me about my ride.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "sign up for an account using Facebook",
+          "result": "I can import my contact information and not have to type it.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "sign up for an account using Google+",
+          "result": "I can import my contact information and not have to type it.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "sign up for an account using my email",
+          "result": "I can request a ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "download the application",
+          "result": "I can request a car.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "select a location for work",
+          "result": "I can select it quickly when requesting a ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "select a location for home",
+          "result": "I can select it quickly when requesting a ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to access my settings ",
+          "result": "I can change or update information.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "enter promotion codes I have received",
+          "result": "I can get a free ride.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "send promotion codes to other users",
+          "result": "I can get a free ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "get help from Uber",
+          "result": "I can resolve any issues I might have.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "click on a specific ride",
+          "result": "I can view the receipt from it.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "see my past history of rides I have taken with Uber",
+          "result": "I can track expenses and remember what I prefer.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "add my PayPal information",
+          "result": "I can use it instead of a credit card if I did not add it during registration.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "add a different credit card than the one I added during registration",
+          "result": "I can use a different method if I need to do so.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "select text messages to receive information about my ride",
+          "result": "I can receive information quickly.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "input the verification code sent to me",
+          "result": "I can use the service.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "add my PayPal account information",
+          "result": "I can pay for my ride.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "enter rates based on system demand",
+          "result": "I can properly estimate the price for a trip.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "calculate the ideal route between the start and end of a trip",
+          "result": "I can calculate mileage.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "see the route that will be taken between my pickup and my destination",
+          "result": "I can see what the cost is based on.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "use an image of a credit card to acquire the needed credit card information for payment",
+          "result": "the payment can go through when a user requests a ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "user my phone's camera to take a picture of my credit card",
+          "result": "I don't have to type in the information.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "see where the car is in relation to me",
+          "result": "I have an idea of how far it is from me.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to enter my password to verify access to my settings ",
+          "result": "I can update my information.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "see the rate that uber will charge me when I select my pickup location and uberX",
+          "result": "I can choose the best option for me.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": " see how many cars are available near me when I select SUV ",
+          "result": "I can plan my trip.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "select the type of car I wish to use",
+          "result": " I can choose what works best for me.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "put in the location I wish to travel to ",
+          "result": "I can request a vehicle.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "cancel out of editing my profile",
+          "result": "I do not make any changes I don't want or need to.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": " see how many cars are available near me when I select uberX ",
+          "result": "I can plan my trip.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "edit my name",
+          "result": "I can change it to whatever I need it to be.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "edit my email",
+          "result": "I can update it if it has changed.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "retrieve my password",
+          "result": "I can verify my account information.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "edit my account",
+          "result": "I can change my information.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "connect my Spotify account",
+          "result": "I can hear the music I like on my ride.",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "user has to have a spotify account in order to login and access."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "demo arbor",
+          "result": "I can showcase it's abilities",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that demo connection is great"
+            }
+          ]
+        },
+        {
+          "role": "user,",
+          "action": "select whether to allow push notifications",
+          "result": "I can receive information quickly.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "see the full list of notifications that I have received from Uber within the app",
+          "result": "I do not miss anything that has been sent to me.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "calculate the price of a route based on mileage and pricing",
+          "result": "the passenger can see the estimates for their route.",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that estimate is correct."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Epic",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "visitor",
+          "action": "learn about the product",
+          "result": "I can see how it works",
+          "estimated_points": 13,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "visitor",
+          "action": "sign up for Epic",
+          "result": "I can get started",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "provide my name",
+          "result": "sign up",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "provide my email",
+          "result": "sign up",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "provide a password",
+          "result": "sign up",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "annotate text on a blank screen",
+          "result": "I can add detail to a flow",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "view a list of all user's and their info",
+          "result": "I can track growth",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "recieve custom user requests",
+          "result": "I can contact the user",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "link a screen to an estimation",
+          "result": "I can create a detailed library",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "link a screen to backlog",
+          "result": "I can create the library",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "reopen a project",
+          "result": "I can add to it and export it again",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "request custom work on any project",
+          "result": "I can get in contact with NR",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view my account info",
+          "result": "I can keep my info up to date",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view all of my projects",
+          "result": "I can store all of my different ideas",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view a downloaded pdf of project",
+          "result": "I can present my idea",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "create a new project",
+          "result": "I can continue to use the service",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "provide payment information",
+          "result": "I can export my project",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "export my project",
+          "result": "I can view my presentation as a PDF",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "export my project",
+          "result": "I can view it's estimation quote",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "export my project",
+          "result": "I can view it's backlog",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "request special screens",
+          "result": "Epic can add to it's catalog",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "preview my project flow",
+          "result": "I can view it in click through order",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "reorder and remove screens in my project",
+          "result": "I can refine my project",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "add notes to a screen in my project",
+          "result": "I can capture all my ideas",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view screen's name ad description",
+          "result": "I can choose to add it to my project",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view my project",
+          "result": "I can see the screens I've collected",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "drag and drop a screen to my project",
+          "result": "I can build my project",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to learn about a category",
+          "result": "I can understand it's screens",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "choose from a list of categories",
+          "result": "I can find screens I need",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view the catalog",
+          "result": "I can start a project",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "store my payment info",
+          "result": "I only have to put it once",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "look at FAQ",
+          "result": "I can get quick help",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "request NR design help (add imagery, color, etc)",
+          "result": "I can get next level design work",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "change the title of a screen in my project",
+          "result": "I can name each part of the flow",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "2oothe",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "book a dental hygenist",
+          "result": "they can have plaque removed",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "ResourceMastering",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": []
+    },
+    {
+      "name": "Kioku",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": []
+    },
+    {
+      "name": "Testing A New Projcet Invite to mojo",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": []
+    },
+    {
+      "name": "Testing New Project",
+      "favorite": false,
+      "velocity": 15,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "User ",
+          "action": "create a new project",
+          "result": "I can start creating a roadmap for my idea",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "be able to see all my coworkers projects",
+          "result": "I can find what they have been working recently",
+          "estimated_points": 13,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "be able to enter user storie",
+          "result": "I can create an awesome backlog",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Given that I write my user story \\u003e When I submit it \\u003e Then I can see the new story on the list. And I should be able to keep on writing the next story"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Healthy Face",
+      "favorite": false,
+      "velocity": 9,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "search through curated products for me",
+          "result": "I can see specific type of products that were curated for me",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that curated products can be searched by type and use"
+            },
+            {
+              "description": "Verify that curated results are displayed"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "learn about Healthy Face",
+          "result": "I can install the app",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "log out of Healthy eFace",
+          "result": "I can exit my account",
+          "estimated_points": 2,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that account can be logged out from"
+            },
+            {
+              "description": "Verify that account is logged out"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "sign up with my email for Healthy Face",
+          "result": "I can benefit from it",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that Full Name, Email, and Password are collected"
+            },
+            {
+              "description": "Verify that details can be submitted"
+            },
+            {
+              "description": "Verify that if details are already being used to communicate error"
+            },
+            {
+              "description": "Verify that new account is created is everything is correct"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "see motivational quotes scattered around",
+          "result": "I can be constantly motivated",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "product recommendations based off products I scan",
+          "result": "I can know what I should buy instead",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that better products of similar category are displayed"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "turn on location services on Healthy Face",
+          "result": "I can benefit from HF's location features",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that user is requested to turn on location services"
+            },
+            {
+              "description": "Verify that location services are turned on request is accepted"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "purchase healthy products",
+          "result": "I can benefit from having them",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Once I process the payment I receive an email saying that I purchased the product"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "view my favorited products",
+          "result": "I can always remember the products I purchase on Amazon frequently",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that favorited products can be viewed"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "reset my password",
+          "result": "I can recover if I forget my password",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that password can be reset"
+            },
+            {
+              "description": "Verify that email is sent with new password information"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "see a simple score for a product",
+          "result": "I know if it's healthy or unhealthy",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that score is product is displayed"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "stay logged in",
+          "result": "I don't need to log in every time",
+          "estimated_points": 2,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that User remains logged in"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "receive a notification when I'm dropping in my healthy score",
+          "result": "I can be motivated to get back on track",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "update my payment information",
+          "result": "it can be kept current",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "review my purchase history",
+          "result": "I can see what products I ordered",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "I can see each payment that I have done, seeing products and price"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "share products on Twitter that I find on HF",
+          "result": "I can spread the word on HF",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that product can be shared on Twitter"
+            },
+            {
+              "description": "Verify that product is shared on Twitter"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "see results of curated products based off my profile",
+          "result": "I can only see healthy products for me",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that curated products are viewable"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "scan a product I see in the store",
+          "result": "I can see if they contain toxic chemicals",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that a product's barcode can be scanned"
+            },
+            {
+              "description": "Verify that if barcode is unreadable that user is notified"
+            },
+            {
+              "description": "Verify that product details are displayed if scan succesful"
+            },
+            {
+              "description": "Verify that if product is not a beauty product, user is notified"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "favorite products",
+          "result": "I can remember them for later",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that products can be favorited"
+            },
+            {
+              "description": "Verify that product is favorited"
+            },
+            {
+              "description": "Verify that product can be unfavorited and becomes unfavorited"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "view educational content",
+          "result": "I can read and learn about healthy products",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that preview of content is displayed"
+            },
+            {
+              "description": "Verify that content can be fully viewed"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "receive a notification when I reach an achievement in my progress",
+          "result": "I can be motivated to continue",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view Amazon product pages within in-app web browser",
+          "result": "I don't have to fully leave the HF app",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that user is taken to amazon page in in-app browser"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "see an overall score of my health based off products purchased and previously used",
+          "result": "I can see my progress",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "I can see a score based on my history"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "see a daily recommendation based off location and weather",
+          "result": "I can make sure to use the best product possible each day",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that curated products can be viewed based off weather and location"
+            },
+            {
+              "description": "Verify that 5 days of recommendations are able to be seen"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "log in using my email and password",
+          "result": "I can return to my account",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that Email and Password are authenticated"
+            },
+            {
+              "description": "Verify that email and password can be submitted"
+            },
+            {
+              "description": "Verify that if Email and Password are incorrect, an error is communicated"
+            },
+            {
+              "description": "Verify that account is logged in if all information is correct"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "provide information about myself",
+          "result": "I can get a curated experience and results from healthy face",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that it can be skipped"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "see ingredients in products",
+          "result": "I can know what's in products",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that ingredients are displayed"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "receive receipts of my payment",
+          "result": "I can get confirmation",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "I should get my receipt by email"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "learn about the scoring system",
+          "result": "I can understand what it's based off",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "add healthy products into a cart",
+          "result": "I can purchase them when ready",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "upload a photo of myself",
+          "result": "I can personalize my HF experience",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that photo can be uploaded"
+            },
+            {
+              "description": "Verify that uploaded photo is displayed"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "share products on Facebook that I find on HF",
+          "result": "I can spread the word on HF",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that product can be shared on Facebook"
+            },
+            {
+              "description": "Verify that product is shared on Facebook"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "easily share my progress on social media",
+          "result": "can see the benefits of using HealthyFace",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "I should be able to use my native share to share my progress"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "be taken to Amazon",
+          "result": "I can purchase a product I discover on Healthy Face",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that there an option to buy on Amazon on product page"
+            },
+            {
+              "description": "Verify that user is taken to correct amazon product page"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "see product details",
+          "result": "I can know exactly what I'm looking at",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that a product image, description, name are shown"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "turn on notifications on HF",
+          "result": "I can benefit from HF's notifications",
+          "estimated_points": 2,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that user is requested to turn on notifications"
+            },
+            {
+              "description": "Verify that notifications are turned on request is accepted"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "provide information on the bad current products I use",
+          "result": "I can see the health scores they have",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin",
+          "action": "view user activity through an analytics tool",
+          "result": "I understand traction and activity",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "enter a product name instead of scanning",
+          "result": "I don't have to worry about not having the barcode",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that name of product can be entered"
+            },
+            {
+              "description": "Verify that name of product can be submitted"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "enter my payment information",
+          "result": "I can purchase products",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "I should be able to add my credit card information and validate it"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Taxi Hailing App",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user,",
+          "action": "to sign up for an account using my email",
+          "result": "I can request a ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select text messages to receive information about my ride",
+          "result": "I can receive information quickly.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to add a different credit card than the one I added during registration",
+          "result": "I can use a different method if I need to do so.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to enter rates based on system demand",
+          "result": "I can properly estimate the price for a trip.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to calculate the price of a route based on mileage and pricing",
+          "result": "the passenger can see the estimates for their route.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to request the luxury tier",
+          "result": "I can ride in comfort and style",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that luxury tier is available anywhere when I need it"
+            }
+          ]
+        },
+        {
+          "role": "user,",
+          "action": "to see my past history of rides I have taken",
+          "result": "I can track expenses and remember what I prefer.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select a location for home",
+          "result": "I can select it quickly when requesting a ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to confirm my request for a vehicle",
+          "result": "Uber will send my car.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to cancel the reqest for a car",
+          "result": "I can change my mind if necessary.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to add my mobile phone number",
+          "result": "my driver can contact me about my ride.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to user my phone's camera to take a picture of my credit card",
+          "result": "I don't have to type in the information.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my email",
+          "result": "I can update it if it has changed.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my account",
+          "result": "I can change my information.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see where the car is in relation to me",
+          "result": "I have an idea of how far it is from me.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to put in the location I wish to travel to ",
+          "result": "I can request a vehicle.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to add my credit card",
+          "result": "I can pay for my ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my mobile number",
+          "result": "drivers can call the correct number to reach me.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to update my picture",
+          "result": "a picture shows on my profile.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to view the receipt when the ride is completed",
+          "result": "I know how much is being charged to my payment method.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to give feedback to my driver",
+          "result": "they are aware of my experience with the driver.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to send a verification code to a newly registered user",
+          "result": "I can make sure they are not a spammer/scammer.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to locate the user through geolocation",
+          "result": "I can show them if there are any available cars in their area.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to send promotion codes to other users",
+          "result": "I can get a free ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": " to see how many cars are available near me",
+          "result": "I can plan my trip.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to send the user an email to verify their email address when it is added or updated in the system",
+          "result": "I can be sure they are a real person.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see who my driver will be",
+          "result": "I can view their information and feedback.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see how much time it will take for the car to reach me",
+          "result": "I am ready to go when it arrives.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to download the application",
+          "result": "I can request a car.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to click on a specific ride",
+          "result": "I can view the receipt from it.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to input the verification code sent to me",
+          "result": "I can use the service.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to calculate the ideal route between the start and end of a trip",
+          "result": "I can calculate mileage.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see the route that will be taken between my pickup and my destination",
+          "result": "I can see what the cost is based on.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to enter promotion codes I have received",
+          "result": "I can get a free ride.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select a location for work",
+          "result": "I can select it quickly when requesting a ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to retrieve my password",
+          "result": "I can verify my account information.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my name",
+          "result": "I can change it to whatever I need it to be.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to cancel out of editing my profile",
+          "result": "I do not make any changes I don't want or need to.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to enter my password to verify access to my settings ",
+          "result": "I can update my information.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to use an image of a credit card to acquire the needed credit card information for payment",
+          "result": "the payment can go through when a user requests a ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select whether to allow push notifications",
+          "result": "I can receive information quickly.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see the full list of notifications that I have received within the app",
+          "result": "I do not miss anything that has been sent to me.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to access my settings ",
+          "result": "I can change or update information.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to get help",
+          "result": "I can resolve any issues I might have.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Copy of Test (1)",
+      "favorite": true,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": []
+    },
+    {
+      "name": "Altour (TopTier review)",
+      "favorite": false,
+      "velocity": 10,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "check-in on my flight",
+          "result": "I can use my app for checking in",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see past itineraries",
+          "result": "I can keep track of what trips I have made",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "share my itinerary",
+          "result": "other people can see the information",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "see my itineraries",
+          "result": "I can access all the information of my trips",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agent",
+          "action": "message a customer",
+          "result": "I can serve them",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that a message can be written"
+            },
+            {
+              "description": "Verify that message can be sent"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "message my agent",
+          "result": "they can serve me",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that a message can be written"
+            },
+            {
+              "description": "Verify that message is sent"
+            }
+          ]
+        },
+        {
+          "role": "agency admin",
+          "action": "invite a team member",
+          "result": "I can keep the team up to date",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agency admin",
+          "action": "manage agents on the team account",
+          "result": "I can keep the team up to date",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that team members can be added or removed"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "have my log in remembered",
+          "result": "I don't have to log in every time I go to the web app",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agent",
+          "action": "log in to my agency team account",
+          "result": "I can serve my customers",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that email and password are authenticated"
+            }
+          ]
+        },
+        {
+          "role": "agency admin",
+          "action": "manage the team account",
+          "result": "I can keep everything up to date",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agent",
+          "action": "see a list of all my customer's message threads",
+          "result": "I can easily manage them",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agent",
+          "action": "sign up to my agency team account",
+          "result": "I can start serving customers",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that name and password are collected"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "manage my account profile",
+          "result": "I can keep my profile up to date",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that name, email, and password can be updated"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "have an introduction to the app",
+          "result": "I know what to do my first time",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "have my app experience personalized with my assigned agent",
+          "result": "I can remember that there's an agent looking out for me",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that assigned agent name appears"
+            },
+            {
+              "description": "Verify that image of assigned agent is displayed"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "stay logged in",
+          "result": "I don't have to keep logging in every time I open the app",
+          "estimated_points": 2,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that User remains logged in"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "send car options to my customers",
+          "result": "they can choose which car they want to rent",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agent",
+          "action": "see my customers profile",
+          "result": "I can see their details ",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agency admin",
+          "action": "sign up for LC",
+          "result": "I can create a team account and start providing a better service to my customers",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that team name, email, password, and agent name is collected"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "log in with my credentials",
+          "result": "can continue enjoying the benefits of using the app",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that Email and Password are authenticated"
+            },
+            {
+              "description": "Verify that email and password can be submitted"
+            },
+            {
+              "description": "Verify that if Email and Password are incorrect, an error is communicated"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "see the weather forecast for my trip",
+          "result": "I can know what to pack and wear",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "visually see car options",
+          "result": "I can choose what I want to book",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that make, model, rental agency name, description and total cost is displayed"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "receive app notifications",
+          "result": "I can stay up to date on messages from my agent and be reminded of any updates ",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that notifications are sent when message from agent is received, new itinerary item is added, and itinerary item is updated"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "see my message history with my customer",
+          "result": "I can remember everything I talked about with my customer",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that messages are stored"
+            },
+            {
+              "description": "Verify that historical messages are viewable by agent"
+            }
+          ]
+        },
+        {
+          "role": "customer",
+          "action": "see my message history with my agent",
+          "result": "I can remember everything I talked about with my agent",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that messages are stored"
+            },
+            {
+              "description": "Verify that historical messages are viewable by customer"
+            }
+          ]
+        },
+        {
+          "role": "agency admin",
+          "action": "send a customer an invite",
+          "result": "the customer can start enjoying the benefits of the app",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agency admin",
+          "action": "receive an invite request from a customer",
+          "result": "I can review and send the customer an invite",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agency admin",
+          "action": "assign a customer to an agent",
+          "result": "the customer can be taken care of.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "agent",
+          "action": "manage my account profile",
+          "result": "I can keep my profile up to date",
+          "estimated_points": 2,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that name and password can be changed"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "receive notifications",
+          "result": "I can know when my customer is reaching out to me",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that notification is sent to agent when a message from customer is received"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "send flight options to my customer",
+          "result": "they can choose which flight they want to book",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "visually see hotel options",
+          "result": "I can choose what I want to book",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that photo of hotel, name, description, benefits, location, and total cost are displayed"
+            }
+          ]
+        },
+        {
+          "role": "customer ",
+          "action": "see my most up to date flight's stats",
+          "result": "I can be aware of any changes",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "customer",
+          "action": "call my agency",
+          "result": "I can get helped out",
+          "estimated_points": 2,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that call reaches an agent"
+            }
+          ]
+        },
+        {
+          "role": "agent",
+          "action": "send hotel options to my customers",
+          "result": "they can choose which hotel they want to book",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Promptchal",
+      "favorite": false,
+      "velocity": 10,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "new user",
+          "action": "accept Terms and Conditions of the app",
+          "result": "I know where I am liable",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "view general analytics",
+          "result": "I understand usage of the app",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "change my info",
+          "result": "I can update my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view my fb friends who use this app",
+          "result": "I can see my community",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "create a profile",
+          "result": "I can have a digital presence in the app",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "be notified when I've won a challenge",
+          "result": "I can informed of it",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "be able to manage my notification preferences",
+          "result": "I can have the app meet my needs",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "sign out",
+          "result": "I can change users",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "delete my account",
+          "result": "I can opt out",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "registered user",
+          "action": "stay logged in",
+          "result": "I don't have to sign-in with every use.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "log in using facebook",
+          "result": "I can register in the app",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "provide a password",
+          "result": "I can create an account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "provide my username",
+          "result": "I can create an account",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "sign up using email",
+          "result": "I can register in the app",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "store account info",
+          "result": "I can archive user data",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see who has declined and pending",
+          "result": "I can see who is not or has not yet accepted",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "manage accounts",
+          "result": "I can quality control",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "vistior",
+          "action": "click to the iTunes store",
+          "result": "I can choose to download it",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "visitor",
+          "action": "learn about the app",
+          "result": "I can choose to download it",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "decline a pending challenge",
+          "result": "I can remove it",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "accept a pending challenge",
+          "result": "I join it",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view the invited members of a pending challenge",
+          "result": "I can choose to participate",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view the active members of a pending challenge",
+          "result": "I can choose to participate",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view a preview instructional video from the creator of a pending challenge",
+          "result": "I can choose to participate",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "I should be able to see the details of a pending challenge",
+          "result": "I can choose to participate",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view all of my pending challenges",
+          "result": "I can choose to participate",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "a landing page the communicates the app",
+          "result": "I understand the brand and service",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "see 3-5 tutorial screens",
+          "result": "I can learn how it works",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "caption a submission",
+          "result": "I can compete in a challenge",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "add a profile picture",
+          "result": "I have a digital page",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "the contests I've created",
+          "result": "I can view my activity",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "viewer",
+          "action": "can only view my username ",
+          "result": "I can have privacy ",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "be notified when I have been invited to a new challenge",
+          "result": "I can be informed of it",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "be notified when people have liked my submission to a challenge",
+          "result": "I can learn of my progress",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": " click on notifications so",
+          "result": "I can return to the app",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "be notified when people have joined my challenge",
+          "result": "I can learn of it's progress",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "invite my friends through facebook",
+          "result": "I can add members to the challenge",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "submit the first submission",
+          "result": "I can start a challenge",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "set the rounds",
+          "result": "I can set the structure of the challenge",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "set the challenge type",
+          "result": "I can set the structure of the challenge",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "create an instructional preview video",
+          "result": "I can explain the challenge",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "create a challenge",
+          "result": "I can contribute to the app",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "message members of the challenge",
+          "result": "we can all communicate",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "create and edit video/picture content of a challenge (to my Prompchal profile or other social medias)",
+          "result": "can share my experiences",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": " share my own video/picture content on social medias",
+          "result": "I can share my experiences",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "vote for a re-challenge",
+          "result": "I can get revenge",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "like one submission in each trial",
+          "result": "my vote only is counted once for each trial",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "submit voice over recordings over the visual content",
+          "result": "I can compete in a challenge",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "submit photos",
+          "result": "I can compete in a challenge",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "not be able like my own submissions",
+          "result": "I cannot vote for myself",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": " upon finishing a challenge, be able to delete it",
+          "result": "I can focus on what's current and 'live'",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "submit to a current challenge",
+          "result": "I can win a challenge",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see what members are inactive",
+          "result": "I can see who no longer is able to win the challenge",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see what members are active",
+          "result": "I can see who remains to win the challenge",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see all members of the challenge and their submissions",
+          "result": "I can see all participant activity",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "like a user's submission",
+          "result": "I can vote for it",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see all of the current submissions in the challenge",
+          "result": "I can see what others have done",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see the details of a current challenge",
+          "result": "I can learn about the challenge",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view a preview instructional video from the creator of a current challenge",
+          "result": "I can see how to play",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view all of my current challenges",
+          "result": "I can see what I'm participating in",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "submit videos",
+          "result": "I can compete in a challenge",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "be able to upload ads with redirection links",
+          "result": "I can promote other companies/Apps",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "see who has accepted the challenge",
+          "result": "I can see who will contribute",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "click on a link to the website",
+          "result": "I can learn more",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "recieve an e-mail with a link which must be activated",
+          "result": "I can verify my email and complete the sign up.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "accept the App using my location",
+          "result": " it can be used in challenges",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "registered user",
+          "action": "be able to use fingers scanner",
+          "result": "I can protect my account",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "My Test Project",
+      "favorite": true,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "coco",
+          "action": "coqc",
+          "result": "df",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "coco",
+          "action": "coco",
+          "result": "coco",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "user",
+          "result": "user",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "browse the site",
+          "result": "i can check things out",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "aa"
+            },
+            {
+              "description": "ac"
+            },
+            {
+              "description": "aaa"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "other",
+          "result": "other",
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Salesphase",
+      "favorite": false,
+      "velocity": 10,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "to be able to edit the information I have provided the app",
+          "result": "I can make the questions as accurate as possible",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to view a report based on all of my deals",
+          "result": "I can learn about my abilities overall",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "the website to link to the itunes app store",
+          "result": "I can download the app",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view FAQ on the website ",
+          "result": "I can learn about the app",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "view tutorials on the website",
+          "result": "I can learn about the app",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to discover the product on a website",
+          "result": "I can learn about the app",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "the report to link to a webpage ",
+          "result": "I can view more info",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "the report to educate me",
+          "result": "I can improve my skills",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "the report to provide advice and suggestions ",
+          "result": "I can orchestrate the deal better",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "the report to provide a shape based off my answers",
+          "result": "I understand the shape of the deal",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "the report to provide me with insights based on my answers",
+          "result": "I understand the deal in detail",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to view a report on a deal",
+          "result": "I can learn more about my deal",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "the app to re-ask unanswered questions  ",
+          "result": "I can provide more info on the deal as it develops",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "the experience to always feel consistent",
+          "result": "I can master the app quickly",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "the app to use my user input (names, places, people) in it questions",
+          "result": "the service can feel personalized",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to know when I answered a particular question",
+          "result": "I can see the deal's evolution",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to respond to a questions using voice activiation",
+          "result": "I can use the app hands free",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to play the question asked",
+          "result": "I can use the app without reading it",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user ",
+          "action": "to be able to remove a deal",
+          "result": "I can manage my list of deals",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to see a list of my deals",
+          "result": "I can open up a particular deal.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to view my previous questions and answers to questions",
+          "result": "I can view or change them",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to import my contacts from my contacts list for a deal",
+          "result": "the app can be 'smarter'",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to add a new deal",
+          "result": "I can start answer questions about it",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to provide the app info and details about my deals",
+          "result": "the app can store that info and get 'smarter'",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to answer as many or as little questions as I want ",
+          "result": "I can use the app on my terms",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "User",
+          "action": "immediately start answering questions",
+          "result": "I can understand the shape of my deal",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "to see a splash page",
+          "result": "I understand the brand",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to change my username",
+          "result": "I can change my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "stay logged in",
+          "result": "I only need to sign up once",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "new user",
+          "action": "be provided a unique user name",
+          "result": "I can get started",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Taxi Hailing App",
+      "favorite": true,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "to be able to request the luxury tier",
+          "result": "I can ride in comfort and style",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that luxury tier is available anywhere when I need it"
+            }
+          ]
+        },
+        {
+          "role": "user,",
+          "action": "to add a different credit card than the one I added during registration",
+          "result": "I can use a different method if I need to do so.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see my past history of rides I have taken",
+          "result": "I can track expenses and remember what I prefer.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select a location for home",
+          "result": "I can select it quickly when requesting a ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to confirm my request for a vehicle",
+          "result": "Uber will send my car.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to cancel the reqest for a car",
+          "result": "I can change my mind if necessary.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to add my mobile phone number",
+          "result": "my driver can contact me about my ride.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to user my phone's camera to take a picture of my credit card",
+          "result": "I don't have to type in the information.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my account",
+          "result": "I can change my information.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my email",
+          "result": "I can update it if it has changed.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to put in the location I wish to travel to ",
+          "result": "I can request a vehicle.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see where the car is in relation to me",
+          "result": "I have an idea of how far it is from me.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to update my picture",
+          "result": "a picture shows on my profile.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my mobile number",
+          "result": "drivers can call the correct number to reach me.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to add my credit card",
+          "result": "I can pay for my ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to sign up for an account using my email",
+          "result": "I can request a ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to locate the user through geolocation",
+          "result": "I can show them if there are any available cars in their area.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to send a verification code to a newly registered user",
+          "result": "I can make sure they are not a spammer/scammer.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to give feedback to my driver",
+          "result": "they are aware of my experience with the driver.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to view the receipt when the ride is completed",
+          "result": "I know how much is being charged to my payment method.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to send promotion codes to other users",
+          "result": "I can get a free ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": " to see how many cars are available near me",
+          "result": "I can plan my trip.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to calculate the price of a route based on mileage and pricing",
+          "result": "the passenger can see the estimates for their route.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to enter rates based on system demand",
+          "result": "I can properly estimate the price for a trip.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select text messages to receive information about my ride",
+          "result": "I can receive information quickly.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to calculate the ideal route between the start and end of a trip",
+          "result": "I can calculate mileage.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to input the verification code sent to me",
+          "result": "I can use the service.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to click on a specific ride",
+          "result": "I can view the receipt from it.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to download the application",
+          "result": "I can request a car.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see how much time it will take for the car to reach me",
+          "result": "I am ready to go when it arrives.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see who my driver will be",
+          "result": "I can view their information and feedback.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to send the user an email to verify their email address when it is added or updated in the system",
+          "result": "I can be sure they are a real person.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to enter promotion codes I have received",
+          "result": "I can get a free ride.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see the route that will be taken between my pickup and my destination",
+          "result": "I can see what the cost is based on.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to access my settings ",
+          "result": "I can change or update information.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see the full list of notifications that I have received within the app",
+          "result": "I do not miss anything that has been sent to me.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select whether to allow push notifications",
+          "result": "I can receive information quickly.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to use an image of a credit card to acquire the needed credit card information for payment",
+          "result": "the payment can go through when a user requests a ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to enter my password to verify access to my settings ",
+          "result": "I can update my information.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to cancel out of editing my profile",
+          "result": "I do not make any changes I don't want or need to.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my name",
+          "result": "I can change it to whatever I need it to be.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to retrieve my password",
+          "result": "I can verify my account information.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select a location for work",
+          "result": "I can select it quickly when requesting a ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to get help",
+          "result": "I can resolve any issues I might have.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "MPR",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": []
+    }
+  ]
+}

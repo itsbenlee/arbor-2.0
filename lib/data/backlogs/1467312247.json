@@ -1,0 +1,4177 @@
+{
+  "email": "napoleon.martinez@neonroots.com",
+  "full_name": "Napoleon Martinez",
+  "projects": [
+    {
+      "name": "LaZZy",
+      "favorite": false,
+      "velocity": 10,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "learn about LaZZy",
+          "result": "I can be motivated to sign up",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view LaZZy's Terms \\u0026 Conditions",
+          "result": "I know what I am agreeing to",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to sign up for LaZZy with my email",
+          "result": "I can create an account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to select my school",
+          "result": "I can be placed in the correct network",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to verify my account with my school email",
+          "result": "LaZZy can verify that I'm an actual student",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to set up my profile details",
+          "result": "my correct information can be displayed",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to set up my payment information",
+          "result": "I can pay and be paid",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to log in to LaZZy",
+          "result": "I can access my account",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to reset my password",
+          "result": "if I forget my current password, I can regain access to my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be reminded that there's working users available to help me out",
+          "result": "I can be motivated to request help",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "lazy user",
+          "action": "to see which tasks are available for Now or Tomorrow",
+          "result": "I can request help on the right task",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "lazy user",
+          "action": "to select a task",
+          "result": "I can request help from someone",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "lazy user",
+          "action": "to set the details for my task request",
+          "result": "whoever helps me with my task receives all the right information",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "lazy user",
+          "action": "to book my requested task and pay",
+          "result": "it can queued up in the task feed",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be notified when there's a batch of new requests",
+          "result": "I can be motivated to help out as a working user",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "working user",
+          "action": "to view all the requests in the task list",
+          "result": "I can see what lazy users need help with",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "working user",
+          "action": "to see details on a request",
+          "result": "I can decide whether to help with it or not",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "working user",
+          "action": "commit to a request in the task list",
+          "result": "I can work on it and get paid",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "lazy user",
+          "action": "to be notified when a working user has committed to my request",
+          "result": "I can know I will be getting help with my task",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "working user",
+          "action": "to see a list of all the tasks I've committed to",
+          "result": "I can keep track of them and my messages with the lazy users",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "lazy user",
+          "action": "to see a list of all the tasks I've requested help with",
+          "result": "I can keep track of them and the messages with the working users",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "working user",
+          "action": "to be reminded of a tomorrow task",
+          "result": "I can accomplish my commitment",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "working user",
+          "action": "to be able to communicate with a lazy user",
+          "result": "I can communicate with them while helping them out",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "lazy user",
+          "action": "to communicate with a working user",
+          "result": "I can communicate with them while they're helping me out",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to receive a notification when I receive a new message",
+          "result": "I can stay on top of my communication",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "working user",
+          "action": "to mark a task as complete",
+          "result": "engagement is finalized",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "lazy user",
+          "action": "to be notified when my request has been completed",
+          "result": "I can know that I have one less thing to do",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "lazy user",
+          "action": "to rate my experience with my working user",
+          "result": "LaZZy can maintain a network of great users",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "working user",
+          "action": "to rate my experience with my lazy user",
+          "result": "LaZZy can maintain a network of great users",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "working user",
+          "action": "to send out a status update",
+          "result": "I can notify lazy users of my availability and motivate them to request help",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "lazy user",
+          "action": "to receive a notification when a working user posts a status update",
+          "result": "I can be motivated to request a task",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to receive a notification when other users are requesting similar tasks to the task I made myself available for",
+          "result": "I can get a lead on them",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see an activity feed of all my alerts and notifications",
+          "result": "I can keep track of them",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to invite friends to LaZZy",
+          "result": "they can earn credit and I can earn credit too",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to redeem a code",
+          "result": "I can earn credit",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see my profile",
+          "result": "I can manage and update my details",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see my history",
+          "result": "I can keep track of all the tasks I've requested and helped in",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "worker user",
+          "action": "to set my task preferences",
+          "result": "I only see task requests for tasks I'm willing to do",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to set my notification preferences",
+          "result": "I only receive the type of notifications I want",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "log out from my account",
+          "result": "I'm no longer logged in",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin",
+          "action": "to manage school details and task details",
+          "result": "I can keep them up to date",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin",
+          "action": "to track data and view analytics",
+          "result": "I can stay informed about my users",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "AOE",
+      "favorite": false,
+      "velocity": 10,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "admin",
+          "action": "to manage categories, skills, and featured lists",
+          "result": "I can set up everything accordingly",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view the AOE blog",
+          "result": "I can catch up on company updates",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to contact AOE",
+          "result": "I can get help with whatever I need",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "log out from my account",
+          "result": "I'm no longer logged in",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to update my skills on my profile",
+          "result": "I can keep them up to date",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to update my profile details",
+          "result": "I can keep my profile up to date",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to change my password",
+          "result": "I can keep my account secure",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to update my account information",
+          "result": "I can keep it up to date",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see all my notifications",
+          "result": "I can make sure I'm caught up with all most recent activity",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to receive notifications",
+          "result": "I can be alerted of important activity",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to favorite a creator",
+          "result": "they can be added to my favorites list",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to earn badge rankings",
+          "result": "other users can see my expertise level on my profile",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "my availability to be displayed on my profile",
+          "result": "if I'm on a team currently, it shows that I'm not available",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see my own profile",
+          "result": "I can see my publicly available details",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to delete content I posted on a topic",
+          "result": "it no longer is available",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to delete a topic I created",
+          "result": "it no longer is available",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to only see topics related to a tag",
+          "result": "I can only browse topics I'm interested in",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see trending topics on forums",
+          "result": "I can be inspired and motivated to contribute",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see all recent topics on the forum",
+          "result": "I can see all the interesting conversations going on",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see related topics on public forums when viewing a topic",
+          "result": "I can be motivated to contribute in those other topics",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view the content posted by other users on a public forums",
+          "result": "I can enjoy the content and be motivated to contribute even more",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see the content on my private team forum",
+          "result": "I can see the conversation going on within my team",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to post a photo on a topic",
+          "result": "I can add content to a public forum or private forum I'm in",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to post a message on a topic",
+          "result": "I can contribute on a public forum or private team forum I'm in",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to create a topic on the public forum",
+          "result": "I can share and have other users contribute to it",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "accept or decline a project invite",
+          "result": "I'm either added or not into the project",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to manage the developers on my team",
+          "result": "I can maintain my private team forum",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to create a private team forum for my team",
+          "result": "we can contribute ideas and collaborate",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see similar developer recommendations on a user's profile",
+          "result": "I can view their profiles as well",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see what topics a user has contributed to on the public forums",
+          "result": "I can see what they're involved in",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to manually add a developer to my team",
+          "result": "I don't have to wait for them to be recommended to me",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see the details of a skill set",
+          "result": "I can understand what that skill set really means",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see a developer's profile",
+          "result": "I can see every detail available about them",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "request an extra recommendation for my team",
+          "result": "I can have a larger team",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to remove a recommended developer from my team",
+          "result": "I can trim down my team",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to swap a recommendation",
+          "result": "I can get a different developer recommended to me",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see a team of recommended developers",
+          "result": "I can form my team for my project",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to search for developers by filters and criteria",
+          "result": "I can have a team of developers recommended to me",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to search for developers by their name or skill set",
+          "result": "I can find a specific developer",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see featured topics from the public forum",
+          "result": "I can be motivated to contribute to them",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to reset my password",
+          "result": "if I forget my current password, I can regain access to my account",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to log in with Facebook",
+          "result": "I don't have to create an account with my email",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to log in with my email",
+          "result": "I can access my account",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to upload an image of myself to my profile",
+          "result": "it can be displayed on my profile",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to add my likes and interests",
+          "result": "other users can see them on my profile",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to set my skills",
+          "result": "they appear on my profile",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to set up my profile details",
+          "result": "my profile can be populated",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to sign up with my email",
+          "result": "I can create an account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to navigate across the site and it's different pages",
+          "result": "I can enjoy all parts of the site",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "learn about what AOE is about",
+          "result": "I can be motivated to sign up",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Taxi Hailing App",
+      "favorite": true,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "to be able to request the luxury tier",
+          "result": "I can ride in comfort and style",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that luxury tier is available anywhere when I need it"
+            }
+          ]
+        },
+        {
+          "role": "user,",
+          "action": "to add a different credit card than the one I added during registration",
+          "result": "I can use a different method if I need to do so.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see my past history of rides I have taken",
+          "result": "I can track expenses and remember what I prefer.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select a location for home",
+          "result": "I can select it quickly when requesting a ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to confirm my request for a vehicle",
+          "result": "Uber will send my car.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to cancel the reqest for a car",
+          "result": "I can change my mind if necessary.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to add my mobile phone number",
+          "result": "my driver can contact me about my ride.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to user my phone's camera to take a picture of my credit card",
+          "result": "I don't have to type in the information.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my account",
+          "result": "I can change my information.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my email",
+          "result": "I can update it if it has changed.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to put in the location I wish to travel to ",
+          "result": "I can request a vehicle.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see where the car is in relation to me",
+          "result": "I have an idea of how far it is from me.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to update my picture",
+          "result": "a picture shows on my profile.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my mobile number",
+          "result": "drivers can call the correct number to reach me.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to add my credit card",
+          "result": "I can pay for my ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to sign up for an account using my email",
+          "result": "I can request a ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to locate the user through geolocation",
+          "result": "I can show them if there are any available cars in their area.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to send a verification code to a newly registered user",
+          "result": "I can make sure they are not a spammer/scammer.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to give feedback to my driver",
+          "result": "they are aware of my experience with the driver.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to view the receipt when the ride is completed",
+          "result": "I know how much is being charged to my payment method.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to send promotion codes to other users",
+          "result": "I can get a free ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": " to see how many cars are available near me",
+          "result": "I can plan my trip.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to calculate the price of a route based on mileage and pricing",
+          "result": "the passenger can see the estimates for their route.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to enter rates based on system demand",
+          "result": "I can properly estimate the price for a trip.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select text messages to receive information about my ride",
+          "result": "I can receive information quickly.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to calculate the ideal route between the start and end of a trip",
+          "result": "I can calculate mileage.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to input the verification code sent to me",
+          "result": "I can use the service.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to click on a specific ride",
+          "result": "I can view the receipt from it.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to download the application",
+          "result": "I can request a car.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see how much time it will take for the car to reach me",
+          "result": "I am ready to go when it arrives.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see who my driver will be",
+          "result": "I can view their information and feedback.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to send the user an email to verify their email address when it is added or updated in the system",
+          "result": "I can be sure they are a real person.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to enter promotion codes I have received",
+          "result": "I can get a free ride.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see the route that will be taken between my pickup and my destination",
+          "result": "I can see what the cost is based on.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to access my settings ",
+          "result": "I can change or update information.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see the full list of notifications that I have received within the app",
+          "result": "I do not miss anything that has been sent to me.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select whether to allow push notifications",
+          "result": "I can receive information quickly.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to use an image of a credit card to acquire the needed credit card information for payment",
+          "result": "the payment can go through when a user requests a ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to enter my password to verify access to my settings ",
+          "result": "I can update my information.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to cancel out of editing my profile",
+          "result": "I do not make any changes I don't want or need to.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my name",
+          "result": "I can change it to whatever I need it to be.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to retrieve my password",
+          "result": "I can verify my account information.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select a location for work",
+          "result": "I can select it quickly when requesting a ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to get help",
+          "result": "I can resolve any issues I might have.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Taxi Hailing App",
+      "favorite": true,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "to be able to request the luxury tier",
+          "result": "I can ride in comfort and style",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that luxury tier is available anywhere when I need it"
+            }
+          ]
+        },
+        {
+          "role": "user,",
+          "action": "to add a different credit card than the one I added during registration",
+          "result": "I can use a different method if I need to do so.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see my past history of rides I have taken",
+          "result": "I can track expenses and remember what I prefer.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select a location for home",
+          "result": "I can select it quickly when requesting a ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to confirm my request for a vehicle",
+          "result": "Uber will send my car.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to cancel the reqest for a car",
+          "result": "I can change my mind if necessary.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to add my mobile phone number",
+          "result": "my driver can contact me about my ride.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to user my phone's camera to take a picture of my credit card",
+          "result": "I don't have to type in the information.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my account",
+          "result": "I can change my information.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my email",
+          "result": "I can update it if it has changed.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to put in the location I wish to travel to ",
+          "result": "I can request a vehicle.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see where the car is in relation to me",
+          "result": "I have an idea of how far it is from me.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to update my picture",
+          "result": "a picture shows on my profile.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my mobile number",
+          "result": "drivers can call the correct number to reach me.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to add my credit card",
+          "result": "I can pay for my ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to sign up for an account using my email",
+          "result": "I can request a ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to locate the user through geolocation",
+          "result": "I can show them if there are any available cars in their area.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to send a verification code to a newly registered user",
+          "result": "I can make sure they are not a spammer/scammer.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to give feedback to my driver",
+          "result": "they are aware of my experience with the driver.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to view the receipt when the ride is completed",
+          "result": "I know how much is being charged to my payment method.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to send promotion codes to other users",
+          "result": "I can get a free ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": " to see how many cars are available near me",
+          "result": "I can plan my trip.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to calculate the price of a route based on mileage and pricing",
+          "result": "the passenger can see the estimates for their route.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to enter rates based on system demand",
+          "result": "I can properly estimate the price for a trip.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select text messages to receive information about my ride",
+          "result": "I can receive information quickly.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to calculate the ideal route between the start and end of a trip",
+          "result": "I can calculate mileage.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to input the verification code sent to me",
+          "result": "I can use the service.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to click on a specific ride",
+          "result": "I can view the receipt from it.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to download the application",
+          "result": "I can request a car.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see how much time it will take for the car to reach me",
+          "result": "I am ready to go when it arrives.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see who my driver will be",
+          "result": "I can view their information and feedback.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to send the user an email to verify their email address when it is added or updated in the system",
+          "result": "I can be sure they are a real person.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to enter promotion codes I have received",
+          "result": "I can get a free ride.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see the route that will be taken between my pickup and my destination",
+          "result": "I can see what the cost is based on.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to access my settings ",
+          "result": "I can change or update information.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see the full list of notifications that I have received within the app",
+          "result": "I do not miss anything that has been sent to me.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select whether to allow push notifications",
+          "result": "I can receive information quickly.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to use an image of a credit card to acquire the needed credit card information for payment",
+          "result": "the payment can go through when a user requests a ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to enter my password to verify access to my settings ",
+          "result": "I can update my information.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to cancel out of editing my profile",
+          "result": "I do not make any changes I don't want or need to.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my name",
+          "result": "I can change it to whatever I need it to be.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to retrieve my password",
+          "result": "I can verify my account information.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select a location for work",
+          "result": "I can select it quickly when requesting a ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to get help",
+          "result": "I can resolve any issues I might have.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Sooo Lit! Draft",
+      "favorite": false,
+      "velocity": 10,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "brand",
+          "action": "to be able to see how well I'm performing compared to other brands",
+          "result": "I can strategize better",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to navigate through the app easily",
+          "result": "I can enjoy the features",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to know the best times to hire an influencer",
+          "result": "I can promote my products with a high conversions rate",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to dominate the market",
+          "result": "I can always be ahead of the competition",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to make more money",
+          "result": "I can keep my company open",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to have more loyal influencers",
+          "result": "I can see growing",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to have more feedback",
+          "result": "I can continue to improve my products",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to attract new consumers",
+          "result": "I can grow",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to reward the best customers",
+          "result": "they can tell their friends",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to have better data on users",
+          "result": "I can make better decisions",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to acquire as many followers as I can",
+          "result": "brands grow",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to communicate with other users",
+          "result": "I can get in contact with them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to know what's trending",
+          "result": "I know what to buy",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to look like a boss",
+          "result": "I can get more girls",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to post content",
+          "result": "I can earn some extra money",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to have a better profile then my friends",
+          "result": "I can feel better then them",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be rewarded for my loyalty to brands",
+          "result": "I can be soo lit and get free stuff",
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "A",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "s",
+          "action": "s",
+          "result": "s",
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Taxi Hailing App",
+      "favorite": true,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "to be able to request the luxury tier",
+          "result": "I can ride in comfort and style",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that luxury tier is available anywhere when I need it"
+            }
+          ]
+        },
+        {
+          "role": "user,",
+          "action": "to add a different credit card than the one I added during registration",
+          "result": "I can use a different method if I need to do so.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see my past history of rides I have taken",
+          "result": "I can track expenses and remember what I prefer.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select a location for home",
+          "result": "I can select it quickly when requesting a ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to confirm my request for a vehicle",
+          "result": "Uber will send my car.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to cancel the reqest for a car",
+          "result": "I can change my mind if necessary.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to add my mobile phone number",
+          "result": "my driver can contact me about my ride.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to user my phone's camera to take a picture of my credit card",
+          "result": "I don't have to type in the information.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my account",
+          "result": "I can change my information.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my email",
+          "result": "I can update it if it has changed.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to put in the location I wish to travel to ",
+          "result": "I can request a vehicle.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see where the car is in relation to me",
+          "result": "I have an idea of how far it is from me.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to update my picture",
+          "result": "a picture shows on my profile.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my mobile number",
+          "result": "drivers can call the correct number to reach me.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to add my credit card",
+          "result": "I can pay for my ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to sign up for an account using my email",
+          "result": "I can request a ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to locate the user through geolocation",
+          "result": "I can show them if there are any available cars in their area.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to send a verification code to a newly registered user",
+          "result": "I can make sure they are not a spammer/scammer.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to give feedback to my driver",
+          "result": "they are aware of my experience with the driver.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to view the receipt when the ride is completed",
+          "result": "I know how much is being charged to my payment method.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to send promotion codes to other users",
+          "result": "I can get a free ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": " to see how many cars are available near me",
+          "result": "I can plan my trip.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to calculate the price of a route based on mileage and pricing",
+          "result": "the passenger can see the estimates for their route.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to enter rates based on system demand",
+          "result": "I can properly estimate the price for a trip.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select text messages to receive information about my ride",
+          "result": "I can receive information quickly.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to calculate the ideal route between the start and end of a trip",
+          "result": "I can calculate mileage.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to input the verification code sent to me",
+          "result": "I can use the service.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to click on a specific ride",
+          "result": "I can view the receipt from it.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to download the application",
+          "result": "I can request a car.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see how much time it will take for the car to reach me",
+          "result": "I am ready to go when it arrives.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see who my driver will be",
+          "result": "I can view their information and feedback.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to send the user an email to verify their email address when it is added or updated in the system",
+          "result": "I can be sure they are a real person.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to enter promotion codes I have received",
+          "result": "I can get a free ride.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see the route that will be taken between my pickup and my destination",
+          "result": "I can see what the cost is based on.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to access my settings ",
+          "result": "I can change or update information.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see the full list of notifications that I have received within the app",
+          "result": "I do not miss anything that has been sent to me.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select whether to allow push notifications",
+          "result": "I can receive information quickly.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to use an image of a credit card to acquire the needed credit card information for payment",
+          "result": "the payment can go through when a user requests a ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to enter my password to verify access to my settings ",
+          "result": "I can update my information.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to cancel out of editing my profile",
+          "result": "I do not make any changes I don't want or need to.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my name",
+          "result": "I can change it to whatever I need it to be.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to retrieve my password",
+          "result": "I can verify my account information.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select a location for work",
+          "result": "I can select it quickly when requesting a ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to get help",
+          "result": "I can resolve any issues I might have.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Sooo Lit!",
+      "favorite": false,
+      "velocity": 10,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "influencer",
+          "action": "to see highlights about the product",
+          "result": "I can be motivated to sign up",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "to sign up with my email",
+          "result": "I can create an account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "to create my profile",
+          "result": "I can details about myself that will make it easier for brands to find me",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "to connect my social network accounts",
+          "result": "my social stats can be displayed on my profile",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "to see all my current requests from brands",
+          "result": "I can view new opportunities",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "to chat with a brand",
+          "result": "I can ask question I might have before I approve the request or while I'm working on a request I approved",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "to view a brands profile",
+          "result": "I can see a few details about them",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "I'm assuming that this will include the ui implementation for the brand profile"
+            }
+          ]
+        },
+        {
+          "role": "influencer",
+          "action": "to approve or ignore a request from a brand",
+          "result": "I can either start on a request I want or ignore one I don't want to work on",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "to see a current status on approved request",
+          "result": "I can stay current on all details",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that progress such as, acceptance, in progress, and completed is shown."
+            }
+          ]
+        },
+        {
+          "role": "influencer",
+          "action": "to mark a request as completed",
+          "result": "the brand can be notified that I've completed promoting the their product",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": " influencer",
+          "action": "to view my profile",
+          "result": "I can see what brands are seeing",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "to manage my profile",
+          "result": "I can keep it up to date",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "to see my history of completed requests",
+          "result": "I can keep everything on record",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "to manage my account details",
+          "result": "I can keep them up to date",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "to set my notification preferences",
+          "result": "I can set all notifications from app to my preference",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "to refer my friends to the app",
+          "result": "they can sign up and benefit from the app",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "to be able to get help on the app",
+          "result": "my needs or questions can be answered",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Assumes integration with external service"
+            }
+          ]
+        },
+        {
+          "role": "influencer",
+          "action": "log out from my account",
+          "result": "I'm no longer logged in",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "to log in with my email",
+          "result": "I can access my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "influencer",
+          "action": "to reset my password",
+          "result": "if I forget my current password, I can regain access to my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to see highlights about the product",
+          "result": "I can be motivated to sign up",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to sign up with my email",
+          "result": "I can create an account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to create my profile",
+          "result": "I can add details about my brand",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "see top performing influencers",
+          "result": "I can browse through them",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to filter through influencers",
+          "result": "I can find the right person for the job",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to view an influencers profile",
+          "result": "I can see more details about them",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "I assume this will include the profile view implementation"
+            }
+          ]
+        },
+        {
+          "role": "brand",
+          "action": "to send an influencer a request",
+          "result": "I can motivate them to promote my product",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to chat with an influencer",
+          "result": "I can answer any questions they might have while considering my request or while they're working on my request",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to see all my current sent requests",
+          "result": "I can keep an overview of all my requests",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to see the status update of my request",
+          "result": "I can stay current with its progress",
+          "estimated_points": 2,
+          "acceptance_criterions": [
+            {
+              "description": "Verify that progress such as, acceptance, in progress, and completed is shown."
+            }
+          ]
+        },
+        {
+          "role": "brand",
+          "action": "to rate my influencer's performance on my request",
+          "result": "other brands can see how well they do",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to favorite influencers",
+          "result": "I can easily have access to all the influencers I prefer",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to view my profile",
+          "result": "I can see what influencers are seeing",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to manage my profile",
+          "result": "I can keep it up to date",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to see my history of requests",
+          "result": "I can keep everything on record",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to manage my account details",
+          "result": "I can keep them up to date",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to set my notification preferences",
+          "result": "I can set all notifications to my preference",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to be able to get help on the app",
+          "result": "my needs or questions can be answered",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Assumes integration with external service"
+            }
+          ]
+        },
+        {
+          "role": "brand",
+          "action": "log out from my account",
+          "result": "I'm no longer logged in",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to log in with my email",
+          "result": "I can access my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "brand",
+          "action": "to reset my password",
+          "result": "if I forget my current password, I can regain access to my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin",
+          "action": "to be able to view metrics / analytics",
+          "result": "I can know how my app is performing",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Assumes very basic metrics from a service like Google Analytics or Mix Panel"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MyConfidant",
+      "favorite": false,
+      "velocity": 10,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "seeker",
+          "action": "to volunteer as a confidant",
+          "result": "I can earn more convos",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "ADMIN",
+          "action": "ADMIN",
+          "result": "ADMIN",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "to be able to message a/any Confidant",
+          "result": "I can quality control the app",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "to terminate any account",
+          "result": "I can manage the app",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "Admin",
+          "action": "to view all Confidant info",
+          "result": "I can manage the app",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "CONFIDANT ACCOUNT",
+          "action": "CONFIDANT ACCOUNT",
+          "result": "CONFIDANT ACCOUNT",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to report abuse",
+          "result": "I can quality control the app",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "confidant",
+          "action": "to be able to cash out",
+          "result": "I can make money",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "confidant",
+          "action": "to provide a bank account",
+          "result": "I can make money",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "confidant",
+          "action": "see my rating",
+          "result": "I can get feedback",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "confidant",
+          "action": "to put a short experience description",
+          "result": "I can give more info about me",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "confidant",
+          "action": "enter my username",
+          "result": "I can build a profile",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "confidant",
+          "action": "to set up an account",
+          "result": "I can start working",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "PAYMENT",
+          "action": "PAYMENT",
+          "result": "PAYMENT",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "seeker",
+          "action": "provide a paypal account",
+          "result": "I purchase more convos",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "seeker",
+          "action": "to provide a bank card",
+          "result": "I can purchase more convos",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "MESSAGING",
+          "action": "MESSAGING",
+          "result": "MESSAGING",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "seeker",
+          "action": "to be able to report a confidant",
+          "result": "I can help quality control an app",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "seeker",
+          "action": "to be able to review my confidant after a convo",
+          "result": "I can help quality control an app",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "seeker",
+          "action": "to see expired convos with confidants",
+          "result": "I can choose to purchase more convos from a confidant ",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "seeker",
+          "action": "to see all of my convos",
+          "result": "I can see my different confidant relationships",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "seeker",
+          "action": "be able to purchase more convos",
+          "result": "I can extend my conversation with my Confidant at any time",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "seeker",
+          "action": "to be able to create a new request",
+          "result": "I can have multiple confidants",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "seeker",
+          "action": "to understand my free consultation",
+          "result": "I understand the messaging service",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "seeker",
+          "action": "to message my confidant",
+          "result": "I can begin my relationship",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "MATCHING",
+          "action": "MATCHING",
+          "result": "MATCHING",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "confidant",
+          "action": "Only see current available requests",
+          "result": "I can be the first to to take the job",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "confidant",
+          "action": "to see the info provided by the Seeker",
+          "result": "I can choose to start working on them",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "confidant",
+          "action": "to see a list of Seeker requests so that I can choose a Seeker",
+          "result": "to start working with them",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "seeker",
+          "action": "to see my Confidant's rating",
+          "result": "I can learn about them",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "seeker",
+          "action": "to enter a referral code",
+          "result": "I can be matched to a particular Confidant",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "seeker",
+          "action": "to see a profile of the Confidant I've been matched with",
+          "result": "I can start my relationship",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "SET MY NEEDS",
+          "action": "SET MY NEEDS",
+          "result": "SET MY NEEDS",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "seeker",
+          "action": "set who I want to speak with",
+          "result": "I can get a confidant that meets my needs",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "seeker",
+          "action": "the option to select my sexual identity",
+          "result": "I can provide my Confidant with info",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "seeker",
+          "action": "the option to select my gender identity",
+          "result": "I can provide my Confidant with info",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "seeker",
+          "action": "provide a brief description of my topic",
+          "result": "I can provide my Confidant with info",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "seeker",
+          "action": "set my needs",
+          "result": "I can be matched with a Confidant",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "SIGN UP",
+          "action": "SIGN UP",
+          "result": "SIGN UP",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "agree to terms and services",
+          "result": "I understand the legalities of the app",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see a splash page that displays the brand's messaging and logo",
+          "result": "I can understand the brand",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "seeker",
+          "action": "sign up using mobile sign in",
+          "result": "I can not disclose other personal info",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "WEBSITE",
+          "action": "WEBSITE",
+          "result": "WEBSITE",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "seeker",
+          "action": "to see tutorials",
+          "result": "I can learn features of the app",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "seeker",
+          "action": "to see a list of topics and questions",
+          "result": "I can learn more about an issue",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "seeker",
+          "action": "to view a news feed curated by the app",
+          "result": "I can learn about topics and stories",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "seeker",
+          "action": "find the website through google adwords",
+          "result": "I can learn more",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "seeker",
+          "action": "be linked to the app store from the website",
+          "result": "I can decide to download it",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "seeker",
+          "action": "learn how it works on the website",
+          "result": "I can decide to download it",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "seeker",
+          "action": "to discover the product on a website",
+          "result": "I can decide to download it",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Yo",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": []
+    },
+    {
+      "name": "Taxi Hailing App",
+      "favorite": true,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "to be able to request the luxury tier",
+          "result": "I can ride in comfort and style",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that luxury tier is available anywhere when I need it"
+            }
+          ]
+        },
+        {
+          "role": "user,",
+          "action": "to add a different credit card than the one I added during registration",
+          "result": "I can use a different method if I need to do so.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see my past history of rides I have taken",
+          "result": "I can track expenses and remember what I prefer.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select a location for home",
+          "result": "I can select it quickly when requesting a ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to confirm my request for a vehicle",
+          "result": "Uber will send my car.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to cancel the reqest for a car",
+          "result": "I can change my mind if necessary.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to add my mobile phone number",
+          "result": "my driver can contact me about my ride.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to user my phone's camera to take a picture of my credit card",
+          "result": "I don't have to type in the information.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my account",
+          "result": "I can change my information.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my email",
+          "result": "I can update it if it has changed.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to put in the location I wish to travel to ",
+          "result": "I can request a vehicle.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see where the car is in relation to me",
+          "result": "I have an idea of how far it is from me.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to update my picture",
+          "result": "a picture shows on my profile.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my mobile number",
+          "result": "drivers can call the correct number to reach me.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to add my credit card",
+          "result": "I can pay for my ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to sign up for an account using my email",
+          "result": "I can request a ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to locate the user through geolocation",
+          "result": "I can show them if there are any available cars in their area.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to send a verification code to a newly registered user",
+          "result": "I can make sure they are not a spammer/scammer.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to give feedback to my driver",
+          "result": "they are aware of my experience with the driver.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to view the receipt when the ride is completed",
+          "result": "I know how much is being charged to my payment method.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to send promotion codes to other users",
+          "result": "I can get a free ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": " to see how many cars are available near me",
+          "result": "I can plan my trip.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to calculate the price of a route based on mileage and pricing",
+          "result": "the passenger can see the estimates for their route.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to enter rates based on system demand",
+          "result": "I can properly estimate the price for a trip.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select text messages to receive information about my ride",
+          "result": "I can receive information quickly.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to calculate the ideal route between the start and end of a trip",
+          "result": "I can calculate mileage.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to input the verification code sent to me",
+          "result": "I can use the service.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to click on a specific ride",
+          "result": "I can view the receipt from it.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to download the application",
+          "result": "I can request a car.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see how much time it will take for the car to reach me",
+          "result": "I am ready to go when it arrives.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see who my driver will be",
+          "result": "I can view their information and feedback.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to send the user an email to verify their email address when it is added or updated in the system",
+          "result": "I can be sure they are a real person.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to enter promotion codes I have received",
+          "result": "I can get a free ride.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see the route that will be taken between my pickup and my destination",
+          "result": "I can see what the cost is based on.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to access my settings ",
+          "result": "I can change or update information.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see the full list of notifications that I have received within the app",
+          "result": "I do not miss anything that has been sent to me.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select whether to allow push notifications",
+          "result": "I can receive information quickly.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to use an image of a credit card to acquire the needed credit card information for payment",
+          "result": "the payment can go through when a user requests a ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to enter my password to verify access to my settings ",
+          "result": "I can update my information.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to cancel out of editing my profile",
+          "result": "I do not make any changes I don't want or need to.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my name",
+          "result": "I can change it to whatever I need it to be.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to retrieve my password",
+          "result": "I can verify my account information.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select a location for work",
+          "result": "I can select it quickly when requesting a ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to get help",
+          "result": "I can resolve any issues I might have.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "123",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "new user",
+          "action": "to understand extra benifits",
+          "result": "I can make a decision on whether to upgrade.",
+          "estimated_points": 13,
+          "acceptance_criterions": [
+            {
+              "description": "1. Must do this. "
+            },
+            {
+              "description": "2. Must do that. "
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Taxi Hailing App",
+      "favorite": true,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "to be able to request the luxury tier",
+          "result": "I can ride in comfort and style",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that luxury tier is available anywhere when I need it"
+            }
+          ]
+        },
+        {
+          "role": "user,",
+          "action": "to add a different credit card than the one I added during registration",
+          "result": "I can use a different method if I need to do so.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see my past history of rides I have taken",
+          "result": "I can track expenses and remember what I prefer.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select a location for home",
+          "result": "I can select it quickly when requesting a ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to confirm my request for a vehicle",
+          "result": "Uber will send my car.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to cancel the reqest for a car",
+          "result": "I can change my mind if necessary.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to add my mobile phone number",
+          "result": "my driver can contact me about my ride.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to user my phone's camera to take a picture of my credit card",
+          "result": "I don't have to type in the information.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my account",
+          "result": "I can change my information.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my email",
+          "result": "I can update it if it has changed.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to put in the location I wish to travel to ",
+          "result": "I can request a vehicle.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see where the car is in relation to me",
+          "result": "I have an idea of how far it is from me.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to update my picture",
+          "result": "a picture shows on my profile.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my mobile number",
+          "result": "drivers can call the correct number to reach me.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to add my credit card",
+          "result": "I can pay for my ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to sign up for an account using my email",
+          "result": "I can request a ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to locate the user through geolocation",
+          "result": "I can show them if there are any available cars in their area.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to send a verification code to a newly registered user",
+          "result": "I can make sure they are not a spammer/scammer.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to give feedback to my driver",
+          "result": "they are aware of my experience with the driver.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to view the receipt when the ride is completed",
+          "result": "I know how much is being charged to my payment method.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to send promotion codes to other users",
+          "result": "I can get a free ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": " to see how many cars are available near me",
+          "result": "I can plan my trip.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to calculate the price of a route based on mileage and pricing",
+          "result": "the passenger can see the estimates for their route.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to enter rates based on system demand",
+          "result": "I can properly estimate the price for a trip.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select text messages to receive information about my ride",
+          "result": "I can receive information quickly.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to calculate the ideal route between the start and end of a trip",
+          "result": "I can calculate mileage.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to input the verification code sent to me",
+          "result": "I can use the service.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to click on a specific ride",
+          "result": "I can view the receipt from it.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to download the application",
+          "result": "I can request a car.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see how much time it will take for the car to reach me",
+          "result": "I am ready to go when it arrives.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see who my driver will be",
+          "result": "I can view their information and feedback.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to send the user an email to verify their email address when it is added or updated in the system",
+          "result": "I can be sure they are a real person.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to enter promotion codes I have received",
+          "result": "I can get a free ride.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see the route that will be taken between my pickup and my destination",
+          "result": "I can see what the cost is based on.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to access my settings ",
+          "result": "I can change or update information.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see the full list of notifications that I have received within the app",
+          "result": "I do not miss anything that has been sent to me.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select whether to allow push notifications",
+          "result": "I can receive information quickly.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to use an image of a credit card to acquire the needed credit card information for payment",
+          "result": "the payment can go through when a user requests a ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to enter my password to verify access to my settings ",
+          "result": "I can update my information.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to cancel out of editing my profile",
+          "result": "I do not make any changes I don't want or need to.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my name",
+          "result": "I can change it to whatever I need it to be.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to retrieve my password",
+          "result": "I can verify my account information.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select a location for work",
+          "result": "I can select it quickly when requesting a ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to get help",
+          "result": "I can resolve any issues I might have.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Taxi Hailing App",
+      "favorite": false,
+      "velocity": null,
+      "is_template": true,
+      "user_stories": [
+        {
+          "role": "user,",
+          "action": "to see the route that will be taken between my pickup and my destination",
+          "result": "I can see what the cost is based on.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to access my settings ",
+          "result": "I can change or update information.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see the full list of notifications that I have received within the app",
+          "result": "I do not miss anything that has been sent to me.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select whether to allow push notifications",
+          "result": "I can receive information quickly.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to use an image of a credit card to acquire the needed credit card information for payment",
+          "result": "the payment can go through when a user requests a ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to enter my password to verify access to my settings ",
+          "result": "I can update my information.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to cancel out of editing my profile",
+          "result": "I do not make any changes I don't want or need to.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my name",
+          "result": "I can change it to whatever I need it to be.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to retrieve my password",
+          "result": "I can verify my account information.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select a location for work",
+          "result": "I can select it quickly when requesting a ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to get help",
+          "result": "I can resolve any issues I might have.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to request the luxury tier",
+          "result": "I can ride in comfort and style",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that luxury tier is available anywhere when I need it"
+            }
+          ]
+        },
+        {
+          "role": "user,",
+          "action": "to add a different credit card than the one I added during registration",
+          "result": "I can use a different method if I need to do so.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see my past history of rides I have taken",
+          "result": "I can track expenses and remember what I prefer.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select a location for home",
+          "result": "I can select it quickly when requesting a ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to confirm my request for a vehicle",
+          "result": "Uber will send my car.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to cancel the reqest for a car",
+          "result": "I can change my mind if necessary.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to add my mobile phone number",
+          "result": "my driver can contact me about my ride.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to user my phone's camera to take a picture of my credit card",
+          "result": "I don't have to type in the information.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my account",
+          "result": "I can change my information.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my email",
+          "result": "I can update it if it has changed.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to put in the location I wish to travel to ",
+          "result": "I can request a vehicle.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see where the car is in relation to me",
+          "result": "I have an idea of how far it is from me.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to update my picture",
+          "result": "a picture shows on my profile.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my mobile number",
+          "result": "drivers can call the correct number to reach me.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to add my credit card",
+          "result": "I can pay for my ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to sign up for an account using my email",
+          "result": "I can request a ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to locate the user through geolocation",
+          "result": "I can show them if there are any available cars in their area.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to send a verification code to a newly registered user",
+          "result": "I can make sure they are not a spammer/scammer.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to give feedback to my driver",
+          "result": "they are aware of my experience with the driver.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to view the receipt when the ride is completed",
+          "result": "I know how much is being charged to my payment method.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to send promotion codes to other users",
+          "result": "I can get a free ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": " to see how many cars are available near me",
+          "result": "I can plan my trip.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to calculate the price of a route based on mileage and pricing",
+          "result": "the passenger can see the estimates for their route.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to enter rates based on system demand",
+          "result": "I can properly estimate the price for a trip.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select text messages to receive information about my ride",
+          "result": "I can receive information quickly.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to calculate the ideal route between the start and end of a trip",
+          "result": "I can calculate mileage.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to input the verification code sent to me",
+          "result": "I can use the service.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to click on a specific ride",
+          "result": "I can view the receipt from it.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to download the application",
+          "result": "I can request a car.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see how much time it will take for the car to reach me",
+          "result": "I am ready to go when it arrives.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see who my driver will be",
+          "result": "I can view their information and feedback.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to send the user an email to verify their email address when it is added or updated in the system",
+          "result": "I can be sure they are a real person.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to enter promotion codes I have received",
+          "result": "I can get a free ride.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Taxi Hailing App",
+      "favorite": true,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "to be able to request the luxury tier",
+          "result": "I can ride in comfort and style",
+          "acceptance_criterions": [
+            {
+              "description": "Verify that luxury tier is available anywhere when I need it"
+            }
+          ]
+        },
+        {
+          "role": "user,",
+          "action": "to add a different credit card than the one I added during registration",
+          "result": "I can use a different method if I need to do so.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see my past history of rides I have taken",
+          "result": "I can track expenses and remember what I prefer.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select a location for home",
+          "result": "I can select it quickly when requesting a ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to confirm my request for a vehicle",
+          "result": "Uber will send my car.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to cancel the reqest for a car",
+          "result": "I can change my mind if necessary.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to add my mobile phone number",
+          "result": "my driver can contact me about my ride.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to user my phone's camera to take a picture of my credit card",
+          "result": "I don't have to type in the information.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my account",
+          "result": "I can change my information.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my email",
+          "result": "I can update it if it has changed.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to put in the location I wish to travel to ",
+          "result": "I can request a vehicle.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see where the car is in relation to me",
+          "result": "I have an idea of how far it is from me.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to update my picture",
+          "result": "a picture shows on my profile.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my mobile number",
+          "result": "drivers can call the correct number to reach me.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to add my credit card",
+          "result": "I can pay for my ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to sign up for an account using my email",
+          "result": "I can request a ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to locate the user through geolocation",
+          "result": "I can show them if there are any available cars in their area.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to send a verification code to a newly registered user",
+          "result": "I can make sure they are not a spammer/scammer.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to give feedback to my driver",
+          "result": "they are aware of my experience with the driver.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to view the receipt when the ride is completed",
+          "result": "I know how much is being charged to my payment method.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to send promotion codes to other users",
+          "result": "I can get a free ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": " to see how many cars are available near me",
+          "result": "I can plan my trip.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to calculate the price of a route based on mileage and pricing",
+          "result": "the passenger can see the estimates for their route.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to enter rates based on system demand",
+          "result": "I can properly estimate the price for a trip.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select text messages to receive information about my ride",
+          "result": "I can receive information quickly.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to calculate the ideal route between the start and end of a trip",
+          "result": "I can calculate mileage.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to input the verification code sent to me",
+          "result": "I can use the service.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to click on a specific ride",
+          "result": "I can view the receipt from it.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to download the application",
+          "result": "I can request a car.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see how much time it will take for the car to reach me",
+          "result": "I am ready to go when it arrives.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see who my driver will be",
+          "result": "I can view their information and feedback.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "admin,",
+          "action": "to send the user an email to verify their email address when it is added or updated in the system",
+          "result": "I can be sure they are a real person.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to enter promotion codes I have received",
+          "result": "I can get a free ride.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see the route that will be taken between my pickup and my destination",
+          "result": "I can see what the cost is based on.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to access my settings ",
+          "result": "I can change or update information.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to see the full list of notifications that I have received within the app",
+          "result": "I do not miss anything that has been sent to me.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select whether to allow push notifications",
+          "result": "I can receive information quickly.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "system,",
+          "action": "to use an image of a credit card to acquire the needed credit card information for payment",
+          "result": "the payment can go through when a user requests a ride.",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to enter my password to verify access to my settings ",
+          "result": "I can update my information.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to cancel out of editing my profile",
+          "result": "I do not make any changes I don't want or need to.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to edit my name",
+          "result": "I can change it to whatever I need it to be.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to retrieve my password",
+          "result": "I can verify my account information.",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to select a location for work",
+          "result": "I can select it quickly when requesting a ride.",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user,",
+          "action": "to get help",
+          "result": "I can resolve any issues I might have.",
+          "estimated_points": 1,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "Project Kevin",
+      "favorite": false,
+      "velocity": 8,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "admin",
+          "action": "to be able to view metrics / analytics",
+          "result": "I can know how my app is performing",
+          "estimated_points": 5,
+          "acceptance_criterions": [
+            {
+              "description": "Assumes very basic metrics from a service like Google Analytics or Mix Panel"
+            }
+          ]
+        },
+        {
+          "role": "admin",
+          "action": "to manage all chats incoming from customers",
+          "result": "I can provide excellent concierge service",
+          "estimated_points": 8,
+          "acceptance_criterions": [
+            {
+              "description": "Assumes integration with external service"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "log out from my account",
+          "result": "I'm no longer logged in",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to provide feedback",
+          "result": "the app is further improved according to my needs",
+          "estimated_points": 3,
+          "acceptance_criterions": [
+            {
+              "description": "Assumes integration with external service"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "action": "to set my notification preferences",
+          "result": "I can set all notifications from app to my preference",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to manage my account details",
+          "result": "I can keep them up to date",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to upgrade my membership",
+          "result": "I can receive more perks and benefits",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view my membership details",
+          "result": "I can be clear on my membership benefits and perks",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to remove a linked card",
+          "result": "I can manage my linked cards",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to link a card",
+          "result": "I can earn cash back, redeem cash and pay for membership upgrades",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to manage my vehicle profiles",
+          "result": "I can keep them up to date",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view my vehicle profiles",
+          "result": "I can keep track of my vehicles",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to register my vehicles",
+          "result": "I can gain access to my membership",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to redeem my cash back into my bank account",
+          "result": "I can use it towards my monthly car payment or towards my new car as a down payment",
+          "estimated_points": 13,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view all reward goals available",
+          "result": "I can see which I've unlocked and are able to redeem",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to invite my friends to the app",
+          "result": "they can sign up and we can receive cash back rewards",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to filter all nearby merchants",
+          "result": "I can find merchants based off a category",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to search a specific merchant",
+          "result": "I can easily locate the nearest one",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to be able to easily see the location of a merchant",
+          "result": "I can see their distance away from my location",
+          "estimated_points": 8,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to discover nearby merchants",
+          "result": "I can go use my rewards card at that merchant's location",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to call a concierge",
+          "result": "I can receive support",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to message with my concierge",
+          "result": "I can get help and be assisted",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view my total cash back earned",
+          "result": "I can know how much I've earned",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to reset my password",
+          "result": "if I forget my current password, I can regain access to my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to sign up with my email",
+          "result": "I can create an account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to log in with my email",
+          "result": "I can access my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see highlights about the product",
+          "result": "I can be motivated to sign up",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "A",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "mococ",
+          "action": "moco",
+          "result": "moco",
+          "acceptance_criterions": []
+        },
+        {
+          "role": "coco",
+          "action": "coco",
+          "result": "coco",
+          "acceptance_criterions": []
+        }
+      ]
+    },
+    {
+      "name": "ShootMe",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": []
+    },
+    {
+      "name": "Lan Le Backlog",
+      "favorite": false,
+      "velocity": null,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "visitor",
+          "action": "to learn about NR",
+          "result": "I can explore my options",
+          "estimated_points": 2,
+          "acceptance_criterions": [
+            {
+              "description": "qsfknadkfjnd"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Shade Room",
+      "favorite": false,
+      "velocity": 10,
+      "is_template": false,
+      "user_stories": [
+        {
+          "role": "user",
+          "action": "to see a feed of articles",
+          "result": "I can discover new interesting stories",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to explore different categories of content",
+          "result": "I can find the exact kind of content I'm looking for",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to search for articles",
+          "result": "I can find exactly what I'm looking for",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view an article",
+          "result": "I can enjoy it's content",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view an article's comments",
+          "result": "I can enjoy the conversation",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to add a comment on an article",
+          "result": "I can join the conversation",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see latest articles",
+          "result": "I can keep reading and finding more content",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to watch video content in the app",
+          "result": "I can enjoy all kinds of content",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view products for sale",
+          "result": "I can purchase them",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to purchase a product",
+          "result": "I can have it",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to set up my payment information",
+          "result": "I can purchase items on the store",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see a feed of TSR's instagram photos",
+          "result": "I can stay up to date on all their content",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to favorite an article",
+          "result": "I can save it",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to view my profile and favorited articles",
+          "result": "I can keep track of my saved content",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to upload an image of myself",
+          "result": " it can be added to my profile",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to unfavorite a favorited article",
+          "result": "it's not saved in my favorite's list anymore",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to share an article on social media",
+          "result": "I can have my friends enjoy the great content as well",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to sign up with my email",
+          "result": "I can create an account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to manage my account details",
+          "result": "I can keep them up to date",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to manage my payment information",
+          "result": "I can keep it up to date",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to see my purchase history",
+          "result": "I can keep track of my past purchases",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to set my notification preferences",
+          "result": "I can set all notifications from app to my preference",
+          "estimated_points": 5,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to reach customer support",
+          "result": "I can get help on anything",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "log out from my account",
+          "result": "I'm no longer logged in",
+          "estimated_points": 2,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to log in with my email",
+          "result": "I can access my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        },
+        {
+          "role": "user",
+          "action": "to reset my password",
+          "result": "if I forget my current password, I can regain access to my account",
+          "estimated_points": 3,
+          "acceptance_criterions": []
+        }
+      ]
+    }
+  ]
+}
