@@ -7,7 +7,7 @@ module ArborReloaded
         def create
           params[:acceptance_criterions].each do |acceptance_criteria|
             ac_params = acceptance_criteria.permit(:description)
-            @user_story.acceptance_criterions.create(ac_params)
+            @user_story.acceptance_criterions.find_or_create_by(ac_params)
           end
 
           render json: @user_story.as_json
