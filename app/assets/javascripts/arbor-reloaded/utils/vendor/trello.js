@@ -47,6 +47,7 @@ function ajaxCallNewBoard(token, url) {
       if (response.success) {
         $('.trello-export-success').html(response.data.message);
       }
+      AnalyticsTracks.trelloExport();
     },
     error: function(response) {
       if($.parseJSON(response.responseText).data.token_error) {
