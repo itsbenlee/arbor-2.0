@@ -1,4 +1,4 @@
-%li.white-block
+%li.white-block{ data: { example: project.name == Project.find_by(is_template: true).try(:name) ? 'true' : 'false' }}
   .right
     = link_to '#', class: 'favorite-link favorite has-tip', aria: { haspopup: true }, title: t('reloaded.tooltips.favorite_project'), data: { url: arbor_reloaded_project_path(project), favorite: project.favorite, tooltip: '' } do
       %span.icn-favorite-empty

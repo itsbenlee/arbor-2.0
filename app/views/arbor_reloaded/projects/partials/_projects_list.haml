@@ -4,7 +4,7 @@
       %h5= t('reloaded.project_dashboard.favorite', count: projects.favorite.count)
     %ul.favorites.small-block-grid-1.medium-block-grid-3.large-block-grid-3
       - projects.favorite.each do |project|
-        %li.favorite-project.white-block
+        %li.favorite-project.white-block{ data: { example: project.name == Project.find_by(is_template: true).try(:name) ? 'true' : 'false' }}
           .right
             = link_to '#', class: 'favorite-link favorite has-tip', title: t('reloaded.tooltips.unfavorite_project'), aria: { haspopup: true }, data: { url: arbor_reloaded_project_path(project), favorite: project.favorite, tooltip: '' } do
               %span.icn-favorite
