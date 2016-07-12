@@ -47,3 +47,6 @@
 //= require arbor-reloaded/main
 //= require arbor-reloaded/teams
 //= require arbor-reloaded/team_bindings
+//= require arbor-reloaded/utils/enviroment
+//= require arbor-reloaded/analytics_track_events
+//= require arbor-reloaded/analytics_binds

@@ -10,7 +10,7 @@ module ArborReloaded
                                         :estimated_points,
                                         :group_id)
 
-            @project.user_stories.create(story_params)
+            @project.user_stories.find_or_create_by(story_params)
           end
 
           render json: @project.as_json

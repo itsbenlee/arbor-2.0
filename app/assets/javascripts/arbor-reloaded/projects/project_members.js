@@ -29,6 +29,7 @@ function ProjectMembers() {
         break;
       case 'Invite':
         $('.submit-modal-form').click();
+        AnalyticsTracks.inviteOutsider();
         break;
       case 'Remove':
         removeMembers(membersToRemoveArray);

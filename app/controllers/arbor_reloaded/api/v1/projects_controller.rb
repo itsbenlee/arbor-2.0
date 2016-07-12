@@ -3,7 +3,9 @@ module ArborReloaded
     module V1
       class ProjectsController < ApiBaseController
         def create
-          project = current_user.owned_projects.create(project_params)
+          project =
+            current_user.owned_projects.find_or_create_by(project_params)
+
           render json: project.as_json
         end
 
