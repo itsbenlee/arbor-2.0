@@ -70,16 +70,14 @@ module ArborReloaded
     private
 
     def replicate_associations(replica)
-      [
-        Thread.new { copy_stories(replica) },
-        Thread.new { @project.copy_canvas(replica) if @project.canvas }
-      ].each(&:join)
+      copy_stories(replica)
+      @project.copy_canvas(replica) if @project.canvas
       replica.clean_log
     end
 
     def copy_stories(replica)
       @project.user_stories.each do |story|
-        story.copy_in_project(replica.id)
+        story.copy_in_project(replica)
       end
     end
   end
