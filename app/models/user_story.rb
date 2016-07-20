@@ -42,12 +42,14 @@ class UserStory < ActiveRecord::Base
 
   def copy_in_project(new_project)
     replica =
-      new_project.user_stories.create(role: role,
-                                      action: action,
-                                      result: result,
-                                      description: description,
-                                      estimated_points: estimated_points,
-                                      priority: priority)
+      new_project
+      .user_stories
+      .where(role: role,
+             action: action,
+             result: result,
+             description: description,
+             estimated_points: estimated_points,
+             priority: priority).first_or_create
 
     copy_associations(replica)
   end
@@ -89,6 +91,7 @@ class UserStory < ActiveRecord::Base
   def copy_associations(replica)
     copy_criterions(replica)
     copy_comments(replica)
+    copy_group(replica)
   end
 
   def copy_comments(replica)
@@ -113,5 +116,13 @@ class UserStory < ActiveRecord::Base
 
   def role_action_or_result_missing?
     role.blank? || action.blank? || result.blank?
+  end
+
+  def copy_group(replica)
+    replica_group =
+      replica.project.groups.find_or_create_by(name: group.try(:name))
+
+    return unless replica_group
+    replica_group.user_stories << replica
   end
 end
