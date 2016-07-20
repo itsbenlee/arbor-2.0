@@ -12,15 +12,11 @@ class Comment < ActiveRecord::Base
     comment
   end
 
-  def copy_comment(replica_id)
-    Comment.create(
-      comment: comment,
-      user_story_id: replica_id,
-      user: user,
-      created_at: created_at)
-  end
-
   def user_name
     user.full_name
+  end
+
+  def as_json(*_args)
+    { comment: comment, user_id: user.id, created_at: created_at }
   end
 end
