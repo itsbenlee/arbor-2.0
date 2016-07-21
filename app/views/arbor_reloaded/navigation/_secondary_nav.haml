@@ -15,11 +15,11 @@
       = link_to t('reloaded.navigation.more'), '#', aria: { controls: 'project-actions', expanded: false }, data: {dropdown: 'project-actions' }
       %ul#project-actions.f-dropdown{ data: { dropdown: { content: '' } } }
         %li
-          = link_to arbor_reloaded_project_export_backlog_path(current_project, format: :pdf, estimation: true, id: 'export-as-pdf-estimation') do
+          = link_to arbor_reloaded_project_export_backlog_path(current_project, format: :pdf, estimation: true), id: 'export-as-pdf-estimation' do
             = t('reloaded.navigation.export_with_estimation')
             %span.icn-export
         %li
-          = link_to arbor_reloaded_project_export_backlog_path(current_project, format: :pdf, estimation: false, id: 'export-as-pdf') do
+          = link_to arbor_reloaded_project_export_backlog_path(current_project, format: :pdf, estimation: false), id: 'export-as-pdf' do
             = t('reloaded.navigation.export_without_estimation')
             %span.icn-export
         %li

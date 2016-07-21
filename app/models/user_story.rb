@@ -40,15 +40,18 @@ class UserStory < ActiveRecord::Base
     estimated_points.present? ? estimated_points : '*'
   end
 
-  def copy_in_project(new_id)
-    replica = UserStory.create(role: role,
-                               action: action,
-                               result: result,
-                               project_id: new_id,
-                               estimated_points: estimated_points,
-                               priority: priority)
+  def copy_in_project(new_project)
+    replica =
+      new_project
+      .user_stories
+      .where(role: role,
+             action: action,
+             result: result,
+             description: description,
+             estimated_points: estimated_points,
+             priority: priority).first_or_create
 
-    copy_associations(replica.id)
+    copy_associations(replica)
   end
 
   def as_json(*_args)
@@ -85,23 +88,21 @@ class UserStory < ActiveRecord::Base
     project.update_attribute :next_story_number, project.next_story_number + 1
   end
 
-  def copy_associations(replica_id)
-    copy_criterions(replica_id)
-    copy_comments(replica_id)
+  def copy_associations(replica)
+    copy_criterions(replica)
+    copy_comments(replica)
+    copy_group(replica)
   end
 
-  def copy_comments(replica_id)
+  def copy_comments(replica)
     comments.each do |comment|
-      comment.copy_comment(replica_id)
+      replica.comments.create(comment.as_json)
     end
   end
 
-  def copy_criterions(replica_id)
+  def copy_criterions(replica)
     acceptance_criterions.each do |criterion|
-      criterion_replica =
-      AcceptanceCriterion.new(description: criterion.description,
-                              user_story_id: replica_id)
-      criterion_replica.save
+      replica.acceptance_criterions.create(description: criterion.description)
     end
   end
 
@@ -115,5 +116,13 @@ class UserStory < ActiveRecord::Base
 
   def role_action_or_result_missing?
     role.blank? || action.blank? || result.blank?
+  end
+
+  def copy_group(replica)
+    replica_group =
+      replica.project.groups.find_or_create_by(name: group.try(:name))
+
+    return unless replica_group
+    replica_group.user_stories << replica
   end
 end

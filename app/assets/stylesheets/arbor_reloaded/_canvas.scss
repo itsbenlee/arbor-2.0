@@ -69,7 +69,10 @@ $general-canvas-padding: rem-calc(30);
     margin-top: rem-calc(50);
     padding-left: rem-calc(40);
 
-    .resizable-text-area { position: relative; }
+    .resizable-text-area {
+      max-height: rem-calc(475);
+      position: relative;
+    }
 
     .enter {
       @include inline-block;

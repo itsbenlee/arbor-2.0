@@ -23,4 +23,34 @@ feature 'Export backlog' do
       "#{project.name} Backlog.pdf"
     )
   end
+
+  scenario 'should download a PDF', js: true do
+    allow_any_instance_of(ArborReloaded::IntercomServices)
+      .to receive(:create_event).and_return(true)
+
+    click_link 'More...'
+    click_link 'Export as PDF'
+
+    wait_for_ajax
+
+    response_headers = page.response_headers
+    expect(response_headers['Content-Disposition']).to have_text(
+      "#{project.name} Backlog.pdf"
+    )
+  end
+
+  scenario 'should download a PDF with no estimation', js: true do
+    allow_any_instance_of(ArborReloaded::IntercomServices)
+      .to receive(:create_event).and_return(true)
+
+    click_link 'More...'
+    click_link 'Export as PDF (no Estimation)'
+
+    wait_for_ajax
+
+    response_headers = page.response_headers
+    expect(response_headers['Content-Disposition']).to have_text(
+      "#{project.name} Backlog.pdf"
+    )
+  end
 end

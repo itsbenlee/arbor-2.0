@@ -151,9 +151,9 @@ module ArborReloaded
     def copied_user_stories
       @project =
         Project.find(copy_stories_params[:project_id])
-      @copied_stories = []
-      copy_stories_params[:user_stories].each do |story_id|
-        @copied_stories.push(UserStory.find(story_id))
+
+      @copied_stories = copy_stories_params[:user_stories].map do |story_id|
+        UserStory.find(story_id)
       end
     end
 
