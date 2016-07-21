@@ -1,11 +1,13 @@
 require 'spec_helper'
 
 feature 'Project duplication', js: true do
-  let!(:user)       { create :user }
-  let!(:project)    { create :project, owner: user }
-  let!(:user_story) { create :user_story, project: project }
-  let!(:criterion)  { create :acceptance_criterion, user_story: user_story }
-  let!(:comment)    { create :comment, user_story: user_story }
+  let!(:user)         { create :user }
+  let!(:project)      { create :project, owner: user }
+  let!(:group)        { create :group, project: project }
+  let!(:user_story)   { create :user_story, project: project }
+  let!(:user_story_2) { create :user_story, project: project, group: group }
+  let!(:criterion)    { create :acceptance_criterion, user_story: user_story }
+  let!(:comment)      { create :comment, user_story: user_story }
 
   background do
     sign_in user
@@ -78,6 +80,17 @@ feature 'Project duplication', js: true do
 
     scenario 'the user who comments is duplicated' do
       expect(@duplicated_comment.user).to eq(comment.user)
+    end
+  end
+
+  context 'for group duplication' do
+    background do
+      duplicated_project = Project.find_by_name("Copy of #{project.name} (1)")
+      @duplicated_group = duplicated_project.groups.first
+    end
+
+    scenario 'the name is duplicated' do
+      expect(@duplicated_group.name).to eq(group.name)
     end
   end
 end

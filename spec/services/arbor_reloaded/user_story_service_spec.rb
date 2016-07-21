@@ -68,8 +68,15 @@ module ArborReloaded
   feature 'copy user story in other project' do
     let(:project)         { create :project }
     let(:another_project) { create :project }
-    let(:user_stories)    { create_list :user_story, 3,
-                                        project: project }
+    let(:user_stories) do
+      3.times.map do
+        create :user_story,
+               project: project,
+               role: "user-#{rand(9999)}-#{rand(9999)}",
+               action: "action-#{rand(9999)}-#{rand(9999)}",
+               result: "result-#{rand(9999)}-#{rand(9999)}"
+      end
+    end
 
     background do
       user_story_services = ArborReloaded::UserStoryService.new(another_project)
@@ -82,12 +89,12 @@ module ArborReloaded
     end
 
     scenario 'user story data is copied successfully' do
-      user_stories.each_with_index do |user_story, index|
-        expect(another_project.user_stories[index].role).to eq(user_story.role)
-        expect(another_project.user_stories[index].action).to eq(user_story.action)
-        expect(another_project.user_stories[index].result).to eq(user_story.result)
-        expect(another_project.user_stories[index].priority).to eq(user_story.priority)
-        expect(another_project.user_stories[index].estimated_points).to eq(user_story.estimated_points)
+      user_stories.each do |user_story|
+        expect(another_project.user_stories.pluck(:role).include?(user_story.role)).to eq(true)
+        expect(another_project.user_stories.pluck(:action).include?(user_story.action)).to eq(true)
+        expect(another_project.user_stories.pluck(:result).include?(user_story.result)).to eq(true)
+        expect(another_project.user_stories.pluck(:priority).include?(user_story.priority)).to eq(true)
+        expect(another_project.user_stories.pluck(:estimated_points).include?(user_story.estimated_points)).to eq(true)
       end
     end
   end

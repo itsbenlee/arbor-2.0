@@ -73,9 +73,11 @@ module ArborReloaded
     end
 
     scenario 'should copy all the stories' do
-      create_list :user_story, 3, project: project
-      response = project_services.replicate(user)
+      3.times do
+        create :user_story, project: project, role: "story-name-#{rand(9999)}-#{rand(9999)}"
+      end
 
+      response = project_services.replicate(user)
       expect(response.data[:project].user_stories.count).to eq(3)
     end
 
