@@ -7,4 +7,4 @@
       = select_tag 'project_order', options_for_select({ t('reloaded.project_dashboard.sort_by_name')=>'by_name',
         t('reloaded.project_dashboard.sort_by_recent')=>'recent'}, 'recent'), data: { remote: true, url: arbor_reloaded_projects_path }
     .create-project
-      =link_to '+', '#', class: 'circle-add-btn', id: 'create-project-btn', data: { reveal_id: 'project-modal' }
+      =link_to '+', '#', class: 'circle-add-btn', id: 'create-project-btn', data: { reveal_id: 'project-modal', tooltip: '' }, aria: { haspopup: true }, title: t('reloaded.tooltips.create_project')

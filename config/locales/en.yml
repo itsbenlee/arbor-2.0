@@ -264,6 +264,7 @@ en:
       copy_token: 'This is your token to connect Arbor with other apps'
       acceptance_criteria: 'Acceptance Criteria are statements that serve as conditions of satisfaction. They define the boundaries of a User Story and determine if a story is completed and working as intended.'
       delete_group: 'Delete group'
+      create_project: 'Create a new project'
     pdf:
       user_stories: 'User Stories'
     groups:
