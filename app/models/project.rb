@@ -33,13 +33,15 @@ class Project < ActiveRecord::Base
   end
 
   def total_cost
-    return 0 unless velocity && cost_per_week
-    cost_per_week * (total_points / velocity.to_f).ceil
+    velocity_number = velocity.to_f
+    return 0 unless velocity_number != 0.0 && cost_per_week
+    cost_per_week * (total_points / velocity_number).ceil
   end
 
   def total_weeks
-    return 0 unless velocity
-    (total_points / velocity.to_f).ceil
+    velocity_number = velocity.to_f
+    return 0 unless velocity_number != 0.0
+    (total_points / velocity_number).ceil
   end
 
   def name_url_hash
