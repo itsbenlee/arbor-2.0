@@ -40,10 +40,7 @@ module ArborReloaded
     end
 
     def replicate(current_user)
-      replica =
-        Project.new(name: replica_name,
-                    owner: current_user,
-                    members: [current_user])
+      replica = Project.new(name: replica_name, owner: current_user)
 
       if replica.save && @project.save
         replicate_associations(replica)
@@ -55,10 +52,7 @@ module ArborReloaded
 
     def replicate_template(current_user)
       replica =
-        Project.new(name: @project.name,
-                    owner: current_user,
-                    favorite: true,
-                    members: [current_user])
+        Project.new(name: @project.name, owner: current_user, favorite: true)
 
       replicate_associations(replica) if replica.save && @project.save
     end
@@ -70,15 +64,22 @@ module ArborReloaded
     private
 
     def replicate_associations(replica)
+      copy_groups(replica)
       copy_stories(replica)
-      @project.copy_canvas(replica) if @project.canvas
+      copy_canvas(replica)
       replica.clean_log
     end
 
+    def copy_groups(replica)
+      @project.groups.each { |group| group.deep_duplication(replica) }
+    end
+
+    def copy_canvas(replica)
+      replica.canvas = @project.canvas.try(:clone)
+    end
+
     def copy_stories(replica)
-      @project.user_stories.each do |story|
-        story.copy_in_project(replica)
-      end
+      @project.user_stories.each { |story| story.copy_in_project(replica) }
     end
   end
 end
