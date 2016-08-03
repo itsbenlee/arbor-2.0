@@ -31,7 +31,8 @@ FeatureEnvy:
     LinkAttachmentServices#fetch_http_content_type,
     FileUploader#extract_type,
     UserStoriesController#story_update_params,
-    SlackIntegrationService#validate_message_for_story_creation
+    SlackIntegrationService#validate_message_for_story_creation,
+    UserStory#copy_group
   ]
 IrresponsibleModule:
   enabled: false

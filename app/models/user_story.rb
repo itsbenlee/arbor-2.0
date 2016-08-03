@@ -119,10 +119,7 @@ class UserStory < ActiveRecord::Base
   end
 
   def copy_group(replica)
-    replica_group =
-      replica.project.groups.find_or_create_by(name: group.try(:name))
-
-    return unless replica_group
-    replica_group.user_stories << replica
+    replica_group = replica.project.groups.find_by_name(group.try(:name))
+    replica.update_attribute(:group_id, replica_group.try(:id))
   end
 end
