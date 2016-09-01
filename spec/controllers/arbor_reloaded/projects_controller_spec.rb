@@ -26,6 +26,16 @@ RSpec.describe ArborReloaded::ProjectsController do
       expect(project.members).to include(user2)
       expect(project.members).to include(user3)
     end
+
+    context 'when other user is signed in' do
+      it 'should not be able to add members' do
+        sign_in create :user
+        request.env["HTTP_REFERER"] = arbor_reloaded_project_user_stories_path project
+        put :add_member, project_id: project.id, member: user3.email
+
+        expect(response).to be_not_found
+      end
+    end
   end
 
   describe 'PUT join project with current user team member' do
@@ -45,6 +55,16 @@ RSpec.describe ArborReloaded::ProjectsController do
 
       user.reload
       expect(user.projects).to include(project)
+    end
+
+    it 'should not allow non team members to join' do
+      other_user = create :user
+      sign_in other_user
+
+      put :join_project, project_id: project.id
+
+      other_user.reload
+      expect(other_user.projects).not_to include(project)
     end
   end
 

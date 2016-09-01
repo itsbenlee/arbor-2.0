@@ -28,6 +28,8 @@ class Project < ActiveRecord::Base
 
   after_commit :owner_as_member
 
+  scope :by_teams, ->(teams) { where(team_id: teams.pluck(:id)) }
+
   def total_points
     user_stories.map(&:estimated_points).compact.sum
   end

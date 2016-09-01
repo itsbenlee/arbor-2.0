@@ -5,6 +5,10 @@ module ArborReloaded
       only: %i(members show edit update destroy log add_member join_project
                export_backlog remove_member_from_project export_to_spreadhseet)
 
+    rescue_from ActiveRecord::RecordNotFound do
+      render 'errors/404', status: 404
+    end
+
     def index
       scope = params[:project_order] || 'recent'
       @projects = @projects.send(scope)
@@ -116,7 +120,7 @@ module ArborReloaded
 
     def copy
       project =
-        Project
+        current_user.projects
         .includes(user_stories: [:acceptance_criterions])
         .find(params[:project_id])
 
@@ -199,6 +203,8 @@ module ArborReloaded
     def load_project
       id = params[:id] || params[:project_id]
       @project = Project.find(id)
+      has_access = current_user.available_projects.include?(@project)
+      fail ActiveRecord::RecordNotFound unless has_access
     end
 
     def update_order_params
