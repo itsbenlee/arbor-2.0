@@ -9,4 +9,14 @@ FactoryGirl.define do
   trait :with_team do
     team { create :team }
   end
+
+  trait :with_member do
+    transient do
+      member_to_add { create :user }
+    end
+
+    before :build, :create do |project, evaluator|
+      project.members << evaluator.member_to_add
+    end
+  end
 end
