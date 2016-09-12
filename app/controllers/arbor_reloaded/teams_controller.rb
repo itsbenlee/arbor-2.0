@@ -5,6 +5,10 @@ module ArborReloaded
     before_action :load_team, only: %i(members add_member remove_member)
     before_action :find_member, only: :add_member
 
+    rescue_from ActiveRecord::RecordNotFound do
+      render 'errors/404', status: 404
+    end
+
     def index
       @new_team = Team.new
       @teams = current_user.teams
@@ -63,7 +67,7 @@ module ArborReloaded
 
     def load_team
       id = params[:id] || params[:team_id]
-      @team = Team.find(id)
+      @team = current_user.teams.find(id)
     end
 
     def member_params

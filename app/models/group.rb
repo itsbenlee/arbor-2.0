@@ -10,4 +10,9 @@ class Group < ActiveRecord::Base
   def ungroup_stories
     user_stories { |story| story.update_attribute('group_id', nil) }
   end
+
+  def deep_duplication(new_project)
+    new_project.groups.concat(dup)
+    user_stories.each { |story| story.copy_in_project(new_project) }
+  end
 end

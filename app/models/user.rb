@@ -32,6 +32,10 @@ class User < ActiveRecord::Base
     self == project.owner
   end
 
+  def available_projects
+    projects + Project.by_teams(teams).all
+  end
+
   def log_description
     full_name
   end
