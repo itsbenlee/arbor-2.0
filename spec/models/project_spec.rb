@@ -18,6 +18,7 @@ describe Project do
   it { should belong_to :owner }
   it { should belong_to :team }
   it { should_not validate_uniqueness_of(:is_template) }
+  it { should validate_numericality_of(:velocity).is_greater_than_or_equal_to(0).allow_nil }
 
   context 'if is_tremplate is true' do
     before :each do
