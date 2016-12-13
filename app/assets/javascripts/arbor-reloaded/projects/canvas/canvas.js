@@ -1,5 +1,6 @@
 function Canvas() {
   var $canvasLinks       = $('li.canvas-item'),
+      $canvasForm        = $("#canvas form"),
       $canvasFields      = $('.canvas-fields'),
       $canvasTextarea    = $('.canvas-fields textarea'),
       $currentQuestion   = $('#current-question'),
@@ -39,5 +40,17 @@ function Canvas() {
 
   $canvasTextarea.bind('keyup', function() {
     setCurrentQuestion($(this).data('question'));
+  });
+
+  $canvasTextarea.unbind('keydown').bind('keydown', function(event) {
+    if (event.which == 13) {
+      if (event.metaKey) {
+        $canvasForm.submit();
+      } else {
+        var s = $(this).val();
+        $(this).val(s+"\n");
+        return false;
+      }
+    }
   });
 }
