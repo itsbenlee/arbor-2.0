@@ -49,6 +49,8 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'wkhtmltopdf-binary-edge', '~> 0.12.2.1'
+  gem 'pry-rails', '~> 0.3.4'
+  gem 'pry-nav', '~> 0.2.4'
 end
 
 group :test do
