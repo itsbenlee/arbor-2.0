@@ -81,8 +81,6 @@ module ArborReloaded
     def copy_stories(replica)
       @project.user_stories.each { |story| story.copy_in_project(replica) }
 
-      # The next_story_number is copied from the original project and the
-      # replica stays consistent with the original.
       replica.update_attribute :next_story_number, @project.next_story_number
     end
   end

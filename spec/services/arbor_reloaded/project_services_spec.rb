@@ -94,6 +94,7 @@ module ArborReloaded
       expect(user_story.priority).to eq(copied_story.priority)
       expect(user_story.story_number).to eq(copied_story.story_number)
       expect(user_story.backlog_order).to eq(copied_story.backlog_order)
+      expect(user_story.color).to eq(copied_story.color)
     end
 
     scenario 'should copy the criterions' do
