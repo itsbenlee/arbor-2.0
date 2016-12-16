@@ -191,7 +191,7 @@ en:
       export_with_estimation: 'Export as PDF'
       export_without_estimation: 'Export as PDF (no Estimation)'
       export_trello: 'Export to Trello'
-      export_jira: 'Export to JIRA'
+      connect_jira: 'Connect to JIRA'
     project_members:
       owner: 'Owner'
       user_invited: 'Invited'
@@ -297,5 +297,8 @@ en:
   jira:
     modal_title: 'Sign in into JIRA'
     sign_in: 'Sign in'
+    placeholder_site: 'Enter your JIRA site'
     placeholder_email: 'Enter your email'
     placeholder_password: 'Enter your password'
+    authentication_error: 'Wrong email or password'
+    success_message: 'Authenticated!'

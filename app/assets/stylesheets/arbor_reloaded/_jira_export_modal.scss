@@ -1,0 +1,9 @@
+$modal-margin: rem-calc(20);
+
+#jira-modal {
+  h2,
+  input { margin-bottom: $modal-margin; }
+
+  .jira-export-success { color: $success-color; }
+  .jira-export-error { color: $error-color; }
+} // modal
