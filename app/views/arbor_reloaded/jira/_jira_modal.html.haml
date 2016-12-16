@@ -1,0 +1,9 @@
+#jira-modal.reveal-modal{ aria: { hidden: 'true', labelledby: 'project-modal' }, data: { reveal: ''}, role: 'dialog' }
+  = link_to '×', '#', class: 'close-reveal-modal'
+  %h2= t('jira.modal_title')
+  = form_tag authenticate_arbor_reloaded_project_jira_index_path(current_project), remote: true do
+    = email_field_tag 'email', nil, class: 'dashed-input interactive-field', placeholder: t('jira.placeholder_email')
+    = password_field_tag 'password', nil, class: 'dashed-input interactive-field', placeholder: t('jira.placeholder_password')
+    = submit_tag t('jira.sign_in'), class: 'button radius small'
+  .trello-export-error
+  .trello-export-success

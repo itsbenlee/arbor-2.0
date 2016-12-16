@@ -191,6 +191,7 @@ en:
       export_with_estimation: 'Export as PDF'
       export_without_estimation: 'Export as PDF (no Estimation)'
       export_trello: 'Export to Trello'
+      export_jira: 'Export to JIRA'
     project_members:
       owner: 'Owner'
       user_invited: 'Invited'
@@ -293,3 +294,8 @@ en:
       result:
         - 'so that'
         - 'so'
+  jira:
+    modal_title: 'Sign in into JIRA'
+    sign_in: 'Sign in'
+    placeholder_email: 'Enter your email'
+    placeholder_password: 'Enter your password'

@@ -29,6 +29,7 @@ gem 'active_link_to'
 gem 'intercom', "~> 3.4.0"
 gem 'rails_admin', '~> 0.8.1'
 gem 'newrelic_rpm'
+gem 'jira-ruby', '~> 0.1.18'
 
 group :doc do
   gem 'sdoc', require: false

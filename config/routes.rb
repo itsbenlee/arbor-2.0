@@ -70,6 +70,9 @@ Railsroot::Application.routes.draw do
       get 'members', controller: :projects, action: :members
 
       resources :groups, only: %i(index create destroy)
+      resources :jira, only: [] do
+        post :authenticate, on: :collection
+      end
     end
 
     get 'export/:id/spreadhseet', to: 'projects#export_to_spreadhseet'

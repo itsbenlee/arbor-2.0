@@ -33,6 +33,10 @@
         - if ENV['ENABLE_SLACK'] == 'true'
           %li
             = react_component('SlackButton', {}, {prerender: false})
+        %li
+          = link_to '#', data: { reveal_id: 'jira-modal' } do
+            = t('reloaded.navigation.export_jira')
+            %span.icn-export
         - if current_user == current_project.owner
           %li
             = link_to arbor_reloaded_project_path(current_project), method: :delete, data: { confirm: t('project.delete_confirmation') } do
@@ -48,3 +52,4 @@
       slackEnabled: current_project.slack_enabled }, { prerender: false })
 
 = render 'arbor_reloaded/trello/trello_modal', current_project: current_project
+= render 'arbor_reloaded/jira/jira_modal', current_project: current_project
