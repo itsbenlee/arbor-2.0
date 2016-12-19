@@ -72,6 +72,14 @@ module ArborReloaded
       expect(project.copies).to eq(1)
     end
 
+    scenario 'should copy estimation and cost' do
+      response = project_services.replicate(user)
+
+      copied_project = response.data[:project]
+      expect(copied_project.velocity).to eq(project.velocity)
+      expect(copied_project.cost_per_week).to eq(project.cost_per_week)
+    end
+
     scenario 'should copy all the stories' do
       3.times do
         create :user_story, project: project, role: "story-name-#{rand(9999)}-#{rand(9999)}"

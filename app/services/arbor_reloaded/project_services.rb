@@ -40,7 +40,10 @@ module ArborReloaded
     end
 
     def replicate(current_user)
-      replica = Project.new(name: replica_name, owner: current_user)
+      replica = Project.new(name: replica_name,
+                            owner: current_user,
+                            velocity: @project.velocity,
+                            cost_per_week: @project.cost_per_week)
 
       if replica.save && @project.save
         replicate_associations(replica)
@@ -57,11 +60,11 @@ module ArborReloaded
       replicate_associations(replica) if replica.save && @project.save
     end
 
+    private
+
     def replica_name
       "Copy of #{@project.name} (#{@project.copies += 1})"
     end
-
-    private
 
     def replicate_associations(replica)
       copy_groups(replica)
