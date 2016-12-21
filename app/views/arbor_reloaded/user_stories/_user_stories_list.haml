@@ -1,5 +1,4 @@
-= link_to t('reloaded.groups.create'), '#', class: 'create-btn create-group button radius tiny', id: 'create-group', data: { reveal_id: 'group-modal' }
-= render 'arbor_reloaded/groups/list', groups: project.groups, project: project
 #ungrouped-list-container
   = render 'arbor_reloaded/user_stories/ungrouped_list', project: project
-= render 'arbor_reloaded/groups/form', new_group: new_group
+= render 'arbor_reloaded/groups/list', groups: project.groups, project: project
+= render 'arbor_reloaded/groups/new', new_group: new_group

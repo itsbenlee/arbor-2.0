@@ -127,6 +127,23 @@ function bindUserStoriesColorLinks() {
   });
 }
 
+function toggleNewGroupForm() {
+  var $newGroupButton = $('.add-new-group h5');
+  var $newGroupForm = $('.new-group-container');
+  var $newGroupNameInput = $('.new-group-container input[name="group[name]"]');
+  
+  $newGroupButton.click(function(event) {
+    $(this).hide();
+    $newGroupForm.show();
+    $newGroupNameInput.focus();
+  });
+
+  $newGroupNameInput.blur(function(event) {
+    $newGroupForm.hide();
+    $newGroupButton.show();
+  });
+}
+
 $(document).ready(function() {
   if ($('.new-backlog-story').length > 0) { autogrowInputs(); }
 
@@ -135,6 +152,7 @@ $(document).ready(function() {
     bindReorderStories();
     checkForEmptyGroupStories();
     bindUserStoriesColorLinks();
+    toggleNewGroupForm();
   }
 });
 

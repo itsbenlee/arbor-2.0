@@ -245,7 +245,16 @@ $circle-dimension: $story-points-dimension;
   margin: rem-calc(20 0 0);
 }
 
-.group-wrapper { text-align: center; }
+.new-group-container {
+  input[name="group[name]"] {
+    width: 30%;
+    margin: auto;
+  }
+
+  .new-group-errors {
+    text-transform: none;
+  }
+}
 
 //  STORIES EMPTY
 // - - - - - - - - - - - - - - - - - - - - - - - - -

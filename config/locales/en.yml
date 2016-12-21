@@ -268,7 +268,7 @@ en:
     pdf:
       user_stories: 'User Stories'
     groups:
-      create: 'Create theme'
+      create: 'Click here to add a theme'
       delete_group_confirm: 'Are you sure you want to delete this theme?'
   slack:
     notifications:
