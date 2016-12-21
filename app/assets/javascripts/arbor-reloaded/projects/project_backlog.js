@@ -129,18 +129,23 @@ function bindUserStoriesColorLinks() {
 
 function toggleNewGroupForm() {
   var $newGroupButton = $('.add-new-group h5');
-  var $newGroupForm = $('.new-group-container');
   var $newGroupNameInput = $('.new-group-container input[name="group[name]"]');
-  
+
   $newGroupButton.click(function(event) {
     $(this).hide();
-    $newGroupForm.show();
-    $newGroupNameInput.focus();
+    $(this).next()
+      .show()
+      .find('input[name="group[name]"]').focus();
   });
 
   $newGroupNameInput.blur(function(event) {
-    $newGroupForm.hide();
+    $('.new-group-container').hide();
     $newGroupButton.show();
+    $("#add-new-group-upper .title-breaker").removeAttr("style");
+  });
+
+  $('#add-new-group-upper input[name="group[name]"]').focus(function(event) {
+    $("#add-new-group-upper .title-breaker").css('visibility', 'visible');
   });
 }
 

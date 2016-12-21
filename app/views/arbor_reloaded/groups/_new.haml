@@ -1,5 +1,5 @@
-.group-divider
-  .title-breaker.add-new-group
+.group-divider.add-new-group{ id: "add-new-group-#{place}" }
+  .title-breaker
     %h5= t('reloaded.groups.create')
     .new-group-container.hide
       = render 'arbor_reloaded/groups/form', new_group: new_group

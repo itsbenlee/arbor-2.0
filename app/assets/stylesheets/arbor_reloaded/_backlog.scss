@@ -245,6 +245,18 @@ $circle-dimension: $story-points-dimension;
   margin: rem-calc(20 0 0);
 }
 
+#add-new-group-upper {
+  .title-breaker {
+    visibility: hidden;
+  }
+
+  &:hover {
+    .title-breaker {
+      visibility: visible;
+    }
+  }
+}
+
 .new-group-container {
   input[name="group[name]"] {
     width: 30%;
