@@ -141,12 +141,19 @@ function toggleNewGroupForm() {
   $newGroupNameInput.blur(function(event) {
     $('.new-group-container').hide();
     $newGroupButton.show();
-    $("#add-new-group-upper .title-breaker").removeAttr("style");
   });
 
-  $('#add-new-group-upper input[name="group[name]"]').focus(function(event) {
-    $("#add-new-group-upper .title-breaker").css('visibility', 'visible');
-  });
+  toggleUpperNewGroupButton();
+}
+
+function toggleUpperNewGroupButton() {  
+  $('#add-new-group-upper input[name="group[name]"]')
+    .focus(function(event) {
+      $("#add-new-group-upper .title-breaker").css('visibility', 'visible');
+    })
+    .blur(function(event){
+      $("#add-new-group-upper .title-breaker").removeAttr("style");
+    });
 }
 
 $(document).ready(function() {

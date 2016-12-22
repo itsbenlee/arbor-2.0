@@ -258,9 +258,9 @@ $circle-dimension: $story-points-dimension;
 }
 
 .new-group-container {
-  input[name="group[name]"] {
-    width: 30%;
+  [name="group[name]"] {
     margin: auto;
+    width: 30%;
   }
 
   .new-group-errors {
