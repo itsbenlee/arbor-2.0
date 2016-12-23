@@ -11,7 +11,8 @@ class UserStory < ActiveRecord::Base
                             greater_than_or_equal_to: 1,
                             less_than_or_equal_to: 7
 
-  before_create :order_in_backlog, :assign_story_number
+  before_create :order_in_backlog,    unless: -> { backlog_order }
+  before_create :assign_story_number, unless: -> { story_number }
   after_create :update_next_story_number
 
   has_many :acceptance_criterions,
@@ -41,16 +42,7 @@ class UserStory < ActiveRecord::Base
   end
 
   def copy_in_project(new_project)
-    replica =
-      new_project
-      .user_stories
-      .where(role: role,
-             action: action,
-             result: result,
-             description: description,
-             estimated_points: estimated_points,
-             priority: priority).first_or_create
-
+    replica = find_or_create_replica(new_project)
     copy_associations(replica)
   end
 
@@ -86,6 +78,21 @@ class UserStory < ActiveRecord::Base
 
   def update_next_story_number
     project.update_attribute :next_story_number, project.next_story_number + 1
+  end
+
+  def find_or_create_replica(new_project)
+    new_project
+      .user_stories
+      .find_or_create_by(role: role,
+                         action: action,
+                         result: result,
+                         description: description,
+                         estimated_points: estimated_points,
+                         priority: priority) do |user_story|
+                           user_story.story_number = story_number
+                           user_story.backlog_order = backlog_order
+                           user_story.color = color
+                         end
   end
 
   def copy_associations(replica)
