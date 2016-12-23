@@ -166,12 +166,8 @@ module ArborReloaded
     end
 
     def html_update
-      if @project.save
-        redirect_to :back
-      else
-        @errors = @project.errors.full_messages
-        render :edit, status: 400
-      end
+      @errors = @project.errors.full_messages unless @project.save
+      redirect_to :back
     end
 
     def json_update

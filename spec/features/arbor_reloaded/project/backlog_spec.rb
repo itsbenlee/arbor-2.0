@@ -50,9 +50,19 @@ feature 'Project backlog', js: true do
       expect(project.reload.cost_per_week).to eq(0)
     end
 
-    scenario 'the velocity is updated on database when velocity is zero' do
+    scenario 'the velocity is updated on database when is possitive' do
+      set_project_velocity(1)
+      expect(project.reload.velocity).to eq(1)
+    end
+
+    scenario 'the velocity is updated on database when is zero' do
       set_project_velocity(0)
       expect(project.reload.velocity).to eq(0)
+    end
+
+    scenario 'the velocity is not updated on database when is negative' do
+      set_project_velocity(-1)
+      expect(project.reload.velocity).to be(nil)
     end
   end
 end

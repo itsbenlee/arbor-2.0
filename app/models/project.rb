@@ -9,6 +9,9 @@ class Project < ActiveRecord::Base
   validates_uniqueness_of :slack_iw_url, allow_nil: true
   validates_uniqueness_of :is_template,
     if: proc { |project| project.is_template }
+  validates_numericality_of :velocity,
+                            greater_than_or_equal_to: 0,
+                            allow_nil: true
 
   belongs_to :owner, class_name: User
   belongs_to :team
