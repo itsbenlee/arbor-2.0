@@ -127,20 +127,20 @@ function bindUserStoriesColorLinks() {
   });
 }
 
-function toggleNewGroupForm() {
-  var $newGroupButton = $('.add-new-group h5');
-  var $newGroupNameInput = $('.new-group-container input[name="group[name]"]');
+function toggleGroupForm() {
+  var $groupButton = $('.form-group-container h5');
+  var $groupNameInput = $('.form-group-container input[name="group[name]"]');
 
-  $newGroupButton.click(function(event) {
+  $groupButton.click(function(event) {
     $(this).hide();
     $(this).next()
       .show()
       .find('input[name="group[name]"]').focus();
   });
 
-  $newGroupNameInput.blur(function(event) {
-    $(this).closest('.new-group-container').hide();
-    $newGroupButton.show();
+  $groupNameInput.blur(function(event) {
+    $('.form-group-container .hide').hide();
+    $groupButton.show();
   });
 
   hoverNewGroupButton();
@@ -164,7 +164,7 @@ $(document).ready(function() {
     bindReorderStories();
     checkForEmptyGroupStories();
     bindUserStoriesColorLinks();
-    toggleNewGroupForm();
+    toggleGroupForm();
   }
 });
 

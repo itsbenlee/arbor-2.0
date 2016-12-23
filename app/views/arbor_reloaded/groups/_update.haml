@@ -1,0 +1,3 @@
+= form_for group, url: arbor_reloaded_group_path(group), remote: true  do |f|
+  = f.text_field :name, value: group.name, placeholder: t('reloaded.create_group.placeholder'), class: 'group-name radius'
+  .group-errors

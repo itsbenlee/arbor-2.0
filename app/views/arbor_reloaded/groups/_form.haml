@@ -1,3 +1,3 @@
 = form_for new_group, url: arbor_reloaded_project_groups_path(new_group.project, add_ungrouped_stories: add_ungrouped_stories), html: { id: 'new_group' }, remote: true  do |f|
   = f.text_field :name, placeholder: t('reloaded.create_group.placeholder'), class: 'group-name radius'
-  .new-group-errors
+  .group-errors

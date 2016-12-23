@@ -1,7 +1,7 @@
 module ArborReloaded
   class GroupsController < ApplicationController
-    before_action :set_project_and_groups, except: :destroy
-    before_action :set_group, only: :destroy
+    before_action :set_project_and_groups, except: [:destroy, :update]
+    before_action :set_group, only: [:destroy, :update]
 
     def index
       render partial: 'arbor_reloaded/groups/list',
@@ -12,6 +12,13 @@ module ArborReloaded
       @group = @groups.create(group_params)
       @errors = @group.errors.full_messages
       @group.add_ungrouped_stories if @errors.empty? && add_ungrouped_stories?
+    end
+
+    def update
+      @group.update(group_params)
+      @project = @group.project
+      @groups = @project.groups
+      @errors = @group.try(:errors).try(:full_messages)
     end
 
     def destroy
