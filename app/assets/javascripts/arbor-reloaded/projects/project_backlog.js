@@ -127,6 +127,35 @@ function bindUserStoriesColorLinks() {
   });
 }
 
+function toggleNewGroupForm() {
+  var $newGroupButton = $('.add-new-group h5');
+  var $newGroupNameInput = $('.new-group-container input[name="group[name]"]');
+
+  $newGroupButton.click(function(event) {
+    $(this).hide();
+    $(this).next()
+      .show()
+      .find('input[name="group[name]"]').focus();
+  });
+
+  $newGroupNameInput.blur(function(event) {
+    $('.new-group-container').hide();
+    $newGroupButton.show();
+  });
+
+  toggleUpperNewGroupButton();
+}
+
+function toggleUpperNewGroupButton() {  
+  $('#add-new-group-upper input[name="group[name]"]')
+    .focus(function(event) {
+      $("#add-new-group-upper .title-breaker").css('visibility', 'visible');
+    })
+    .blur(function(event){
+      $("#add-new-group-upper .title-breaker").removeAttr("style");
+    });
+}
+
 $(document).ready(function() {
   if ($('.new-backlog-story').length > 0) { autogrowInputs(); }
 
@@ -135,6 +164,7 @@ $(document).ready(function() {
     bindReorderStories();
     checkForEmptyGroupStories();
     bindUserStoriesColorLinks();
+    toggleNewGroupForm();
   }
 });
 

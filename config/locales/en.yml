@@ -53,8 +53,8 @@ en:
       enter_result: "<some benefit>"
       enter_criterion: 'Write a new acceptance criteria here...'
       new_comment: "Write a new comment here..."
-      ungrouped: No group
-      empty_group_text: 'Add Stories in this Group'
+      ungrouped: No theme
+      empty_group_text: 'Add Stories in this Theme'
     logout: "Sign out"
     acceptance_criterions: "Acceptance Criteria"
   canvas:
@@ -145,8 +145,8 @@ en:
       save: 'Save'
       cancel: 'Cancel'
     create_group:
-      title: 'Create a group'
-      placeholder: 'Enter group name here'
+      title: 'Create a theme'
+      placeholder: 'Enter theme name here'
     user_stories:
       write_title: 'Write some User Stories'
       write_subtitle: 'On the field above, enter a user story to start filling up your project'
@@ -155,7 +155,7 @@ en:
         confirm: 'Yes, delete it'
         cancel: 'Cancel'
       create:
-        group_select_default: 'Place it in group...'
+        group_select_default: 'Place it in theme...'
     team:
       can_not_delete_team: 'An error occurred while deleting sorry.'
       no_email: 'Please type an email on the field to submit'
@@ -225,7 +225,7 @@ en:
         confirmation_text: 'Are you sure you want to delete this user story?'
         disclaimer: 'This change cannot be undone'
       complexity_points: Complexity Points
-      group: Group
+      group: Theme
     delete_story_modal:
       confirm_delete_title_first: 'Are you sure you want to delete'
       confirm_delete_title_second: 'the following user stories?'
@@ -263,13 +263,13 @@ en:
       estimation_cost: 'This is the cost of a sprint. Different development teams charge differently, but the average cost of a week of work is a good benchmark.'
       copy_token: 'This is your token to connect Arbor with other apps'
       acceptance_criteria: 'Acceptance Criteria are statements that serve as conditions of satisfaction. They define the boundaries of a User Story and determine if a story is completed and working as intended.'
-      delete_group: 'Delete group'
+      delete_group: 'Delete theme'
       create_project: 'Create a new project'
     pdf:
       user_stories: 'User Stories'
     groups:
-      create: 'Create group'
-      delete_group_confirm: 'Are you sure you want to delete this group?'
+      create: 'Click here to add a theme'
+      delete_group_confirm: 'Are you sure you want to delete this theme?'
   slack:
     notifications:
       story_created: 'New user story created'

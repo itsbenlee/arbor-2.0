@@ -1,8 +1,3 @@
-#group-modal.group-wrapper.reveal-modal{ aria: { hidden: 'true', labelledby: 'group-modal' }, data: { reveal: '' }, role: 'dialog' }
-  = link_to '×', '#', class: 'close-reveal-modal'
-  = form_for new_group, url: arbor_reloaded_project_groups_path(new_group.project), html: { id: 'new_group' }, remote: true  do |f|
-    %h2= t('reloaded.create_group.title')
-    = f.text_field :name, placeholder: t('reloaded.create_group.placeholder'), class: 'group-name radius login'
-    .new-group-errors
-    .action
-      = f.submit t('reloaded.create_project.save_button'), class: 'button radius tiny', id: 'save-group'
+= form_for new_group, url: arbor_reloaded_project_groups_path(new_group.project), html: { id: 'new_group' }, remote: true  do |f|
+  = f.text_field :name, placeholder: t('reloaded.create_group.placeholder'), class: 'group-name radius'
+  .new-group-errors

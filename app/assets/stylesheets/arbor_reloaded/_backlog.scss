@@ -245,7 +245,28 @@ $circle-dimension: $story-points-dimension;
   margin: rem-calc(20 0 0);
 }
 
-.group-wrapper { text-align: center; }
+#add-new-group-upper {
+  .title-breaker {
+    visibility: hidden;
+  }
+
+  &:hover {
+    .title-breaker {
+      visibility: visible;
+    }
+  }
+}
+
+.new-group-container {
+  [name="group[name]"] {
+    margin: auto;
+    width: 30%;
+  }
+
+  .new-group-errors {
+    text-transform: none;
+  }
+}
 
 //  STORIES EMPTY
 // - - - - - - - - - - - - - - - - - - - - - - - - -

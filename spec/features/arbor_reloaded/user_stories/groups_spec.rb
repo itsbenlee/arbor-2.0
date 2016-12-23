@@ -13,18 +13,18 @@ feature 'Groups', js: true do
 
     scenario 'I should see the create group on the backlog section' do
       within '.backlog-story-list' do
-        expect(page).to have_css('#create-group')
+        expect(page).to have_css('#add-new-group-bottom')
       end
     end
 
     scenario 'I should be able to create a group' do
       within '.backlog-story-list' do
-        find('#create-group').click
+        find('#add-new-group-bottom h5').click
       end
 
       within 'form#new_group' do
         fill_in 'group_name', with: 'Test group'
-        click_button 'Create'
+        page.execute_script("$('form#new_group').submit()")
       end
       wait_for_ajax
 
@@ -34,12 +34,12 @@ feature 'Groups', js: true do
 
     scenario 'I should see a group after creating it' do
       within '.backlog-story-list' do
-        find('#create-group').click
+        find('#add-new-group-bottom h5').click
       end
 
       within 'form#new_group' do
         fill_in 'group_name', with: 'Test group'
-        click_button 'Create'
+        page.execute_script("$('form#new_group').submit()")
       end
       wait_for_ajax
       expect(page).to have_content(/Test group/i)
@@ -47,12 +47,12 @@ feature 'Groups', js: true do
 
     scenario 'I should see the group on select box after creating it' do
       within '.backlog-story-list' do
-        find('#create-group').click
+        find('#add-new-group-bottom h5').click
       end
 
       within 'form#new_group' do
         fill_in 'group_name', with: 'Test group'
-        click_button 'Create'
+        page.execute_script("$('form#new_group').submit()")
       end
       wait_for_ajax
       sleep 0.5
@@ -60,18 +60,34 @@ feature 'Groups', js: true do
       expect(find('#user_story_group_id').find(:xpath, 'option[3]').text).to eq('Test group')
     end
 
-    scenario 'I should see the error message wen name is taken' do
+    scenario 'I should see the error message when name is taken' do
       within '.backlog-story-list' do
-        find('#create-group').click
+        find('#add-new-group-bottom h5').click
       end
 
       within 'form#new_group' do
         fill_in 'group_name', with: group.name
-        click_button 'Create'
+        page.execute_script("$('form#new_group').submit()")
       end
       wait_for_ajax
+      find('#add-new-group-bottom h5').click
 
       expect(page).to have_content('Name has already been taken')
+    end
+
+    scenario 'I should see the error message when name is longer than 100 characters' do
+      within '.backlog-story-list' do
+        find('#add-new-group-bottom h5').click
+      end
+
+      within 'form#new_group' do
+        fill_in 'group_name', with: "Test group"*11
+        page.execute_script("$('form#new_group').submit()")
+      end
+      wait_for_ajax
+      find('#add-new-group-bottom h5').click
+
+      expect(page).to have_content('Name is too long')
     end
   end
 
