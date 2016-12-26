@@ -5,6 +5,9 @@
   $('.group-name').val('');
   $('.new-group-errors').text('');
   $('#groups-list').empty().html("<%= j render 'arbor_reloaded/groups/list', groups: @groups, project: @project %>");
+  <% unless @project.has_ungrouped_user_stories? %>
+    $('#ungrouped-list-container .reorder-user-stories').empty();
+  <% end %>
   backlogGeneralBinds();
 
   $.get(new_story_url, function(data) {
