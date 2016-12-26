@@ -139,20 +139,20 @@ function toggleNewGroupForm() {
   });
 
   $newGroupNameInput.blur(function(event) {
-    $('.new-group-container').hide();
+    $(this).closest('.new-group-container').hide();
     $newGroupButton.show();
   });
 
-  toggleUpperNewGroupButton();
+  hoverNewGroupButton();
 }
 
-function toggleUpperNewGroupButton() {  
-  $('#add-new-group-upper input[name="group[name]"]')
+function hoverNewGroupButton() {
+  $('.add-new-group input[name="group[name]"]')
     .focus(function(event) {
-      $("#add-new-group-upper .title-breaker").css('visibility', 'visible');
+      $(this).closest(".title-breaker").css('visibility', 'visible');
     })
     .blur(function(event){
-      $("#add-new-group-upper .title-breaker").removeAttr("style");
+      $(this).closest(".title-breaker").removeAttr("style");
     });
 }
 
