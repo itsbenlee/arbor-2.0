@@ -14,12 +14,6 @@ li { list-style: none; }
 
 input { outline: 0; }
 
-%flex-centered {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 // CIRCULAR CHECKBOX
 
 .circle-checkbox {
@@ -189,6 +183,14 @@ input:focus {
     margin-right: rem-calc(15);
     padding: rem-calc(0 12);
     text-transform: uppercase;
+  }
+
+  .actions-container {
+    background: $body-bg;
+    float: right;
+
+    a:not(:last-child) { margin-left: rem-calc(7); }
+    a:last-child { margin-left: rem-calc(15); }
   }
 
   .reorder-user-stories {
