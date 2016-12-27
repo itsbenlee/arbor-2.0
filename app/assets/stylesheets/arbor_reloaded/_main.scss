@@ -14,6 +14,12 @@ li { list-style: none; }
 
 input { outline: 0; }
 
+%flex-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 // CIRCULAR CHECKBOX
 
 .circle-checkbox {
@@ -146,20 +152,37 @@ input:focus {
     padding: rem-calc(0 15);
   }
 
+  .actions-container {
+    @extend %flex-centered;
+    background: $body-bg;
+    float: right;
+
+    a { margin-left: rem-calc(10); }
+  }
+
   .reorder-user-stories {
     min-height: rem-calc(40);
   }
 
   .toggle-content-btn,
   .icn-settings,
-  .delete-group {
+  .delete-group,
+  .move-group {
     background-color: $body-bg;
-    color: $black-20;
+    color: $black-30;
     float: right;
 
     &:hover { color: $black-30; }
+  }
 
-    &.delete-group { line-height: rem-calc(23); }
+  .move-group.down { @include transform(rotate(180deg)); }
+
+  .round-btn {
+    background-color: $black-10;
+    border-radius: 50%;
+    height: rem-calc(22);
+    line-height: rem-calc(22);
+    width: rem-calc(22);
   }
 
   .toggle-content-btn {

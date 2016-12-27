@@ -265,6 +265,8 @@ en:
       acceptance_criteria: 'Acceptance Criteria are statements that serve as conditions of satisfaction. They define the boundaries of a User Story and determine if a story is completed and working as intended.'
       delete_group: 'Delete theme'
       create_project: 'Create a new project'
+      move_down: 'Move down'
+      move_up: 'Move up'
     pdf:
       user_stories: 'User Stories'
     groups:
