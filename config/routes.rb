@@ -69,7 +69,12 @@ Railsroot::Application.routes.draw do
 
       get 'members', controller: :projects, action: :members
 
-      resources :groups, only: %i(index create destroy)
+      resources :groups, only: %i(index create destroy) do
+        member do
+          patch :upgrade
+          patch :downgrade
+        end
+      end
     end
 
     get 'export/:id/spreadhseet', to: 'projects#export_to_spreadhseet'

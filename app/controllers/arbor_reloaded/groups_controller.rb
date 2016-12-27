@@ -19,7 +19,21 @@ module ArborReloaded
       redirect_to :back
     end
 
+    def upgrade
+      group.upgrade
+      head :ok
+    end
+
+    def downgrade
+      group.downgrade
+      head :ok
+    end
+
     private
+
+    def group
+      @group ||= Group.find(params[:id])
+    end
 
     def group_params
       params.require(:group).permit(:name)

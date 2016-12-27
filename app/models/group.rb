@@ -5,6 +5,7 @@ class Group < ActiveRecord::Base
   validates_presence_of :name
   validates_uniqueness_of :name, case_sensitive: false, scope: :project_id
   validates_length_of :name, maximum: 100
+  validates_uniqueness_of :order, scope: :project_id
 
   before_destroy :ungroup_stories
 
@@ -19,5 +20,21 @@ class Group < ActiveRecord::Base
 
   def add_ungrouped_stories
     project.user_stories.ungrouped.update_all(group_id: id)
+  end
+
+  def upgrade
+    downgraded_group = self.class.find_by(order: order - 1)
+    return unless downgraded_group
+
+    downgraded_group.update_attribute(order: order)
+    update_attribute(order: order - 1)
+  end
+
+  def downgrade
+    upgraded_group = self.class.find_by(order: order + 1)
+    return unless upgraded_group
+
+    upgraded_group.update_attribute(order: order)
+    update_attribute(order: order + 1)
   end
 end
