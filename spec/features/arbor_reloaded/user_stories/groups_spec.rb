@@ -13,18 +13,18 @@ feature 'Groups', js: true do
 
     scenario 'I should see the create group on the backlog section' do
       within '.backlog-story-list' do
-        expect(page).to have_css('#add-new-group-bottom')
+        expect(page).to have_css('.add-new-group')
       end
     end
 
     scenario 'I should be able to create a group' do
       within '.backlog-story-list' do
-        find('#add-new-group-bottom h5').click
+        find('#add-new-group-bottom h5').trigger 'click'
       end
 
-      within 'form#new_group' do
+      within '#add-new-group-bottom form#new_group' do
         fill_in 'group_name', with: 'Test group'
-        page.execute_script("$('form#new_group').submit()")
+        page.execute_script("$('#add-new-group-bottom form#new_group').submit()")
       end
       wait_for_ajax
 
@@ -34,12 +34,12 @@ feature 'Groups', js: true do
 
     scenario 'I should see a group after creating it' do
       within '.backlog-story-list' do
-        find('#add-new-group-bottom h5').click
+        find('#add-new-group-bottom h5').trigger 'click'
       end
 
-      within 'form#new_group' do
+      within '#add-new-group-bottom form#new_group' do
         fill_in 'group_name', with: 'Test group'
-        page.execute_script("$('form#new_group').submit()")
+        page.execute_script("$('#add-new-group-bottom form#new_group').submit()")
       end
       wait_for_ajax
       expect(page).to have_content(/Test group/i)
@@ -47,12 +47,12 @@ feature 'Groups', js: true do
 
     scenario 'I should see the group on select box after creating it' do
       within '.backlog-story-list' do
-        find('#add-new-group-bottom h5').click
+        find('#add-new-group-bottom h5').trigger 'click'
       end
 
-      within 'form#new_group' do
+      within '#add-new-group-bottom form#new_group' do
         fill_in 'group_name', with: 'Test group'
-        page.execute_script("$('form#new_group').submit()")
+        page.execute_script("$('#add-new-group-bottom form#new_group').submit()")
       end
       wait_for_ajax
       sleep 0.5
@@ -62,32 +62,65 @@ feature 'Groups', js: true do
 
     scenario 'I should see the error message when name is taken' do
       within '.backlog-story-list' do
-        find('#add-new-group-bottom h5').click
+        find('#add-new-group-bottom h5').trigger 'click'
       end
 
-      within 'form#new_group' do
+      within '#add-new-group-bottom form#new_group' do
         fill_in 'group_name', with: group.name
-        page.execute_script("$('form#new_group').submit()")
+        page.execute_script("$('#add-new-group-bottom #new_group').submit()")
       end
       wait_for_ajax
-      find('#add-new-group-bottom h5').click
 
-      expect(page).to have_content('Name has already been taken')
+      page.execute_script("$('#add-new-group-bottom .new-group-container').show()")
+      expect(find("#add-new-group-bottom #new_group")).to have_css(".errors")
     end
 
     scenario 'I should see the error message when name is longer than 100 characters' do
       within '.backlog-story-list' do
-        find('#add-new-group-bottom h5').click
+        find('#add-new-group-bottom h5').trigger 'click'
       end
 
-      within 'form#new_group' do
+      within '#add-new-group-bottom form#new_group' do
         fill_in 'group_name', with: "Test group"*11
-        page.execute_script("$('form#new_group').submit()")
+        page.execute_script("$('#add-new-group-bottom #new_group').submit()")
       end
       wait_for_ajax
-      find('#add-new-group-bottom h5').click
 
-      expect(page).to have_content('Name is too long')
+      page.execute_script("$('#add-new-group-bottom .new-group-container').show()")
+      expect(find("#add-new-group-bottom #new_group")).to have_css(".errors")
+    end
+
+    context 'On the upper new group form' do
+      let!(:user_story) { create :user_story, project: project }
+
+      scenario 'I should be able to create a group that has all the ungrouped stories' do
+        within '.backlog-story-list' do
+          find('#add-new-group-upper h5').trigger 'click'
+        end
+
+        within '#add-new-group-upper form#new_group' do
+          fill_in 'group_name', with: "Test group"
+          page.execute_script("$('#add-new-group-upper #new_group').submit()")
+        end
+        wait_for_ajax
+
+        group = Group.find_by_name('Test group')
+        expect(group.user_stories).to include(user_story)
+      end
+
+      scenario 'I should make the project not have any ungrouped story' do
+        within '.backlog-story-list' do
+          find('#add-new-group-upper h5').trigger 'click'
+        end
+
+        within '#add-new-group-upper form#new_group' do
+          fill_in 'group_name', with: "Test group"
+          page.execute_script("$('#add-new-group-upper #new_group').submit()")
+        end
+        wait_for_ajax
+
+        expect(project.ungrouped_user_stories?).to be false
+      end
     end
   end
 

@@ -97,8 +97,8 @@ class Project < ActiveRecord::Base
     end
   end
 
-  def has_ungrouped_user_stories?
-    user_stories.where(group_id: nil).any?
+  def ungrouped_user_stories?
+    user_stories.ungrouped.any?
   end
 
   def copy_canvas(replica)
