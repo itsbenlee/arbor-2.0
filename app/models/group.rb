@@ -5,7 +5,7 @@ class Group < ActiveRecord::Base
   validates_presence_of :name
   validates_uniqueness_of :name, case_sensitive: false, scope: :project_id
   validates_length_of :name, maximum: 100
-  validates_uniqueness_of :order, scope: :project_id
+  # validates_uniqueness_of :order, scope: :project_id
 
   before_destroy :ungroup_stories
 

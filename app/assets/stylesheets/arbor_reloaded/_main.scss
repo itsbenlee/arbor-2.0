@@ -14,12 +14,6 @@ li { list-style: none; }
 
 input { outline: 0; }
 
-%flex-centered {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 // CIRCULAR CHECKBOX
 
 .circle-checkbox {
@@ -153,11 +147,11 @@ input:focus {
   }
 
   .actions-container {
-    @extend %flex-centered;
     background: $body-bg;
     float: right;
 
-    a { margin-left: rem-calc(10); }
+    a:not(:last-child) { margin-left: rem-calc(7); }
+    a:last-child { margin-left: rem-calc(15); }
   }
 
   .reorder-user-stories {
@@ -180,9 +174,10 @@ input:focus {
   .round-btn {
     background-color: $black-10;
     border-radius: 50%;
-    height: rem-calc(22);
-    line-height: rem-calc(22);
-    width: rem-calc(22);
+    font-size: rem-calc(12);
+    height: rem-calc(20);
+    line-height: rem-calc(20);
+    width: rem-calc(20);
   }
 
   .toggle-content-btn {
@@ -214,6 +209,14 @@ input:focus {
   }
 }//section separator
 
+#groups-list {
+
+  & > :first-child .move-group.up,
+  & > :last-child .move-group.down {
+    cursor: default;
+    opacity: .4;
+  }
+}
 // -------  BLOCK ELEMENT AND ACTIONS' BUTTONS ------ //
 
 $action-circle-dimension: rem-calc(25);
