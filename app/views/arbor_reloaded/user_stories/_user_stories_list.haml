@@ -1,5 +1,5 @@
-= render 'arbor_reloaded/groups/new', new_group: new_group, place: 'upper'
+= render 'arbor_reloaded/groups/new', new_group: new_group, place: 'upper', add_ungrouped_stories: true
 #ungrouped-list-container
   = render 'arbor_reloaded/user_stories/ungrouped_list', project: project
 = render 'arbor_reloaded/groups/list', groups: project.groups, project: project
-= render 'arbor_reloaded/groups/new', new_group: new_group, place: 'bottom'
+= render 'arbor_reloaded/groups/new', new_group: new_group, place: 'bottom', add_ungrouped_stories: false

@@ -9,8 +9,9 @@ module ArborReloaded
     end
 
     def create
-      @groups.create(group_params)
-      @errors = @groups.try(:last).try(:errors).try(:full_messages)
+      @group = @groups.create(group_params)
+      @errors = @group.errors.full_messages
+      @group.add_ungrouped_stories if @errors.empty? && add_ungrouped_stories?
     end
 
     def destroy
@@ -31,6 +32,10 @@ module ArborReloaded
 
     def set_group
       @group = Group.includes(:user_stories).find(params[:id])
+    end
+
+    def add_ungrouped_stories?
+      params[:add_ungrouped_stories] == 'true'
     end
   end
 end

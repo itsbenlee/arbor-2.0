@@ -22,6 +22,7 @@ class UserStory < ActiveRecord::Base
   belongs_to :group
 
   scope :backlog_ordered, -> { order(backlog_order: :desc) }
+  scope :ungrouped, -> { where(group_id: nil) }
 
   def self.estimation_series
     fib = ->(arg) { arg < 2 ? arg : fib[arg - 1] + fib[arg - 2] }
