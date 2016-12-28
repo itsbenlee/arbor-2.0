@@ -38,10 +38,6 @@ module ArborReloaded
 
     private
 
-    def group
-      @group ||= Group.find(params[:id])
-    end
-
     def group_params
       params.require(:group).permit(:name, :order, :preset_order)
     end
