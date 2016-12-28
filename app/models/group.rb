@@ -9,6 +9,8 @@ class Group < ActiveRecord::Base
   validates_length_of :name, maximum: 100
   validates_uniqueness_of :order, scope: :project_id
 
+  before_create :set_order
+  before_destroy :reorder_project_groups
   before_destroy :ungroup_stories
 
   def ungroup_stories
@@ -38,5 +40,16 @@ class Group < ActiveRecord::Base
 
     upgraded_group.update_attribute(:order, order)
     update_attribute(:order, new_order)
+  end
+
+  private
+
+  def set_order
+    self.order = project.try(:groups).try(:count) || 0
+  end
+
+  def reorder_project_groups
+    groups = project.groups.where('groups.order > :order', order: order)
+    groups.each { |group| group.update_attribute(:order, group.order - 1) }
   end
 end
