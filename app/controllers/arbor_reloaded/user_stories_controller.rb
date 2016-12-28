@@ -170,7 +170,7 @@ module ArborReloaded
 
     def set_project_and_groups
       check_edit_permission
-      @groups = @project.groups
+      @groups = @project.groups.order(:order)
     end
   end
 end

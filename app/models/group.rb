@@ -1,11 +1,13 @@
 class Group < ActiveRecord::Base
+  default_scope { order(:order) }
+
   belongs_to :project
   has_many :user_stories
 
   validates_presence_of :name
   validates_uniqueness_of :name, case_sensitive: false, scope: :project_id
   validates_length_of :name, maximum: 100
-  # validates_uniqueness_of :order, scope: :project_id
+  validates_uniqueness_of :order, scope: :project_id
 
   before_destroy :ungroup_stories
 
@@ -22,19 +24,19 @@ class Group < ActiveRecord::Base
     project.user_stories.ungrouped.update_all(group_id: id)
   end
 
-  def upgrade
-    downgraded_group = self.class.find_by(order: order - 1)
-    return unless downgraded_group
+  def up
+    new_order = order - 1
+    return unless (downgraded_group = project.groups.find_by(order: new_order))
 
-    downgraded_group.update_attribute(order: order)
-    update_attribute(order: order - 1)
+    downgraded_group.update_attribute(:order, order)
+    update_attribute(:order, new_order)
   end
 
-  def downgrade
-    upgraded_group = self.class.find_by(order: order + 1)
-    return unless upgraded_group
+  def down
+    new_order = order + 1
+    return unless (upgraded_group = project.groups.find_by(order: new_order))
 
-    upgraded_group.update_attribute(order: order)
-    update_attribute(order: order + 1)
+    upgraded_group.update_attribute(:order, order)
+    update_attribute(:order, new_order)
   end
 end

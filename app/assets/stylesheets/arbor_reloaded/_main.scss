@@ -211,8 +211,8 @@ input:focus {
 
 #groups-list {
 
-  & > :first-child .move-group.up,
-  & > :last-child .move-group.down {
+  > :first-child .move-group.up,
+  > :last-child .move-group.down {
     cursor: default;
     opacity: .4;
   }

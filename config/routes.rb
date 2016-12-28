@@ -71,8 +71,8 @@ Railsroot::Application.routes.draw do
 
       resources :groups, only: %i(index create destroy) do
         member do
-          patch :upgrade
-          patch :downgrade
+          patch :up
+          patch :down
         end
       end
     end

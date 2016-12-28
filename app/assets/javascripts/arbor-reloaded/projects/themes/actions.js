@@ -18,6 +18,8 @@ function moveUpTheme() {
       var $groupDivider = $this.closest('.group-divider');
       var $prev = $groupDivider.prev();
       $prev.before($groupDivider);
+
+      updateOrderTheme($this.data('url'))
     }
   });
 }
@@ -32,6 +34,15 @@ function moveDownTheme() {
       var $groupDivider = $this.closest('.group-divider');
       var $next = $groupDivider.next();
       $next.after($groupDivider);
+
+      updateOrderTheme($this.data('url'))
     }
+  });
+}
+
+var updateOrderTheme = function(url) {
+  $.ajax({
+    type: 'PATCH',
+    url: url
   });
 }
