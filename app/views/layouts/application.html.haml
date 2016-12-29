@@ -26,7 +26,6 @@
     :javascript
       try{Typekit.load();}catch(e){}
   %body{'data-action' => action_name, 'data-controller' => controller_name }
-    = render 'layouts/sidebar', projects: @projects, current_project: @project
     .columns.small-10.right-app-content
       #top-nav
         = link_to destroy_user_session_path, method: :delete, class: 'logout nav-links' do

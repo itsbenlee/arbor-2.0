@@ -79,6 +79,10 @@ Railsroot::Application.routes.draw do
       end
     end
 
+    resources :google_sheets, only: [] do
+      get :authorization_callback, on: :collection
+    end
+
     get 'export/:id/spreadhseet', to: 'projects#export_to_spreadhseet'
 
     post 'user_stories/copy', controller: :user_stories, action: :copy

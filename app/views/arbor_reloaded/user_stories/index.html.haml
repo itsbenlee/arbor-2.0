@@ -13,3 +13,9 @@
     = render 'arbor_reloaded/user_stories/user_stories_list', project: @project, new_group_top: @new_group_top, new_group_bottom: @new_group_bottom
 = render 'arbor_reloaded/user_stories/story_delete_modal', project: @project
 = render 'arbor_reloaded/user_stories/copy_stories_modal', projects: @projects
+
+- if @google_sheets_callback
+  :javascript
+    $(document).ready(function(){
+      $('#google-sheets-modal').foundation('reveal', 'open');
+    });

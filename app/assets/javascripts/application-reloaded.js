@@ -23,6 +23,7 @@
 //= require arbor-reloaded/utils/vendor/jquery.mousewheel.min
 //= require arbor-reloaded/utils/vendor/jquery.mCustomScrollbar.concat.min
 //= require arbor-reloaded/utils/vendor/trello
+//= require arbor-reloaded/utils/vendor/google_sheets
 //= require arbor-reloaded/utils/userStories/modalUtils
 //= require arbor-reloaded/projects/canvas/canvas
 //= require arbor-reloaded/projects/canvas/form
