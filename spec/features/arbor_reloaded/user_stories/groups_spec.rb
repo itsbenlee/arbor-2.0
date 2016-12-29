@@ -135,6 +135,12 @@ feature 'Groups', js: true do
     scenario 'I should see existing groups' do
       expect(page).to have_content(group.name.upcase)
     end
+
+    scenario 'I should see group estimated points' do
+      within "#group-#{group.id}" do
+        expect(page).to have_content("#{group.total_estimated_points} pts".upcase)
+      end
+    end
   end
 
   context 'For deleting grups' do
