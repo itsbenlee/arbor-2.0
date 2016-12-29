@@ -128,19 +128,23 @@ function bindUserStoriesColorLinks() {
 }
 
 function toggleGroupForm() {
-  var $groupButton = $('.form-group-container h5');
+  var $groupName = $('.form-group-container h5');
   var $groupNameInput = $('.form-group-container input[name="group[name]"]');
 
-  $groupButton.click(function(event) {
-    $(this).hide();
-    $(this).next()
-      .show()
-      .find('input[name="group[name]"]').focus();
+  $groupName.click(function(event) {
+    $this = $(this);
+    $formEditName = $this.closest('.title-breaker').find('.form-container');
+
+    $this.addClass('hidden-element');
+    $formEditName.removeClass('hidden-element');
+    $formEditName.find('input[name="group[name]"]').focus();
   });
 
   $groupNameInput.blur(function(event) {
-    $('.form-group-container .hide').hide();
-    $groupButton.show();
+    $this = $(this);
+
+    $this.closest('.form-container').addClass('hidden-element');
+    $this.closest('.title-breaker').find('h5').removeClass('hidden-element');
   });
 
   hoverNewGroupButton();

@@ -119,6 +119,7 @@ input:focus {
 .title-breaker {
   $icon-dimension: rem-calc(15);
 
+  line-height: 2.5rem;
   margin: rem-calc(35) 0;
   position: relative;
   text-align: center;
@@ -146,6 +147,18 @@ input:focus {
     padding: rem-calc(0 15);
   }
 
+  .edit-name-container {
+    background-color: $body-bg;
+    display: inline-block;
+    padding: 0 rem-calc(15);
+
+    [name="group[name]"] {
+      text-align: center;
+      text-transform: uppercase;
+      width: 100%;
+    }
+  }
+
   .reorder-user-stories {
     min-height: rem-calc(40);
   }
@@ -159,7 +172,7 @@ input:focus {
 
     &:hover { color: $black-30; }
 
-    &.delete-group { line-height: rem-calc(23); }
+    &.delete-group { line-height: 2.5rem; }
   }
 
   .toggle-content-btn {
@@ -168,7 +181,7 @@ input:focus {
     font-size: rem-calc(12);
     height: $icon-dimension;
     line-height: rem-calc(10);
-    margin-top: rem-calc(4);
+    margin-top: rem-calc(12);
     text-align: center;
     width: $icon-dimension;
 

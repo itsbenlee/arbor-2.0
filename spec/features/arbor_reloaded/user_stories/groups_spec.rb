@@ -71,7 +71,7 @@ feature 'Groups', js: true do
       end
       wait_for_ajax
 
-      page.execute_script("$('#add-new-group-bottom .new-group-container').show()")
+      page.execute_script("$('#add-new-group-bottom .new-group-container').removeClass('hidden-element')")
       expect(find("#add-new-group-bottom #new_group")).to have_css(".errors")
     end
 
@@ -86,7 +86,7 @@ feature 'Groups', js: true do
       end
       wait_for_ajax
 
-      page.execute_script("$('#add-new-group-bottom .new-group-container').show()")
+      page.execute_script("$('#add-new-group-bottom .new-group-container').removeClass('hidden-element')")
       expect(find("#add-new-group-bottom #new_group")).to have_css(".errors")
     end
 
