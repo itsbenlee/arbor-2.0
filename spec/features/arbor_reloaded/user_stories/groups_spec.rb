@@ -125,7 +125,7 @@ feature 'Groups', js: true do
   end
 
   context 'For listing groups' do
-    let!(:group) { create :group, project: project }
+    let!(:group)    { create :group, project: project }
 
     background do
       sign_in user
@@ -134,6 +134,58 @@ feature 'Groups', js: true do
 
     scenario 'I should see existing groups' do
       expect(page).to have_content(group.name.upcase)
+    end
+  end
+
+  context 'Editing group' do
+    let!(:first_group)  { create :group, project: project }
+    let!(:second_group) { create :group, project: project }
+
+    background do
+      sign_in user
+      visit arbor_reloaded_project_user_stories_path(project)
+    end
+
+    scenario 'I should be able to change the group\'s name' do
+      within "#group-#{first_group.id}" do
+        find('h5').click
+      end
+
+      within "form#edit_group_#{first_group.id}" do
+        fill_in 'group_name', with: 'New name'
+        page.execute_script("$('form#edit_group_#{first_group.id}').submit()")
+      end
+
+      wait_for_ajax
+      expect(page).to have_content('New name'.upcase)
+    end
+
+    scenario 'I should see the original group\'s name if it is repeated' do
+      within "#group-#{first_group.id}" do
+        find('h5').click
+      end
+
+      within "form#edit_group_#{first_group.id}" do
+        fill_in 'group_name', with: second_group.name
+        page.execute_script("$('form#edit_group_#{first_group.id}').submit()")
+      end
+
+      wait_for_ajax
+      expect(page).to have_content(first_group.name.upcase)
+    end
+
+    scenario 'I should see the original group\'s name if it is too long' do
+      within "#group-#{first_group.id}" do
+        find('h5').click
+      end
+
+      within "form#edit_group_#{first_group.id}" do
+        fill_in 'group_name', with: 'More than 100 characters' * 5
+        page.execute_script("$('form#edit_group_#{first_group.id}').submit()")
+      end
+
+      wait_for_ajax
+      expect(page).to have_content(first_group.name.upcase)
     end
   end
 
