@@ -135,15 +135,32 @@ input:focus {
     z-index: -1;
   }//border
 
-  h5 {
+  .group-info-wrapper {
+    @include inline-block;
+    background-color: $body-bg;
+  }
+
+  h5,
+  .points {
     @include inline-block;
     background-color: $body-bg;
     color: $light-blue;
     font-size: rem-calc(14);
     font-weight: $font-weight-normal;
-    line-height: 1;
+  }
+
+  h5 {
     margin: 0;
+    line-height: 1;
     padding: rem-calc(0 15);
+  }
+
+  .points {
+    border: 1px solid $light-blue;
+    border-radius: rem-calc(15);
+    margin-right: rem-calc(15);
+    padding: rem-calc(0 12);
+    text-transform: uppercase;
   }
 
   .reorder-user-stories {
