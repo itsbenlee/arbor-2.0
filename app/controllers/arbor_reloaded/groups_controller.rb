@@ -32,7 +32,7 @@ module ArborReloaded
     private
 
     def group_params
-      params.require(:group).permit(:name)
+      params.require(:group).permit(:name, :order, :preset_order)
     end
 
     def set_project_and_groups

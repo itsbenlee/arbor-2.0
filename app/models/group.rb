@@ -1,16 +1,19 @@
 class Group < ActiveRecord::Base
   default_scope { order(:order) }
 
+  attr_accessor :preset_order
+
   belongs_to :project
   has_many :user_stories
 
   validates_presence_of :name
   validates_uniqueness_of :name, case_sensitive: false, scope: :project_id
   validates_length_of :name, maximum: 100
-  validates_uniqueness_of :order, scope: :project_id
+  validates_uniqueness_of :order, scope: :project_id, unless: -> { preset_order }
 
-  before_create :set_order
-  before_destroy :reorder_project_groups
+  before_create :move_down_project_groups, if: -> { order.present? }
+  before_create :set_order, unless: -> { order.present? }
+  before_destroy :move_up_project_groups
   before_destroy :ungroup_stories
 
   def ungroup_stories
@@ -48,7 +51,12 @@ class Group < ActiveRecord::Base
     self.order = project.try(:groups).try(:count) || 0
   end
 
-  def reorder_project_groups
+  def move_down_project_groups
+    groups = project.groups.where('groups.order >= :order', order: order)
+    groups.each { |group| group.update_attribute(:order, group.order + 1) }
+  end
+
+  def move_up_project_groups
     groups = project.groups.where('groups.order > :order', order: order)
     groups.each { |group| group.update_attribute(:order, group.order - 1) }
   end
