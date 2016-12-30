@@ -73,6 +73,8 @@ Railsroot::Application.routes.draw do
         member do
           patch :up
           patch :down
+          patch :active
+          patch :inactive
         end
       end
     end

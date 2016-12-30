@@ -1,7 +1,7 @@
 module ArborReloaded
   class GroupsController < ApplicationController
-    before_action :set_project_and_groups, except: %i(update destroy up down)
-    before_action :set_group, only: %i(update destroy up down)
+    before_action :set_project_and_groups, only: %i(index create)
+    before_action :set_group, except: %i(index create)
 
     def index
       render partial: 'arbor_reloaded/groups/list',
@@ -36,6 +36,16 @@ module ArborReloaded
       head :ok
     end
 
+    def active
+      @group.active!
+      head :ok
+    end
+
+    def inactive
+      @group.inactive!
+      head :ok
+    end
+
     private
 
     def group_params
@@ -53,6 +63,12 @@ module ArborReloaded
 
     def add_ungrouped_stories?
       params[:add_ungrouped_stories] == 'true'
+    end
+
+    def json_status
+      render_to_string(partial: '',
+                       layout: false,
+                       locals: {})
     end
   end
 end

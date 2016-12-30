@@ -19,7 +19,7 @@ function moveUpTheme() {
       var $prev = $groupDivider.prev();
       $prev.before($groupDivider);
 
-      updateOrderTheme($this.data('url'))
+      makeAJAXCall($this.data('url'))
     }
   });
 }
@@ -35,14 +35,28 @@ function moveDownTheme() {
       var $next = $groupDivider.next();
       $next.after($groupDivider);
 
-      updateOrderTheme($this.data('url'))
+      makeAJAXCall($this.data('url'))
     }
   });
 }
 
-var updateOrderTheme = function(url) {
+function toggleStatusTheme() {
+  $('#groups-list .status-btn').on('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    // debugger;
+    makeAJAXCall($(this).data('url'), function(response) {
+      console.log(response);
+    });
+  });
+}
+
+var makeAJAXCall = function(url, success, error) {
   $.ajax({
     type: 'PATCH',
-    url: url
+    url: url,
+    success: success,
+    error: error
   });
 }

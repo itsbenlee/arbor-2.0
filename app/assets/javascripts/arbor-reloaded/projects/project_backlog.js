@@ -193,4 +193,5 @@ function backlogGeneralBinds() {
   bindUserStoriesColorLinks();
   moveUpTheme();
   moveDownTheme();
+  toggleStatusTheme();
 }

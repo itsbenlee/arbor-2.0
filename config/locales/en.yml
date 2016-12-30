@@ -267,6 +267,8 @@ en:
       create_project: 'Create a new project'
       move_down: 'Move down'
       move_up: 'Move up'
+      active: 'Enable'
+      inactive: 'Disable'
     pdf:
       user_stories: 'User Stories'
     groups:

@@ -60,4 +60,5 @@ $( document ).ready(function() {
   collapsableContent();
   moveUpTheme();
   moveDownTheme();
+  toggleStatusTheme();
 });
