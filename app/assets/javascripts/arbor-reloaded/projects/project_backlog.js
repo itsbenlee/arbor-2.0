@@ -55,7 +55,15 @@ function bindReorderStories() {
         url: url,
         dataType: 'json',
         method: 'PUT',
-        data: { stories: newStoriesOrder.stories, project: project }
+        data: { stories: newStoriesOrder.stories, project: project },
+        success: function(response) {
+          $('#groups-list-container').replaceWith(response.data);
+          bindReorderStories();
+          checkForEmptyGroupStories();
+          displayColorTags();
+          bindUserStoriesColorLinks();
+          collapsableContent();
+        }
       });
     }
   });

@@ -106,9 +106,15 @@ module ArborReloaded
     end
 
     def order_stories
-      project = Project.includes(:user_stories).find(params[:project_id])
+      project = Project.includes(:user_stories, :groups)
+                .find(params[:project_id])
       project_services = ArborReloaded::ProjectServices.new(project)
-      render json: project_services.reorder_stories(update_order_params)
+      project_ordered = project_services.reorder_stories(update_order_params)
+      data = render_to_string(partial: 'arbor_reloaded/groups/list',
+                              layout: false,
+                              locals: { project: project_ordered,
+                                        groups: project_ordered.groups })
+      render json: { data: data }
     end
 
     def log
