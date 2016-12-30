@@ -34,7 +34,8 @@ class Project < ActiveRecord::Base
   scope :by_teams, ->(teams) { where(team_id: teams.pluck(:id)) }
 
   def total_points
-    user_stories.map(&:estimated_points).compact.sum
+    # user_stories.map(&:estimated_points).compact.sum
+    groups.active.map(&:total_estimated_points).sum
   end
 
   def total_cost
