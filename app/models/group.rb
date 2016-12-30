@@ -9,7 +9,8 @@ class Group < ActiveRecord::Base
   validates_presence_of :name
   validates_uniqueness_of :name, case_sensitive: false, scope: :project_id
   validates_length_of :name, maximum: 100
-  validates_uniqueness_of :order, scope: :project_id, unless: -> { preset_order }
+  validates_uniqueness_of :order, scope: :project_id,
+                                  unless: -> { preset_order }
 
   before_create :move_down_project_groups, if: -> { order.present? }
   before_create :set_order, unless: -> { order.present? }
