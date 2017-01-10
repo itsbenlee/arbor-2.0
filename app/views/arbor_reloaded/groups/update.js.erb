@@ -1,0 +1,17 @@
+<% unless @errors.any? %>
+  var $stories_container = $('#user-story-form-container')[0],
+      new_story_url      = $stories_container.dataset.newStoryUrl;
+
+  $('#edit_group_<%= @group.id %> .group-name').val("<%= @group.name %>").blur();
+  $('#edit_group_<%= @group.id %> .group-errors').text('');
+  $("#group-<%= @group.id %> h5").text("<%= @group.name %>");
+  backlogGeneralBinds();
+
+  $.get(new_story_url, function(data) {
+    $('#user-story-form-container').empty().html(data);
+    autogrowInputs();
+  });
+<% else %>
+  $('#edit_group_<%= @group.id %> .group-name').addClass('errors')
+  $('#edit_group_<%= @group.id %> .group-errors').html('*<%= @errors[0] %>');
+<% end %>

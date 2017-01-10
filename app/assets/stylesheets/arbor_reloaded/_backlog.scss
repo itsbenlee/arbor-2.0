@@ -257,13 +257,13 @@ $circle-dimension: $story-points-dimension;
   }
 }
 
-.new-group-container {
+.form-group-container {
   [name="group[name]"] {
     margin: auto;
     width: 30%;
   }
 
-  .new-group-errors {
+  .group-errors {
     text-transform: none;
   }
 }
