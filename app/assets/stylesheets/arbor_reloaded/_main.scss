@@ -119,7 +119,6 @@ input:focus {
 .title-breaker {
   $icon-dimension: rem-calc(15);
 
-  line-height: 2.5rem;
   margin: rem-calc(35) 0;
   position: relative;
   text-align: center;
@@ -139,6 +138,7 @@ input:focus {
   .group-info-wrapper {
     @include inline-block;
     background-color: $body-bg;
+    margin-left: 5%;
   }
 
   h5,
@@ -170,6 +170,7 @@ input:focus {
     padding: 0 rem-calc(15);
 
     [name="group[name]"] {
+      height: 1.8em;
       text-align: center;
       text-transform: uppercase;
       width: 100%;
@@ -216,7 +217,7 @@ input:focus {
     font-size: rem-calc(12);
     height: $icon-dimension;
     line-height: rem-calc(10);
-    margin-top: rem-calc(12);
+    margin-top: rem-calc(4);
     text-align: center;
     width: $icon-dimension;
 

@@ -3,7 +3,7 @@ function collapsableContent() {
   $trigger.on( "click", function(e) {
     e.preventDefault();
     e.stopPropagation();
-    $(this).closest('.title-breaker').next().fadeToggle(400);
+    $(this).closest('.form-group-container').next().fadeToggle(400);
     $(this).toggleClass('active');
   });
 }

@@ -31,19 +31,11 @@ class Group < ActiveRecord::Base
   end
 
   def up
-    new_order = order - 1
-    return unless (downgraded_group = project.groups.find_by(order: new_order))
-
-    downgraded_group.update_attribute(:order, order)
-    update_attribute(:order, new_order)
+    move_group_order(-1)
   end
 
   def down
-    new_order = order + 1
-    return unless (upgraded_group = project.groups.find_by(order: new_order))
-
-    upgraded_group.update_attribute(:order, order)
-    update_attribute(:order, new_order)
+    move_group_order(1)
   end
 
   def total_estimated_points
@@ -64,5 +56,13 @@ class Group < ActiveRecord::Base
   def move_up_project_groups
     groups = project.groups.where('groups.order > :order', order: order)
     groups.each { |group| group.update_attribute(:order, group.order - 1) }
+  end
+
+  def move_group_order(step)
+    new_order = order + step
+    return unless (moved_group = project.groups.find_by(order: new_order))
+
+    moved_group.update_attribute(:order, order)
+    update_attribute(:order, new_order)
   end
 end
