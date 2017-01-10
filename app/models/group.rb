@@ -20,4 +20,8 @@ class Group < ActiveRecord::Base
   def add_ungrouped_stories
     project.user_stories.ungrouped.update_all(group_id: id)
   end
+
+  def total_estimated_points
+    user_stories.sum(:estimated_points)
+  end
 end
