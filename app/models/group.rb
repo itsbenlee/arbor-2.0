@@ -46,6 +46,10 @@ class Group < ActiveRecord::Base
     update_attribute(:order, new_order)
   end
 
+  def total_estimated_points
+    user_stories.sum(:estimated_points)
+  end
+
   private
 
   def set_order

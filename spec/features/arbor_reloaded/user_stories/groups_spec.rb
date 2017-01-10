@@ -60,14 +60,14 @@ feature 'Groups', js: true do
       scenario 'I should see the error message when name is taken' do
         submit_group_form(position, group.name)
 
-        page.execute_script("$('#add-new-group-bottom .new-group-container').show()")
+        page.execute_script("$('#add-new-group-bottom .new-group-container').removeClass('hidden-element')")
         expect(find("#add-new-group-bottom #new_group")).to have_css(".errors")
       end
 
       scenario 'I should see the error message when name is longer than 100 characters' do
         submit_group_form(position, name * 11)
 
-        page.execute_script("$('#add-new-group-bottom .new-group-container').show()")
+        page.execute_script("$('#add-new-group-bottom .new-group-container').removeClass('hidden-element')")
         expect(find("#add-new-group-bottom #new_group")).to have_css(".errors")
       end
     end
@@ -109,6 +109,94 @@ feature 'Groups', js: true do
 
     scenario 'I should see existing groups' do
       expect(page).to have_content(group.name.upcase)
+    end
+
+    scenario 'I should see group estimated points' do
+      within "#group-#{group.id}" do
+        expect(page).to have_content("#{group.total_estimated_points} pts".upcase)
+      end
+    end
+  end
+
+  context 'Editing group' do
+    let!(:first_group)  { create :group, project: project }
+    let!(:second_group) { create :group, project: project }
+
+    background do
+      sign_in user
+      visit arbor_reloaded_project_user_stories_path(project)
+    end
+
+    scenario 'I should be able to change the group\'s name' do
+      within "#group-#{first_group.id}" do
+        find('h5').click
+      end
+
+      within "form#edit_group_#{first_group.id}" do
+        fill_in 'group_name', with: 'New name'
+        page.execute_script("$('form#edit_group_#{first_group.id}').submit()")
+      end
+
+      wait_for_ajax
+      expect(page).to have_content('New name'.upcase)
+    end
+
+    scenario 'I should see the original group\'s name if it is repeated' do
+      within "#group-#{first_group.id}" do
+        find('h5').click
+      end
+
+      within "form#edit_group_#{first_group.id}" do
+        fill_in 'group_name', with: second_group.name
+        page.execute_script("$('form#edit_group_#{first_group.id}').submit()")
+      end
+
+      wait_for_ajax
+      expect(page).to have_content(first_group.name.upcase)
+    end
+
+    scenario 'I should see an error message if group\'s name is repeated' do
+      within "#group-#{first_group.id}" do
+        find('h5').click
+      end
+
+      within "form#edit_group_#{first_group.id}" do
+        fill_in 'group_name', with: second_group.name
+        page.execute_script("$('form#edit_group_#{first_group.id}').submit()")
+      end
+      wait_for_ajax
+
+      page.execute_script("$('#group-#{first_group.id} .form-container').removeClass('hidden-element')")
+      expect(page).to have_content('Name has already been taken')
+    end
+
+    scenario 'I should see the original group\'s name if it is too long' do
+      within "#group-#{first_group.id}" do
+        find('h5').click
+      end
+
+      within "form#edit_group_#{first_group.id}" do
+        fill_in 'group_name', with: 'More than 100 characters' * 5
+        page.execute_script("$('form#edit_group_#{first_group.id}').submit()")
+      end
+
+      wait_for_ajax
+      expect(page).to have_content(first_group.name.upcase)
+    end
+
+    scenario 'I should see an error message if group\'s name is too long' do
+      within "#group-#{first_group.id}" do
+        find('h5').click
+      end
+
+      within "form#edit_group_#{first_group.id}" do
+        fill_in 'group_name', with: 'More than 100 characters' * 5
+        page.execute_script("$('form#edit_group_#{first_group.id}').submit()")
+      end
+      wait_for_ajax
+
+      page.execute_script("$('#group-#{first_group.id} .form-container').removeClass('hidden-element')")
+      expect(page).to have_content('Name is too long')
     end
   end
 

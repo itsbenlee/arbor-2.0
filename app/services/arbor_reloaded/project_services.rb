@@ -32,7 +32,7 @@ module ArborReloaded
 
     def reorder_stories(new_order)
       @project.reorder_user_stories(new_order)
-      { success: true }
+      @project
     end
 
     def all_activities

@@ -2,8 +2,8 @@
   var $stories_container = $('#user-story-form-container')[0],
       new_story_url      = $stories_container.dataset.newStoryUrl;
 
-  $('.group-name').val('');
-  $('.new-group-errors').text('');
+  $('.new-group-container .group-name').val('');
+  $('.new-group-container .group-errors').text('');
   $('#groups-list-container').replaceWith("<%= j render 'arbor_reloaded/groups/list', groups: @groups, project: @project %>");
   <% unless @project.ungrouped_user_stories? %>
     $('#ungrouped-list-container .reorder-user-stories').empty();
@@ -15,6 +15,6 @@
     autogrowInputs();
   });
 <% else %>
-  $('.group-name').addClass('errors')
-  $('.new-group-errors').html('*<%= @errors[0] %>');
+  $('.new-group-container .group-name').addClass('errors')
+  $('.new-group-container .group-errors').html('*<%= @errors[0] %>');
 <% end %>

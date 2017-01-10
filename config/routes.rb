@@ -69,7 +69,7 @@ Railsroot::Application.routes.draw do
 
       get 'members', controller: :projects, action: :members
 
-      resources :groups, only: %i(index create destroy) do
+      resources :groups, only: %i(index create update destroy) do
         member do
           patch :up
           patch :down

@@ -55,7 +55,15 @@ function bindReorderStories() {
         url: url,
         dataType: 'json',
         method: 'PUT',
-        data: { stories: newStoriesOrder.stories, project: project }
+        data: { stories: newStoriesOrder.stories, project: project },
+        success: function(response) {
+          $('#groups-list-container').replaceWith(response.data);
+          bindReorderStories();
+          checkForEmptyGroupStories();
+          displayColorTags();
+          bindUserStoriesColorLinks();
+          collapsableContent();
+        }
       });
     }
   });
@@ -127,20 +135,21 @@ function bindUserStoriesColorLinks() {
   });
 }
 
-function toggleNewGroupForm() {
-  var $newGroupButton = $('.add-new-group h5');
-  var $newGroupNameInput = $('.new-group-container input[name="group[name]"]');
+function toggleGroupForm() {
+  $(document).on('click', '.form-group-container h5', function(event) {
+    $this = $(this);
+    $formEditName = $this.closest('.form-group-container').find('.form-container');
 
-  $newGroupButton.click(function(event) {
-    $(this).hide();
-    $(this).next()
-      .show()
-      .find('input[name="group[name]"]').focus();
+    $this.addClass('hidden-element');
+    $formEditName.removeClass('hidden-element');
+    $formEditName.find('input[name="group[name]"]').focus();
   });
 
-  $newGroupNameInput.blur(function(event) {
-    $(this).closest('.new-group-container').hide();
-    $newGroupButton.show();
+  $(document).on('blur', '.form-group-container input[name="group[name]"]', function(event) {
+    $this = $(this);
+
+    $this.closest('.form-container').addClass('hidden-element');
+    $this.closest('.form-group-container').find('h5').removeClass('hidden-element');
   });
 
   hoverNewGroupButton();
@@ -149,10 +158,10 @@ function toggleNewGroupForm() {
 function hoverNewGroupButton() {
   $('.add-new-group input[name="group[name]"]')
     .focus(function(event) {
-      $(this).closest(".title-breaker").css('visibility', 'visible');
+      $(this).closest(".form-group-container").css('visibility', 'visible');
     })
     .blur(function(event){
-      $(this).closest(".title-breaker").removeAttr("style");
+      $(this).closest(".form-group-container").removeAttr("style");
     });
 }
 
@@ -164,7 +173,7 @@ $(document).ready(function() {
     bindReorderStories();
     checkForEmptyGroupStories();
     bindUserStoriesColorLinks();
-    toggleNewGroupForm();
+    toggleGroupForm();
   }
 });
 

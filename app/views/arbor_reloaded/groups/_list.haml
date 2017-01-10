@@ -2,8 +2,12 @@
   #groups-list
     - groups.each do |group|
       .group-divider{ id: "group-#{group.id}" }
-        .title-breaker
-          %h5= group.name
+        .title-breaker.form-group-container
+          .group-info-wrapper
+            %h5= group.name
+            .form-container.edit-name-container.hidden-element
+              = render 'arbor_reloaded/groups/update', group: group
+            .points= "#{group.total_estimated_points} pts"
           .actions-container
             = link_to '', '#', class: 'has-tip toggle-content-btn active', data: { tooltip: '' }, aria: { haspopup: true }, title: t('reloaded.tooltips.hide')
             = link_to '', '#', class: 'icn-arrow move-group down round-btn', data: { tooltip: '', url: down_arbor_reloaded_group_path(group) }, title: t('reloaded.tooltips.move_down')

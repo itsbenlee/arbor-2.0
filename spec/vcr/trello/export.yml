@@ -407,4 +407,59 @@ http_interactions:
       string: '{"id":"56ccad22463767b02184291e","name":"Arbor Backlog Export","closed":false,"idBoard":"56ccad1e3a0d826ed783f91a","pos":8192}'
     http_version: 
   recorded_at: Tue, 23 Feb 2016 19:06:38 GMT
+- request:
+    method: get
+    uri: https://slack.com/api/auth.test?token=wehhrm9gmylxxvnio4w9kdx4i4b0spclmn0hxzjmtooy48pxh02nn79bsodt3jwukng789ztgtb9os3ibw4dftdqfwhxerc6s20bgbv5oszydhzx0t6fmrym9e298z965j5j3hngixor8glnaz9w7ysk0h7g838u812ifuunv9svmtwtpzp83ak4hgezj9j0ie9u044zg8ceddxzt9lj6xa0nbb6280y0gdvku9x3vw86lkkdh9avqlf4a0r603(364)
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '55'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - referrer no-referrer;
+      Date:
+      - Thu, 29 Dec 2016 20:48:17 GMT
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Slack-Backend:
+      - h
+      X-Slack-Req-Id:
+      - df4266b2-5330-4fc9-aaed-4eaa9011ea49
+      X-Xss-Protection:
+      - '0'
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 5b520560d2d222c748f183fdacfe692b.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 8aCMYu0hKBcKTPqqym6iSrKWdu8T-7C64fdMI5fv1On83oYx8sU6iw==
+    body:
+      encoding: UTF-8
+      string: '{"ok":false,"error":"invalid_auth"}'
+    http_version: 
+  recorded_at: Thu, 29 Dec 2016 20:48:17 GMT
 recorded_with: VCR 2.9.3
