@@ -136,23 +136,20 @@ function bindUserStoriesColorLinks() {
 }
 
 function toggleGroupForm() {
-  var $groupName = $('.form-group-container h5');
-  var $groupNameInput = $('.form-group-container input[name="group[name]"]');
-
-  $groupName.click(function(event) {
+  $(document).on('click', '.form-group-container h5', function(event) {
     $this = $(this);
-    $formEditName = $this.closest('.title-breaker').find('.form-container');
+    $formEditName = $this.closest('.form-group-container').find('.form-container');
 
     $this.addClass('hidden-element');
     $formEditName.removeClass('hidden-element');
     $formEditName.find('input[name="group[name]"]').focus();
   });
 
-  $groupNameInput.blur(function(event) {
+  $(document).on('blur', '.form-group-container input[name="group[name]"]', function(event) {
     $this = $(this);
 
     $this.closest('.form-container').addClass('hidden-element');
-    $this.closest('.title-breaker').find('h5').removeClass('hidden-element');
+    $this.closest('.form-group-container').find('h5').removeClass('hidden-element');
   });
 
   hoverNewGroupButton();
@@ -161,10 +158,10 @@ function toggleGroupForm() {
 function hoverNewGroupButton() {
   $('.add-new-group input[name="group[name]"]')
     .focus(function(event) {
-      $(this).closest(".title-breaker").css('visibility', 'visible');
+      $(this).closest(".form-group-container").css('visibility', 'visible');
     })
     .blur(function(event){
-      $(this).closest(".title-breaker").removeAttr("style");
+      $(this).closest(".form-group-container").removeAttr("style");
     });
 }
 

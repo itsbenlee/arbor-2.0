@@ -125,7 +125,7 @@ feature 'Groups', js: true do
   end
 
   context 'For listing groups' do
-    let!(:group)    { create :group, project: project }
+    let!(:group) { create :group, project: project }
 
     background do
       sign_in user
@@ -180,6 +180,21 @@ feature 'Groups', js: true do
       expect(page).to have_content(first_group.name.upcase)
     end
 
+    scenario 'I should see an error message if group\'s name is repeated' do
+      within "#group-#{first_group.id}" do
+        find('h5').click
+      end
+
+      within "form#edit_group_#{first_group.id}" do
+        fill_in 'group_name', with: second_group.name
+        page.execute_script("$('form#edit_group_#{first_group.id}').submit()")
+      end
+      wait_for_ajax
+
+      page.execute_script("$('#group-#{first_group.id} .form-container').removeClass('hidden-element')")
+      expect(page).to have_content('Name has already been taken')
+    end
+
     scenario 'I should see the original group\'s name if it is too long' do
       within "#group-#{first_group.id}" do
         find('h5').click
@@ -192,6 +207,21 @@ feature 'Groups', js: true do
 
       wait_for_ajax
       expect(page).to have_content(first_group.name.upcase)
+    end
+
+    scenario 'I should see an error message if group\'s name is too long' do
+      within "#group-#{first_group.id}" do
+        find('h5').click
+      end
+
+      within "form#edit_group_#{first_group.id}" do
+        fill_in 'group_name', with: 'More than 100 characters' * 5
+        page.execute_script("$('form#edit_group_#{first_group.id}').submit()")
+      end
+      wait_for_ajax
+
+      page.execute_script("$('#group-#{first_group.id} .form-container').removeClass('hidden-element')")
+      expect(page).to have_content('Name is too long')
     end
   end
 
