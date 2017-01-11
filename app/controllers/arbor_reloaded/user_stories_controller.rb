@@ -19,7 +19,8 @@ module ArborReloaded
     def index
       @user_story = UserStory.new
       @total_points = @project.total_points
-      @new_group = Group.new(project: @project)
+      @new_group_top = Group.new(project: @project, order: 0)
+      @new_group_bottom = Group.new(project: @project)
     end
 
     def show
@@ -170,7 +171,7 @@ module ArborReloaded
 
     def set_project_and_groups
       check_edit_permission
-      @groups = @project.groups
+      @groups = @project.groups.order(:order)
     end
   end
 end

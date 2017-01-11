@@ -191,4 +191,6 @@ function backlogGeneralBinds() {
   displayHideDelete();
   displayColorTags();
   bindUserStoriesColorLinks();
+  moveUpTheme();
+  moveDownTheme();
 }

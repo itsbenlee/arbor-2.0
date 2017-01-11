@@ -8,8 +8,11 @@
             .form-container.edit-name-container.hidden-element
               = render 'arbor_reloaded/groups/update', group: group
             .points= "#{group.total_estimated_points} pts"
-          = link_to '', '#', class: 'has-tip toggle-content-btn active', data: { tooltip: '' }, aria: { haspopup: true }, title: t('reloaded.tooltips.hide')
-          = link_to '', arbor_reloaded_group_path(group.id), method: :delete, class: 'icn-cross delete-group', data: { confirm: t('reloaded.groups.delete_group_confirm'), tooltip: '' }, aria: { haspopup: true } , title: t('reloaded.tooltips.delete_group')
+          .actions-container
+            = link_to '', '#', class: 'has-tip toggle-content-btn active', data: { tooltip: '' }, aria: { haspopup: true }, title: t('reloaded.tooltips.hide')
+            = link_to '', '#', class: 'icn-arrow move-group down round-btn', data: { tooltip: '', url: down_arbor_reloaded_group_path(group) }, title: t('reloaded.tooltips.move_down')
+            = link_to '', '#', class: 'icn-arrow move-group up round-btn', data: { tooltip: '', url: up_arbor_reloaded_group_path(group) }, title: t('reloaded.tooltips.move_up')
+            = link_to '', arbor_reloaded_group_path(group.id), method: :delete, class: 'icn-cross delete-group round-btn', data: { confirm: t('reloaded.groups.delete_group_confirm'), tooltip: '' }, aria: { haspopup: true } , title: t('reloaded.tooltips.delete_group')
         .reorder-user-stories{ data: { url: arbor_reloaded_project_reorder_backlog_path(project), project: project.id, group_id: group.id  } }
           - group.user_stories.backlog_ordered.each do |user_story|
             = render 'arbor_reloaded/user_stories/user_story', user_story: user_story

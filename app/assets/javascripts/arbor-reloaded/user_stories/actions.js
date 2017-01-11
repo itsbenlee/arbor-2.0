@@ -1,5 +1,5 @@
 function displayColorTags() {
-  var $colorTrigger = $('.backlog-user-story .color-story');
+  var $colorTrigger = $('.user-stories-container .color-story');
 
   $colorTrigger.each(function(index, el) {
     $(el).click(function(event) {

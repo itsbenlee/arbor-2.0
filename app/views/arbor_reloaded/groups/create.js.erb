@@ -4,7 +4,7 @@
 
   $('.new-group-container .group-name').val('');
   $('.new-group-container .group-errors').text('');
-  $('#groups-list').empty().html("<%= j render 'arbor_reloaded/groups/list', groups: @groups, project: @project %>");
+  $('#groups-list-container').replaceWith("<%= j render 'arbor_reloaded/groups/list', groups: @groups, project: @project %>");
   <% unless @project.ungrouped_user_stories? %>
     $('#ungrouped-list-container .reorder-user-stories').empty();
   <% end %>
