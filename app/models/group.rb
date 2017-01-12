@@ -44,7 +44,7 @@ class Group < ActiveRecord::Base
     user_stories.sum(:estimated_points)
   end
 
-  def oposite_status
+  def opposite_status
     active? ? 'inactive' : 'active'
   end
 
