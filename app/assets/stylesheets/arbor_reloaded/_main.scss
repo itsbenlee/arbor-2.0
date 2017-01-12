@@ -185,14 +185,6 @@ input:focus {
     text-transform: uppercase;
   }
 
-  .actions-container {
-    background: $body-bg;
-    float: right;
-
-    a:not(:last-child) { margin-left: rem-calc(7); }
-    a:last-child { margin-left: rem-calc(15); }
-  }
-
   .reorder-user-stories {
     min-height: rem-calc(40);
   }
@@ -218,6 +210,11 @@ input:focus {
     height: rem-calc(20);
     line-height: rem-calc(20);
     width: rem-calc(20);
+
+    &.status-btn {
+      font-size: rem-calc(20);
+      line-height: rem-calc(14);
+    }
   }
 
   .toggle-content-btn {

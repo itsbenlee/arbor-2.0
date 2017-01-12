@@ -30,7 +30,7 @@ function checkForEmptyGroupStories() {
 }
 
 function bindReorderStories() {
-  var $reorder_stories = $backlogStoryList.find('.reorder-user-stories');
+  var $reorder_stories = $backlogStoryList.find('#ungrouped-list-container .reorder-user-stories, .active .reorder-user-stories');
 
   $reorder_stories.sortable({
     connectWith: '.reorder-user-stories',
@@ -165,6 +165,12 @@ function hoverNewGroupButton() {
     });
 }
 
+function refreshProjectEstimations(total_points, total_cost, total_weeks) {
+  $('.total_points').text(total_points);
+  $('.total_cost').text(numberWithCommas(total_cost));
+  $('.total_weeks').text(total_weeks);
+}
+
 $(document).ready(function() {
   if ($('.new-backlog-story').length > 0) { autogrowInputs(); }
 
@@ -191,7 +197,4 @@ function backlogGeneralBinds() {
   displayHideDelete();
   displayColorTags();
   bindUserStoriesColorLinks();
-  moveUpTheme();
-  moveDownTheme();
-  toggleStatusTheme();
 }

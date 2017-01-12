@@ -16,9 +16,7 @@ module ArborReloaded
 
     def update
       @group.update(group_params)
-      @project = @group.project
-      @groups = @project.groups
-      @errors = @group.try(:errors).try(:full_messages)
+      @errors = @group.errors.full_messages
     end
 
     def destroy
@@ -38,12 +36,10 @@ module ArborReloaded
 
     def active
       @group.active!
-      head :ok
     end
 
     def inactive
       @group.inactive!
-      head :ok
     end
 
     private
@@ -63,12 +59,6 @@ module ArborReloaded
 
     def add_ungrouped_stories?
       params[:add_ungrouped_stories] == 'true'
-    end
-
-    def json_status
-      render_to_string(partial: '',
-                       layout: false,
-                       locals: {})
     end
   end
 end

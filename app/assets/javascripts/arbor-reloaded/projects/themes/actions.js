@@ -9,7 +9,7 @@ function collapsableContent() {
 }
 
 function moveUpTheme() {
-  $('#groups-list .move-group.up').on('click', function(e) {
+  $(document).on('click', '#groups-list .move-group.up', function(e) {
     e.preventDefault();
     e.stopPropagation();
 
@@ -19,13 +19,13 @@ function moveUpTheme() {
       var $prev = $groupDivider.prev();
       $prev.before($groupDivider);
 
-      makeAJAXCall($this.data('url'))
+      makePatchAJAXCall($this.data('url'))
     }
   });
 }
 
 function moveDownTheme() {
-  $('#groups-list .move-group.down').on('click', function(e) {
+  $(document).on('click', '#groups-list .move-group.down', function(e) {
     e.preventDefault();
     e.stopPropagation();
 
@@ -35,24 +35,21 @@ function moveDownTheme() {
       var $next = $groupDivider.next();
       $next.after($groupDivider);
 
-      makeAJAXCall($this.data('url'))
+      makePatchAJAXCall($this.data('url'))
     }
   });
 }
 
 function toggleStatusTheme() {
-  $('#groups-list .status-btn').on('click', function(e) {
+  $(document).on('click', '#groups-list .status-btn', function(e) {
     e.preventDefault();
     e.stopPropagation();
 
-    // debugger;
-    makeAJAXCall($(this).data('url'), function(response) {
-      console.log(response);
-    });
+    makePatchAJAXCall($(this).data('url'));
   });
 }
 
-var makeAJAXCall = function(url, success, error) {
+var makePatchAJAXCall = function(url, success, error) {
   $.ajax({
     type: 'PATCH',
     url: url,

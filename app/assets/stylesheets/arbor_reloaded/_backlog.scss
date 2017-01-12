@@ -97,8 +97,8 @@ $circle-dimension: $story-points-dimension;
     .status-btn { background-color: $inactive-green; }
 
     .reorder-user-stories {
-      opacity: .2;
       cursor: default;
+      opacity: .2;
     }
   }
 }

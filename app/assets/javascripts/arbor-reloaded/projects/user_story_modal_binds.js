@@ -28,9 +28,7 @@ $(document).on('change', selectBoxSelectors, {}, function(event){
     data: { user_story: { estimated_points: estimated_points, group_id: group_id } },
     success: function (response) {
       if(response.success) {
-        $('.total_points').text(response.data.total_points);
-        $('.total_cost').text(numberWithCommas(response.data.total_cost));
-        $('.total_weeks').text(response.data.total_weeks);
+        refreshProjectEstimations(response.data.total_points, response.data.total_cost, response.data.total_weeks);
         ModalUtils.displayEstimation(response.data);
 
         $.when($.get(groups_url), $.get(ungrouped_url)).done(function(groupsData, ungroupedData) {
