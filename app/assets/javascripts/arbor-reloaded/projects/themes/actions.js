@@ -9,7 +9,7 @@ function collapsableContent() {
 }
 
 function moveUpTheme() {
-  $('#groups-list .move-group.up').on('click', function(e) {
+  $(document).on('click', '#groups-list .move-group.up', function(e) {
     e.preventDefault();
     e.stopPropagation();
 
@@ -19,13 +19,13 @@ function moveUpTheme() {
       var $prev = $groupDivider.prev();
       $prev.before($groupDivider);
 
-      updateOrderTheme($this.data('url'))
+      makePatchAJAXCall($this.data('url'))
     }
   });
 }
 
 function moveDownTheme() {
-  $('#groups-list .move-group.down').on('click', function(e) {
+  $(document).on('click', '#groups-list .move-group.down', function(e) {
     e.preventDefault();
     e.stopPropagation();
 
@@ -35,14 +35,25 @@ function moveDownTheme() {
       var $next = $groupDivider.next();
       $next.after($groupDivider);
 
-      updateOrderTheme($this.data('url'))
+      makePatchAJAXCall($this.data('url'))
     }
   });
 }
 
-var updateOrderTheme = function(url) {
+function toggleStatusTheme() {
+  $(document).on('click', '#groups-list .status-btn', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    makePatchAJAXCall($(this).data('url'));
+  });
+}
+
+var makePatchAJAXCall = function(url, success, error) {
   $.ajax({
     type: 'PATCH',
-    url: url
+    url: url,
+    success: success,
+    error: error
   });
 }

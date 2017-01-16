@@ -192,7 +192,8 @@ input:focus {
   .toggle-content-btn,
   .icn-settings,
   .delete-group,
-  .move-group {
+  .move-group,
+  .status-btn {
     background-color: $body-bg;
     color: $black-30;
     float: right;
@@ -209,6 +210,11 @@ input:focus {
     height: rem-calc(20);
     line-height: rem-calc(20);
     width: rem-calc(20);
+
+    &.status-btn {
+      font-size: rem-calc(20);
+      line-height: rem-calc(14);
+    }
   }
 
   .toggle-content-btn {

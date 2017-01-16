@@ -3,6 +3,8 @@ class Group < ActiveRecord::Base
 
   attr_accessor :preset_order
 
+  enum status: [:active, :inactive]
+
   belongs_to :project
   has_many :user_stories
 
@@ -40,6 +42,10 @@ class Group < ActiveRecord::Base
 
   def total_estimated_points
     user_stories.sum(:estimated_points)
+  end
+
+  def opposite_status
+    active? ? 'inactive' : 'active'
   end
 
   private

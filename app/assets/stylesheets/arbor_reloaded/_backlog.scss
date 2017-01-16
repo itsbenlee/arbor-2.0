@@ -91,6 +91,16 @@ $circle-dimension: $story-points-dimension;
   position: relative;
 
   .title-breaker { cursor: pointer; }
+
+  &.inactive {
+
+    .status-btn { background-color: $inactive-green; }
+
+    .reorder-user-stories {
+      cursor: default;
+      opacity: .2;
+    }
+  }
 }
 
 .empty-group-text {

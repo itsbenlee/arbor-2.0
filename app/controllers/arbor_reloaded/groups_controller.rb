@@ -1,7 +1,7 @@
 module ArborReloaded
   class GroupsController < ApplicationController
-    before_action :set_project_and_groups, except: %i(update destroy up down)
-    before_action :set_group, only: %i(update destroy up down)
+    before_action :set_project_and_groups, only: %i(index create)
+    before_action :set_group, except: %i(index create)
 
     def index
       render partial: 'arbor_reloaded/groups/list',
@@ -16,9 +16,7 @@ module ArborReloaded
 
     def update
       @group.update(group_params)
-      @project = @group.project
-      @groups = @project.groups
-      @errors = @group.try(:errors).try(:full_messages)
+      @errors = @group.errors.full_messages
     end
 
     def destroy
@@ -34,6 +32,14 @@ module ArborReloaded
     def down
       @group.down
       head :ok
+    end
+
+    def active
+      @group.active!
+    end
+
+    def inactive
+      @group.inactive!
     end
 
     private
