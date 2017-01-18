@@ -1,23 +1,21 @@
 module ArborReloaded
   class CanvasesController < ApplicationController
     layout 'application_reload'
-    before_action :set_canvas, :check_edit_permission
-    before_action :set_current_question, only: :create
+    before_action :check_edit_permission
+
+    helper_method :canvas
+    helper_method :project
+    helper_method :questions
 
     def index
-      @current_question = 'problems'
     end
 
     def create
-      @canvas.update_attributes(canvas_params)
+      canvas.update_attributes(canvas_params)
       render :index
     end
 
     private
-
-    def set_current_question
-      @current_question = params['current-question']
-    end
 
     def canvas_params
       params.permit(:problems, :solutions, :alternative, :advantage, :segment,
@@ -25,17 +23,24 @@ module ArborReloaded
                     :cost_structure)
     end
 
-    def set_canvas
-      @project = Project.includes(:canvas).find(params[:project_id])
-      @canvas = @project.canvas ||= Canvas.new
-    end
-
     def check_edit_permission
-      project_auth = ProjectAuthorization.new(@project)
+      project_auth = ProjectAuthorization.new(project)
       return if project_auth.member?(current_user)
 
       flash[:alert] = I18n.translate('can_not_edit')
       redirect_to root_url
+    end
+
+    def canvas
+      @canvas ||= project.canvas ||= Canvas.new
+    end
+
+    def project
+      @project ||= Project.includes(:canvas).find(params[:project_id])
+    end
+
+    def questions
+      @questions ||= Canvas::QUESTIONS
     end
   end
 end
