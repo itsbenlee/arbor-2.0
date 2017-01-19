@@ -13,11 +13,8 @@ def set_project_velocity(velocity)
 end
 
 def set_cost_input
-  within '#estimation-item-cost' do
-    find('.icn-settings', visible: false).trigger(:click)
-    sleep 0.5
-  end
-
+  find('#estimation-item-cost').click()
+  sleep 0.5
   yield
   click_button 'Save Changes'
   wait_for_ajax

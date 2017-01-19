@@ -38,16 +38,6 @@ $estimation-box-height: rem-calc(140);
         font-size: rem-calc(34);
         line-height: $estimation-box-height;
       }
-
-      .icn-settings {
-        background-color: transparent;
-        bottom: rem-calc(5);
-        display: none;
-        position: absolute;
-        right: rem-calc(5);
-      }//.icn-settings
-
-      &:hover { .icn-settings { display: block; } }
     } // item box
   }
 } // estimation
@@ -56,12 +46,16 @@ $estimation-box-height: rem-calc(140);
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 #edit-estimation-modal {
-  padding: 0;
   text-align: center;
   width: rem-calc(400);
 
-  h5 { border-bottom: 1px solid $black-20;}
-  .estimation-item { text-align: center; }
+  h5 { background-color: $light-bg; }
+
+  .estimation-item {
+    text-align: center;
+
+    + .estimation-item { margin-top: rem-calc(30); }
+  }
 
   .title {
     @include inline-block();
@@ -77,7 +71,9 @@ $estimation-box-height: rem-calc(140);
     input {
       background-color: $light-bg;
       border: 0;
+      border-bottom: 1px solid $black-20;
       color: $black;
+      display: block;
       font-size: rem-calc(40);
       height: rem-calc(50);
       line-height: rem-calc(50);
@@ -99,4 +95,6 @@ $estimation-box-height: rem-calc(140);
     text-align: center;
     width: $icon-dimension;
   }
+
+  .modal-footer { border-top: 0; }
 } // modal

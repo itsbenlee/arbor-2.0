@@ -49,11 +49,8 @@ feature 'Estimation totals', js:true do
     end
   end
 
-  scenario 'I sould access to estimation settings from extimation boxes' do
-    within '.total-points' do
-      find('.icn-settings', visible: false).trigger('click')
-    end
-
+  scenario 'I sould access to estimation settings from estimation boxes' do
+    find('.total-points').click()
     expect(page).to have_content('Estimation Settings')
   end
 end
