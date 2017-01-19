@@ -7,7 +7,7 @@ module ArborReloaded
     before_action :check_edit_permission, only: :create
     before_action :set_project, only: %i(destroy_stories update ungrouped new)
     before_action :set_project_and_groups, only: %i(index show)
-    before_action :google_sheets_export, only: :index
+    before_action :google_sheets_response, only: :index
 
     def new
       user_story = UserStory.new
@@ -175,14 +175,14 @@ module ArborReloaded
       @groups = @project.groups.order(:order)
     end
 
-    def google_sheets_export
-      if @google_sheets_callback = params[:google_sheets_export].present?
-        @google_sheets_response = {
-          success: params[:google_sheets_export][:success] == 'true',
-          url: params[:google_sheets_export][:url],
-          errors: params[:google_sheets_export][:errors]
-        }
-      end
+    def google_sheets_response
+      return unless (response = params[:google_sheets_response])
+
+      @google_sheets_response = {
+        success: response[:success] == 'true',
+        url: response[:url],
+        errors: response[:errors]
+      }
     end
   end
 end

@@ -14,7 +14,7 @@
 = render 'arbor_reloaded/user_stories/story_delete_modal', project: @project
 = render 'arbor_reloaded/user_stories/copy_stories_modal', projects: @projects
 
-- if @google_sheets_callback
+- if @google_sheets_response.present?
   :javascript
     $(document).ready(function(){
       $('#google-sheets-modal').foundation('reveal', 'open');

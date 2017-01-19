@@ -12,6 +12,8 @@ module ApplicationHelper
   end
 
   def google_sheets_authentication_url(project)
-    ArborReloaded::GoogleSheetsServices.new(project, authorization_callback_arbor_reloaded_google_sheets_url).google_sheets_authentication_url
+    callback = authorization_callback_arbor_reloaded_google_sheets_url
+    service = Google::SheetsV4::ExportService.new(project, callback)
+    service.google_sheets_authentication_url
   end
 end

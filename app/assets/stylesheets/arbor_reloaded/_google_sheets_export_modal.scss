@@ -1,12 +1,10 @@
-$modal-margin: rem-calc(20);
-
 #google-sheets-modal {
+  $modal-margin: rem-calc(20);
+
   h2 { margin-bottom: $modal-margin; }
-
+  button[type='submit']         { margin-bottom: $modal-margin / 2; }
   .google-sheets-export-success { color: $success-color; }
-  .google-sheets-export-error { color: $error-color; }
-
-  #google-sheets-export-submit { margin-bottom: $modal-margin / 2; }
+  .google-sheets-export-error   { color: $error-color; }
 
   .export-text {
     color: $black-30;
