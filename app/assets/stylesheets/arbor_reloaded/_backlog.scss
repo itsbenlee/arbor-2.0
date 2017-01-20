@@ -2,18 +2,32 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .new-backlog-story {
-  @include border-radius($global-radius);
-  border-bottom: 2px dashed $black-20;
-  color: $black-40;
-  font-size: rem-calc(22);
-  padding: rem-calc(15 25);
-  position: relative;
+  $story-font-size: rem-calc(18);
 
-  .backlog-story-input {
-    float: left;
-    max-width: 100%;
-    width: auto;
+  color: $black-40;
+  font-size: $story-font-size;
+  margin-top: - $page-wrapper-margin;
+
+  .user-story-form-container {
+    background-color: $body-bg;
+    padding: rem-calc(15 25);
+
+    &.fixed { border-bottom: 1px solid $black-10; }
   }
+
+  form {
+    @include flexbox();
+    align-items: center;
+
+    > * + * { margin: 0 rem-calc(10); }
+  }
+
+  .backlog-story {
+    @include flex(1);
+    border-bottom: 2px dashed $black-20;
+  }
+
+  .backlog-story-input { display: inline-block; }
 
   input {
     &[type="text"] {
@@ -21,8 +35,8 @@
       @include ellipsis;
       background-color: $body-bg;
       border: 0;
-      font-size: rem-calc(22);
-      margin: 0;
+      font-size: $story-font-size;
+      margin-bottom: 0;
       vertical-align: inherit;
       @include input-placeholder { color: $black-80; };
     }
@@ -32,14 +46,10 @@
   .select-group-dropdown {
     $btn-width: rem-calc(73);
     $btn-height: rem-calc(40);
-    $select-width: rem-calc(180);
+    $select-width: rem-calc(150);
     $select-height: rem-calc(34);
 
-    bottom: - $btn-height / 2;
-    margin: 0;
-    position: absolute;
-    right: $btn-width + rem-calc(20);
-    z-index: 4;
+    margin-bottom: 0;
 
     &.select-group-dropdown {
       height: $select-height;
@@ -50,13 +60,12 @@
 
     &.create-btn {
       background-color: $black-20;
-      right: 0;
 
       @media #{ $small-only } { right: rem-calc(10); }
+
+      &.complete { background-color: $success-color; }
     }//create btn
   }
-
-  .success-button { background-color: $success-color; }
 }//new backlog story
 
 //  USER STORY LIST

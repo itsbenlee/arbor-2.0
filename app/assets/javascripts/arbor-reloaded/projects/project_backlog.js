@@ -171,6 +171,41 @@ function refreshProjectEstimations(total_points, total_cost, total_weeks) {
   $('.total_weeks').text(total_weeks);
 }
 
+function onNewBacklogStoryInputKeyup() {
+  var $backlogStoryInput = $('.backlog-story-input input'),
+      $saveStoryButton   = $('#save-user-story');
+
+  $backlogStoryInput.keyup(function() {
+    var count = $backlogStoryInput.filter(function() {
+      return $(this).val().length > 0;
+    }).length;
+
+    if (count === $backlogStoryInput.length) {
+      $saveStoryButton.addClass('complete');
+    } else {
+      $saveStoryButton.removeClass('complete');
+    }
+  })
+}
+
+function fixNewBacklogStoryOnTop() {
+  var $newBacklogStory        = $('.new-backlog-story'),
+      $userStoryFormContainer = $('#user-story-form-container');
+
+  if ($(window).scrollTop() >= $newBacklogStory.offset().top) {
+    $userStoryFormContainer.addClass('fixed');
+  } else {
+    $userStoryFormContainer.removeClass('fixed');
+  }
+}
+
+function fixNewBacklogStoryHeight() {
+    var $newBacklogStory        = $('.new-backlog-story'),
+        $userStoryFormContainer = $('#user-story-form-container');
+
+    $newBacklogStory.height($userStoryFormContainer.outerHeight());
+}
+
 $(document).ready(function() {
   if ($('.new-backlog-story').length > 0) { autogrowInputs(); }
 
@@ -180,6 +215,14 @@ $(document).ready(function() {
     checkForEmptyGroupStories();
     bindUserStoriesColorLinks();
     toggleGroupForm();
+  }
+
+  if ($('.new-backlog-story').length > 0) {
+    onNewBacklogStoryInputKeyup();
+    fixNewBacklogStoryHeight();
+    $(window)
+      .scroll(fixNewBacklogStoryOnTop)
+      .resize(fixNewBacklogStoryHeight);
   }
 });
 
