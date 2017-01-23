@@ -6,10 +6,7 @@
 
     .body
       - canvas_question = canvas.public_send(question)
-      - if canvas_question.present?
-        %p.question= canvas_question
-      - else
-        %p.question.default= t("#{question}_title")
+      %p.question{ class: "#{'default' if canvas_question.blank?}" }= canvas_question.presence || t("#{question}_title")
 
       = text_area_tag question, canvas_question, class: 'resizable-text-area', placeholder: t("#{question}_title")
       .actions-wrapper

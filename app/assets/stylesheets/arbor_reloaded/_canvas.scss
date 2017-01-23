@@ -5,23 +5,23 @@ $text-color: #999;
 $shadow: 0 -.5px 1.5px 0 rgba($shadow-grey, .4);
 
 #canvas {
-  display: flex;
+  @include flexbox();
   flex-wrap: wrap;
 }
 
 .canvas-question-container {
   color: $light-grey;
-  flex-basis: 33%;
   font-size: rem-calc(14);
   padding: rem-calc(10);
-  @media #{ $medium-only } { flex-basis: 50%; }
-  @media #{ $small-only } { flex-basis: 100%; }
+  width: 33%;
+  @media #{ $medium-only } { width: 49%; }
+  @media #{ $small-only } { width: 100%; }
 
   .question-form {
+    @include flexbox();
     background-color: $white;
     border-radius: rem-calc(2);
     box-shadow: $shadow;
-    display: flex;
     flex-direction: column;
     height: rem-calc(200);
     padding: rem-calc(15);
@@ -29,8 +29,8 @@ $shadow: 0 -.5px 1.5px 0 rgba($shadow-grey, .4);
   }
 
   header {
+    @include flexbox();
     align-items: center;
-    display: flex;
 
     > * + *  { margin-left: rem-calc(10); }
 
@@ -56,18 +56,19 @@ $shadow: 0 -.5px 1.5px 0 rgba($shadow-grey, .4);
   } // header
 
   .body {
-    display: flex;
-    flex: 1;
+    @include flexbox();
+    @include flex(1);
     flex-direction: column;
     margin-top: rem-calc(15);
 
     .question {
       color: $text-color;
       font-size: rem-calc(14);
-      height: 100%;
       line-height: normal;
       margin-bottom: 0;
+      max-height: 100%;
       overflow-y: overlay;
+      white-space: pre-wrap;
       word-wrap: break-word;
 
       &.default {
@@ -77,9 +78,9 @@ $shadow: 0 -.5px 1.5px 0 rgba($shadow-grey, .4);
     }
 
     textarea {
+      @include flex(1);
       border: 0;
       display: none;
-      flex: 1;
       height: 100%;
       padding: 0;
       resize: none;
