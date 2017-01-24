@@ -1,91 +1,123 @@
-$general-canvas-padding: rem-calc(30);
+$dark-grey: #393939;
+$light-grey: #b7b7b7;
+$shadow-grey: #686868;
+$text-color: #999;
+$shadow: 0 -.5px 1.5px 0 rgba($shadow-grey, .4);
 
 #canvas {
-  .left-content-wrapper {
-    border-right: 1px solid $black-10;
+  @include flexbox();
+  flex-wrap: wrap;
+}
 
-    .canvas-item {
-      color: $black-30;
+.canvas-question-container {
+  color: $light-grey;
+  font-size: rem-calc(14);
+  padding: rem-calc(10);
+  width: 33%;
+  @media #{ $medium-only } { width: 49%; }
+  @media #{ $small-only } { width: 100%; }
 
-      +.done {
-        color: $success-color;
+  .question-form {
+    @include flexbox();
+    background-color: $white;
+    border-radius: rem-calc(2);
+    box-shadow: $shadow;
+    flex-direction: column;
+    height: rem-calc(200);
+    padding: rem-calc(15);
+    @media #{ $small-only } { height: auto; }
+  }
 
-        &::after {
-          color: $success-color;
-          content: '\2713';
-        }
-      }
-    } // items checked
+  header {
+    @include flexbox();
+    align-items: center;
 
-    .canvas-visited {
-      color: $black;
-      font-weight: $font-weight-bold;
+    > * + *  { margin-left: rem-calc(10); }
+
+    h5 {
+      color: $dark-grey;
+      display: inline-block;
+      font-weight: normal;
+      margin: 0;
     }
 
-    .progress-bar {
-      margin: ($general-canvas-padding / 2) 0 0;
-
-      .progress {
-        @include border-radius($global-radius);
-        background-color: $black-10;
-      }
-
-      .meter {
-        @include border-radius($global-radius 0 0 $global-radius);
-        background-color: $success-color;
-      }
-    } // progress bar
-  } // left wrapper
-
-  .canvas-item-list {
-    margin-top: $general-canvas-padding;
-
-    li {
-      cursor: pointer;
-      font-size: rem-calc(20);
-
-      &::before {
-        color: $success-color;
-        content: '•';
-        font-size: rem-calc(20);
-        padding-right: rem-calc(10);
-      }
+    .info-trigger {
+      border: 1px solid $light-grey;
+      border-radius: 50%;
+      box-sizing: content-box;
+      color: $light-grey;
+      display: inline-block;
+      font-size: rem-calc(11);
+      height: rem-calc(14);
+      line-height: rem-calc(15);
+      text-align: center;
+      width: rem-calc(14);
     }
-  } // list
+  } // header
 
-  .canvas-fields {
-    label {
-      font-size: rem-calc(18);
-      margin-bottom: ($general-canvas-padding / 2);
+  .body {
+    @include flexbox();
+    @include flex(1);
+    flex-direction: column;
+    margin-top: rem-calc(15);
+
+    .question {
+      color: $text-color;
+      font-size: rem-calc(14);
+      line-height: normal;
+      margin-bottom: 0;
+      max-height: 100%;
+      overflow-y: overlay;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+
+      &.default {
+        font-size: rem-calc(12);
+        font-style: italic;
+      }
     }
 
     textarea {
-      @include border-radius($global-radius);
-      min-height: rem-calc(200);
+      @include flex(1);
+      border: 0;
+      display: none;
+      height: 100%;
+      padding: 0;
+      resize: none;
+      width: 100%;
+      @media #{ $small-only } { resize: vertical; }
+
+      @include input-placeholder {
+        font-size: rem-calc(12);
+        font-style: italic;
+      };
     }
-  }
 
-  .right-content-wrapper {
-    margin-top: rem-calc(50);
-    padding-left: rem-calc(40);
+    .actions-wrapper {
+      display: none;
+      text-align: right;
 
-    .resizable-text-area {
-      max-height: rem-calc(475);
-      position: relative;
+      .button {
+        font-size: rem-calc(10);
+        margin: 0;
+        padding: .5rem .9rem;
+        text-transform: uppercase;
+
+        &.cancel {
+          background-color: $light-grey;
+          color: $black;
+        }
+
+        + .button { margin-left: rem-calc(10); }
+      } // button
+    } // actions-wrapper
+
+    &.edit {
+
+      .question { display: none; }
+
+      textarea,
+      .actions-wrapper { display: block; }
     }
-
-    .enter {
-      @include inline-block;
-      color: $black-40;
-      font-size: rem-calc(14);
-    } // press
-
-    .secondary-btn {
-      bottom: rem-calc(-13);
-      float: right;
-      position: absolute;
-      right: rem-calc(15);
-      text-transform: uppercase;
-    } // save button
-  } // right content
-} // canvas
+  } // body
+} // canvas-question-container
