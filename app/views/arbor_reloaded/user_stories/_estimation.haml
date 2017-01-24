@@ -10,7 +10,6 @@
           %h4.title= t('reloaded.estimation.total_points')
           .value
             %p.total_points= total_points
-        = link_to '', '#', class: 'icn-settings has-tip', data: { reveal_id: 'edit-estimation-modal', tooltip: '' }, aria: { haspopup: true }, title: t('reloaded.tooltips.update_estimation')
       %li
         #estimation-item-cost.estimation-item
           = link_to '#', data: { reveal_id: 'edit-estimation-modal' }, aria: { haspopup: true }, title: t('reloaded.tooltips.update_estimation') do
@@ -18,7 +17,6 @@
             .cost
               %p.total_cost
                 = "$#{number_with_delimiter(project.total_cost)}"
-          = link_to '', '#', class: 'icn-settings has-tip', data: { reveal_id: 'edit-estimation-modal', tooltip: '' }, aria: { haspopup: true }, title: t('reloaded.tooltips.update_estimation')
     %li
       #estimation-item-weeks.estimation-item
         = link_to '#', data: { reveal_id: 'edit-estimation-modal' }, aria: { haspopup: true }, title: t('reloaded.tooltips.update_estimation') do
@@ -26,5 +24,4 @@
           .value
             %p.total_weeks
               = project.total_weeks
-        = link_to '', '#', class: 'icn-settings has-tip', data: { reveal_id: 'edit-estimation-modal', tooltip: '' }, aria: { haspopup: true }, title: t('reloaded.tooltips.update_estimation')
 = render 'arbor_reloaded/user_stories/estimation_modal', project: project

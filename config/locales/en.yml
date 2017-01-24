@@ -173,8 +173,8 @@ en:
       total_cost: 'Total estimated cost'
       total_weeks: 'Effort in weeks'
       modal_title: 'Estimation Settings'
-      modal_velocity: 'Velocity'
-      modal_cost: 'Cost per week'
+      modal_velocity: 'Velocity per sprint'
+      modal_cost: 'Cost per sprint'
     navigation:
       menu: 'Menu'
       projects: 'Projects'
