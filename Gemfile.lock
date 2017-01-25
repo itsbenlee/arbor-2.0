@@ -67,6 +67,8 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     acts_as_commentable (4.0.2)
+    acts_as_list (0.9.0)
+      activerecord (>= 3.0)
     adamantium (0.2.0)
       ice_nine (~> 0.11.0)
       memoizable (~> 0.4.0)
@@ -494,6 +496,7 @@ PLATFORMS
 DEPENDENCIES
   active_link_to
   acts_as_commentable
+  acts_as_list (~> 0.9.0)
   better_errors
   binding_of_caller
   byebug
@@ -563,4 +566,4 @@ RUBY VERSION
    ruby 2.1.5p273
 
 BUNDLED WITH
-   1.13.6
+   1.14.2

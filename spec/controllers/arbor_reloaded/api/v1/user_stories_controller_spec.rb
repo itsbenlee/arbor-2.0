@@ -36,13 +36,13 @@ RSpec.describe ArborReloaded::Api::V1::UserStoriesController do
       end
 
       it 'should return the right user story description' do
-        expect(@response_hash['user_stories'][0]['description']).to eq('test2')
-        expect(@response_hash['user_stories'][1]['description']).to eq('test')
+        expect(@response_hash['user_stories'][0]['description']).to eq('test')
+        expect(@response_hash['user_stories'][1]['description']).to eq('test2')
       end
 
       it 'should return the right user story description' do
-        expect(@response_hash['user_stories'][0]['estimated_points']).to eq(2)
-        expect(@response_hash['user_stories'][1]['estimated_points']).to eq(4)
+        expect(@response_hash['user_stories'][0]['estimated_points']).to eq(4)
+        expect(@response_hash['user_stories'][1]['estimated_points']).to eq(2)
       end
 
       it 'should return the right user stories amount' do
@@ -77,13 +77,13 @@ RSpec.describe ArborReloaded::Api::V1::UserStoriesController do
       end
 
       it 'should return the right user story description' do
-        expect(@response_hash['user_stories'][0]['description']).to eq('test2')
-        expect(@response_hash['user_stories'][1]['description']).to eq('test')
+        expect(@response_hash['user_stories'][0]['description']).to eq('test')
+        expect(@response_hash['user_stories'][1]['description']).to eq('test2')
       end
 
       it 'should return the right user story description' do
-        expect(@response_hash['user_stories'][0]['estimated_points']).to eq(2)
-        expect(@response_hash['user_stories'][1]['estimated_points']).to eq(4)
+        expect(@response_hash['user_stories'][0]['estimated_points']).to eq(4)
+        expect(@response_hash['user_stories'][1]['estimated_points']).to eq(2)
       end
 
       it 'should return the right user stories amount' do

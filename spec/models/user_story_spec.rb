@@ -23,9 +23,17 @@ RSpec.describe UserStory do
   end
 
   it 'must increase user stories backlog order' do
-    user_stories = create_list :user_story, 3, project: project
-    user_stories.each_with_index do |user_story, index|
-      expect(user_story.backlog_order).to be(index + 1)
+    create_list(:user_story, 3, project: project)
+
+    expect(project.user_stories.pluck(:backlog_order).sort).to eq([1, 2, 3])
+  end
+
+  context 'new story' do
+    it 'is added at the end of backlog' do
+      create_list(:user_story, 3, project: project)
+      new_story = create(:user_story, project: project)
+
+      expect(project.user_stories.backlog_ordered.last.id).to be(new_story.id)
     end
   end
 
