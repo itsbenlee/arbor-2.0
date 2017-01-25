@@ -2,6 +2,8 @@ class UserStory < ActiveRecord::Base
   include PublicActivity::Common
 
   acts_as_commentable
+  acts_as_list column: :backlog_order, top_of_list: 1, add_new_at: :top,
+               scope: :project
 
   validates_uniqueness_of :backlog_order, scope: :project_id, allow_nil: true
   validates_uniqueness_of :story_number, scope: :project_id
@@ -11,7 +13,6 @@ class UserStory < ActiveRecord::Base
                             greater_than_or_equal_to: 1,
                             less_than_or_equal_to: 7
 
-  before_create :order_in_backlog,    unless: -> { backlog_order }
   before_create :assign_story_number, unless: -> { story_number }
   after_create :update_next_story_number
 
@@ -26,16 +27,14 @@ class UserStory < ActiveRecord::Base
 
   def self.estimation_series
     fib = ->(arg) { arg < 2 ? arg : fib[arg - 1] + fib[arg - 2] }
-    (2..8).map { |index| fib[index] }.unshift([nil]).flatten
+    (2..8).map { |index| fib[index] }.unshift(nil)
   end
 
   def log_description
     return description unless role
-    "As #{role.with_indefinite_article} "\
-    "#{I18n.t('reloaded.backlog.action')} "\
-    "#{action} "\
-    "#{I18n.t('reloaded.backlog.result')} "\
-    "#{result}"
+
+    I18n.t('reloaded.backlog.log', role: role.with_indefinite_article,
+                                   action: action, result: result)
   end
 
   def points_for_trello
@@ -71,10 +70,6 @@ class UserStory < ActiveRecord::Base
 
   def assign_story_number
     self.story_number = project.next_story_number
-  end
-
-  def order_in_backlog
-    self.backlog_order = project.user_stories.maximum(:backlog_order).to_i + 1
   end
 
   def update_next_story_number

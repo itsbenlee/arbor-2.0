@@ -138,6 +138,7 @@ en:
     pdf_export: 'exported to pdf'
   reloaded:
     backlog:
+      log: 'As %{role} I want %{action} so that %{result}'
       role: 'As a'
       action: 'I want'
       result: 'so that'
