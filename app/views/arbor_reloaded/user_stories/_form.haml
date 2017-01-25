@@ -1,4 +1,16 @@
-= form_for(user_story, remote: true, url: arbor_reloaded_project_user_stories_path) do |form|
+.backlog-story-creation-mode
+  .creation-mode-selected
+    %span.creation-mode-icon G
+    %i.icn-arrow-dropdown &nbsp;
+  %ul.creation-mode-list.hidden-element
+    %li.creation-mode-list-item.creation-mode-guided
+      %span.creation-mode-icon G
+      Guided
+    %li.creation-mode-list-item.creation-mode-freeform
+      %span.creation-mode-icon F
+      Freeform
+
+= form_for(user_story, remote: true, html: { class: 'creation-mode-guided' }, url: arbor_reloaded_project_user_stories_path) do |form|
   .backlog-story
     .backlog-story-input.role
       %span.role-a-an= t('reloaded.backlog.role')
@@ -35,4 +47,20 @@
       )                                                      |
 
   = form.select(:group_id, project.groups.map{ |group| [group.name, group.id] }, { include_blank: t('reloaded.user_stories.create.group_select_default') }, class: 'select-group-dropdown')
-  = form.submit t('reloaded.backlog.enter'), id: 'save-user-story', class: 'create-btn button radius tiny'
+  = form.submit t('reloaded.backlog.enter'), class: 'save-user-story create-btn button radius tiny'
+
+= form_for(user_story, remote: true, html: { id: 'new_free_user_story', class: 'creation-mode-freeform hidden-element' }, url: arbor_reloaded_project_user_stories_path) do |form|
+  .backlog-story
+    .backlog-story-input.description
+      = form.text_field(                                   |
+        :description,                                      |
+        placeholder: t('backlog.user_stories.free'),       |
+        required:    true,                                 |
+        maxlength:   400,                                  |
+        class:      'description',                         |
+        id:         'description-input',                   |
+        autofocus:  'true',                                |
+      )                                                    |
+
+  = form.select(:group_id, project.groups.map{ |group| [group.name, group.id] }, { include_blank: t('reloaded.user_stories.create.group_select_default') }, class: 'select-group-dropdown')
+  = form.submit t('reloaded.backlog.enter'), class: 'save-user-story create-btn button radius tiny'

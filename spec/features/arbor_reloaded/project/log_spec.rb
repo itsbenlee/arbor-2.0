@@ -70,12 +70,12 @@ feature 'Log activity'do
           .to receive(:create_event).and_return(true)
 
         PublicActivity.with_tracking do
-          within 'form.new_user_story' do
+          within 'form#new_user_story' do
             find('#role-input').set(user_story.role)
             find('#action-input').set(user_story.action)
             find('#result-input').set(user_story.result)
+            find('input.save-user-story').click
           end
-          find('input#save-user-story').click
         end
 
         expect(project.activities.first.key).to eq('project.add_user_story')

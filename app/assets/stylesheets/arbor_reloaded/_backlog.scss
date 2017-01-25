@@ -1,6 +1,59 @@
 //  CREATE USER STORY
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
+
+.backlog-story-creation-mode {
+  .creation-mode-icon {
+    color: $black-20;
+    font-family: serif;
+    font-size: rem-calc(25);
+    font-weight: bold;
+  }
+
+  i {
+    font-size: rem-calc(5);
+    margin-left: rem-calc(5);
+  }
+
+  .creation-mode-selected {
+    @include flexbox();
+    align-items: center;
+    cursor: pointer;
+    height: 100%;
+
+    i {
+      margin-left: rem-calc(5);
+    }
+  }
+
+  ul {
+    @include box-shadow(0 0 14px 1px $creation-mode-shadow);
+    background: $body-bg;
+    min-width: rem-calc(278);
+    position: absolute;
+
+    li {
+      border-bottom: 1px solid $border-color;
+      color: $black;
+      margin: rem-calc(3);
+      padding: rem-calc(10);
+
+      .creation-mode-icon {
+        margin: rem-calc(8);
+      }
+
+      &:last-child {
+        border: 0;
+      }
+
+      &:hover {
+        background: $light-grey;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
 .new-backlog-story {
   $story-font-size: rem-calc(18);
 
@@ -9,6 +62,7 @@
   margin-top: - $page-wrapper-margin;
 
   .user-story-form-container {
+    @include flexbox();
     background-color: $body-bg;
     padding: rem-calc(15 25);
 
@@ -17,6 +71,7 @@
 
   form {
     @include flexbox();
+    @include flex(1);
     align-items: center;
 
     > * + * { margin: 0 rem-calc(10); }
