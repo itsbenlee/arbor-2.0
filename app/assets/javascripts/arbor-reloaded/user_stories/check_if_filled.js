@@ -14,7 +14,7 @@ function changeButtonColor() {
     if (count === 3) {
       $('.create-btn').addClass('success-button');
     } else {
-        $('.create-btn').removeClass('success-button');
+      $('.create-btn').removeClass('success-button');
     }
   });
 }

@@ -1,6 +1,10 @@
-$('.backlog-story-input.role input').val('');
-$('.backlog-story-input.role input').focus();
-$('.backlog-story-input.action input').val('');
-$('.backlog-story-input.result input').val('');
+$('.backlog-story-input input').val('');
+
+if ($('form.creation-mode-guided').is('hidden-element')) {
+  $('.backlog-story-input.description input').focus();
+} else {
+  $('.backlog-story-input.role input').focus();
+}
+
 $('.user-stories-container').html("<%= j render 'arbor_reloaded/user_stories/user_stories_list', project: @user_story.project.reload, new_group_top: Group.new(project_id: @user_story.project.id, order: 0), new_group_bottom: Group.new(project_id: @user_story.project.id) %>");
 backlogGeneralBinds();

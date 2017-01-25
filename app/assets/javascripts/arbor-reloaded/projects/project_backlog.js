@@ -20,12 +20,13 @@ function autogrowInputs() {
 
 function checkForEmptyGroupStories() {
   var $groupDivider = $backlogStoryList.find('.group-divider');
+
   $groupDivider.each(function(index, el) {
-      if ($(el).find('.backlog-user-story').length) {
-        $(el).find('.empty-group-text').addClass('hide');
-      } else {
-        $(el).find('.empty-group-text').removeClass('hide');
-      }
+    if ($(el).find('.backlog-user-story').length) {
+      $(el).find('.empty-group-text').addClass('hide');
+    } else {
+      $(el).find('.empty-group-text').removeClass('hide');
+    }
   });
 }
 
@@ -48,9 +49,11 @@ function bindReorderStories() {
     stop: function(event, ui) {
       checkForEmptyGroupStories();
       $(ui.item).attr('style', '');
+
       var newStoriesOrder = setStoriesOrder(),
-          url = $reorder_stories.data('url');
+          url = $reorder_stories.data('url'),
           project = $reorder_stories.data('project');
+
       $.ajax({
         url: url,
         dataType: 'json',
@@ -71,7 +74,7 @@ function bindReorderStories() {
 
 function setStoriesOrder() {
   var newStoriesOrder = { stories: [] },
-      $updatedStoriesOnList = $('li.backlog-user-story');
+      $updatedStoriesOnList = $('li.backlog-user-story'),
       length = $updatedStoriesOnList.length + 1;
 
   $.each($updatedStoriesOnList, function(index) {
@@ -96,12 +99,14 @@ function showBulkMenu() {
 
 function removeColors(userStoryID) {
   var $backlogStory = $('#backlog-user-story-' + userStoryID);
+
   for (var i = 1; i <= 7; i++) { $backlogStory.removeClass('story-tag-' + i); }
 }
 
 function addColor(userStoryID, colorID) {
   removeColors(userStoryID);
-  if(colorID) {
+
+  if (colorID) {
     $('#backlog-user-story-' + userStoryID).addClass('story-tag-' + colorID);
   }
 }
@@ -137,8 +142,8 @@ function bindUserStoriesColorLinks() {
 
 function toggleGroupForm() {
   $(document).on('click', '.form-group-container h5', function(event) {
-    $this = $(this);
-    $formEditName = $this.closest('.form-group-container').find('.form-container');
+    var $this = $(this),
+        $formEditName = $this.closest('.form-group-container').find('.form-container');
 
     $this.addClass('hidden-element');
     $formEditName.removeClass('hidden-element');
@@ -172,20 +177,22 @@ function refreshProjectEstimations(total_points, total_cost, total_weeks) {
 }
 
 function onNewBacklogStoryInputKeyup() {
-  var $backlogStoryInput = $('.backlog-story-input input'),
-      $saveStoryButton   = $('#save-user-story');
+  $('.backlog-story').parent('form').each(function (_, form) {
+    var $backlogStoryInput = $('.backlog-story-input input', form),
+        $saveStoryButton   = $('.save-user-story', form);
 
-  $backlogStoryInput.keyup(function() {
-    var count = $backlogStoryInput.filter(function() {
-      return $(this).val().length > 0;
-    }).length;
+    $backlogStoryInput.keyup(function() {
+      var count = $backlogStoryInput.filter(function() {
+        return $(this).val().length > 0;
+      }).length;
 
-    if (count === $backlogStoryInput.length) {
-      $saveStoryButton.addClass('complete');
-    } else {
-      $saveStoryButton.removeClass('complete');
-    }
-  })
+      if (count === $backlogStoryInput.length) {
+        $saveStoryButton.addClass('complete');
+      } else {
+        $saveStoryButton.removeClass('complete');
+      }
+    });
+  });
 }
 
 function fixNewBacklogStoryOnTop() {
@@ -200,16 +207,50 @@ function fixNewBacklogStoryOnTop() {
 }
 
 function fixNewBacklogStoryHeight() {
-    var $newBacklogStory        = $('.new-backlog-story'),
-        $userStoryFormContainer = $('#user-story-form-container');
+  var $newBacklogStory        = $('.new-backlog-story'),
+      $userStoryFormContainer = $('#user-story-form-container');
 
-    $newBacklogStory.height($userStoryFormContainer.outerHeight());
+  $newBacklogStory.height($userStoryFormContainer.outerHeight());
+}
+
+function bindCreationMode() {
+  $('.backlog-story-creation-mode').each(function (i, item) {
+    var $item = $(item);
+
+    $('.creation-mode-selected', $item).click(function () {
+      $('ul.creation-mode-list', $item).removeClass('hidden-element');
+    });
+
+    $('li.creation-mode-guided', $item).click(function () {
+      $('.creation-mode-selected .creation-mode-icon', $item).text("G");
+
+      $('form.creation-mode-guided').removeClass('hidden-element');
+      $('form.creation-mode-freeform').addClass('hidden-element');
+    });
+
+    $('li.creation-mode-freeform', $item).click(function () {
+      $('.creation-mode-selected .creation-mode-icon', $item).text("F");
+
+      $('form.creation-mode-guided').addClass('hidden-element');
+      $('form.creation-mode-freeform').removeClass('hidden-element');
+    });
+  });
+
+  $(document).click(function (event) {
+    var $element = $(event.target);
+
+    if ($element.parents('.creation-mode-selected').length !== 1 &&
+        !$element.is('.creation-mode-selected')) {
+      $('ul.creation-mode-list').addClass('hidden-element');
+    }
+  });
 }
 
 $(document).ready(function() {
   if ($('.new-backlog-story').length > 0) { autogrowInputs(); }
 
   if ($backlogStoryList.length) {
+    bindCreationMode();
     showBulkMenu();
     bindReorderStories();
     checkForEmptyGroupStories();
@@ -226,7 +267,7 @@ $(document).ready(function() {
   }
 });
 
-$( window ).resize(function() { autogrowInputs(); });
+$(window).resize(function() { autogrowInputs(); });
 
 function backlogGeneralBinds() {
   fixArticlesForRolesOnBacklog();

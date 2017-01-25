@@ -48,6 +48,7 @@ en:
       Are you sure you want to continue?
   backlog:
     user_stories:
+      free: "As a <type of user> I want <some function> so that <some benefit>"
       enter_role: "<type of user>"
       enter_action: "<some function>"
       enter_result: "<some benefit>"
