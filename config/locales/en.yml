@@ -141,7 +141,7 @@ en:
       role: 'As a'
       action: 'I want'
       result: 'so that'
-      create: 'Create'
+      enter: 'Enter'
       save: 'Save'
       cancel: 'Cancel'
     create_group:

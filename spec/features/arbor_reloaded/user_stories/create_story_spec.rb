@@ -59,7 +59,7 @@ feature 'Create user story', js: true do
     end
   end
 
-  scenario 'I should be able to assign group top the new user storie' do
+  scenario 'I should be able to assign the group on top to the new story' do
     within 'form#new_user_story' do
       find('#role-input').set(role)
       find('#action-input').set(action)
@@ -70,5 +70,42 @@ feature 'Create user story', js: true do
     wait_for_ajax
 
     expect(UserStory.last.group).to eq(group)
+  end
+
+  context 'when writing the new story' do
+    scenario 'I should see the button on green when all fields contain characters' do
+      within 'form#new_user_story' do
+        fill_in 'role-input', with: 'user'
+        fill_in 'action-input', with: 'I want to see the button with green color when creating stories'
+        fill_in 'result-input', with: 'I know when they are ready to submit'
+
+        expect(page).to have_css('#save-user-story.complete')
+      end
+    end
+
+    scenario 'I should not see the button on green if any field lacks of content' do
+      within 'form#new_user_story' do
+        fill_in 'role-input', with: 'user'
+        fill_in 'action-input', with: 'I should not see the button with green color'
+
+        expect(page).not_to have_css('#save-user-story.complete')
+      end
+    end
+  end
+
+  context 'when navingating on project\'s backlog page' do
+    scenario 'I should be able to see the user story\'s creation bar fixed' do
+      add_height = "$('html').height($(window).height() + $('.new-backlog-story').offset().top)"
+      scroll_to_story_bar = "$(window).scrollTop($('.new-backlog-story').offset().top)"
+
+      page.execute_script(add_height)
+      page.execute_script(scroll_to_story_bar)
+      expect(page).to have_css('.user-story-form-container.fixed')
+    end
+
+    scenario 'I should not see user\'s story creation bar fixed if the user is on top' do
+      page.execute_script('$(window).scrollTop(0)')
+      expect(page).not_to have_css('.user-story-form-container.fixed')
+    end
   end
 end
