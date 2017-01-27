@@ -1,35 +1,42 @@
-require 'jira'
+require 'jira-ruby'
 
 module ArborReloaded
   class JiraServices
-    def initialize(_project = nil)
-      @project = _project
-      @common_response = CommonResponse.new(true)
+    def initialize(token, secret)
+      @client = create_client(token, secret)
     end
 
-    def authenticate(username, password, site)
-      options = {
-        username: username,
-        password: password,
-        site: site,
-        context_path: '',
-        auth_type: :basic
-      }
+    def start_authentication(callback_url)
+      p callback_url
+      request_token = @client.request_token(oauth_callback: callback_url)
 
-      @client = JIRA::Client.new(options)
-      authenticate_client
-      @common_response
+      return {
+        token: request_token.token,
+        secret: request_token.secret,
+        errors: [],
+        url: request_token.authorize_url
+      }
+    end
+
+    def authenticate(oauth_verifier)
+      @jira_client.init_access_token(
+        :oauth_verifier => oauth_verifier
+      )
     end
 
     private
 
-    def authenticate_client
-      # TODO: Should we export the project here and test the connection???
-      @client.Project.all
-      @common_response.data[:client] = @client
-    rescue JIRA::HTTPError
-      @common_response.success = false
-      @common_response.errors << I18n.t('jira.authentication_error')
+    def create_client(token, secret)
+      # add any extra configuration options for your instance of JIRA,
+      # e.g. :use_ssl, :ssl_verify_mode, :context_path, :site
+      options = {
+        :private_key_file => ENV.fetch("JIRA_KEY_FILE_PATH"), #"rsakey.pem",
+        :consumer_key => ENV.fetch("JIRA_CONSUMER_KEY"), #'test'
+      }
+
+      JIRA::Client.new(options).tap do |client|
+        client.set_access_token(token, secret) if token && secret
+      end
     end
   end
 end

@@ -1,7 +1,7 @@
 #jira-modal.reveal-modal{ aria: { hidden: 'true', labelledby: 'project-modal' }, data: { reveal: ''}, role: 'dialog' }
   = link_to '×', '#', class: 'close-reveal-modal'
   %h2= t('jira.modal_title')
-  = form_tag authenticate_arbor_reloaded_project_jira_index_path(current_project), remote: true do
+  = form_tag arbor_reloaded_project_jira_index_path(current_project), remote: true do
     = text_field_tag 'site', nil, class: 'dashed-input interactive-field', placeholder: t('jira.placeholder_site')
     = email_field_tag 'email', nil, class: 'dashed-input interactive-field', placeholder: t('jira.placeholder_email')
     = password_field_tag 'password', nil, class: 'dashed-input interactive-field', placeholder: t('jira.placeholder_password')

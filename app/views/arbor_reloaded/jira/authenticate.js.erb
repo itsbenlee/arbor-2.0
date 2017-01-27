@@ -1,10 +1,5 @@
-var errors = $('.jira-export-error');
-var success = $('.jira-export-success');
-
-errors.html('');
-success.html('');
-<% if @response.errors.empty? %>
-  success.html("<%= I18n.t('jira.success_message' ) %>");
+<% if @errors.empty? %>
+  window.open("<%= @login_url %>");
 <% else %>
-  errors.html("<%= @response.errors[0] %>");
+  errors.html("<%= @errors[0] %>");
 <% end %>

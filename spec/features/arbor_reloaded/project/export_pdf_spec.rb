@@ -10,7 +10,7 @@ feature 'Export backlog' do
   end
 
   scenario 'should display export to pdf link' do
-    expect(page).to have_css('.icn-export')
+    expect(page).to have_text('Export as PDF')
   end
 
   scenario 'should download PDF' do

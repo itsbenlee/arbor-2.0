@@ -1,6 +1,4 @@
 class FileUploader < CarrierWave::Uploader::Base
-  include CarrierWave::MimeTypes
-
   process :set_content_type
   process :save_content_type
 

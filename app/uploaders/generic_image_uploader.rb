@@ -1,5 +1,4 @@
 class GenericImageUploader < CarrierWave::Uploader::Base
-  include CarrierWave::MimeTypes, Piet::CarrierWaveExtension
   process optimize: [{ verbose: false, quality: 70 }]
 
   def extension_white_list
