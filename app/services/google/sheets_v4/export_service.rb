@@ -61,7 +61,7 @@ module Google
 
       def process_error(_error)
         @common_response.success = false
-        @common_response.errors = I18n.t('google_sheets.modal.error')
+        @common_response.errors << I18n.t('google_sheets.modal.error')
       end
 
       def session(code)

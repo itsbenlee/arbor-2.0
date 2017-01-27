@@ -1,16 +1,17 @@
 #google-sheets-modal.reveal-modal{ aria: { hidden: 'true', labelledby: 'project-modal' }, data: { reveal: ''}, role: 'dialog' }
   = link_to '×', '#', class: 'close-reveal-modal'
   %h2= t('google_sheets.modal.title')
-  = button_tag t('google_sheets.modal.export'), class: 'button radius small', id: 'google-sheets-export-submit',
-    data: { url: google_sheets_authentication_url(@project) }
+  - if @google_sheets_response.blank?
+    = button_tag t('google_sheets.modal.export'), class: 'button radius small', id: 'google-sheets-export-submit',
+      data: { url: google_sheets_authentication_url(@project) }
 
   - if @google_sheets_response.try(:[], :success)
     .google-sheets-export-success
       = t('google_sheets.modal.success')
       %br
       %a{ href: @google_sheets_response[:url] }= t('google_sheets.modal.link')
-  - if @google_sheets_response.try(:[], :error)
-    .google-sheets-export-error= t('google_sheets.modal.error')
+  - if @google_sheets_response.try(:[], :errors)
+    .google-sheets-export-error= @google_sheets_response[:errors].first
 
   .export-text
     %p.disclaimer= t('google_sheets.modal.text1')
