@@ -21,13 +21,14 @@ module ArborReloaded
 
     def google_response
       service_response = service.export(params[:code])
+      data = service_response.data
 
       if service_response.success
-        spreadsheet_id = service_response.data[:spreadsheet_id]
+        spreadsheet_id = data[:spreadsheet_id]
         { success: true,
           url: "#{ENV['GOOGLE_SHEETS_BASE_URL']}/#{spreadsheet_id}" }
       else
-        { success: false, errors: service_response.data[:errors] }
+        { success: false, errors: data[:errors] }
       end
     end
   end

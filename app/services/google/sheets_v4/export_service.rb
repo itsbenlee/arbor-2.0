@@ -20,31 +20,19 @@ module Google
 
       def export(code)
         @current_row = ROW_TITLE
-        @group_points_rows = []
+        @group_points = []
         @spreadsheet = session(code).create_spreadsheet @project.name
         @ws = @spreadsheet.worksheets[SHEET_ID]
 
-        write_title_and_description
-        write_header
-        write_ungrouped_user_stories if @project.user_stories.ungrouped.any?
-        write_groups_with_stories
-        write_results_table
-
-        format_worksheet
+        load_spreadsheet
 
         @ws.synchronize
-        @common_response.data[:spreadsheet_id] = @spreadsheet.key
-        @common_response
+        process_success
       rescue => error
         process_error(error)
-        @common_response
       end
 
       private
-
-      def step(step = 1)
-        @current_row += step
-      end
 
       def credentials
         @credentials ||= Google::Auth::UserRefreshCredentials.new(
@@ -59,145 +47,174 @@ module Google
         )
       end
 
-      def process_error(_error)
-        @common_response.success = false
-        @common_response.errors << I18n.t('google_sheets.modal.error')
-      end
-
       def session(code)
         credentials.code = code
         credentials.fetch_access_token!
         GoogleDrive::Session.from_credentials(credentials)
       end
 
-      def write_title_and_description
-        @ws[@current_row, 3] = I18n.t('google_sheets.worksheet.title')
-        step 2
-
-        I18n.t('google_sheets.worksheet.description').each do |item|
-          @ws[@current_row, 3] = item
-          step
-        end
-        step
+      def process_success
+        @common_response.data[:spreadsheet_id] = @spreadsheet.key
+        @common_response
       end
 
-      def write_header
+      def process_error(_error)
+        @common_response.success = false
+        @common_response.errors << Translations::MODAL_ERROR
+        @common_response
+      end
+
+      def advance_current_row(step = 1)
+        @current_row += step
+      end
+
+      def set_cell_value(row, column, value)
+        @ws[row, column] = value
+      end
+
+      def set_column_value(column, value)
+        set_cell_value(@current_row, column, value)
+      end
+
+      def load_spreadsheet
+        load_title_and_description
+        load_header
+        load_ungrouped
+        load_groups
+        load_results
+        load_format
+      end
+
+      def load_title_and_description
+        set_column_value 3, Translations::WORKSHEET_TITLE
+        advance_current_row 2
+
+        Translations::WORKSHEET_DESCRIPTION.each do |item|
+          set_column_value 3, item
+          advance_current_row
+        end
+        advance_current_row
+      end
+
+      def load_header
         @header_row = @current_row
         @story_row = @current_row + 4
-        @ws[@header_row, 1] = I18n.t('google_sheets.worksheet.header')
-        @ws[@header_row + 2, 2] = I18n.t('google_sheets.worksheet.complexity')
 
-        @project.total_weeks.times.each do |sprint|
-          @ws[@header_row, sprint + 3] =
-            "#{I18n.t('google_sheets.worksheet.sprint_header')} #{sprint}"
-          next if sprint == 0
+        set_cell_value @header_row, 1, Translations::WORKSHEET_HEADER
+        set_cell_value @header_row + 2, 2, Translations::WORKSHEET_COMPLEXITY
 
-          column_chr = (sprint + 67).chr
-          @ws[@header_row + 2, sprint + 3] =
-            "=SUMIF(#{column_chr}#{@story_row}:#{column_chr}"\
-            "#{@ws.max_rows}; \"-\"; "\
-            "B#{@story_row}:#{column_chr}#{@ws.max_rows})"
+        load_header_sprint
+      end
+
+      def load_header_sprint
+        set_cell_value @header_row, 3,
+          "#{Translations::WORKSHEET_SPRINT_HEADER} 0"
+
+        (1..@project.total_weeks).each do |sprint|
+          set_cell_value @header_row, sprint + 3,
+            "#{Translations::WORKSHEET_SPRINT_HEADER} #{sprint}"
+          set_cell_value @header_row + 2, sprint + 3,
+            Calculations::Sum.row((sprint + 67).chr, @story_row, @ws.max_rows)
         end
       end
 
-      def write_ungrouped_user_stories
+      def load_ungrouped
+        stories = @project.user_stories.ungrouped
+        return unless stories.any?
+
         @current_row = @story_row
-        count = @current_row + @project.user_stories.ungrouped.count
+        count = @current_row + stories.count
 
-        @ws[@current_row, 1] = I18n.t('google_sheets.worksheet.ungrouped')
-        @ws[@current_row, 2] = "=SUM(B#{@current_row + 1}:B#{count})"
-        @group_points_rows << @current_row
+        set_column_value 1, Translations::WORKSHEET_UNGROUPED
+        set_column_value 2, Calculations::Sum.stories(@current_row, count)
+        @group_points << @current_row
 
-        write_user_stories @project.user_stories.ungrouped
+        load_user_stories stories
       end
 
-      def write_groups_with_stories
+      def load_groups
         @project.groups.each do |group|
-          count = group.user_stories.any? ? group.user_stories.count : 1
-          count += @current_row
+          stories = group.user_stories
+          count = (stories.any? ? stories.count : 1) + @current_row
 
-          @ws[@current_row, 1] = group.name
-          @ws[@current_row, 2] = "=SUM(B#{@current_row + 1}:B#{count})"
-          @group_points_rows << @current_row
+          set_column_value 1, group.name
+          set_column_value 2, Calculations::Sum.stories(@current_row, count)
+          @group_points << @current_row
 
-          write_user_stories group.user_stories
+          load_user_stories stories
         end
       end
 
-      def write_user_stories(user_stories)
-        step
+      def load_user_stories(user_stories)
+        advance_current_row
         user_stories.each do |user_story|
-          @ws[@current_row, 1] = user_story.log_description
-          @ws[@current_row, 2] = user_story.estimated_points
-          step
+          set_column_value 1, user_story.log_description
+          set_column_value 2, user_story.estimated_points
+          advance_current_row
         end
-        step
+        advance_current_row
       end
 
-      def write_results_table
+      def load_results
         @last_row = @current_row
-
-        col = @project.total_weeks + 4
         @current_row = @story_row
 
-        @ws[@current_row, col] = I18n.t('google_sheets.worksheet.delivered')
-        @ws[@current_row, col + 1] = '√'
-        step
-
-        @ws[@current_row, col] = I18n.t('google_sheets.worksheet.in_progress')
-        @ws[@current_row, col + 1] = '-'
-        step
-
-        @ws[@current_row, col] = I18n.t('google_sheets.worksheet.planned')
-        @ws[@current_row, col + 1] = '-'
-        step
-
-        @ws[@current_row, col] = I18n.t('google_sheets.worksheet.advanced')
-        @ws[@current_row, col + 1] = '-'
-        step
-
-        @ws[@current_row, col] = I18n.t('google_sheets.worksheet.points')
-        @ws[@current_row, col + 1] =
-          "=SUM(#{@group_points_rows.map { |points| "B#{points}" }.join(';')})"
-        step
-
-        @ws[@current_row, col] = I18n.t('google_sheets.worksheet.sprints')
-        @ws[@current_row, col + 1] = @project.total_weeks + 1
-        step 4
-
-        @ws[@current_row, col] = I18n.t('google_sheets.worksheet.ppw')
-        @ws[@current_row, col + 1] = "=#{(col + 65).chr}#{@current_row - 5}/" \
-                                     "#{(col + 65).chr}#{@current_row - 4}"
+        load_results_row Translations::WORKSHEET_DELIVERED, '√'
+        load_results_row Translations::WORKSHEET_IN_PROGRESS, '-'
+        load_results_row Translations::WORKSHEET_PLANNED, '-'
+        load_results_row Translations::WORKSHEET_ADVANCED, '-'
+        load_results_row Translations::WORKSHEET_POINTS,
+          Calculations::Sum.groups(@group_points)
+        load_results_row Translations::WORKSHEET_SPRINTS,
+          @project.total_weeks, 4
+        load_results_row Translations::WORKSHEET_PPW,
+          @project.points_per_week, 0
       end
 
-      def format_worksheet
-        formatter = Google::SheetsV4::Formatter.new
+      def load_results_row(description, value, step = 1)
+        col = @project.total_weeks + 4
+
+        set_column_value col, description
+        set_column_value col + 1, value
+        advance_current_row step
+      end
+
+      def load_format
+        formatter = Formatter.new
         requests = []
+        total_weeks = @project.total_weeks
 
-        requests << formatter.title
-        requests << formatter.description
-        requests << formatter.header(@header_row - 1, @header_row + 2,
-                                     0, @project.total_weeks + 3)
-        requests << formatter.estimation_column(@story_row - 2, @last_row - 1)
+        requests << formatter.title(range(0, 1, 2, 3))
+        requests << formatter.description(range(ROW_TITLE + 1,
+            Translations::WORKSHEET_DESCRIPTION.count + 3,
+            2, 3))
+        requests << formatter.header(range(@header_row - 1,
+                                           @header_row + 2,
+                                           0, total_weeks + 3))
+        requests << formatter.estimation_column(range(@story_row - 2,
+                                                      @last_row - 1,
+                                                      1, 2))
 
-        @group_points_rows.each { |row| requests << formatter.group_name(row) }
+        @group_points.each do |row|
+          requests << formatter.group_name(range(row - 1, row, 0, 1))
+        end
 
-        requests << formatter.delivered_cell(@story_row - 1,
-                                             @story_row,
-                                             @project.total_weeks + 4,
-                                             @project.total_weeks + 5)
-        requests << formatter.in_progress_cell(@story_row,
-                                               @story_row + 1,
-                                               @project.total_weeks + 4,
-                                               @project.total_weeks + 5)
-        requests << formatter.planned_cell(@story_row + 1,
-                                           @story_row + 2,
-                                           @project.total_weeks + 4,
-                                           @project.total_weeks + 5)
-        requests << formatter.advanced_cell(@story_row + 2,
-                                  @story_row + 3,
-                                  @project.total_weeks + 4,
-                                  @project.total_weeks + 5)
+        requests << formatter.delivered_cell(range(@story_row - 1,
+                                                   @story_row,
+                                                   total_weeks + 4,
+                                                   total_weeks + 5))
+        requests << formatter.in_progress_cell(range(@story_row,
+                                                     @story_row + 1,
+                                                     total_weeks + 4,
+                                                     total_weeks + 5))
+        requests << formatter.planned_cell(range(@story_row + 1,
+                                                 @story_row + 2,
+                                                 total_weeks + 4,
+                                                 total_weeks + 5))
+        requests << formatter.advanced_cell(range(@story_row + 2,
+                                                  @story_row + 3,
+                                                  total_weeks + 4,
+                                                  total_weeks + 5))
 
         service = Google::Apis::SheetsV4::SheetsService.new
         service.authorization = credentials
@@ -206,7 +223,16 @@ module Google
                                          {})
       rescue => error
         process_error(error)
-        @common_response
+      end
+
+      def range(start_row, end_row, start_column, end_column)
+        {
+          sheet_id: SHEET_ID,
+          start_row_index: start_row,
+          end_row_index: end_row,
+          start_column_index: start_column,
+          end_column_index: end_column
+        }
       end
     end
   end

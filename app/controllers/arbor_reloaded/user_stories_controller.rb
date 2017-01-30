@@ -178,11 +178,8 @@ module ArborReloaded
     def google_sheets_response
       return unless (response = params[:google_sheets_response])
 
-      @google_sheets_response = {
-        success: response[:success] == 'true',
-        url: response[:url],
-        errors: response[:errors]
-      }
+      response[:success] = response[:success] == 'true'
+      @google_sheets_response = response
     end
   end
 end

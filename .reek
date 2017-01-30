@@ -18,7 +18,10 @@ DataClump:
   min_clump_size: 2
 DuplicateMethodCall:
   enabled: true
-  exclude: []
+  exclude: [
+    ExportService#load_header_sprint,
+    ExportService#load_format
+  ]
   max_calls: 1
   allow_calls: []
 FeatureEnvy:
@@ -39,7 +42,7 @@ IrresponsibleModule:
   exclude: []
 LongParameterList:
   enabled: true
-  exclude: []
+  exclude: [ExportService#range]
   max_params: 3
   overrides:
     initialize:
@@ -79,7 +82,10 @@ RepeatedConditional:
   max_ifs: 2
 TooManyInstanceVariables:
   enabled: true
-  exclude: []
+  exclude: [
+    UserStoriesController,
+    ExportService
+  ]
   max_instance_variables: 9
 TooManyMethods:
   enabled: true
@@ -90,7 +96,12 @@ TooManyStatements:
   exclude: [
     RegistrationsController#create,
     AcceptanceCriterionServices#new_acceptance_criterion,
-    SlackIntegrationService#validate_message_for_story_creation
+    SlackIntegrationService#validate_message_for_story_creation,
+    ExportService#export,
+    ExportService#load_groups,
+    ExportService#load_results,
+    ExportService#load_ungrouped,
+    ExportService#load_format
   ]
   max_statements: 6
 UncommunicativeMethodName:
@@ -103,7 +114,7 @@ UncommunicativeMethodName:
   accept: []
 UncommunicativeModuleName:
   enabled: true
-  exclude: ['V1']
+  exclude: [V1, SheetsV4]
   reject:
   - !ruby/regexp /^.$/
   - !ruby/regexp /[0-9]$/
