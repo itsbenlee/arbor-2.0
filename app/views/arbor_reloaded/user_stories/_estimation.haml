@@ -16,7 +16,7 @@
             %h4.title= t('reloaded.estimation.total_cost')
             .cost
               %p.total_cost
-                = "$#{number_with_delimiter(project.total_cost)}"
+                = number_to_currency(project.total_cost, precision: 0)
     %li
       #estimation-item-weeks.estimation-item
         = link_to '#', data: { reveal_id: 'edit-estimation-modal' }, aria: { haspopup: true }, title: t('reloaded.tooltips.update_estimation') do
