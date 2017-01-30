@@ -6,6 +6,6 @@ deployment:
     branch: master
     commands:
       - heroku maintenance:on --app arbor-2-development
-      - git push git@heroku.com:arbor-2-development.git $CIRCLE_SHA1:refs/heads/master
+      - git push --force git@heroku.com:arbor-2-development.git $CIRCLE_SHA1:refs/heads/master
       - heroku run rake db:migrate --app arbor-2-development
       - heroku maintenance:off --app arbor-2-development
