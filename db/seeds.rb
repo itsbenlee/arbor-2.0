@@ -191,12 +191,13 @@ Project.find_or_initialize_by(is_template: true) do |project|
   story.acceptance_criterions << AcceptanceCriterion
     .new(description: 'Verify that luxury tier is available anywhere when I need it')
 
-  stories_array.each do |story|
+  stories_array.each_with_index do |story, index|
     new_story = UserStory.new(
       role: story[:role],
       action: story[:action],
       result: story[:result],
-      estimated_points: story[:estimated_points])
+      estimated_points: story[:estimated_points],
+      backlog_order: index + 1)
     project.user_stories << new_story
   end
 
