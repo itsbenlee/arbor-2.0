@@ -46,6 +46,46 @@ feature 'Story detail modal', js:true do
     expect(user_story.description).to eq('This is the new user story')
   end
 
+  context 'clicking delete' do
+    before do
+      find('.story-actions').click
+      within '#story-detail-modal' do
+        find('a.icn-delete').click
+      end
+    end
+
+    scenario 'shows delete confirmation' do
+      within '#story-detail-modal' do
+        expect(page).to have_text('Are you sure you want to delete this user story?')
+        expect(page).to have_text('Yes, delete it')
+        expect(page).to have_text('Cancel')
+      end
+    end
+
+    context 'canceling deletion' do
+      scenario 'does not delete the story' do
+        within '#story-detail-modal' do
+          click_link('Cancel')
+
+          expect(UserStory.find_by_id(user_story.id)).to_not be_nil
+          expect(page).to_not have_text('Yes, delete it')
+        end
+      end
+    end
+
+    context 'confirming deletion' do
+      scenario 'deletes the story' do
+        within '#story-detail-modal' do
+          click_link('Yes, delete it')
+
+          wait_for_ajax
+
+          expect(UserStory.find_by_id(user_story.id)).to be_nil
+        end
+      end
+    end
+  end
+
   scenario 'should be able to see other actions' do
     find('.story-actions').click
     within '#story-detail-modal' do
