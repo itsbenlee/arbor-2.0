@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'Add member to team', js: true do
+feature 'Add member to team', skip: true, js: true do
   let!(:user)  { create :user }
   let!(:user2) { create :user }
   let!(:team)  { create :team, owner: user, users: [user, user2] }

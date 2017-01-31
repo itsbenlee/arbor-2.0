@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe ArborReloaded::TeamsController do
+RSpec.describe ArborReloaded::TeamsController, skip: true do
   let(:user)         { create :user }
   let(:team)         { create :team, owner: user }
   let(:another_user) { create :user }

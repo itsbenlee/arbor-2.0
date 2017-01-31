@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'Delete team', js: true do
+feature 'Delete team', skip: true, js: true do
   let!(:user)     { create :user }
   let!(:user2)    { create :user }
   let!(:team)     { create :team, name: 'Awesome team', owner: user }
