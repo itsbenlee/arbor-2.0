@@ -509,7 +509,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   fog-aws
-  foundation-rails
+  foundation-rails (~> 5.5.2.1)
   gravtastic
   haml-rails
   http-cookie

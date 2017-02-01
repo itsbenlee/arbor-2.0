@@ -22,17 +22,20 @@
           = link_to arbor_reloaded_project_export_backlog_path(current_project, format: :pdf, estimation: false), id: 'export-as-pdf' do
             = t('reloaded.navigation.export_without_estimation')
             %span.icn-export
+        - if ENV['ENABLE_SLACK'] == 'true'
+          %li
+            = react_component('SlackButton', {}, {prerender: false})
+        %li.has-dropdown.export-menu-link
+          = link_to 'Export as...', '#'
+          %ul#export-actions.f-dropdown
+            %li
+              = link_to '#', data: { reveal_id: 'trello-modal' } do
+                = t('reloaded.navigation.export_trello')
+                %span.icn-export
         %li
           = link_to arbor_reloaded_project_copy_path(current_project), method: :post, class: 'copy-project' do
             = t('project.copy_project')
             %span.icn-copy
-        %li
-          = link_to '#', data: { reveal_id: 'trello-modal' } do
-            = t('reloaded.navigation.export_trello')
-            %span.icn-export
-        - if ENV['ENABLE_SLACK'] == 'true'
-          %li
-            = react_component('SlackButton', {}, {prerender: false})
         - if current_user == current_project.owner
           %li
             = link_to arbor_reloaded_project_path(current_project), method: :delete, data: { confirm: t('project.delete_confirmation') } do
