@@ -1,0 +1,9 @@
+#delete-modal.reveal-modal{ aria: { hidden: true, labelledby: 'project-modal' }, data: { reveal: ''}, role: 'dialog' }
+  = link_to '×', '#', class: 'close-reveal-modal'
+  %h2= t('project.delete_project')
+  %p
+    %span= t('common.warning')
+    = t('project.warning_hint')
+
+  = link_to t('project.delete_cancel'), '#', class: 'button radius close close-reveal-modal'
+  = link_to t('project.delete_confirmation'), arbor_reloaded_project_path(current_project), method: :delete, class: 'button radius alert'

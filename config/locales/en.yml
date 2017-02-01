@@ -1,4 +1,6 @@
 en:
+  common:
+    warning: Warning
   page_title:
     dashboard: 'Dashboard'
     teams: 'Teams'
@@ -43,9 +45,11 @@ en:
       cost_per_week: '2500'
     delete_project: 'Delete project'
     copy_project: 'Duplicate project'
-    delete_confirmation: |
-      This project will be deleted permanently.
-      Are you sure you want to continue?
+    delete_confirmation: Yes, delete project
+    delete_cancel: Cancel, do not delete
+    warning_hint: |
+      Taking this action will permanently delete this whole project.
+      Once deleted it won't be accesible anymore.
   backlog:
     user_stories:
       free: "As a <type of user> I want <some function> so that <some benefit>"
