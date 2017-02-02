@@ -85,3 +85,19 @@ function filterProjects(projects) {
     }
   });
 }
+
+$('.export-menu-link').hover(function (event) {
+  var $menu = $('#export-actions'),
+      link = event.target,
+      position = $(link).position();
+
+  $menu.addClass('f-open-dropdown open').css({
+    position: 'absolute',
+    left: position.left + link.clientWidth + 'px',
+    top: position.top + 'px'
+  });
+}, function () {
+  var $menu = $('#export-actions');
+
+  $menu.removeClass('f-open-dropdown open');
+});
