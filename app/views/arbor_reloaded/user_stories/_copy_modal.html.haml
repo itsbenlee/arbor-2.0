@@ -1,0 +1,7 @@
+#copy-modal.action-modal.reveal-modal{ aria: { hidden: true, labelledby: 'copy-modal' }, data: { reveal: ''}, role: 'dialog' }
+  = link_to '×', '#', class: 'close-reveal-modal'
+  %h2= t('project.copy_project')
+  %p.hint= t('project.copy_hint')
+  .action-wrapper
+    = link_to t('project.copy'), arbor_reloaded_project_copy_path(current_project), method: :post, class: 'button radius success'
+  %p.tip= t('project.copy_tip')
