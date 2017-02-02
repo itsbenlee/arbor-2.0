@@ -16,6 +16,7 @@ Railsroot::Application.routes.draw do
   namespace :arbor_reloaded do
     root to: 'projects#index'
 
+    get 'feedback' => redirect(ENV['FEEDBACK_URL'])
     get 'projects/list', controller: :projects, action: :list_projects
 
     resources :projects, except: [:new, :edit], shallow: true do
