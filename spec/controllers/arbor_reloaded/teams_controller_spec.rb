@@ -61,7 +61,7 @@ RSpec.describe ArborReloaded::TeamsController, skip: true do
         )
         team.reload
         expect{ team.users.reload.count }.to become_eq 2
-        expect(team.users.last).to eq(another_user)
+        expect(team.users).to include(another_user)
       end
 
       context 'if the signed user is not the owner' do

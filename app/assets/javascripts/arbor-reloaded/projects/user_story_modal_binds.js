@@ -61,6 +61,16 @@ $(document).on('click', '#acceptance-list .criterion', {}, function(event) {
   });
 });
 
+$(document).on('click', '.delete-confirmation-overlay .cancel', {}, function (event) {
+  var $overlay       = $(event.target).closest('.delete-confirmation-overlay'),
+      $overlayParent = $overlay.parent();
+
+  $overlay.removeClass('active');
+  $overlayParent.find('.header-wrapper').removeClass('inactive');
+
+  event.preventDefault();
+});
+
 $(document).on('click', '.story-actions .icn-delete', {}, function(event) {
   var $storyModalHeader    = $(this).parent().parent().parent(),
       $confirmationWarning = $storyModalHeader.find('.delete-confirmation-overlay'),
