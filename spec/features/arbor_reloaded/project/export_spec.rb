@@ -29,7 +29,7 @@ feature 'Export backlog' do
       .to receive(:create_event).and_return(true)
 
     click_link 'More...'
-    click_link 'Export as PDF'
+    click_link 'Download as PDF'
 
     wait_for_ajax
 
@@ -44,7 +44,7 @@ feature 'Export backlog' do
       .to receive(:create_event).and_return(true)
 
     click_link 'More...'
-    click_link 'Export as PDF (no Estimation)'
+    click_link 'Download as PDF (no Estimation)'
 
     wait_for_ajax
 

@@ -549,7 +549,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   fog-aws
-  foundation-rails
+  foundation-rails (~> 5.5.2.1)
   google-api-client (~> 0.9)
   google_drive (~> 2.1, >= 2.1.1)
   googleauth (~> 0.5.1)

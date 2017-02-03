@@ -18,8 +18,8 @@
     %ul.right
       %ul
         %li= link_to t('reloaded.navigation.projects'), arbor_reloaded_root_path
+        %li= link_to t('reloaded.navigation.feedback'), arbor_reloaded_feedback_path, target: '_blank'
         %li= link_to t('reloaded.navigation.help'), 'mailto:feedback@getarbor.io', target: '_top', class: 'hidden-element'
-        %li= link_to t('reloaded.navigation.people'), arbor_reloaded_teams_path
         %li.hide
           %a{:href => "#"} FAQ
         - if current_project

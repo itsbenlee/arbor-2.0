@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'Create a new team', js: true do
+feature 'Create a new team', skip: true, js: true do
   let!(:user) { create :user }
 
   background do

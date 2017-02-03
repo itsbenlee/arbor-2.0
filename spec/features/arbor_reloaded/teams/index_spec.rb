@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'Index Teams' do
+feature 'Index Teams', skip: true do
   let!(:user)  { create :user }
   let!(:teams) { create_list :team, 3, users: [user] }
 

@@ -16,6 +16,7 @@ Railsroot::Application.routes.draw do
   namespace :arbor_reloaded do
     root to: 'projects#index'
 
+    get 'feedback' => redirect(ENV['FEEDBACK_URL'])
     get 'projects/list', controller: :projects, action: :list_projects
 
     resources :projects, except: [:new, :edit], shallow: true do
@@ -89,12 +90,6 @@ Railsroot::Application.routes.draw do
       action: :destroy_stories
 
     resources :users, only: :show
-    resources :teams, only: [:index, :create, :destroy] do
-      put 'add_member', controller: :teams, action: :add_member
-      delete 'remove_member', controller: :teams, action: :remove_member
-    end
-
-    get 'team_members', controller: :teams, action: :members
 
     put 'users/ajax_update',
       controller: :users,

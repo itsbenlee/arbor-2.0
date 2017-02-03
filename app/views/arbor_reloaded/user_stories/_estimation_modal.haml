@@ -13,6 +13,6 @@
         %h4.title= t('reloaded.estimation.modal_cost')
         = link_to '?', '#', class: 'has-tip estimation-info', aria: {haspopup: true}, data: {tooltip: ''}, title: t('reloaded.tooltips.estimation_cost')
         = f.label :cost_per_week, class: 'hide'
-        = f.number_field :cost_per_week, placeholder: t('project.default.cost_per_week'), in: 1 .. 999999999999999
+        = f.number_field :cost_per_week, value: project.cost_per_week.to_i, placeholder: t('project.default.cost_per_week'), in: 1 .. 999999999999999
     .modal-footer
       = f.submit t('reloaded.estimation.save_button'), id: 'submit-edit-project-form', class: 'button radius tiny'
