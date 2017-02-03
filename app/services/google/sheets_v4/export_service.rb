@@ -14,44 +14,26 @@ module Google
         @common_response = CommonResponse.new(true, [])
       end
 
-      def google_sheets_authentication_url
-        credentials.authorization_uri.to_s
-      end
-
       def export(code)
         @current_row = ROW_TITLE
         @group_points = []
-        @spreadsheet = session(code).create_spreadsheet @project.name
+        @spreadsheet = session(code).create_spreadsheet(@project.name)
         @ws = @spreadsheet.worksheets[SHEET_ID]
 
         load_spreadsheet
 
         @ws.synchronize
+
         process_success
-      rescue => error
+      rescue Signet::AuthorizationError => error
         process_error(error)
       end
 
+      def google_sheets_authentication_url
+        credentials.authorization_uri.to_s
+      end
+
       private
-
-      def credentials
-        @credentials ||= Google::Auth::UserRefreshCredentials.new(
-          client_id: ENV['GOOGLE_SHEETS_CLIENT_ID'],
-          client_secret: ENV['GOOGLE_SHEETS_CLIENT_SECRET'],
-          scope: [
-            'https://www.googleapis.com/auth/drive',
-            'https://spreadsheets.google.com/feeds/'
-          ],
-          state: @project.id,
-          redirect_uri: @redirect_uri
-        )
-      end
-
-      def session(code)
-        credentials.code = code
-        credentials.fetch_access_token!
-        GoogleDrive::Session.from_credentials(credentials)
-      end
 
       def process_success
         @common_response.data[:spreadsheet_id] = @spreadsheet.key
@@ -216,13 +198,7 @@ module Google
                                                   total_weeks + 4,
                                                   total_weeks + 5))
 
-        service = Google::Apis::SheetsV4::SheetsService.new
-        service.authorization = credentials
-        service.batch_update_spreadsheet(@spreadsheet.key,
-                                         { requests: requests },
-                                         {})
-      rescue => error
-        process_error(error)
+        update_spreadsheet(requests)
       end
 
       def range(start_row, end_row, start_column, end_column)
@@ -233,6 +209,33 @@ module Google
           start_column_index: start_column,
           end_column_index: end_column
         }
+      end
+
+      def credentials
+        @credentials ||= Google::Auth::UserRefreshCredentials.new(
+          client_id: ENV['GOOGLE_SHEETS_CLIENT_ID'],
+          client_secret: ENV['GOOGLE_SHEETS_CLIENT_SECRET'],
+          scope: [
+            'https://www.googleapis.com/auth/drive',
+            'https://spreadsheets.google.com/feeds/'
+          ],
+          state: @project.id,
+          redirect_uri: @redirect_uri
+        )
+      end
+
+      def session(code)
+        credentials.code = code
+        credentials.fetch_access_token!
+        GoogleDrive::Session.from_credentials(credentials)
+      end
+
+      def update_spreadsheet(requests)
+        service = Google::Apis::SheetsV4::SheetsService.new
+        service.authorization = credentials
+        service.batch_update_spreadsheet(@spreadsheet.key,
+                                         { requests: requests },
+                                         {})
       end
     end
   end

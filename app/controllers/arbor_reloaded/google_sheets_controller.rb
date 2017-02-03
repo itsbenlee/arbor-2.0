@@ -8,10 +8,17 @@ module ArborReloaded
         google_sheets_response: google_response)
     end
 
+    def export
+      callback = authorization_callback_arbor_reloaded_google_sheets_url
+      service = Google::SheetsV4::ExportService.new(project, callback)
+
+      redirect_to service.google_sheets_authentication_url
+    end
+
     private
 
     def project
-      @project ||= Project.find(params[:state])
+      @project ||= Project.find(params[:state] || params[:project_id])
     end
 
     def service

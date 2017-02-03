@@ -552,7 +552,7 @@ DEPENDENCIES
   foundation-rails
   google-api-client (~> 0.9)
   google_drive (~> 2.1, >= 2.1.1)
-  googleauth
+  googleauth (~> 0.5.1)
   gravtastic
   haml-rails
   http-cookie

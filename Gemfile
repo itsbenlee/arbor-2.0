@@ -32,7 +32,7 @@ gem 'rails_admin', '~> 0.8.1'
 gem 'newrelic_rpm'
 gem 'google_drive', '~> 2.1', '>= 2.1.1'
 gem 'google-api-client', '~> 0.9'
-gem 'googleauth'
+gem 'googleauth', '~> 0.5.1'
 
 group :doc do
   gem 'sdoc', require: false
