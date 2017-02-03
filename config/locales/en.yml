@@ -1,4 +1,7 @@
 en:
+  common:
+    options: Options
+    warning: Warning
   page_title:
     dashboard: 'Dashboard'
     teams: 'Teams'
@@ -42,10 +45,22 @@ en:
       velocity: '10'
       cost_per_week: '2500'
     delete_project: 'Delete project'
+    copy: 'Duplicate'
     copy_project: 'Duplicate project'
-    delete_confirmation: |
-      This project will be deleted permanently.
-      Are you sure you want to continue?
+    copy_hint: 'Includes stories, canvas, acceptance criteria, and estimations.'
+    copy_tip: 'Does not include comments or project members'
+    delete_confirmation: 'Yes, delete project'
+    delete_cancel: 'Cancel, do not delete'
+    delete_hint: |
+      Taking this action will permanently delete this whole project.
+      Once deleted it won't be accesible anymore.
+    pdf:
+      download: 'Download PDF'
+      export_label: "Don't include story estimations"
+      hint: |
+        Download a PDF of your project to share
+        your stories, canvas and more offline.
+    export: 'Export project'
   backlog:
     user_stories:
       free: "As a <type of user> I want <some function> so that <some benefit>"
@@ -95,15 +110,16 @@ en:
   cost_structure: "Cost Structure"
   cost_structure_title: "What are your customer acquisition costs, distribution costs, people, hosting, integration partners, etc?"
   trello:
-    export: 'Export'
+    export: 'Export to Trello'
     new_board: 'Export to New Board'
     existing_board: 'Export to Existing Board'
     success: 'Project exported to Trello succesfully!'
     default_list: 'Arbor Backlog Export'
     error: 'There was an error exporting your project to Trello. Please try again later'
     modal_title: 'Export Stories to Trello'
-    text1: 'Be patient, exportation may take a few minutes.'
-    text2: 'You can keep working on Arbor as your stories are being exported.'
+    hint: |
+      Export your project to Trello to start assigning
+      your stories and managing your team's productivity.
   mailer:
     team_invite:
       someone_invited_you: 'You are invited to be member on %{team_name} in Arbor.'
@@ -273,6 +289,11 @@ en:
       active: 'Enable'
       inactive: 'Disable'
     pdf:
+      download: 'Download PDF'
+      export_label: Don't include story estimations
+      hint: |
+        Download a PDF of your project to share
+        your stories, canvas and more offline.
       user_stories: 'User Stories'
     groups:
       create: 'Click here to add a theme'

@@ -1,0 +1,10 @@
+%p.hint= t('trello.hint')
+= select_tag 'export_type', options_for_select({ t('trello.new_board')=>'new_board',
+  t('trello.existing_board') => 'existing_board' }, 'new_board'), class: 'radius'
+.select-board-list
+.action-wrapper
+  = button_tag t('trello.export'), class: 'button radius success', id: 'trello-export-submit',
+    data: { url: arbor_reloaded_project_trello_index_path(current_project),
+            token: current_user.trello_token }
+.trello-export-error
+.trello-export-success

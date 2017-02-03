@@ -1,0 +1,88 @@
+$red-alert: #f04124;
+
+.action-modal {
+  padding: 2rem;
+  text-align: center;
+
+  .hint {
+    display: inline-block;
+    margin-top: 1.5rem;
+    width: 75%;
+
+    .alert { color: $red-alert; }
+  }
+
+  .tip {
+    @include opacity(.7);
+    font-size: rem-calc(12);
+  }
+
+  .action-wrapper {
+    @include flexbox();
+    justify-content: space-around;
+    margin-top: 2rem;
+
+    .button {
+      flex-basis: 45%;
+      text-transform: capitalize;
+
+      &.cancel {
+        background-color: $white;
+        border: 1px solid $black-30;
+        color: $black-30;
+
+        &:hover {
+          background-color: $white;
+          border: 1px solid $black-40;
+          color: $black-40;
+        }
+      }
+
+      &.close-reveal-modal {
+        @extend .button;
+        position: inherit;
+      }
+    }
+  }
+}
+
+#export-as-pdf-modal {
+  form {
+    text-align: left;
+
+    .options {
+      border-bottom: 1px solid $black-20;
+      font-size: rem-calc(14);
+      text-transform: uppercase;
+    }
+
+    label { font-size: rem-calc(16); }
+  }
+}
+
+#export-to-services-modal {
+  .tabs {
+    @include flexbox();
+    justify-content: center;
+
+    .tab-title {
+      font-family: inherit;
+
+      &.active {
+        border-bottom: 2px solid $success-color;
+        color: $success-color;
+      }
+
+      &:hover {
+        border-bottom: 2px solid $success-color-dark;
+        color: $success-color-dark;
+      }
+
+      a {
+        background-color: initial;
+        color: inherit;
+        padding: .5rem 1rem;
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 %section.backlog
   .user-stories-list-container
     .user-stories
-      - if @estimation == 'true'
+      - if @estimation
         .title-breaker
           %h5
             = t('reloaded.estimation.separator_title')
@@ -29,7 +29,7 @@
       - @project.user_stories.each do |user_story|
         %ul.user-story-list
           %li.user-story
-            - if @estimation == 'true'
+            - if @estimation
               %span.points
                 = t('reloaded.estimation.separator_title')
                 (

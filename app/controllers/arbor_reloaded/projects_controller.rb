@@ -97,7 +97,7 @@ module ArborReloaded
 
     def export_backlog
       parameters = params.permit(:estimation)
-      @estimation = parameters[:estimation]
+      @estimation = parameters[:estimation].blank?
       send_data(export_content,
                 filename: "#{@project.name} Backlog.pdf",
                 type:     'application/pdf')

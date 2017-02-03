@@ -1,0 +1,9 @@
+#export-to-services-modal.action-modal.reveal-modal{ aria: { hidden: true, labelledby: 'copy-modal' }, data: { reveal: '' }, role: 'dialog' }
+  = link_to '×', '#', class: 'close-reveal-modal'
+  %h2= t('project.export')
+  %ul.tabs{ 'data-tab' => '', role: 'tablist' }
+    %li.tab-title.active
+      %a{ 'aria-controls' => 'trello', 'aria-selected' => 'true', href: '#trello', role: 'tab' } Trello
+  .tabs-content
+    %section#trello.content.active{ 'aria-hidden' => 'false', role: 'tabpanel' }
+      = render 'arbor_reloaded/user_stories/services/trello', current_project: current_project
