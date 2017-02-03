@@ -45,22 +45,22 @@ en:
       velocity: '10'
       cost_per_week: '2500'
     delete_project: 'Delete project'
-    copy: Duplicate
+    copy: 'Duplicate'
     copy_project: 'Duplicate project'
-    copy_hint: Includes stories, canvas, acceptance criteria, and estimations.
-    copy_tip: Does not include comments or project members
-    delete_confirmation: Yes, delete project
-    delete_cancel: Cancel, do not delete
+    copy_hint: 'Includes stories, canvas, acceptance criteria, and estimations.'
+    copy_tip: 'Does not include comments or project members'
+    delete_confirmation: 'Yes, delete project'
+    delete_cancel: 'Cancel, do not delete'
     delete_hint: |
       Taking this action will permanently delete this whole project.
       Once deleted it won't be accesible anymore.
     pdf:
-      download: Download PDF
-      export_label: Don't include story estimations
+      download: 'Download PDF'
+      export_label: "Don't include story estimations"
       hint: |
         Download a PDF of your project to share
         your stories, canvas and more offline.
-    export: Export project
+    export: 'Export project'
   backlog:
     user_stories:
       free: "As a <type of user> I want <some function> so that <some benefit>"
@@ -289,7 +289,7 @@ en:
       active: 'Enable'
       inactive: 'Disable'
     pdf:
-      download: Download PDF
+      download: 'Download PDF'
       export_label: Don't include story estimations
       hint: |
         Download a PDF of your project to share

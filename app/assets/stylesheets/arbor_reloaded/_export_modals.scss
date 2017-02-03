@@ -69,13 +69,13 @@ $red-alert: #f04124;
       font-family: inherit;
 
       &.active {
-        color: $success-color;
         border-bottom: 2px solid $success-color;
+        color: $success-color;
       }
 
       &:hover {
-        color: $success-color-dark;
         border-bottom: 2px solid $success-color-dark;
+        color: $success-color-dark;
       }
 
       a {
