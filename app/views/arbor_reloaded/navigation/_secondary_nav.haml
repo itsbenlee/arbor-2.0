@@ -15,12 +15,8 @@
       = link_to t('reloaded.navigation.more'), '#', aria: { controls: 'project-actions', expanded: false }, data: {dropdown: 'project-actions' }
       %ul#project-actions.f-dropdown{ data: { dropdown: { content: '' } } }
         %li
-          = link_to arbor_reloaded_project_export_backlog_path(current_project, format: :pdf, estimation: true), id: 'export-as-pdf-estimation' do
+          = link_to '', data: { reveal_id: 'export-as-pdf-modal' } do
             = t('reloaded.navigation.export_with_estimation')
-            %span.icn-export
-        %li
-          = link_to arbor_reloaded_project_export_backlog_path(current_project, format: :pdf, estimation: false), id: 'export-as-pdf' do
-            = t('reloaded.navigation.export_without_estimation')
             %span.icn-export
         - if ENV['ENABLE_SLACK'] == 'true'
           %li
@@ -29,7 +25,7 @@
           = link_to 'Export as...', '#'
           %ul#export-actions.f-dropdown
             %li
-              = link_to '#', data: { reveal_id: 'trello-modal' } do
+              = link_to '#', data: { reveal_id: 'export-to-services-modal' } do
                 = t('reloaded.navigation.export_trello')
                 %span.icn-export
             %li
@@ -37,12 +33,12 @@
                 = t('reloaded.navigation.export_google_sheets')
                 %span.icn-export
         %li
-          = link_to arbor_reloaded_project_copy_path(current_project), method: :post, class: 'copy-project' do
+          = link_to '', data: { reveal_id: 'copy-modal' } do
             = t('project.copy_project')
             %span.icn-copy
         - if current_user == current_project.owner
           %li
-            = link_to arbor_reloaded_project_path(current_project), method: :delete, data: { confirm: t('project.delete_confirmation') } do
+            = link_to '', data: { reveal_id: 'delete-modal' } do
               = t('project.delete_project')
               %span.icn-delete
   %ul.right.members.members-avatars
@@ -54,5 +50,7 @@
       projectId: current_project.id,
       slackEnabled: current_project.slack_enabled }, { prerender: false })
 
-= render 'arbor_reloaded/trello/trello_modal', current_project: current_project
-= render 'arbor_reloaded/google_sheets/google_sheets_modal', current_project: current_project, google_sheets_response: google_sheets_response
+= render 'arbor_reloaded/user_stories/export_as_pdf_modal', current_project: current_project
+= render 'arbor_reloaded/user_stories/copy_modal', current_project: current_project
+= render 'arbor_reloaded/user_stories/export_to_services_modal', current_project: current_project
+= render 'arbor_reloaded/user_stories/delete_modal', current_project: current_project

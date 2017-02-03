@@ -13,44 +13,42 @@ feature 'Export backlog' do
     expect(page).to have_css('.icn-export')
   end
 
-  scenario 'should download PDF' do
-    allow_any_instance_of(ArborReloaded::IntercomServices)
-      .to receive(:create_event).and_return(true)
+  context 'when exporting project', js: true do
+    background do
+      allow_any_instance_of(ArborReloaded::IntercomServices)
+        .to receive(:create_event).and_return(true)
 
-    visit arbor_reloaded_project_export_backlog_path(project, format: :pdf, estimation: false)
-    response_headers = page.response_headers
-    expect(response_headers['Content-Disposition']).to have_text(
-      "#{project.name} Backlog.pdf"
-    )
-  end
+      click_link 'More...'
+      click_link 'Download as PDF'
+    end
 
-  scenario 'should download a PDF', js: true do
-    allow_any_instance_of(ArborReloaded::IntercomServices)
-      .to receive(:create_event).and_return(true)
+    scenario 'should display export\'s as PDF modal' do
+      expect(page).to have_selector('#export-as-pdf-modal', visible: true)
+    end
 
-    click_link 'More...'
-    click_link 'Download as PDF'
+    scenario 'should download a PDF', js: true do
+      within '#export-as-pdf-modal' do
+        click_button 'Download PDF'
+        wait_for_ajax
+      end
 
-    wait_for_ajax
+      response_headers = page.response_headers
+      expect(response_headers['Content-Disposition']).to have_text(
+        "#{project.name} Backlog.pdf"
+      )
+    end
 
-    response_headers = page.response_headers
-    expect(response_headers['Content-Disposition']).to have_text(
-      "#{project.name} Backlog.pdf"
-    )
-  end
+    scenario 'should download a PDF with no estimation', js: true do
+      within '#export-as-pdf-modal' do
+        check 'estimation'
+        click_button 'Download PDF'
+        wait_for_ajax
+      end
 
-  scenario 'should download a PDF with no estimation', js: true do
-    allow_any_instance_of(ArborReloaded::IntercomServices)
-      .to receive(:create_event).and_return(true)
-
-    click_link 'More...'
-    click_link 'Download as PDF (no Estimation)'
-
-    wait_for_ajax
-
-    response_headers = page.response_headers
-    expect(response_headers['Content-Disposition']).to have_text(
-      "#{project.name} Backlog.pdf"
-    )
+      response_headers = page.response_headers
+      expect(response_headers['Content-Disposition']).to have_text(
+        "#{project.name} Backlog.pdf"
+      )
+    end
   end
 end

@@ -1,0 +1,10 @@
+#export-as-pdf-modal.action-modal.reveal-modal{ aria: { hidden: true, labelledby: 'export-as-pdf-modal' }, data: { reveal: ''}, role: 'dialog' }
+  = link_to '×', '#', class: 'close-reveal-modal'
+  %h2= t('project.pdf.download')
+  %p.hint= t('project.pdf.hint')
+  = form_tag arbor_reloaded_project_export_backlog_path(current_project, format: :pdf), method: :get do
+    %p.options= t('common.options')
+    = check_box_tag :estimation, false
+    = label_tag :estimation, t('project.pdf.export_label')
+    .action-wrapper
+      = submit_tag t('project.pdf.download'), class: 'button radius success'

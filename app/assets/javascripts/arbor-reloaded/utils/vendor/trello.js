@@ -1,5 +1,3 @@
-var $export_trello = $('#trello_export_link');
-
 $('#trello-export-submit').click(function() {
   $('.trello-export-success').html('');
   if ($('#board_id').length > 0) {
@@ -65,9 +63,9 @@ hideSuccessMessage();
 buttonDisable();
 
 function hideSuccessMessage() {
-  var $trelloModal = $('#trello-modal');
+  var $exportModal = $('#export-to-services-modal');
 
-  $trelloModal.on('close.fndtn.reveal', function() {
+  $exportModal.on('close.fndtn.reveal', function() {
     $('.trello-export-success').html('');
   });
 }
