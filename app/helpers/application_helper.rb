@@ -10,4 +10,8 @@ module ApplicationHelper
   def user_initial(user)
     user.email[0].upcase
   end
+
+  def google_sheets_authentication_url(project)
+    arbor_reloaded_project_export_to_google_path(project.id)
+  end
 end

@@ -15,7 +15,7 @@ gem 'jquery-ui-rails', '5.0.5'
 gem 'public_activity'
 gem 'rails_engine_decorators'
 gem 'ruby-trello', github: 'jeremytregunna/ruby-trello'
-gem 'httpclient'
+gem 'httpclient', '~> 2.7', '>= 2.7.1'
 gem 'http-cookie'
 gem 'fog-aws'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
@@ -30,6 +30,9 @@ gem 'active_link_to'
 gem 'intercom', "~> 3.4.0"
 gem 'rails_admin', '~> 0.8.1'
 gem 'newrelic_rpm'
+gem 'google_drive', '~> 2.1', '>= 2.1.1'
+gem 'google-api-client', '~> 0.9'
+gem 'googleauth', '~> 0.5.1'
 
 group :doc do
   gem 'sdoc', require: false

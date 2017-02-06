@@ -21,7 +21,7 @@ RSpec.describe ArborReloaded::TrelloController do
         )
         expect(response).to be_success
         result = JSON.parse(response.body)
-        expect(result['data']['message']).to eq('Project exported to Trello succesfully!')
+        expect(result['data']['message']).to eq('Project exported to Trello successfully!')
         expect(result['errors']).to be_empty
       end
     end

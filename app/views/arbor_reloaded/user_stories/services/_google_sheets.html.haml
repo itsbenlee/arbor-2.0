@@ -1,0 +1,22 @@
+%p.hint= t('google_sheets.modal.title')
+
+- if google_sheets_response.try(:[], :success)
+  .google-sheets-export-success
+    = t('google_sheets.modal.success')
+  .google-sheets-export-success
+    %a{ href: google_sheets_response[:url] }= t('google_sheets.modal.link')
+- if google_sheets_response.try(:[], :errors)
+  - if google_sheets_response[:errors].empty?
+    .google-sheets-export-error Something went wrong
+  - else
+    .google-sheets-export-error= google_sheets_response[:errors].first
+
+- if google_sheets_response.blank?
+  .export-text
+    %p.disclaimer= t('google_sheets.modal.text1')
+    %p.disclaimer= t('google_sheets.modal.text2')
+
+  = button_tag t('google_sheets.modal.export'), class: 'button radius small',
+    id: 'google-sheets-export-submit',
+    data: { url: google_sheets_authentication_url(current_project) }
+

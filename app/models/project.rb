@@ -49,6 +49,13 @@ class Project < ActiveRecord::Base
     (total_points / velocity_number).ceil
   end
 
+  def points_per_week
+    points = total_points
+    return points if velocity > points
+
+    velocity
+  end
+
   def name_url_hash
     {
       label: name,

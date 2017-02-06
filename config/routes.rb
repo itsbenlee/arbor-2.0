@@ -21,24 +21,21 @@ Railsroot::Application.routes.draw do
 
     resources :projects, except: [:new, :edit], shallow: true do
       resources :trello, only: [:new, :create, :index, :update]
-      get 'export_to_board',
-        controller: :trello,
-        action: :export_to_board
-      get 'export_backlog',
-        controller: :projects,
-        action: :export_backlog
+      get 'export_to_google', controller: :google_sheets,
+                              action: :export
+      get 'export_to_board', controller: :trello,
+                             action: :export_to_board
+      get 'export_backlog', controller: :projects,
+                            action: :export_backlog
       get 'log', on: :member
-      get 'members',
-          controller: :projects,
-          action: :members
-      resources :canvas,
-        only: [:index, :create],
-        as: :canvases,
-        controller: :canvases
-      put 'user_stories/order',
-          controller: :projects,
-          action: :order_stories,
-          as: :reorder_backlog
+      get 'members', controller: :projects,
+                     action: :members
+      resources :canvas, only: [:index, :create],
+                         as: :canvases,
+                         controller: :canvases
+      put 'user_stories/order', controller: :projects,
+                                action: :order_stories,
+                                as: :reorder_backlog
 
       resources :backlog,
           only: [:create, :index, :show, :update, :destroy, :new],
@@ -78,6 +75,10 @@ Railsroot::Application.routes.draw do
           patch :inactive
         end
       end
+    end
+
+    resources :google_sheets, only: [] do
+      get :authorization_callback, on: :collection
     end
 
     get 'export/:id/spreadhseet', to: 'projects#export_to_spreadhseet'

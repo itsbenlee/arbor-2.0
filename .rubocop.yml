@@ -19,6 +19,8 @@ MethodLength:
   Description: 'Avoid methods longer than `Max` lines of code.'
   CountComments: false  # count full line comments?
   Max: 15
+  Exclude:
+    - 'app/services/google/sheets_v4/export_service.rb'
 
 AlignParameters:
   Enabled: false
@@ -115,3 +117,7 @@ Style/WordArray:
 Metrics/ClassLength:
   CountComments: false
   Max: 300
+
+Metrics/AbcSize:
+  Exclude:
+    - 'app/services/google/sheets_v4/export_service.rb'

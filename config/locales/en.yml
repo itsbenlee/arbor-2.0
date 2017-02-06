@@ -110,13 +110,44 @@ en:
   cost_structure: "Cost Structure"
   cost_structure_title: "What are your customer acquisition costs, distribution costs, people, hosting, integration partners, etc?"
   trello:
+    hint: 'Export to Trello'
     export: 'Export to Trello'
     new_board: 'Export to New Board'
     existing_board: 'Export to Existing Board'
-    success: 'Project exported to Trello succesfully!'
+    success: 'Project exported to Trello successfully!'
     default_list: 'Arbor Backlog Export'
     error: 'There was an error exporting your project to Trello. Please try again later'
     modal_title: 'Export Stories to Trello'
+    text1: 'Be patient, exportation may take a few minutes.'
+    text2: 'You can keep working on Arbor as your stories are being exported.'
+  google_sheets:
+    modal:
+      export: 'Export'
+      error: 'There was an error exporting your project to Google Sheets. Please try again later'
+      success: 'Project exported to Google Sheets successfully!'
+      link: 'Click here to go to Google Sheets'
+      title: 'Export Stories to Google Sheets'
+      text1: 'Be patient, exportation may take a few minutes.'
+      text2: 'You can keep working on Arbor as your stories are being exported.'
+    worksheet:
+      title: 'V1 Release Overview'
+      description:
+        - '- the goal of the Release Plan is to deliver the features as potentially shippable products each sprint'
+        - '- this release plan is based on current Product Backlog. Any change to the backlog could affect the schedule in this plan.'
+        - '- this release plan is based on estimates and assumed velocity. Actuals may vary for various reasons'
+        - '- the schedules and deliverables may change as the PO/Client sees fit'
+        - '- the estimates are based on current understanding of requirements. Additional information that may become available may change the estimates'
+      header: 'Themes/Epics (Features & Requirements)'
+      complexity: 'Complexity'
+      ungrouped: 'Unthemed Stories'
+      sprint_header: 'Sprint'
+      delivered: 'Delivered'
+      in_progress: 'In Progress'
+      planned: 'Planned'
+      advanced: 'Advanced Design Work'
+      points: '#Points'
+      sprints: '#Sprints'
+      ppw: '#ppw'
     hint: |
       Export your project to Trello to start assigning
       your stories and managing your team's productivity.
@@ -210,6 +241,7 @@ en:
       export_with_estimation: 'Download as PDF'
       export_without_estimation: 'Download as PDF (no Estimation)'
       export_trello: 'Trello'
+      export_google_sheets: 'Google Sheets'
     project_members:
       owner: 'Owner'
       user_invited: 'Invited'
