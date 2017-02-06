@@ -2,8 +2,13 @@
   = link_to '×', '#', class: 'close-reveal-modal'
   %h2= t('project.export')
   %ul.tabs{ 'data-tab' => '', role: 'tablist' }
-    %li.tab-title.active
+    %li.tab-title.tab-trello.active
       %a{ 'aria-controls' => 'trello', 'aria-selected' => 'true', href: '#trello', role: 'tab' } Trello
+    %li.tab-title.tab-google
+      %a{ 'aria-controls' => 'google', 'aria-selected' => 'false', href: '#google', role: 'tab' } Google
   .tabs-content
     %section#trello.content.active{ 'aria-hidden' => 'false', role: 'tabpanel' }
       = render 'arbor_reloaded/user_stories/services/trello', current_project: current_project
+    %section#google.content{ 'aria-hidden' => 'true', role: 'tabpanel' }
+      = render 'arbor_reloaded/user_stories/services/google_sheets', current_project: current_project,
+        google_sheets_response: google_sheets_response

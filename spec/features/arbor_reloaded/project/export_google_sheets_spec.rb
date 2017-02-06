@@ -18,11 +18,11 @@ feature 'Export backlog', js: true do
 
     scenario 'I should see the modal' do
       wait_for_ajax
-      expect(page).to have_selector('#google-sheets-modal', visible: true)
+      expect(page).to have_selector('#export-to-services-modal', visible: true)
     end
 
     scenario 'I should not see the button on the modal' do
-      within '#google-sheets-modal' do
+      within '#export-to-services-modal' do
         expect(page).not_to have_selector('#google-sheets-export-submit')
       end
     end
@@ -36,13 +36,13 @@ feature 'Export backlog', js: true do
     end
 
     scenario 'I should see a success message' do
-      within '#google-sheets-modal' do
+      within '#export-to-services-modal' do
         expect(page).to have_text('Project exported to Google Sheets successfully!')
       end
     end
 
     scenario 'I should not see an error message' do
-      within '#google-sheets-modal' do
+      within '#export-to-services-modal' do
         expect(page).not_to have_text('There was an error exporting your project to Google Sheets. Please try again later')
       end
     end
@@ -56,13 +56,13 @@ feature 'Export backlog', js: true do
     end
 
     scenario 'I should not see a success message' do
-      within '#google-sheets-modal' do
+      within '#export-to-services-modal' do
         expect(page).not_to have_text('Project exported to Google Sheets successfully!')
       end
     end
 
     scenario 'I should see an error message' do
-      within '#google-sheets-modal' do
+      within '#export-to-services-modal' do
         expect(page).to have_text('There was an error exporting your project to Google Sheets. Please try again later')
       end
     end

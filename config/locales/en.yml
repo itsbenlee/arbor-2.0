@@ -110,6 +110,7 @@ en:
   cost_structure: "Cost Structure"
   cost_structure_title: "What are your customer acquisition costs, distribution costs, people, hosting, integration partners, etc?"
   trello:
+    hint: 'Export to Trello'
     export: 'Export to Trello'
     new_board: 'Export to New Board'
     existing_board: 'Export to Existing Board'

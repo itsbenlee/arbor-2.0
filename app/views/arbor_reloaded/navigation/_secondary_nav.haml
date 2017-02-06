@@ -29,7 +29,7 @@
                 = t('reloaded.navigation.export_trello')
                 %span.icn-export
             %li
-              = link_to '#', data: { reveal_id: 'google-sheets-modal' } do
+              = link_to '#', data: { reveal_id: 'export-to-services-modal' } do
                 = t('reloaded.navigation.export_google_sheets')
                 %span.icn-export
         %li
@@ -52,5 +52,6 @@
 
 = render 'arbor_reloaded/user_stories/export_as_pdf_modal', current_project: current_project
 = render 'arbor_reloaded/user_stories/copy_modal', current_project: current_project
-= render 'arbor_reloaded/user_stories/export_to_services_modal', current_project: current_project
+= render 'arbor_reloaded/user_stories/export_to_services_modal', current_project: current_project,
+  google_sheets_response: google_sheets_response
 = render 'arbor_reloaded/user_stories/delete_modal', current_project: current_project
