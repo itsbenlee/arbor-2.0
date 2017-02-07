@@ -2,27 +2,18 @@ function displayActions() {
   var $actionCaller = $('.others'),
       $actionContainer;
 
-  $actionCaller.on( "click", function( event ) {
+  $actionCaller.on('click', function(event) {
     $('.actions').removeClass('visible');
     $('.icn-comments').addClass('hidden-element');
     $actionContainer = $(this).closest('li');
     $actionContainer.find($('.actions')).addClass('visible');
+
     event.stopPropagation();
     event.preventDefault();
   });
 
   $('html').click(function() {
-    if ($('.actions').hasClass('visible')) {
-      $('.actions').removeClass('visible');
-    }
-
-    if ($('.deleter').hasClass('visible')) {
-      $('.deleter').removeClass('visible');
-    }
-
-    if ($('.color-tags').hasClass('visible')) {
-      $('.color-tags').removeClass('visible');
-    }
+    $('.actions,.deleter,.color-tags').removeClass('visible');
 
     if ($('.icn-comments').hasClass('hidden-element')) {
       $('.icn-comments').removeClass('hidden-element');
@@ -37,7 +28,8 @@ function displayActions() {
 function displayHideDelete() {
   var $deleteCaller = $('.delete-project, .delete-story'),
       $cancel       = $('.cancel');
-  $deleteCaller.on( "click", function( event ) {
+
+  $deleteCaller.on('click', function(event) {
     $deleteContainer = $(this).closest('li');
     $deleteContainer.find($('.deleter')).addClass('visible');
     $(this).parent().removeClass('visible');
@@ -45,16 +37,19 @@ function displayHideDelete() {
     if ($('.color-tags.visible')) {
       $('.color-tags').removeClass('visible');
     }
+
     event.preventDefault();
     event.stopPropagation();
   });
 
-  $cancel.on('click', function( e ) {
+  $cancel.on('click', function(event) {
     $('.deleter').removeClass('visible');
+
+    event.preventDefault();
   });
 }
 
-$( document ).ready(function() {
+$(document).ready(function() {
   generalBinds();
   bindAutoReveal();
   collapsableContent();

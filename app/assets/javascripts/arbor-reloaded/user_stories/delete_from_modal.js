@@ -12,8 +12,10 @@ $deleteModal.on('opened.fndtn.reveal', function() {
 });
 
 function bindModalClose() {
-  $('#story-delete-modal .close').click(function(){
+  $('#story-delete-modal .close').click(function(event) {
     $deleteModal.foundation('reveal', 'close');
+
+    event.preventDefault();
   });
 }
 
