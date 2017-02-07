@@ -93,7 +93,7 @@ function showBulkMenu() {
       $bulkMenu       = $backlogStoryList.find('.sticky-menu');
 
   $storyBulkInput.click(function() {
-    $bulkMenu[$storyBulkInput.is(':checked') ? "show" : "hide"]();
+    $bulkMenu[$storyBulkInput.is(':checked') ? 'show' : 'hide']();
   });
 }
 
@@ -120,7 +120,7 @@ function bindUserStoriesColorLinks() {
         selected = $(this).data('selected'),
         storyID  = $(this).data('storyId');
 
-    if(selected) {
+    if (selected) {
       color = null;
     }
 
@@ -163,10 +163,10 @@ function toggleGroupForm() {
 function hoverNewGroupButton() {
   $('.add-new-group input[name="group[name]"]')
     .focus(function(event) {
-      $(this).closest(".form-group-container").css('visibility', 'visible');
+      $(this).closest('.form-group-container').css('visibility', 'visible');
     })
     .blur(function(event){
-      $(this).closest(".form-group-container").removeAttr("style");
+      $(this).closest('.form-group-container').removeAttr('style');
     });
 }
 
@@ -222,14 +222,14 @@ function bindCreationMode() {
     });
 
     $('li.creation-mode-guided', $item).click(function () {
-      $('.creation-mode-selected .creation-mode-icon', $item).text("G");
+      $('.creation-mode-selected .creation-mode-icon', $item).text('G');
 
       $('form.creation-mode-guided').removeClass('hidden-element');
       $('form.creation-mode-freeform').addClass('hidden-element');
     });
 
     $('li.creation-mode-freeform', $item).click(function () {
-      $('.creation-mode-selected .creation-mode-icon', $item).text("F");
+      $('.creation-mode-selected .creation-mode-icon', $item).text('F');
 
       $('form.creation-mode-guided').addClass('hidden-element');
       $('form.creation-mode-freeform').removeClass('hidden-element');

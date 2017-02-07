@@ -6,7 +6,7 @@ function copyStories() {
         url              = $(this).data('url'),
         projectId        = $('#copy_story_project_id').val();
 
-    if($selectedStories.length !== 0) {
+    if ($selectedStories.length !== 0) {
       $.ajax({
         type: 'POST',
         url: url,
@@ -29,11 +29,13 @@ function getStoriesId(storiesElements) {
 }
 
 
-$( document ).ready(function() {
+$(document).ready(function() {
   $('#copy-stories-modal').foundation('reveal', {
     opened: function () {
-        $('#copy-stories-modal .close').click(function(){
+        $('#copy-stories-modal .close').click(function(event) {
           $('#copy-stories-modal').foundation('reveal', 'close');
+
+          event.preventDefault();
         });
       copyStories();
     }
