@@ -31,12 +31,15 @@ module ArborReloaded
       project_services = ArborReloaded::ProjectServices.new(project)
       project_services.reorder_stories(stories)
 
-      first_story_updated, second_story_updated, third_story_updated =
-      UserStory.find(first_story.id, second_story.id, third_story.id)
+      backlog_orders = UserStory.where(id: [
+        first_story.id, second_story.id, third_story.id
+      ]).select(:id, :backlog_order).map { |us| [us.id, us.backlog_order] }.to_h
 
-      expect(first_story_updated.backlog_order).to eq 2
-      expect(second_story_updated.backlog_order).to eq 3
-      expect(third_story_updated.backlog_order).to eq 1
+      expect(backlog_orders).to eq(
+        first_story.id => 2,
+        second_story.id => 3,
+        third_story.id => 1
+      )
     end
   end
 
@@ -66,7 +69,7 @@ module ArborReloaded
     end
 
     scenario 'should update number of copies' do
-      user_story = create :user_story, project: project
+      create :user_story, project: project
       project_services.replicate(user)
       project.reload
       expect(project.copies).to eq(1)
