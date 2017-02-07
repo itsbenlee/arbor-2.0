@@ -13,7 +13,7 @@ feature 'User profile', js:true do
     end
 
     scenario 'I should be able to update my password' do
-      within ("form#edit_user_#{user.id}") do
+      within("form#edit_user_#{user.id}") do
         find('#user_password').set('12345678')
         find('#user_password_confirmation').set('12345678')
         find('#user_current_password').set(user.password)
@@ -31,7 +31,7 @@ feature 'User profile', js:true do
     end
 
     scenario 'I should not be able to change password with different passwords' do
-      within ("form#edit_user_#{user.id}") do
+      within("form#edit_user_#{user.id}") do
         find('#user_password').set('12345678')
         find('#user_password_confirmation').set('12345678910')
         find('#user_current_password').set(user.password)
@@ -42,7 +42,7 @@ feature 'User profile', js:true do
     end
 
     scenario 'I should not be able to submit profile changes with wrong password' do
-      within ("form#edit_user_#{user.id}") do
+      within("form#edit_user_#{user.id}") do
         find('#user_email').set('test@getarbor.io')
         find('#user_current_password').set('wrong_password')
         click_button('Save')

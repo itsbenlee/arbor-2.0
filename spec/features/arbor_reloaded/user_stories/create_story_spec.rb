@@ -12,6 +12,7 @@ feature 'Create user story', js: true do
   background do
     sign_in user
     visit arbor_reloaded_project_user_stories_path(project)
+    find('.show-updates-popup').click
   end
 
   scenario 'should show control for switching mode' do

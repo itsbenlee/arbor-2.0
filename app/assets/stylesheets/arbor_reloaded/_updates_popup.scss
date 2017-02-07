@@ -1,0 +1,39 @@
+#updates-popup {
+  @include box-shadow($shadow-depth-popup);
+
+  background: $white;
+  display: none;
+  left: calc(100% - 450px);
+  padding: rem-calc(10);
+  position: absolute;
+  width: rem-calc(300);
+  z-index: 1;
+
+  p {
+    color: $black-35;
+    font-size: rem-calc(13);
+    margin: 0;
+    text-align: center;
+  }
+
+  h5 {
+    font-family: $font-family-sans-serif;
+    font-size: rem-calc(14);
+    margin-top: rem-calc(140);
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .dismiss {
+    background: $white;
+  }
+
+  .learn-more {
+    color: $inactive-green;
+    font-weight: bold;
+  }
+}
+
+.new-updates #updates-popup {
+  display: initial;
+}

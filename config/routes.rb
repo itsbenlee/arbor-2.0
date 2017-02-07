@@ -19,6 +19,9 @@ Railsroot::Application.routes.draw do
     get 'feedback' => redirect(ENV['FEEDBACK_URL'])
     get 'projects/list', controller: :projects, action: :list_projects
 
+    post 'read-updates', to: 'users#read_updates'
+    get 'updates' => redirect(ENV['UPDATES_URL'])
+
     resources :projects, except: [:new, :edit], shallow: true do
       resources :trello, only: [:new, :create, :index, :update]
       get 'export_to_google', controller: :google_sheets,
