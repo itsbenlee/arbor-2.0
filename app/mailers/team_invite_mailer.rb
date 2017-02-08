@@ -1,6 +1,4 @@
-class TeamInviteMailer < ActionMailer::Base
-  default from: ENV['FROM_EMAIL_ADDRESS']
-
+class TeamInviteMailer < BaseMailer
   def team_invite_email(data)
     @team_name = data[:team_name]
 

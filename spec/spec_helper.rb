@@ -6,6 +6,7 @@ require 'vcr'
 Spork.prefork do
   ENV['RAILS_ENV'] ||= 'test'
   ENV['FROM_EMAIL_ADDRESS'] = 'no-reply@getarbor.io'
+  ENV['FROM_EMAIL_NAME'] = 'Arbor'
   ENV['MAXIMUM_MEMBER_COUNT'] = '16'
   ENV['SIDEBAR_VERSION'] = '1.0'
   ENV['MOUSEFLOW_SRC'] = '//cdn.mouseflow.com/projects/51a89e86-f3d8-469d-80d2-4971f0cdb36b.js'

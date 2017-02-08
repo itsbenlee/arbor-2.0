@@ -1,6 +1,4 @@
-class InviteMailer < ActionMailer::Base
-  default from: ENV['FROM_EMAIL_ADDRESS']
-
+class InviteMailer < BaseMailer
   def project_invite_email(data, is_new)
     @project_name = data[:project_name]
     @inviter = data[:inviter]
