@@ -28,7 +28,8 @@
       try{Typekit.load();}catch(e){}
   %body{'data-action' => action_name, 'data-controller' => controller_name }
     = render 'layouts/navigation', projects: @projects, current_project: @project,
-      google_sheets_response: @google_sheets_response, dismiss_updates: @dismiss_updates
+      google_sheets_response: @google_sheets_response, dismiss_updates: @dismiss_updates,
+      show_updates: !ENV['UPDATES_URL'].blank?
     = yield :user_nav
     - if Rails.env.production?
       // Intercom plugin
