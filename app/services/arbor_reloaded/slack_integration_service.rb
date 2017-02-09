@@ -45,6 +45,8 @@ module ArborReloaded
     end
 
     def req_slack_data(token)
+      return {} unless @data_url
+
       options = {
         token: token
       }

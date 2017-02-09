@@ -66,32 +66,47 @@ $avatar-dimension: rem-calc(40);
   }//notification on bell
 }//top-bar
 
-.top-bar-section .profile {
-  .avatar {
-    @include user-avatar($avatar-dimension, rem-calc(20));
+.top-bar-section {
+  .show-updates-popup i { font-size: rem-calc(28); }
 
-    @media #{ $medium-only } { margin: rem-calc(10 15 0 0); }
-    @media #{ $medium-up } { @include inline-block; }
-  }//avatar
+  .new-updates .show-updates-popup {
+    i { color: $updates-color; }
 
-  a:not(.button) {
-    &#welcome {
-      color: $black-30;
-      display: inline;
-      font-size: rem-calc(13);
-      padding-right: 0;
-      width: calc(100% - #{$avatar-dimension});
-
-      span {
-        color: $white;
-        font-weight: $font-weight-bold;
-      }
-
-      @media #{ $small-only } { display: block; }
-      @media #{ $medium-only } { display: none; }
-    }//welcome tag
+    &:hover i { color: lighten($updates-color, 25%); }
   }
-}//profile section in nav
+
+  .profile {
+    .avatar {
+      @include user-avatar($avatar-dimension, rem-calc(20));
+
+      @media #{ $medium-only } { margin: rem-calc(10 15 0 0); }
+      @media #{ $medium-up } { @include inline-block; }
+    }//avatar
+
+    a:not(.button) {
+      &#welcome {
+        color: $black-30;
+        display: inline;
+        font-size: rem-calc(13);
+        padding-right: 0;
+        width: calc(100% - #{$avatar-dimension});
+
+        span {
+          color: $white;
+          font-weight: $font-weight-bold;
+        }
+
+        @media #{ $small-only } { display: block; }
+        @media #{ $medium-only } { display: none; }
+      }//welcome tag
+    }
+  }//profile section in nav
+
+  ul .f-dropdown {
+    // scss-lint:disable ImportantRule
+    top: $topbar-height !important;
+  }
+}
 
 // DROPDOWNS
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -108,11 +123,6 @@ ul .f-dropdown {
     }// span icons
   }// li and a
 }//f-dropdown
-
-.top-bar-section ul .f-dropdown {
-  // scss-lint:disable ImportantRule
-  top: $topbar-height !important;
-}
 
 ul .dropdown {
   span {

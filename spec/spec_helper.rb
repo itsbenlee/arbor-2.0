@@ -16,6 +16,7 @@ Spork.prefork do
   ENV['ENABLE_INTERCOM'] = 'true'
   ENV['SLACK_CLIENT_ID']= 'VALID_SLACK_CLIENT_ID'
   ENV['SLACK_CLIENT_SECRET'] = 'CLIENT_SECRET'
+  ENV['UPDATES_URL'] = 'http://example.com'
 
   require File.expand_path('../../config/environment', __FILE__)
   require 'rspec/rails'

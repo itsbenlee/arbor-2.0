@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   layout :layout_by_resource
   force_ssl if: :ssl_configured?
+  before_action :updates_status
 
   private
 
@@ -15,6 +16,10 @@ class ApplicationController < ActionController::Base
   end
 
   protected
+
+  def updates_status
+    @dismiss_updates = session['dismiss_updates']
+  end
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :full_name

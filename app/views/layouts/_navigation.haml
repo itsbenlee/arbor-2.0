@@ -26,6 +26,18 @@
           %li.hide
             = link_to log_arbor_reloaded_project_path(current_project) do
               %span.icn-notifications
+        %li{class: dismiss_updates ? nil : 'new-updates'}
+          %a.show-updates-popup
+            %i.icn-favorite
+
+          %div#updates-popup
+            %h5= t('reloaded.updates.title')
+            %p= t('reloaded.updates.description')
+            %p
+              = link_to t('reloaded.updates.learn_more'), arbor_reloaded_updates_path,
+                data: { url: arbor_reloaded_read_updates_path }, class: 'learn-more dismiss', target: '_blank'
+              = link_to t('reloaded.updates.dismiss'), '#', data: { url: arbor_reloaded_read_updates_path }, class: 'dismiss'
+
       %ul.profile
         %li.user-dropdown.has-dropdown.clearfix
           -# .not-click

@@ -113,3 +113,21 @@ function setVisibleState(elements, reversed){
     }
   });
 }
+
+$('#updates-popup .dismiss').click(function (event) {
+  $('#updates-popup').hide();
+
+  if (!$(event.target).is('.learn-more')) {
+    event.preventDefault();
+  }
+});
+
+$(document).on('click', '.new-updates .dismiss', function (event) {
+  $(event.target).closest('.new-updates').removeClass('new-updates');
+
+  $.post($(event.target).data('url'));
+});
+
+$('.show-updates-popup').click(function () {
+  $('#updates-popup').toggle();
+});
