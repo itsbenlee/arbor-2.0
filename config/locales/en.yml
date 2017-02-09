@@ -1,7 +1,7 @@
 en:
   common:
-    options: Options
-    warning: Warning
+    options: 'Options'
+    warning: 'Warning'
   page_title:
     dashboard: 'Dashboard'
     teams: 'Teams'
@@ -242,6 +242,7 @@ en:
       export_without_estimation: 'Download as PDF (no Estimation)'
       export_trello: 'Trello'
       export_google_sheets: 'Google Sheets'
+      feedback: 'Send feedback'
     project_members:
       owner: 'Owner'
       user_invited: 'Invited'

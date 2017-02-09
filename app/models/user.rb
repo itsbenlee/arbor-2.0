@@ -28,6 +28,9 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, UserAvatarImageUploader
   delegate :access_token, to: :api_key, prefix: false
 
+  scope :user_first,
+          -> (id) { order("CASE WHEN users.id = #{id.to_i} THEN 0 ELSE 1 END") }
+
   def can_delete?(project)
     self == project.owner
   end

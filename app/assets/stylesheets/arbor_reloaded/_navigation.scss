@@ -1,6 +1,5 @@
 // TOP BAR
 // - - - - - - - - - - - - - - - - - - - - - - - - -
-
 $topbar-margin: rem-calc(15);
 $avatar-dimension: rem-calc(40);
 
@@ -129,7 +128,6 @@ ul .dropdown {
 
 .secondary-nav {
   $sub-nav-height: rem-calc(50);
-  $member-avatar-dimension: rem-calc(30);
   $user-edit-dimension: rem-calc(20);
 
   @include clearfix;
@@ -179,61 +177,77 @@ ul .dropdown {
   }//left container
 
   .members {
-    @include user-avatar($member-avatar-dimension, rem-calc(15));
-    margin-right: $topbar-margin;
+    $member-count: 3;
+    $items-count: $member-count + 2;
+    $border-width: rem-calc(3);
+    $border: $border-width solid $secondary-nav-color;
 
-    a:not(.button) {
-      @include inline-block;
-      line-height: 1;
-      margin: (($sub-nav-height - $member-avatar-dimension) / 2) 0 0 rem-calc(8);
+    @include user-avatar($avatar-dimension, rem-calc(15));
+    @include flexbox();
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    padding: 0 1rem;
 
-      @media #{ $small-only } { display: none; }
+    > li {
+      height: auto;
+      position: relative;
 
-      &.add-member,
-      &.other-members {
-        @include transition(background-color .25s ease-in-out);
-        background-color: $icon-color;
-        color: $secondary-nav-color;
-        font-size: rem-calc(14);
-        height: $user-edit-dimension;
-        line-height: rem-calc(19);
-        text-align: center;
-        vertical-align: middle;
-        width: $user-edit-dimension;
+      &:not(:first-child) { margin-left: rem-calc(-10); }
 
-        &.add-member {
-          @include border-radius(100%);
-          margin-right: 0;
-          margin-top: ($sub-nav-height - $user-edit-dimension) / 2;
-        }
+      @for $i from 1 through $items-count {
+        &:nth-child(#{$i}) { z-index: #{$items-count - $i + 1}; }
+      }
 
-        &:hover { background-color: $black-20; }
-
-        @media #{$small-only} {
-          display: inline-block;
-          margin-right: 0;
-        }
-      }//add-member, other-members
-
-      &.other-members {
-        @include border-radius(100%);
-        background-color: transparent;
-        border: 1px solid $black-30;
-        color: $black-20;
-        font-size: rem-calc(12);
-        height: rem-calc(30);
-        letter-spacing: 0;
-        line-height: rem-calc(29);
+      > a {
+        line-height: inherit;
         margin-right: 0;
-        width: rem-calc(30);
 
-        @media #{$small-only} { display: none; }
-      }//other members
-    }//a
+        > div { border: $border; }
+      }
+    }
 
-    .button {
-      display: inline;
-      margin: 0;
-    }//button
+    %circle {
+      @include border-radius(100%);
+      border: $border;
+      height: $avatar-dimension;
+      width: $avatar-dimension;
+    }
+
+    .add-member-item {
+      @extend %circle;
+      background-color: $success-color;
+      line-height: $avatar-dimension;
+      text-align: center;
+
+      &:hover { background-color: rgba($success-color, .9); }
+
+      .add-member {
+        @include flexbox;
+        align-items: center;
+        color: $white;
+        height: 100%;
+        justify-content: center;
+        width: 100%;
+
+        span {
+          background: url('data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAQAAACROWYpAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfhAgkLDjZLaCmbAAACXklEQVQ4y62UTUiUURSG3xlHx0Doq3QqxZSKCKMwIikkopBaCS2tnRRRYItqcCEREkEMbSIsI0SiCMJFRBHUoh9pUQuFMjJjyNIYpvGvEWFCx3xaOD93vu9TE3rP6rznvPdyzzn3CKXsHOMUZrx/Mq/S2KDVKtSy4F1e+n8U+9SsUknSfklXNC1J6lSfkVOns6pVkYb0UCGNGRFGceKMUZYQkKSbRwwCUaqzMeHHwsKiHajAwmKlIT0JvKMSITw0Mk0EKytO2zXI0inzMUKUVQZzCrjgbJUbalSidv0ymA5NqN5ZbVzEZZI+5zCzCqssW+00bimsuE08IancxpUaWY6h20Qbn4jSQyvlJPhAnhE9BFx3FmzejjINDPKGEeAnL4BOClLRHUSBy+S7ifcxS4SDCOHlOAnifAS+cpVmHpBkhnEgTJ1T/JYZqgz/GHCDFkYAmOM1NRRxkQR/aMgVrwPu2Z7xhSGEly3sojjDVhEhwXozcS8QtIm7wPUvHwFazSGZlBSwNaZECdfxeaK4DucO4yjf8RvMRpI8W2CPdDNq3lyoPlWoQwUpf4265NOAMUgmYirOnnSCMeA3MEALjYQyfj8HHPda/CDmSY30TZ1WVJd0V+fVrCJJ0rBa9FRBBZWv55rJWSG7FVBw/pwG4GXm6/nZQz3VeFP+VgaBBHHD+mlK97mXKaOLTqsFbjt5IQLA/SV2dJhv7nt7s6QeLY5eVcpvJ72SKiQNLyGOSFrrJo5Jql1UmqcazWnSTnuQfHqvbXq14O0e7dR23VGjI4IQpTwmycKYoo0VzoL9BcyFnyCTPgV0AAAAAElFTkSuQmCC') center center no-repeat;
+          background-size: cover;
+          display: inline-block;
+          height: 50%;
+          width: 50%;
+        }
+      }
+    }
+
+    .avatar-circle { line-height: #{$avatar-dimension - ($border-width / 2)}; }
+
+    .other-members {
+      @extend %circle;
+      background-color: $black-30;
+      color: $white;
+      line-height: #{$avatar-dimension - $border-width};
+      text-align: center;
+    }
   }//members
 }//secondary nav

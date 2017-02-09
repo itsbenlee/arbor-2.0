@@ -1,19 +1,27 @@
-%li
-  = link_to '+', |
-  arbor_reloaded_project_members_path(project), |
-  { class: 'add-member has-tip', data: { reveal_id: 'project-members-modal', reveal_ajax: true, tooltip: '' }, aria: { haspopup: true }, title: t('reloaded.tooltips.add_members') }
-- project.members.each_with_index do |member, index|
-  - if index < 3
-    %li
-      = link_to arbor_reloaded_project_members_path(project), { data: { reveal_id: 'project-members-modal', reveal_ajax: true }} do
-        -  if member.avatar?
-          .avatar-img{ style: "background-image: url(#{member.avatar_url})" }
-        - else
-          = image_tag(member.gravatar_url, class: 'avatar-img', onerror: "this.src=''")
-          .avatar-circle#avatar-circle= user_initial(member)
-- if project.members.count > 3
+%li.add-member-item
+  = link_to arbor_reloaded_project_members_path(project),                    |
+  { class: 'add-member has-tip', data: { reveal_id: 'project-members-modal', |
+                                 reveal_ajax: true, tooltip: '' },           |
+  aria: { haspopup: true }, title: t('reloaded.tooltips.add_members') } do
+    %span
+
+- limit = 3
+- project.members.user_first(current_user.id).limit(limit).each do |member|
   %li
-    = link_to arbor_reloaded_project_members_path(project), { class: 'other-members', data: { reveal_id: 'project-members-modal', reveal_ajax: true }} do
+    = link_to arbor_reloaded_project_members_path(project),                  |
+    { data: { reveal_id: 'project-members-modal', reveal_ajax: true } } do
+      - if member.avatar?
+        .avatar-img{ style: "background-image: url(#{member.avatar_url})" }
+      - else
+        = image_tag(member.gravatar_url, class: 'avatar-img', onerror: "this.src=''")
+        .avatar-circle#avatar-circle= user_initial(member)
+
+- remaining_members = project.members.offset(limit).count
+- if remaining_members > 0
+  %li
+    = link_to arbor_reloaded_project_members_path(project),                  |
+    { class: 'other-members',                                                |
+      data: { reveal_id: 'project-members-modal', reveal_ajax: true } } do
       +
-      = project.members.count - 3
+      = remaining_members
 #project-members-modal.reveal-modal{ data: { reveal: '' } }
