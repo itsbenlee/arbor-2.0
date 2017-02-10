@@ -31,6 +31,17 @@ UTIL = {
   }
 };
 
+$(document).bind('formNotification.error', function (event, text) {
+  var $div = $('<div></div>').text(text).addClass("alert-box error");
+
+  $('<a></a>').attr('href', '#').addClass('close').text('×').appendTo($div);
+  $div.insertAfter('.secondary-nav').show();
+
+  setTimeout(function () {
+    $div.fadeOut();
+  }, 2000);
+});
+
 $(document).ready(function() {
   UTIL.init();
 
