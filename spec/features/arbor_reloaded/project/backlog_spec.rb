@@ -58,8 +58,10 @@ feature 'Project backlog', js: true do
     end
 
     scenario 'the velocity is not updated on database when is negative' do
-      set_project_velocity(-1)
-      expect(project.reload.velocity).to be(nil)
+      expect{
+        set_project_velocity(-1)
+        project.reload
+      }.not_to change(project, :velocity)
     end
   end
 end

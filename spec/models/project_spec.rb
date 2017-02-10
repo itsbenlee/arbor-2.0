@@ -67,4 +67,18 @@ describe Project do
       expect(project.members).to include(project.owner)
     end
   end
+
+  describe '#points_per_week' do
+    context 'when having velocity' do
+      let(:project) { create :project, velocity: 1 }
+
+      it { expect(project.points_per_week).to eq 1 }
+    end
+
+    context 'when not having velocity' do
+      let(:project) { create :project, velocity: 0 }
+
+      it { expect(project.points_per_week).to eq 0 }
+    end
+  end
 end
