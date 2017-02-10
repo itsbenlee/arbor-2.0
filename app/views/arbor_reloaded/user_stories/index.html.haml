@@ -12,7 +12,7 @@
   .user-stories-container
     = render 'arbor_reloaded/user_stories/user_stories_list', project: @project, new_group_top: @new_group_top, new_group_bottom: @new_group_bottom
 = render 'arbor_reloaded/user_stories/story_delete_modal', project: @project
-= render 'arbor_reloaded/user_stories/copy_stories_modal', projects: @projects
+= render 'arbor_reloaded/user_stories/copy_stories_modal', projects: @projects.exclude_project(@project)
 
 - if @google_sheets_response.present?
   :javascript

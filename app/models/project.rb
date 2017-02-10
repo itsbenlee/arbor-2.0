@@ -29,6 +29,8 @@ class Project < ActiveRecord::Base
   scope :recent, -> { order(updated_at: :desc) }
   scope :by_name, -> { order('LOWER(name)') }
 
+  scope :exclude_project, ->(project) { where.not(id: project.id) }
+
   after_commit :owner_as_member
 
   scope :by_teams, ->(teams) { where(team_id: teams.pluck(:id)) }

@@ -20,6 +20,18 @@ describe Project do
   it { should_not validate_uniqueness_of(:is_template) }
   it { should validate_numericality_of(:velocity).is_greater_than_or_equal_to(0).allow_nil }
 
+  feature '#exclude_project' do
+    before do
+      create_list(:project, 3)
+    end
+
+    scenario 'removes a project from the scope' do
+      project = create(:project)
+
+      expect(Project.exclude_project(project)).to_not include(project)
+    end
+  end
+
   context 'if is_tremplate is true' do
     before :each do
       project.update_attributes(is_template: true)
