@@ -4,6 +4,7 @@ FactoryGirl.define do
     sequence(:slack_channel_id) { |n| Faker::Lorem.word + "(#{n})" }
     owner                       { create :user }
     copies                      0
+    velocity                    { rand(0..100) }
   end
 
   trait :with_team do
