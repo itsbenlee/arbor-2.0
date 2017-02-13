@@ -1,5 +1,6 @@
 function collapsableContent() {
   var $trigger = $('#groups-list .toggle-content-btn');
+
   $trigger.on( "click", function(e) {
     e.preventDefault();
     e.stopPropagation();
