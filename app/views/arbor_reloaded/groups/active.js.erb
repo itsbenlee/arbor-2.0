@@ -3,7 +3,7 @@ $groupDivider.removeClass('inactive').addClass('active');
 $groupDivider.find('.status-btn').data('url', '<%= inactive_arbor_reloaded_group_path(@group) %>')
 
 var total_points = '<%= @group.project.total_points %>',
-  total_cost = numberWithCommas('<%= @group.project.total_cost %>'),
+  total_cost = '<%= number_to_currency(@group.project.total_cost, precision: 0) %>',
   total_weeks = '<%= @group.project.total_weeks %>';
 
 refreshProjectEstimations(total_points, total_cost, total_weeks);

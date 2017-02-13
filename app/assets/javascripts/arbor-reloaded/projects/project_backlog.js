@@ -172,7 +172,7 @@ function hoverNewGroupButton() {
 
 function refreshProjectEstimations(total_points, total_cost, total_weeks) {
   $('.total_points').text(total_points);
-  $('.total_cost').text(numberWithCommas(total_cost));
+  $('.total_cost').text(total_cost);
   $('.total_weeks').text(total_weeks);
 }
 
