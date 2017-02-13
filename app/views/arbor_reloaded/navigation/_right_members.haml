@@ -6,8 +6,9 @@
     %span
 
 - limit = 3
-- project.members.user_first(current_user.id).limit(limit).each do |member|
-  %li
+- project_members = project.members
+- project_members.user_first(current_user.id).limit(limit).each do |member|
+  %li.show-for-medium-up
     = link_to arbor_reloaded_project_members_path(project),                  |
     { data: { reveal_id: 'project-members-modal', reveal_ajax: true } } do
       - if member.avatar?
@@ -16,12 +17,20 @@
         = image_tag(member.gravatar_url, class: 'avatar-img', onerror: "this.src=''")
         .avatar-circle#avatar-circle= user_initial(member)
 
-- remaining_members = project.members.offset(limit).count
+- remaining_members = project_members.offset(limit).count
 - if remaining_members > 0
-  %li
+  %li.show-for-medium-up
     = link_to arbor_reloaded_project_members_path(project),                  |
     { class: 'other-members',                                                |
       data: { reveal_id: 'project-members-modal', reveal_ajax: true } } do
       +
       = remaining_members
+
+- if project_members.any?
+  %li.hidden-for-medium-up
+    = link_to arbor_reloaded_project_members_path(project),                  |
+    { class: 'other-members',                                                |
+      data: { reveal_id: 'project-members-modal', reveal_ajax: true } } do
+      +
+      = project_members.count
 #project-members-modal.reveal-modal{ data: { reveal: '' } }
