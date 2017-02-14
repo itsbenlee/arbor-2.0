@@ -6,11 +6,18 @@ $avatar-dimension: rem-calc(40);
 .link.active { @include fake-border(4px, false, false, false, false, 0); } // current page state
 
 .top-bar {
+  @include flexbox();
+  justify-content: space-around;
+
+  &.expanded { background: $primary-nav-color; }
+
   .logo {
     left: $topbar-margin;
     position: absolute;
     top: $topbar-margin;
   }//logo
+
+  .title-area { @include flex(1); }
 
   .name {
     color: $white;
@@ -29,18 +36,15 @@ $avatar-dimension: rem-calc(40);
       color: $white;
       font-size: rem-calc(16);
       height: $topbar-height - $topbar-margin;
+      max-width: rem-calc(500);
       padding: 0;
       top: $topbar-margin / 2;
-      width: rem-calc(500);
 
       &:hover,
       &:focus { color: $black-30; }
 
       &:focus,
       &:active { border-bottom: 1px dashed lighten($primary-nav-color, 20%); }
-
-      @media #{ $small-only } { width: rem-calc(150); }
-      @media #{ $medium-only } { width: rem-calc(300); }
     }
 
     @media #{ $small-only } {
@@ -63,10 +67,16 @@ $avatar-dimension: rem-calc(40);
       @media #{ $small-only } { left: $topbar-link-padding * 1.8; }
     }//notification bullet
   }//notification on bell
+
+  @media #{ $small-only } { display: block; }
 }//top-bar
 
 .top-bar-section {
-  .show-updates-popup i { font-size: rem-calc(28); }
+  .show-updates-popup {
+    i { font-size: rem-calc(28); }
+
+    @media #{ $small-only } { display: none; }
+  }
 
   .new-updates .show-updates-popup {
     i { color: $updates-color; }
@@ -96,7 +106,6 @@ $avatar-dimension: rem-calc(40);
         }
 
         @media #{ $small-only } { display: block; }
-        @media #{ $medium-only } { display: none; }
       }//welcome tag
     }
   }//profile section in nav
@@ -233,7 +242,7 @@ ul .dropdown {
       &:hover { background-color: rgba($success-color, .9); }
 
       .add-member {
-        @include flexbox;
+        @include flexbox();
         align-items: center;
         color: $white;
         height: 100%;
@@ -254,7 +263,7 @@ ul .dropdown {
 
     .other-members {
       @extend %circle;
-      background-color: $black-30;
+      background-color: $black-20;
       color: $white;
       line-height: #{$avatar-dimension - $border-width};
       text-align: center;

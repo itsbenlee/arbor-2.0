@@ -7,7 +7,7 @@
   padding: rem-calc(10);
   position: absolute;
   width: rem-calc(300);
-  z-index: 1;
+  z-index: 10;
 
   p {
     color: $black-35;
@@ -31,6 +31,11 @@
   .learn-more {
     color: $inactive-green;
     font-weight: bold;
+  }
+
+  @media #{ $small-only } {
+    // scss-lint:disable ImportantRule
+    display: none !important;
   }
 }
 
