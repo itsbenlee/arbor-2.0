@@ -7,6 +7,15 @@ $('#new_user_story').submit(function() {
   autogrowInputs();
 });
 
+function collapseEstimationBox() {
+  var $trigger = $('#estimation-box .toggle-content-btn');
+
+  $trigger.click(function (e) {
+    e.preventDefault();
+    $('.estimation-wrapper').fadeToggle();
+  });
+}
+
 function autogrowInputs() {
   var newStoryWidth = $('.new-backlog-story').width(),
       inputMaxWidth = newStoryWidth - 90;
@@ -265,6 +274,8 @@ $(document).ready(function() {
       .scroll(fixNewBacklogStoryOnTop)
       .resize(fixNewBacklogStoryHeight);
   }
+
+  collapseEstimationBox();
 });
 
 $(window).resize(function() { autogrowInputs(); });
