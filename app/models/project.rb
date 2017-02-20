@@ -53,7 +53,7 @@ class Project < ActiveRecord::Base
 
   def points_per_week
     points = total_points
-    return points if velocity.blank? && velocity > points
+    return points if velocity.blank? || velocity > points
 
     velocity
   end

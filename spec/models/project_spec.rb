@@ -69,16 +69,23 @@ describe Project do
   end
 
   describe '#points_per_week' do
+    let(:project) { create :project }
+    before(:each) { project.stub(:total_points) { 10 } }
+
     context 'when having velocity' do
-      let(:project) { create :project, velocity: 1 }
+      before(:each) { project.update velocity: 1 }
 
       it { expect(project.points_per_week).to eq 1 }
     end
 
-    context 'when not having velocity' do
-      let(:project) { create :project, velocity: 0 }
+    context 'when having velocity' do
+      before(:each) { project.update velocity: 0 }
 
       it { expect(project.points_per_week).to eq 0 }
+    end
+
+    context 'when not having velocity' do
+      it { expect(project.points_per_week).to eq 10 }
     end
   end
 end
