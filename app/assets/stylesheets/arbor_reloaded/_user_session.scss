@@ -31,7 +31,8 @@
   #error_explanation {
     background-color: $white;
     margin-bottom: rem-calc(20);
-    padding: rem-calc(20);
+    padding: rem-calc(10) rem-calc(20);
+    text-align: center;
   }
 
   .register {
