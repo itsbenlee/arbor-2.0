@@ -86,7 +86,6 @@ class UserStory < ActiveRecord::Base
                          estimated_points: estimated_points,
                          priority: priority) do |user_story|
                            user_story.story_number = story_number
-                           user_story.backlog_order = backlog_order
                            user_story.color = color
                          end
   end
