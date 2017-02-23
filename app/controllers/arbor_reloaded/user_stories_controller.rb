@@ -154,9 +154,8 @@ module ArborReloaded
       @project =
         Project.find(copy_stories_params[:project_id])
 
-      @copied_stories = copy_stories_params[:user_stories].map do |story_id|
-        UserStory.find(story_id)
-      end
+      stories = copy_stories_params[:user_stories]
+      @copied_stories = stories.uniq.map { |story_id| UserStory.find(story_id) }
     end
 
     def next_and_prev_story
