@@ -6,7 +6,10 @@ class UserStory < ActiveRecord::Base
                scope: :project
 
   validates_uniqueness_of :backlog_order, scope: :project_id, allow_nil: true
-  validates_uniqueness_of :story_number, scope: :project_id
+  validates_uniqueness_of :story_number,
+                          scope: :project_id,
+                          if: -> { story_number_changed? }
+
   validates_numericality_of :color,
                             only_integer: true,
                             allow_nil: true,
