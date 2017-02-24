@@ -11,7 +11,7 @@
       = link_to '', '#', method: :post, class: 'icn-archive hidden-element has-tip tip-left', aria: { haspopup: true }, data: { tooltip: '' }, title: t('reloaded.tooltips.archive_story')
       = link_to '', '#', method: :post, class: 'icn-copy hidden-element has-tip tip-left', aria: { haspopup: true }, data: { tooltip: '' }, title: t('reloaded.tooltips.duplicate_story')
     %h4
-      %span.story-points{ data: { id: @user_story.id } }= @user_story.estimated_points ||= '?'
+      %span.story-points{ data: { id: @user_story.id }, class: "#{@user_story.color ? "story-tag-#{@user_story.color}" : nil}" }= @user_story.estimated_points ||= '?'
       %select.fibonacci-select{ id: 'fibonacci-dropdown', class: 'has-tip',
       aria: { haspopup: true }, title: t('reloaded.tooltips.estimate'),
       data: { id: @user_story.id, url: arbor_reloaded_user_story_path(@user_story),
