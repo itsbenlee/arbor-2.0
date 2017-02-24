@@ -277,11 +277,7 @@ $circle-dimension: $story-points-dimension;
   .shorten-story { width: 75%; }
 
   //define color tags classes
-  @for $n from 1 through $color-tags-amount {
-    $nth: nth($color-tags, $n);
-
-    &.story-tag-#{$n} { .story-points { background: $nth; }}
-  }
+  @include color-tags();
 } //  user story
 
 //  STICKY SELECT MENU

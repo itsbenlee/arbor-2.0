@@ -35,6 +35,7 @@
     }//header wrapper
 
     h4 { font-weight: $font-weight-normal; }
+    span { @include color-tags(); }
 
     .story-points,
     .story-actions { top: $modal-padding-top + $header-top-margin; }
@@ -42,6 +43,7 @@
     .fibonacci-select {
       @include opacity(0);
       @include appearance-none;
+
       left: $modal-sides-padding;
       position: absolute;
       width: $story-points-dimension;
