@@ -43,7 +43,6 @@
     .fibonacci-select {
       @include opacity(0);
       @include appearance-none;
-
       left: $modal-sides-padding;
       position: absolute;
       width: $story-points-dimension;

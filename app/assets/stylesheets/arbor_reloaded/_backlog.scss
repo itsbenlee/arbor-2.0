@@ -202,6 +202,7 @@ $circle-dimension: $story-points-dimension;
 }
 
 .backlog-user-story {
+  @include color-tags();
   border-top: 1px solid $black-10;
   padding: $story-padding-top $story-padding-sides $story-padding-top 0;
   position: relative;
@@ -275,9 +276,6 @@ $circle-dimension: $story-points-dimension;
   } // text
 
   .shorten-story { width: 75%; }
-
-  //define color tags classes
-  @include color-tags();
 } //  user story
 
 //  STICKY SELECT MENU
