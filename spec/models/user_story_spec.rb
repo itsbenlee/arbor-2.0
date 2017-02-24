@@ -144,4 +144,62 @@ RSpec.describe UserStory do
       end
     end
   end
+
+  describe 'copy' do
+    let(:user_story) { create :user_story }
+    let(:project)    { create :project }
+
+    before(:each) do
+      user_story.copy_out_project(project)
+      @new_user_story = find_user_story(project, user_story)
+    end
+
+    def find_user_story(project, user_story)
+      project.user_stories.find_by(
+        role: user_story.role,
+        action: user_story.action,
+        result: user_story.result,
+        estimated_points: user_story.estimated_points,
+        priority: user_story.priority
+      )
+    end
+
+    describe '#copy_in_project' do
+      context 'when duplicating a story' do
+        it { expect(@new_user_story.color).to eq(user_story.color) }
+      end
+
+      context 'when the target project does not have user stories' do
+        it { expect(@new_user_story.story_number).to eq(user_story.story_number) }
+      end
+
+      context 'when the target project has many user stories' do
+        prepend_before(:each) do
+          user_stories = create_list :user_story, 10
+          project.user_stories << user_stories
+        end
+
+        it { expect(@new_user_story.story_number).to eq(user_story.story_number) }
+      end
+    end
+
+    describe '#copy_out_project' do
+      context 'when duplicating a story' do
+        it { expect(@new_user_story.color).to eq(user_story.color) }
+      end
+
+      context 'when the target project does not have user stories' do
+        it { expect(@new_user_story.story_number).to eq 1 }
+      end
+
+      context 'when the target project has many user stories' do
+        prepend_before(:each) do
+          user_stories = create_list :user_story, 10
+          project.user_stories << user_stories
+        end
+
+        it { expect(@new_user_story.story_number).to eq(project.next_story_number - 1) }
+      end
+    end
+  end
 end

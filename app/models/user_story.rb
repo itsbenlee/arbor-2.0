@@ -45,8 +45,22 @@ class UserStory < ActiveRecord::Base
   end
 
   def copy_in_project(new_project)
-    replica = find_or_create_replica(new_project)
-    copy_associations(replica)
+    replica = find_or_initialize_replica(new_project)
+
+    replica.story_number = story_number
+    replica.color = color
+    replica.save
+
+    copy_associations(replica) if replica.persisted?
+  end
+
+  def copy_out_project(new_project)
+    replica = find_or_initialize_replica(new_project)
+
+    replica.color = color
+    replica.save
+
+    copy_associations(replica) if replica.persisted?
   end
 
   def as_json(*_args)
@@ -79,18 +93,15 @@ class UserStory < ActiveRecord::Base
     project.update_attribute :next_story_number, project.next_story_number + 1
   end
 
-  def find_or_create_replica(new_project)
+  def find_or_initialize_replica(new_project)
     new_project
       .user_stories
-      .find_or_create_by(role: role,
-                         action: action,
-                         result: result,
-                         description: description,
-                         estimated_points: estimated_points,
-                         priority: priority) do |user_story|
-                           user_story.story_number = story_number
-                           user_story.color = color
-                         end
+      .find_or_initialize_by(role: role,
+                             action: action,
+                             result: result,
+                             description: description,
+                             estimated_points: estimated_points,
+                             priority: priority)
   end
 
   def copy_associations(replica)
