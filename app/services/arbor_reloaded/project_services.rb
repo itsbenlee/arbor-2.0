@@ -82,7 +82,10 @@ module ArborReloaded
     end
 
     def copy_stories(replica)
-      @project.user_stories.each { |story| story.copy_in_project(replica) }
+      @project
+        .user_stories
+        .backlog_ordered
+        .each { |story| story.copy_in_project(replica) }
 
       replica.update_attribute :next_story_number, @project.next_story_number
     end

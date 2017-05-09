@@ -250,3 +250,17 @@ $shadow-depth-hover: rgba($black-50, .2) 3px 8px 25px;
   -ms-flex:  $values;
   flex:  $values;
 }
+
+// Color tags
+@mixin color-tags() {
+  @for $n from 1 through $color-tags-amount {
+    $nth: nth($color-tags, $n);
+
+    &.story-tag-#{$n} {
+      &.story-points,
+      .story-points {
+        background: $nth;
+      }
+    }
+  }
+}

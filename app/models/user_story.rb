@@ -6,7 +6,10 @@ class UserStory < ActiveRecord::Base
                scope: :project
 
   validates_uniqueness_of :backlog_order, scope: :project_id, allow_nil: true
-  validates_uniqueness_of :story_number, scope: :project_id
+  validates_uniqueness_of :story_number,
+                          scope: :project_id,
+                          if: -> { story_number_changed? }
+
   validates_numericality_of :color,
                             only_integer: true,
                             allow_nil: true,
@@ -42,8 +45,22 @@ class UserStory < ActiveRecord::Base
   end
 
   def copy_in_project(new_project)
-    replica = find_or_create_replica(new_project)
-    copy_associations(replica)
+    replica = find_or_initialize_replica(new_project)
+
+    replica.story_number = story_number
+    replica.color = color
+    replica.save
+
+    copy_associations(replica) if replica.persisted?
+  end
+
+  def copy_out_project(new_project)
+    replica = find_or_initialize_replica(new_project)
+
+    replica.color = color
+    replica.save
+
+    copy_associations(replica) if replica.persisted?
   end
 
   def as_json(*_args)
@@ -76,19 +93,15 @@ class UserStory < ActiveRecord::Base
     project.update_attribute :next_story_number, project.next_story_number + 1
   end
 
-  def find_or_create_replica(new_project)
+  def find_or_initialize_replica(new_project)
     new_project
       .user_stories
-      .find_or_create_by(role: role,
-                         action: action,
-                         result: result,
-                         description: description,
-                         estimated_points: estimated_points,
-                         priority: priority) do |user_story|
-                           user_story.story_number = story_number
-                           user_story.backlog_order = backlog_order
-                           user_story.color = color
-                         end
+      .find_or_initialize_by(role: role,
+                             action: action,
+                             result: result,
+                             description: description,
+                             estimated_points: estimated_points,
+                             priority: priority)
   end
 
   def copy_associations(replica)
