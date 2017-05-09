@@ -22,6 +22,8 @@ module ArborReloaded
       @intercom.events.create(event_name: event_key,
                               created_at: Time.now.to_i,
                               email: @user.email)
+    rescue Intercom::ResourceNotFound
+      user_create_event
     end
   end
 end
