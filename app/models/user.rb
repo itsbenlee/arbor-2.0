@@ -1,5 +1,7 @@
 include Gravtastic
 class User < ActiveRecord::Base
+  INTERCOM_ENABLED = ENV['ENABLE_INTERCOM'] == 'true'
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
@@ -24,6 +26,7 @@ class User < ActiveRecord::Base
   has_many :acceptance_criterions, through: :user_stories
   has_one :api_key, dependent: :destroy
   after_commit :generate_api_key, on: %i(create update)
+  after_update :update_intercom, if: :email_changed?
 
   mount_uploader :avatar, UserAvatarImageUploader
   delegate :access_token, to: :api_key, prefix: false
@@ -57,5 +60,10 @@ class User < ActiveRecord::Base
   def generate_api_key
     return if api_key
     create_api_key!
+  end
+
+  def update_intercom
+    return unless INTERCOM_ENABLED
+    ArborReloaded::IntercomServices.new(self).user_create_event
   end
 end
