@@ -469,6 +469,8 @@ GEM
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     sexp_processor (4.6.0)
+    shoulda-callback-matchers (1.1.4)
+      activesupport (>= 3)
     shoulda-matchers (2.8.0)
       activesupport (>= 3.0.0)
     signet (0.7.3)
@@ -594,6 +596,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   scss_lint
   sdoc
+  shoulda-callback-matchers (~> 1.1)
   shoulda-matchers
   spork-rails
   thin
