@@ -70,7 +70,7 @@ describe Project do
 
   describe '#points_per_week' do
     let(:project) { create :project }
-    before(:each) { project.stub(:total_points) { 10 } }
+    before(:each) { allow(project).to receive(:total_points).and_return(10) }
 
     context 'when having velocity' do
       before(:each) { project.update velocity: 1 }
