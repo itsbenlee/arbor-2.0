@@ -1,7 +1,11 @@
 $('#trello-export-submit').click(function() {
+  showPreloader();
+
   $('.trello-export-success').html('');
+
   if ($('#board_id').length > 0) {
     $('#select-board-form').submit();
+    hidePreloader();
   }
   else {
     var export_type = document.getElementById('export_type').value,
@@ -22,6 +26,9 @@ function authorizeTrello(export_type, url) {
     success: function () {
       var token = Trello.token();
       exportToTrello(token, export_type, url);
+    },
+    complete: function(){
+      hidePreloader();
     },
     scope: { write: true, read: true },
   });
@@ -55,6 +62,9 @@ function ajaxCallNewBoard(token, url) {
       else {
         $('.trello-export-error').html('There was an error exporting your project to Trello. Please try again later');
       }
+    },
+    complete: function(){
+      hidePreloader();
     }
   });
 }
@@ -66,6 +76,7 @@ function hideSuccessMessage() {
   var $exportModal = $('#export-to-services-modal');
 
   $exportModal.on('close.fndtn.reveal', function() {
+    hidePreloader();
     $('.trello-export-success').html('');
   });
 }
@@ -78,6 +89,9 @@ function ajaxCallBoards(token, url) {
     success: function(response) {
       $('.select-board-list').html(response);
       $('.select-board-list').removeClass('hide');
+    },
+    complete: function(){
+      hidePreloader();
     }
   });
 }
@@ -86,7 +100,18 @@ function buttonDisable() {
   $( document ).ajaxStart(function() {
     $('#trello-export-submit').attr("disabled", true);
   });
+
   $(document).ajaxComplete(function () {
     $('#trello-export-submit').attr("disabled", false);
   });
+}
+
+function showPreloader() {
+  $('.export-preloader').show();
+  $('.trello-export-content').hide();
+}
+
+function hidePreloader() {
+  $('.export-preloader').hide();
+  $('.trello-export-content').show();
 }
