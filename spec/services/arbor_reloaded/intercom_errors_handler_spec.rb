@@ -13,7 +13,7 @@ module ArborReloaded
 
     scenario 'should handle an Intercom::ResourceNotFound' do
       VCR.use_cassette('intercom/create_user') do
-        expect{ intercom_service.create_event(I18n.t('intercom_keys.create_project')) }.not_to raise_error Intercom::ResourceNotFound
+        expect{ intercom_service.create_event(I18n.t('intercom_keys.create_project')) }.not_to raise_error
       end
     end
   end

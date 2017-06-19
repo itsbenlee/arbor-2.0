@@ -7,6 +7,8 @@
     %li.tab-title.tab-google
       %a{ 'aria-controls' => 'google', 'aria-selected' => 'false', href: '#google', role: 'tab' } Google
   .tabs-content
+    .export-preloader
+      = image_tag 'preloader.gif'
     %section#trello.content.active{ 'aria-hidden' => 'false', role: 'tabpanel' }
       = render 'arbor_reloaded/user_stories/services/trello', current_project: current_project
     %section#google.content{ 'aria-hidden' => 'true', role: 'tabpanel' }
