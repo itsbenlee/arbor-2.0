@@ -27,7 +27,7 @@ function authorizeTrello(export_type, url) {
       var token = Trello.token();
       exportToTrello(token, export_type, url);
     },
-    complete: function(){
+    complete: function() {
       hidePreloader();
     },
     scope: { write: true, read: true },
@@ -63,7 +63,7 @@ function ajaxCallNewBoard(token, url) {
         $('.trello-export-error').html('There was an error exporting your project to Trello. Please try again later');
       }
     },
-    complete: function(){
+    complete: function() {
       hidePreloader();
     }
   });
@@ -90,7 +90,7 @@ function ajaxCallBoards(token, url) {
       $('.select-board-list').html(response);
       $('.select-board-list').removeClass('hide');
     },
-    complete: function(){
+    complete: function() {
       hidePreloader();
     }
   });
