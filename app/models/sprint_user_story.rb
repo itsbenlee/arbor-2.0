@@ -14,8 +14,6 @@ class SprintUserStory < ActiveRecord::Base
 
   def sprint_story_are_in_project
     return if sprint.project_id == user_story.project_id
-    errors.add(
-      :base, "sprint and user story don't belong to the same project"
-    )
+    errors.add(:base, :distinct_project)
   end
 end

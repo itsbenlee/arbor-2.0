@@ -171,6 +171,10 @@ en:
           attributes:
             password:
               too_short: Password is too short
+        sprint_user_story:
+          attributes:
+            base:
+              distinct_project: sprint and user story don't belong to the same project
     attributes:
       link_attachment:
         content: 'URL'
