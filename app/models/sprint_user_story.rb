@@ -3,7 +3,6 @@ class SprintUserStory < ActiveRecord::Base
   belongs_to :user_story
 
   validates_uniqueness_of :user_story_id, scope: :sprint_id
-  validates_uniqueness_of :sprint_id, scope: :user_story_id
 
   STATUS = %w(PLANNED WIP DONE)
 
@@ -14,7 +13,7 @@ class SprintUserStory < ActiveRecord::Base
   private
 
   def sprint_story_are_in_project
-    return unless sprint.project_id != user_story.project_id
+    return if sprint.project_id == user_story.project_id
     errors.add(
       :base, "sprint and user story don't belong to the same project"
     )

@@ -8,7 +8,6 @@ RSpec.describe SprintUserStory, type: :model do
   it { should validate_presence_of :user_story }
   it { should validate_inclusion_of(:status).in_array(SprintUserStory::STATUS) }
   it { should validate_uniqueness_of(:user_story_id).scoped_to(:sprint_id) }
-  it { should validate_uniqueness_of(:sprint_id).scoped_to(:user_story_id) }
 
   describe 'user story and sprint belongs to different project' do
     let(:user_story) { create(:user_story, project: create(:project)) }
