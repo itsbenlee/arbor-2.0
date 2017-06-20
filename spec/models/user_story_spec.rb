@@ -13,6 +13,8 @@ RSpec.describe UserStory do
   it { should validate_numericality_of(:color).allow_nil }
   it { should validate_numericality_of(:color).is_greater_than_or_equal_to(1) }
   it { should validate_numericality_of(:color).is_less_than_or_equal_to(7) }
+  it { should have_many :sprint_user_stories }
+  it { should have_many :sprints }
 
   it 'must increment user story number' do
     test_project = create :project

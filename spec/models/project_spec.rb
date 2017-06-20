@@ -15,6 +15,7 @@ describe Project do
   it { should have_many :members }
   it { should have_many :user_stories }
   it { should have_many :attachments }
+  it { should have_many :sprints }
   it { should belong_to :owner }
   it { should belong_to :team }
   it { should_not validate_uniqueness_of(:is_template) }
