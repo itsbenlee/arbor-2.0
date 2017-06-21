@@ -1,9 +1,8 @@
 module ArborReloaded
   class ReleasePlanService
     def initialize(project_id, user)
-      @project = user.projects
-                     .includes(sprints: %i(user_stories))
-                     .find(project_id)
+      @project =
+        user.projects.includes(sprints: %i(user_stories)).find(project_id)
     end
 
     def plan
