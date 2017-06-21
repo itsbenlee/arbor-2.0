@@ -22,6 +22,9 @@ class UserStory < ActiveRecord::Base
   has_many :acceptance_criterions,
     -> { order(order: :asc) }, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :sprint_user_stories, dependent: :destroy
+  has_many :sprints, through: :sprint_user_stories
+
   belongs_to :project
   belongs_to :group
 
