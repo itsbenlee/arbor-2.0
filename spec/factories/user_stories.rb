@@ -33,4 +33,8 @@ FactoryGirl.define do
     action nil
     result nil
   end
+
+  trait :no_points do
+    estimated_points { nil }
+  end
 end
