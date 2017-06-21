@@ -102,6 +102,7 @@ Railsroot::Application.routes.draw do
       namespace :v1 do
         resources :projects, only: :create, shallow: true do
           resources :groups, only: :create
+          resources :release_plans, only: :index
           resources :user_stories, only: :create, shallow: true do
             resources :acceptance_criterions, only: :create
           end
