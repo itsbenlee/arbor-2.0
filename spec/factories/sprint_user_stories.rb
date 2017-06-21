@@ -11,5 +11,9 @@ FactoryGirl.define do
     trait :done do
       status 'DONE'
     end
+
+    trait :with_story_without_points do
+      user_story { create :user_story, :no_points, project: sprint.project }
+    end
   end
 end
