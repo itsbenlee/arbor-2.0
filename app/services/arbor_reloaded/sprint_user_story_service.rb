@@ -14,16 +14,16 @@ module ArborReloaded
         sprint_id: @sprint.id
       )
 
-      raise ActiveRecord::RecordNotFound unless sprint_user_story
+      fail ActiveRecord::RecordNotFound unless sprint_user_story
 
       sprint_user_story.destroy
     end
 
     def update_story_status(status = nil)
-      delete_user_story and return unless status
+      delete_user_story && return unless status
 
       unless SprintUserStory::STATUS.include? status
-        raise WrongUserStoryStatusError
+        fail WrongUserStoryStatusError
       end
 
       sprint_user_story = SprintUserStory.find_or_create_by(
