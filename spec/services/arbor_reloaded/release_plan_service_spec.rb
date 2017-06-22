@@ -61,4 +61,54 @@ describe ArborReloaded::ReleasePlanService do
       it { should eq user_story.as_json }
     end
   end
+
+  describe '.add_sprint' do
+    let(:project)              { create :project, owner: user }
+    let(:release_plan_service) { ArborReloaded::ReleasePlanService.new(project.id, user) }
+
+    it 'should add a new sprint to project' do
+      expect {
+        release_plan_service.add_sprint
+      }.to change { project.sprints.reload.count }.from(0).to(1)
+    end
+
+    describe 'response data' do
+      subject { release_plan_service.add_sprint }
+
+      it { should have_key :name }
+      it { should have_key :sprints }
+    end
+  end
+
+  describe '.delete_sprint' do
+    let(:project)              { create :project, owner: user }
+    let(:release_plan_service) { ArborReloaded::ReleasePlanService.new(project.id, user) }
+
+    describe "sprint doesn't belongs to project" do
+      let(:other_sprint) { create :sprint }
+
+      it 'should raise an ActiveRecord::RecordNotFound error' do
+        expect{
+          release_plan_service.delete_sprint(other_sprint.id)
+        }.to raise_error(ActiveRecord::RecordNotFound)
+      end
+    end
+
+    describe 'sprint belongs to project' do
+      let!(:sprint) { create :sprint, project: project }
+
+      it 'should remove the selected sprint from project' do
+        expect {
+          release_plan_service.delete_sprint(sprint.id)
+        }.to change { project.sprints.reload.count }.from(1).to(0)
+      end
+
+      describe 'response data' do
+        subject { release_plan_service.delete_sprint(sprint.id) }
+
+        it { should have_key :name }
+        it { should have_key :sprints }
+      end
+    end
+  end
 end

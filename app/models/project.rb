@@ -141,6 +141,10 @@ class Project < ActiveRecord::Base
     end
   end
 
+  def to_release_plan
+    { name: name, sprints: sprints.map(&:as_json) }
+  end
+
   private
 
   def user_stories_points
