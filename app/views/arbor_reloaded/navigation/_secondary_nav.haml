@@ -9,6 +9,8 @@
       = active_link_to t('reloaded.navigation.backlog'), arbor_reloaded_project_user_stories_path(current_project), class: 'link'
     %li
       = active_link_to t('reloaded.navigation.activity'), log_arbor_reloaded_project_path(current_project), class: 'link'
+    %li
+      = active_link_to t('reloaded.navigation.release_plan'), release_plan_arbor_reloaded_project_path(current_project), class: 'link'
     %li.not-ready
       = link_to t('reloaded.navigation.assets'), arbor_reloaded_project_attachments_path(current_project), class: 'link'
     %li

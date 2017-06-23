@@ -3,7 +3,8 @@ module ArborReloaded
     layout false, only: :members
     before_action :load_project,
       only: %i(members show edit update destroy log add_member join_project
-               export_backlog remove_member_from_project export_to_spreadhseet)
+               export_backlog remove_member_from_project export_to_spreadhseet
+               release_plan)
 
     rescue_from ActiveRecord::RecordNotFound do
       render 'errors/404', status: 404
@@ -139,6 +140,10 @@ module ArborReloaded
     def export_to_spreadhseet
       send_data(SpreadsheetExporterService.export(@project),
                                                   disposition: 'inline')
+    end
+
+    def release_plan
+      render layout: 'application_reload'
     end
 
     private

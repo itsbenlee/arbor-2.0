@@ -6,8 +6,6 @@
 //= require react_ujs
 //= require components
 //= require foundation
-//= require mustache
-//= require jquery.mustache
 //= require jquery-ui/autocomplete
 //= require arbor-reloaded/utils/globalVars
 //= require i18n
@@ -52,3 +50,4 @@
 //= require arbor-reloaded/utils/enviroment
 //= require arbor-reloaded/analytics_track_events
 //= require arbor-reloaded/analytics_binds
+//= require components/release_plan

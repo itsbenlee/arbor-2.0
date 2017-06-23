@@ -276,8 +276,6 @@ GEM
     multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
-    mustache-js-rails (2.0.2)
-      railties (>= 3.1, <= 5.0)
     nested_form (0.3.2)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
@@ -568,7 +566,6 @@ DEPENDENCIES
   jquery-ui-rails (= 5.0.5)
   migration_data
   mini_magick
-  mustache-js-rails
   newrelic_rpm
   nilify_blanks (= 1.2.1)
   parallel_tests
@@ -607,3 +604,9 @@ DEPENDENCIES
   wicked_pdf!
   wkhtmltopdf-binary-edge (~> 0.12.2.1)
   wkhtmltopdf-heroku
+
+RUBY VERSION
+   ruby 2.1.5p273
+
+BUNDLED WITH
+   1.12.5

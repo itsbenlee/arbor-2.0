@@ -1,0 +1,17 @@
+$release-plan-height-header: rem-calc(50);
+
+.release-plan {
+  margin-top: 3%;
+
+  .release-plan-header {
+    background: $primary-nav-color;
+    height: $release-plan-height-header;
+
+    .sprint-title {
+      color: $white;
+      text-transform: uppercase;
+
+      &.current-sprint { color: $success-color; }
+    }//.sprint-title
+  }//.release-plan-header
+}//.release-plan
