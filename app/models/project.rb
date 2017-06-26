@@ -35,6 +35,7 @@ class Project < ActiveRecord::Base
   after_commit :owner_as_member
 
   scope :by_teams, ->(teams) { where(team_id: teams.pluck(:id)) }
+  after_initialize :default_starting_date
 
   def total_points
     user_stories_points - inactive_groups_points
@@ -124,6 +125,7 @@ class Project < ActiveRecord::Base
     { id: id,
       name: name,
       user_stories: user_stories.backlog_ordered.map(&:as_json),
+      starting_date: starting_date,
       errors: errors.full_messages }
   end
 
@@ -153,5 +155,9 @@ class Project < ActiveRecord::Base
 
   def inactive_groups_points
     groups.inactive.map(&:total_estimated_points).sum
+  end
+
+  def default_starting_date
+    self.starting_date = Time.now unless starting_date
   end
 end
