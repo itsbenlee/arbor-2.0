@@ -7,9 +7,7 @@ module ArborReloaded
         def create
           starting_date = project_params[:starting_date]
 
-          if starting_date
-            @project.update(starting_date: starting_date)
-          end
+          @project.update(starting_date: starting_date) if starting_date
 
           render json: @project.as_json
         end
