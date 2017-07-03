@@ -27,6 +27,7 @@ $release-plan-height-header: rem-calc(50);
   table {
     border-collapse: collapse;
     border-spacing: 0;
+
     td { @extend .release-plan-cell; }
   }
 
