@@ -35,7 +35,8 @@ FeatureEnvy:
     FileUploader#extract_type,
     UserStoriesController#story_update_params,
     SlackIntegrationService#validate_message_for_story_creation,
-    UserStory#copy_group
+    UserStory#copy_group,
+    ReleasePlanUserStoriesHelper#format_user_story_text
   ]
 IrresponsibleModule:
   enabled: false
@@ -84,7 +85,8 @@ TooManyInstanceVariables:
   enabled: true
   exclude: [
     UserStoriesController,
-    ExportService
+    ExportService,
+    'ArborReloaded::ProjectsController'
   ]
   max_instance_variables: 9
 TooManyMethods:

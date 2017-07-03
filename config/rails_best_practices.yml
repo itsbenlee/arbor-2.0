@@ -50,7 +50,8 @@ RemoveUnusedMethodsInModelsCheck: {
     Project#by_name,
     Comment#recent,
     Comment#user_name,
-    Project#recent
+    Project#recent,
+    UserStory#as_summarized_json
   ]
 }
 ReplaceComplexCreationWithFactoryMethodCheck: { attribute_assignment_count: 2 }

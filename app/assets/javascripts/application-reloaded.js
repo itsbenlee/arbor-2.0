@@ -1,7 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui/sortable
-//= require vendor/clipboard.min.js
+//= require_tree ./vendor
 //= require react
 //= require react_ujs
 //= require components
@@ -11,9 +11,6 @@
 //= require i18n
 //= require i18n/translations
 //= require init
-//= require vendor/jquery.scrollTo.min
-//= require vendor/jquery.timeago
-//= require vendor/alt
 //= require initialize
 //= require arbor-reloaded/utils/hashTable
 //= require arbor-reloaded/utils/utility_functions
@@ -50,4 +47,3 @@
 //= require arbor-reloaded/utils/enviroment
 //= require arbor-reloaded/analytics_track_events
 //= require arbor-reloaded/analytics_binds
-//= require components/release_plan

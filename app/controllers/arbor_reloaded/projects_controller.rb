@@ -143,6 +143,7 @@ module ArborReloaded
     end
 
     def release_plan
+      @release_plan = @project.to_release_plan
       render layout: 'application_reload'
     end
 

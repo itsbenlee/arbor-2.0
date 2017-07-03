@@ -366,3 +366,6 @@ en:
       result:
         - 'so that'
         - 'so'
+  release_plan:
+    ungrouped_stories: Ungrouped user stories
+    start_date: start date
