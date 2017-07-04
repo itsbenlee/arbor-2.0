@@ -4,14 +4,6 @@ $release-plan-height-header: rem-calc(50);
   height: rem-calc(40);
   padding: rem-calc(10);
   text-align: right;
-
-  .add-sprint-button {
-    @extend .button;
-    @extend .success;
-    @extend .radius;
-    @extend .tiny;
-    @extend .right;
-  }
 }
 
 .release-plan-cell {
@@ -29,6 +21,7 @@ $release-plan-height-header: rem-calc(50);
     border-spacing: 0;
 
     td { @extend .release-plan-cell; }
+    th { padding: rem-calc(10); }
   }
 
   .user-story-text {
@@ -63,6 +56,6 @@ $release-plan-height-header: rem-calc(50);
   .release-plan-group-title {
     border-right-style: none;
     color: $success-color;
-    font-weight: bold;
+    font-weight: $font-weight-bold;
   }
 }
