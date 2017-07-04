@@ -22,9 +22,10 @@
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'vendor/modernizr'
     = csrf_meta_tags
-    = javascript_include_tag '//use.typekit.net/uyn6gfv.js'
-    :javascript
-      try{Typekit.load();}catch(e){}
+    - unless Rails.env.test?
+      = javascript_include_tag '//use.typekit.net/uyn6gfv.js'
+      :javascript
+        try{Typekit.load();}catch(e){}
   %body{'data-action' => action_name, 'data-controller' => controller_name }
     .columns.small-10.right-app-content
       #top-nav
