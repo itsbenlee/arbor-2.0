@@ -1,0 +1,61 @@
+$release-plan-height-header: rem-calc(50);
+
+.add-sprint-button-container {
+  height: rem-calc(40);
+  padding: rem-calc(10);
+  text-align: right;
+}
+
+.release-plan-cell {
+  background-color: $white;
+  border: 1px solid $light-grey;
+  color: $light-grey;
+}
+
+.release-plan-container {
+  overflow-x: scroll;
+  width: 100%;
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    td { @extend .release-plan-cell; }
+    th { padding: rem-calc(10); }
+  }
+
+  .user-story-text {
+    @extend .release-plan-cell;
+
+    min-width: rem-calc(250);
+  }
+
+  .user-story-number {
+    background-color: $light-grey;
+    color: $white;
+    height: 100%;
+    min-width: rem-calc(30);
+    text-align: center;
+  }
+
+  .release-plan-header {
+    background: $primary-nav-color;
+    height: $release-plan-height-header;
+
+    .sprint-title,
+    .project-start-date {
+      border: 1px solid $white;
+      color: $white;
+      min-width: rem-calc(100);
+      text-transform: uppercase;
+
+      &.current-sprint { color: $success-color; }
+    }//.sprint-title
+  }//.release-plan-header
+
+  .release-plan-group-title {
+    border-right-style: none;
+    color: $success-color;
+    font-weight: $font-weight-bold;
+  }
+}

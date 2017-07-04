@@ -78,6 +78,10 @@ Railsroot::Application.routes.draw do
           patch :inactive
         end
       end
+
+      member do
+        get :release_plan
+      end
     end
 
     resources :google_sheets, only: [] do

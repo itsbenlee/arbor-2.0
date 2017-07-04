@@ -144,7 +144,12 @@ class Project < ActiveRecord::Base
   end
 
   def to_release_plan
-    { name: name, sprints: sprints.map(&:as_json) }
+    {
+      name: name,
+      sprints: sprints.map(&:as_json),
+      groups: groups.map(&:as_json),
+      ungrouped_stories: user_stories.ungrouped.map(&:as_json)
+    }
   end
 
   private

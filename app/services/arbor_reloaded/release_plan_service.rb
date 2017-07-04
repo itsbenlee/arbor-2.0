@@ -3,8 +3,9 @@ module ArborReloaded
     attr_reader :plan
 
     def initialize(project_id, user)
-      @project =
-        user.projects.includes(sprints: %i(user_stories)).find(project_id)
+      @project = user.projects.includes(
+        sprints: %i(user_stories), groups: %i(user_stories)
+      ).find(project_id)
 
       @plan = @project.to_release_plan
     end

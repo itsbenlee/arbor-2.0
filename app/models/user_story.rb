@@ -78,6 +78,16 @@ class UserStory < ActiveRecord::Base
       group: group }.compact
   end
 
+  def as_summarized_json
+    {
+      id: id,
+      description: description,
+      role: role,
+      action: action,
+      result: result
+    }.compact
+  end
+
   def self.from_hash(hash, project)
     filters = { role: hash['role'],
                 result: hash['result'],
