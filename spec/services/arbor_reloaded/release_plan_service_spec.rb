@@ -1,5 +1,7 @@
 describe ArborReloaded::ReleasePlanService do
-  let(:user) { create :user }
+  let(:user)    { create :user }
+  let(:project) { create :project, owner: user }
+  let(:sprint)  { project.sprints.first }
 
   describe '.new' do
     describe 'fake project id' do
@@ -11,17 +13,16 @@ describe ArborReloaded::ReleasePlanService do
     end
 
     describe 'not owned project' do
-      let(:project) { create :project }
+      let(:other_project) { create :project }
 
       it 'should raise an ActiveRecord::RecordNotFound error' do
         expect{
-          ArborReloaded::ReleasePlanService.new(project.id, user)
+          ArborReloaded::ReleasePlanService.new(other_project.id, user)
         }.to raise_error(ActiveRecord::RecordNotFound)
       end
     end
 
     describe 'project that user owns' do
-      let(:project) { create :project, owner: user }
 
       it 'should not raise any kind of error' do
         expect{
@@ -32,8 +33,6 @@ describe ArborReloaded::ReleasePlanService do
   end
 
   describe '.plan' do
-    let(:project)     { create :project, owner: user }
-    let!(:sprint)     { create :sprint, project: project }
     let!(:user_story) { create(:sprint_user_story, sprint: sprint).user_story }
 
     describe 'project data' do
@@ -45,31 +44,32 @@ describe ArborReloaded::ReleasePlanService do
 
     describe 'sprints data' do
       subject do
-        ArborReloaded::ReleasePlanService.new(project.id, user)
-                                         .plan[:sprints][0]
+        ArborReloaded::ReleasePlanService.new(project.id, user).plan[:sprints]
       end
 
-      it { should eq sprint.as_json }
+      it { should include sprint.as_json }
     end
 
     describe 'user stories data' do
-      subject do
-        ArborReloaded::ReleasePlanService.new(project.id, user)
-                                         .plan[:sprints][0][:user_stories][0]
-      end
+      let(:sprints_array) { ArborReloaded::ReleasePlanService.new(project.id, user).plan[:sprints] }
 
-      it { should eq user_story.as_json }
+      it 'should add user story to the right sprint' do
+        sprints_array.each do |sprint_hash|
+          next unless sprint_hash[:id] == sprint.id
+
+          expect(sprint_hash[:user_stories]).to include user_story.as_json
+        end
+      end
     end
   end
 
   describe '.add_sprint' do
-    let(:project)              { create :project, owner: user }
     let(:release_plan_service) { ArborReloaded::ReleasePlanService.new(project.id, user) }
 
     it 'should add a new sprint to project' do
       expect {
         release_plan_service.add_sprint
-      }.to change { project.sprints.reload.count }.from(0).to(1)
+      }.to change { project.sprints.reload.count }.from(5).to(6)
     end
 
     describe 'response data' do
@@ -81,7 +81,6 @@ describe ArborReloaded::ReleasePlanService do
   end
 
   describe '.delete_sprint' do
-    let(:project)              { create :project, owner: user }
     let(:release_plan_service) { ArborReloaded::ReleasePlanService.new(project.id, user) }
 
     describe "sprint doesn't belongs to project" do
@@ -95,12 +94,10 @@ describe ArborReloaded::ReleasePlanService do
     end
 
     describe 'sprint belongs to project' do
-      let!(:sprint) { create :sprint, project: project }
-
       it 'should remove the selected sprint from project' do
         expect {
           release_plan_service.delete_sprint(sprint.id)
-        }.to change { project.sprints.reload.count }.from(1).to(0)
+        }.to change { project.sprints.reload.count }.from(5).to(4)
       end
 
       describe 'response data' do

@@ -71,10 +71,13 @@ describe Project do
 
   describe '#points_per_week' do
     let(:project) { create :project }
-    before(:each) { allow(project).to receive(:total_points).and_return(10) }
 
     context 'when having velocity' do
-      before(:each) { project.update velocity: 1 }
+      let(:project) { create :project, is_template: false, velocity: 1 }
+
+      before(:each) do
+        expect(project).to receive(:total_points).and_return(10)
+      end
 
       it { expect(project.points_per_week).to eq 1 }
     end
@@ -86,7 +89,40 @@ describe Project do
     end
 
     context 'when not having velocity' do
+      before(:each) { expect(project).to receive(:total_points).and_return(10) }
       it { expect(project.points_per_week).to eq 10 }
+    end
+  end
+
+  describe '#create_default_sprints' do
+    it 'should create 5 sprints by default' do
+      expect {
+        create :project
+      }.to change { Sprint.count }.from(0).to(5)
+    end
+  end
+
+  describe '#sprints_based_on_velocity' do
+    let!(:user_stories) { create_list :user_story, 5, project: project }
+
+    it 'should not change the sprints numbers if total weeks is less than 5' do
+      expect {
+        project.update(velocity: 10)
+      }.not_to change { project.reload.sprints.count }
+    end
+
+    it 'should change the sprints numbers if total weeks is more than 5' do
+      expect {
+        project.update(velocity: 1)
+      }.to change { project.reload.sprints.count }.from(5).to(10)
+    end
+
+    it 'should not change the sprints number if any sprint has a user story' do
+      create :sprint_user_story, sprint: project.sprints.first, user_story: project.user_stories.first
+
+      expect {
+        project.update(velocity: 10)
+      }.not_to change { project.reload.sprints.count }
     end
   end
 end

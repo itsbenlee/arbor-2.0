@@ -462,4 +462,108 @@ http_interactions:
       string: '{"ok":false,"error":"invalid_auth"}'
     http_version: 
   recorded_at: Thu, 29 Dec 2016 20:48:17 GMT
+- request:
+    method: get
+    uri: https://slack.com/api/auth.test?token=2x56z1f2prnmxyzujxlwukmi2uv3ojjc68c4plp9iyeiqsq6isrg5kuhmfevz7u097300fwvov05i6go48cs94pv3wq14hvfwdugmgzp0qsyathzv05zognhf0lzt267on3xp0ru1t2uivu6ac35lhd805x50i5h40y5tordmf0r3ilbv4hdt82jsp4ksew0hkoz2abngz1jwc8v8xeoea4sg0mazkv4x4tkuwuvxkt0dai5ocm7s92mmarfh26(416)
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '35'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Tue, 04 Jul 2017 17:25:45 GMT
+      Referrer-Policy:
+      - no-referrer
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Slack-Backend:
+      - h
+      X-Slack-Req-Id:
+      - 8a1c247c-0a4f-493e-9a19-fb9830362119
+      X-Xss-Protection:
+      - '0'
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 eae9588c80b212b9c41c2d16b13586fe.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - i2mkV0mkEV34OGlYVFQLD70HbOoHvbGMDHPZgEgwAAPWs00YeTdNFg==
+    body:
+      encoding: UTF-8
+      string: '{"ok":false,"error":"invalid_auth"}'
+    http_version: 
+  recorded_at: Tue, 04 Jul 2017 17:25:45 GMT
+- request:
+    method: get
+    uri: https://slack.com/api/auth.test?token=tdvmttkqpi293fqrffgax83h9r740cvm8f6p7tj28we8bolu639yl39wi9jmxv2np237tj8h74gsdlyh8lyk16qyj7gj9clp08x9zy3o2ktg2vmn0jp6scalwklbjs15htl1jl9uii6mwgkvvxzg0nm8h36s2idvxdd5oyzfjxdknib87yajnq2u81ayq8tjurlix3q14zjbaw31l1nb0dlzp3bqv6zuo0odm41my1inbdu06wozex3jd49jfww(97)
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '55'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Tue, 04 Jul 2017 19:56:24 GMT
+      Referrer-Policy:
+      - no-referrer
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Slack-Backend:
+      - h
+      X-Slack-Req-Id:
+      - fcf686a0-cabf-4aa9-81e8-5cb2a29c27cf
+      X-Xss-Protection:
+      - '0'
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 7a7217b79ce10ca6b1e959e451f56af8.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - jPUqLn9xb7fGEVkO6AOZPUA5aMhYb8cFmcBKb9hLjI37quu-EFEZWw==
+    body:
+      encoding: UTF-8
+      string: '{"ok":false,"error":"invalid_auth"}'
+    http_version: 
+  recorded_at: Tue, 04 Jul 2017 19:56:24 GMT
 recorded_with: VCR 2.9.3

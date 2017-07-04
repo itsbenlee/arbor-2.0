@@ -1,6 +1,8 @@
 class Project < ActiveRecord::Base
   include PublicActivity::Common
 
+  DEFAULT_SPRINTS_AMOUNT = ENV.fetch('DEFAULT_SPRINTS_AMOUNT', 5).to_i
+
   validates_presence_of :name
   validates_uniqueness_of :name,
                           scope: :owner,
@@ -36,6 +38,8 @@ class Project < ActiveRecord::Base
 
   scope :by_teams, ->(teams) { where(team_id: teams.pluck(:id)) }
   after_initialize :default_starting_date
+  after_create :create_default_sprints
+  after_update :sprints_based_on_velocity, if: :velocity_changed?
 
   def total_points
     user_stories_points - inactive_groups_points
@@ -164,5 +168,21 @@ class Project < ActiveRecord::Base
 
   def default_starting_date
     self.starting_date = Time.now unless starting_date
+  end
+
+  def create_default_sprints
+    DEFAULT_SPRINTS_AMOUNT.times { sprints.create }
+  end
+
+  def sprints_based_on_velocity
+    return unless sprints_empty?
+    sprints_to_create =
+      [DEFAULT_SPRINTS_AMOUNT, total_weeks].max - sprints.count
+
+    sprints_to_create.times { sprints.create }
+  end
+
+  def sprints_empty?
+    !UserStory.joins(:sprints).where(sprints: { project_id: id }).any?
   end
 end
