@@ -1,14 +1,12 @@
 module ArborReloaded
   class ProjectsController < ApplicationController
+    include ArborReloaded::Concerns::ActAsProjectResource
+
     layout false, only: :members
     before_action :load_project,
       only: %i(members show edit update destroy log add_member join_project
                export_backlog remove_member_from_project export_to_spreadhseet
-               release_plan)
-
-    rescue_from ActiveRecord::RecordNotFound do
-      render 'errors/404', status: 404
-    end
+               release_plan add_sprint)
 
     def index
       scope = params[:project_order] || 'recent'
@@ -206,13 +204,6 @@ module ArborReloaded
       params.require(:project).permit(:name,
         :favorite, :velocity, :cost_per_week,
         :slack_token, :slack_channel_id)
-    end
-
-    def load_project
-      id = params[:id] || params[:project_id]
-      @project = Project.find(id)
-      has_access = current_user.available_projects.include?(@project)
-      fail ActiveRecord::RecordNotFound unless has_access
     end
 
     def update_order_params

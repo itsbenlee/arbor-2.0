@@ -1,0 +1,5 @@
+$release_plan_container = $('.release-plan-container');
+
+if($release_plan_container.length) {
+  $release_plan_container.html("<%= j render 'arbor_reloaded/projects/partials/release_plan/sprints_table', release_plan: @release_plan %>");
+}

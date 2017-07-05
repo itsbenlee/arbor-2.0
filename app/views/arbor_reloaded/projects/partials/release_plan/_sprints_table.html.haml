@@ -1,0 +1,7 @@
+%table#release_plan_table.release-plan.stripe.row-border.order-column
+  %thead
+    = render 'arbor_reloaded/projects/partials/release_plan/header', sprints: release_plan[:sprints]
+  %tbody
+    - if release_plan[:ungrouped_stories].any?
+      = render 'arbor_reloaded/projects/partials/release_plan/group_row', group_name: I18n.t('release_plan.ungrouped_stories'),
+      user_stories: release_plan[:ungrouped_stories], sprints: release_plan[:sprints]

@@ -82,6 +82,8 @@ Railsroot::Application.routes.draw do
       member do
         get :release_plan
       end
+
+      resources :sprints, only: :create, shallow: true
     end
 
     resources :google_sheets, only: [] do

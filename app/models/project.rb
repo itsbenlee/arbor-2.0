@@ -156,6 +156,10 @@ class Project < ActiveRecord::Base
     }
   end
 
+  def create_default_sprints
+    DEFAULT_SPRINTS_AMOUNT.times { sprints.create }
+  end
+
   private
 
   def user_stories_points
@@ -168,10 +172,6 @@ class Project < ActiveRecord::Base
 
   def default_starting_date
     self.starting_date = Time.now unless starting_date
-  end
-
-  def create_default_sprints
-    DEFAULT_SPRINTS_AMOUNT.times { sprints.create }
   end
 
   def sprints_based_on_velocity
