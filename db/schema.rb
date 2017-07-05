@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20170705135531) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "pg_stat_statements"
 
   create_table "acceptance_criterions", force: :cascade do |t|
     t.text     "description"
@@ -110,6 +111,7 @@ ActiveRecord::Schema.define(version: 20170705135531) do
     t.integer  "user_story_id",             null: false
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.integer  "order"
   end
 
   add_index "constraints", ["description"], name: "index_constraints_on_description", using: :btree
@@ -260,6 +262,7 @@ ActiveRecord::Schema.define(version: 20170705135531) do
     t.integer  "hypothesis_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "order"
     t.integer  "story_number"
     t.integer  "backlog_order"
     t.boolean  "archived",                     default: false
@@ -290,8 +293,8 @@ ActiveRecord::Schema.define(version: 20170705135531) do
     t.boolean  "admin",                  default: false
     t.string   "slack_id"
     t.string   "avatar"
-    t.string   "slack_auth_token"
     t.string   "trello_token"
+    t.string   "slack_auth_token"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
