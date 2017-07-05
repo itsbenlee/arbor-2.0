@@ -40,7 +40,8 @@ RemoveUnusedMethodsInControllersCheck: {
     SlackController#authorize,
     SlackController#send_authorize_data,
     RegistrationsController#respond_with,
-    'ArborReloaded::CommentsController#load_project'
+    'ArborReloaded::CommentsController#load_project',
+    'ArborReloaded::ProjectsController#join_project'
   ]
 }
 RemoveUnusedMethodsInHelpersCheck: { except_methods: [] }

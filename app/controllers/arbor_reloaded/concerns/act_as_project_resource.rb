@@ -15,9 +15,8 @@ module ArborReloaded
         id = params[:id] || params[:project_id]
         @project = Project.find(id)
 
-        unless current_user.available_projects.include?(@project)
-          fail ActiveRecord::RecordNotFound
-        end
+        return if current_user.available_projects.include?(@project)
+        fail ActiveRecord::RecordNotFound
       end
     end
   end
