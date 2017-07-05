@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature 'create sprint from release plan page' do
-  let(:user)     { create :user }
+  let(:user)    { create :user }
   let(:project) { create :project, owner: user }
 
   background do
