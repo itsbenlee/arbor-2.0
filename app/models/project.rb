@@ -160,6 +160,14 @@ class Project < ActiveRecord::Base
     DEFAULT_SPRINTS_AMOUNT.times { sprints.create }
   end
 
+  def sprints_based_on_velocity
+    return unless sprints_empty?
+    sprints_to_create =
+      [DEFAULT_SPRINTS_AMOUNT, total_weeks].max - sprints.count
+
+    sprints_to_create.times { sprints.create }
+  end
+
   private
 
   def user_stories_points
@@ -172,14 +180,6 @@ class Project < ActiveRecord::Base
 
   def default_starting_date
     self.starting_date = Time.now unless starting_date
-  end
-
-  def sprints_based_on_velocity
-    return unless sprints_empty?
-    sprints_to_create =
-      [DEFAULT_SPRINTS_AMOUNT, total_weeks].max - sprints.count
-
-    sprints_to_create.times { sprints.create }
   end
 
   def sprints_empty?

@@ -3,6 +3,6 @@ end
 
 class UpdateOldProjectDataCreateDefaultSprints < ActiveRecord::Migration
   def change
-    Project.all.each(&:create_default_sprints)
+    Project.all.each(&:sprints_based_on_velocity)
   end
 end
