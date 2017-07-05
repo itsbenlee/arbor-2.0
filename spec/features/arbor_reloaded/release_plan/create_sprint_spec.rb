@@ -17,7 +17,7 @@ feature 'create sprint from release plan page' do
 
   context '+ Sprint button works' do
     background do
-      click_link '+ Sprint'
+      find('#add-sprint-button').trigger(:click)
       wait_for_ajax
     end
 
