@@ -1,5 +1,7 @@
 module ArborReloaded
   class SprintUserStoryService
+    attr_reader :project, :sprint, :user_story
+
     def initialize(user, project_id, sprint_id, user_story_id)
       @project =
         user.projects.includes(:sprints, :user_stories).find(project_id)
@@ -20,7 +22,7 @@ module ArborReloaded
     end
 
     def update_story_status(status = nil)
-      delete_user_story && return unless status
+      delete_user_story && return if status.blank?
 
       unless SprintUserStory::STATUS.include? status
         fail WrongUserStoryStatusError

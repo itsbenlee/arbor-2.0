@@ -4,4 +4,4 @@
   %tbody
     - if release_plan[:ungrouped_stories].any?
       = render 'arbor_reloaded/projects/partials/release_plan/group_row', group_name: I18n.t('release_plan.ungrouped_stories'),
-      user_stories: release_plan[:ungrouped_stories], sprints: release_plan[:sprints]
+      user_stories: release_plan[:ungrouped_stories], sprints: release_plan[:sprints], project_id: project_id

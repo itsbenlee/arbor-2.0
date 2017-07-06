@@ -27,7 +27,7 @@ $release-plan-height-header: rem-calc(50);
   .user-story-text {
     @extend .release-plan-cell;
 
-    min-width: rem-calc(250);
+    min-width: rem-calc(300);
   }
 
   .user-story-number {
@@ -36,6 +36,26 @@ $release-plan-height-header: rem-calc(50);
     height: 100%;
     min-width: rem-calc(30);
     text-align: center;
+  }
+
+  .user-story-status {
+    padding: 0;
+    text-align: center;
+
+    .done,
+    .wip,
+    .planned { border-bottom: 5px solid; }
+
+    .done { border-color: $success-color; }
+    .wip { border-color: $warning-color; }
+    .planned { border-color: $light-grey; }
+
+    .update-user-story-status {
+      display: block;
+      min-height: rem-calc(40);
+      min-width: rem-calc(100);
+      padding-top: rem-calc(10);
+    }
   }
 
   .release-plan-header {
