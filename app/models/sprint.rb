@@ -3,6 +3,9 @@ class Sprint < ActiveRecord::Base
   has_many :sprint_user_stories, dependent: :destroy
   has_many :user_stories, through: :sprint_user_stories
 
+  acts_as_list column: :position, top_of_list: 1, add_new_at: :bottom,
+               scope: :project
+
   validates_presence_of :project
 
   def as_json(*_args)
