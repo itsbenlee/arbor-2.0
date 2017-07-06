@@ -115,6 +115,8 @@ Railsroot::Application.routes.draw do
         end
       end
     end
+
+    resources :sprint_user_stories, only: :create
   end
 
   namespace :api_slack do
