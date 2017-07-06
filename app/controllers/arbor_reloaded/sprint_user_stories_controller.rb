@@ -1,7 +1,7 @@
 module ArborReloaded
   class SprintUserStoriesController < ApplicationController
-    before_action :set_status
-    before_action :set_service
+    before_action :status
+    before_action :service
 
     def create
       @sprint_user_story_service.update_story_status(
@@ -15,11 +15,11 @@ module ArborReloaded
 
     private
 
-    def set_status
+    def status
       @status = params[:status]
     end
 
-    def set_service
+    def service
       @sprint_user_story_service = ArborReloaded::SprintUserStoryService.new(
         current_user,
         params[:project_id],
