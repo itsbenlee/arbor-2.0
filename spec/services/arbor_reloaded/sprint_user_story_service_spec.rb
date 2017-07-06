@@ -81,6 +81,16 @@ describe ArborReloaded::SprintUserStoryService do
       end
     end
 
+    describe 'remove from sprint if status is an empty strng' do
+      let!(:sprint_user_story) { create :sprint_user_story, user_story: user_story, sprint: sprint }
+
+      it 'removes the story' do
+        expect {
+          sprint_user_story_service.update_story_status ''
+        }.to change { sprint.user_stories.count }.from(1).to(0)
+      end
+    end
+
     describe 'status is not allowed' do
       it 'should raise a WrongUserStoryStatusError' do
         expect {

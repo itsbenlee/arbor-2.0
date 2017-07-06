@@ -1,33 +1,43 @@
 module ArborReloaded
   class SprintUserStoriesController < ApplicationController
-    include ArborReloaded::Concerns::ActAsProjectResource
-
-    before_action :load_project
-    before_action :load_sprint
-    before_action :load_user_story
+    before_action :set_status
+    before_action :set_service
 
     def create
-      sprint_user_story = SprintUserStory.find_or_create_by(
-        sprint: @sprint, user_story: @user_story
+      @sprint_user_story_service.update_story_status(
+        @status
       )
 
-      @status = params[:status]
-
-      if @status.blank?
-        sprint_user_story.destroy
-      else
-        sprint_user_story.update(status: @status)
-      end
+      project
+      sprint
+      user_story
     end
 
     private
 
-    def load_sprint
-      @sprint = @project.sprints.find(params[:sprint_id])
+    def set_status
+      @status = params[:status]
     end
 
-    def load_user_story
-      @user_story = @project.user_stories.find(params[:user_story_id])
+    def set_service
+      @sprint_user_story_service = ArborReloaded::SprintUserStoryService.new(
+        current_user,
+        params[:project_id],
+        params[:sprint_id],
+        params[:user_story_id]
+      )
+    end
+
+    def project
+      @project = @sprint_user_story_service.project.reload
+    end
+
+    def sprint
+      @sprint = @sprint_user_story_service.sprint
+    end
+
+    def user_story
+      @user_story = @sprint_user_story_service.user_story
     end
   end
 end

@@ -10,6 +10,14 @@ class SprintUserStory < ActiveRecord::Base
   validates :status, inclusion: STATUS
   validate :sprint_story_are_in_project, if: -> { user_story && sprint }
 
+  def self.next_status(actual_status)
+    actual_status_index = SprintUserStory::STATUS.find_index(actual_status)
+
+    return 'PLANNED' unless actual_status_index
+
+    SprintUserStory::STATUS[actual_status_index + 1]
+  end
+
   private
 
   def sprint_story_are_in_project
