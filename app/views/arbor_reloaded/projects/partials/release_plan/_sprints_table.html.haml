@@ -5,3 +5,6 @@
     - if release_plan[:ungrouped_stories].any?
       = render 'arbor_reloaded/projects/partials/release_plan/group_row', group_name: I18n.t('release_plan.ungrouped_stories'),
       user_stories: release_plan[:ungrouped_stories], sprints: release_plan[:sprints], project_id: project_id
+    - release_plan[:groups].each do |group_hash|
+      = render 'arbor_reloaded/projects/partials/release_plan/group_row', group_name: group_hash[:name],
+      user_stories: group_hash[:user_stories], sprints: release_plan[:sprints], project_id: project_id
