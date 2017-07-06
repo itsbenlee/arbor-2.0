@@ -1,31 +1,11 @@
 require 'spec_helper'
 
 feature 'show user stories by sprint on release plan page' do
-  let(:owner)   { create :user }
-  let(:project) { create :project, owner: owner }
-  let(:group)   { create :group, project: project }
-
-  let(:ungrouped_stories) do
-    create_list(
-      :user_story,
-      3,
-      project: project,
-      role: Faker::Lorem.sentence,
-      action: Faker::Lorem.sentence,
-      result: Faker::Lorem.sentence
-    )
-  end
-
-  let(:grouped_stories) do
-    create_list(
-      :user_story,
-      3,
-      project: project,
-      role: Faker::Lorem.sentence,
-      action: Faker::Lorem.sentence,
-      result: Faker::Lorem.sentence
-    )
-  end
+  let(:owner)             { create :user }
+  let(:project)           { create :project, owner: owner }
+  let(:group)             { create :group, project: project }
+  let(:ungrouped_stories) { create_list :user_story, 3, project: project }
+  let(:grouped_stories)   { create_list :user_story, 3, project: project }
 
   context 'ungrouped user stories' do
     background do
