@@ -26,6 +26,48 @@ feature 'update user story status on sprint from release plan page' do
     scenario 'should add the user story in the selected sprint with PLANNED as status code', js: true do
       expect(SprintUserStory.last.status).to eq 'PLANNED'
     end
+
+    scenario 'should change the status every time you click the user story sprint cell', js: true do
+      within "#user-story-#{user_story.id}-sprint-#{sprint.id}" do
+        find('a').trigger(:click)
+        wait_for_ajax
+      end
+
+      expect(SprintUserStory.last.status).to eq 'WIP'
+
+      within "#user-story-#{user_story.id}-sprint-#{sprint.id}" do
+        expect(find('a').text).to eq 'Wip'
+      end
+
+      within "#user-story-#{user_story.id}-sprint-#{sprint.id}" do
+        find('a').trigger(:click)
+        wait_for_ajax
+      end
+
+      expect(SprintUserStory.last.status).to eq 'DONE'
+
+      within "#user-story-#{user_story.id}-sprint-#{sprint.id}" do
+        expect(find('a').text).to eq 'Done'
+      end
+
+      within "#user-story-#{user_story.id}-sprint-#{sprint.id}" do
+        find('a').trigger(:click)
+        wait_for_ajax
+      end
+
+      expect(sprint.reload.user_stories.count).to eq 0
+
+      within "#user-story-#{user_story.id}-sprint-#{sprint.id}" do
+        find('a').trigger(:click)
+        wait_for_ajax
+      end
+
+      expect(SprintUserStory.last.status).to eq 'PLANNED'
+
+      within "#user-story-#{user_story.id}-sprint-#{sprint.id}" do
+        expect(find('a').text).to eq 'Planned'
+      end
+    end
   end
 
   context 'user story belongs to project with DONE as status code' do
