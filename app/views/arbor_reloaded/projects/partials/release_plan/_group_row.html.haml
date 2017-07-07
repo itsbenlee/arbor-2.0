@@ -5,7 +5,7 @@
     %th.user-story-number= index
     %th.user-story-text= truncate(format_user_story_text(user_story), length: 40)
     - sprints.each do |sprint|
-      - if sprint[:user_stories].include? user_story.as_json.symbolize_keys
+      - if sprint[:user_stories].find { |sprint_story| sprint_story[:id] == user_story[:id] }
         - user_story_status = SprintUserStory.find_by(sprint_id: sprint[:id], user_story_id: user_story[:id]).try(:status) || ''
       - else
         - user_story_status = ''
