@@ -44,11 +44,13 @@ $release-plan-height-header: rem-calc(50);
 
     .done,
     .wip,
-    .planned { border-bottom: 5px solid; }
+    .planned,
+    .carryover { border-bottom: 5px solid; }
 
     .done { border-color: $success-color; }
     .wip { border-color: $warning-color; }
     .planned { border-color: $light-grey; }
+    .carryover { border-color: $alert-color; }
 
     .update-user-story-status {
       display: block;
