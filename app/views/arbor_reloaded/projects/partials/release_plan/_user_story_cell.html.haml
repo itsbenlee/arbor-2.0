@@ -1,0 +1,4 @@
+- next_status = SprintUserStory.next_status(actual_status)
+
+= link_to arbor_reloaded_sprint_user_stories_path(status: next_status, user_story_id: user_story_id, sprint_id: sprint_id, project_id: project_id), remote: true, method: :post, class: "update-user-story-status #{actual_status.try(:downcase)}" do
+  = actual_status.try :humanize

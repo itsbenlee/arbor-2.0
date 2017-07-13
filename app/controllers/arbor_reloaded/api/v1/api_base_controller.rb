@@ -8,7 +8,15 @@ module ArborReloaded
 
         respond_to :json
 
+        rescue_from ActiveRecord::RecordNotFound do |error|
+          json_response({ message: error.message }, :not_found)
+        end
+
         protected
+
+        def json_response(object, status = :ok)
+          render json: object, status: status
+        end
 
         def current_user
           @api_key.try(:user)

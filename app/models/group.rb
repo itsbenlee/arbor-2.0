@@ -48,6 +48,15 @@ class Group < ActiveRecord::Base
     active? ? 'inactive' : 'active'
   end
 
+  def as_json(*_args)
+    {
+      id: id,
+      name: name,
+      user_stories: user_stories.map(&:as_summarized_json),
+      estimated_points: total_estimated_points
+    }
+  end
+
   private
 
   def set_order

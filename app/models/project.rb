@@ -1,6 +1,8 @@
 class Project < ActiveRecord::Base
   include PublicActivity::Common
 
+  DEFAULT_SPRINTS_AMOUNT = ENV.fetch('DEFAULT_SPRINTS_AMOUNT', 5).to_i
+
   validates_presence_of :name
   validates_uniqueness_of :name,
                           scope: :owner,
@@ -21,6 +23,7 @@ class Project < ActiveRecord::Base
   has_many :members_projects, class_name: MembersProject
   has_many :members, class_name: User, through: :members_projects
   has_many :groups
+  has_many :sprints, -> { order(position: :asc) }, dependent: :destroy
 
   has_many :attachments, dependent: :destroy
   scope :favorite, -> { where(favorite: true) }
@@ -34,6 +37,9 @@ class Project < ActiveRecord::Base
   after_commit :owner_as_member
 
   scope :by_teams, ->(teams) { where(team_id: teams.pluck(:id)) }
+  after_initialize :default_starting_date
+  after_create :create_default_sprints
+  after_update :sprints_based_on_velocity, if: :velocity_changed?
 
   def total_points
     user_stories_points - inactive_groups_points
@@ -123,6 +129,7 @@ class Project < ActiveRecord::Base
     { id: id,
       name: name,
       user_stories: user_stories.backlog_ordered.map(&:as_json),
+      starting_date: starting_date,
       errors: errors.full_messages }
   end
 
@@ -140,6 +147,27 @@ class Project < ActiveRecord::Base
     end
   end
 
+  def to_release_plan
+    {
+      name: name,
+      sprints: sprints.includes(:user_stories).map(&:as_json),
+      groups: groups.map(&:as_json),
+      ungrouped_stories: user_stories.ungrouped.map(&:as_json)
+    }
+  end
+
+  def create_default_sprints
+    DEFAULT_SPRINTS_AMOUNT.times { sprints.create }
+  end
+
+  def sprints_based_on_velocity
+    return unless sprints_empty?
+    sprints_to_create =
+      [DEFAULT_SPRINTS_AMOUNT, total_weeks].max - sprints.count
+
+    sprints_to_create.times { sprints.create }
+  end
+
   private
 
   def user_stories_points
@@ -148,5 +176,13 @@ class Project < ActiveRecord::Base
 
   def inactive_groups_points
     groups.inactive.map(&:total_estimated_points).sum
+  end
+
+  def default_starting_date
+    self.starting_date = Time.now unless starting_date
+  end
+
+  def sprints_empty?
+    !UserStory.joins(:sprints).where(sprints: { project_id: id }).any?
   end
 end

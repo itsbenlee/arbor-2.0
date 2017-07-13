@@ -78,6 +78,12 @@ Railsroot::Application.routes.draw do
           patch :inactive
         end
       end
+
+      member do
+        get :release_plan
+      end
+
+      resources :sprints, only: :create, shallow: true
     end
 
     resources :google_sheets, only: [] do
@@ -102,12 +108,15 @@ Railsroot::Application.routes.draw do
       namespace :v1 do
         resources :projects, only: :create, shallow: true do
           resources :groups, only: :create
+          resources :release_plans, only: :index
           resources :user_stories, only: :create, shallow: true do
             resources :acceptance_criterions, only: :create
           end
         end
       end
     end
+
+    resources :sprint_user_stories, only: :create
   end
 
   namespace :api_slack do

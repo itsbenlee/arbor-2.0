@@ -1,0 +1,5 @@
+$user_story_cell = $('<%="#user-story-#{@user_story.id}-sprint-#{@sprint.id}"%>');
+
+if($user_story_cell.length) {
+  $user_story_cell.html("<%= j render 'arbor_reloaded/projects/partials/release_plan/user_story_cell', project_id: @project.id, actual_status: @status, user_story_id: @user_story.id, sprint_id: @sprint.id %>");
+}

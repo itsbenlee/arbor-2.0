@@ -85,4 +85,13 @@ $red-alert: #f04124;
       }
     }
   }
+
+  .export-preloader {
+    display: none;
+
+    img {
+      margin-top: rem-calc(35);
+      width: rem-calc(70);
+    }
+  }
 }

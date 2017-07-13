@@ -22,6 +22,9 @@ class UserStory < ActiveRecord::Base
   has_many :acceptance_criterions,
     -> { order(order: :asc) }, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :sprint_user_stories, dependent: :destroy
+  has_many :sprints, through: :sprint_user_stories
+
   belongs_to :project
   belongs_to :group
 
@@ -73,6 +76,16 @@ class UserStory < ActiveRecord::Base
       color: color,
       acceptance_criterions: acceptance_criterions.map(&:as_json),
       group: group }.compact
+  end
+
+  def as_summarized_json
+    {
+      id: id,
+      description: description,
+      role: role,
+      action: action,
+      result: result
+    }.compact
   end
 
   def self.from_hash(hash, project)

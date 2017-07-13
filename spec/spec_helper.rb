@@ -63,16 +63,7 @@ Spork.prefork do
 
     config.before :suite do
       DatabaseRewinder.clean_with :truncation
-    end
-
-    config.before :each do |example_group|
-      if Capybara.current_driver == :rack_test
-        DatabaseRewinder.strategy = :transaction
-      else
-        page.driver.browser.url_blacklist = ['http://use.typekit.net']
-        DatabaseRewinder.strategy = :truncation
-      end
-      DatabaseRewinder.start
+      DatabaseRewinder.strategy = :transaction
     end
 
     config.after do

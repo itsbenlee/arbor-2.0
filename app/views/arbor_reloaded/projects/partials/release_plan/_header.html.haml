@@ -1,0 +1,4 @@
+%tr.release-plan-header
+  %th.project-start-date{ colspan: 2 }= I18n.t('release_plan.start_date')
+  - sprints.each_with_index do |sprint, index|
+    %th.sprint-title= "sprint #{index}"

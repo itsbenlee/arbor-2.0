@@ -1,0 +1,7 @@
+%section
+  .add-sprint-button-container
+    =link_to '+ Sprint', arbor_reloaded_project_sprints_path(@project),
+    id: 'add-sprint-button', class: 'button success radius tiny right',
+    remote: true, method: :post
+  .release-plan-container
+    = render 'arbor_reloaded/projects/partials/release_plan/sprints_table', release_plan: @release_plan, project_id: @project.id
