@@ -4,7 +4,7 @@ class SprintUserStory < ActiveRecord::Base
 
   validates_uniqueness_of :user_story_id, scope: :sprint_id
 
-  STATUS = %w(PLANNED WIP DONE)
+  STATUS = %w(PLANNED WIP DONE CARRYOVER)
 
   validates_presence_of :user_story, :sprint
   validates :status, inclusion: STATUS
