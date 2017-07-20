@@ -80,4 +80,8 @@ $release-plan-height-header: rem-calc(50);
     color: $success-color;
     font-weight: $font-weight-bold;
   }
+
+  .release-plan-group-row {
+    &:hover * { background-color: rgba($success-color, .2); }
+  }
 }
