@@ -157,6 +157,7 @@ UtilityFunction:
     AcceptanceCriterionServices#get_order,
     SlackIntegrationService,
     UserAvatarImageUploader#default_url,
-    'ApplicationController#ssl_configured?'
+    'ApplicationController#ssl_configured?',
+    ReleasePlanUserStoriesHelper#current_sprint
   ]
   max_helper_calls: 1

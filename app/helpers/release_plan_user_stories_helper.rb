@@ -8,4 +8,12 @@ module ReleasePlanUserStoriesHelper
     #{t('reloaded.backlog.action')} #{user_story[:action]}
     #{t('reloaded.backlog.result')} #{user_story[:result]}"""
   end
+
+  def current_sprint(delivery_date)
+    return nil unless Time.zone.today.between?(
+      delivery_date - 6.days, delivery_date
+    )
+
+    'current-sprint'
+  end
 end
