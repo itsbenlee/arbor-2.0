@@ -6,6 +6,9 @@ $release-plan-height-header: rem-calc(50);
   text-align: right;
 }
 
+.release-plan-selected-row,
+.release-plan-selected-column { background-color: rgba($success-color, .2); }
+
 .release-plan-cell {
   background-color: $white;
   border: 1px solid $light-grey;
@@ -79,5 +82,9 @@ $release-plan-height-header: rem-calc(50);
     border-right-style: none;
     color: $success-color;
     font-weight: $font-weight-bold;
+  }
+
+  .release-plan-group-row {
+    &:hover * { @extend .release-plan-selected-row; }
   }
 }

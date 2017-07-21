@@ -1,7 +1,7 @@
 %tr
   %td.release-plan-group-title{ colspan: 2 }= group_name
 - user_stories.each.with_index(1) do |user_story, index|
-  %tr{ id: "group-user-story-#{user_story[:id]}" }
+  %tr.release-plan-group-row{ id: "group-user-story-#{user_story[:id]}" }
     %th.user-story-number= index
     %th.user-story-text= truncate(format_user_story_text(user_story), length: 40)
     - sprints.each do |sprint|
@@ -9,5 +9,5 @@
         - user_story_status = SprintUserStory.find_by(sprint_id: sprint[:id], user_story_id: user_story[:id]).try(:status) || ''
       - else
         - user_story_status = ''
-      %td.user-story-status{ id: "user-story-#{user_story[:id]}-sprint-#{sprint[:id]}" }
+      %td.user-story-status{ id: "user-story-#{user_story[:id]}-sprint-#{sprint[:id]}", class: "user-story-#{sprint[:id]}", data: { sprint_id: sprint[:id] } }
         = render 'arbor_reloaded/projects/partials/release_plan/user_story_cell', project_id: project_id, actual_status: user_story_status, user_story_id: user_story[:id], sprint_id: sprint[:id]
