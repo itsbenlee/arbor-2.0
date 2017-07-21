@@ -10,7 +10,7 @@ module ReleasePlanUserStoriesHelper
   end
 
   def current_sprint(delivery_date)
-    return nil unless Time.zone.today.between?(
+    return unless Time.zone.today.between?(
       delivery_date - 6.days, delivery_date
     )
 
