@@ -7,9 +7,7 @@ $release-plan-height-header: rem-calc(50);
 }
 
 .release-plan-selected-row,
-.release-plan-selected-column {
-  background-color: rgba($success-color, .2);
-}
+.release-plan-selected-column { background-color: rgba($success-color, .2); }
 
 .release-plan-cell {
   background-color: $white;
