@@ -55,6 +55,17 @@ feature 'update user story status on sprint from release plan page' do
         wait_for_ajax
       end
 
+      expect(SprintUserStory.last.status).to eq 'CARRYOVER'
+
+      within "#user-story-#{user_story.id}-sprint-#{sprint.id}" do
+        expect(find('a').text).to eq 'Carryover'
+      end
+
+      within "#user-story-#{user_story.id}-sprint-#{sprint.id}" do
+        find('a').trigger(:click)
+        wait_for_ajax
+      end
+
       expect(sprint.reload.user_stories.count).to eq 0
 
       within "#user-story-#{user_story.id}-sprint-#{sprint.id}" do
@@ -70,8 +81,8 @@ feature 'update user story status on sprint from release plan page' do
     end
   end
 
-  context 'user story belongs to project with DONE as status code' do
-    let!(:sprint_user_story) { SprintUserStory.create(user_story: user_story, sprint: sprint, status: 'DONE') }
+  context 'user story belongs to project with CARRYOVER as status code' do
+    let!(:sprint_user_story) { SprintUserStory.create(user_story: user_story, sprint: sprint, status: 'CARRYOVER') }
 
     background do
       sign_in user

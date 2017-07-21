@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170706191551) do
+ActiveRecord::Schema.define(version: 20170707152115) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -197,11 +197,11 @@ ActiveRecord::Schema.define(version: 20170706191551) do
   add_index "projects", ["team_id"], name: "index_projects_on_team_id", using: :btree
 
   create_table "sprint_user_stories", force: :cascade do |t|
-    t.integer  "sprint_id",     null: false
-    t.integer  "user_story_id", null: false
-    t.string   "status",        null: false
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "sprint_id",                         null: false
+    t.integer  "user_story_id",                     null: false
+    t.string   "status",        default: "PLANNED", null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
   add_index "sprint_user_stories", ["sprint_id"], name: "index_sprint_user_stories_on_sprint_id", using: :btree

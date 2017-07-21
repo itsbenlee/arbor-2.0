@@ -3,7 +3,6 @@ RSpec.describe SprintUserStory, type: :model do
 
   it { should belong_to :user_story }
   it { should belong_to :sprint }
-  it { should validate_presence_of :status }
   it { should validate_presence_of :sprint }
   it { should validate_presence_of :user_story }
   it { should validate_inclusion_of(:status).in_array(SprintUserStory::STATUS) }
