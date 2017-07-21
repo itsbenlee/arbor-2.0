@@ -26,7 +26,7 @@ feature 'create sprint from release plan page' do
     end
 
     it 'should add show the sprint added if you click the + Sprint button', js: true do
-      expect(page).to have_selector('th.sprint-title', count: 6)
+      expect(page).to have_selector('.sprint-title', count: 6)
     end
   end
 end
