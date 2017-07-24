@@ -8,11 +8,14 @@ class Sprint < ActiveRecord::Base
 
   validates_presence_of :project
 
+  delegate :starting_date, to: :project, prefix: true
+
   def as_json(*_args)
     {
       id: id,
       user_stories: user_stories.map(&:as_json),
-      total_points: user_stories.sum(:estimated_points)
+      total_points: user_stories.sum(:estimated_points),
+      delivery_date: (project_starting_date + position.to_i.weeks)
     }
   end
 end
