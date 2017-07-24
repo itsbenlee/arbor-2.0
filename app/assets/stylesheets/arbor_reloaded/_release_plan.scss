@@ -80,6 +80,7 @@ $release-plan-height-header: rem-calc(50);
     .sprint-title,
     .sprint-date {
       text-align: center;
+
       &.current-sprint { color: $success-color; }
     }//.sprint-title
   }//.release-plan-header
