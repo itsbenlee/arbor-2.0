@@ -48,3 +48,4 @@
 //= require arbor-reloaded/analytics_track_events
 //= require arbor-reloaded/analytics_binds
 //= require arbor-reloaded/release_plan
+//= require arbor-reloaded/update_project_starting_date

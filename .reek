@@ -91,7 +91,8 @@ TooManyInstanceVariables:
   max_instance_variables: 9
 TooManyMethods:
   enabled: true
-  exclude: []
+  exclude:
+    - 'ArborReloaded::ProjectsController'
   max_methods: 25
 TooManyStatements:
   enabled: true

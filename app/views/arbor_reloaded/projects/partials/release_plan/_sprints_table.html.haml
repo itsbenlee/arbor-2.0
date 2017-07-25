@@ -1,6 +1,6 @@
 %table#release_plan_table.release-plan.stripe.row-border.order-column
-  %thead
-    = render 'arbor_reloaded/projects/partials/release_plan/header', sprints: release_plan[:sprints]
+  %thead.release-plan-header-container
+    = render 'arbor_reloaded/projects/partials/release_plan/header', sprints: release_plan[:sprints], project_id: project_id, starting_date: release_plan[:starting_date]
   %tbody
     - if release_plan[:ungrouped_stories].any?
       = render 'arbor_reloaded/projects/partials/release_plan/group_row', group_name: I18n.t('release_plan.ungrouped_stories'),

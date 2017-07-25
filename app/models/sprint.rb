@@ -14,8 +14,7 @@ class Sprint < ActiveRecord::Base
     {
       id: id,
       user_stories: user_stories.map(&:as_json),
-      total_points: user_stories.sum(:estimated_points),
-      delivery_date: (project_starting_date + position.to_i.weeks)
+      total_points: user_stories.sum(:estimated_points)
     }
   end
 end

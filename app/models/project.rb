@@ -149,10 +149,12 @@ class Project < ActiveRecord::Base
 
   def to_release_plan
     {
+      id: id,
       name: name,
       sprints: sprints.includes(:user_stories).map(&:as_json),
       groups: groups.map(&:as_json),
-      ungrouped_stories: user_stories.ungrouped.map(&:as_json)
+      ungrouped_stories: user_stories.ungrouped.map(&:as_json),
+      starting_date: starting_date
     }
   end
 

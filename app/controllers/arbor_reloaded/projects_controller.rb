@@ -143,6 +143,11 @@ module ArborReloaded
       render layout: 'application_reload'
     end
 
+    def starting_date
+      starting_date_service.starting_date(starting_date_from_params)
+      @release_plan = starting_date_service.release_plan
+    end
+
     private
 
     def export_content
@@ -206,6 +211,20 @@ module ArborReloaded
 
     def update_order_params
       params.require(:stories)
+    end
+
+    def starting_date_service
+      @starting_date_service = ArborReloaded::UpdateProjectStartDateService.new(
+        params[:id], current_user
+      )
+    end
+
+    def starting_date_from_params
+      Date.new(
+        params[:starting_date_year].to_i,
+        params[:starting_date_month].to_i,
+        params[:starting_date_day].to_i
+      )
     end
   end
 end
