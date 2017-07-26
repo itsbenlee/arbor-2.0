@@ -81,6 +81,7 @@ Railsroot::Application.routes.draw do
 
       member do
         get :release_plan
+        put :starting_date
       end
 
       resources :sprints, only: :create, shallow: true

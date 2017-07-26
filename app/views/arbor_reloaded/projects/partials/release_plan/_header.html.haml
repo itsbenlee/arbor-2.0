@@ -1,7 +1,13 @@
 %tr.release-plan-header
-  %th.project-start-date{ colspan: 2 }= I18n.t('release_plan.start_date')
+  %th.project-start-date{ colspan: 2 }
+    = t('release_plan.start_date')
+    = form_tag starting_date_arbor_reloaded_project_path(project_id), class: 'project-starting-date-form', id: 'project-starting-date-form', remote: true, method: :put do
+      = number_field_tag :starting_date_month, starting_date.month, min: 1, max: 12, class: 'starting-date-form-element'
+      = number_field_tag :starting_date_day, starting_date.day, min: 1, max: 31, class: 'starting-date-form-element'
+      = number_field_tag :starting_date_year, starting_date.year, min: 2000, max: 2100, class: 'starting-date-form-element'
+      = submit_tag 'OK', class: 'button success tiny starting-date-form-button'
   - sprints.each_with_index do |sprint, index|
+    - delivery_date = starting_date + index.weeks
     %th
       .sprint-title= "sprint #{index}"
-      .sprint-date{ class: current_sprint(sprint[:delivery_date]) }
-        = sprint[:delivery_date]
+      .sprint-date{ class: current_sprint(delivery_date) }= delivery_date
