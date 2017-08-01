@@ -8,6 +8,8 @@ class Sprint < ActiveRecord::Base
 
   validates_presence_of :project
 
+  delegate :starting_date, to: :project, prefix: true
+
   def as_json(*_args)
     {
       id: id,

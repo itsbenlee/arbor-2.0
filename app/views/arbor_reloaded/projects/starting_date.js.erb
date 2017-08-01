@@ -1,0 +1,5 @@
+$release_plan_header_container = $('.release-plan-header-container');
+
+if($release_plan_header_container.length) {
+  $release_plan_header_container.html("<%= j render 'arbor_reloaded/projects/partials/release_plan/header', sprints: @release_plan[:sprints], project_id: @release_plan[:id], starting_date: @release_plan[:starting_date] %>");
+}
