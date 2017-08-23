@@ -3,7 +3,8 @@
 - user_stories.each.with_index(1) do |user_story, index|
   %tr.release-plan-group-row{ id: "group-user-story-#{user_story[:id]}" }
     %th.user-story-number= index
-    %th.user-story-text{ title: format_user_story_text(user_story) }= truncate(format_user_story_text(user_story), length: 55)
+    %th.user-story-text{ title: format_user_story_text(user_story), class: user_story[:done] ? 'done-user-story-text' : nil, id: "user-story-text-#{user_story[:id]}"  }
+      = truncate(format_user_story_text(user_story), length: 55)
     - sprints.each do |sprint|
       - if sprint[:user_stories].find { |sprint_story| sprint_story[:id] == user_story[:id] }
         - user_story_status = SprintUserStory.find_by(sprint_id: sprint[:id], user_story_id: user_story[:id]).try(:status) || ''

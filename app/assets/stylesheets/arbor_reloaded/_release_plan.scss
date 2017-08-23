@@ -31,6 +31,8 @@ $release-plan-height-header: rem-calc(50);
     @extend .release-plan-cell;
 
     min-width: rem-calc(300);
+
+    &.done-user-story-text { color: $success-color; }
   }
 
   .user-story-number {
