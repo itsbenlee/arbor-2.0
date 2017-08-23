@@ -11,13 +11,13 @@ feature 'secondary navbar' do
       visit arbor_reloaded_project_user_stories_path(project.id)
     end
 
-    context 'release plan link is present' do
-      scenario { should have_selector(:link_or_button, 'Release plan') }
+    context 'Release Plan link is present' do
+      scenario { should have_selector(:link_or_button, 'Release Plan') }
     end
 
-    context 'release plan link works' do
+    context 'Release Plan link works' do
       background do
-        click_link 'Release plan'
+        click_link 'Release Plan'
       end
 
       scenario { should have_current_path release_plan_arbor_reloaded_project_path(project)  }
