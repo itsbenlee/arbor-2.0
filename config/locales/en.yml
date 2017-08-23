@@ -247,7 +247,7 @@ en:
       export_trello: 'Trello'
       export_google_sheets: 'Google Sheets'
       feedback: 'Send feedback'
-      release_plan: Release plan
+      release_plan: Release Plan
     project_members:
       owner: 'Owner'
       user_invited: 'Invited'
