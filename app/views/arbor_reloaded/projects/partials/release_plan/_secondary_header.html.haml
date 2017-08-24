@@ -1,0 +1,5 @@
+%th.project-total-points{ colspan: 2 }
+  Total Points
+- sprints.each_with_index do |sprint, index|
+  %th
+    .sprint-points= "#{sprint[:total_points]} pts"
