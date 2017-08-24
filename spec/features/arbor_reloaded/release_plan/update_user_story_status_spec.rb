@@ -44,6 +44,17 @@ feature 'update user story status on sprint from release plan page' do
         wait_for_ajax
       end
 
+      expect(SprintUserStory.last.status).to eq 'ADVANCE_WORK'
+
+      within "#user-story-#{user_story.id}-sprint-#{sprint.id}" do
+        expect(find('a').text).to eq 'Advance work'
+      end
+
+      within "#user-story-#{user_story.id}-sprint-#{sprint.id}" do
+        find('a').trigger(:click)
+        wait_for_ajax
+      end
+
       expect(SprintUserStory.last.status).to eq 'DONE'
 
       within "#user-story-#{user_story.id}-sprint-#{sprint.id}" do

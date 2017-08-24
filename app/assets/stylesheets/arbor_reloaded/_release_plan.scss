@@ -47,6 +47,8 @@ $release-plan-height-header: rem-calc(50);
     padding: 0;
     text-align: center;
 
+    // scss-lint:disable SelectorFormat
+    .advance_work,
     .done,
     .wip,
     .planned,
@@ -54,7 +56,11 @@ $release-plan-height-header: rem-calc(50);
 
     .done { border-color: $success-color; }
     .wip { border-color: $warning-color; }
+
+    // scss-lint:disable SelectorFormat
+    .advance_work,
     .planned { border-color: $light-grey; }
+
     .carryover { border-color: $alert-color; }
 
     .update-user-story-status {
