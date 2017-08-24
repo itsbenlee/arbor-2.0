@@ -1,5 +1,6 @@
 $user_story_cell = $('<%="#user-story-#{@user_story.id}-sprint-#{@sprint.id}"%>');
 $user_story_text = $('<%="#user-story-text-#{@user_story.id}"%>');
+$release_plan_secondary_header = $('#release-plan-secondary-header');
 actual_status = '<%=@status%>';
 
 if($user_story_cell.length) {
@@ -12,4 +13,8 @@ if($user_story_text.length) {
   } else {
     $user_story_text.removeClass('done-user-story-text');
   }
+}
+
+if($release_plan_secondary_header.length) {
+  $release_plan_secondary_header.html("<%=j render 'arbor_reloaded/projects/partials/release_plan/secondary_header', sprints: @sprints.map(&:as_json)%>");
 }

@@ -11,6 +11,7 @@ module ArborReloaded
       project
       sprint
       user_story
+      sprints
     end
 
     private
@@ -38,6 +39,12 @@ module ArborReloaded
 
     def user_story
       @user_story = @sprint_user_story_service.user_story
+    end
+
+    def sprints
+      @project ||= project
+
+      @sprints = @project.sprints
     end
   end
 end

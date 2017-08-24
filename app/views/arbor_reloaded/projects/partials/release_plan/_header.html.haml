@@ -11,3 +11,6 @@
     %th
       .sprint-title= "sprint #{index}"
       .sprint-date{ class: current_sprint(delivery_date) }= delivery_date
+
+%tr#release-plan-secondary-header.release-plan-secondary-header
+  = render 'arbor_reloaded/projects/partials/release_plan/secondary_header', sprints: sprints
