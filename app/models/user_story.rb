@@ -86,7 +86,8 @@ class UserStory < ActiveRecord::Base
       role: role,
       action: action,
       result: result,
-      estimated_points: estimated_points
+      estimated_points: estimated_points,
+      done: done?
     }.compact
   end
 
