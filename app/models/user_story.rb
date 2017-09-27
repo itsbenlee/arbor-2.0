@@ -75,7 +75,8 @@ class UserStory < ActiveRecord::Base
       estimated_points: estimated_points,
       color: color,
       acceptance_criterions: acceptance_criterions.map(&:as_json),
-      group: group }.compact
+      group: group,
+      done: done? }.compact
   end
 
   def as_summarized_json
@@ -84,7 +85,9 @@ class UserStory < ActiveRecord::Base
       description: description,
       role: role,
       action: action,
-      result: result
+      result: result,
+      estimated_points: estimated_points,
+      done: done?
     }.compact
   end
 
@@ -94,6 +97,10 @@ class UserStory < ActiveRecord::Base
                 action: hash['action'] }
 
     project.user_stories.where(filters).first_or_create
+  end
+
+  def done?
+    sprint_user_stories.where(status: 'DONE').any?
   end
 
   private

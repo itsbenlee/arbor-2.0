@@ -204,4 +204,20 @@ RSpec.describe UserStory do
       end
     end
   end
+
+  describe '#done?' do
+    let(:sprint)                 { create :sprint, project: user_story.project }
+    let(:sprint_user_story)      { create :sprint_user_story, user_story: subject, sprint: sprint }
+    let(:done_sprint_user_story) { create :sprint_user_story, :done, user_story: subject, sprint: sprint }
+
+    it 'should return false if sprint user story status is not done' do
+      sprint_user_story
+      expect(user_story.done?).to be_falsey
+    end
+
+    it 'should return true if sprint user story status is not done' do
+      done_sprint_user_story
+      expect(user_story.done?).to be_truthy
+    end
+  end
 end
