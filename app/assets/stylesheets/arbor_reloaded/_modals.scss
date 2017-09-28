@@ -63,7 +63,10 @@ $modal-close-offset: rem-calc(20);
     top: 0;
   }
 
-  .disclaimer { font-style: italic; }
+  .disclaimer {
+    font-style: italic;
+    margin-bottom: 0;
+  }
 
   .show-project-data {
     background-color: $black-10;
