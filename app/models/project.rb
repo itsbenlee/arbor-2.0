@@ -35,6 +35,7 @@ class Project < ActiveRecord::Base
   scope :exclude_project, ->(project) { where.not(id: project.id) }
 
   after_commit :owner_as_member
+  after_create :track_backlog_creation
 
   scope :by_teams, ->(teams) { where(team_id: teams.pluck(:id)) }
   after_initialize :default_starting_date
@@ -186,5 +187,10 @@ class Project < ActiveRecord::Base
 
   def sprints_empty?
     !UserStory.joins(:sprints).where(sprints: { project_id: id }).any?
+  end
+
+  def track_backlog_creation
+    tracker_services = Mixpanel::TrackerServices.new
+    tracker_services.track_event(owner_id, 'USER_CREATES_BACKLOG')
   end
 end

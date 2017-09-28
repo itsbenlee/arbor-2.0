@@ -2,6 +2,7 @@ module ArborReloaded
   class TrelloController < ApplicationController
     before_action :load_project, except: :new
     before_action :load_token, except: :new
+    before_action :track_trello_export, only: :create
     layout 'application_reload'
 
     def index
@@ -16,11 +17,13 @@ module ArborReloaded
     def create
       response = ArborReloaded::TrelloServices.new(@project, @token).export
       positive_response = response.success
+
       if positive_response
         response.data[:message] = t('trello.success')
         ArborReloaded::IntercomServices.new(current_user)
           .create_event(t('intercom_keys.trello_export'))
       end
+
       render json: response, status: (positive_response ? 201 : 422)
     end
 
@@ -45,6 +48,11 @@ module ArborReloaded
     def load_project
       id = params[:id] || params[:project_id]
       @project = Project.find(id)
+    end
+
+    def track_trello_export
+      tracker_services = Mixpanel::TrackerServices.new
+      tracker_services.track_event(current_user.id, 'USER_EXPORTS_TO_TRELLO')
     end
   end
 end

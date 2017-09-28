@@ -32,6 +32,7 @@ gem 'newrelic_rpm'
 gem 'google_drive', '~> 2.1', '>= 2.1.1'
 gem 'google-api-client', '~> 0.9'
 gem 'googleauth', '~> 0.5.1'
+gem 'mixpanel-ruby', '~> 2.2'
 
 group :doc do
   gem 'sdoc', require: false
