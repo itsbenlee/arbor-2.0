@@ -8,6 +8,8 @@ module ArborReloaded
     helper_method :questions
 
     def index
+      tracker_services = Mixpanel::TrackerServices.new
+      tracker_services.track_event(current_user.id, 'USER_CLICKS_ON_CANVAS_TAB')
     end
 
     def create

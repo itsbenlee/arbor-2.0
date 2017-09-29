@@ -27,6 +27,7 @@ class User < ActiveRecord::Base
   has_one :api_key, dependent: :destroy
   after_commit :generate_api_key, on: %i(create update)
   after_update :update_intercom, if: :email_changed?
+  after_create :track_sign_up
 
   mount_uploader :avatar, UserAvatarImageUploader
   delegate :access_token, to: :api_key, prefix: false
@@ -65,5 +66,10 @@ class User < ActiveRecord::Base
   def update_intercom
     return unless INTERCOM_ENABLED
     ArborReloaded::IntercomServices.new(self).user_create_event
+  end
+
+  def track_sign_up
+    tracker_services = Mixpanel::TrackerServices.new
+    tracker_services.track_event(id, 'USER_SIGNS_UP')
   end
 end
