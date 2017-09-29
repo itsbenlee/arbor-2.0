@@ -72,7 +72,6 @@ function bindReorderStories() {
           $('#groups-list-container').replaceWith(response.data);
           bindReorderStories();
           checkForEmptyGroupStories();
-          displayColorTags();
           bindUserStoriesColorLinks();
           collapsableContent();
         }
@@ -283,6 +282,5 @@ function backlogGeneralBinds() {
   checkForEmptyGroupStories();
   displayActions();
   displayHideDelete();
-  displayColorTags();
   bindUserStoriesColorLinks();
 }
