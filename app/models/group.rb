@@ -19,6 +19,10 @@ class Group < ActiveRecord::Base
   before_destroy :move_up_project_groups
   before_destroy :ungroup_stories
 
+  delegate :owner_id, to: :project
+
+  after_update :track_group_changes
+
   def ungroup_stories
     user_stories.update_all group_id: nil
   end
@@ -79,5 +83,10 @@ class Group < ActiveRecord::Base
 
     moved_group.update_attribute(:order, order)
     update_attribute(:order, new_order)
+  end
+
+  def track_group_changes
+    tracker_services = Mixpanel::TrackerServices.new
+    tracker_services.track_event(owner_id, 'USER_EDITS_THEME')
   end
 end

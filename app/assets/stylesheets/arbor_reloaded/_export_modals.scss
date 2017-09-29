@@ -5,6 +5,7 @@ $red-alert: #f04124;
   text-align: center;
 
   .hint {
+    color: $font-color-3;
     display: inline-block;
     margin-top: 1.5rem;
     width: 75%;
@@ -24,6 +25,7 @@ $red-alert: #f04124;
 
     .button {
       flex-basis: 45%;
+      margin: rem-calc(10 0 0);
       text-transform: capitalize;
 
       &.cancel {

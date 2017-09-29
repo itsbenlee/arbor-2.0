@@ -36,6 +36,11 @@ module ArborReloaded
     end
 
     def create
+      tracker_services = Mixpanel::TrackerServices.new
+      tracker_services.track_event(
+        current_user.id, 'USER_ADDS_STORY_TO_BACKLOG'
+      )
+
       story_services = ArborReloaded::UserStoryService.new(@project)
       @user_story =
         story_services.new_user_story(user_story_params, current_user)

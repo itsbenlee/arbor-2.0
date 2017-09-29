@@ -5,6 +5,9 @@ module ArborReloaded
     layout false, only: :members
     before_action :load_project,
                   except: %i(index create list_projects order_stories copy)
+    before_action :track_add_member, only: :add_member
+    before_action :track_export_backlog, only: :export_backlog
+    before_action :track_release_plan, only: :release_plan
 
     def index
       scope = params[:project_order] || 'recent'
@@ -67,7 +70,9 @@ module ArborReloaded
     def add_member
       member_param = params.permit(:member)
       ArborReloaded::ProjectMemberService.new(
-        @project, current_user, member_param[:member]).invite_member
+        @project, current_user, member_param[:member]
+      ).invite_member
+
       if @project.save
         redirect_to :back
       else
@@ -95,11 +100,14 @@ module ArborReloaded
     def export_backlog
       parameters = params.permit(:estimation)
       @estimation = parameters[:estimation].blank?
+
       send_data(export_content,
                 filename: "#{@project.name} Backlog.pdf",
                 type:     'application/pdf')
-      ArborReloaded::IntercomServices.new(current_user)
-        .create_event(t('intercom_keys.pdf_export'))
+
+      ArborReloaded::IntercomServices.new(
+        current_user
+      ).create_event(t('intercom_keys.pdf_export'))
     end
 
     def order_stories
@@ -224,6 +232,30 @@ module ArborReloaded
         params[:starting_date_year].to_i,
         params[:starting_date_month].to_i,
         params[:starting_date_day].to_i
+      )
+    end
+
+    def track_add_member
+      tracker_services = Mixpanel::TrackerServices.new
+
+      tracker_services.track_event(
+        current_user.id, 'USER_INVITES_MEMBER_TO_TEAM'
+      )
+    end
+
+    def track_export_backlog
+      tracker_services = Mixpanel::TrackerServices.new
+
+      tracker_services.track_event(
+        current_user.id, 'USER_EXPORTS_PROJECT_TO_PDF'
+      )
+    end
+
+    def track_release_plan
+      tracker_services = Mixpanel::TrackerServices.new
+
+      tracker_services.track_event(
+        current_user.id, 'USER_CLICKS_ON_RELEASE_PLAN_TAB'
       )
     end
   end
