@@ -222,44 +222,37 @@ function fixNewBacklogStoryHeight() {
   $newBacklogStory.height($userStoryFormContainer.outerHeight());
 }
 
-function bindCreationMode() {
-  $('.backlog-story-creation-mode').each(function (i, item) {
-    var $item = $(item);
+$(document).on('click', '.creation-mode-selected', function() {
+  $('ul.creation-mode-list').removeClass('hidden-element');
+});
 
-    $('.creation-mode-selected', $item).click(function () {
-      $('ul.creation-mode-list', $item).removeClass('hidden-element');
-    });
+$(document).on('click', 'li.creation-mode-guided', function() {
+  $('.creation-mode-selected .creation-mode-icon').text('G');
 
-    $('li.creation-mode-guided', $item).click(function () {
-      $('.creation-mode-selected .creation-mode-icon', $item).text('G');
+  $('form.creation-mode-guided').removeClass('hidden-element');
+  $('form.creation-mode-freeform').addClass('hidden-element');
+});
 
-      $('form.creation-mode-guided').removeClass('hidden-element');
-      $('form.creation-mode-freeform').addClass('hidden-element');
-    });
+$(document).on('click', 'li.creation-mode-freeform', function() {
+  $('.creation-mode-selected .creation-mode-icon').text('F');
 
-    $('li.creation-mode-freeform', $item).click(function () {
-      $('.creation-mode-selected .creation-mode-icon', $item).text('F');
+  $('form.creation-mode-guided').addClass('hidden-element');
+  $('form.creation-mode-freeform').removeClass('hidden-element');
+});
 
-      $('form.creation-mode-guided').addClass('hidden-element');
-      $('form.creation-mode-freeform').removeClass('hidden-element');
-    });
-  });
+$(document).click(function (event) {
+  var $element = $(event.target);
 
-  $(document).click(function (event) {
-    var $element = $(event.target);
-
-    if ($element.parents('.creation-mode-selected').length !== 1 &&
-        !$element.is('.creation-mode-selected')) {
-      $('ul.creation-mode-list').addClass('hidden-element');
-    }
-  });
-}
+  if ($element.parents('.creation-mode-selected').length !== 1 &&
+      !$element.is('.creation-mode-selected')) {
+    $('ul.creation-mode-list').addClass('hidden-element');
+  }
+});
 
 $(document).ready(function() {
   if ($('.new-backlog-story').length > 0) { autogrowInputs(); }
 
   if ($backlogStoryList.length) {
-    bindCreationMode();
     showBulkMenu();
     bindReorderStories();
     checkForEmptyGroupStories();
