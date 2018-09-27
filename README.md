@@ -1,6 +1,3 @@
-******************************************************************************************************************
-Arbor
-
 About Arbor
 =====================
 One of our internal tools is Arbor, a hybrid software and consulting service that allows startup entrepreneurs to distill ideas into an actionable roadmap that your team can use to build out your product. 
